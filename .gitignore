@@ -12,6 +12,7 @@ data/stories/
 data/index/
 data/operators/pages/
 data/*.json
+data/*.db
 
 # Markdown 生成输出
 output/markdown/
