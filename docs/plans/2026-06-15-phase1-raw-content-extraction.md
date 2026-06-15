@@ -1,7 +1,7 @@
 # Phase 1: 原始内容提取 — 实施计划
 
 > **关联 Spec:** `docs/specs/2026-06-15-phase1-raw-content-extraction.md`
-> **状态:** 草稿
+> **状态:** 已完成
 
 **目标:** 从 mrfz 迁移 scraper 管线到 `arknights_wiki/pipeline/`，新增干员数据提取能力
 

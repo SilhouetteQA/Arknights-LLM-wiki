@@ -32,19 +32,21 @@ class EntityRepository:
         conn.commit()
         return entity['id']
 
-    def update(self, entity_id: str, updates: dict):
+    def update(self, entity_id: str, updates: dict) -> int:
+        """更新实体字段。返回受影响的行数（0 表示实体不存在或无可更新字段）。"""
         if not updates:
-            return
+            return 0
         allowed = {'name_zh', 'aliases', 'source_data', 'lifecycle'}
         filtered = {k: v for k, v in updates.items() if k in allowed}
         if not filtered:
-            return
+            return 0
         set_clause = ', '.join(f"{k} = ?" for k in filtered)
         set_clause += ", updated_at = datetime('now')"
         values = list(filtered.values()) + [entity_id]
         conn = self._conn()
-        conn.execute(f"UPDATE entities SET {set_clause} WHERE id = ?", values)
+        cursor = conn.execute(f"UPDATE entities SET {set_clause} WHERE id = ?", values)
         conn.commit()
+        return cursor.rowcount
 
     def delete(self, entity_id: str):
         conn = self._conn()
@@ -226,7 +228,7 @@ class EntityRepository:
                 return True
         return False
 
-    def seed_from_story_dialogue(self, index_json_path: str, stories_dir: str) -> int:
+    def seed_from_story_dialogue(self, _index_json_path: str, stories_dir: str) -> int:
         """从 stories/ 对话提取 story NPC character 实体"""
         import pathlib as _pl
         speakers = set()

@@ -27,19 +27,21 @@ class WikiPageRepository:
         conn.commit()
         return conn.execute("SELECT last_insert_rowid()").fetchone()[0]
 
-    def update(self, page_id: int, updates: dict):
+    def update(self, page_id: int, updates: dict) -> int:
+        """更新页面字段。返回受影响的行数（0 表示页面不存在或无可更新字段）。"""
         if not updates:
-            return
+            return 0
         allowed = {'content_json', 'content_md', 'source_refs', 'quality_score', 'status'}
         filtered = {k: v for k, v in updates.items() if k in allowed}
         if not filtered:
-            return
+            return 0
         set_clause = ', '.join(f"{k} = ?" for k in filtered)
         set_clause += ", updated_at = datetime('now')"
         values = list(filtered.values()) + [page_id]
         conn = self._conn()
-        conn.execute(f"UPDATE wiki_pages SET {set_clause} WHERE id = ?", values)
+        cursor = conn.execute(f"UPDATE wiki_pages SET {set_clause} WHERE id = ?", values)
         conn.commit()
+        return cursor.rowcount
 
     def delete(self, page_id: int):
         conn = self._conn()

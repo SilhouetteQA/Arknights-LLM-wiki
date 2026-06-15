@@ -1,0 +1,50 @@
+{
+  "_description": "概念/阵营关键词 → 实体映射。种子时扫描源文档匹配这些关键词，建立概念级索引。概念层面匹配：relevance=0.7, match_type=concept_keyword",
+  "keywords": [
+    {
+      "keywords": ["深海猎人", "阿戈尔猎人", "深海猎人血脉", "深海猎人计划"],
+      "entity_id": "concept:abyssal_hunters",
+      "display_name": "深海猎人"
+    },
+    {
+      "keywords": ["岁兽", "岁", "岁之碎片", "岁相", "岁兽碎片"],
+      "entity_id": "concept:sui",
+      "display_name": "岁兽"
+    },
+    {
+      "keywords": ["源石", "源石技艺", "源石结晶", "源石感染", "源石粉尘"],
+      "entity_id": "concept:originium",
+      "display_name": "源石"
+    },
+    {
+      "keywords": ["矿石病", "矿石病感染", "感染者", "矿石病感染者", "矿石病症状"],
+      "entity_id": "concept:oripathy",
+      "display_name": "矿石病"
+    },
+    {
+      "keywords": ["整合运动", "整合运动军", "整合运动成员", "整合运动干部"],
+      "entity_id": "faction:reunion",
+      "display_name": "整合运动"
+    },
+    {
+      "keywords": ["罗德岛", "罗德岛制药", "罗德岛公司"],
+      "entity_id": "faction:rhodes_island",
+      "display_name": "罗德岛"
+    },
+    {
+      "keywords": ["天灾", "天灾降临", "天灾预警"],
+      "entity_id": "concept:catastrophe",
+      "display_name": "天灾"
+    },
+    {
+      "keywords": ["移动城邦", "移动城市", "城邦"],
+      "entity_id": "concept:mobile_city",
+      "display_name": "移动城邦"
+    },
+    {
+      "keywords": ["感染者组织", "感染者权益", "感染者处境"],
+      "entity_id": "concept:infected_rights",
+      "display_name": "感染者权益"
+    }
+  ]
+}
