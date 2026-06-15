@@ -39,52 +39,67 @@ def fetch_operator_list() -> list[dict]:
 
 
 def parse_operator_page(html_text: str) -> dict[str, str]:
-    """从干员个人页 HTML 解析「干员档案」节，返回 {档案项标题: 纯文本内容}"""
+    """从干员个人页 HTML 解析「干员档案」节，返回 {档案项标题: 纯文本内容}
+
+    PRTS Wiki 的干员档案使用 <table class="wikitable"> 格式：
+    - <th style="background:#424242"> 行为节标题
+    - <td> 行为该节内容
+    - 中间 <th> 行为解锁信息（跳过）
+    """
     from bs4 import BeautifulSoup
 
     soup = BeautifulSoup(html_text, 'lxml')
     archives = {}
 
-    # 定位「干员档案」h2：mw-headline 的 id 可能是中文或 URL 编码两种形式
+    # 找到「干员档案」h2
     archive_h2 = None
     for span in soup.find_all('span', class_='mw-headline'):
         span_id = span.get('id', '')
-        if '干员档案' in span_id or '档案' in span_id:
+        if '干员档案' in span_id:
             archive_h2 = span.find_parent('h2')
             if archive_h2:
                 break
     if not archive_h2:
         return archives
 
+    # 找到 h2 之后的第一个 table
+    archive_table = None
     current = archive_h2.next_sibling
-    current_title = None
-    current_lines = []
-
     while current:
-        if current.name == 'h2':
-            if current_title and current_lines:
-                archives[current_title] = "\n".join(current_lines).strip()
+        if hasattr(current, 'name') and current.name == 'table':
+            archive_table = current
             break
-
-        if current.name == 'h3':
-            if current_title and current_lines:
-                archives[current_title] = "\n".join(current_lines).strip()
-            span = current.find('span', class_='mw-headline')
-            current_title = span.get_text(strip=True) if span else current.get_text(strip=True)
-            current_lines = []
-        elif current.name in ('p', 'div', 'table', 'ul', 'ol'):
-            text = current.get_text().strip()
-            if text:
-                current_lines.append(text)
-            for child in current.find_all(['p', 'li'], recursive=False):
-                child_text = child.get_text().strip()
-                if child_text:
-                    current_lines.append(child_text)
-
         current = current.next_sibling
 
-    if current_title and current_lines:
-        archives[current_title] = "\n".join(current_lines).strip()
+    if not archive_table:
+        return archives
+
+    # 解析 table: 遍历 tr，收集节标题和内容
+    current_title = None
+    rows = archive_table.find_all('tr')
+    for row in rows:
+        th = row.find('th')
+        td = row.find('td')
+
+        # 检查是否为节标题行（有 background:#424242 样式）
+        if th:
+            style = th.get('style', '')
+            if 'background' in style and '424242' in style:
+                # 保存上一节
+                if current_title and current_title not in archives:
+                    pass  # 空节暂不处理，等 td 内容
+                current_title = th.get_text(strip=True)
+                continue
+
+        # 内容行
+        if td and current_title:
+            text = td.get_text().strip()
+            if text:
+                # 去重：同一节可能有多行 td
+                if current_title in archives:
+                    archives[current_title] += "\n" + text
+                else:
+                    archives[current_title] = text
 
     return archives
 

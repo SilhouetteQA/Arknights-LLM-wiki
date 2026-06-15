@@ -16,19 +16,26 @@ data-group="罗德岛" data-sex="女" data-logo="罗德岛"
 data-hp="1200" data-atk="450"></div>
 </div></body></html>"""
 
-# 模拟干员个人页档案 HTML
+# 模拟干员个人页档案 HTML（table 格式，与 PRTS Wiki 实际结构一致）
 ARCHIVE_HTML = """<html><body>
 <h2><span class="mw-headline" id="干员信息">干员信息</span></h2>
 <p>一些内容</p>
 <h2><span class="mw-headline" id="干员档案">干员档案</span></h2>
-<h3><span class="mw-headline" id="基础档案">基础档案</span></h3>
-<p>【代号】测试干员</p>
-<p>【性别】女</p>
-<p>【出身地】罗德岛</p>
-<h3><span class="mw-headline" id="客观履历">客观履历</span></h3>
-<p>一位测试干员，背景不详。</p>
-<h3><span class="mw-headline" id="档案资料一">档案资料一</span></h3>
-<p>这是档案内容。</p>
+<table class="wikitable">
+<tr><th>————人员档案</th></tr>
+<tr><th style="background:#424242">基础档案</th></tr>
+<tr><th>初始开放</th></tr>
+<tr><td>【代号】测试干员<br/>【性别】女<br/>【出身地】罗德岛</td></tr>
+<tr><th style="background:#424242">客观履历</th></tr>
+<tr><th>初始开放</th></tr>
+<tr><td>一位测试干员，背景不详。</td></tr>
+<tr><th style="background:#424242">档案资料一</th></tr>
+<tr><th>初始开放</th></tr>
+<tr><td>这是档案内容。</td></tr>
+<tr><th style="background:#424242">档案资料二</th></tr>
+<tr><th>提升信赖至50%以查看更多信息</th></tr>
+<tr><td></td></tr>
+</table>
 <h2><span class="mw-headline" id="语音记录">语音记录</span></h2>
 <p>语音内容</p>
 </body></html>"""
