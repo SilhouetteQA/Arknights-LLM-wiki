@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# 缓存
+.cache/
+
+# 数据产物 (体积大, 可重新生成)
+data/stories/
+data/index/
+
+# IDE & 工具
+.zed/
+.superpowers/
+.scratch/
+
+# macOS
+__MACOSX/
+.DS_Store
+
+# 临时输出
+output/test-output/
+*.tmp
+
+# 环境
+.env
+.venv/
+venv/
