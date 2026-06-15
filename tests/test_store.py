@@ -153,3 +153,83 @@ class TestEntityRepository:
         repo.add_alias('character:r001', 'Guard', 'codename')
         repo.remove_alias('character:r001', 'Guard')
         assert repo.resolve_name('Guard') is None
+
+
+from arknights_wiki.store.source_repository import SourceIndexRepository
+
+
+class TestSourceIndexRepository:
+    @pytest.fixture
+    def repo(self, tmp_path):
+        db_path = str(tmp_path / "test.db")
+        init_db(db_path)
+        er = EntityRepository(db_path)
+        er.insert({'id': 'character:amiya', 'type': 'character', 'name_zh': '阿米娅'})
+        er.insert({'id': 'character:chen', 'type': 'character', 'name_zh': '陈'})
+        er.insert({'id': 'concept:abyssal', 'type': 'concept', 'name_zh': '深海猎人'})
+        return SourceIndexRepository(db_path)
+
+    def test_insert_and_query_by_entity(self, repo):
+        repo.insert({
+            'entity_id': 'character:amiya', 'source_type': 'story',
+            'source_id': '3-1_会合_行动前', 'source_location': '对话行1',
+            'match_type': 'exact', 'relevance': 1.0,
+            'source_text': '陈长官，究竟发生了什么事？'
+        })
+        sources = repo.get_sources_for('character:amiya')
+        assert len(sources) == 1
+        assert sources[0]['source_id'] == '3-1_会合_行动前'
+        assert sources[0]['match_type'] == 'exact'
+
+    def test_insert_duplicate_ignored(self, repo):
+        entry = {
+            'entity_id': 'character:amiya', 'source_type': 'story',
+            'source_id': 'node_1', 'source_location': 'loc_1'
+        }
+        rid1 = repo.insert(entry)
+        rid2 = repo.insert(entry)
+        assert rid1 == rid2
+
+    def test_query_by_source(self, repo):
+        repo.insert({
+            'entity_id': 'character:amiya', 'source_type': 'story',
+            'source_id': 'node_1', 'source_location': '对话行1'
+        })
+        repo.insert({
+            'entity_id': 'character:chen', 'source_type': 'story',
+            'source_id': 'node_1', 'source_location': '对话行2'
+        })
+        entities = repo.get_entities_for('story', 'node_1')
+        assert len(entities) == 2
+
+    def test_filter_by_match_type(self, repo):
+        repo.insert({
+            'entity_id': 'character:amiya', 'source_type': 'story',
+            'source_id': 'n1', 'source_location': 'a',
+            'match_type': 'exact', 'relevance': 1.0
+        })
+        repo.insert({
+            'entity_id': 'concept:abyssal', 'source_type': 'story',
+            'source_id': 'n1', 'source_location': 'b',
+            'match_type': 'concept_keyword', 'relevance': 0.7
+        })
+        all_sources = repo.get_sources_for('character:amiya')
+        assert len(all_sources) == 1
+        keyword_only = repo.get_sources_for('concept:abyssal', match_type='concept_keyword')
+        assert len(keyword_only) == 1
+
+    def test_delete_by_entity(self, repo):
+        repo.insert({
+            'entity_id': 'character:amiya', 'source_type': 'story',
+            'source_id': 'n1', 'source_location': 'a'
+        })
+        repo.delete_by_entity('character:amiya')
+        assert len(repo.get_sources_for('character:amiya')) == 0
+
+    def test_delete_by_source(self, repo):
+        repo.insert({
+            'entity_id': 'character:amiya', 'source_type': 'story',
+            'source_id': 'n1', 'source_location': 'a'
+        })
+        repo.delete_by_source('story', 'n1')
+        assert len(repo.get_sources_for('character:amiya')) == 0
