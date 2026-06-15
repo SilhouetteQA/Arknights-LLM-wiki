@@ -10,6 +10,11 @@ __pycache__/
 # 数据产物 (体积大, 可重新生成)
 data/stories/
 data/index/
+data/operators/pages/
+data/*.json
+
+# Markdown 生成输出
+output/markdown/
 
 # IDE & 工具
 .zed/
