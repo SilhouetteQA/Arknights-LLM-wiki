@@ -1,7 +1,7 @@
 """M0 store 模块测试"""
 import sqlite3
 import pytest
-from arknights_wiki.store._schema import get_connection, init_db, DDL_STATEMENTS
+from arknights_wiki.store._schema import get_connection, init_db
 
 
 class TestSchema:
@@ -27,11 +27,14 @@ class TestSchema:
         init_db(db_path)  # should not error
 
     def test_get_connection_returns_sqlite3_connection(self, tmp_path):
-        """get_connection 应该返回可用的 sqlite3.Connection"""
+        """get_connection 应该返回可用的 sqlite3.Connection，WAL 和外键已启用"""
         db_path = str(tmp_path / "test.db")
         init_db(db_path)
         conn = get_connection(db_path)
         assert isinstance(conn, sqlite3.Connection)
+        assert conn.execute("PRAGMA journal_mode").fetchone()[0] == 'wal'
+        assert conn.execute("PRAGMA foreign_keys").fetchone()[0] == 1
+        assert conn.row_factory == sqlite3.Row
         conn.execute("SELECT 1")
 
     def test_entities_columns(self, tmp_path):
