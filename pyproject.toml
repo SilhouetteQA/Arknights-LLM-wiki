@@ -1,0 +1,12 @@
+[project]
+name = "arknights-wiki"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.25"]
