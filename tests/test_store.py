@@ -47,3 +47,109 @@ class TestSchema:
         assert 'name_zh' in cols
         assert 'aliases' in cols
         assert 'lifecycle' in cols
+
+
+import json
+from arknights_wiki.store.entity_repository import EntityRepository
+
+
+class TestEntityRepository:
+    @pytest.fixture
+    def repo(self, tmp_path):
+        db_path = str(tmp_path / "test.db")
+        init_db(db_path)
+        return EntityRepository(db_path)
+
+    def test_insert_and_get(self, repo):
+        eid = repo.insert({
+            'id': 'character:test',
+            'type': 'character',
+            'name_zh': '测试干员',
+            'source_data': json.dumps({'race': '菲林'})
+        })
+        assert eid == 'character:test'
+        entity = repo.get('character:test')
+        assert entity is not None
+        assert entity['name_zh'] == '测试干员'
+        assert entity['type'] == 'character'
+
+    def test_insert_duplicate_id_raises(self, repo):
+        repo.insert({'id': 'character:dup', 'type': 'character', 'name_zh': 'A'})
+        with pytest.raises(Exception):
+            repo.insert({'id': 'character:dup', 'type': 'character', 'name_zh': 'B'})
+
+    def test_get_nonexistent_returns_none(self, repo):
+        assert repo.get('character:ghost') is None
+
+    def test_get_by_name(self, repo):
+        repo.insert({'id': 'character:c1', 'type': 'character', 'name_zh': '阿米娅'})
+        result = repo.get_by_name('阿米娅', 'character')
+        assert result is not None
+        assert result['name_zh'] == '阿米娅'
+
+    def test_list_by_type(self, repo):
+        repo.insert({'id': 'character:c1', 'type': 'character', 'name_zh': 'A'})
+        repo.insert({'id': 'character:c2', 'type': 'character', 'name_zh': 'B'})
+        repo.insert({'id': 'faction:f1', 'type': 'faction', 'name_zh': '罗德岛'})
+        chars = repo.list_by_type('character')
+        assert len(chars) == 2
+        factions = repo.list_by_type('faction')
+        assert len(factions) == 1
+
+    def test_search_by_name(self, repo):
+        repo.insert({'id': 'character:a1', 'type': 'character', 'name_zh': '星熊'})
+        repo.insert({'id': 'character:a2', 'type': 'character', 'name_zh': '星极'})
+        results = repo.search_by_name('星')
+        assert len(results) == 2
+        results_empty = repo.search_by_name('不存在')
+        assert len(results_empty) == 0
+
+    def test_count(self, repo):
+        assert repo.count() == 0
+        repo.insert({'id': 'character:c1', 'type': 'character', 'name_zh': 'A'})
+        assert repo.count() == 1
+        assert repo.count('character') == 1
+        assert repo.count('faction') == 0
+
+    def test_update(self, repo):
+        repo.insert({'id': 'character:t1', 'type': 'character', 'name_zh': '原名'})
+        repo.update('character:t1', {'name_zh': '新名', 'lifecycle': 'deprecated'})
+        entity = repo.get('character:t1')
+        assert entity['name_zh'] == '新名'
+        assert entity['lifecycle'] == 'deprecated'
+
+    def test_delete(self, repo):
+        repo.insert({'id': 'character:del', 'type': 'character', 'name_zh': '待删'})
+        repo.delete('character:del')
+        assert repo.get('character:del') is None
+
+    def test_add_alias_and_resolve_name(self, repo):
+        repo.insert({'id': 'character:r001', 'type': 'character', 'name_zh': '阿米娅'})
+        repo.add_alias('character:r001', '近卫阿米娅', 'form')
+        repo.add_alias('character:r001', 'Guard', 'codename')
+        assert repo.resolve_name('近卫阿米娅') == 'character:r001'
+        assert repo.resolve_name('Guard') == 'character:r001'
+        assert repo.resolve_name('阿米娅') == 'character:r001'
+        assert repo.resolve_name('博士') is None
+
+    def test_resolve_name_with_type_filter(self, repo):
+        repo.insert({'id': 'character:amiya', 'type': 'character', 'name_zh': '阿米娅'})
+        repo.insert({'id': 'faction:rhodes', 'type': 'faction', 'name_zh': '罗德岛'})
+        result = repo.resolve_name('阿米娅', 'character')
+        assert result == 'character:amiya'
+        result = repo.resolve_name('阿米娅', 'faction')
+        assert result is None
+
+    def test_get_aliases(self, repo):
+        repo.insert({'id': 'character:r001', 'type': 'character', 'name_zh': '阿米娅'})
+        repo.add_alias('character:r001', 'Guard', 'codename')
+        repo.add_alias('character:r001', '近卫阿米娅', 'form')
+        aliases = repo.get_aliases('character:r001')
+        assert 'Guard' in aliases
+        assert '近卫阿米娅' in aliases
+
+    def test_remove_alias(self, repo):
+        repo.insert({'id': 'character:r001', 'type': 'character', 'name_zh': '阿米娅'})
+        repo.add_alias('character:r001', 'Guard', 'codename')
+        repo.remove_alias('character:r001', 'Guard')
+        assert repo.resolve_name('Guard') is None
