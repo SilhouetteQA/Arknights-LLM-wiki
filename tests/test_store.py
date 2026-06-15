@@ -233,3 +233,109 @@ class TestSourceIndexRepository:
         })
         repo.delete_by_source('story', 'n1')
         assert len(repo.get_sources_for('character:amiya')) == 0
+
+
+from arknights_wiki.store.page_repository import WikiPageRepository
+
+
+class TestWikiPageRepository:
+    @pytest.fixture
+    def repo(self, tmp_path):
+        db_path = str(tmp_path / "test.db")
+        init_db(db_path)
+        er = EntityRepository(db_path)
+        er.insert({'id': 'character:amiya', 'type': 'character', 'name_zh': '阿米娅'})
+        return WikiPageRepository(db_path)
+
+    def test_insert_and_get(self, repo):
+        pid = repo.insert({
+            'entity_id': 'character:amiya', 'page_type': 'character',
+            'content_json': '{"name":"阿米娅","story":"..."}',
+            'content_md': '# 阿米娅\n...',
+            'generated_by': 'M3:character'
+        })
+        page = repo.get(pid)
+        assert page is not None
+        assert page['entity_id'] == 'character:amiya'
+        assert page['page_type'] == 'character'
+        assert page['status'] == 'draft'
+
+    def test_get_latest(self, repo):
+        repo.insert({
+            'entity_id': 'character:amiya', 'page_type': 'character',
+            'content_json': '{"v":1}', 'version': 1
+        })
+        repo.insert({
+            'entity_id': 'character:amiya', 'page_type': 'character',
+            'content_json': '{"v":2}', 'version': 2
+        })
+        latest = repo.get_latest('character:amiya', 'character')
+        assert latest is not None
+        assert latest['version'] == 2
+
+    def test_list_by_entity(self, repo):
+        repo.insert({
+            'entity_id': 'character:amiya', 'page_type': 'character',
+            'content_json': '{}'
+        })
+        repo.insert({
+            'entity_id': 'character:amiya', 'page_type': 'character',
+            'content_json': '{}', 'version': 2
+        })
+        pages = repo.list_by_entity('character:amiya')
+        assert len(pages) == 2
+
+    def test_list_by_type_published_only(self, repo):
+        repo.insert({
+            'entity_id': 'character:amiya', 'page_type': 'character',
+            'content_json': '{}', 'status': 'draft'
+        })
+        repo.insert({
+            'entity_id': 'character:amiya', 'page_type': 'character',
+            'content_json': '{}', 'status': 'published', 'version': 2
+        })
+        published = repo.list_by_type('character', status='published')
+        assert len(published) == 1
+
+    def test_update_page(self, repo):
+        pid = repo.insert({
+            'entity_id': 'character:amiya', 'page_type': 'character',
+            'content_json': '{"old":"data"}'
+        })
+        repo.update(pid, {'content_json': '{"new":"data"}', 'status': 'published'})
+        page = repo.get(pid)
+        assert page['content_json'] == '{"new":"data"}'
+        assert page['status'] == 'published'
+
+    def test_delete_page(self, repo):
+        pid = repo.insert({
+            'entity_id': 'character:amiya', 'page_type': 'character',
+            'content_json': '{}'
+        })
+        repo.delete(pid)
+        assert repo.get(pid) is None
+
+    def test_generate_atomic_operation(self, repo):
+        pid = repo.generate(
+            'character:amiya', 'character',
+            {
+                'name_zh': '阿米娅',
+                'race': '卡特斯',
+                'summary': '罗德岛公开领袖',
+                'backstory': '...'
+            }
+        )
+        page = repo.get(pid)
+        assert page['entity_id'] == 'character:amiya'
+        assert page['generated_by'] == 'M0:seed'
+
+    def test_patch_section(self, repo):
+        pid = repo.generate(
+            'character:amiya', 'character',
+            {'name_zh': '阿米娅', 'backstory': '旧内容'}
+        )
+        repo.patch(pid, 'backstory', '新内容')
+        page = repo.get(pid)
+        import json as _json
+        content = _json.loads(page['content_json'])
+        assert content['backstory'] == '新内容'
