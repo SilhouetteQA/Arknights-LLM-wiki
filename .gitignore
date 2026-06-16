@@ -28,9 +28,15 @@ __MACOSX/
 
 # 临时输出
 output/test-output/
+output/_test_*
+output/extraction_tests/
+output/stats.jsonl
 *.tmp
 
 # 环境
 .env
 .venv/
 venv/
+
+# Git worktrees
+.claude/worktrees/
