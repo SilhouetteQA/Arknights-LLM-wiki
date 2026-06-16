@@ -48,6 +48,87 @@ class StatsReporter:
             cost = f"¥{s['cost']['total_cost_rmb']:.4f}"
             print(f"{ts:<20} {op:<16} {entities_total:>5} {aliases:>4} {si_total:>6} {wp_total:>4} {dur:>8} {llm:>7} {cost:>8}")
 
+    def show_diff(self) -> None:
+        snapshots = self._read_all()
+        if len(snapshots) < 2:
+            print("(至少需要两次快照才能对比)")
+            return
+        a, b = snapshots[-2], snapshots[-1]
+        print(f"对比: {a['operation']} ({a['timestamp'][:19].replace('T', ' ')}) "
+              f"-> {b['operation']} ({b['timestamp'][:19].replace('T', ' ')})")
+        print('─' * 60)
+
+        ac, bc = a['content'], b['content']
+
+        # entities
+        ae, be = ac['entities'], bc['entities']
+        at = sum(ae.values())
+        bt = sum(be.values())
+        diff_e = bt - at
+        sign = f'+{diff_e}' if diff_e > 0 else str(diff_e)
+        print(f"entities:       {at} -> {bt} ({sign})")
+        for etype in sorted(set(list(ae.keys()) + list(be.keys()))):
+            old = ae.get(etype, 0)
+            new = be.get(etype, 0)
+            if old != new:
+                d = new - old
+                s = f'+{d}' if d > 0 else str(d)
+                print(f"  {etype}: {old} -> {new} ({s})")
+
+        # aliases
+        aa = ac.get('entity_aliases', 0)
+        ba = bc.get('entity_aliases', 0)
+        if aa != ba:
+            d = ba - aa
+            s = f'+{d}' if d > 0 else str(d)
+            print(f"aliases:        {aa} -> {ba} ({s})")
+
+        # source_index
+        asi = ac['source_index']
+        bsi = bc['source_index']
+        at_si = sum(asi.values())
+        bt_si = sum(bsi.values())
+        if at_si != bt_si:
+            d = bt_si - at_si
+            s = f'+{d}' if d > 0 else str(d)
+            print(f"source_index:   {at_si} -> {bt_si} ({s})")
+
+        # wiki_pages
+        awp = ac['wiki_pages']
+        bwp = bc['wiki_pages']
+        at_wp = sum(sum(st.values()) for st in awp.values())
+        bt_wp = sum(sum(st.values()) for st in bwp.values())
+        if at_wp != bt_wp:
+            d = bt_wp - at_wp
+            s = f'+{d}' if d > 0 else str(d)
+            print(f"wiki_pages:     {at_wp} -> {bt_wp} ({s})")
+            for pt in sorted(awp.keys()):
+                a_pt = awp.get(pt, {'draft': 0, 'published': 0})
+                b_pt = bwp.get(pt, {'draft': 0, 'published': 0})
+                if a_pt != b_pt:
+                    print(f"  {pt}: draft {a_pt['draft']}->{b_pt['draft']} published {a_pt['published']}->{b_pt['published']}")
+
+        # db_size
+        adb = ac.get('db_size_mb', 0)
+        bdb = bc.get('db_size_mb', 0)
+        if adb != bdb:
+            d = bdb - adb
+            s = f'+{d:.1f}' if d > 0 else f'{d:.1f}'
+            print(f"db_size:        {adb}MB -> {bdb}MB ({s}MB)")
+
+        # timing
+        print(f"耗时:           {a['duration_ms']}ms -> {b['duration_ms']}ms")
+
+        # cost
+        allm = a['timing']['llm_calls_count']
+        bllm = b['timing']['llm_calls_count']
+        if allm != bllm:
+            print(f"LLM调用:        {allm} -> {bllm}")
+        acost = a['cost']['total_cost_rmb']
+        bcost = b['cost']['total_cost_rmb']
+        if acost != bcost:
+            print(f"成本:           ¥{acost:.4f} -> ¥{bcost:.4f}")
+
     def _print_detail(self, s: dict) -> None:
         """打印单个快照详情"""
         content = s['content']
