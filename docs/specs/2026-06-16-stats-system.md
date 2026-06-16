@@ -51,8 +51,19 @@ output/
   "duration_ms": 1847,
   "content": {
     "entities": {"character": 381, "faction": 44, "region": 34},
+    "entity_aliases": 40,
     "source_index": {"exact": 3615, "alias": 0, "concept_keyword": 0},
-    "wiki_pages": {"draft": 0, "published": 0},
+    "wiki_pages": {
+      "character": {"draft": 0, "published": 0},
+      "faction":   {"draft": 0, "published": 0},
+      "region":    {"draft": 0, "published": 0},
+      "concept":   {"draft": 0, "published": 0},
+      "event":     {"draft": 0, "published": 0},
+      "storyarc":  {"draft": 0, "published": 0},
+      "chapter":   {"draft": 0, "published": 0},
+      "timeline":  {"draft": 0, "published": 0},
+      "glossary":  {"draft": 0, "published": 0}
+    },
     "db_size_mb": 2.3,
     "raw_data": {
       "stories_count": 1663,
@@ -79,9 +90,10 @@ output/
 
 | 字段 | 说明 |
 |------|------|
-| `content.entities` | 各 type 实体数，按实际 type 动态列出 |
+| `content.entities` | 各 type 实体数，按 DB 实际 type 动态列出 |
+| `content.entity_aliases` | 别名映射总数 |
 | `content.source_index` | 按 match_type 分组计数 |
-| `content.wiki_pages` | 按 status 分组计数 |
+| `content.wiki_pages` | 按 page_type × status 二维分组，覆盖 9 种 Wiki 页面类型 |
 | `content.db_size_mb` | SQLite 文件大小 |
 | `content.raw_data` | 原始数据总量，首次快照统计后缓存 |
 | `content.raw_data.total_chars` | 全部原始文本（故事 + 档案）总字符数 |
@@ -115,7 +127,11 @@ class StatsCollector:
 ```
 
 **content 自动采集逻辑：**
-- entities / source_index / wiki_pages / db_size → 直接从 DB SQL 查询
+- entities → `SELECT type, COUNT(*) FROM entities GROUP BY type`（动态，不硬编码 type 列表）
+- entity_aliases → `SELECT COUNT(*) FROM entity_aliases`
+- source_index → 按 match_type 分组计数
+- wiki_pages → 按 page_type + status 二维分组，覆盖全部 9 种类型
+- db_size → `os.path.getsize(db_path)`
 - raw_data → 首次采集时遍历 stories/ + operators.json 计算总字符数，写入模块级缓存，后续快照直接复用
 
 **进度可见性：**
