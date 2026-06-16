@@ -64,9 +64,9 @@ data/stories/{category}/{chapter}/*.json
 | 条件 | 策略 | 涉及章节 |
 |------|------|----------|
 | ≤128K tokens | 单次全量喂入 | 107 章 |
-| >128K tokens | 按 ~25K tokens 切分，每批完整 node 结尾处截断 | 相变临界、长夜临光 |
+| >128K tokens | 按自然 node 边界切成 2 批，在总 token 数一半处最近 node 边界切断 | 相变临界、长夜临光 |
 
-分批合并：同章各批结果由 Python 合并——事件/角色/概念去重，摘要拼接。
+两批各自独立调用 LLM，Python 合并去重。
 
 ---
 
@@ -77,7 +77,7 @@ data/stories/{category}/{chapter}/*.json
 - 模型: MiniMax-M3
 - API: OpenAI SDK, base_url=https://api.minimaxi.com/v1
 - temperature: 0.1
-- max_tokens: 8192
+- max_tokens: 16384 (mrfz 经验：65536 导致 M3 think 过长，16384 最优)
 - 环境变量: `minimax_api`
 
 ### 5.2 Prompt 设计
@@ -85,7 +85,7 @@ data/stories/{category}/{chapter}/*.json
 **系统提示**要点：
 - 角色设定：明日方舟剧情深度分析师
 - 严格要求 JSON 输出，不含 markdown 代码块标记
-- 事件类型枚举锁定，禁止发明新类型
+- 事件类型由 LLM 用 snake_case 英文自由描述（如 `battle`, `political_intrigue`, `sacrifice`），不设枚举
 - 泛型角色过滤规则
 - 概念"实质讨论"vs"提及"区分标准
 
@@ -103,7 +103,7 @@ data/stories/{category}/{chapter}/*.json
 - 必须基于对话内容，不要编造
 - 泛型角色不提取为 characters
 - concepts_discussed 只记录被实质性讨论的概念
-- 只用给定 event type 枚举值
+- 事件类型用 snake_case 英文描述，覆盖剧情中各种可能的场景
 ```
 
 ### 5.3 LLM 输出 Schema
@@ -116,7 +116,7 @@ data/stories/{category}/{chapter}/*.json
 
   "events": [{
     "event": "事件描述（一句话）",
-    "type": "battle|revelation|confrontation|negotiation|rescue|departure|sacrifice|meeting|emotional_breakthrough|other",
+    "type": "snake_case 事件类型，如 battle, political_intrigue, sacrifice",
     "line_range": [起始行号, 结束行号],
     "participants": ["角色名"],
     "location": "发生地点",
@@ -139,20 +139,11 @@ data/stories/{category}/{chapter}/*.json
 }
 ```
 
-### 5.4 事件类型枚举
+### 5.4 事件类型
 
-| 类型 | 含义 |
-|------|------|
-| battle | 战斗/冲突 |
-| revelation | 揭露/揭示（真相、秘密、情报） |
-| confrontation | 对峙/争论 |
-| negotiation | 谈判/协商 |
-| rescue | 营救/救援 |
-| departure | 出发/离别 |
-| sacrifice | 牺牲/献身 |
-| meeting | 会面/集结 |
-| emotional_breakthrough | 情感突破/角色成长 |
-| other | 其他重要事件 |
+不设枚举，LLM 自行用 snake_case 英文描述事件性质。prompt 中给出 8-10 个常见类型作为参考示例，但不限制 LLM 创造新类型。
+
+常见参考类型: `battle`, `ambush`, `siege`, `retreat`, `infiltration`, `revelation`, `investigation`, `negotiation`, `alliance`, `betrayal`, `confrontation`, `sacrifice`, `rescue`, `departure`, `reunion`, `ceremony`, `emotional_breakthrough`, `flashback`, `disaster`, `planning`, `political_intrigue`, `assassination`, `rebellion`, `training`, `dream_vision`
 
 ### 5.5 角色提取规则
 
@@ -199,7 +190,7 @@ LLM 输出角色名
 
 - chapter/category 字段非空
 - events 数组至少 1 条
-- 每个 event 的 type 在枚举范围内
+- 每个 event 的 event/type 字段非空
 - line_range 为有效整数对且不超出输入行数
 
 ---
@@ -252,9 +243,16 @@ data/extractions/v1_events/{category}/{chapter}.json
 
 ### 8.2 检查项
 
-人工审阅每章输出：
+每个试跑章生成一个审阅用 Markdown 文件（`output/trial_review/{chapter}.md`），包含：
+- 章节摘要
+- 事件列表（序号 + 类型 + 描述 + 参与角色 + 行号范围）
+- 角色列表（名称 + 类型 + 本章角色）
+- 概念列表（名称 + 讨论摘要 + 行号范围）
+- 原文行号引用（关键事件对应的原文对话片段，方便核对）
+
+人工逐章审阅：
 - [ ] 事件是否遗漏重要剧情节点
-- [ ] 事件类型是否准确
+- [ ] 事件类型描述是否准确
 - [ ] 角色名是否规范（尤其 operator 角色）
 - [ ] NPC 是否正确识别（未被过滤的真正角色 vs 应过滤的泛型角色）
 - [ ] 概念标注是否准确区分"讨论"和"提及"
@@ -264,6 +262,10 @@ data/extractions/v1_events/{category}/{chapter}.json
 ### 8.3 通过标准
 
 用户逐章确认后，进入全量 109 章执行。
+
+### 8.4 用户预设验证问题（§1.3 要求）
+
+待用户定义 10-20 个关键验证问题，试跑后在审阅 Markdown 中逐一检查答案质量，通过率达标后进入全量执行。
 
 ---
 
