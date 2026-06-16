@@ -54,3 +54,29 @@ class TestStatsReporter:
         reporter.show_latest()
         captured = capsys.readouterr().out
         assert 'op2' in captured
+
+    def test_show_last_prints_table(self, jsonl_path, capsys):
+        snapshots = [
+            {"timestamp": "2026-06-16T15:00:00+00:00", "operation": "seed_m0", "duration_ms": 1847,
+             "content": {"entities": {"character": 381}, "entity_aliases": 40,
+                         "source_index": {"exact": 3615},
+                         "wiki_pages": {'character': {'draft': 0, 'published': 0}}},
+             "cost": {"models": {}, "total_cost_rmb": 0},
+             "timing": {"module_steps": {}, "llm_calls_count": 0, "llm_calls_total_ms": 0}},
+            {"timestamp": "2026-06-16T16:00:00+00:00", "operation": "gen_chapter", "duration_ms": 45200,
+             "content": {"entities": {"character": 381, "chapter": 5}, "entity_aliases": 42,
+                         "source_index": {"exact": 4120},
+                         "wiki_pages": {'chapter': {'draft': 5, 'published': 0}}},
+             "cost": {"models": {"deepseek-v4-flash": {"calls": 120, "tokens_in": 60000, "tokens_out": 30000}},
+                      "total_cost_rmb": 0.18},
+             "timing": {"module_steps": {"llm_generate": 44000}, "llm_calls_count": 120, "llm_calls_total_ms": 43000}},
+        ]
+        with open(jsonl_path, 'w', encoding='utf-8') as f:
+            for s in snapshots:
+                f.write(json.dumps(s, ensure_ascii=False) + '\n')
+        reporter = StatsReporter(jsonl_path)
+        reporter.show_last(2)
+        captured = capsys.readouterr().out
+        assert 'seed_m0' in captured
+        assert 'gen_chapter' in captured
+        assert '1847' in captured

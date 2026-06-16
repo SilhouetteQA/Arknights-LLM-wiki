@@ -26,6 +26,28 @@ class StatsReporter:
         s = snapshots[-1]
         self._print_detail(s)
 
+    def show_last(self, n: int) -> None:
+        snapshots = self._read_all()
+        if not snapshots:
+            print("(无快照)")
+            return
+        # 表头
+        header = f"{'时间':<20} {'操作':<16} {'实体':>5} {'别名':>4} {'索引':>6} {'页面':>4} {'耗时':>8} {'LLM调用':>7} {'成本':>8}"
+        print(header)
+        print('-' * len(header))
+        for s in snapshots[-n:]:
+            ts = s['timestamp'][:19].replace('T', ' ')
+            op = s['operation'][:16]
+            c = s['content']
+            entities_total = sum(c['entities'].values())
+            aliases = c['entity_aliases']
+            si_total = sum(c['source_index'].values())
+            wp_total = sum(sum(st.values()) for st in c['wiki_pages'].values())
+            dur = f"{s['duration_ms']}ms" if s['duration_ms'] < 10000 else f"{s['duration_ms']/1000:.1f}s"
+            llm = f"{s['timing']['llm_calls_count']}次"
+            cost = f"¥{s['cost']['total_cost_rmb']:.4f}"
+            print(f"{ts:<20} {op:<16} {entities_total:>5} {aliases:>4} {si_total:>6} {wp_total:>4} {dur:>8} {llm:>7} {cost:>8}")
+
     def _print_detail(self, s: dict) -> None:
         """打印单个快照详情"""
         content = s['content']
