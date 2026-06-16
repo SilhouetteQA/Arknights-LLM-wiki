@@ -1,0 +1,1083 @@
+{
+  "chapter": "长夜临光",
+  "category": "main",
+  "summary": "本章以卡西米尔特锦赛决赛为核心，讲述了耀骑士玛嘉烈·临光重返赛场并最终夺冠的故事。玛嘉烈在佐菲娅、玛莉娅等人的帮助下备战，与血骑士狄开俄波利斯进行了一场关于骑士精神与感染者命运的深刻对话后展开决战。最终玛嘉烈获胜，但商业联合会随即宣布她并非感染者，试图挑拨她与感染者群体的关系。玛嘉烈与血骑士共同走向冠军墙，途中遭遇无胄盟的阻挠，但得到了红松骑士团、银枪天马等各方势力的护送与支持。\n\n与此同时，红松骑士团的索娜等人策划并实施了针对商业联合会的行动，试图窃取零号地块和无胄盟的秘密资料。然而，无胄盟内部发生叛乱，青金大位罗伊和莫妮克借机清洗董事会成员并试图摆脱控制。红松骑士团的行动被利用，艾沃娜重伤，但最终索娜成功获取了关键数据。\n\n烛骑士薇薇安娜·德罗斯特与玛嘉烈进行了一场优雅而深刻的决斗，最终认输，并表达了对玛嘉烈信念的认同。逐魇骑士拓拉作为梦魇末裔，在特锦赛上与玛嘉烈和血骑士先后交手，其追寻古老传统的执念与现实的冲突被展现。\n\n罗德岛方面，博士和阿米娅在卡西米尔周旋于各方势力之间，与发言人马克维茨建立了联系，并逐渐了解到零号地块的黑暗真相。闪灵和夜莺始终陪伴在玛嘉烈身边。最终，特锦赛落幕，玛嘉烈留在卡西米尔，血骑士归隐田园，烛骑士被调离，红松骑士团与罗德岛合作，无胄盟的白金大位欣特莱雅叛逃并被罗德岛所救。玛恩纳·临光也决定离开大骑士领，踏上寻找自我的旅程。",
+  "events": [
+    {
+      "event": "玛嘉烈备战决赛，与佐菲娅、玛莉娅等人进行最后的训练和武器调试。",
+      "type": "preparation",
+      "line_range": [
+        1,
+        15
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "佐菲娅",
+        "玛莉娅·临光",
+        "老工匠",
+        "光头马丁"
+      ],
+      "location": "临光家工坊",
+      "significance": "展现玛嘉烈回归后获得的家庭支持，为最终决战铺垫。"
+    },
+    {
+      "event": "罗伊与莫妮克讨论对耀骑士下手的计划，并提及玄铁大位的指示。",
+      "type": "planning",
+      "line_range": [
+        16,
+        26
+      ],
+      "participants": [
+        "罗伊",
+        "莫妮克"
+      ],
+      "location": "无胄盟据点",
+      "significance": "揭示无胄盟内部对耀骑士的敌意和复杂态度。"
+    },
+    {
+      "event": "大嘴莫布被任命为特锦赛决赛解说，感到兴奋。",
+      "type": "revelation",
+      "line_range": [
+        27,
+        34
+      ],
+      "participants": [
+        "大嘴莫布",
+        "发言人马克维茨"
+      ],
+      "location": "商业联合会",
+      "significance": "展现商业联合会如何操控舆论和赛事。"
+    },
+    {
+      "event": "阿米娅、博士、闪灵、夜莺获得决赛门票，决定前往观战。",
+      "type": "departure",
+      "line_range": [
+        35,
+        56
+      ],
+      "participants": [
+        "阿米娅",
+        "伊奥莱塔·罗素",
+        "闪灵",
+        "夜莺",
+        "博士",
+        "砾",
+        "芙蓉"
+      ],
+      "location": "罗德岛驻地",
+      "significance": "罗德岛核心成员齐聚赛场，见证关键事件。"
+    },
+    {
+      "event": "托兰与索娜讨论感染者抗争的局限性，指出挫败商业联合会并非终点。",
+      "type": "negotiation",
+      "line_range": [
+        57,
+        68
+      ],
+      "participants": [
+        "索娜",
+        "托兰"
+      ],
+      "location": "大骑士领某处",
+      "significance": "深化红松骑士团行动的意义，引出更宏大的抗争主题。"
+    },
+    {
+      "event": "闪回：狄开俄波利斯作为感染者骑士的崛起过程，以及他与商业联合会发言人恰尔内的交易。",
+      "type": "flashback",
+      "line_range": [
+        69,
+        101
+      ],
+      "participants": [
+        "狄开俄波利斯",
+        "企业员工",
+        "发言人恰尔内"
+      ],
+      "location": "地下竞技场、商业联合会",
+      "significance": "揭示血骑士的出身和成为联合会棋子的背景。"
+    },
+    {
+      "event": "血骑士建立赤盏骑士团，收留感染者骑士，成为感染者的英雄。",
+      "type": "alliance",
+      "line_range": [
+        102,
+        117
+      ],
+      "participants": [
+        "血骑士",
+        "发言人麦基",
+        "感染者骑士"
+      ],
+      "location": "赤盏骑士团",
+      "significance": "展现血骑士为感染者争取生存空间的实际行动。"
+    },
+    {
+      "event": "特锦赛决赛开幕，玛嘉烈与血骑士在赛前进行关于骑士精神和感染者命运的深刻对话。",
+      "type": "confrontation",
+      "line_range": [
+        118,
+        170
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "血骑士",
+        "大嘴莫布"
+      ],
+      "location": "卡西米尔国立竞技场",
+      "significance": "核心思想碰撞，定义两位冠军的不同理念。"
+    },
+    {
+      "event": "伊奥莱塔·罗素向银枪天马讲述“不畏苦暗”的典故，表明监正会支持玛嘉烈的决心。",
+      "type": "revelation",
+      "line_range": [
+        171,
+        185
+      ],
+      "participants": [
+        "伊奥莱塔·罗素",
+        "银枪的天马"
+      ],
+      "location": "竞技场某处",
+      "significance": "揭示临光家族与监正会的历史渊源，为后续银枪天马的行动铺垫。"
+    },
+    {
+      "event": "玛嘉烈与血骑士展开激烈战斗，双方展现出惊人的实力和意志。",
+      "type": "battle",
+      "line_range": [
+        186,
+        230
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "血骑士",
+        "大嘴莫布"
+      ],
+      "location": "卡西米尔国立竞技场",
+      "significance": "特锦赛高潮，展现两位冠军的巅峰对决。"
+    },
+    {
+      "event": "无胄盟白金大位欣特莱雅与银枪天马对峙，被轻松压制。",
+      "type": "confrontation",
+      "line_range": [
+        231,
+        240
+      ],
+      "participants": [
+        "白金",
+        "银枪的天马"
+      ],
+      "location": "竞技场外围",
+      "significance": "展现银枪天马的强大实力，为后续无胄盟的失败埋下伏笔。"
+    },
+    {
+      "event": "玛嘉烈与血骑士在战斗中交流各自的经历和信念，战斗进入白热化。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        241,
+        280
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "血骑士"
+      ],
+      "location": "卡西米尔国立竞技场",
+      "significance": "深化角色，揭示玛嘉烈流浪期间的见闻和成长。"
+    },
+    {
+      "event": "玛嘉烈最终战胜血骑士，但商业联合会随即宣布玛嘉烈并非感染者，引发轩然大波。",
+      "type": "revelation",
+      "line_range": [
+        281,
+        310
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "血骑士",
+        "大嘴莫布",
+        "阿米娅",
+        "闪灵"
+      ],
+      "location": "卡西米尔国立竞技场",
+      "significance": "剧情重大转折，商业联合会试图瓦解感染者对玛嘉烈的信任。"
+    },
+    {
+      "event": "无胄盟趁机袭击玛莉娅等人，但被闪灵、老骑士等人击退。",
+      "type": "ambush",
+      "line_range": [
+        311,
+        330
+      ],
+      "participants": [
+        "玛莉娅·临光",
+        "佐菲娅",
+        "闪灵",
+        "老骑士",
+        "无胄盟成员"
+      ],
+      "location": "竞技场观众席",
+      "significance": "展现无胄盟的卑劣手段和罗德岛成员的战斗力。"
+    },
+    {
+      "event": "玛嘉烈与血骑士决定共同走向冠军墙，无视商业联合会的阻挠。",
+      "type": "departure",
+      "line_range": [
+        331,
+        340
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "血骑士"
+      ],
+      "location": "竞技场出口",
+      "significance": "展现两位冠军的反抗精神，将个人荣誉升华为集体行动。"
+    },
+    {
+      "event": "玛恩纳·临光正式与无胄盟决裂，使用假期介入冲突。",
+      "type": "confrontation",
+      "line_range": [
+        341,
+        355
+      ],
+      "participants": [
+        "玛恩纳·临光",
+        "罗伊",
+        "托兰",
+        "莫妮克"
+      ],
+      "location": "大骑士领街道",
+      "significance": "玛恩纳从旁观者转为参与者，展现临光家族的团结。"
+    },
+    {
+      "event": "红松骑士团出面护送玛嘉烈和血骑士，与无胄盟发生冲突。",
+      "type": "rescue",
+      "line_range": [
+        356,
+        380
+      ],
+      "participants": [
+        "索娜",
+        "格蕾纳蒂",
+        "艾沃娜",
+        "查丝汀娜",
+        "玛嘉烈·临光",
+        "血骑士",
+        "无胄盟成员"
+      ],
+      "location": "大骑士领街道",
+      "significance": "感染者骑士与耀骑士的联合，展现抗争力量的汇聚。"
+    },
+    {
+      "event": "银枪天马奉命护送玛嘉烈和血骑士抵达冠军墙展厅。",
+      "type": "escort",
+      "line_range": [
+        381,
+        395
+      ],
+      "participants": [
+        "银枪的天马",
+        "玛嘉烈·临光",
+        "血骑士",
+        "伊奥莱塔·罗素"
+      ],
+      "location": "冠军墙展厅",
+      "significance": "监正会正式表态支持玛嘉烈，银枪天马成为其保护者。"
+    },
+    {
+      "event": "伊奥莱塔·罗素在冠军墙展厅接见玛嘉烈和血骑士，表达了对他们的认可和期许。",
+      "type": "ceremony",
+      "line_range": [
+        396,
+        410
+      ],
+      "participants": [
+        "伊奥莱塔·罗素",
+        "玛嘉烈·临光",
+        "血骑士"
+      ],
+      "location": "冠军墙展厅",
+      "significance": "官方层面的认可，为玛嘉烈的行动赋予合法性。"
+    },
+    {
+      "event": "闪回：发言人麦基与烛骑士的多次对话，展现麦基对烛骑士的关心以及商业联合会对骑士的操控。",
+      "type": "flashback",
+      "line_range": [
+        411,
+        470
+      ],
+      "participants": [
+        "发言人麦基",
+        "烛骑士"
+      ],
+      "location": "商业联合会、宴会厅",
+      "significance": "揭示烛骑士的处境和麦基的矛盾心理，为烛骑士的最终选择铺垫。"
+    },
+    {
+      "event": "红松骑士团内部讨论，索娜透露他们与监正会有交易，并计划调查零号地块。",
+      "type": "planning",
+      "line_range": [
+        471,
+        530
+      ],
+      "participants": [
+        "索娜",
+        "格蕾纳蒂",
+        "查丝汀娜",
+        "艾沃娜",
+        "瑟奇亚克"
+      ],
+      "location": "红松骑士团据点",
+      "significance": "揭示红松骑士团的更深层目标和与监正会的合作。"
+    },
+    {
+      "event": "感染者骑士杰米在夺旗赛中遭锈铜骑士奥尔默·英格拉等人围攻致死，引发感染者愤怒。",
+      "type": "death",
+      "line_range": [
+        531,
+        620
+      ],
+      "participants": [
+        "感染者骑士杰米",
+        "锈铜骑士",
+        "艾沃娜",
+        "正经的骑士",
+        "谄媚的骑士"
+      ],
+      "location": "特锦赛赛场",
+      "significance": "激化感染者与骑士贵族之间的矛盾，成为后续冲突的导火索。"
+    },
+    {
+      "event": "逐魇骑士拓拉在酒吧与老骑士弗格瓦尔德等人相遇，展现其梦魇身份和对现代卡西米尔的蔑视。",
+      "type": "confrontation",
+      "line_range": [
+        621,
+        680
+      ],
+      "participants": [
+        "逐魇骑士",
+        "老骑士",
+        "佐菲娅",
+        "玛莉娅·临光",
+        "光头马丁",
+        "罗伊"
+      ],
+      "location": "光头马丁的酒吧",
+      "significance": "引入逐魇骑士这一重要角色，展现古老传统与现代社会的冲突。"
+    },
+    {
+      "event": "玛嘉烈与左手骑士泰特斯·白杨对决，轻松获胜。",
+      "type": "battle",
+      "line_range": [
+        681,
+        710
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "左手骑士",
+        "大嘴莫布"
+      ],
+      "location": "竞技场",
+      "significance": "展现玛嘉烈的强大实力，为后续与烛骑士的对决铺垫。"
+    },
+    {
+      "event": "烛骑士主动与玛嘉烈会面，进行了一次关于骑士身份的深入交谈。",
+      "type": "negotiation",
+      "line_range": [
+        711,
+        760
+      ],
+      "participants": [
+        "烛骑士",
+        "玛嘉烈·临光",
+        "发言人麦基"
+      ],
+      "location": "竞技场外",
+      "significance": "两位重要女性骑士的首次正式交流，为后续决斗奠定基础。"
+    },
+    {
+      "event": "发言人马克维茨与国民院副审官交易，以处理恰尔内为条件换取对锈铜骑士的审判。",
+      "type": "political_intrigue",
+      "line_range": [
+        761,
+        790
+      ],
+      "participants": [
+        "发言人马克维茨",
+        "电话那头的声音"
+      ],
+      "location": "商业联合会",
+      "significance": "展现马克维茨在权力斗争中的挣扎和妥协。"
+    },
+    {
+      "event": "博士与发言人马克维茨会面，讨论罗德岛在卡西米尔的合作事宜。",
+      "type": "negotiation",
+      "line_range": [
+        791,
+        830
+      ],
+      "participants": [
+        "博士",
+        "发言人马克维茨",
+        "砾"
+      ],
+      "location": "罗德岛驻地",
+      "significance": "建立罗德岛与商业联合会的官方联系，为后续调查零号地块提供渠道。"
+    },
+    {
+      "event": "烛骑士与发言人麦基讨论与耀骑士的对决，烛骑士坚持要堂堂正正一战。",
+      "type": "confrontation",
+      "line_range": [
+        831,
+        870
+      ],
+      "participants": [
+        "烛骑士",
+        "发言人麦基"
+      ],
+      "location": "商业联合会",
+      "significance": "展现烛骑士的骑士精神和对商业联合会操控的反抗。"
+    },
+    {
+      "event": "玛嘉烈与佐菲娅、玛莉娅进行训练，回忆过去，展现姐妹情深。",
+      "type": "training",
+      "line_range": [
+        871,
+        900
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "佐菲娅",
+        "玛莉娅·临光"
+      ],
+      "location": "临光家",
+      "significance": "温馨的家庭场景，为后续的紧张剧情提供缓冲。"
+    },
+    {
+      "event": "托兰劝说玛恩纳参与对抗无胄盟的行动，但玛恩纳拒绝。",
+      "type": "negotiation",
+      "line_range": [
+        901,
+        930
+      ],
+      "participants": [
+        "托兰",
+        "玛恩纳·临光"
+      ],
+      "location": "玛恩纳家中",
+      "significance": "展现玛恩纳的消极态度和托兰的积极介入。"
+    },
+    {
+      "event": "红松骑士团制定详细计划，准备突袭联合会大楼窃取数据。",
+      "type": "planning",
+      "line_range": [
+        931,
+        980
+      ],
+      "participants": [
+        "索娜",
+        "格蕾纳蒂",
+        "查丝汀娜",
+        "艾沃娜",
+        "瑟奇亚克",
+        "托兰"
+      ],
+      "location": "红松骑士团据点",
+      "significance": "红松骑士团行动的高潮，展现其组织能力和决心。"
+    },
+    {
+      "event": "阿米娅和博士在感染者收治中心发现异常，怀疑零号地块存在问题。",
+      "type": "investigation",
+      "line_range": [
+        981,
+        1010
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "芙蓉"
+      ],
+      "location": "感染者收治中心",
+      "significance": "罗德岛开始察觉零号地块的黑暗真相。"
+    },
+    {
+      "event": "无胄盟绑架玛莉娅·临光，试图以此要挟玛嘉烈。",
+      "type": "kidnapping",
+      "line_range": [
+        1011,
+        1050
+      ],
+      "participants": [
+        "玛莉娅·临光",
+        "白金",
+        "艾沃娜",
+        "托兰"
+      ],
+      "location": "大骑士领某处",
+      "significance": "无胄盟的卑劣手段，激化矛盾。"
+    },
+    {
+      "event": "玛嘉烈与烛骑士进行了一场优雅而激烈的决斗，烛骑士最终认输。",
+      "type": "battle",
+      "line_range": [
+        1051,
+        1120
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "烛骑士",
+        "大嘴莫布"
+      ],
+      "location": "卡西米尔国立竞技场",
+      "significance": "两位骑士的巅峰对决，烛骑士表达了对玛嘉烈信念的认同。"
+    },
+    {
+      "event": "无胄盟青金大位罗伊和莫妮克开始大规模清洗感染者，并计划背叛商业联合会。",
+      "type": "massacre",
+      "line_range": [
+        1121,
+        1160
+      ],
+      "participants": [
+        "罗伊",
+        "莫妮克",
+        "无胄盟成员",
+        "感染者"
+      ],
+      "location": "大骑士领各处",
+      "significance": "无胄盟的叛乱开始，局势进一步混乱。"
+    },
+    {
+      "event": "闪灵从感染者骑士口中得知零号地块的真相——那是一座“屠宰场”。",
+      "type": "revelation",
+      "line_range": [
+        1161,
+        1190
+      ],
+      "participants": [
+        "闪灵",
+        "感染者骑士"
+      ],
+      "location": "感染者聚集区",
+      "significance": "揭示零号地块的恐怖本质，为罗德岛的介入提供理由。"
+    },
+    {
+      "event": "红松骑士团按计划行动，艾沃娜吸引无胄盟，格蕾纳蒂突袭动力炉，索娜潜入联合会大楼。",
+      "type": "infiltration",
+      "line_range": [
+        1191,
+        1250
+      ],
+      "participants": [
+        "索娜",
+        "格蕾纳蒂",
+        "艾沃娜",
+        "查丝汀娜",
+        "瑟奇亚克"
+      ],
+      "location": "大骑士领各处",
+      "significance": "红松骑士团行动的高潮，多方同时行动。"
+    },
+    {
+      "event": "艾沃娜与青金莫妮克激战，身受重伤。",
+      "type": "battle",
+      "line_range": [
+        1251,
+        1300
+      ],
+      "participants": [
+        "艾沃娜",
+        "莫妮克"
+      ],
+      "location": "大骑士领街道",
+      "significance": "展现青金大位的强大实力和艾沃娜的顽强。"
+    },
+    {
+      "event": "索娜成功潜入联合会大楼并下载数据，但被罗伊发现。",
+      "type": "infiltration",
+      "line_range": [
+        1301,
+        1350
+      ],
+      "participants": [
+        "索娜",
+        "罗伊"
+      ],
+      "location": "商业联合会大楼",
+      "significance": "索娜行动的关键时刻，面临生死抉择。"
+    },
+    {
+      "event": "大骑士领发生大断电，红松骑士团的行动被无胄盟利用，嫁祸给感染者。",
+      "type": "disaster",
+      "line_range": [
+        1351,
+        1400
+      ],
+      "participants": [
+        "格蕾纳蒂",
+        "瑟奇亚克",
+        "罗伊",
+        "莫妮克"
+      ],
+      "location": "大骑士领",
+      "significance": "剧情转折，红松骑士团被算计，局势失控。"
+    },
+    {
+      "event": "索娜在烛骑士的帮助下逃脱，并见到了大骑士长伊奥莱塔·罗素。",
+      "type": "rescue",
+      "line_range": [
+        1401,
+        1450
+      ],
+      "participants": [
+        "索娜",
+        "烛骑士",
+        "伊奥莱塔·罗素"
+      ],
+      "location": "冠军墙展厅",
+      "significance": "揭示监正会与红松骑士团的交易，以及大骑士长的立场。"
+    },
+    {
+      "event": "玛嘉烈与逐魇骑士的比赛因逐魇骑士的法术违规被终止，血骑士介入。",
+      "type": "battle",
+      "line_range": [
+        1451,
+        1520
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "逐魇骑士",
+        "血骑士",
+        "大嘴莫布"
+      ],
+      "location": "卡西米尔国立竞技场",
+      "significance": "展现逐魇骑士的强大和疯狂，以及血骑士的强势介入。"
+    },
+    {
+      "event": "逐魇骑士在赛后袭击玛莉娅，被老骑士和玛莉娅联手阻止。",
+      "type": "confrontation",
+      "line_range": [
+        1521,
+        1580
+      ],
+      "participants": [
+        "逐魇骑士",
+        "玛莉娅·临光",
+        "老骑士"
+      ],
+      "location": "工坊附近",
+      "significance": "展现玛莉娅的成长和守护姐姐的决心。"
+    },
+    {
+      "event": "血骑士与逐魇骑士正式对决，血骑士获胜，逐魇骑士失败后决定继续自己的天途。",
+      "type": "battle",
+      "line_range": [
+        1581,
+        1650
+      ],
+      "participants": [
+        "血骑士",
+        "逐魇骑士",
+        "大嘴莫布"
+      ],
+      "location": "卡西米尔国立竞技场",
+      "significance": "血骑士的胜利巩固其地位，逐魇骑士的失败促使他反思。"
+    },
+    {
+      "event": "无胄盟白金大位欣特莱雅发现玛嘉烈并非感染者的体检报告。",
+      "type": "revelation",
+      "line_range": [
+        1651,
+        1660
+      ],
+      "participants": [
+        "白金",
+        "无胄盟成员"
+      ],
+      "location": "无胄盟据点",
+      "significance": "为后续商业联合会利用此信息做铺垫。"
+    },
+    {
+      "event": "闪灵与青金莫妮克对峙，以三箭之约化解冲突。",
+      "type": "confrontation",
+      "line_range": [
+        1661,
+        1720
+      ],
+      "participants": [
+        "闪灵",
+        "莫妮克"
+      ],
+      "location": "大骑士领某处",
+      "significance": "展现闪灵的强大实力和莫妮克的矛盾心理。"
+    },
+    {
+      "event": "玛嘉烈与玛莉娅进行深入交谈，玛嘉烈阐述了自己对骑士和荣耀的理解。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1721,
+        1760
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "玛莉娅·临光"
+      ],
+      "location": "临光家",
+      "significance": "姐妹之间的心灵沟通，明确玛嘉烈的信念。"
+    },
+    {
+      "event": "托兰救下被无胄盟用作实验的萨卡兹“腐败骑士”和“凋零骑士”。",
+      "type": "rescue",
+      "line_range": [
+        1761,
+        1790
+      ],
+      "participants": [
+        "托兰",
+        "腐败骑士",
+        "凋零骑士"
+      ],
+      "location": "大骑士领某处",
+      "significance": "揭示无胄盟对萨卡兹的残酷实验，托兰的同族情谊。"
+    },
+    {
+      "event": "发言人马克维茨与麦基的幕后老板“记者”凯恩通话，揭示了商业联合会的真正野心。",
+      "type": "political_intrigue",
+      "line_range": [
+        1791,
+        1840
+      ],
+      "participants": [
+        "发言人马克维茨",
+        "发言人麦基",
+        "电话那头的声音"
+      ],
+      "location": "商业联合会",
+      "significance": "揭示商业联合会的终极目标和马克维茨的抉择。"
+    },
+    {
+      "event": "罗伊和莫妮克向白金透露他们计划背叛无胄盟，并开设新公司。",
+      "type": "revelation",
+      "line_range": [
+        1841,
+        1880
+      ],
+      "participants": [
+        "罗伊",
+        "莫妮克",
+        "白金"
+      ],
+      "location": "新店面",
+      "significance": "无胄盟高层叛乱的真相大白。"
+    },
+    {
+      "event": "玛嘉烈与博士、阿米娅等人告别，决定留在卡西米尔。",
+      "type": "departure",
+      "line_range": [
+        1881,
+        1910
+      ],
+      "participants": [
+        "玛嘉烈·临光",
+        "博士",
+        "阿米娅",
+        "闪灵",
+        "夜莺"
+      ],
+      "location": "大骑士领某处",
+      "significance": "玛嘉烈与罗德岛暂时分离，各自踏上新的道路。"
+    },
+    {
+      "event": "烛骑士薇薇安娜被调离大骑士领，与玛嘉烈告别。",
+      "type": "departure",
+      "line_range": [
+        1911,
+        1960
+      ],
+      "participants": [
+        "烛骑士",
+        "玛嘉烈·临光",
+        "发言人麦基"
+      ],
+      "location": "车站",
+      "significance": "烛骑士的离开，为后续可能的回归埋下伏笔。"
+    },
+    {
+      "event": "伊奥莱塔·罗素与逐魇骑士拓拉对话，揭示了拓拉的身世和天途的真相。",
+      "type": "revelation",
+      "line_range": [
+        1961,
+        2020
+      ],
+      "participants": [
+        "伊奥莱塔·罗素",
+        "逐魇骑士"
+      ],
+      "location": "大骑士领某处",
+      "significance": "揭示逐魇骑士的背景和天途的深层含义。"
+    },
+    {
+      "event": "血骑士狄开俄波利斯隐退，在偏远村庄开始务农生活。",
+      "type": "departure",
+      "line_range": [
+        2021,
+        2060
+      ],
+      "participants": [
+        "血骑士",
+        "卡西米尔村民"
+      ],
+      "location": "偏远村庄",
+      "significance": "血骑士的结局，回归平凡生活。"
+    },
+    {
+      "event": "玛恩纳·临光离开大骑士领，踏上寻找自我的旅程，并与“玄铁”对峙。",
+      "type": "departure",
+      "line_range": [
+        2061,
+        2100
+      ],
+      "participants": [
+        "玛恩纳·临光",
+        "玄铁"
+      ],
+      "location": "大骑士领外",
+      "significance": "玛恩纳的转变，以及无胄盟最高领袖的现身。"
+    },
+    {
+      "event": "白金大位欣特莱雅叛逃，被莫妮克追杀，最终被罗德岛所救。",
+      "type": "rescue",
+      "line_range": [
+        2101,
+        2180
+      ],
+      "participants": [
+        "白金",
+        "莫妮克",
+        "砾",
+        "芙蓉",
+        "Touch"
+      ],
+      "location": "零号地块、商业区",
+      "significance": "白金的叛逃和罗德岛的介入，为后续剧情埋下伏笔。"
+    },
+    {
+      "event": "红松骑士团与罗德岛合作，将感染者们送上罗德岛的舰船，准备离开卡西米尔。",
+      "type": "departure",
+      "line_range": [
+        2181,
+        2240
+      ],
+      "participants": [
+        "索娜",
+        "格蕾纳蒂",
+        "艾沃娜",
+        "查丝汀娜",
+        "阿米娅",
+        "闪灵",
+        "玛嘉烈·临光"
+      ],
+      "location": "罗德岛舰船",
+      "significance": "红松骑士团与罗德岛的联合，开启新的篇章。"
+    },
+    {
+      "event": "发言人马克维茨前往流放地拜访前发言人恰尔内，两人进行了一场关于命运和选择的对话。",
+      "type": "confrontation",
+      "line_range": [
+        2241,
+        2300
+      ],
+      "participants": [
+        "发言人马克维茨",
+        "恰尔内"
+      ],
+      "location": "偏远村庄",
+      "significance": "马克维茨的最终抉择，以及恰尔内的悲剧结局。"
+    }
+  ],
+  "characters": [
+    {
+      "name": "玛嘉烈·临光",
+      "type": "operator",
+      "role_in_chapter": "主角，耀骑士，重返卡西米尔参加特锦赛并最终夺冠，展现了坚定的骑士信念和对感染者的同情。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "血骑士",
+      "type": "npc",
+      "role_in_chapter": "特锦赛卫冕冠军，感染者的英雄，与玛嘉烈进行了一场关于理念的决战，最终隐退。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "烛骑士",
+      "type": "npc",
+      "role_in_chapter": "来自莱塔尼亚的大骑士，与玛嘉烈进行了一场优雅的决斗并认输，后被调离大骑士领。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "逐魇骑士",
+      "type": "npc",
+      "role_in_chapter": "梦魇末裔，追寻古老传统，在特锦赛上与玛嘉烈和血骑士交手，失败后继续自己的天途。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "索娜",
+      "type": "operator",
+      "role_in_chapter": "红松骑士团领袖，策划并实施了针对商业联合会的行动，最终带领感染者与罗德岛合作。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "格蕾纳蒂",
+      "type": "operator",
+      "role_in_chapter": "红松骑士团成员，参与突袭动力炉的行动。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "艾沃娜",
+      "type": "operator",
+      "role_in_chapter": "红松骑士团成员，负责吸引无胄盟，与青金莫妮克激战并身受重伤。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "查丝汀娜",
+      "type": "operator",
+      "role_in_chapter": "红松骑士团成员，负责狙击和侦查。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "托兰",
+      "type": "npc",
+      "role_in_chapter": "赏金猎人领袖，与红松骑士团合作，救下玛莉娅和萨卡兹骑士，劝说玛恩纳。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "玛恩纳",
+      "type": "operator",
+      "role_in_chapter": "玛嘉烈的叔叔，从消极旁观到最终介入冲突，并离开大骑士领踏上寻找自我的旅程。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "玛莉娅·临光",
+      "type": "operator",
+      "role_in_chapter": "玛嘉烈的妹妹，支持姐姐，并为了保护姐姐与逐魇骑士对抗。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "佐菲娅",
+      "type": "npc",
+      "role_in_chapter": "玛嘉烈的姑母，帮助玛嘉烈备战，并保护玛莉娅。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "闪灵",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，陪伴玛嘉烈，从感染者骑士口中得知零号地块的真相，并与青金莫妮克对峙。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "夜莺",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，陪伴玛嘉烈，给予她情感支持。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领导人，与博士一起在卡西米尔周旋，关注玛嘉烈的比赛。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官，与各方势力交涉，策划了罗德岛在卡西米尔的行动。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "砾",
+      "type": "operator",
+      "role_in_chapter": "监正会派给博士的护卫，征战骑士，在关键时刻保护了博士和白金。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "白金",
+      "type": "npc",
+      "role_in_chapter": "无胄盟白金大位，发现玛嘉烈并非感染者，后叛逃无胄盟，被罗德岛所救。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "罗伊",
+      "type": "npc",
+      "role_in_chapter": "无胄盟青金大位，策划并实施了针对商业联合会的叛乱。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "莫妮克",
+      "type": "npc",
+      "role_in_chapter": "无胄盟青金大位，参与清洗感染者和追杀白金，与闪灵和托兰有过交锋。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "发言人马克维茨",
+      "type": "npc",
+      "role_in_chapter": "商业联合会发言人，与罗德岛合作，在权力斗争中挣扎，最终做出自己的选择。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "发言人麦基",
+      "type": "npc",
+      "role_in_chapter": "商业联合会发言人，负责与烛骑士对接，是“记者”凯恩的儿子。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "伊奥莱塔·罗素",
+      "type": "npc",
+      "role_in_chapter": "大骑士长，监正会领袖，支持玛嘉烈，与红松骑士团和逐魇骑士有过对话。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老骑士",
+      "type": "npc",
+      "role_in_chapter": "征战骑士退役，与逐魇骑士有血缘关系，保护玛莉娅。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "光头马丁",
+      "type": "npc",
+      "role_in_chapter": "酒吧老板，退役骑士，帮助保护玛莉娅。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老工匠",
+      "type": "npc",
+      "role_in_chapter": "工匠，帮助玛嘉烈和玛莉娅打造武器。",
+      "first_appearance_chapter": false
+    }
+  ],
+  "processed_at": "2026-06-16T22:12:11",
+  "model": "deepseek-chat",
+  "batch_count": 1,
+  "stats": {
+    "tokens_in": 114585,
+    "tokens_out": 8192
+  },
+  "_unmatched_names": [
+    "玛嘉烈·临光",
+    "血骑士",
+    "烛骑士",
+    "逐魇骑士",
+    "索娜",
+    "格蕾纳蒂",
+    "艾沃娜",
+    "查丝汀娜",
+    "托兰",
+    "玛莉娅·临光",
+    "佐菲娅",
+    "博士",
+    "罗伊",
+    "莫妮克",
+    "发言人马克维茨",
+    "发言人麦基",
+    "伊奥莱塔·罗素",
+    "老骑士",
+    "光头马丁",
+    "老工匠"
+  ]
+}

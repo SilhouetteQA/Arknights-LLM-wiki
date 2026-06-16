@@ -1,0 +1,402 @@
+{
+  "chapter": "怒号光明",
+  "category": "main",
+  "summary": "本章以塔露拉的回忆与罗德岛的行动双线展开。回忆线中，塔露拉从科西切的继承人成长为整合运动领袖，经历了与爱国者的理念冲突、阿丽娜的牺牲以及科西切「黑蛇」的诅咒，最终在切尔诺伯格核心城被科西切意志占据。现代线中，阿米娅与陈联手对抗被科西切控制的塔露拉，通过情感与记忆的共鸣唤醒塔露拉的本心，最终击败黑蛇意志。W取得制动钥匙停下核心城，罗德岛收押塔露拉。凯尔希在石棺区揭露了博士与特蕾西娅之死的关联，并表达了对博士的复杂情感。章节以罗德岛撤离、各方势力收尾告终。",
+  "events": [
+    {
+      "event": "塔露拉回忆与科西切的决裂，主动感染矿石病以摆脱其控制",
+      "type": "revelation",
+      "line_range": [
+        1,
+        100
+      ],
+      "participants": [
+        "塔露拉",
+        "科西切"
+      ],
+      "location": "科西切公爵领",
+      "significance": "揭示塔露拉成为感染者的动机与科西切诅咒的起源"
+    },
+    {
+      "event": "塔露拉回忆与爱国者的初次冲突及理念碰撞",
+      "type": "confrontation",
+      "line_range": [
+        101,
+        200
+      ],
+      "participants": [
+        "塔露拉",
+        "爱国者",
+        "霜星"
+      ],
+      "location": "乌萨斯北原",
+      "significance": "展现塔露拉与爱国者在感染者道路上的根本分歧"
+    },
+    {
+      "event": "阿丽娜被叛逃感染者杀害，塔露拉陷入悲痛与愤怒",
+      "type": "sacrifice",
+      "line_range": [
+        201,
+        300
+      ],
+      "participants": [
+        "塔露拉",
+        "阿丽娜"
+      ],
+      "location": "乌萨斯冻原村庄",
+      "significance": "阿丽娜之死成为塔露拉内心崩溃的转折点，科西切诅咒开始生效"
+    },
+    {
+      "event": "阿米娅与陈在核心城指挥塔顶与科西切控制的塔露拉交战",
+      "type": "battle",
+      "line_range": [
+        301,
+        500
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "塔露拉",
+        "科西切"
+      ],
+      "location": "切尔诺伯格核心城指挥塔",
+      "significance": "核心决战，阿米娅通过情感共鸣唤醒塔露拉本心"
+    },
+    {
+      "event": "W取得制动钥匙并成功停下切尔诺伯格核心城",
+      "type": "rescue",
+      "line_range": [
+        501,
+        600
+      ],
+      "participants": [
+        "W",
+        "阿米娅",
+        "塔露拉",
+        "陈"
+      ],
+      "location": "切尔诺伯格核心城指挥塔",
+      "significance": "阻止核心城撞击龙门，W获得阿米娅的信任"
+    },
+    {
+      "event": "凯尔希在石棺区揭露博士与特蕾西娅之死的关联",
+      "type": "revelation",
+      "line_range": [
+        601,
+        700
+      ],
+      "participants": [
+        "凯尔希",
+        "博士"
+      ],
+      "location": "切尔诺伯格石棺区",
+      "significance": "揭示博士曾杀害特蕾西娅，凯尔希表达对博士的恨意与保护承诺"
+    },
+    {
+      "event": "迷迭香在核心城战斗中突破心理防线，展现强大法术",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        701,
+        800
+      ],
+      "participants": [
+        "迷迭香",
+        "阿米娅",
+        "盾卫"
+      ],
+      "location": "切尔诺伯格核心城",
+      "significance": "迷迭香学会面对仇恨与责任，成长为真正的战士"
+    },
+    {
+      "event": "陈与塔露拉在战后重逢，陈决定逮捕塔露拉但承诺公正审判",
+      "type": "reunion",
+      "line_range": [
+        801,
+        900
+      ],
+      "participants": [
+        "陈",
+        "塔露拉"
+      ],
+      "location": "切尔诺伯格核心城指挥塔",
+      "significance": "姐妹和解，陈确立建立公正审判感染者的理想"
+    },
+    {
+      "event": "罗德岛收押塔露拉，凯尔希解释利用塔露拉作为政治筹码的策略",
+      "type": "planning",
+      "line_range": [
+        901,
+        1000
+      ],
+      "participants": [
+        "凯尔希",
+        "博士",
+        "陈"
+      ],
+      "location": "罗德岛飞行器",
+      "significance": "罗德岛通过扣留塔露拉在龙门与乌萨斯之间取得平衡"
+    },
+    {
+      "event": "魏彦吾与陈在无名冢告别，魏彦吾讲述塔露拉父母的往事",
+      "type": "departure",
+      "line_range": [
+        1001,
+        1100
+      ],
+      "participants": [
+        "魏彦吾",
+        "陈",
+        "鼠王"
+      ],
+      "location": "龙门无名冢",
+      "significance": "陈与魏彦吾和解，陈决定离开龙门加入罗德岛"
+    },
+    {
+      "event": "乌萨斯皇帝费奥多尔与维特讨论切尔诺伯格事件及感染者政策",
+      "type": "political_intrigue",
+      "line_range": [
+        1101,
+        1200
+      ],
+      "participants": [
+        "费奥多尔",
+        "伊斯拉姆·维特"
+      ],
+      "location": "乌萨斯皇宫",
+      "significance": "揭示乌萨斯高层对感染者问题的分歧与科西切阴谋的后续影响"
+    },
+    {
+      "event": "凯尔希在罗德岛舰船上宣读切尔诺伯格事件牺牲干员名单",
+      "type": "ceremony",
+      "line_range": [
+        1201,
+        1300
+      ],
+      "participants": [
+        "凯尔希",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛舰船",
+      "significance": "纪念牺牲者，重申罗德岛的信念"
+    }
+  ],
+  "characters": [
+    {
+      "name": "塔露拉",
+      "type": "npc",
+      "role_in_chapter": "核心人物，回忆线主角，被科西切意志控制后与阿米娅和陈战斗，最终被唤醒并收押",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "与陈联手对抗科西切控制的塔露拉，通过情感共鸣唤醒塔露拉本心，展现魔王之力",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "与阿米娅联手对抗塔露拉，最终逮捕塔露拉并决定加入罗德岛",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "指挥罗德岛行动，在石棺区揭露博士与特蕾西娅之死的关联，表达对博士的复杂情感",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "跟随凯尔希行动，得知自己曾杀害特蕾西娅的真相",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "W",
+      "type": "npc",
+      "role_in_chapter": "取得制动钥匙停下核心城，获得阿米娅的信任，与罗德岛暂时合作",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "迷迭香",
+      "type": "operator",
+      "role_in_chapter": "在核心城战斗中突破心理防线，展现强大法术，成长为真正的战士",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "爱国者",
+      "type": "npc",
+      "role_in_chapter": "在回忆中与塔露拉理念碰撞，最终认可塔露拉的正直",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "霜星",
+      "type": "npc",
+      "role_in_chapter": "在回忆中作为塔露拉的战友与朋友，已牺牲",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿兰娜",
+      "type": "operator",
+      "role_in_chapter": "塔露拉回忆中的重要人物，被叛逃感染者杀害，其死亡成为塔露拉内心崩溃的转折点",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "科西切",
+      "type": "npc",
+      "role_in_chapter": "以黑蛇意志形式控制塔露拉，与阿米娅和陈战斗，最终被塔露拉本心驱逐",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "魏彦吾",
+      "type": "npc",
+      "role_in_chapter": "与陈在无名冢告别，讲述塔露拉父母的往事，同意陈离开龙门",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "鼠王",
+      "type": "npc",
+      "role_in_chapter": "阻止魏彦吾干预核心城战斗，与魏彦吾讨论龙门未来",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "费奥多尔",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯皇帝，与维特讨论切尔诺伯格事件及感染者政策",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "伊斯拉姆·维特",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯情报官员，向皇帝汇报切尔诺伯格事件真相",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "九",
+      "type": "npc",
+      "role_in_chapter": "龙门近卫局成员，在核心城战斗中受重伤成为感染者，决定离开龙门",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "弑君者",
+      "type": "npc",
+      "role_in_chapter": "整合运动领袖之一，决定离开整合运动返回叙拉古",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "12F",
+      "type": "operator",
+      "role_in_chapter": "与博士对话，讨论选择与命运",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "推进之王",
+      "type": "operator",
+      "role_in_chapter": "凯尔希与她讨论准备情况",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "黑蛇/不死的黑蛇",
+      "line_range": [
+        301,
+        500
+      ],
+      "discussion_summary": "科西切以黑蛇意志形式控制塔露拉，自称乌萨斯的化身，阐述其通过战争重塑乌萨斯的理念。阿米娅通过情感共鸣揭露其本质，最终被塔露拉本心驱逐。",
+      "is_substantive": true
+    },
+    {
+      "concept": "魔王/萨卡兹君主",
+      "line_range": [
+        301,
+        500
+      ],
+      "discussion_summary": "科西切识破阿米娅的魔王身份，讨论萨卡兹王庭与魔王的力量。阿米娅否认自己是魔王，强调自己是感染者与人。",
+      "is_substantive": true
+    },
+    {
+      "concept": "石棺",
+      "line_range": [
+        601,
+        700
+      ],
+      "discussion_summary": "凯尔希详细解释石棺的历史：二十多年前被乌萨斯发现，科学家团队研究其能源，最终导致屠杀。石棺治愈了博士但转化了另一个感染者成为牧群根源。",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动",
+      "line_range": [
+        1,
+        200
+      ],
+      "discussion_summary": "塔露拉回忆整合运动的起源与理念，讨论其作为感染者团结组织的本质。科西切利用整合运动作为战争工具，最终导致其崩溃。",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者的命运",
+      "line_range": [
+        1,
+        300
+      ],
+      "discussion_summary": "塔露拉与阿丽娜讨论感染者的命运与抗争，阿丽娜认为真正的战斗是与看不见的敌人（偏见、制度）作战。凯尔希讨论感染者遭受的暴力循环。",
+      "is_substantive": true
+    },
+    {
+      "concept": "赤霄",
+      "line_range": [
+        301,
+        500
+      ],
+      "discussion_summary": "陈与阿米娅讨论赤霄的本质：不靠剑术靠心境，能切开法术。阿米娅通过陈的情感学会赤霄剑术。",
+      "is_substantive": true
+    },
+    {
+      "concept": "牧群/特殊感染者",
+      "line_range": [
+        601,
+        700
+      ],
+      "discussion_summary": "凯尔希讨论牧群的本质：被石棺转化的萨卡兹特殊感染者，成为源石粉尘扩散的元凶，失去思考能力。",
+      "is_substantive": true
+    },
+    {
+      "concept": "乌萨斯的战争与和平",
+      "line_range": [
+        1101,
+        1200
+      ],
+      "discussion_summary": "费奥多尔与维特讨论乌萨斯的战争传统与感染者政策，维特指出皇帝不能与人民敌对，感染者问题需要谨慎处理。",
+      "is_substantive": true
+    },
+    {
+      "concept": "暴力与正义",
+      "line_range": [
+        1,
+        300
+      ],
+      "discussion_summary": "塔露拉与阿丽娜讨论暴力与正义的关系：如果公义需要更多暴力才能伸张，那还能叫公义吗？阿丽娜认为真正的战斗是与看不见的敌人作战。",
+      "is_substantive": true
+    }
+  ],
+  "processed_at": "2026-06-16T22:08:08",
+  "model": "deepseek-chat",
+  "batch_count": 1,
+  "stats": {
+    "tokens_in": 101434,
+    "tokens_out": 3185
+  },
+  "_unmatched_names": [
+    "塔露拉",
+    "博士",
+    "爱国者",
+    "霜星",
+    "科西切",
+    "魏彦吾",
+    "鼠王",
+    "费奥多尔",
+    "伊斯拉姆·维特",
+    "九"
+  ]
+}

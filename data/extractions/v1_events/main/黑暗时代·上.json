@@ -1,0 +1,393 @@
+{
+  "chapter": "黑暗时代·上",
+  "category": "main",
+  "summary": "罗德岛救援小队在切尔诺伯格城核心区成功救出失忆的博士，但随即遭遇整合运动的大规模袭击。临光与Ace等人掩护小队突围，途中遭遇整合运动干部梅菲斯特和浮士德的伏击。梅菲斯特以象棋走法指挥狂暴的感染者部队围困罗德岛，临光及时赶到解围。小队在撤退过程中目睹整合运动对平民的暴行，以及乌萨斯军警与整合运动的激烈交火。杜宾向博士解释了矿石病和感染者的处境，以及罗德岛的使命。最终小队突破重围，博士通过PRTS系统重新连接罗德岛后勤系统。",
+  "events": [
+    {
+      "event": "临光与整合运动干部梅菲斯特和浮士德交战，Ace率队支援",
+      "type": "battle",
+      "line_range": [
+        1,
+        60
+      ],
+      "participants": [
+        "临光",
+        "梅菲斯特",
+        "浮士德",
+        "Ace",
+        "阿米娅",
+        "杜宾"
+      ],
+      "location": "切尔诺伯格上城区",
+      "significance": "展现整合运动干部的实力和罗德岛小队的战斗力"
+    },
+    {
+      "event": "罗德岛小队讨论浮士德的狙击能力，推测其可能预设了多个火力点",
+      "type": "revelation",
+      "line_range": [
+        61,
+        90
+      ],
+      "participants": [
+        "临光",
+        "Ace",
+        "杜宾",
+        "阿米娅"
+      ],
+      "location": "切尔诺伯格上城区",
+      "significance": "揭示浮士德作为狙击手的特殊战术能力"
+    },
+    {
+      "event": "梅菲斯特与浮士德对话，梅菲斯特决定将罗德岛的情况通报给塔露拉",
+      "type": "planning",
+      "line_range": [
+        91,
+        100
+      ],
+      "participants": [
+        "梅菲斯特",
+        "浮士德"
+      ],
+      "location": "切尔诺伯格上城区",
+      "significance": "揭示整合运动高层结构，塔露拉是领袖"
+    },
+    {
+      "event": "罗德岛小队目睹整合运动在切尔诺伯格城内对平民施暴",
+      "type": "confrontation",
+      "line_range": [
+        101,
+        130
+      ],
+      "participants": [
+        "阿米娅",
+        "杜宾",
+        "医疗干员",
+        "近卫干员"
+      ],
+      "location": "切尔诺伯格城区",
+      "significance": "展现整合运动的暴行和切尔诺伯格的混乱"
+    },
+    {
+      "event": "阿米娅决定突袭整合运动救出平民，杜宾服从命令",
+      "type": "rescue",
+      "line_range": [
+        131,
+        160
+      ],
+      "participants": [
+        "阿米娅",
+        "杜宾"
+      ],
+      "location": "切尔诺伯格城区巷子",
+      "significance": "展现阿米娅的领导力和罗德岛的救援原则"
+    },
+    {
+      "event": "阿米娅向博士解释矿石病和感染者的处境",
+      "type": "revelation",
+      "line_range": [
+        161,
+        200
+      ],
+      "participants": [
+        "阿米娅",
+        "杜宾"
+      ],
+      "location": "切尔诺伯格城区",
+      "significance": "介绍世界观核心设定——矿石病和感染者问题"
+    },
+    {
+      "event": "杜宾透露天灾将在三小时后降临切尔诺伯格",
+      "type": "revelation",
+      "line_range": [
+        201,
+        210
+      ],
+      "participants": [
+        "杜宾",
+        "阿米娅"
+      ],
+      "location": "切尔诺伯格城区",
+      "significance": "设置时间紧迫的危机背景"
+    },
+    {
+      "event": "罗德岛小队观察乌萨斯军警与整合运动的战斗",
+      "type": "observation",
+      "line_range": [
+        211,
+        260
+      ],
+      "participants": [
+        "杜宾",
+        "阿米娅",
+        "近卫干员"
+      ],
+      "location": "切尔诺伯格瓦舒克大道",
+      "significance": "展现切尔诺伯格当局的虚伪宣传和整合运动的实力"
+    },
+    {
+      "event": "罗德岛小队与整合运动遭遇战，乌萨斯军警队长拒绝合作",
+      "type": "battle",
+      "line_range": [
+        261,
+        310
+      ],
+      "participants": [
+        "阿米娅",
+        "杜宾",
+        "乌萨斯军警队长"
+      ],
+      "location": "切尔诺伯格城区街道",
+      "significance": "展现乌萨斯对感染者的敌视态度"
+    },
+    {
+      "event": "Ace与小队汇合，得知博士失忆后仍决定服从指挥",
+      "type": "reunion",
+      "line_range": [
+        311,
+        360
+      ],
+      "participants": [
+        "Ace",
+        "杜宾",
+        "阿米娅"
+      ],
+      "location": "切尔诺伯格汇合点",
+      "significance": "展现Ace对博士的信任和罗德岛的团队精神"
+    },
+    {
+      "event": "罗德岛小队遭遇整合运动驱使的感染野兽",
+      "type": "battle",
+      "line_range": [
+        361,
+        400
+      ],
+      "participants": [
+        "杜宾",
+        "Ace",
+        "阿米娅",
+        "近卫干员"
+      ],
+      "location": "切尔诺伯格城区",
+      "significance": "揭示整合运动使用感染生物作为武器"
+    },
+    {
+      "event": "杜宾分析整合运动的运作模式，将其领袖定性为暴君",
+      "type": "revelation",
+      "line_range": [
+        401,
+        450
+      ],
+      "participants": [
+        "杜宾",
+        "Ace",
+        "阿米娅"
+      ],
+      "location": "切尔诺伯格城区",
+      "significance": "深入分析整合运动的组织结构和领袖本质"
+    },
+    {
+      "event": "罗德岛小队在公园遭遇弑君者和梅菲斯特的伏击",
+      "type": "ambush",
+      "line_range": [
+        451,
+        510
+      ],
+      "participants": [
+        "阿米娅",
+        "杜宾",
+        "Ace",
+        "弑君者",
+        "梅菲斯特"
+      ],
+      "location": "切尔诺伯格中城区公园",
+      "significance": "引入整合运动干部弑君者和梅菲斯特"
+    },
+    {
+      "event": "梅菲斯特以象棋走法指挥部队围困罗德岛，提出游戏规则",
+      "type": "confrontation",
+      "line_range": [
+        511,
+        600
+      ],
+      "participants": [
+        "梅菲斯特",
+        "阿米娅",
+        "杜宾",
+        "Ace"
+      ],
+      "location": "切尔诺伯格中城区公园",
+      "significance": "展现梅菲斯特的指挥能力和残忍性格"
+    },
+    {
+      "event": "临光及时赶到解围，罗德岛小队成功突围",
+      "type": "rescue",
+      "line_range": [
+        601,
+        640
+      ],
+      "participants": [
+        "临光",
+        "阿米娅",
+        "杜宾",
+        "梅菲斯特"
+      ],
+      "location": "切尔诺伯格中城区公园",
+      "significance": "临光作为关键援军扭转战局"
+    },
+    {
+      "event": "博士在昏迷中听到模糊的对话和手术场景",
+      "type": "flashback",
+      "line_range": [
+        641,
+        680
+      ],
+      "participants": [],
+      "location": "未知（博士的意识中）",
+      "significance": "暗示博士过去的经历和与阿米娅的关系"
+    },
+    {
+      "event": "阿米娅唤醒博士，解释博士失忆并请求其指挥罗德岛",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        681,
+        760
+      ],
+      "participants": [
+        "阿米娅",
+        "医疗干员"
+      ],
+      "location": "切尔诺伯格核心区废弃设施",
+      "significance": "确立博士与阿米娅的核心关系"
+    },
+    {
+      "event": "整合运动袭击核心区设施，阿米娅请求博士指挥战斗",
+      "type": "battle",
+      "line_range": [
+        761,
+        810
+      ],
+      "participants": [
+        "阿米娅",
+        "医疗干员",
+        "近卫干员",
+        "杜宾"
+      ],
+      "location": "切尔诺伯格核心区废弃设施",
+      "significance": "博士首次指挥罗德岛作战"
+    },
+    {
+      "event": "博士通过PRTS系统重新连接罗德岛后勤系统",
+      "type": "revelation",
+      "line_range": [
+        811,
+        851
+      ],
+      "participants": [
+        "阿米娅",
+        "PRTS",
+        "杜宾"
+      ],
+      "location": "切尔诺伯格核心区废弃设施",
+      "significance": "博士恢复对罗德岛系统的访问权限"
+    }
+  ],
+  "characters": [
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，指挥救援行动，向博士解释矿石病和罗德岛使命，请求博士指挥战斗",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "杜宾",
+      "type": "operator",
+      "role_in_chapter": "行动组E1组长，协助指挥战斗，分析整合运动本质，向博士介绍感染者处境",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "临光",
+      "type": "operator",
+      "role_in_chapter": "耀骑士，率E4小队作战，与浮士德和梅菲斯特交战，及时赶到解围",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Ace",
+      "type": "operator",
+      "role_in_chapter": "罗德岛资深干员，率队支援临光，在博士失忆后仍决定服从指挥",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "梅菲斯特",
+      "type": "npc",
+      "role_in_chapter": "整合运动干部，以象棋走法指挥部队围困罗德岛，性格残忍，对博士的身份感兴趣",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "浮士德",
+      "type": "npc",
+      "role_in_chapter": "整合运动狙击手，实力强大，服从梅菲斯特的命令",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "弑君者",
+      "type": "npc",
+      "role_in_chapter": "整合运动干部，追击罗德岛小队，后被梅菲斯特接手",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "PRTS",
+      "type": "npc",
+      "role_in_chapter": "罗德岛人工智能系统，帮助博士重新连接后勤系统",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "乌萨斯军警队长",
+      "type": "npc",
+      "role_in_chapter": "切尔诺伯格军警指挥官，拒绝与罗德岛合作，对感染者充满敌意",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "矿石病",
+      "line_range": [
+        161,
+        200
+      ],
+      "discussion_summary": "阿米娅和杜宾向博士解释矿石病是一种让人害怕的重病，感染者被称为感染者，乌萨斯对感染者十分严苛，罗德岛致力于研究治疗方法并减少感染者带来的问题",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动",
+      "line_range": [
+        401,
+        450
+      ],
+      "discussion_summary": "杜宾分析整合运动的运作模式：领袖放养士兵，用仇恨和恐慌喂养追随者，只需在必要时推动即可；整合运动的暴徒不过是领袖的棋子，这种领袖是暴君",
+      "is_substantive": true
+    },
+    {
+      "concept": "天灾",
+      "line_range": [
+        201,
+        210
+      ],
+      "discussion_summary": "杜宾透露天灾将在三小时后降临切尔诺伯格，天灾会吞没城市，切尔诺伯格会被撕成布满源石的巨型废墟",
+      "is_substantive": true
+    }
+  ],
+  "processed_at": "2026-06-16T22:07:34",
+  "model": "deepseek-chat",
+  "batch_count": 1,
+  "stats": {
+    "tokens_in": 12984,
+    "tokens_out": 2686
+  },
+  "_unmatched_names": [
+    "Ace",
+    "梅菲斯特",
+    "浮士德",
+    "PRTS",
+    "乌萨斯军警队长"
+  ]
+}

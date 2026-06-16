@@ -1,0 +1,789 @@
+{
+  "chapter": "慈悲灯塔",
+  "category": "main",
+  "summary": "维多利亚公爵联军与萨卡兹军事委员会在伦蒂尼姆周边展开决战。威灵顿公爵与爱布拉娜联手，开斯特公爵坚守旗舰，典范军在推进之王的带领下夺取诸王之息并激活剑座，扭转了战场局势。罗德岛方面，凯尔希、阿米娅、博士与Logos深入赦罪师的祭坛，试图摧毁「提卡兹之血」以阻止「阿喃那」的降临。Logos独自留下对抗食腐者之王孽茨雷，以骨哨和咒术重创对方，但自身也濒临死亡，被女妖河谷的歌声救回。闪灵、临光与夜莺组成使徒小队，对抗赦罪师奎萨图什塔，夜莺以撕裂灵魂为代价反抗，陷入昏迷。W与阿米娅等人登上飞空艇，在死魂灵的核心处遭遇特蕾西娅的意志。特蕾西娅揭示了源石内化宇宙的真相，并将「最初的源石」交给博士。在源石内部的巴别塔中，特蕾西娅与阿米娅、W、凯尔希和博士进行了最后的告别，将魔王的力量与意志传承给阿米娅，并为W赐名「维什戴尔」。特蕾西娅与众魂一同消散，萨卡兹的众魂不再被源石囚禁。飞空艇坠毁，众人落入源石内化宇宙，最终在Logos的接应下返回现实。与此同时，整合运动在伦蒂尼姆城内活动，塔露拉与九会合，陈也加入了他们。典范军与高多汀公爵短暂交锋后，继续向银石崖前线进军。威灵顿公爵在关键时刻背叛联军，导致开斯特公爵的旗舰「荣光」号被食腐者包围。W在探索山洞时发现了赦罪师的祭坛和特蕾西娅复生的秘密，并获得了萨卡兹英雄的武器。曼弗雷德率军围攻「生命脊椎」，赫德雷、伊内丝等人奋力防守，阿斯卡纶刺杀曼弗雷德未果，发现对方是变形者集群假扮。最终，特蕾西娅的离去使所有萨卡兹感受到灵魂的悸动，战场局势发生剧变。",
+  "events": [
+    {
+      "event": "威灵顿公爵与爱布拉娜联手，在食腐者包围中杀出一条血路，返回「加斯特里尔」号。",
+      "type": "battle",
+      "line_range": [
+        1,
+        30
+      ],
+      "participants": [
+        "威灵顿公爵",
+        "爱布拉娜"
+      ],
+      "location": "伦蒂尼姆外围战场",
+      "significance": "展现威灵顿与爱布拉娜的同盟关系，以及爱布拉娜的火焰能力。"
+    },
+    {
+      "event": "开斯特公爵在旗舰「荣光」号上坚守，拒绝撤退，并命令「灰礼帽」联系推进之王，改变交易计划。",
+      "type": "political_intrigue",
+      "line_range": [
+        31,
+        70
+      ],
+      "participants": [
+        "开斯特公爵",
+        "灰礼帽"
+      ],
+      "location": "荣光号",
+      "significance": "揭示开斯特公爵的政治手腕和决心，以及她对诸王之息的图谋。"
+    },
+    {
+      "event": "戴菲恩与典范军战士在战场上救助伤员，并鼓励一名濒死的士兵帕特尔以自爆方式摧毁食腐者小队。",
+      "type": "sacrifice",
+      "line_range": [
+        71,
+        120
+      ],
+      "participants": [
+        "戴菲恩",
+        "希勒少尉",
+        "帕特尔"
+      ],
+      "location": "伦蒂尼姆外围战场",
+      "significance": "展现战争的残酷和普通士兵的牺牲精神，以及戴菲恩的成长。"
+    },
+    {
+      "event": "推进之王、号角、风笛等人与「灰礼帽」会合，在蒸汽骑士的意外帮助下，突破重围，抵达「荣光」号并激活诸王之息。",
+      "type": "battle",
+      "line_range": [
+        121,
+        230
+      ],
+      "participants": [
+        "推进之王",
+        "号角",
+        "风笛",
+        "灰礼帽",
+        "戴菲恩",
+        "蒸汽骑士"
+      ],
+      "location": "伦蒂尼姆外围战场",
+      "significance": "推进之王成功激活国剑，扭转战场局势，成为维多利亚的英雄象征。"
+    },
+    {
+      "event": "开斯特公爵在战后与推进之王通讯，承认典范军的功绩，并邀请其以独立英雄部队的身份参与联军反攻。",
+      "type": "negotiation",
+      "line_range": [
+        231,
+        270
+      ],
+      "participants": [
+        "开斯特公爵",
+        "推进之王"
+      ],
+      "location": "通讯频道",
+      "significance": "开斯特公爵改变策略，试图拉拢典范军，为战后政治布局。"
+    },
+    {
+      "event": "Logos独自留下对抗食腐者之王孽茨雷，以骨哨和咒术重创对方，但自身也濒临死亡。",
+      "type": "confrontation",
+      "line_range": [
+        271,
+        400
+      ],
+      "participants": [
+        "Logos",
+        "孽茨雷",
+        "杜卡雷",
+        "菈玛莲"
+      ],
+      "location": "峡谷",
+      "significance": "Logos展现女妖之主的强大实力和牺牲精神，与孽茨雷的对话揭示了萨卡兹战争的循环本质。"
+    },
+    {
+      "event": "闪灵、临光与夜莺组成使徒小队，对抗赦罪师奎萨图什塔，夜莺以撕裂灵魂为代价反抗，陷入昏迷。",
+      "type": "confrontation",
+      "line_range": [
+        401,
+        620
+      ],
+      "participants": [
+        "闪灵",
+        "临光",
+        "夜莺",
+        "奎萨图什塔",
+        "喀利喀"
+      ],
+      "location": "赦罪师祭坛",
+      "significance": "揭示闪灵与赦罪师的过去，夜莺的牺牲精神，以及奎萨图什塔的野心。"
+    },
+    {
+      "event": "萨卢斯引爆自身，试图完成赦罪师的仪式，但被阿米娅阻止。",
+      "type": "sacrifice",
+      "line_range": [
+        621,
+        660
+      ],
+      "participants": [
+        "萨卢斯",
+        "阿米娅",
+        "凯尔希"
+      ],
+      "location": "赦罪师祭坛",
+      "significance": "萨卢斯对奎萨图什塔的忠诚和疯狂，以及仪式的失败。"
+    },
+    {
+      "event": "整合运动的九与伦蒂尼姆工人领袖凯瑟琳会面，提出合作，共同解放城市。",
+      "type": "alliance",
+      "line_range": [
+        661,
+        720
+      ],
+      "participants": [
+        "九",
+        "凯瑟琳"
+      ],
+      "location": "伦蒂尼姆地下",
+      "significance": "整合运动在伦蒂尼姆的活动，以及他们与本地抵抗力量的联合。"
+    },
+    {
+      "event": "W、阿米娅、博士和凯尔希登上飞空艇，在死魂灵的核心处遭遇特蕾西娅的意志。",
+      "type": "revelation",
+      "line_range": [
+        721,
+        900
+      ],
+      "participants": [
+        "W",
+        "阿米娅",
+        "博士",
+        "凯尔希",
+        "特蕾西娅"
+      ],
+      "location": "飞空艇",
+      "significance": "揭示特蕾西娅的意志仍在，以及她与源石内化宇宙的联系。"
+    },
+    {
+      "event": "W在飞空艇上回忆起巴别塔的往事，以及特蕾西娅被刺杀的场景。",
+      "type": "flashback",
+      "line_range": [
+        901,
+        1000
+      ],
+      "participants": [
+        "W",
+        "特蕾西娅"
+      ],
+      "location": "飞空艇",
+      "significance": "揭示W对特蕾西娅的复杂情感，以及她对博士的怀疑。"
+    },
+    {
+      "event": "阿米娅在飞空艇上遭遇巴别塔的幽灵，他们曾是特蕾西娅的护卫，如今成为死魂灵的造物。",
+      "type": "confrontation",
+      "line_range": [
+        1001,
+        1100
+      ],
+      "participants": [
+        "阿米娅",
+        "巴别塔幽灵"
+      ],
+      "location": "飞空艇",
+      "significance": "展现阿米娅的成长和决心，以及她对特蕾西娅的忠诚。"
+    },
+    {
+      "event": "W与Mon3tr合作，炸开死魂灵的核心，发现特蕾西娅的意志所在。",
+      "type": "battle",
+      "line_range": [
+        1101,
+        1200
+      ],
+      "participants": [
+        "W",
+        "Mon3tr",
+        "博士"
+      ],
+      "location": "飞空艇核心",
+      "significance": "W的爆破能力和与Mon3tr的配合，为见到特蕾西娅铺平道路。"
+    },
+    {
+      "event": "特蕾西娅在源石内化宇宙中现身，与阿米娅、W、凯尔希和博士进行最后的告别。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1201,
+        1400
+      ],
+      "participants": [
+        "特蕾西娅",
+        "阿米娅",
+        "W",
+        "凯尔希",
+        "博士"
+      ],
+      "location": "源石内化宇宙",
+      "significance": "特蕾西娅的最终告别，将魔王的力量与意志传承给阿米娅，并为W赐名「维什戴尔」。"
+    },
+    {
+      "event": "特蕾西娅与众魂一同消散，萨卡兹的众魂不再被源石囚禁。",
+      "type": "sacrifice",
+      "line_range": [
+        1401,
+        1500
+      ],
+      "participants": [
+        "特蕾西娅",
+        "众魂"
+      ],
+      "location": "源石内化宇宙",
+      "significance": "特蕾西娅的牺牲，为萨卡兹带来真正的自由。"
+    },
+    {
+      "event": "Logos在女妖河谷的歌声中苏醒，并立下誓言，要为萨卡兹的亡魂摆渡。",
+      "type": "revelation",
+      "line_range": [
+        1501,
+        1600
+      ],
+      "participants": [
+        "Logos",
+        "菈玛莲"
+      ],
+      "location": "女妖河谷",
+      "significance": "Logos的誓言，以及他对女妖王庭责任的承担。"
+    },
+    {
+      "event": "W在探索山洞时发现了赦罪师的祭坛和特蕾西娅复生的秘密，并获得了萨卡兹英雄的武器。",
+      "type": "revelation",
+      "line_range": [
+        1601,
+        1700
+      ],
+      "participants": [
+        "W",
+        "喀利喀"
+      ],
+      "location": "山洞",
+      "significance": "揭示特蕾西娅复生的真相，以及W获得新武器。"
+    },
+    {
+      "event": "曼弗雷德率军围攻「生命脊椎」，赫德雷、伊内丝等人奋力防守，阿斯卡纶刺杀曼弗雷德未果。",
+      "type": "battle",
+      "line_range": [
+        1701,
+        1800
+      ],
+      "participants": [
+        "曼弗雷德",
+        "赫德雷",
+        "伊内丝",
+        "阿斯卡纶",
+        "娜汀"
+      ],
+      "location": "生命脊椎",
+      "significance": "曼弗雷德的进攻，以及阿斯卡纶的刺杀失败，揭示变形者集群的介入。"
+    },
+    {
+      "event": "典范军与高多汀公爵在吉布森镇短暂交锋，高多汀试图拉拢典范军，但被推进之王拒绝。",
+      "type": "negotiation",
+      "line_range": [
+        1801,
+        1900
+      ],
+      "participants": [
+        "推进之王",
+        "高多汀公爵",
+        "号角",
+        "戴菲恩"
+      ],
+      "location": "吉布森镇",
+      "significance": "高多汀公爵的政治试探，以及推进之王对典范军独立性的坚持。"
+    },
+    {
+      "event": "可露希尔与罗德岛干员在吉布森镇外建立通讯塔，遭遇食腐者袭击，多名干员牺牲。",
+      "type": "sacrifice",
+      "line_range": [
+        1901,
+        2000
+      ],
+      "participants": [
+        "可露希尔",
+        "芬",
+        "Misery"
+      ],
+      "location": "吉布森镇外",
+      "significance": "罗德岛干员的牺牲精神，以及通讯塔的成功建立。"
+    },
+    {
+      "event": "威灵顿公爵在关键时刻背叛联军，导致开斯特公爵的旗舰「荣光」号被食腐者包围。",
+      "type": "betrayal",
+      "line_range": [
+        2001,
+        2100
+      ],
+      "participants": [
+        "威灵顿公爵",
+        "开斯特公爵",
+        "爱布拉娜"
+      ],
+      "location": "银石崖前线",
+      "significance": "威灵顿公爵的背叛，彻底改变战场局势，导致联军溃败。"
+    },
+    {
+      "event": "阿米娅、博士、凯尔希和Logos深入赦罪师的祭坛，与萨卢斯和变形者集群交战，最终摧毁「提卡兹之血」。",
+      "type": "battle",
+      "line_range": [
+        2101,
+        2200
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "凯尔希",
+        "Logos",
+        "萨卢斯",
+        "变形者集群"
+      ],
+      "location": "赦罪师祭坛",
+      "significance": "摧毁「提卡兹之血」，阻止「阿喃那」的完全降临。"
+    },
+    {
+      "event": "塔露拉与九在伦蒂尼姆城内会合，陈也加入了他们。",
+      "type": "reunion",
+      "line_range": [
+        2201,
+        2300
+      ],
+      "participants": [
+        "塔露拉",
+        "九",
+        "陈"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "整合运动在伦蒂尼姆的活动，以及塔露拉与陈的重逢。"
+    },
+    {
+      "event": "W在山洞中发现了特蕾西娅复生的秘密，并获得了萨卡兹英雄的武器。",
+      "type": "revelation",
+      "line_range": [
+        2301,
+        2400
+      ],
+      "participants": [
+        "W",
+        "喀利喀"
+      ],
+      "location": "山洞",
+      "significance": "揭示特蕾西娅复生的真相，以及W获得新武器。"
+    },
+    {
+      "event": "曼弗雷德率军围攻「生命脊椎」，赫德雷、伊内丝等人奋力防守，阿斯卡纶刺杀曼弗雷德未果。",
+      "type": "battle",
+      "line_range": [
+        2401,
+        2500
+      ],
+      "participants": [
+        "曼弗雷德",
+        "赫德雷",
+        "伊内丝",
+        "阿斯卡纶",
+        "娜汀"
+      ],
+      "location": "生命脊椎",
+      "significance": "曼弗雷德的进攻，以及阿斯卡纶的刺杀失败，揭示变形者集群的介入。"
+    },
+    {
+      "event": "典范军与高多汀公爵在吉布森镇短暂交锋，高多汀试图拉拢典范军，但被推进之王拒绝。",
+      "type": "negotiation",
+      "line_range": [
+        2501,
+        2600
+      ],
+      "participants": [
+        "推进之王",
+        "高多汀公爵",
+        "号角",
+        "戴菲恩"
+      ],
+      "location": "吉布森镇",
+      "significance": "高多汀公爵的政治试探，以及推进之王对典范军独立性的坚持。"
+    },
+    {
+      "event": "可露希尔与罗德岛干员在吉布森镇外建立通讯塔，遭遇食腐者袭击，多名干员牺牲。",
+      "type": "sacrifice",
+      "line_range": [
+        2601,
+        2700
+      ],
+      "participants": [
+        "可露希尔",
+        "芬",
+        "Misery"
+      ],
+      "location": "吉布森镇外",
+      "significance": "罗德岛干员的牺牲精神，以及通讯塔的成功建立。"
+    },
+    {
+      "event": "威灵顿公爵在关键时刻背叛联军，导致开斯特公爵的旗舰「荣光」号被食腐者包围。",
+      "type": "betrayal",
+      "line_range": [
+        2701,
+        2800
+      ],
+      "participants": [
+        "威灵顿公爵",
+        "开斯特公爵",
+        "爱布拉娜"
+      ],
+      "location": "银石崖前线",
+      "significance": "威灵顿公爵的背叛，彻底改变战场局势，导致联军溃败。"
+    },
+    {
+      "event": "阿米娅、博士、凯尔希和Logos深入赦罪师的祭坛，与萨卢斯和变形者集群交战，最终摧毁「提卡兹之血」。",
+      "type": "battle",
+      "line_range": [
+        2801,
+        2900
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "凯尔希",
+        "Logos",
+        "萨卢斯",
+        "变形者集群"
+      ],
+      "location": "赦罪师祭坛",
+      "significance": "摧毁「提卡兹之血」，阻止「阿喃那」的完全降临。"
+    },
+    {
+      "event": "塔露拉与九在伦蒂尼姆城内会合，陈也加入了他们。",
+      "type": "reunion",
+      "line_range": [
+        2901,
+        3000
+      ],
+      "participants": [
+        "塔露拉",
+        "九",
+        "陈"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "整合运动在伦蒂尼姆的活动，以及塔露拉与陈的重逢。"
+    }
+  ],
+  "characters": [
+    {
+      "name": "威灵顿公爵",
+      "type": "npc",
+      "role_in_chapter": "维多利亚铁公爵，与爱布拉娜联手，在战场上表现出强大的战斗力和战略眼光，最终背叛联军。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "爱布拉娜",
+      "type": "npc",
+      "role_in_chapter": "塔拉领袖，与威灵顿公爵合作，使用火焰能力在战场上大显身手。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "开斯特公爵",
+      "type": "npc",
+      "role_in_chapter": "维多利亚大公爵，在旗舰「荣光」号上坚守，试图利用诸王之息和典范军巩固自己的政治地位。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "推进之王",
+      "type": "operator",
+      "role_in_chapter": "典范军领袖，成功激活诸王之息，带领典范军继续前进，拒绝高多汀公爵的拉拢。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "戴菲恩",
+      "type": "operator",
+      "role_in_chapter": "典范军成员，温德米尔公爵之女，在战场上表现出冷静和决断力。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "号角",
+      "type": "operator",
+      "role_in_chapter": "典范军成员，风暴突击队前成员，与风笛重逢，面对小丘郡的仇人时内心挣扎。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "风笛",
+      "type": "operator",
+      "role_in_chapter": "典范军成员，号角的队友，与号角重逢，表现出对队长的忠诚。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "灰礼帽",
+      "type": "npc",
+      "role_in_chapter": "开斯特公爵的密探，负责与典范军联络，传递信息，并引导他们前往剑座。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Logos",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，女妖之主，独自对抗孽茨雷，重创对方后濒死，被女妖河谷的歌声救回。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "孽茨雷",
+      "type": "npc",
+      "role_in_chapter": "食腐者之王，与Logos交战，被重创，后返回战场。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "杜卡雷",
+      "type": "npc",
+      "role_in_chapter": "血魔大君，已死，其意志在源石内化宇宙中出现，与Logos对话。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "闪灵",
+      "type": "operator",
+      "role_in_chapter": "使徒成员，赦罪师奎萨辛娜，与临光和夜莺一起对抗奎萨图什塔。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "临光",
+      "type": "operator",
+      "role_in_chapter": "使徒成员，与闪灵和夜莺一起对抗奎萨图什塔。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "夜莺",
+      "type": "operator",
+      "role_in_chapter": "使徒成员，以撕裂灵魂为代价反抗奎萨图什塔，陷入昏迷。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "奎萨图什塔",
+      "type": "npc",
+      "role_in_chapter": "赦罪师首领，试图篡夺魔王的力量，与闪灵等人交战，最终被喀利喀救走。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "萨卢斯",
+      "type": "npc",
+      "role_in_chapter": "赦罪师成员，奎萨图什塔的追随者，试图引爆自身完成仪式，被阿米娅阻止。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，魔王继承者，与特蕾西娅进行最终告别，接受传承。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，与博士和阿米娅一起行动，揭示源石内化宇宙的真相。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官，在源石内化宇宙中与特蕾西娅对话，获得「最初的源石」。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "W",
+      "type": "operator",
+      "role_in_chapter": "萨卡兹雇佣兵，在飞空艇上与特蕾西娅告别，被赐名「维什戴尔」，后探索山洞发现特蕾西娅复生的秘密。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "特蕾西娅",
+      "type": "npc",
+      "role_in_chapter": "前魔王，巴别塔领袖，在源石内化宇宙中与阿米娅等人告别，与众魂一同消散。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "赫德雷",
+      "type": "operator",
+      "role_in_chapter": "萨卡兹雇佣兵，负责防守「生命脊椎」，与曼弗雷德对峙。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "伊内丝",
+      "type": "operator",
+      "role_in_chapter": "萨卡兹雇佣兵，与赫德雷一起防守「生命脊椎」，与娜汀交战。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿斯卡纶",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，刺杀曼弗雷德未果，发现对方是变形者集群假扮。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "曼弗雷德",
+      "type": "npc",
+      "role_in_chapter": "军事委员会将军，率军围攻「生命脊椎」，与赫德雷和阿斯卡纶交战。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "高多汀公爵",
+      "type": "npc",
+      "role_in_chapter": "维多利亚大公爵，试图拉拢典范军，被推进之王拒绝。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "可露希尔",
+      "type": "operator",
+      "role_in_chapter": "罗德岛工程师，在吉布森镇外建立通讯塔，遭遇食腐者袭击。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "芬",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，A1小队成员，参与救援行动。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Misery",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，参与救援行动，与食腐者交战。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "九",
+      "type": "npc",
+      "role_in_chapter": "整合运动领袖，与凯瑟琳会面，提出合作。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凯瑟琳",
+      "type": "npc",
+      "role_in_chapter": "伦蒂尼姆工人领袖，与整合运动的九会面，同意合作。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "塔露拉",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，在伦蒂尼姆城内活动，与九和陈会合。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在伦蒂尼姆城内与塔露拉和九会合。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "喀利喀",
+      "type": "npc",
+      "role_in_chapter": "赦罪师的守墓人，与W在山洞中相遇，揭示了特蕾西娅复生的秘密。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "变形者集群",
+      "type": "npc",
+      "role_in_chapter": "王庭之主，假扮成曼弗雷德，与阿斯卡纶交战，后与Logos和凯尔希对话。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "娜汀",
+      "type": "npc",
+      "role_in_chapter": "曼弗雷德的副官，食腐者，与伊内丝交战。",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "源石内化宇宙",
+      "line_range": [
+        1201,
+        1500
+      ],
+      "discussion_summary": "凯尔希解释源石内部存在一个「内化宇宙」，是万物信息被源石封存的尽头。特蕾西娅在此处活动，并试图修改源石中的信息。",
+      "is_substantive": true
+    },
+    {
+      "concept": "众魂",
+      "line_range": [
+        1401,
+        1500
+      ],
+      "discussion_summary": "特蕾西娅与众魂一同消散，Logos与特蕾西娅讨论众魂的本质，认为众魂是萨卡兹被源石囚禁的信息集合，特蕾西娅的离去意味着众魂不再被囚禁。",
+      "is_substantive": true
+    },
+    {
+      "concept": "提卡兹之血",
+      "line_range": [
+        2101,
+        2200
+      ],
+      "discussion_summary": "Logos解释「提卡兹之血」是血魔大君杜卡雷的执念，本身不包含力量，但能连接「阿喃那」。阿米娅等人最终将其摧毁。",
+      "is_substantive": true
+    },
+    {
+      "concept": "阿喃那",
+      "line_range": [
+        2101,
+        2200
+      ],
+      "discussion_summary": "凯尔希解释「阿喃那」是最初的源石，也是最初的诅咒，特雷西斯试图利用它改变萨卡兹的命运。",
+      "is_substantive": true
+    },
+    {
+      "concept": "诸王之息",
+      "line_range": [
+        1801,
+        1900
+      ],
+      "discussion_summary": "「灰礼帽」讲述诸王之息的历史，它来自萨尔贡的秘宝，能抑制源石结晶扩散，后被铸成剑，成为维多利亚王权的象征。",
+      "is_substantive": true
+    },
+    {
+      "concept": "赦罪师",
+      "line_range": [
+        401,
+        620
+      ],
+      "discussion_summary": "凯尔希解释赦罪师在卡兹戴尔的角色，他们执着于探索萨卡兹历史，研究血脉力量，奎萨图什塔试图通过仪式篡夺魔王的力量。",
+      "is_substantive": true
+    },
+    {
+      "concept": "食腐者",
+      "line_range": [
+        271,
+        400
+      ],
+      "discussion_summary": "凯尔希解释食腐者的巫术传统，他们吞噬生命滋养肉体，强大的食腐者会用自己的身体给养同胞，形成死与生的循环。",
+      "is_substantive": true
+    },
+    {
+      "concept": "女妖",
+      "line_range": [
+        1501,
+        1600
+      ],
+      "discussion_summary": "Logos与赫德雷讨论女妖的骨哨和骨笔，女妖通报死亡，但Logos认为死亡之后并非虚无，因此放下了骨哨，拿起了骨笔。",
+      "is_substantive": true
+    }
+  ],
+  "processed_at": "2026-06-16T22:09:11",
+  "model": "deepseek-chat",
+  "batch_count": 1,
+  "stats": {
+    "tokens_in": 117255,
+    "tokens_out": 6829
+  },
+  "_unmatched_names": [
+    "威灵顿公爵",
+    "爱布拉娜",
+    "开斯特公爵",
+    "灰礼帽",
+    "Logos",
+    "孽茨雷",
+    "杜卡雷",
+    "奎萨图什塔",
+    "萨卢斯",
+    "博士",
+    "特蕾西娅",
+    "曼弗雷德",
+    "高多汀公爵",
+    "Misery",
+    "九",
+    "塔露拉",
+    "喀利喀",
+    "变形者集群",
+    "娜汀"
+  ]
+}
