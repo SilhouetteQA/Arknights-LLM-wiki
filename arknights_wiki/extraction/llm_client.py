@@ -12,31 +12,48 @@ def strip_think_tags(text: str) -> str:
     return re.sub(r"<think>[\s\S]*?</think>", "", text).strip()
 
 
+def _repair_json(text: str) -> str:
+    """修复 LLM 常见 JSON 错误"""
+    try:
+        from json_repair import repair_json
+        return repair_json(text)
+    except ImportError:
+        pass
+    return text
+
+
 def parse_llm_response(raw: str) -> dict | None:
-    """从 LLM 原始输出中提取 JSON"""
+    """从 LLM 原始输出中提取 JSON，含修复步骤"""
     text = strip_think_tags(raw).strip()
 
-    # 尝试直接解析
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        pass
+    # 候选 JSON 字符串列表
+    candidates = []
 
-    # 尝试提取 ```json ... ``` 块
+    # 直接文本
+    candidates.append(text)
+
+    # ```json ... ``` 块
     m = re.search(r"```(?:json)?\s*([\s\S]*?)```", text)
     if m:
-        try:
-            return json.loads(m.group(1).strip())
-        except json.JSONDecodeError:
-            pass
+        candidates.append(m.group(1).strip())
 
-    # 尝试提取 { ... } 块
+    # { ... } 块
     m = re.search(r"\{[\s\S]*\}", text)
     if m:
+        candidates.append(m.group(0))
+
+    for cand in candidates:
+        # 尝试直接解析
         try:
-            return json.loads(m.group(0))
+            return json.loads(cand)
         except json.JSONDecodeError:
             pass
+        # 尝试修复后解析
+        try:
+            repaired = _repair_json(cand)
+            return json.loads(repaired)
+        except json.JSONDecodeError:
+            continue
 
     return None
 
@@ -55,7 +72,7 @@ def call_llm(
     user_prompt: str,
     model: str = "MiniMax-M3",
     temperature: float = 0.1,
-    max_tokens: int = 16384,
+    max_tokens: int = 32768,
     max_retries: int = 3,
 ) -> dict:
     """调用 LLM，自动重试 JSON 解析失败"""
