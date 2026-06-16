@@ -21,6 +21,23 @@ def _get_raw_data() -> dict:
     return _raw_data_cache
 
 
+# DeepSeek 定价 (RMB/1K tokens)
+_COST_RATES = {
+    'deepseek-v4-flash':        {'in': 0.001, 'out': 0.004},
+    'deepseek-v4-flash-think':  {'in': 0.001, 'out': 0.004},
+}
+
+
+def _estimate_cost(models: dict) -> float:
+    """按模型估算成本，未知模型按 0 计"""
+    total = 0.0
+    for model, stats in models.items():
+        rate = _COST_RATES.get(model, {'in': 0, 'out': 0})
+        total += (stats['tokens_in'] / 1000) * rate['in']
+        total += (stats['tokens_out'] / 1000) * rate['out']
+    return round(total, 4)
+
+
 class StatsCollector:
     _PAGE_TYPES = ['character', 'faction', 'region', 'concept',
                    'event', 'storyarc', 'chapter', 'timeline', 'glossary']
@@ -122,11 +139,49 @@ class StatsCollector:
         if self._thread is not None:
             self._thread.join(timeout=5)
             self._thread = None
-        return {}
+        return self._write_snapshot()
 
     def _auto_snapshot_loop(self) -> None:
         while self._stop_event is not None and not self._stop_event.wait(self._auto_interval):
             self._write_snapshot()
 
+    def _build_snapshot(self) -> dict:
+        duration_ms = int((time.time() - self._start_time) * 1000)
+
+        # 构建 cost.models
+        models = {}
+        for model, stats in self._llm_calls.items():
+            models[model] = {
+                'calls': stats['calls'],
+                'tokens_in': stats['tokens_in'],
+                'tokens_out': stats['tokens_out'],
+            }
+
+        # 计算总成本（RMB）
+        total_cost = _estimate_cost(models)
+
+        llm_count = sum(s['calls'] for s in self._llm_calls.values())
+        llm_total_ms = sum(s.get('duration_ms', 0) for s in self._llm_calls.values())
+
+        return {
+            'timestamp': datetime.now(timezone.utc).isoformat(),
+            'operation': self._operation,
+            'duration_ms': duration_ms,
+            'content': self._collect_content(),
+            'cost': {
+                'models': models,
+                'total_cost_rmb': total_cost,
+            },
+            'timing': {
+                'module_steps': dict(self._steps),
+                'llm_calls_count': llm_count,
+                'llm_calls_total_ms': llm_total_ms,
+            },
+        }
+
     def _write_snapshot(self) -> dict:
-        return {}
+        snapshot = self._build_snapshot()
+        os.makedirs(os.path.dirname(self._jsonl_path), exist_ok=True)
+        with open(self._jsonl_path, 'a', encoding='utf-8') as f:
+            f.write(_json.dumps(snapshot, ensure_ascii=False) + '\n')
+        return snapshot
