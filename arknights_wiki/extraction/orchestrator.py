@@ -146,3 +146,76 @@ def generate_review_markdown(data: dict, lines: list[str]) -> str:
         md += f"- **实质讨论:** {c.get('is_substantive', False)}\n\n"
 
     return md
+
+
+def run_trial(
+    trial_chapters: list[tuple[str, str]],
+    data_dir: str = "data/stories",
+) -> dict[str, dict]:
+    """试跑：提取指定章节，生成 JSON + 审阅 Markdown"""
+    results = {}
+    os.makedirs("output/trial_review", exist_ok=True)
+
+    for category, chapter in trial_chapters:
+        print(f"\n{'='*50}")
+        print(f"提取: [{category}] {chapter}")
+        print(f"{'='*50}")
+
+        data = extract_chapter(category, chapter, data_dir)
+        save_extraction(data)
+
+        chapter_dir = os.path.join(data_dir, category, chapter)
+        try:
+            cd = load_chapter(chapter_dir)
+            review_texts = [l["text"] for l in cd.lines]
+        except Exception:
+            review_texts = []
+        md = generate_review_markdown(data, review_texts)
+        md_path = f"output/trial_review/{chapter}.md"
+        with open(md_path, "w", encoding="utf-8") as f:
+            f.write(md)
+
+        print(f"  事件: {len(data.get('events', []))}")
+        print(f"  角色: {len(data.get('characters', []))}")
+        print(f"  概念: {len(data.get('concepts', []))}")
+        if data.get("_validation_errors"):
+            print(f"  校验错误: {data['_validation_errors']}")
+        if data.get("_unmatched_names"):
+            print(f"  未匹配角色名: {data['_unmatched_names']}")
+        print(f"  JSON → data/extractions/v1_events/{category}/{chapter}.json")
+        print(f"  Markdown → {md_path}")
+
+        results[chapter] = data
+
+    return results
+
+
+def run_all(
+    data_dir: str = "data/stories",
+    skip_chapters: set = None,
+) -> list[dict]:
+    """全量 109 章提取"""
+    if skip_chapters is None:
+        skip_chapters = set()
+
+    chapters = discover_chapters(data_dir)
+    results = []
+
+    for category, chapter in chapters:
+        if chapter in skip_chapters:
+            continue
+        print(f"[{category}] {chapter} ...", end=" ", flush=True)
+        try:
+            data = extract_chapter(category, chapter, data_dir)
+            save_extraction(data)
+            n_events = len(data.get("events", []))
+            n_chars = len(data.get("characters", []))
+            toks = data.get("stats", {}).get("tokens_in", 0)
+            elapsed = data.get("stats", {}).get("elapsed_s", 0)
+            print(f"events={n_events} chars={n_chars} toks_in={toks} {elapsed:.1f}s")
+            results.append(data)
+        except Exception as e:
+            print(f"ERROR: {e}")
+            results.append({"chapter": chapter, "category": category, "_error": str(e)})
+
+    return results
