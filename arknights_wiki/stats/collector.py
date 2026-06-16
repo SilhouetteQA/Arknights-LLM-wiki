@@ -8,16 +8,59 @@ import time
 from datetime import datetime, timezone
 
 
+def _resolve_data_dir() -> str:
+    """解析 data/ 目录，尊重环境变量"""
+    import pathlib
+    data_dir = os.environ.get('ARKNIGHTS_DATA_DIR')
+    if data_dir:
+        return data_dir
+    pkg_dir = pathlib.Path(__file__).resolve().parent.parent.parent
+    return str(pkg_dir / 'data')
+
+
 # 模块级缓存：原始数据总量，首次计算后复用
 _raw_data_cache: dict | None = None
 
 
 def _get_raw_data() -> dict:
+    """采集原始数据总量，首次计算后缓存。返回 {stories_count, operators_count, total_chars}"""
     global _raw_data_cache
     if _raw_data_cache is not None:
         return _raw_data_cache
-    # Task 5 实现
-    _raw_data_cache = {'stories_count': 0, 'operators_count': 0, 'total_chars': 0}
+
+    import pathlib
+    data_dir = _resolve_data_dir()
+
+    total_chars = 0
+    stories_count = 0
+    operators_count = 0
+
+    # 统计 operators.json
+    op_path = pathlib.Path(data_dir) / 'operators.json'
+    if op_path.exists():
+        with open(op_path, 'r', encoding='utf-8') as f:
+            ops = _json.load(f)
+        operators_count = len(ops.get('operators', []))
+        for op in ops.get('operators', []):
+            for archive_text in op.get('archives', {}).values():
+                total_chars += len(archive_text)
+
+    # 统计 stories/
+    stories_dir = pathlib.Path(data_dir) / 'stories'
+    if stories_dir.exists():
+        for fp in stories_dir.glob('**/*.json'):
+            stories_count += 1
+            with open(fp, 'r', encoding='utf-8') as f:
+                story = _json.load(f)
+            for line in story.get('lines', []):
+                total_chars += len(line.get('text', '') or '')
+                total_chars += len(line.get('speaker', '') or '')
+
+    _raw_data_cache = {
+        'stories_count': stories_count,
+        'operators_count': operators_count,
+        'total_chars': total_chars,
+    }
     return _raw_data_cache
 
 

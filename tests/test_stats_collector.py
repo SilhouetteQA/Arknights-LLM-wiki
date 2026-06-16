@@ -94,6 +94,35 @@ class TestStatsCollectorContent:
         assert 'db_size_mb' in content
 
 
+class TestRawData:
+    def test_get_raw_data_cached_after_first_call(self, tmp_path, monkeypatch):
+        """首次调用计算并缓存，后续调用复用缓存"""
+        import arknights_wiki.stats.collector as mod
+        monkeypatch.setattr(mod, '_raw_data_cache', None)
+
+        # 创建最小化的 operators.json
+        op_path = tmp_path / "operators.json"
+        op_path.write_text('{"operators": [{"id": "R001", "name_zh": "阿米娅", "archives": {"档案1": "测试内容ABC"}}]}', encoding='utf-8')
+
+        # 创建最小化的 stories
+        stories_dir = tmp_path / "stories"
+        stories_dir.mkdir()
+        s1 = stories_dir / "s1.json"
+        s1.write_text('{"id": "s1", "lines": [{"speaker": "A", "text": "hello"}, {"speaker": "B", "text": "world"}]}', encoding='utf-8')
+
+        # Monkeypatch _resolve_data_dir 使用 tmp_path
+        monkeypatch.setattr(mod, '_resolve_data_dir', lambda: str(tmp_path))
+
+        result = mod._get_raw_data()
+        assert result['operators_count'] == 1
+        assert result['stories_count'] == 1
+        assert result['total_chars'] > 0
+
+        # 第二次调用应返回缓存
+        result2 = mod._get_raw_data()
+        assert result2 == result
+
+
 class TestStatsCollectorSnapshot:
     def test_finish_writes_jsonl_line(self, tmp_path):
         db_path = str(tmp_path / "test.db")
