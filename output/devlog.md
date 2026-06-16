@@ -102,3 +102,47 @@
 2. 读本文件末尾 — 最新决策
 3. 读 memory/session_20250615_m0_store.md — 完整会话记录
 4. 下一步：用户审阅 entity md → M0 质量评估修复 → 通过后进入 M1 chapter
+
+---
+
+## Pass 1 剧情骨架提取 (2026-06-16)
+
+### 架构决策
+
+- **模型选定 DeepSeek v4-flash**：MiniMax M3 的 `<think>` 块占满输出 token（14.5K/16K），JSON 解析近 100% 失败。DeepSeek 0% 失败，25-76s/章，$0.08/6章
+- **json-repair**：LLM JSON 含中文双引号/控制字符/换行，`json-repair` 库可靠修复
+- **max_tokens**：DeepSeek 8192 足够，MiniMax 需 32768
+- **事件类型自由 snake_case**：不设枚举，覆盖更广
+- **>128K 章切 2 批**：自然 node 边界切断
+- **移除 §1.3 预设问题规则**：v3 架构用 line_range 溯源代替
+
+### 代码基线
+
+```
+arknights_wiki/extraction/ (5 模块, 28 tests)
+```
+
+### 试跑基线 (DeepSeek v4-flash)
+
+| 章节 | Events | 耗时 | 成本 |
+|------|--------|------|------|
+| 黑暗时代·上 | 19 | 25s | <$0.01 |
+| 怒号光明 | 12 | 34s | $0.02 |
+| 慈悲灯塔 | 30 | 63s | $0.02 |
+| 孤星 | 41 | 68s | $0.02 |
+| 相见欢 | 19 | 37s | $0.01 |
+| 长夜临光 | 58 | 76s | $0.02 |
+
+### 已知问题
+
+1. llm_client 默认模型仍是 MiniMax-M3，需改为 deepseek-chat
+2. 怒号光明仅 12 events（max_tokens=8192 可能限制大章输出）
+3. 长夜临光 0 concepts
+4. 大量 NPC 角色名未匹配（需补充 identity_map）
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-16-4.md — 完整会话记录
+4. 下一步：审阅试跑 Markdown → 修复质量问题 → 全量 109 章

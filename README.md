@@ -97,6 +97,17 @@ Arknights LLM Wiki/
 - NPC 实体 + 故事对话索引 → M1 按需创建
 - 概念实体 + 关键词索引 → M3 LLM 提取
 
+## Pass 1 剧情骨架提取完成 (2026-06-16)
+
+| 维度 | 值 |
+|------|-----|
+| 架构 | v3 三遍独立提取 |
+| 模型 | DeepSeek v4-flash (MiniMax M3 因 think 块问题淘汰) |
+| 提取模块 | 5 文件 (dialogue_loader/prompt_builder/llm_client/post_processor/orchestrator) |
+| 测试 | 163 all pass (28 extraction + 135 existing) |
+| 试跑 | 6 章全成功, $0.08, ~5 min |
+| 分支 | feature/pass1-event-extraction |
+
 ## 下一步
 
-1. 开发统计系统：内容数量、成本、时间统计
+审阅试跑质量 → 修复问题 → 全量 109 章 Pass 1 执行
