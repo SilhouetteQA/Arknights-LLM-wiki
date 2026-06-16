@@ -55,4 +55,50 @@
 1. 读 README.md — 项目状态
 2. 读本文件末尾 — 最新决策和数据基线
 3. 读 output/sessions/ 下日期最新的会话总结
-4. 下一步：Phase 2 知识图谱生成 — 分析 mrfz scripts/extraction/ 子包，产出 Spec + Plan
+4. 下一步：M0 质量评估（用户审阅 entity md 后），然后进入 M1 chapter 页面生成
+
+---
+
+## M0 store/ 完成 (2026-06-15)
+
+### 架构决策
+
+- 4 张 SQLite 表：entities / entity_aliases / source_index / wiki_pages
+- 3 个 Repository 类每表一个，seed.py 编排种子流程
+- 异格自动提取：PRTS Wiki API `Category:异格干员` → `config/identity_map.json` (40 条)
+- 概念关键词索引：`config/concept_keywords.json` (9 个概念) → source_index match_type=concept_keyword
+- 无名 NPC 过滤：5 类正则模式，行级过滤，边界 case 保留供 M3 处理
+- 实施方法：Spec → Plan → Subagent-Driven TDD (8 commits, 31 new tests)
+
+### 数据基线
+
+| 指标 | 值 |
+|------|-----|
+| character | 3,766 (420 干员 + 3,346 NPC) |
+| faction | 44 |
+| region | 34 |
+| concept | 9 |
+| aliases | 40 |
+| source_index(exact) | 246,214 |
+| source_index(concept_keyword) | 4,794 |
+| 章节覆盖 | 109/109 (100%) |
+| 测试 | 119 全部通过 |
+
+### 已知问题
+
+- 少量泛型 NPC 未被过滤（路过的观众A、黑帮A/B、老奶奶 等）
+- seed_concept_keywords O(n*m) 复杂度，当前够用但可优化
+- chapter 实体未种子（M1 处理）
+- 23/1663 节点未索引
+
+### 审阅文档
+
+- `output/m0_seed_summary.md` — 总体统计
+- `output/m0_entities_by_chapter/` — 109 章实体覆盖 md
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 memory/session_20250615_m0_store.md — 完整会话记录
+4. 下一步：用户审阅 entity md → M0 质量评估修复 → 通过后进入 M1 chapter

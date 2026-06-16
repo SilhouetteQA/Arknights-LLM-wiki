@@ -69,15 +69,30 @@ class SourceIndexRepository:
 
     # ── Seed ──
 
-    def seed_operator_archives(self, operators_json_path: str) -> int:
-        """每个干员档案 -> source_index"""
+    def seed_operator_archives(self, operators_json_path: str, identity_map_path: str | None = None) -> int:
+        """每个干员档案 -> source_index。异格干员的档案索引挂到基体 entity 上。"""
         er = EntityRepository(self.db_path)
+        # 加载异格映射: alter_name -> base_entity_id
+        alter_to_base: dict[str, str] = {}
+        if identity_map_path:
+            with open(identity_map_path, 'r', encoding='utf-8') as f:
+                alter_to_base = _json.load(f).get('mappings', {})
+
         with open(operators_json_path, 'r', encoding='utf-8') as f:
             data = _json.load(f)
         count = 0
         for op in data['operators']:
             oid = op['id']
-            entity_id = f'character:{oid}'
+            name = op['name_zh']
+            # 异格干员: 档案挂在基体 entity 上
+            if name in alter_to_base:
+                entity_id = alter_to_base[name]
+            else:
+                stripped = name.split('(')[0].split('（')[0].strip()
+                if stripped in alter_to_base:
+                    entity_id = alter_to_base[stripped]
+                else:
+                    entity_id = f'character:{oid}'
             if not er.get(entity_id):
                 continue
             archives = op.get('archives', {})

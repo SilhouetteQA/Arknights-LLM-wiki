@@ -146,8 +146,19 @@ class EntityRepository:
 
     # ── Seed ──
 
-    def seed_from_operators(self, operators_json_path: str) -> int:
-        """从 operators.json 提取 character/faction/region 实体"""
+    def seed_from_operators(self, operators_json_path: str, identity_map_path: str | None = None) -> int:
+        """从 operators.json 提取 character/faction/region 实体
+
+        异格干员不创建独立 entity，仅作为基体的别名存在。
+        identity_map 中的 key 会被跳过 entity 创建。
+        """
+        # 加载异格映射，获取应跳过的干员名集合
+        alter_names: set[str] = set()
+        if identity_map_path:
+            with open(identity_map_path, 'r', encoding='utf-8') as f:
+                idmap = _json.load(f)
+            alter_names = set(idmap.get('mappings', {}).keys())
+
         with open(operators_json_path, 'r', encoding='utf-8') as f:
             data = _json.load(f)
         count = 0
@@ -159,12 +170,16 @@ class EntityRepository:
         for op in data['operators']:
             oid = op['id']
             name = op['name_zh']
+            stripped = name.split('(')[0].split('（')[0].strip()
+            # 异格干员不创建 entity
+            if name in alter_names or stripped in alter_names:
+                continue
             if self.get(f'character:{oid}'):
                 continue
             self.insert({
                 'id': f'character:{oid}',
                 'type': 'character',
-                'name_zh': name.split('(')[0].split('（')[0].strip(),
+                'name_zh': stripped,
                 'source_data': _json.dumps({
                     'race': op.get('race', ''), 'nation': op.get('nation', ''),
                     'birth_place': op.get('birth_place', ''), 'sex': op.get('sex', ''),
@@ -203,6 +218,14 @@ class EntityRepository:
 
     def _filter_npc(self, name: str) -> bool:
         """True 表示应过滤（是无名 NPC），False 表示保留"""
+        # 排除列表：真名角色被模式误判时跳过
+        _NPC_EXCLUSIONS = {
+            'AMa-10', '异常的Lancet-2', '异常的Castle-3', '主播U',
+            'PRTS', 'Thermal-EX',
+        }
+        if name in _NPC_EXCLUSIONS:
+            return False
+
         _NPC_PATTERNS = [
             r'\?{2,}', r'？{1,}',
             r'(成员|士兵|队员|干员|佣兵|术师|术士|守卫|卫兵|军官|警员|警察|宪兵|教徒|信使|难民|赏金猎人)$',
@@ -222,6 +245,12 @@ class EntityRepository:
             r'赦罪师[^\s]{0,2}(直属)?[^\s]{0,2}(卫兵)',
             r'拓荒(者|队)[^\s]{0,2}(成员)?',
             r'家族[^\s]{0,2}(成员|干部)',
+            # 编号后缀: 角色描述词 + [甲乙丙丁A-Za-z]
+            r'(成员|队员|干员|士兵|佣兵|术师|术士|守卫|卫兵|军官|警员|警察|宪兵|教徒|信使|难民|居民|市民|村民|路人|工人|学生|商人|囚犯|犯人|罪犯|黑帮|特工|调查员|领航员|驾驶员|飞行员|护士|医生|记者|演员|观众|警卫|保安|雇员|职员|学徒|祭司|萨满|战士|矿工|平民|感染者|赏金猎人)[甲乙丙丁ABCD]$',
+            # 路过的/巡逻的 等前缀泛型
+            r'^(路过的|开车的|巡逻的|站岗的|看门的|卖菜的|卖鱼的|摆摊的|送信的)',
+            # 纯单名泛型 (精确匹配, 不匹配组合词)
+            r'^(路人|观众|市民|居民|村民|船员|乘客|行人|酒客|食客|看客|游人|黑帮|混混|恶棍|暴徒|匪徒|盗贼|窃贼|小偷|骗子|杀手|打手|难民|平民|群众|众人|暴民)$',
         ]
         for pattern in _NPC_PATTERNS:
             if re.search(pattern, name):
@@ -229,19 +258,38 @@ class EntityRepository:
         return False
 
     def seed_from_story_dialogue(self, _index_json_path: str, stories_dir: str) -> int:
-        """从 stories/ 对话提取 story NPC character 实体"""
+        """从 stories/ 对话提取 story NPC character 实体
+
+        两遍扫描:
+        1. 统计每个 speaker 的总台词行数和出现的 story 数
+        2. 组合策略过滤: 保留 (跨>=2个故事) OR (>=10行台词) 的 speaker
+        """
         import pathlib as _pl
-        speakers = set()
+        from collections import defaultdict as _dd
+        # 第一遍: 统计
+        speaker_stats: dict[str, dict] = _dd(lambda: {'lines': 0, 'stories': set()})
         stories_path = _pl.Path(stories_dir)
         for fp in stories_path.glob('**/*.json'):
             with open(fp, 'r', encoding='utf-8') as f:
                 data = _json.load(f)
+            story_id = data.get('id', fp.stem)
             for line in data.get('lines', []):
                 sp = (line.get('speaker') or '').strip()
-                if sp and not self._filter_npc(sp):
-                    speakers.add(sp)
+                if not sp:
+                    continue
+                if self._filter_npc(sp):
+                    continue
+                speaker_stats[sp]['lines'] += 1
+                speaker_stats[sp]['stories'].add(story_id)
+        # 第二遍: 组合策略过滤 -> 创建实体
         count = 0
-        for sp in sorted(speakers):
+        for sp in sorted(speaker_stats):
+            stats = speaker_stats[sp]
+            n_stories = len(stats['stories'])
+            n_lines = stats['lines']
+            # 组合策略: 跨>=2故事 或 单故事>=10行台词
+            if n_stories < 2 and n_lines < 10:
+                continue
             resolved = self.resolve_name(sp, 'character')
             if resolved:
                 continue
@@ -253,7 +301,11 @@ class EntityRepository:
                 continue
             self.insert({
                 'id': oid, 'type': 'character', 'name_zh': sp,
-                'source_data': _json.dumps({'source': 'stories dialogue'}, ensure_ascii=False)
+                'source_data': _json.dumps({
+                    'source': 'stories dialogue',
+                    'total_lines': n_lines,
+                    'story_count': n_stories
+                }, ensure_ascii=False)
             })
             count += 1
         return count

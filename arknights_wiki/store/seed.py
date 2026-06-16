@@ -27,13 +27,20 @@ def resolve_config_path(relative_path: str) -> str:
 
 
 def run_seed(db_path: str | None = None) -> dict:
-    """执行完整种子流程，返回统计信息"""
+    """执行 M0 种子流程，仅确定性数据。
+
+    M0 职责:
+      1. 干员/faction/region 实体 (operators.json)
+      2. 异格别名映射 (identity_map.json)
+      3. 干员档案索引 (确定性, 无需 LLM)
+
+    NPC 实体和故事对话索引移出 M0 —— 在 M1 chapter 生成和 M3 LLM 提取中按需创建。
+    """
     if db_path is None:
         db_path = os.path.join(resolve_data_path(''), 'arknights_wiki.db')
 
     print(f'[M0 Seed] 数据库: {db_path}')
 
-    # 初始化数据库
     init_db(db_path)
 
     er = EntityRepository(db_path)
@@ -41,47 +48,33 @@ def run_seed(db_path: str | None = None) -> dict:
 
     result = {}
 
-    # 1. 从 operators.json 提取实体
-    print('[M0 Seed] Step 1/5: 干员实体...')
+    # 1. 从 operators.json 提取干员/faction/region 实体 (异格不建独立 entity)
+    print('[M0 Seed] Step 1/3: 干员实体...')
     ops_path = resolve_data_path('operators.json')
-    n_entities = er.seed_from_operators(ops_path)
+    idmap_path = resolve_config_path('identity_map.json')
+    n_entities = er.seed_from_operators(ops_path, idmap_path)
     result['entities'] = n_entities
     print(f'  -> {n_entities} 实体 (character + faction + region)')
 
     # 2. 加载 identity_map -> entity_aliases
-    print('[M0 Seed] Step 2/5: 加载异格/别名映射...')
-    idmap_path = resolve_config_path('identity_map.json')
+    print('[M0 Seed] Step 2/3: 异格/别名映射...')
     n_aliases = er.seed_identity_map(idmap_path)
     result['aliases'] = n_aliases
     print(f'  -> {n_aliases} 别名')
 
-    # 3. 从 stories 对话提取 NPC
-    print('[M0 Seed] Step 3/5: 故事NPC...')
-    index_path = resolve_data_path('index.json')
-    stories_path = resolve_data_path('stories')
-    n_npc = er.seed_from_story_dialogue(index_path, stories_path)
-    result['npc_added'] = n_npc
-    print(f'  -> {n_npc} 新 NPC')
+    # 3. 干员档案 -> source_index (异格档案挂在基体 entity 上)
+    print('[M0 Seed] Step 3/3: 干员档案索引...')
+    n_archive = sr.seed_operator_archives(ops_path, idmap_path)
+    result['source_index_entries'] = n_archive
+    print(f'  -> {n_archive} 档案索引条目')
 
-    # 4. 建立 source_index
-    print('[M0 Seed] Step 4/5: 源文档索引...')
-    n_archive = sr.seed_operator_archives(ops_path)
-    n_story = sr.seed_story_dialogue(index_path, stories_path)
-    n_concept = sr.seed_concept_keywords(resolve_config_path('concept_keywords.json'))
-    result['source_index_entries'] = n_archive + n_story + n_concept
-    print(f'  -> 档案索引: {n_archive}, 故事索引: {n_story}, 概念索引: {n_concept}')
-
-    # 5. 统计
     result['characters'] = er.count('character')
     result['factions'] = er.count('faction')
     result['regions'] = er.count('region')
-    result['concepts'] = er.count('concept')
-    result['chapters'] = er.count('chapter')
 
     print(f'[M0 Seed] 完成!')
     print(f'  character: {result["characters"]}  faction: {result["factions"]}')
-    print(f'  region: {result["regions"]}  concept: {result["concepts"]}')
-    print(f'  source_index: {result["source_index_entries"]}')
+    print(f'  region: {result["regions"]}  source_index: {result["source_index_entries"]}')
 
     return result
 
