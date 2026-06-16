@@ -1,6 +1,7 @@
 """统计报告器 — 读取 JSONL 并渲染终端输出"""
 import json as _json
 import os
+import sys
 
 
 class StatsReporter:
@@ -45,7 +46,7 @@ class StatsReporter:
             wp_total = sum(sum(st.values()) for st in c['wiki_pages'].values())
             dur = f"{s['duration_ms']}ms" if s['duration_ms'] < 10000 else f"{s['duration_ms']/1000:.1f}s"
             llm = f"{s['timing']['llm_calls_count']}次"
-            cost = f"¥{s['cost']['total_cost_rmb']:.4f}"
+            cost = f"RMB{s['cost']['total_cost_rmb']:.4f}"
             print(f"{ts:<20} {op:<16} {entities_total:>5} {aliases:>4} {si_total:>6} {wp_total:>4} {dur:>8} {llm:>7} {cost:>8}")
 
     def show_diff(self) -> None:
@@ -127,7 +128,7 @@ class StatsReporter:
         acost = a['cost']['total_cost_rmb']
         bcost = b['cost']['total_cost_rmb']
         if acost != bcost:
-            print(f"成本:           ¥{acost:.4f} -> ¥{bcost:.4f}")
+            print(f"成本:           RMB{acost:.4f} -> RMB{bcost:.4f}")
 
     def _print_detail(self, s: dict) -> None:
         """打印单个快照详情"""
@@ -176,7 +177,7 @@ class StatsReporter:
         if models:
             for model, m in models.items():
                 print(f"  {model}: {m['calls']}次 {m['tokens_in']}in/{m['tokens_out']}out tokens")
-            print(f"  估算成本: ¥{cost['total_cost_rmb']:.4f}")
+            print(f"  估算成本: RMB{cost['total_cost_rmb']:.4f}")
         else:
             print("  (无LLM调用)")
         print()

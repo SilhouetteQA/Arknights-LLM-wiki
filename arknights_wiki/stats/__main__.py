@@ -1,9 +1,16 @@
 """统计系统 CLI 入口 — python -m arknights_wiki.stats"""
 import argparse
 import os
+import sys
 
 
 def main():
+    # Windows 终端 GBK 编码兼容：强制 UTF-8 输出
+    if sys.platform == 'win32':
+        try:
+            sys.stdout.reconfigure(encoding='utf-8')
+        except Exception:
+            pass
     parser = argparse.ArgumentParser(description='开发过程统计')
     parser.add_argument('--last', type=int, metavar='N',
                         help='显示最近 N 次快照')
