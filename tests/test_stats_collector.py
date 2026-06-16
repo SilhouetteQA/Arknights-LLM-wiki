@@ -1,6 +1,8 @@
 """StatsCollector 测试"""
+import sqlite3
 import pytest
 from arknights_wiki.stats.collector import StatsCollector
+from arknights_wiki.store._schema import init_db
 
 
 class TestStatsCollectorRecording:
@@ -60,3 +62,29 @@ class TestStatsCollectorLifecycle:
         assert collector._operation == "op2"
         assert collector._llm_calls == {}
         assert collector._steps == {}
+
+
+class TestStatsCollectorContent:
+    def test_collect_content_reads_db(self, tmp_path):
+        db_path = str(tmp_path / "test.db")
+        # 用已知数据初始化数据库
+        init_db(db_path)
+        conn = sqlite3.connect(db_path)
+        conn.execute("INSERT INTO entities (id, type, name_zh) VALUES ('c:1', 'character', 'A')")
+        conn.execute("INSERT INTO entities (id, type, name_zh) VALUES ('c:2', 'character', 'B')")
+        conn.execute("INSERT INTO entities (id, type, name_zh) VALUES ('f:1', 'faction', 'X')")
+        conn.execute("INSERT INTO entity_aliases (alias_text, entity_id) VALUES ('AltA', 'c:1')")
+        conn.execute("INSERT INTO source_index (entity_id, source_type, source_id, match_type) VALUES ('c:1', 'story', 's1', 'exact')")
+        conn.execute("INSERT INTO wiki_pages (entity_id, page_type, content_json, status) VALUES ('c:1', 'character', '{}', 'draft')")
+        conn.commit()
+        conn.close()
+
+        collector = StatsCollector(db_path)
+        collector.start("test")
+        content = collector._collect_content()
+        assert content['entities'] == {'character': 2, 'faction': 1}
+        assert content['entity_aliases'] == 1
+        assert content['source_index'] == {'exact': 1}
+        assert content['wiki_pages']['character'] == {'draft': 1, 'published': 0}
+        assert content['wiki_pages']['faction'] == {'draft': 0, 'published': 0}
+        assert 'db_size_mb' in content
