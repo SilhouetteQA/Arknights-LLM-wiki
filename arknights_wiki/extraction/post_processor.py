@@ -95,6 +95,11 @@ def merge_batches(batches: list[dict], chapter: str) -> dict:
         result = dict(batches[0])
         result["chapter"] = chapter
         result["batch_count"] = 1
+        # 保留 _raw 和 _parse_error
+        if "_raw" not in result:
+            result["_raw"] = batches[0].get("_raw", "")
+        if "_parse_error" not in result:
+            result["_parse_error"] = batches[0].get("_parse_error", False)
         return result
 
     merged = {
@@ -105,6 +110,8 @@ def merge_batches(batches: list[dict], chapter: str) -> dict:
         "events": [],
         "characters": [],
         "concepts": [],
+        "_raw": "\n---BATCH---\n".join(b.get("_raw", "") for b in batches if b.get("_raw")),
+        "_parse_error": any(b.get("_parse_error") for b in batches),
     }
 
     # events: 收集所有 -> 按 line_range 起始行排序 -> 去重

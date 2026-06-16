@@ -63,7 +63,7 @@ def create_client() -> OpenAI:
     api_key = os.environ.get("minimax_api", "")
     if not api_key:
         raise RuntimeError("环境变量 minimax_api 未设置")
-    return OpenAI(api_key=api_key, base_url="https://api.minimaxi.com/v1")
+    return OpenAI(api_key=api_key, base_url="https://api.minimaxi.com/v1", timeout=600.0)
 
 
 def call_llm(
