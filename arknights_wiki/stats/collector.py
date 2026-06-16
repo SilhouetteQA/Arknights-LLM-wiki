@@ -37,8 +37,21 @@ class StatsCollector:
         self._thread.start()
 
     def record_step(self, step_name: str, duration_ms: int) -> None:
-        """占位实现，Task 3 完成"""
-        pass
+        self._steps[step_name] = duration_ms
+
+    def record_llm_call(self, model: str, tokens_in: int,
+                        tokens_out: int, duration_ms: int) -> None:
+        if model not in self._llm_calls:
+            self._llm_calls[model] = {
+                'calls': 0, 'tokens_in': 0, 'tokens_out': 0, 'duration_ms': 0
+            }
+        self._llm_calls[model]['calls'] += 1
+        self._llm_calls[model]['tokens_in'] += tokens_in
+        self._llm_calls[model]['tokens_out'] += tokens_out
+        self._llm_calls[model]['duration_ms'] += duration_ms
+        total_calls = sum(m['calls'] for m in self._llm_calls.values())
+        print(f"[stats] #{total_calls} model={model} {duration_ms/1000:.1f}s",
+              file=sys.stderr)
 
     def finish(self) -> dict:
         if self._stop_event is not None:
