@@ -200,9 +200,7 @@ def main():
                         continue
                     for st, sc in pd['content'].items():
                         f.write(f"\n--- {st} ---\n")
-                        f.write(sc[:3000])
-                        if len(sc) > 3000:
-                            f.write(f"\n[...截断, 共{len(sc)}字符]\n")
+                        f.write(sc)
                         f.write('\n')
 
             chars = sum(p.get('chars', 0) for p in data['pages'].values())
