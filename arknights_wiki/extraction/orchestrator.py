@@ -15,6 +15,21 @@ from .post_processor import (
 )
 
 
+def _load_taxonomy(taxonomy_path: str = "config/story_taxonomy.json") -> dict:
+    """加载剧情分类配置"""
+    if not os.path.exists(taxonomy_path):
+        return {"chapters": {}}
+    with open(taxonomy_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _get_chapter_type(chapter: str, taxonomy: dict = None) -> str:
+    """获取章节的 taxonomy 类型，默认 full"""
+    if taxonomy is None:
+        return "full"
+    return taxonomy.get("chapters", {}).get(chapter, "full")
+
+
 def discover_chapters(data_dir: str = "data/stories") -> list[tuple[str, str]]:
     """发现所有章节，返回 [(category, chapter_name), ...]"""
     chapters = []
@@ -95,6 +110,7 @@ def extract_chapter(
     data_dir: str = "data/stories",
     identity_map_path: str = "config/identity_map.json",
     operators_path: str = "data/operators.json",
+    chapter_type: str = "full",
 ) -> dict:
     """提取单章：加载 → 分批 → LLM（带上下文）→ scene→global 转换 → 合并 → 后处理"""
     chapter_dir = os.path.join(data_dir, category, chapter)
@@ -106,7 +122,7 @@ def extract_chapter(
         operators = json.load(f)["operators"]
 
     client = create_client()
-    system_prompt = build_system_prompt()
+    system_prompt = build_system_prompt(chapter_type)
     all_batches = []
     total_stats = {"tokens_in": 0, "tokens_out": 0, "elapsed_s": 0}
     batch_line_offset = 0  # 累计行数偏移，用于将批次行号映射到全局行号
@@ -122,6 +138,7 @@ def extract_chapter(
             total_lines=len(batch.lines),
             scene_count=batch.scene_count(),
             context=context,
+            chapter_type=chapter_type,
         )
 
         ctx_info = f" (带前{len([b for b in all_batches if not b.get('_parse_error')])}批上下文)" if context else ""
@@ -158,6 +175,7 @@ def extract_chapter(
     merged["processed_at"] = datetime.now(timezone.utc).isoformat()
     merged["model"] = _get_model_label()
     merged["stats"] = total_stats
+    merged["taxonomy_type"] = chapter_type
 
     # 校验（使用原始 cd 的总行数）
     errors = validate_extraction(merged, len(cd.lines))
@@ -232,17 +250,20 @@ def generate_review_markdown(data: dict, lines: list[str]) -> str:
 def run_trial(
     trial_chapters: list[tuple[str, str]],
     data_dir: str = "data/stories",
+    taxonomy_path: str = "config/story_taxonomy.json",
 ) -> dict[str, dict]:
     """试跑：提取指定章节"""
+    taxonomy = _load_taxonomy(taxonomy_path)
     results = {}
     os.makedirs("output/trial_review", exist_ok=True)
 
     for category, chapter in trial_chapters:
+        chapter_type = _get_chapter_type(chapter, taxonomy)
         print(f"\n{'='*50}")
-        print(f"提取: [{category}] {chapter}")
+        print(f"提取: [{category}] {chapter} (type={chapter_type})")
         print(f"{'='*50}")
 
-        data = extract_chapter(category, chapter, data_dir)
+        data = extract_chapter(category, chapter, data_dir, chapter_type=chapter_type)
         save_extraction(data)
 
         chapter_dir = os.path.join(data_dir, category, chapter)
@@ -278,20 +299,30 @@ def run_trial(
 def run_all(
     data_dir: str = "data/stories",
     skip_chapters: set = None,
+    taxonomy_path: str = "config/story_taxonomy.json",
 ) -> list[dict]:
-    """全量章节提取"""
+    """全量章节提取，taxonomy 驱动策略"""
     if skip_chapters is None:
         skip_chapters = set()
+    taxonomy = _load_taxonomy(taxonomy_path)
+    taxonomy_chapters = taxonomy.get("chapters", {})
+
+    # 自动跳过 taxonomy 中标记为 skip 的章节
+    for ch_name, ch_type in taxonomy_chapters.items():
+        if ch_type == "skip":
+            skip_chapters.add(ch_name)
 
     chapters = discover_chapters(data_dir)
     results = []
 
     for category, chapter in chapters:
         if chapter in skip_chapters:
+            print(f"[{category}] {chapter} SKIP (taxonomy)")
             continue
-        print(f"[{category}] {chapter} ...", end=" ", flush=True)
+        chapter_type = _get_chapter_type(chapter, taxonomy)
+        print(f"[{category}] {chapter} (type={chapter_type}) ...", end=" ", flush=True)
         try:
-            data = extract_chapter(category, chapter, data_dir)
+            data = extract_chapter(category, chapter, data_dir, chapter_type=chapter_type)
             save_extraction(data)
             n_events = len(data.get("events", []))
             n_chars = len(data.get("characters", []))

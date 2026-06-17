@@ -2,7 +2,7 @@
 
 文件顺序来自 _order.json（从 data/index.json 的 PRTS Wiki 抓取顺序生成，= 游戏内实际顺序）
 """
-import json, os
+import json, os, re
 from dataclasses import dataclass, field
 
 
@@ -27,7 +27,6 @@ class ChapterDialogue:
         [2] [佐菲娅] 还有疼痛感吗？
         """
         parts = []
-        # 按 nodes 的顺序遍历（即 _order.json 的顺序 = 游戏顺序）
         scene_num = 0
         for nf in self.nodes:
             scene_lines = [l for l in self.lines if l.get("_node_file") == nf]
@@ -35,7 +34,16 @@ class ChapterDialogue:
                 continue
             scene_num += 1
             scene_label = nf.replace(".json", "")
-            parts.append(f"\n## Scene {scene_num}: {scene_label} ({len(scene_lines)} 行)")
+            # 对 ending PART 场景，附加结局标题
+            if "_ending_PART" in nf:
+                first_line = scene_lines[0]
+                ending_title = first_line.get("_ending_title", "")
+                if ending_title:
+                    scene_label = f"{ending_title} {scene_label}"
+                # 标记为想象事件来源
+                parts.append(f"\n## Scene {scene_num}: {scene_label} ({len(scene_lines)} 行) [IS-IF线结局叙事]")
+            else:
+                parts.append(f"\n## Scene {scene_num}: {scene_label} ({len(scene_lines)} 行)")
 
             for li, line in enumerate(scene_lines, 1):
                 if line["type"] == "dialogue" and line["speaker"]:
@@ -62,6 +70,44 @@ class ChapterDialogue:
         return int(len(self.text_no_markers) / 1.5)
 
 
+def _split_by_parts(text: str) -> list[tuple[str, str]]:
+    """将结局文本按 PART N 标记拆分为多个 (part_label, part_text) 块。
+
+    PART 格式: 行首的 `PART N ...`（N = 1-9）
+    返回的 part_label 如 "PART1", "PART2" 等。
+    第一个 PART 标记之前的文本（标题行等）合并到 PART1 块开头。
+    """
+    lines = text.split("\n")
+    part_pattern = re.compile(r"^PART (\d+)\b")
+    blocks = []
+    current_label = None
+    current_lines = []
+    pre_part_lines = []  # 第一个 PART 之前的文本，合并到 PART1
+
+    for line in lines:
+        m = part_pattern.match(line.strip())
+        if m:
+            part_num = int(m.group(1))
+            if current_label is not None and current_lines:
+                blocks.append((current_label, "\n".join(current_lines)))
+            elif part_num == 1 and pre_part_lines:
+                # 第一个 PART 之前的文本合并到 PART1
+                pass
+            current_label = f"PART{part_num}"
+            current_lines = pre_part_lines + [line] if part_num == 1 and pre_part_lines else [line]
+            pre_part_lines = []
+        else:
+            if current_label is None:
+                pre_part_lines.append(line)
+            else:
+                current_lines.append(line)
+
+    if current_label is not None and current_lines:
+        blocks.append((current_label, "\n".join(current_lines)))
+
+    return blocks
+
+
 def load_chapter(chapter_dir: str) -> ChapterDialogue:
     """加载章节目录下所有 JSON 文件。
 
@@ -71,15 +117,26 @@ def load_chapter(chapter_dir: str) -> ChapterDialogue:
     if os.path.exists(order_path):
         with open(order_path, "r", encoding="utf-8") as f:
             ordered = json.load(f)
-        # 过滤掉目录中不存在的文件
         existing = set(os.listdir(chapter_dir))
-        json_files = [f for f in ordered if f in existing and f.endswith(".json")]
-        # 追加任何 _order.json 中未列出的 json 文件
+        # 仅保留实际存在且非 _ending 的 story node
+        json_files = [f for f in ordered if f in existing and f.endswith(".json") and "_ending" not in f]
+        # 追加 _order.json 中未列出的 story node（排除 _ending、_order、_ 前缀）
         for f in sorted(os.listdir(chapter_dir)):
-            if f.endswith(".json") and f not in json_files and not f.startswith("_"):
+            if f.endswith(".json") and f not in json_files and not f.startswith("_") and "_ending" not in f:
                 json_files.append(f)
     else:
-        json_files = sorted(f for f in os.listdir(chapter_dir) if f.endswith(".json"))
+        json_files = sorted(f for f in os.listdir(chapter_dir)
+                          if f.endswith(".json") and not f.startswith("_") and "_ending" not in f)
+
+    # 为每个 story node 注入对应的 _ending.json（集成战略结局文本）
+    enhanced_files = []
+    for jf in json_files:
+        enhanced_files.append(jf)
+        base = jf.replace(".json", "")
+        ending_file = f"{base}_ending.json"
+        if os.path.exists(os.path.join(chapter_dir, ending_file)):
+            enhanced_files.append(ending_file)
+    json_files = enhanced_files
 
     if not json_files:
         raise FileNotFoundError(f"章节目录 {chapter_dir} 下无 JSON 文件")
@@ -88,19 +145,43 @@ def load_chapter(chapter_dir: str) -> ChapterDialogue:
     result = ChapterDialogue(chapter=chapter_name, category="", nodes=[], lines=[])
 
     for jf in json_files:
-        with open(os.path.join(chapter_dir, jf), "r", encoding="utf-8") as f:
+        file_path = os.path.join(chapter_dir, jf)
+        with open(file_path, "r", encoding="utf-8") as f:
             node = json.load(f)
-        result.nodes.append(jf)
-        if not result.category and node.get("category"):
-            result.category = node["category"]
-        for line in node.get("lines", []):
-            result.lines.append({
-                "global_index": len(result.lines) + 1,
-                "speaker": line.get("speaker", ""),
-                "type": line.get("type", "dialogue"),
-                "text": line.get("text", ""),
-                "_node_file": jf,
-            })
+
+        if jf.endswith("_ending.json"):
+            # 按 PART 标记拆分为独立场景，每个 PART 一个虚拟 node
+            ending_title = node.get("ending_title", "")
+            ending_source = node.get("source", "")
+            ending_text = node.get("text", "")
+            part_blocks = _split_by_parts(ending_text)
+            for part_label, part_lines_text in part_blocks:
+                part_node_name = jf.replace(".json", f"_{part_label}")
+                result.nodes.append(part_node_name)
+                for line_text in part_lines_text.split("\n"):
+                    line_text = line_text.strip()
+                    if line_text:
+                        result.lines.append({
+                            "global_index": len(result.lines) + 1,
+                            "speaker": "",
+                            "type": "narration",
+                            "text": line_text,
+                            "_node_file": part_node_name,
+                            "_ending_title": ending_title,
+                            "_ending_source": ending_source,
+                        })
+        else:
+            result.nodes.append(jf)
+            if not result.category and node.get("category"):
+                result.category = node["category"]
+            for line in node.get("lines", []):
+                result.lines.append({
+                    "global_index": len(result.lines) + 1,
+                    "speaker": line.get("speaker", ""),
+                    "type": line.get("type", "dialogue"),
+                    "text": line.get("text", ""),
+                    "_node_file": jf,
+                })
 
     return result
 
