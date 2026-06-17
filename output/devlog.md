@@ -182,3 +182,30 @@ arknights_wiki/extraction/ (5 模块, 28 tests)
 2. 读本文件末尾 — 最新决策
 3. 读 output/sessions/2026-06-17-1.md — 完整会话记录
 4. 下一步：原始数据分支处理数据问题 → feature/pass1-event-extraction 全量 109 章
+
+---
+
+## IS 结局适配 (2026-06-17)
+
+### 架构决策
+
+- **_ending.json 按 PART 拆分**：`_split_by_parts()` 用 `^PART \d+` 正则将结局文本拆为独立 Scene（每个结局 4 PART = 4 场景）。Why: 整个结局作为单一场景时 LLM 会在 PART 之间夹断叙事
+- **IS 专用提示词**：`IS_PROMPT_APPENDIX` 注入来源说明（想象未来/IF线）、总结格式要求（结局→PART 层级）、is_imaginary 强制规则。`build_system_prompt("is")` 拼接完整 prompt
+- **Taxonomy 驱动**：`run_all/run_trial` 加载 `config/story_taxonomy.json`，自动跳过 skip 章节，IS 章节传 `chapter_type="is"`
+- **is_imaginary 全域标记**：所有 IS 章节事件（含序章框架和结局文本）标记 `is_imaginary: true`
+
+### 萨卡兹试跑 (4 轮调优)
+
+| 轮次 | 场景 | Events | Concepts | 关键改进 |
+|------|------|--------|----------|----------|
+| #1 | 15 | 31 | 6 | 基础 prompt，_ending 重复加载 |
+| #2 | 10 | 25 | 14 | summary 按 Ending+PART 分节 |
+| #3 | 10 | 22 | 9 | 全部 is_imaginary=true |
+| #4 | 25 | 29 | 11 | **PART 拆分为独立 Scene** |
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 memory/session_20260617_is_adapter.md — 完整会话记录
+4. 下一步：全量 109 章 Pass 1 批量执行 → 质量检验
