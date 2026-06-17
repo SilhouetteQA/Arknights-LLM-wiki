@@ -2,7 +2,9 @@
 import json, os, time
 from datetime import datetime, timezone
 
-from .dialogue_loader import load_chapter, split_chapter
+from .dialogue_loader import (
+    load_chapter, split_chapter, build_context_prompt, scene_line_to_global,
+)
 from .prompt_builder import build_system_prompt, build_user_prompt
 from .llm_client import create_client, call_llm
 from .post_processor import (
@@ -27,6 +29,66 @@ def discover_chapters(data_dir: str = "data/stories") -> list[tuple[str, str]]:
     return chapters
 
 
+def _get_model_label() -> str:
+    """获取当前模型标识"""
+    from .llm_client import _get_model_config
+    return _get_model_config()["model"]
+
+
+def _convert_batch_scene_ranges(batch_data: dict, batch_cd) -> dict:
+    """将单个批次的 scene-relative line_range 转换为批内全局行号"""
+    for ev in batch_data.get("events", []):
+        lr = ev.get("line_range", {})
+        if isinstance(lr, dict) and "scene" in lr:
+            scene_num = lr["scene"]
+            lines = lr.get("lines", [1, 1])
+            ev["line_range"] = [
+                scene_line_to_global(batch_cd, scene_num, lines[0]),
+                scene_line_to_global(batch_cd, scene_num, lines[1]),
+            ]
+
+    for c in batch_data.get("concepts", []):
+        lr = c.get("line_range", {})
+        if isinstance(lr, dict) and "scene" in lr:
+            scene_num = lr["scene"]
+            lines = lr.get("lines", [1, 1])
+            c["line_range"] = [
+                scene_line_to_global(batch_cd, scene_num, lines[0]),
+                scene_line_to_global(batch_cd, scene_num, lines[1]),
+            ]
+
+    for f in batch_data.get("factions", []):
+        lr = f.get("line_range", {})
+        if isinstance(lr, dict) and "scene" in lr:
+            scene_num = lr["scene"]
+            lines = lr.get("lines", [1, 1])
+            f["line_range"] = [
+                scene_line_to_global(batch_cd, scene_num, lines[0]),
+                scene_line_to_global(batch_cd, scene_num, lines[1]),
+            ]
+
+    for loc in batch_data.get("locations", []):
+        lr = loc.get("line_range", {})
+        if isinstance(lr, dict) and "scene" in lr:
+            scene_num = lr["scene"]
+            lines = lr.get("lines", [1, 1])
+            loc["line_range"] = [
+                scene_line_to_global(batch_cd, scene_num, lines[0]),
+                scene_line_to_global(batch_cd, scene_num, lines[1]),
+            ]
+
+    return batch_data
+
+
+def _offset_line_ranges(batch_data: dict, offset: int):
+    """将批次内的 line_range 统一加偏移量，映射到章全局行号"""
+    for section in ["events", "concepts", "factions", "locations"]:
+        for item in batch_data.get(section, []):
+            lr = item.get("line_range", [])
+            if isinstance(lr, list) and len(lr) == 2:
+                item["line_range"] = [lr[0] + offset, lr[1] + offset]
+
+
 def extract_chapter(
     category: str,
     chapter: str,
@@ -34,7 +96,7 @@ def extract_chapter(
     identity_map_path: str = "config/identity_map.json",
     operators_path: str = "data/operators.json",
 ) -> dict:
-    """提取单章：加载 → 分批 → LLM → 合并 → 后处理"""
+    """提取单章：加载 → 分批 → LLM（带上下文）→ scene→global 转换 → 合并 → 后处理"""
     chapter_dir = os.path.join(data_dir, category, chapter)
     cd = load_chapter(chapter_dir)
     batches = split_chapter(cd)
@@ -47,22 +109,31 @@ def extract_chapter(
     system_prompt = build_system_prompt()
     all_batches = []
     total_stats = {"tokens_in": 0, "tokens_out": 0, "elapsed_s": 0}
+    batch_line_offset = 0  # 累计行数偏移，用于将批次行号映射到全局行号
 
-    for batch in batches:
+    for bi, batch in enumerate(batches):
+        context = ""
+        if bi > 0 and all_batches:
+            context = build_context_prompt(all_batches)
+
         user_prompt = build_user_prompt(
             chapter=batch.chapter,
             dialogue_text=batch.text,
             total_lines=len(batch.lines),
+            scene_count=batch.scene_count(),
+            context=context,
         )
+
+        ctx_info = f" (带前{len([b for b in all_batches if not b.get('_parse_error')])}批上下文)" if context else ""
+        print(f"  批次 {bi+1}/{len(batches)}: {len(batch.lines)} 行, {batch.scene_count()} 场景, ~{batch.token_estimate:,} tokens{ctx_info}")
 
         t0 = time.time()
         llm_result = call_llm(client, system_prompt, user_prompt)
         elapsed = time.time() - t0
 
         if llm_result.get("_parse_error"):
-            print(f"  WARNING: {chapter} JSON 解析失败，记录原始输出")
+            print(f"  WARNING: JSON 解析失败")
             all_batches.append({
-                "chapter": batch.chapter, "category": cd.category,
                 "summary": "", "events": [], "characters": [], "concepts": [],
                 "_parse_error": True, "_raw": llm_result.get("_raw", ""),
             })
@@ -70,15 +141,25 @@ def extract_chapter(
             stats = llm_result.pop("_stats", {})
             total_stats["tokens_in"] += stats.get("tokens_in", 0)
             total_stats["tokens_out"] += stats.get("tokens_out", 0)
+            # scene-relative → batch-local global → chapter-global（加上前几批的偏移）
+            llm_result = _convert_batch_scene_ranges(llm_result, batch)
+            if batch_line_offset > 0:
+                _offset_line_ranges(llm_result, batch_line_offset)
             all_batches.append(llm_result)
+            n_ev = len(llm_result.get("events", []))
+            n_cc = len(llm_result.get("concepts", []))
+            print(f"  tokens: in={stats.get('tokens_in',0):,} out={stats.get('tokens_out',0):,} events={n_ev} concepts={n_cc} {elapsed:.1f}s")
 
         total_stats["elapsed_s"] += elapsed
+        batch_line_offset += len(batch.lines)
 
-    merged = merge_batches(all_batches, chapter)
+    # 合并所有批次
+    merged = merge_batches(all_batches, chapter, source_category=cd.category)
     merged["processed_at"] = datetime.now(timezone.utc).isoformat()
-    merged["model"] = "MiniMax-M3"
+    merged["model"] = _get_model_label()
     merged["stats"] = total_stats
 
+    # 校验（使用原始 cd 的总行数）
     errors = validate_extraction(merged, len(cd.lines))
     if errors:
         merged["_validation_errors"] = errors
@@ -94,7 +175,7 @@ def extract_chapter(
 
 def save_extraction(data: dict, output_base: str = "data/extractions/v1_events") -> str:
     """保存提取结果 JSON"""
-    category = data["category"]
+    category = data.get("category", "unknown")
     chapter = data["chapter"]
     out_dir = os.path.join(output_base, category)
     os.makedirs(out_dir, exist_ok=True)
@@ -124,7 +205,7 @@ def generate_review_markdown(data: dict, lines: list[str]) -> str:
         md += f"- **意义:** {ev.get('significance', '')}\n\n"
 
         lr = ev.get("line_range", [0, 0])
-        if lr[0] > 0 and lr[0] <= len(lines):
+        if isinstance(lr, list) and lr[0] > 0 and lr[0] <= len(lines):
             md += "**原文引用:**\n\n```\n"
             for li in range(lr[0] - 1, min(lr[1], len(lines))):
                 if li < len(lines):
@@ -152,7 +233,7 @@ def run_trial(
     trial_chapters: list[tuple[str, str]],
     data_dir: str = "data/stories",
 ) -> dict[str, dict]:
-    """试跑：提取指定章节，生成 JSON + 审阅 Markdown"""
+    """试跑：提取指定章节"""
     results = {}
     os.makedirs("output/trial_review", exist_ok=True)
 
@@ -175,15 +256,19 @@ def run_trial(
         with open(md_path, "w", encoding="utf-8") as f:
             f.write(md)
 
-        print(f"  事件: {len(data.get('events', []))}")
-        print(f"  角色: {len(data.get('characters', []))}")
-        print(f"  概念: {len(data.get('concepts', []))}")
+        s = data.get("stats", {})
+        events_n = len(data.get("events", []))
+        chars_n = len(data.get("characters", []))
+        concepts_n = len(data.get("concepts", []))
+        print(f"  事件: {events_n}")
+        print(f"  角色: {chars_n}")
+        print(f"  概念: {concepts_n}")
+        print(f"  tokens: in={s.get('tokens_in',0):,} out={s.get('tokens_out',0):,}")
         if data.get("_validation_errors"):
-            print(f"  校验错误: {data['_validation_errors']}")
+            print(f"  校验: {data['_validation_errors']}")
         if data.get("_unmatched_names"):
-            print(f"  未匹配角色名: {data['_unmatched_names']}")
-        print(f"  JSON → data/extractions/v1_events/{category}/{chapter}.json")
-        print(f"  Markdown → {md_path}")
+            print(f"  未匹配: {data['_unmatched_names']}")
+        print(f"  JSON → data/extractions/v1_events/{data.get('category', category)}/{chapter}.json")
 
         results[chapter] = data
 
@@ -194,7 +279,7 @@ def run_all(
     data_dir: str = "data/stories",
     skip_chapters: set = None,
 ) -> list[dict]:
-    """全量 109 章提取"""
+    """全量章节提取"""
     if skip_chapters is None:
         skip_chapters = set()
 

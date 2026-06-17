@@ -146,3 +146,39 @@ arknights_wiki/extraction/ (5 模块, 28 tests)
 2. 读本文件末尾 — 最新决策
 3. 读 output/sessions/2026-06-16-4.md — 完整会话记录
 4. 下一步：审阅试跑 Markdown → 修复质量问题 → 全量 109 章
+
+---
+
+## Pass 1 质量修复 (2026-06-17)
+
+### 架构决策
+
+- **场景级行号**：对话按 Scene（node）组织，Scene 内行号独立编号。LLM 输出 scene-relative line_range，后处理转换为章全局行号。彻底消除 [1, 200] 整数估算和 [1, 3464] 章级范围
+- **游戏顺序**：从 data/index.json 提取 PRTS Wiki 原始抓取顺序生成 _order.json。`load_chapter` 读取 _order.json 确保 ST 节点正确穿插
+- **自然节点分块**：<=2000 行不分，2000-5000 分 2 段，>5000 分 3 段。多批间传递摘要+事件列表作上下文
+- **行号偏移**：`_offset_line_ranges` 将批次行号加前批累计偏移，合并后全局无重叠
+- **概念严格化**：`_reject_broad_concepts` 拒绝 span>200 行的伪概念。prompt 要求 concepts/factions/locations 都用实质性讨论范围
+- **DeepSeek 自动检测**：`create_client` 优先读 `deepseek_api`，回退 `minimax_api`
+- **角色匹配升级**：identity_map 120+ 条（真名→代号+异格+别名），复合名 `·` 拆分匹配
+- **factions/locations**：与 concepts 同格式输出，支持同名多处讨论（不合并去重）
+
+### 试跑基线
+
+| 章节 | 行数 | 批 | Events | Concepts | Factions | Locations |
+|------|------|-----|--------|----------|----------|-----------|
+| 怀黍离 | 3038 | 2 | 67 | 15 | 6 | 5 |
+| 相见欢 | 3714 | 2 | 63 | 11 | - | - |
+| 长夜临光 | 6646 | 3 | 89 | 13 | - | - |
+
+### 已知问题
+
+- 3 tests 预存失败（test_stats_collector，无关本次修改）
+- 部分 factions/locations 仍为短 span（2-4 行），属合理的一带而过
+- HD 节点（逃离/选择/路漫漫）排在末尾而非游戏实际穿插位置
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-17-1.md — 完整会话记录
+4. 下一步：原始数据分支处理数据问题 → feature/pass1-event-extraction 全量 109 章

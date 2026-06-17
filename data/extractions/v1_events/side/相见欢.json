@@ -1,0 +1,1310 @@
+{
+  "chapter": "相见欢",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章以炎国京城百灶为舞台，围绕新皇登基、岁兽威胁、大理寺旧案等多条线索展开。开篇，太傅密会宗师朔，告知先帝驾崩与岁兽碎片「黑子」重现京城，朔被要求立即返回玉门稳定局势。同时，新帝炎武在宫中处理太师谋逆案的余波，而一个婴儿在混乱中被神秘人救走。\n\n大理寺少卿麟青砚（惊蛰）带着罗德岛干员煌回到百灶，调查煌父亲顾筌之死的真相。煌在寻找父亲寄过的特殊点心「桔红酥」时，与脾气暴躁的小饭馆大厨打赌，并结识了美食评论家行箸。麟青砚则发现大理寺卷牍库被烧，退休少卿虞澄自首认罪，但供词荒诞不经，背后似乎隐藏着更大的秘密。\n\n麟青砚追查顾筌的线索，发现其档案疑点重重，并前往百灶学宫查证，得知顾筌可能曾用名「顾笙」，且其档案被转移至刑部死狱。同时，煌在行箸和小大厨的帮助下，为参加鼎丰楼厨师选拔赛学习做长寿面，试图通过比赛见到总厨莫不服，询问桔红酥的配方。\n\n在鼎丰楼，煌通过前两关考验，但莫不服认出她做的长寿面配方来自小大厨，勃然大怒。此时鼎丰楼突发火灾，麟青砚赶到并追捕纵火者，但被其逃脱。事后，莫不服承认自己曾是刑部死狱的厨师，并认出顾筌就是当年因在百珍宴上献菜为太师平反而入狱的犯人。顾筌后被虞澄和宁述救出，这揭示了煌父亲之死与四十年前太师谋逆案存在深层关联。\n\n本段剧情围绕百珍宴前后展开多条并行线。龙门总督魏彦吾收到真龙邀请赴京参加百珍宴，与文月就过去四十年恩怨和自身责任进行深刻对话，最终决定前往百灶面对过去。大理寺少卿麟青砚在谌彻的警告下被迫放弃调查顾筌案，并向煌出示伪造的结案卷宗，试图将她送离百灶。与此同时，鼎丰楼总厨莫不服来到余味居，讲述三十年前雪夜一碗面的往事，并宣布煌通过考核。宁茵（行箸）邀请煌到宁府，通过回忆揭示顾筌在宁府担任誊录郎的往事，以及他身患重病、最终死于前往维多利亚途中的真相。麟青砚在解真的劝说下重新振作，决定继续追查。煌与麟青砚策划闯入百珍宴直接向真龙陈情。百珍宴上突发妖火，宴会中断，煌在逃离时被禁军小教头拦截，被告知自己是四十年前太师谋逆案中唯一幸存的孩子。宁茵在禁城中被神秘人所救。煌被小大厨救回余味居，小大厨通过桔红酥揭示自己与顾筌的旧识关系。虞澄与宁述在大理寺狱中对质，宁述承认太师案是冤案，并讲述四十年前宫廷政变的真相。解真向麟青砚揭示自己与虞澄多年来的谋划，以及煌被送往罗德岛的前因后果。煌与宁茵相认，得知两人实为姐妹。小大厨（余）决定离开饭馆，前往古寺与二哥（望）相见，并用自己的力量熬制一碗汤送行。煌在禁军小教头的阻拦下坚持要见真龙，得到麟青砚、解真、太合的帮助。煌最终见到真龙，当面质问太师案的真相，要求真龙不要忘记那些被牺牲的人。真龙下令开启岁陵，准许望进入申诉冤屈。虞澄坦然服法入狱。麟青砚辞官回天师府修行。余味居的小大厨在梦中与岁兽残识对话后，决定继续经营饭馆。片尾彩蛋中，老天师拦截睚，槐琥和老鲤寻找槐天裴，魏彦吾在前往百灶途中与陈晖洁重逢。",
+  "events": [
+    {
+      "event": "太傅密会宗师朔，告知先帝驾崩与岁兽黑子重现，命其速返玉门",
+      "type": "secret_meeting",
+      "line_range": [
+        1,
+        41
+      ],
+      "participants": [
+        "朔",
+        "太傅"
+      ],
+      "location": "百灶茶馆",
+      "significance": "揭示岁兽威胁重现，以及朝廷高层对局势的担忧和部署"
+    },
+    {
+      "event": "新帝炎武在宫中处理太师谋逆案余波，得知兄长叛逃，婴儿失踪",
+      "type": "political_intrigue",
+      "line_range": [
+        45,
+        75
+      ],
+      "participants": [
+        "炎武",
+        "太尉"
+      ],
+      "location": "百灶皇宫",
+      "significance": "展现新皇登基后的朝堂动荡与权力斗争"
+    },
+    {
+      "event": "神秘人救走太师案中的婴儿，将其托付给一位老人收养",
+      "type": "rescue",
+      "line_range": [
+        76,
+        117
+      ],
+      "participants": [
+        "满手血污的人",
+        "沉默的老人"
+      ],
+      "location": "百灶郊外",
+      "significance": "埋下伏笔，暗示太师案另有隐情，婴儿将成为未来关键"
+    },
+    {
+      "event": "大理寺官员在小饭馆闲聊，提及鼎丰楼火灾、宁府蜜糖封口案以及虞澄自首烧卷牍库",
+      "type": "investigation",
+      "line_range": [
+        150,
+        205
+      ],
+      "participants": [
+        "疲惫的大理寺官员",
+        "严肃的大理寺官员",
+        "饭馆的熟客"
+      ],
+      "location": "余味居小饭馆",
+      "significance": "通过闲谈引出百灶城内发生的多起离奇案件，为后续剧情铺垫"
+    },
+    {
+      "event": "煌与余味居小大厨因桔红酥口味发生争执并打赌",
+      "type": "confrontation",
+      "line_range": [
+        241,
+        293
+      ],
+      "participants": [
+        "煌",
+        "小大厨",
+        "老姜"
+      ],
+      "location": "余味居小饭馆",
+      "significance": "引出煌寻找父亲线索的主线，并结识小大厨和行箸"
+    },
+    {
+      "event": "大理寺审问虞澄，虞澄以荒诞供词承认火烧卷牍库，麟青砚察觉疑点",
+      "type": "interrogation",
+      "line_range": [
+        316,
+        390
+      ],
+      "participants": [
+        "虞澄",
+        "谌彻",
+        "麟青砚",
+        "解真"
+      ],
+      "location": "大理寺决院",
+      "significance": "揭示虞澄行为反常，暗示卷牍库失火与旧案有关"
+    },
+    {
+      "event": "麟青砚与煌在住处发生争执，煌表达查明父亲死因的决心",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        595,
+        639
+      ],
+      "participants": [
+        "麟青砚",
+        "煌"
+      ],
+      "location": "百灶住处",
+      "significance": "深化煌的人物动机，明确其调查父亲之死的核心目标"
+    },
+    {
+      "event": "宁辞秋回京探望祖父宁述，梁洵到访，三人讨论玉门回京与岁兽问题",
+      "type": "family_moment",
+      "line_range": [
+        640,
+        742
+      ],
+      "participants": [
+        "宁辞秋",
+        "宁述",
+        "梁洵"
+      ],
+      "location": "宁府",
+      "significance": "展现宁述的政治立场，引出关于岁兽战争的讨论"
+    },
+    {
+      "event": "麟青砚拜访宁述，询问顾筌调迁一事，宁述解释是顾筌主动请求",
+      "type": "investigation",
+      "line_range": [
+        779,
+        853
+      ],
+      "participants": [
+        "麟青砚",
+        "宁述"
+      ],
+      "location": "宁府",
+      "significance": "麟青砚调查顾筌案，宁述的证词看似合理但存在疑点"
+    },
+    {
+      "event": "麟青砚离开宁府时被禁军小教头盘问，对方警告其莫立危墙之下",
+      "type": "confrontation",
+      "line_range": [
+        868,
+        871
+      ],
+      "participants": [
+        "麟青砚",
+        "禁军小教头"
+      ],
+      "location": "宁府门外",
+      "significance": "暗示麟青砚的调查触及了高层敏感领域，面临压力"
+    },
+    {
+      "event": "行箸与煌在百灶寻找桔红酥，行箸讲述点心历史与百灶建城故事",
+      "type": "investigation",
+      "line_range": [
+        872,
+        913
+      ],
+      "participants": [
+        "行箸",
+        "煌"
+      ],
+      "location": "百灶街头",
+      "significance": "通过寻找点心，展现百灶城市历史与炎国文化，加深煌与行箸的友谊"
+    },
+    {
+      "event": "小大厨提议让煌参加鼎丰楼厨师选拔赛，以见到总厨莫不服",
+      "type": "planning",
+      "line_range": [
+        1046,
+        1081
+      ],
+      "participants": [
+        "小大厨",
+        "行箸",
+        "煌"
+      ],
+      "location": "余味居",
+      "significance": "推动煌接近莫不服，为后续剧情发展提供契机"
+    },
+    {
+      "event": "麟青砚潜入百灶学宫查档案，发现顾筌真名顾笙，档案被转移至刑部死狱",
+      "type": "revelation",
+      "line_range": [
+        1082,
+        1256
+      ],
+      "participants": [
+        "麟青砚",
+        "景教授"
+      ],
+      "location": "百灶学宫",
+      "significance": "重大发现：顾筌身份造假，曾用名顾笙，且其档案被特殊处理，指向刑部死狱"
+    },
+    {
+      "event": "煌在行箸和小大厨指导下学习做长寿面，分享罗德岛生日回忆",
+      "type": "character_development",
+      "line_range": [
+        1257,
+        1343
+      ],
+      "participants": [
+        "煌",
+        "行箸",
+        "小大厨"
+      ],
+      "location": "余味居",
+      "significance": "展现煌的成长与罗德岛同伴情谊，深化行箸的人物背景"
+    },
+    {
+      "event": "左乐回到百灶，与太合讨论岁兽威胁和朝中态度，决定亲自调查",
+      "type": "planning",
+      "line_range": [
+        1446,
+        1481
+      ],
+      "participants": [
+        "左乐",
+        "太合"
+      ],
+      "location": "左府",
+      "significance": "引入左乐线，展现朝廷对岁兽问题的强硬态度和左乐的独立调查决心"
+    },
+    {
+      "event": "煌通过鼎丰楼前两关考试，并在第三关被莫不服识破",
+      "type": "confrontation",
+      "line_range": [
+        1493,
+        1605
+      ],
+      "participants": [
+        "煌",
+        "莫不服",
+        "行箸"
+      ],
+      "location": "鼎丰楼",
+      "significance": "煌接近目标，但莫不服认出其配方来自小大厨，引发冲突"
+    },
+    {
+      "event": "鼎丰楼突发火灾，麟青砚追捕纵火者未果，纵火者暗示麟青砚不敢面对真相",
+      "type": "ambush",
+      "line_range": [
+        1606,
+        1648
+      ],
+      "participants": [
+        "麟青砚",
+        "煌",
+        "莫不服",
+        "戴面具的人"
+      ],
+      "location": "鼎丰楼",
+      "significance": "纵火者再次出现，其话语暗示麟青砚的调查方向正确，但触及禁忌"
+    },
+    {
+      "event": "莫不服承认自己曾是刑部死狱厨师，并认出顾筌是因献菜为太师平反而入狱",
+      "type": "revelation",
+      "line_range": [
+        1649,
+        1765
+      ],
+      "participants": [
+        "莫不服",
+        "麟青砚",
+        "煌"
+      ],
+      "location": "鼎丰楼",
+      "significance": "核心揭秘：顾筌入狱与四十年前太师谋逆案直接相关，虞澄和宁述曾参与营救"
+    },
+    {
+      "event": "魏彦吾收到真龙邀请赴京参加百珍宴，与文月就过去四十年恩怨和自身责任进行深刻对话，最终决定前往百灶面对过去",
+      "type": "revelation",
+      "line_range": [
+        1766,
+        1900
+      ],
+      "participants": [
+        "魏彦吾",
+        "文月",
+        "影卫"
+      ],
+      "location": "龙门魏府",
+      "significance": "揭示魏彦吾与真龙（胞弟）之间四十年的恩怨，以及他决定面对过去的决心"
+    },
+    {
+      "event": "谌彻警告麟青砚停止调查顾筌案，暗示煌的身份特殊，继续追查会危及她的人身安全",
+      "type": "confrontation",
+      "line_range": [
+        1823,
+        1875
+      ],
+      "participants": [
+        "谌彻",
+        "麟青砚"
+      ],
+      "location": "大理寺",
+      "significance": "谌彻揭示煌可能是四十年前太师案中幸存的孩子，迫使麟青砚放弃调查"
+    },
+    {
+      "event": "麟青砚向煌出示伪造的结案卷宗，声称顾筌死于意外，试图将她送离百灶",
+      "type": "betrayal",
+      "line_range": [
+        1901,
+        1926
+      ],
+      "participants": [
+        "麟青砚",
+        "煌"
+      ],
+      "location": "大理寺外",
+      "significance": "麟青砚为保护煌而选择隐瞒真相，导致两人关系紧张"
+    },
+    {
+      "event": "莫不服来到余味居，讲述三十年前雪夜一碗面的往事，并宣布煌通过鼎丰楼考核",
+      "type": "revelation",
+      "line_range": [
+        1927,
+        1998
+      ],
+      "participants": [
+        "莫不服",
+        "老姜",
+        "小大厨"
+      ],
+      "location": "余味居",
+      "significance": "揭示莫不服追寻三十年的味道来自小大厨，以及小大厨对厨艺传承的独特见解"
+    },
+    {
+      "event": "宁茵邀请煌到宁府，通过回忆揭示顾筌在宁府担任誊录郎的往事，以及他身患重病、最终死于前往维多利亚途中的真相",
+      "type": "revelation",
+      "line_range": [
+        2020,
+        2141
+      ],
+      "participants": [
+        "宁茵",
+        "煌",
+        "顾筌",
+        "宁府医官"
+      ],
+      "location": "宁府",
+      "significance": "揭示顾筌在宁府的生活细节，以及他身患重病仍坚持前往维多利亚的真相"
+    },
+    {
+      "event": "解真以肃政院御史身份审问麟青砚，暗示虞澄有意让她追查真相，并劝说她不要放弃",
+      "type": "investigation",
+      "line_range": [
+        2144,
+        2217
+      ],
+      "participants": [
+        "解真",
+        "麟青砚"
+      ],
+      "location": "大理寺",
+      "significance": "解真揭示虞澄的谋划，并劝说麟青砚继续追查真相"
+    },
+    {
+      "event": "宁茵向宁述表达自己决定留在百灶，并透露自己发现大炎史书上缺失了一个人的秘密",
+      "type": "character_development",
+      "line_range": [
+        2225,
+        2274
+      ],
+      "participants": [
+        "宁茵",
+        "宁述"
+      ],
+      "location": "宁府",
+      "significance": "宁茵决定留在百灶追寻真相，并揭示大炎史书被篡改的线索"
+    },
+    {
+      "event": "煌潜入大理寺寻找麟青砚，两人策划闯入百珍宴直接向真龙陈情",
+      "type": "planning",
+      "line_range": [
+        2275,
+        2325
+      ],
+      "participants": [
+        "煌",
+        "麟青砚"
+      ],
+      "location": "大理寺外",
+      "significance": "煌和麟青砚决定采取极端手段，直接向真龙寻求真相"
+    },
+    {
+      "event": "太傅与太尉在真龙面前就岁兽问题激烈争论，真龙暗示已做出决断",
+      "type": "political_intrigue",
+      "line_range": [
+        2326,
+        2350
+      ],
+      "participants": [
+        "太傅",
+        "太尉",
+        "真龙"
+      ],
+      "location": "禁城",
+      "significance": "揭示朝中主战派与主和派的分歧，以及真龙对岁兽问题的最终态度"
+    },
+    {
+      "event": "虞澄回忆与顾筌的对话，顾筌请求虞澄借自己一死来保护真相",
+      "type": "flashback",
+      "line_range": [
+        2357,
+        2379
+      ],
+      "participants": [
+        "虞澄",
+        "顾筌"
+      ],
+      "location": "回忆中",
+      "significance": "揭示顾筌与虞澄的旧识关系，以及顾筌赴死前的谋划"
+    },
+    {
+      "event": "梁洵与宁辞秋在百珍宴前相遇，两人就信任和真心进行含蓄对话",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2380,
+        2420
+      ],
+      "participants": [
+        "梁洵",
+        "宁辞秋"
+      ],
+      "location": "禁城",
+      "significance": "揭示梁洵与宁辞秋之间的情感纠葛，以及宁辞秋对官场虚伪的洞察"
+    },
+    {
+      "event": "煌与麟青砚混入百珍宴后厨，煌与莫不服就厨艺传承问题进行辩论",
+      "type": "ideological_clash",
+      "line_range": [
+        2421,
+        2474
+      ],
+      "participants": [
+        "煌",
+        "莫不服",
+        "麟青砚"
+      ],
+      "location": "百珍宴后厨",
+      "significance": "煌质疑莫不服的传承理念，主张广传厨艺惠及更多人"
+    },
+    {
+      "event": "左宣辽在玉门收到太尉的月饼和口信，准备迎战",
+      "type": "planning",
+      "line_range": [
+        2475,
+        2487
+      ],
+      "participants": [
+        "左宣辽",
+        "玉门守军"
+      ],
+      "location": "玉门",
+      "significance": "玉门进入最高战备状态，准备应对岁兽威胁"
+    },
+    {
+      "event": "绩约见左乐，透露望可能联合炎国之外的其他巨兽，并暗示自己与望并非完全同心",
+      "type": "revelation",
+      "line_range": [
+        2488,
+        2521
+      ],
+      "participants": [
+        "绩",
+        "左乐"
+      ],
+      "location": "百灶当铺",
+      "significance": "揭示望的布局可能涉及炎国之外的巨兽，以及绩的立场摇摆"
+    },
+    {
+      "event": "宁茵伪造请柬帮助麟青砚混入百珍宴，并表示支持查明真相",
+      "type": "alliance",
+      "line_range": [
+        2522,
+        2556
+      ],
+      "participants": [
+        "宁茵",
+        "麟青砚"
+      ],
+      "location": "禁城",
+      "significance": "宁茵主动协助麟青砚，表明她支持查明真相的决心"
+    },
+    {
+      "event": "百珍宴突发妖火，宴会中断，麟青砚发现是低温火焰",
+      "type": "ambush",
+      "line_range": [
+        2570,
+        2580
+      ],
+      "participants": [
+        "麟青砚"
+      ],
+      "location": "百珍宴会场",
+      "significance": "百珍宴被不明势力破坏，局势陷入混乱"
+    },
+    {
+      "event": "煌在逃离时被禁军小教头拦截，被告知自己是四十年前太师谋逆案中唯一幸存的孩子",
+      "type": "revelation",
+      "line_range": [
+        2581,
+        2686
+      ],
+      "participants": [
+        "煌",
+        "禁军小教头",
+        "麟青砚"
+      ],
+      "location": "禁城",
+      "significance": "煌得知自己的真实身世，是太师案中幸存的后代"
+    },
+    {
+      "event": "宁茵在禁城中被神秘人所救，神秘人将她送回宁府并警告宁述",
+      "type": "rescue",
+      "line_range": [
+        2687,
+        2707
+      ],
+      "participants": [
+        "宁茵",
+        "宁述",
+        "神秘人"
+      ],
+      "location": "禁城/宁府",
+      "significance": "神秘人再次出手相救，暗示与四十年前旧事有关"
+    },
+    {
+      "event": "煌被小大厨救回余味居，小大厨通过桔红酥揭示自己与顾筌的旧识关系",
+      "type": "revelation",
+      "line_range": [
+        2708,
+        2736
+      ],
+      "participants": [
+        "煌",
+        "小大厨"
+      ],
+      "location": "余味居",
+      "significance": "小大厨揭示自己认识顾筌，并通过桔红酥的线索引导煌寻找真相"
+    },
+    {
+      "event": "小大厨回忆顾筌在余味居的往事，顾筌透露自己身患重病、即将赴死",
+      "type": "flashback",
+      "line_range": [
+        2737,
+        2762
+      ],
+      "participants": [
+        "顾筌",
+        "小大厨"
+      ],
+      "location": "余味居（回忆）",
+      "significance": "揭示顾筌临终前的心理状态，以及他对女儿煌的牵挂"
+    },
+    {
+      "event": "宁茵在宁府书房发现爷爷宁述隐藏的史书，怀疑宁述与太师案有关",
+      "type": "investigation",
+      "line_range": [
+        2763,
+        2774
+      ],
+      "participants": [
+        "宁茵",
+        "宁述"
+      ],
+      "location": "宁府",
+      "significance": "宁茵发现宁述隐藏的史书，进一步怀疑爷爷与太师案的关联"
+    },
+    {
+      "event": "虞澄与宁述在大理寺狱中对质，宁述承认太师案是冤案，并讲述四十年前宫廷政变的真相",
+      "type": "revelation",
+      "line_range": [
+        2822,
+        2922
+      ],
+      "participants": [
+        "虞澄",
+        "宁述"
+      ],
+      "location": "大理寺狱",
+      "significance": "揭示四十年前太师案的真相：老真龙死于皇子劝谏之夜，太师被当作替罪羊"
+    },
+    {
+      "event": "解真向麟青砚揭示自己与虞澄多年来的谋划，以及煌被送往罗德岛的前因后果",
+      "type": "revelation",
+      "line_range": [
+        2861,
+        2943
+      ],
+      "participants": [
+        "解真",
+        "麟青砚"
+      ],
+      "location": "大理寺狱",
+      "significance": "揭示虞澄和解真多年来的布局，以及煌被送往罗德岛保护的全过程"
+    },
+    {
+      "event": "虞澄推断出宁述在太师案中的角色：刺杀刑部尚书、收养太师遗孤",
+      "type": "revelation",
+      "line_range": [
+        2944,
+        2976
+      ],
+      "participants": [
+        "虞澄",
+        "宁述"
+      ],
+      "location": "大理寺狱",
+      "significance": "虞澄完整还原四十年前太师案的真相，以及宁述在其中扮演的角色"
+    },
+    {
+      "event": "煌与宁茵相认，得知两人实为姐妹，顾筌是她们共同的父亲",
+      "type": "family_moment",
+      "line_range": [
+        2977,
+        3041
+      ],
+      "participants": [
+        "煌",
+        "宁茵",
+        "小大厨"
+      ],
+      "location": "余味居",
+      "significance": "煌与宁茵相认，两人决定共同面对未来"
+    },
+    {
+      "event": "小大厨（余）决定离开饭馆，前往古寺与二哥（望）相见，并用自己的力量熬制一碗汤送行",
+      "type": "departure",
+      "line_range": [
+        3042,
+        3088
+      ],
+      "participants": [
+        "小大厨",
+        "老姜"
+      ],
+      "location": "余味居",
+      "significance": "小大厨决定回归岁兽身份，前往古寺与望相见"
+    },
+    {
+      "event": "煌在禁军小教头的阻拦下坚持要见真龙，得到麟青砚、解真、太合的帮助",
+      "type": "confrontation",
+      "line_range": [
+        3089,
+        3103
+      ],
+      "participants": [
+        "煌",
+        "禁军小教头"
+      ],
+      "location": "禁城",
+      "significance": "煌决心要见真龙，为所有人讨一个说法"
+    },
+    {
+      "event": "麟青砚、解真、太合联手阻拦禁军小教头，帮助煌进入禁城见真龙",
+      "type": "alliance",
+      "line_range": [
+        3104,
+        3150
+      ],
+      "participants": [
+        "麟青砚",
+        "解真",
+        "太合",
+        "禁军小教头",
+        "煌"
+      ],
+      "location": "禁城",
+      "significance": "三人联手帮助煌进入禁城，展现各自的决心"
+    },
+    {
+      "event": "太傅与梁洵在城楼上对话，太傅对梁洵的抉择表示失望，但安排他去天镜阁任职",
+      "type": "political_intrigue",
+      "line_range": [
+        3151,
+        3195
+      ],
+      "participants": [
+        "太傅",
+        "梁洵"
+      ],
+      "location": "禁城城楼",
+      "significance": "太傅对梁洵的考验和评价，以及梁洵被迫中断百珍宴的谋划"
+    },
+    {
+      "event": "小大厨（余）在余味居与太傅相遇，两人就生意和民生进行对话",
+      "type": "ideological_clash",
+      "line_range": [
+        3196,
+        3228
+      ],
+      "participants": [
+        "小大厨",
+        "太傅"
+      ],
+      "location": "余味居",
+      "significance": "小大厨以生意之道隐喻治国之道，太傅受教后前往尚蜀"
+    },
+    {
+      "event": "煌见到真龙，当面质问太师案的真相，要求真龙不要忘记那些被牺牲的人",
+      "type": "confrontation",
+      "line_range": [
+        3229,
+        3322
+      ],
+      "participants": [
+        "煌",
+        "真龙"
+      ],
+      "location": "禁城",
+      "significance": "煌与真龙正面交锋，要求他为太师案给出解释"
+    },
+    {
+      "event": "余在古寺与望相见，用自己百年来积累的力量熬制一碗汤，劝说望不要怀着死志",
+      "type": "family_moment",
+      "line_range": [
+        3248,
+        3416
+      ],
+      "participants": [
+        "余",
+        "望"
+      ],
+      "location": "古寺",
+      "significance": "余用亲情劝说望，并用自己的力量帮助他"
+    },
+    {
+      "event": "左乐向太傅汇报五只巨兽同时苏醒的紧急情况，太傅表示已在预料之中",
+      "type": "revelation",
+      "line_range": [
+        3323,
+        3342
+      ],
+      "participants": [
+        "左乐",
+        "太傅"
+      ],
+      "location": "禁城",
+      "significance": "揭示望的布局涉及炎国之外的多只巨兽，局势更加复杂"
+    },
+    {
+      "event": "真龙下令开启岁陵，准许望进入申诉冤屈，并表示若他成功则赦免其罪",
+      "type": "political_intrigue",
+      "line_range": [
+        3505,
+        3515
+      ],
+      "participants": [
+        "真龙",
+        "禁军"
+      ],
+      "location": "禁城",
+      "significance": "真龙做出最终决断，开启岁陵，给望一个机会"
+    },
+    {
+      "event": "百灶城下起大雪，煌与麟青砚在雪中对话，煌表示理解并接受过去",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        3516,
+        3527
+      ],
+      "participants": [
+        "煌",
+        "麟青砚"
+      ],
+      "location": "禁城",
+      "significance": "煌在雪中领悟到过去的人留下的痕迹终将消失，但值得被记住"
+    },
+    {
+      "event": "令从醉酒中醒来，决定去看看这场千秋大梦的结局",
+      "type": "character_development",
+      "line_range": [
+        3528,
+        3533
+      ],
+      "participants": [
+        "令"
+      ],
+      "location": "未知",
+      "significance": "令决定介入岁兽事件"
+    },
+    {
+      "event": "年和夕决定前往岁陵，参加真正的家庭聚会",
+      "type": "departure",
+      "line_range": [
+        3534,
+        3553
+      ],
+      "participants": [
+        "年",
+        "夕"
+      ],
+      "location": "未知",
+      "significance": "年和夕决定前往岁陵，面对最终的命运"
+    },
+    {
+      "event": "余在梦中与岁兽残识对话，决定将力量还给祂，并劝说祂安睡",
+      "type": "dream_vision",
+      "line_range": [
+        3554,
+        3564
+      ],
+      "participants": [
+        "余",
+        "岁兽残识"
+      ],
+      "location": "梦中",
+      "significance": "余与岁兽残识和解，将力量归还"
+    },
+    {
+      "event": "望拒绝绩的陪同，独自进入岁陵，表示这是他们之间的事",
+      "type": "departure",
+      "line_range": [
+        3565,
+        3583
+      ],
+      "participants": [
+        "望",
+        "绩"
+      ],
+      "location": "岁陵入口",
+      "significance": "望独自进入岁陵，面对最终的命运"
+    },
+    {
+      "event": "虞澄坦然服法入狱，拒绝申请复审，表示法就是法",
+      "type": "reflection",
+      "line_range": [
+        3584,
+        3629
+      ],
+      "participants": [
+        "虞澄",
+        "麟青砚",
+        "大理寺官员"
+      ],
+      "location": "大理寺外",
+      "significance": "虞澄坦然接受法律制裁，并教导麟青砚法的重要性"
+    },
+    {
+      "event": "麟青砚辞官回天师府修行，表示自己还有很多事想不明白",
+      "type": "departure",
+      "line_range": [
+        3610,
+        3616
+      ],
+      "participants": [
+        "麟青砚",
+        "虞澄"
+      ],
+      "location": "大理寺外",
+      "significance": "麟青砚决定暂时离开官场，回天师府修行"
+    },
+    {
+      "event": "老天师拦截睚，警告他不要在大炎地界上撒野，并揭示睚与望合谋的真正目的",
+      "type": "confrontation",
+      "line_range": [
+        3630,
+        3655
+      ],
+      "participants": [
+        "老天师",
+        "睚"
+      ],
+      "location": "百灶城外",
+      "significance": "揭示睚与望合谋的真正目的与百灶城下的东西有关"
+    },
+    {
+      "event": "槐琥和老鲤寻找槐天裴，发现他陷入疯癫状态",
+      "type": "investigation",
+      "line_range": [
+        3656,
+        3678
+      ],
+      "participants": [
+        "槐琥",
+        "老鲤",
+        "槐天裴"
+      ],
+      "location": "百灶城外",
+      "significance": "槐天裴因某种原因陷入疯癫，可能与剑有关"
+    },
+    {
+      "event": "魏彦吾在前往百灶途中与陈晖洁重逢，陈表示要亲眼看看这段往事的收场",
+      "type": "reunion",
+      "line_range": [
+        3679,
+        3704
+      ],
+      "participants": [
+        "魏彦吾",
+        "陈",
+        "影卫"
+      ],
+      "location": "百灶城外驿馆",
+      "significance": "陈晖洁决定介入魏彦吾的往事，寻求公义"
+    },
+    {
+      "event": "余从梦中醒来，决定继续经营余味居，享受人间滋味",
+      "type": "character_development",
+      "line_range": [
+        3705,
+        3714
+      ],
+      "participants": [
+        "余"
+      ],
+      "location": "余味居",
+      "significance": "余决定继续以人的身份生活，享受人间百味"
+    }
+  ],
+  "characters": [
+    {
+      "name": "朔",
+      "type": "npc",
+      "role_in_chapter": "宗师，被太傅密会告知先帝驾崩与岁兽黑子重现，奉命返回玉门",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "太傅",
+      "type": "npc",
+      "role_in_chapter": "朝廷重臣，密会朔并告知先帝死讯与岁兽威胁，安排朔返回玉门",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "炎武",
+      "type": "npc",
+      "role_in_chapter": "新登基的真龙，处理太师谋逆案余波，得知兄长叛逃",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "太尉",
+      "type": "npc",
+      "role_in_chapter": "向炎武汇报太师案处理情况，并劝谏炎武坚定立场",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "满手血污的人",
+      "type": "npc",
+      "role_in_chapter": "救走太师案中的婴儿，将其托付给老人收养",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "沉默的老人",
+      "type": "npc",
+      "role_in_chapter": "接受托付，收养了太师案中的婴儿",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "煌",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，为调查父亲顾筌之死来到百灶，寻找桔红酥线索，参加鼎丰楼比赛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "麟青砚（惊蛰）",
+      "type": "operator",
+      "role_in_chapter": "大理寺少卿，带煌回百灶调查顾筌案，追查卷牍库失火与鼎丰楼火灾",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "小大厨",
+      "type": "npc",
+      "role_in_chapter": "余味居老板兼大厨，与煌因桔红酥打赌，后教煌做长寿面",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "行箸（行箸散人）",
+      "type": "npc",
+      "role_in_chapter": "美食评论家，与煌结伴寻找桔红酥，帮助煌学习做面",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "虞澄",
+      "type": "npc",
+      "role_in_chapter": "前大理寺少卿，自称火烧卷牍库，行为反常，曾是麟青砚的老师",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "谌彻",
+      "type": "npc",
+      "role_in_chapter": "大理寺卿，主持审问虞澄，警告麟青砚远离此案",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "解真",
+      "type": "npc",
+      "role_in_chapter": "肃政院御史，旁观审问，暗示麟青砚去火灾现场查看",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "宁述",
+      "type": "npc",
+      "role_in_chapter": "前任礼部尚书，退休在家，被麟青砚询问顾筌案，曾参与营救顾筌",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "宁辞秋",
+      "type": "npc",
+      "role_in_chapter": "宁述的孙女，礼部侍郎，回京探望祖父",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "梁洵",
+      "type": "npc",
+      "role_in_chapter": "玉门参知，前来拜访宁辞秋，与宁述讨论岁兽问题",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "禁军小教头",
+      "type": "npc",
+      "role_in_chapter": "御林卫校将，盘问麟青砚，警告其调查的危险性",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "景教授",
+      "type": "npc",
+      "role_in_chapter": "麟青砚的姐姐，百灶学宫教授，帮助麟青砚查找档案",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "左乐",
+      "type": "operator",
+      "role_in_chapter": "秉烛人，回到百灶，与太合讨论岁兽威胁，决定亲自调查",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "太合",
+      "type": "npc",
+      "role_in_chapter": "肃政院监察御史，与左乐讨论当前局势",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莫不服",
+      "type": "npc",
+      "role_in_chapter": "鼎丰楼总厨，曾用名莫小六，在刑部死狱做断头饭，认出顾筌",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "戴面具的人",
+      "type": "npc",
+      "role_in_chapter": "在鼎丰楼纵火的神秘人，与麟青砚短暂交手后逃脱",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "魏彦吾",
+      "type": "operator",
+      "role_in_chapter": "收到真龙邀请赴京，与文月就过去四十年恩怨进行对话，最终决定前往百灶面对过去",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "文月",
+      "type": "npc",
+      "role_in_chapter": "劝说魏彦吾不要轻易赴死，表示要保护他",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "惊蛰",
+      "type": "operator",
+      "role_in_chapter": "被迫放弃调查，后重新振作，策划闯入百珍宴，最终辞官回天师府修行",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老姜",
+      "type": "npc",
+      "role_in_chapter": "余味居的跑堂，照顾煌，与莫不服对话",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "宁茵",
+      "type": "npc",
+      "role_in_chapter": "邀请煌到宁府揭示顾筌往事，帮助麟青砚混入百珍宴，与煌相认为姐妹",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "顾筌",
+      "type": "npc",
+      "role_in_chapter": "通过回忆揭示他在宁府的生活和临终前的谋划",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "左宣辽",
+      "type": "npc",
+      "role_in_chapter": "在玉门收到太尉的月饼和口信，准备迎战",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "绩",
+      "type": "npc",
+      "role_in_chapter": "约见左乐透露望的布局，帮助望进入岁陵",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "真龙",
+      "type": "npc",
+      "role_in_chapter": "与煌对话，下令开启岁陵，准许望进入申诉冤屈",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "望",
+      "type": "npc",
+      "role_in_chapter": "在古寺与余相见，最终独自进入岁陵",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "余",
+      "type": "npc",
+      "role_in_chapter": "在古寺与望相见，用力量熬汤送行，最终回归余味居",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "令",
+      "type": "operator",
+      "role_in_chapter": "从醉酒中醒来，决定去看看千秋大梦的结局",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "年",
+      "type": "operator",
+      "role_in_chapter": "决定前往岁陵参加家庭聚会",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "夕",
+      "type": "operator",
+      "role_in_chapter": "决定前往岁陵参加家庭聚会",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老天师",
+      "type": "npc",
+      "role_in_chapter": "拦截睚，警告他不要在大炎地界上撒野",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "睚",
+      "type": "npc",
+      "role_in_chapter": "被老天师拦截，揭示与望合谋的真正目的",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "槐琥",
+      "type": "operator",
+      "role_in_chapter": "与老鲤寻找槐天裴",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老鲤",
+      "type": "operator",
+      "role_in_chapter": "与槐琥寻找槐天裴",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "槐天裴",
+      "type": "npc",
+      "role_in_chapter": "陷入疯癫状态，可能与剑有关",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "在百灶城外与魏彦吾重逢，表示要亲眼看看这段往事的收场",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "百珍宴",
+      "line_range": [
+        269,
+        285
+      ],
+      "discussion_summary": "严肃的大理寺官员向煌解释百珍宴的由来：原为真龙寿宴，后因户部侍郎献上「珍珠翡翠白玉汤」进谏，演变为借宴席议国事的传统，定于每年中秋节举办。",
+      "is_substantive": true
+    },
+    {
+      "concept": "百灶建城史",
+      "line_range": [
+        1024,
+        1038
+      ],
+      "discussion_summary": "行箸向煌解释百灶建城原因：因发现富饶源石矿脉易引发天灾，天师提议将城市建在矿脉上，通过高能耗设施消耗能源。历经五十三载建成，取「照拂天下烟火」之意赐名百灶。",
+      "is_substantive": true
+    },
+    {
+      "concept": "桔红酥的来历",
+      "line_range": [
+        879,
+        884
+      ],
+      "discussion_summary": "行箸讲述桔红酥的起源：由一位进京求学的书生发明，将陈年桔皮碾碎和进酥皮，成本极低。书生为点心写诗「遥知桔林染，乡心一点红」，后因书生高中而流传，被赋予「思乡」或「思念」的含义。",
+      "is_substantive": true
+    },
+    {
+      "concept": "鼎丰楼与四大菜系",
+      "line_range": [
+        1113,
+        1122
+      ],
+      "discussion_summary": "行箸介绍鼎丰楼历史：约四百年前，鼎丰楼第一代大厨促成四大菜系名厨齐聚百灶，鼎丰楼因此被评为四大名楼之首。小大厨补充指出，后来演变为争名夺利的局面。",
+      "is_substantive": true
+    },
+    {
+      "concept": "长寿面的意义",
+      "line_range": [
+        1363,
+        1367
+      ],
+      "discussion_summary": "煌向小大厨阐述自己对长寿面的理解：长寿面最重要的可能不是味道，而是让吃面的人有被祝福的感觉。用挂面也能给自己或家人送上祝福，这就是长寿面的意义。",
+      "is_substantive": true
+    },
+    {
+      "concept": "「天下一白」的典故",
+      "line_range": [
+        1580,
+        1588
+      ],
+      "discussion_summary": "煌讲述「天下一白」这道菜的来历：约五十年前，太师向真龙献上一道清炖萝卜，寓意天下学子不论出身都应有平等机会。真龙采纳建议推行教育改革，使偏远地区学子受益。",
+      "is_substantive": true
+    },
+    {
+      "concept": "真相与谎言",
+      "line_range": [
+        1847,
+        1853
+      ],
+      "discussion_summary": "谌彻认为过去的事最好的结果就是被人忘掉，麟青砚坚持真相不该是任人玩弄的工具，真相对留下的人还有意义",
+      "is_substantive": true
+    },
+    {
+      "concept": "厨艺传承",
+      "line_range": [
+        2463,
+        2473
+      ],
+      "discussion_summary": "煌质疑莫不服只传一人的传承理念，认为教出更多厨师比教出一个顶尖厨师更重要，莫不服斥之为歪理邪说",
+      "is_substantive": true
+    },
+    {
+      "concept": "为君之道",
+      "line_range": [
+        3307,
+        3312
+      ],
+      "discussion_summary": "真龙解释太师教导的为人之道、为臣之道、为君之道，强调以民为重、以己为轻、励精求治",
+      "is_substantive": true
+    },
+    {
+      "concept": "缺憾与圆满",
+      "line_range": [
+        3352,
+        3367
+      ],
+      "discussion_summary": "余阐述大成若缺的道理，认为世上万般滋味都是从缺憾开始的，无悲则无喜，没有分别就没有相见",
+      "is_substantive": true
+    },
+    {
+      "concept": "法与道义",
+      "line_range": [
+        3599,
+        3606
+      ],
+      "discussion_summary": "虞澄认为法就是法，不是道义，今日的虞澄若不服法，将来会有更多人为各自的道义造出乱事",
+      "is_substantive": true
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T14:06:06",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 83871,
+    "tokens_out": 12143,
+    "elapsed_s": 115.12185335159302
+  },
+  "_unmatched_names": [
+    "朔",
+    "太傅",
+    "炎武",
+    "太尉",
+    "满手血污的人",
+    "沉默的老人",
+    "麟青砚（惊蛰）",
+    "小大厨",
+    "行箸（行箸散人）",
+    "虞澄",
+    "谌彻",
+    "解真",
+    "宁述",
+    "宁辞秋",
+    "梁洵",
+    "禁军小教头",
+    "景教授",
+    "太合",
+    "莫不服",
+    "戴面具的人",
+    "魏彦吾",
+    "文月",
+    "老姜",
+    "宁茵",
+    "顾筌",
+    "左宣辽",
+    "绩",
+    "真龙",
+    "老天师",
+    "睚",
+    "槐天裴"
+  ]
+}
