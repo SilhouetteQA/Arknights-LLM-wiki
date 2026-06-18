@@ -40,7 +40,7 @@ Arknights LLM Wiki/
 ├── README.md
 ├── pyproject.toml                 # 依赖与项目元数据（待创建）
 ├── docs/
-│   └── project-rules.md          # 四章项目规则
+├── CLAUDE.md                     # 项目规则（开发流程/Git/多会话管理）
 ├── arknights_wiki/               # 主代码包（待迁移）
 │   ├── cli.py
 │   ├── config.py
