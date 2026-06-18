@@ -72,10 +72,10 @@ def test_split_chapter_single_batch():
 
 
 def test_split_chapter_two_batches():
-    """中等章节（3500-7000 行）切成 2 批，在中点 node 边界切断"""
+    """中等章节（1500-3000 行）切成 2 批，在中点 node 边界切断"""
     lines = []
     nodes = []
-    for ni in range(20):
+    for ni in range(12):
         nname = f"{ni:03d}_node.json"
         nodes.append(nname)
         for li in range(200):
@@ -88,7 +88,7 @@ def test_split_chapter_two_batches():
             })
 
     cd = ChapterDialogue(chapter="中等章", category="main", nodes=nodes, lines=lines)
-    # 20 nodes * 200 = 4000 lines > 3500 → 2 batches
+    # 12 nodes * 200 = 2400 lines, 1500 < 2400 <= 3000 → 2 batches
 
     batches = split_chapter(cd)
     assert len(batches) == 2
@@ -98,7 +98,7 @@ def test_split_chapter_two_batches():
 
 
 def test_split_chapter_many_batches():
-    """超大章（>7000 行）切成 3 批，在 1/3 和 2/3 node 边界切断"""
+    """大章（>3000 行）切成 3 批，在 1/3 和 2/3 node 边界切断"""
     lines = []
     nodes = []
     for ni in range(100):

@@ -1,0 +1,988 @@
+{
+  "summary": "本章围绕伦蒂尼姆战争尾声的多条剧情线展开。Scene 1中，苇草（拉芙希妮）告别追随她的塔拉民众，独自前往威灵顿公爵的「加斯特里尔」号，以塔拉领袖的身份命令公爵出兵解救伦蒂尼姆平民，并与姐姐爱布拉娜隔空配合，向萨卡兹食腐者之王孽茨雷发起挑战。Scene 2聚焦塔露拉、九和陈在伦蒂尼姆的整合运动据点，他们救助萨卡兹平民并与公爵联军发生冲突，最终决定前往乌萨斯，以纠正塔露拉过去的错误并回应冻原上新的反抗运动。Scene 3讲述诺威尔在伦蒂尼姆废墟中寻找给予他长生「诅咒」的「独角兽」，他救助市民和儿童奥利，在地下遭遇「独角兽」的幻影并拒绝其补偿，最终选择继续救人。Scene 4中，隐德来希与凯尔希会面，讨论玫瑰河畔的往事、特蕾西娅的离去以及寻找失踪的亲王，她破坏了杜卡雷的法阵，并决定继续追查亲王的线索。Scene 5描绘了联军与罗德岛对食腐者阵地的总攻，孽茨雷在展现其战争本质后选择退场，维什戴尔以巴别塔名义占领指挥中心，赫德雷准备用「生命脊椎」带领萨卡兹撤离。Scene 6以萨卡兹撤军为背景，维什戴尔利用「阿喃那」制造天灾云威慑各国，阿米娅宣告萨卡兹将回家并终结仇恨循环，同时拉特兰教宗感知到某种「对话」并开始自问。",
+  "events": [
+    {
+      "event": "苇草告别追随者，独自前往威灵顿公爵的战舰",
+      "type": "departure",
+      "line_range": [
+        14,
+        52
+      ],
+      "participants": [
+        "苇草",
+        "莫兰",
+        "失去土地的农民",
+        "逃离城市的手艺人",
+        "被抛弃的伤兵"
+      ],
+      "location": "伦蒂尼姆外围塔拉人营地",
+      "significance": "苇草决定独自面对姐姐和战争，与追随者分离",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草在战场上救治伤兵，不分敌我",
+      "type": "rescue",
+      "line_range": [
+        59,
+        88
+      ],
+      "participants": [
+        "苇草",
+        "萨卡兹斥候队长",
+        "维多利亚军官",
+        "垂死的塔拉人"
+      ],
+      "location": "伦蒂尼姆城外战场",
+      "significance": "展现苇草的悲悯与中立立场，引起各方注意",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草登上「加斯特里尔」号，以塔拉领袖身份命令威灵顿公爵出兵",
+      "type": "confrontation",
+      "line_range": [
+        110,
+        148
+      ],
+      "participants": [
+        "苇草",
+        "威灵顿公爵"
+      ],
+      "location": "「加斯特里尔」号指挥室",
+      "significance": "苇草正式行使领袖权力，命令塔拉军队介入战争解救平民",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜与孽茨雷在城墙上对峙并交战",
+      "type": "battle",
+      "line_range": [
+        196,
+        222
+      ],
+      "participants": [
+        "爱布拉娜",
+        "孽茨雷"
+      ],
+      "location": "伦蒂尼姆城墙",
+      "significance": "爱布拉娜向食腐者之王展示力量，战争进入高潮",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草返回营地，带领追随者回家",
+      "type": "reunion",
+      "line_range": [
+        223,
+        236
+      ],
+      "participants": [
+        "苇草",
+        "莫兰",
+        "失去土地的农民",
+        "逃离城市的手艺人",
+        "被抛弃的伤兵"
+      ],
+      "location": "塔拉人营地",
+      "significance": "苇草兑现承诺归来，带领众人离开战场",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉、九和陈讨论整合运动的未来，决定救助萨卡兹平民",
+      "type": "planning",
+      "line_range": [
+        246,
+        293
+      ],
+      "participants": [
+        "塔露拉",
+        "九",
+        "陈"
+      ],
+      "location": "伦蒂尼姆工业区工厂",
+      "significance": "展现整合运动内部理念分歧，陈开始参与决策",
+      "is_imaginary": false
+    },
+    {
+      "event": "九与公爵联军士兵对峙，救下被虐待的萨卡兹平民",
+      "type": "confrontation",
+      "line_range": [
+        296,
+        321
+      ],
+      "participants": [
+        "九",
+        "联军士兵",
+        "萨卡兹平民"
+      ],
+      "location": "伦蒂尼姆工业区街道",
+      "significance": "九以典范军庇护为名阻止暴行，展现其行动力",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉、九和陈决定前往乌萨斯",
+      "type": "decision",
+      "line_range": [
+        516,
+        573
+      ],
+      "participants": [
+        "塔露拉",
+        "九",
+        "陈"
+      ],
+      "location": "伦蒂尼姆工业区工厂",
+      "significance": "塔露拉提出回乌萨斯纠正错误，九和陈同意同行，整合运动转向新方向",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺威尔在伦蒂尼姆废墟中救助市民，寻找「独角兽」",
+      "type": "rescue",
+      "line_range": [
+        574,
+        630
+      ],
+      "participants": [
+        "诺威尔",
+        "慌乱的女性",
+        "紧张的男性",
+        "寡言的孩子"
+      ],
+      "location": "伦蒂尼姆封锁区",
+      "significance": "展现诺威尔的长生能力和寻找目标的决心",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺威尔与自救军领袖克洛维希娅相遇并合作",
+      "type": "alliance",
+      "line_range": [
+        639,
+        674
+      ],
+      "participants": [
+        "诺威尔",
+        "克洛维希娅",
+        "受伤的工人"
+      ],
+      "location": "伦蒂尼姆封锁区",
+      "significance": "诺威尔短暂加入自救军，继续寻找目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "克洛维希娅为救孩子奥利坠入废墟，诺威尔下寻",
+      "type": "sacrifice",
+      "line_range": [
+        676,
+        751
+      ],
+      "participants": [
+        "诺威尔",
+        "克洛维希娅",
+        "寡言的孩子"
+      ],
+      "location": "伦蒂尼姆废墟地下",
+      "significance": "克洛维希娅牺牲，诺威尔发现克洛维希娅已死，决定先救孩子",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺威尔在地下遭遇「独角兽」幻影，拒绝其补偿",
+      "type": "confrontation",
+      "line_range": [
+        762,
+        813
+      ],
+      "participants": [
+        "诺威尔",
+        "「独角兽」",
+        "寡言的孩子"
+      ],
+      "location": "伦蒂尼姆废墟地下",
+      "significance": "揭示诺威尔长生的来源，他拒绝「独角兽」的补偿，坚持自己的道路",
+      "is_imaginary": true
+    },
+    {
+      "event": "诺威尔带奥利返回地面，发现伤口不再愈合，决定继续救人",
+      "type": "character_development",
+      "line_range": [
+        814,
+        863
+      ],
+      "participants": [
+        "诺威尔",
+        "紧张的男性",
+        "慌乱的女性"
+      ],
+      "location": "伦蒂尼姆封锁区地面",
+      "significance": "诺威尔的能力出现变化，他选择继续救助他人而非沉溺于个人痛苦",
+      "is_imaginary": false
+    },
+    {
+      "event": "隐德来希与凯尔希会面，讨论玫瑰河畔和特蕾西娅",
+      "type": "revelation",
+      "line_range": [
+        864,
+        923
+      ],
+      "participants": [
+        "凯尔希",
+        "隐德来希"
+      ],
+      "location": "罗德岛安全点附近",
+      "significance": "揭示隐德来希寻找亲王的目的，确认特蕾西娅已离开",
+      "is_imaginary": false
+    },
+    {
+      "event": "隐德来希与弥尔顿对峙，放走他并给予信物",
+      "type": "confrontation",
+      "line_range": [
+        924,
+        998
+      ],
+      "participants": [
+        "隐德来希",
+        "弥尔顿",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "伦蒂尼姆街道",
+      "significance": "展现隐德来希的善后手段和对姐妹的维护",
+      "is_imaginary": false
+    },
+    {
+      "event": "隐德来希与「小聪明」通讯，计划破坏军事委员会指挥中心",
+      "type": "planning",
+      "line_range": [
+        999,
+        1043
+      ],
+      "participants": [
+        "隐德来希",
+        "无线电中的声音"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "隐德来希与姐妹合作，为后续行动铺路",
+      "is_imaginary": false
+    },
+    {
+      "event": "隐德来希发现亲王的遗物和死亡线索",
+      "type": "revelation",
+      "line_range": [
+        1069,
+        1087
+      ],
+      "participants": [
+        "隐德来希"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "揭示亲王已死，隐德来希决心继续追查真相",
+      "is_imaginary": false
+    },
+    {
+      "event": "隐德来希与凯尔希告别，决定继续寻找亲王",
+      "type": "farewell",
+      "line_range": [
+        1088,
+        1118
+      ],
+      "participants": [
+        "隐德来希",
+        "凯尔希"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "隐德来希拒绝罗德岛帮助，计划重建玫瑰河畔",
+      "is_imaginary": false
+    },
+    {
+      "event": "维什戴尔、赫德雷、伊内丝和明椒准备进攻军事委员会指挥中心",
+      "type": "planning",
+      "line_range": [
+        1119,
+        1174
+      ],
+      "participants": [
+        "维什戴尔",
+        "赫德雷",
+        "伊内丝",
+        "明椒"
+      ],
+      "location": "伦蒂尼姆地下",
+      "significance": "赫德雷准备用「生命脊椎」撤离萨卡兹，维什戴尔计划以巴别塔名义行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "戴菲恩放行赫德雷等人，允许他们进攻指挥中心",
+      "type": "alliance",
+      "line_range": [
+        1175,
+        1239
+      ],
+      "participants": [
+        "戴菲恩",
+        "赫德雷",
+        "维什戴尔",
+        "伊内丝",
+        "「灰礼帽」"
+      ],
+      "location": "军事委员会指挥中心外",
+      "significance": "典范军与萨卡兹达成临时合作，共同对抗食腐者",
+      "is_imaginary": false
+    },
+    {
+      "event": "维什戴尔以巴别塔名义广播，宣布占领指挥中心",
+      "type": "declaration",
+      "line_range": [
+        1240,
+        1260
+      ],
+      "participants": [
+        "维什戴尔"
+      ],
+      "location": "军事委员会指挥中心",
+      "significance": "维什戴尔正式以巴别塔名义行动，鼓舞联军士气",
+      "is_imaginary": false
+    },
+    {
+      "event": "联军与罗德岛对食腐者阵地发起总攻，孽茨雷展现战争本质",
+      "type": "battle",
+      "line_range": [
+        1261,
+        1440
+      ],
+      "participants": [
+        "孽茨雷",
+        "阿米娅",
+        "凯尔希",
+        "Logos",
+        "维娜",
+        "号角",
+        "可露希尔",
+        "玛嘉烈",
+        "夜莺",
+        "闪灵",
+        "费斯特",
+        "凯瑟琳"
+      ],
+      "location": "圣王会西部大堂广场",
+      "significance": "食腐者之王展现腐败本质，最终选择退场，战争结束",
+      "is_imaginary": false
+    },
+    {
+      "event": "孽茨雷与特蕾西娅的回忆对话",
+      "type": "flashback",
+      "line_range": [
+        1451,
+        1472
+      ],
+      "participants": [
+        "孽茨雷",
+        "特蕾西娅"
+      ],
+      "location": "回忆中",
+      "significance": "揭示孽茨雷参与战争的动机和对特蕾西娅的承诺",
+      "is_imaginary": true
+    },
+    {
+      "event": "爱布拉娜和威灵顿公爵评论孽茨雷的离去",
+      "type": "reflection",
+      "line_range": [
+        1482,
+        1490
+      ],
+      "participants": [
+        "爱布拉娜",
+        "威灵顿公爵"
+      ],
+      "location": "「加斯特里尔」号",
+      "significance": "爱布拉娜羡慕孽茨雷能享受纯粹的战争",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫德雷和伊内丝组织萨卡兹撤军",
+      "type": "retreat",
+      "line_range": [
+        1500,
+        1517
+      ],
+      "participants": [
+        "赫德雷",
+        "伊内丝"
+      ],
+      "location": "伦蒂尼姆城外",
+      "significance": "赫德雷决定以强势姿态撤军回卡兹戴尔",
+      "is_imaginary": false
+    },
+    {
+      "event": "各国观测到天灾云，萨卡兹展示威慑力",
+      "type": "demonstration",
+      "line_range": [
+        1518,
+        1561
+      ],
+      "participants": [
+        "哥伦比亚军官",
+        "莱塔尼亚贵族",
+        "卡西米尔报业主编"
+      ],
+      "location": "哥伦比亚、莱塔尼亚、卡西米尔等多国",
+      "significance": "维什戴尔利用「阿喃那」制造天灾云威慑各国，确保撤军安全",
+      "is_imaginary": false
+    },
+    {
+      "event": "维什戴尔与曼弗雷德争论「阿喃那」的使用和卡兹戴尔的未来",
+      "type": "ideological_clash",
+      "line_range": [
+        1561,
+        1596
+      ],
+      "participants": [
+        "维什戴尔",
+        "曼弗雷德"
+      ],
+      "location": "「生命脊椎」内部",
+      "significance": "曼弗雷德阐述特雷西斯的阳谋，维什戴尔坚持巴别塔立场",
+      "is_imaginary": false
+    },
+    {
+      "event": "探险家帕尤卡卡接近萨卡兹队伍，被维什戴尔放走",
+      "type": "encounter",
+      "line_range": [
+        1597,
+        1693
+      ],
+      "participants": [
+        "帕尤卡卡",
+        "维什戴尔",
+        "叙拉古家族成员",
+        "雇佣兵斥候",
+        "死魂灵"
+      ],
+      "location": "萨卡兹撤军路线附近",
+      "significance": "帕尤卡卡警告有舰队埋伏，维什戴尔放走他，死魂灵察觉其身上有特殊物品",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅宣告萨卡兹将回家，终结仇恨循环",
+      "type": "declaration",
+      "line_range": [
+        1694,
+        1711
+      ],
+      "participants": [
+        "阿米娅"
+      ],
+      "location": "萨卡兹撤军队伍前方",
+      "significance": "阿米娅以魔王身份宣告萨卡兹的新道路，拒绝更多战争",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉特兰教宗伊万杰利斯塔十一世感知到「对话」并开始自问",
+      "type": "revelation",
+      "line_range": [
+        1712,
+        1725
+      ],
+      "participants": [
+        "伊万杰利斯塔十一世",
+        "教宗骑士",
+        "拉特兰特勤队成员"
+      ],
+      "location": "拉特兰圣城",
+      "significance": "拉特兰教宗感知到某种与拉特兰相似的存在在对话，预示重大变化",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "苇草",
+      "type": "operator",
+      "role_in_chapter": "塔拉领袖，独自前往威灵顿公爵战舰，命令公爵出兵解救伦蒂尼姆平民，后返回带领追随者回家",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "莫兰",
+      "type": "npc",
+      "role_in_chapter": "苇草的追随者，在营地组织众人等待苇草归来",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "威灵顿公爵",
+      "type": "npc",
+      "role_in_chapter": "塔拉军队领袖，在「加斯特里尔」号接待苇草，接受其命令出兵",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "爱布拉娜",
+      "type": "npc",
+      "role_in_chapter": "苇草的姐姐，德拉克，与孽茨雷对峙并交战，指挥塔拉军队",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "孽茨雷",
+      "type": "npc",
+      "role_in_chapter": "食腐者之王，与爱布拉娜交战，后在圣王会西部大堂展现战争本质并退场",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "塔露拉",
+      "type": "operator",
+      "role_in_chapter": "整合运动前领袖，与九和陈一起救助萨卡兹平民，决定回乌萨斯纠正错误",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "九",
+      "type": "npc",
+      "role_in_chapter": "整合运动现任领袖，与塔露拉和陈一起行动，主张以强硬手段救助被压迫者",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，以监视者身份跟随整合运动，参与决策并试图约束九的行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "诺威尔",
+      "type": "npc",
+      "role_in_chapter": "被「独角兽」赐予长生的维多利亚人，在伦蒂尼姆废墟中寻找「独角兽」，救助市民，拒绝其补偿后继续救人",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克洛维希娅",
+      "type": "npc",
+      "role_in_chapter": "伦蒂尼姆自救军领袖，与诺威尔合作疏散市民，为救孩子奥利坠入废墟牺牲",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "「独角兽」",
+      "type": "npc",
+      "role_in_chapter": "赐予诺威尔长生的神秘存在，在地下幻影中与诺威尔对话，被其拒绝",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，与隐德来希会面讨论玫瑰河畔和亲王线索，指挥对食腐者的总攻",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "隐德来希",
+      "type": "npc",
+      "role_in_chapter": "玫瑰河畔成员，血魔，寻找失踪的亲王，破坏杜卡雷法阵，与凯尔希合作",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "弥尔顿",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹雇佣兵，试图刺杀隐德来希以保下姐姐，被隐德来希放走",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "维什戴尔",
+      "type": "operator",
+      "role_in_chapter": "巴别塔成员，以巴别塔名义占领军事委员会指挥中心，利用「阿喃那」制造天灾云威慑各国",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "赫德雷",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹佣兵领袖，组织用「生命脊椎」撤离萨卡兹，与典范军合作",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "伊内丝",
+      "type": "operator",
+      "role_in_chapter": "萨卡兹佣兵，与赫德雷和维什戴尔一起行动，负责组织撤军",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "明椒",
+      "type": "operator",
+      "role_in_chapter": "萨卡兹，跟随赫德雷等人，关心曼弗雷德的安危",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "戴菲恩",
+      "type": "operator",
+      "role_in_chapter": "典范军领袖，放行赫德雷等人进攻指挥中心，与萨卡兹达成临时合作",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，魔王，参与对食腐者的总攻，后宣告萨卡兹将回家并终结仇恨循环",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Logos",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，参与对食腐者的战斗，与Misery讨论撤军事宜",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "曼弗雷德",
+      "type": "npc",
+      "role_in_chapter": "军事委员会将军，被维什戴尔俘虏，阐述特雷西斯的阳谋",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "帕尤卡卡",
+      "type": "npc",
+      "role_in_chapter": "探险家，接近萨卡兹队伍警告有舰队埋伏，被维什戴尔放走，身上有特殊物品",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伊万杰利斯塔十一世",
+      "type": "npc",
+      "role_in_chapter": "拉特兰教宗，感知到某种与拉特兰相似的存在在对话，开始自问",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "战争的本质",
+      "line_range": [
+        126,
+        130
+      ],
+      "discussion_summary": "苇草批评维多利亚人对伦蒂尼姆围而不攻是极为丑陋的战术，源于懦弱",
+      "is_substantive": true
+    },
+    {
+      "concept": "领袖的权力与责任",
+      "line_range": [
+        139,
+        148
+      ],
+      "discussion_summary": "苇草以塔拉的名义命令威灵顿公爵出兵，威灵顿公爵接受命令，讨论领袖命令的效力",
+      "is_substantive": true
+    },
+    {
+      "concept": "死亡与安息",
+      "line_range": [
+        77,
+        88
+      ],
+      "discussion_summary": "苇草与垂死的塔拉人讨论死后成为不眠的死者为塔拉奋战，苇草命令他休息，希望他得到守灵人传说中那样的安息",
+      "is_substantive": true
+    },
+    {
+      "concept": "公平与正义",
+      "line_range": [
+        476,
+        489
+      ],
+      "discussion_summary": "九与陈争论各自追求的公平的差异，九认为陈的善意无法改变任何事情，需要让被压迫者自己去看需要做什么",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动的本质与未来",
+      "line_range": [
+        285,
+        291
+      ],
+      "discussion_summary": "塔露拉认为整合运动是一个她亲手铸就的错误，九想给这个名字新的解释，塔露拉没有拒绝的权利",
+      "is_substantive": true
+    },
+    {
+      "concept": "罪孽与偿还",
+      "line_range": [
+        539,
+        552
+      ],
+      "discussion_summary": "塔露拉承认自己的罪孽无法洗清，接受成为符号和武器，决定回乌萨斯投身火焰以偿还罪行",
+      "is_substantive": true
+    },
+    {
+      "concept": "长生的诅咒",
+      "line_range": [
+        780,
+        788
+      ],
+      "discussion_summary": "诺威尔指责「独角兽」赐予的长生是诅咒，带来了漫长的痛苦而不让他真正死去",
+      "is_substantive": true
+    },
+    {
+      "concept": "祝福与补偿",
+      "line_range": [
+        799,
+        807
+      ],
+      "discussion_summary": "「独角兽」承认诺威尔将祝福认作诅咒，提出可以做出补偿，让诺威尔许下愿望，但诺威尔拒绝并离开",
+      "is_substantive": true
+    },
+    {
+      "concept": "善后人的使命",
+      "line_range": [
+        1063,
+        1066
+      ],
+      "discussion_summary": "隐德来希将善后人定义为舍不得离开、不想接受失败、一直留在原地想把满地碎片重新拼起来的人",
+      "is_substantive": true
+    },
+    {
+      "concept": "告别与确认",
+      "line_range": [
+        919,
+        923
+      ],
+      "discussion_summary": "隐德来希认为若不亲眼见到、亲耳听到、亲口说出，告别就会变得很难，即使心脏感知到众魂离去也要反复确认特蕾西娅是否也在其中",
+      "is_substantive": true
+    },
+    {
+      "concept": "战争的目的与本质",
+      "line_range": [
+        1412,
+        1428
+      ],
+      "discussion_summary": "孽茨雷阐述战争达成了让萨卡兹主宰自己命运的目的，他本人只愿践行存在的本质，腐败与新生无异",
+      "is_substantive": true
+    },
+    {
+      "concept": "战争的终结",
+      "line_range": [
+        1482,
+        1486
+      ],
+      "discussion_summary": "爱布拉娜和威灵顿公爵讨论没有人能杀死战争，孽茨雷的离去只是因为这场战争已经结束了",
+      "is_substantive": true
+    },
+    {
+      "concept": "仇恨的循环",
+      "line_range": [
+        1694,
+        1710
+      ],
+      "discussion_summary": "阿米娅宣告萨卡兹将回家，她不能容忍特蕾西娅的努力白费，也不想萨卡兹或其他人再次掀起另一场战争，仇恨的循环该结束了",
+      "is_substantive": true
+    },
+    {
+      "concept": "威慑与生存",
+      "line_range": [
+        1512,
+        1517
+      ],
+      "discussion_summary": "赫德雷认为必须向所有势力展现出最强势的一面，一旦失去挥动武器的力气，这些人就会被吃得骨头都不剩，主动权必须握在自己手里",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "塔拉人",
+      "line_range": [
+        1,
+        52
+      ],
+      "description": "苇草的追随者，从石高原野一路跟随她来到伦蒂尼姆外围，准备参与战争"
+    },
+    {
+      "faction": "威灵顿公爵的军队",
+      "line_range": [
+        89,
+        110
+      ],
+      "description": "「加斯特里尔」号上的塔拉军队，由威灵顿公爵指挥，接待苇草并接受其命令"
+    },
+    {
+      "faction": "萨卡兹军事委员会",
+      "line_range": [
+        53,
+        58
+      ],
+      "description": "萨卡兹斥候在伦蒂尼姆城外监视战场，讨论巴别塔的频段"
+    },
+    {
+      "faction": "维多利亚公爵联军",
+      "line_range": [
+        62,
+        74
+      ],
+      "description": "维多利亚军官讨论围城策略，不愿正面与萨卡兹作战，对威灵顿撤旗表示不满"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        246,
+        293
+      ],
+      "description": "塔露拉、九和陈领导的感染者队伍，在伦蒂尼姆工业区活动，讨论接纳新成员和未来去向"
+    },
+    {
+      "faction": "公爵联军",
+      "line_range": [
+        296,
+        321
+      ],
+      "description": "在伦蒂尼姆搜捕萨卡兹平民的维多利亚士兵，与九发生冲突"
+    },
+    {
+      "faction": "典范军",
+      "line_range": [
+        310,
+        312
+      ],
+      "description": "九声称工厂区受典范军庇护，以此威慑公爵联军士兵"
+    },
+    {
+      "faction": "伦蒂尼姆自救军",
+      "line_range": [
+        639,
+        674
+      ],
+      "description": "由克洛维希娅领导的市民自救组织，在封锁区组织市民撤离"
+    },
+    {
+      "faction": "玫瑰河畔",
+      "line_range": [
+        864,
+        923
+      ],
+      "description": "隐德来希所属的萨卡兹组织，与巴别塔有旧日联系，成员分散，隐德来希在寻找失踪的亲王"
+    },
+    {
+      "faction": "巴别塔",
+      "line_range": [
+        874,
+        876
+      ],
+      "description": "凯尔希提及巴别塔的安全点，隐德来希怀念在巴别塔的日子"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        901,
+        915
+      ],
+      "description": "凯尔希代表罗德岛与隐德来希合作，提供亲王线索和「铣痕」的情报"
+    },
+    {
+      "faction": "军事委员会",
+      "line_range": [
+        1147,
+        1152
+      ],
+      "description": "维什戴尔认为以特雷西斯的能耐，军事委员会没道理这么快败亡，怀疑有阴谋"
+    },
+    {
+      "faction": "典范军",
+      "line_range": [
+        1198,
+        1239
+      ],
+      "description": "戴菲恩领导的典范军放行赫德雷等人，与萨卡兹达成临时合作，共同对抗食腐者"
+    },
+    {
+      "faction": "食腐者王庭",
+      "line_range": [
+        1261,
+        1440
+      ],
+      "description": "孽茨雷领导的食腐者军队，在圣王会西部大堂与联军和罗德岛交战，最终孽茨雷退场"
+    },
+    {
+      "faction": "卡兹戴尔",
+      "line_range": [
+        1561,
+        1596
+      ],
+      "description": "曼弗雷德阐述特雷西斯的阳谋，让萨卡兹重新团结在卡兹戴尔周围，巴别塔和军事委员会再次合作"
+    },
+    {
+      "faction": "拉特兰",
+      "line_range": [
+        1712,
+        1725
+      ],
+      "description": "教宗骑士和特勤队成员讨论拉特兰对萨卡兹撤军的反应，教宗伊万杰利斯塔十一世感知到某种对话"
+    }
+  ],
+  "locations": [
+    {
+      "location": "伦蒂尼姆",
+      "line_range": [
+        1,
+        6
+      ],
+      "description": "塔拉人讨论已到达伦蒂尼姆外围，准备参与战争"
+    },
+    {
+      "location": "「加斯特里尔」号",
+      "line_range": [
+        89,
+        110
+      ],
+      "description": "威灵顿公爵的战舰，苇草在此与公爵会面并命令其出兵"
+    },
+    {
+      "location": "纳斯尔纱",
+      "line_range": [
+        170,
+        173
+      ],
+      "description": "塔拉的首府，苇草承诺会回到那里"
+    },
+    {
+      "location": "乌萨斯",
+      "line_range": [
+        516,
+        573
+      ],
+      "description": "塔露拉提议回乌萨斯纠正错误，回应冻原上新的反抗运动，九和陈同意前往"
+    },
+    {
+      "location": "伦蒂尼姆封锁区",
+      "line_range": [
+        574,
+        630
+      ],
+      "description": "诺威尔在此救助市民，寻找「独角兽」，与自救军合作"
+    },
+    {
+      "location": "卡兹戴尔",
+      "line_range": [
+        1107,
+        1114
+      ],
+      "description": "隐德来希计划将「小聪明」的花瓣送回卡兹戴尔，认为战事结束后卡兹戴尔更需要玫瑰河畔"
+    },
+    {
+      "location": "圣王会西部大堂",
+      "line_range": [
+        1261,
+        1440
+      ],
+      "description": "食腐者之王孽茨雷的阵地，联军与罗德岛在此发起总攻"
+    },
+    {
+      "location": "拉特兰",
+      "line_range": [
+        1712,
+        1725
+      ],
+      "description": "教宗伊万杰利斯塔十一世在拉特兰圣城感知到某种对话"
+    }
+  ],
+  "chapter": "我们明日见",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:36:28.704520+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 36851,
+    "tokens_out": 8170,
+    "elapsed_s": 70.31561064720154
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "莫兰",
+    "威灵顿公爵",
+    "爱布拉娜",
+    "孽茨雷",
+    "塔露拉",
+    "九",
+    "克洛维希娅",
+    "「独角兽」",
+    "弥尔顿",
+    "Logos",
+    "曼弗雷德",
+    "帕尤卡卡",
+    "伊万杰利斯塔十一世"
+  ]
+}

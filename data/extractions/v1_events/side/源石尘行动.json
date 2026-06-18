@@ -1,0 +1,1197 @@
+{
+  "chapter": "源石尘行动",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章分为两条并行剧情线。第一条线以彩虹小队（灰烬、闪击、战车、霜华）为主角，他们在执行「拉马克行动」时遭遇科学家列维·克里奇科启动不明实验装置，导致整个控制室被传送到一个未知的异世界（泰拉大陆）。在异世界生存184天后，他们在一个名为「长泉镇」的萨尔贡边境小镇的感染者社区中落脚，并与当地医生米亚罗建立了互助关系。第二条线以罗德岛外勤小队（黑、巡林者、芙兰卡、雷蛇）为主角，他们在执行一次物资运送任务后，因车辆被窃而徒步穿越萨尔贡荒地，途中遭遇了异常的变异沙地兽袭击，并收到了来自罗德岛安全屋「瞭望塔33」的紧急求援信号。两条线在长泉镇的安全屋攻防战中交汇：彩虹小队保护了被袭击的感染者社区并转移到罗德岛安全屋，而罗德岛小队则响应求援信号赶到，共同击退了由萨卡兹雇佣兵和列维制造的源石畸变体组成的围攻。最终，双方在安全屋中会合，决定暂时合作，固守待援。同时，对话揭示了萨尔贡王酋领地内的一场叛乱：德鲁奇（领主之子）雇佣了列维和萨卡兹佣兵，试图利用源石畸变体推翻其父亲图拉领主的统治。\n\n在矿洞深处，灰烬、闪击和黑发现了被传送至此的磁山二号实验室设施，以及大量关押着人类和动物尸体的笼子。他们找到了被列维囚禁的德鲁奇。灰烬拒绝了德鲁奇的合作提议，并痛打了他一顿为米亚罗报仇。三人最终找到了列维。列维发表了一段疯狂的演说，宣称自己通过源石创造了全新的生命形态，并展示了一个巨大的、正在重生的畸变体。灰烬决心不惜一切代价阻止它，闪击则开始部署炸弹。在地面战场，战车和巡林者弹尽粮绝，准备进行最后的肉搏。关键时刻，罗德岛精英干员Stormeye率领援军赶到，解救了他们。Stormeye与巡林者相识，称其为「血色山谷的弯刀」。最终，矿洞被成功引爆，长泉镇的危机解除。皮加尔感谢众人的帮助，并决定将全部资产用于镇子复兴。彩虹小队决定接受罗德岛的帮助，获得新的身份并登上罗德岛本舰。灰烬表示他们将继续探索这片大地，第一站是汐斯塔。",
+  "events": [
+    {
+      "event": "彩虹小队执行拉马克行动，突入磁山二号实验室，遭遇科学家列维·克里奇科",
+      "type": "infiltration",
+      "line_range": [
+        1,
+        100
+      ],
+      "participants": [
+        "灰烬",
+        "闪击",
+        "战车",
+        "霜华",
+        "列维"
+      ],
+      "location": "磁山二号实验室",
+      "significance": "引入彩虹小队和列维，为穿越事件铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "列维启动实验装置，引发空间传送，彩虹小队与控制室被传送到异世界",
+      "type": "disaster",
+      "line_range": [
+        101,
+        181
+      ],
+      "participants": [
+        "灰烬",
+        "闪击",
+        "战车",
+        "霜华",
+        "列维",
+        "艾拉",
+        "双月"
+      ],
+      "location": "磁山二号实验室",
+      "significance": "核心穿越事件，将彩虹小队带入泰拉大陆，开启主线冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "彩虹小队在异世界遭遇巨型节肢生物袭击，艰难将其击杀",
+      "type": "battle",
+      "line_range": [
+        182,
+        241
+      ],
+      "participants": [
+        "灰烬",
+        "闪击",
+        "战车",
+        "霜华"
+      ],
+      "location": "异世界控制室废墟",
+      "significance": "展现异世界的危险和彩虹小队的战斗能力",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛外勤小队在萨尔贡荒地遭遇变异沙地兽袭击",
+      "type": "ambush",
+      "line_range": [
+        329,
+        342
+      ],
+      "participants": [
+        "黑",
+        "巡林者",
+        "芙兰卡",
+        "雷蛇"
+      ],
+      "location": "萨尔贡荒地",
+      "significance": "引入罗德岛小队，并暗示源石污染导致的生物异常",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队收到来自安全屋「瞭望塔33」的紧急求援信号",
+      "type": "revelation",
+      "line_range": [
+        369,
+        408
+      ],
+      "participants": [
+        "黑",
+        "巡林者",
+        "芙兰卡",
+        "雷蛇"
+      ],
+      "location": "萨尔贡荒地",
+      "significance": "将罗德岛小队引向长泉镇，为两条剧情线交汇提供动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "德鲁奇与列维就源石畸变体的效果和伦理问题发生争执",
+      "type": "confrontation",
+      "line_range": [
+        409,
+        476
+      ],
+      "participants": [
+        "德鲁奇",
+        "列维"
+      ],
+      "location": "矿洞",
+      "significance": "揭示德鲁奇的叛乱计划和列维的疯狂研究，展现反派内部矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "彩虹小队在长泉镇感染者社区与前来绑架的萨卡兹佣兵发生交火",
+      "type": "battle",
+      "line_range": [
+        666,
+        750
+      ],
+      "participants": [
+        "灰烬",
+        "闪击",
+        "战车",
+        "霜华",
+        "米亚罗",
+        "萨卡兹佣兵"
+      ],
+      "location": "长泉镇感染者社区",
+      "significance": "彩虹小队首次与本地武装势力正面冲突，被迫卷入当地冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "彩虹小队和米亚罗带领感染者社区幸存者转移到罗德岛安全屋",
+      "type": "rescue",
+      "line_range": [
+        751,
+        906
+      ],
+      "participants": [
+        "灰烬",
+        "闪击",
+        "战车",
+        "霜华",
+        "米亚罗",
+        "奥克芬"
+      ],
+      "location": "长泉镇罗德岛安全屋",
+      "significance": "彩虹小队与罗德岛安全屋建立联系，获得临时据点",
+      "is_imaginary": false
+    },
+    {
+      "event": "德鲁奇与萨卡兹佣兵讨论攻打领主大宅的进展，并催促列维制造更多畸变体",
+      "type": "planning",
+      "line_range": [
+        907,
+        976
+      ],
+      "participants": [
+        "德鲁奇",
+        "萨卡兹雇佣兵",
+        "列维"
+      ],
+      "location": "矿洞",
+      "significance": "揭示叛乱的全貌：德鲁奇试图用畸变体推翻父亲图拉领主",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队侦察长泉镇，发现安全屋被彩虹小队占据并保护着镇民",
+      "type": "investigation",
+      "line_range": [
+        977,
+        1009
+      ],
+      "participants": [
+        "黑",
+        "巡林者",
+        "芙兰卡",
+        "雷蛇"
+      ],
+      "location": "长泉镇",
+      "significance": "罗德岛小队评估局势，决定与彩虹小队接触",
+      "is_imaginary": false
+    },
+    {
+      "event": "彩虹小队与罗德岛小队在安全屋攻防战中联手击退萨卡兹佣兵和畸变体的围攻",
+      "type": "battle",
+      "line_range": [
+        1115,
+        1158
+      ],
+      "participants": [
+        "灰烬",
+        "闪击",
+        "战车",
+        "霜华",
+        "黑",
+        "巡林者",
+        "芙兰卡",
+        "雷蛇"
+      ],
+      "location": "长泉镇罗德岛安全屋",
+      "significance": "两条剧情线正式交汇，双方建立初步信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "彩虹小队与罗德岛小队在安全屋内会面，交流情报并决定合作固守",
+      "type": "alliance",
+      "line_range": [
+        1159,
+        1326
+      ],
+      "participants": [
+        "灰烬",
+        "闪击",
+        "战车",
+        "霜华",
+        "黑",
+        "巡林者",
+        "芙兰卡",
+        "雷蛇",
+        "米亚罗",
+        "奥克芬"
+      ],
+      "location": "长泉镇罗德岛安全屋",
+      "significance": "双方达成临时合作，为后续剧情发展奠定基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "战车向巡林者学习使用本地重弩，并研究蚀刻子弹的结构",
+      "type": "investigation",
+      "line_range": [
+        1327,
+        1362
+      ],
+      "participants": [
+        "战车",
+        "巡林者",
+        "灰烬"
+      ],
+      "location": "罗德岛安全屋",
+      "significance": "展现彩虹小队对本地武器和技术的适应与学习，为后续战斗做准备",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷蛇为闪击改造盾牌，安装通用源石回路使其能发挥惯用装备的作用",
+      "type": "character_development",
+      "line_range": [
+        1390,
+        1403
+      ],
+      "participants": [
+        "雷蛇",
+        "闪击",
+        "芙兰卡"
+      ],
+      "location": "罗德岛安全屋",
+      "significance": "增强闪击的战斗力，体现罗德岛与彩虹小队的技术合作",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰烬提议返回病人社区回收物资，巡林者同意",
+      "type": "planning",
+      "line_range": [
+        1413,
+        1421
+      ],
+      "participants": [
+        "灰烬",
+        "霜华",
+        "巡林者"
+      ],
+      "location": "罗德岛安全屋",
+      "significance": "为解决食物短缺问题而采取的行动，推动剧情发展",
+      "is_imaginary": false
+    },
+    {
+      "event": "彩虹小队与罗德岛小队在回收物资途中被长泉镇领主之女皮加尔·图拉率领的卫兵队包围",
+      "type": "confrontation",
+      "line_range": [
+        1422,
+        1471
+      ],
+      "participants": [
+        "灰烬",
+        "霜华",
+        "巡林者",
+        "黑",
+        "战车",
+        "闪击",
+        "雷蛇",
+        "皮加尔"
+      ],
+      "location": "长泉镇病人社区附近",
+      "significance": "引入新的冲突方皮加尔，揭示她与德鲁奇的敌对关系，并导致罗德岛被驱逐",
+      "is_imaginary": false
+    },
+    {
+      "event": "米亚罗医生出面为罗德岛和彩虹小队作证，但皮加尔仍坚持驱逐罗德岛并带走所有感染者",
+      "type": "negotiation",
+      "line_range": [
+        1481,
+        1503
+      ],
+      "participants": [
+        "米亚罗",
+        "皮加尔",
+        "灰烬",
+        "巡林者",
+        "雷蛇"
+      ],
+      "location": "长泉镇病人社区附近",
+      "significance": "米亚罗的证词未能改变局面，导致罗德岛与本地领主关系破裂，感染者被带走",
+      "is_imaginary": false
+    },
+    {
+      "event": "皮加尔与感染者告别，巡林者代表罗德岛支付米亚罗酬金",
+      "type": "farewell",
+      "line_range": [
+        1504,
+        1526
+      ],
+      "participants": [
+        "皮加尔",
+        "米亚罗",
+        "灰烬",
+        "战车",
+        "巡林者",
+        "奥克芬"
+      ],
+      "location": "长泉镇病人社区附近",
+      "significance": "展现角色间的情谊，为米亚罗的牺牲埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "黑和灰烬怀疑皮加尔，决定尾随调查",
+      "type": "investigation",
+      "line_range": [
+        1527,
+        1555
+      ],
+      "participants": [
+        "黑",
+        "巡林者",
+        "灰烬"
+      ],
+      "location": "长泉镇",
+      "significance": "推动剧情发展，使主角团发现德鲁奇的阴谋",
+      "is_imaginary": false
+    },
+    {
+      "event": "皮加尔在矿坑遭遇德鲁奇设下的埋伏，被源石畸变体围攻",
+      "type": "ambush",
+      "line_range": [
+        1556,
+        1589
+      ],
+      "participants": [
+        "皮加尔",
+        "德鲁奇",
+        "源石畸变体"
+      ],
+      "location": "长泉镇矿坑",
+      "significance": "揭示德鲁奇的叛乱行动，皮加尔陷入危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "德鲁奇在领主宅邸向被俘的皮加尔炫耀其阴谋，包括勾结哥伦比亚势力、使用实验武器、计划将皮加尔变成感染者",
+      "type": "revelation",
+      "line_range": [
+        1590,
+        1664
+      ],
+      "participants": [
+        "德鲁奇",
+        "皮加尔",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "长泉镇领主宅邸",
+      "significance": "揭示德鲁奇的完整计划、动机和背后的势力，深化反派形象",
+      "is_imaginary": false
+    },
+    {
+      "event": "黑和灰烬在领主宅邸救下皮加尔，彩虹小队和罗德岛小队随后攻入宅邸",
+      "type": "rescue",
+      "line_range": [
+        1665,
+        1722
+      ],
+      "participants": [
+        "黑",
+        "皮加尔",
+        "灰烬",
+        "闪击",
+        "战车",
+        "霜华",
+        "芙兰卡",
+        "雷蛇",
+        "巡林者",
+        "德鲁奇",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "长泉镇领主宅邸",
+      "significance": "主角团与德鲁奇势力正面交锋，战斗进入高潮",
+      "is_imaginary": false
+    },
+    {
+      "event": "德鲁奇使用TSW-2号超声波冲击装置压制主角团",
+      "type": "battle",
+      "line_range": [
+        1723,
+        1737
+      ],
+      "participants": [
+        "德鲁奇",
+        "灰烬",
+        "闪击",
+        "战车",
+        "霜华",
+        "芙兰卡",
+        "雷蛇",
+        "巡林者"
+      ],
+      "location": "长泉镇领主宅邸",
+      "significance": "展示哥伦比亚实验武器的威力，增加战斗难度",
+      "is_imaginary": false
+    },
+    {
+      "event": "米亚罗医生为救众人，强行使用源石技艺引爆精炼源石锭，炸毁超声波发生器，自身因矿石病剧烈发作而牺牲",
+      "type": "sacrifice",
+      "line_range": [
+        1746,
+        1804
+      ],
+      "participants": [
+        "米亚罗",
+        "黑",
+        "皮加尔",
+        "德鲁奇",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "长泉镇领主宅邸",
+      "significance": "关键转折点，米亚罗的牺牲扭转了战局，并深刻影响所有角色",
+      "is_imaginary": false
+    },
+    {
+      "event": "米亚罗的尸体发生源石结晶化异变，罗德岛干员紧急将其隔离处理",
+      "type": "disaster",
+      "line_range": [
+        1844,
+        1877
+      ],
+      "participants": [
+        "雷蛇",
+        "芙兰卡",
+        "黑",
+        "灰烬",
+        "战车",
+        "闪击"
+      ],
+      "location": "长泉镇领主宅邸",
+      "significance": "揭示矿石病感染者死后可能发生的恐怖异变，加深灰烬等人的震撼",
+      "is_imaginary": false
+    },
+    {
+      "event": "战车与灰烬在米亚罗的葬礼上进行深刻对话，战车讲述镇民秘密处理感染者尸体的见闻，安慰灰烬并强调道德的重要性",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1887,
+        1963
+      ],
+      "participants": [
+        "战车",
+        "灰烬"
+      ],
+      "location": "长泉镇米亚罗墓地",
+      "significance": "深化角色内心世界，探讨道德、责任与生存的哲学问题，是战车角色的高光时刻",
+      "is_imaginary": false
+    },
+    {
+      "event": "皮加尔前来道歉，并讲述图拉家族的历史和德鲁奇与沃尔沃特科钦斯基的勾结",
+      "type": "revelation",
+      "line_range": [
+        1965,
+        2008
+      ],
+      "participants": [
+        "皮加尔",
+        "战车",
+        "灰烬"
+      ],
+      "location": "长泉镇米亚罗墓地",
+      "significance": "补充背景故事，揭示长泉镇危机的根源，并引出沃尔沃特科钦斯基这一组织",
+      "is_imaginary": false
+    },
+    {
+      "event": "感染者将米亚罗的遗物交给彩虹小队，包括地图、旅行指南和一张写着祝福的便条",
+      "type": "family_moment",
+      "line_range": [
+        2010,
+        2048
+      ],
+      "participants": [
+        "芙兰卡",
+        "灰烬",
+        "战车"
+      ],
+      "location": "长泉镇米亚罗墓地",
+      "significance": "展现米亚罗的梦想和善良，激励战车提出新的作战计划",
+      "is_imaginary": false
+    },
+    {
+      "event": "战车受到米亚罗遗志启发，向皮加尔提出利用源石引擎引出畸变体并炸毁矿洞的作战计划",
+      "type": "planning",
+      "line_range": [
+        2049,
+        2052
+      ],
+      "participants": [
+        "战车",
+        "灰烬"
+      ],
+      "location": "长泉镇米亚罗墓地",
+      "significance": "推动剧情进入最终决战阶段",
+      "is_imaginary": false
+    },
+    {
+      "event": "德鲁奇被列维背叛并囚禁，列维展示其通过源石技艺以外的科学手段操纵畸变体的能力，并发表蔑视贵族和传统观念的演说",
+      "type": "betrayal",
+      "line_range": [
+        2053,
+        2130
+      ],
+      "participants": [
+        "德鲁奇",
+        "列维",
+        "畸变体感染者"
+      ],
+      "location": "长泉镇矿洞实验室",
+      "significance": "揭示列维的疯狂本质和科学至上主义，德鲁奇沦为弃子",
+      "is_imaginary": false
+    },
+    {
+      "event": "战车向罗德岛小队和皮加尔详细解释作战计划，众人同意参与",
+      "type": "planning",
+      "line_range": [
+        2131,
+        2163
+      ],
+      "participants": [
+        "战车",
+        "皮加尔",
+        "巡林者",
+        "雷蛇",
+        "芙兰卡",
+        "霜华"
+      ],
+      "location": "长泉镇领主宅邸",
+      "significance": "最终决战计划确定，各方势力联合行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "地堡防线战斗开始，海量畸变体涌出，战车、巡林者等人陷入苦战",
+      "type": "battle",
+      "line_range": [
+        2164,
+        2171
+      ],
+      "participants": [
+        "战车",
+        "巡林者",
+        "雷蛇",
+        "芙兰卡",
+        "霜华",
+        "皮加尔"
+      ],
+      "location": "长泉镇地堡防线",
+      "significance": "最终决战的地面战场开启，压力巨大",
+      "is_imaginary": false
+    },
+    {
+      "event": "在地堡防线战斗中，芙兰卡受伤，战车决定独自断后掩护其他人撤退，巡林者选择留下与他并肩作战",
+      "type": "sacrifice",
+      "line_range": [
+        2172,
+        2255
+      ],
+      "participants": [
+        "战车",
+        "巡林者",
+        "雷蛇",
+        "芙兰卡",
+        "皮加尔",
+        "霜华",
+        "奥克芬"
+      ],
+      "location": "长泉镇地堡防线",
+      "significance": "展现战车和巡林者的英勇与牺牲精神，是角色高光时刻",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰烬、闪击和黑深入矿洞，发现被传送至此的磁山二号实验室设施和大量尸体",
+      "type": "revelation",
+      "line_range": [
+        2256,
+        2288
+      ],
+      "participants": [
+        "灰烬",
+        "闪击",
+        "黑"
+      ],
+      "location": "长泉镇矿洞实验室",
+      "significance": "揭示列维实验的规模和残忍程度，与彩虹小队的过去关联",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰烬拒绝德鲁奇的合作提议，并痛打他为米亚罗报仇",
+      "type": "confrontation",
+      "line_range": [
+        2289,
+        2337
+      ],
+      "participants": [
+        "灰烬",
+        "德鲁奇",
+        "闪击",
+        "黑"
+      ],
+      "location": "长泉镇矿洞实验室",
+      "significance": "灰烬为米亚罗复仇，展现其情感和决断",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰烬等人找到列维，列维发表疯狂演说，宣称自己创造了全新的生命形态，并展示一个巨大的重生畸变体",
+      "type": "confrontation",
+      "line_range": [
+        2338,
+        2375
+      ],
+      "participants": [
+        "灰烬",
+        "列维",
+        "闪击",
+        "黑"
+      ],
+      "location": "长泉镇矿洞实验室",
+      "significance": "最终Boss战前的对峙，揭示列维的终极疯狂和科学理念",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛精英干员Stormeye率领援军赶到，解救了弹尽粮绝的战车和巡林者",
+      "type": "rescue",
+      "line_range": [
+        2376,
+        2430
+      ],
+      "participants": [
+        "战车",
+        "巡林者",
+        "Stormeye"
+      ],
+      "location": "长泉镇地堡防线",
+      "significance": "关键转折点，援军到来扭转地面战局，并揭示巡林者的过往",
+      "is_imaginary": false
+    },
+    {
+      "event": "矿洞被成功引爆，长泉镇危机解除。皮加尔感谢众人并决定重建镇子",
+      "type": "ceremony",
+      "line_range": [
+        2431,
+        2455
+      ],
+      "participants": [
+        "皮加尔",
+        "灰烬",
+        "战车",
+        "霜华",
+        "闪击"
+      ],
+      "location": "长泉镇领主宅邸",
+      "significance": "事件收尾，各方告别，长泉镇进入重建阶段",
+      "is_imaginary": false
+    },
+    {
+      "event": "彩虹小队决定接受罗德岛的帮助，获得新身份并登上罗德岛本舰，计划前往汐斯塔继续探索",
+      "type": "departure",
+      "line_range": [
+        2456,
+        2485
+      ],
+      "participants": [
+        "灰烬",
+        "战车",
+        "闪击",
+        "霜华",
+        "雷蛇",
+        "芙兰卡",
+        "黑",
+        "巡林者",
+        "Stormeye"
+      ],
+      "location": "长泉镇",
+      "significance": "彩虹小队正式与罗德岛建立合作关系，开启新的旅程，为后续剧情铺垫",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "灰烬",
+      "type": "operator",
+      "role_in_chapter": "彩虹小队队长，冷静果断的指挥官，带领小队在异世界求生并保护感染者",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "闪击",
+      "type": "operator",
+      "role_in_chapter": "彩虹小队成员，持盾手，性格较为活跃，负责与本地人沟通和侦察",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "战车",
+      "type": "operator",
+      "role_in_chapter": "彩虹小队成员，重火力手，负责火力压制和警戒，养了一只源石虫宠物",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "霜华",
+      "type": "operator",
+      "role_in_chapter": "彩虹小队成员，侦察兵和支援手，负责情报收集和陷阱部署",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾拉",
+      "type": "operator",
+      "role_in_chapter": "彩虹小队成员，与双月一起行动，在穿越事件中与灰烬等人失散",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "双月",
+      "type": "operator",
+      "role_in_chapter": "彩虹小队成员，与艾拉一起行动，在穿越事件中与灰烬等人失散",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "列维",
+      "type": "npc",
+      "role_in_chapter": "磁山二号实验室首席科学家，疯狂的研究者，制造了源石畸变体，是穿越事件的始作俑者",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "黑",
+      "type": "operator",
+      "role_in_chapter": "罗德岛外勤干员，狙击手，冷静谨慎，负责侦察和远程打击",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "巡林者",
+      "type": "operator",
+      "role_in_chapter": "罗德岛外勤干员，经验丰富的老猎人，熟悉萨尔贡地形，负责导航和决策",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "芙兰卡",
+      "type": "operator",
+      "role_in_chapter": "罗德岛外勤干员，黑钢出身，性格活泼，负责近战和情报分析",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "雷蛇",
+      "type": "operator",
+      "role_in_chapter": "罗德岛外勤干员，黑钢出身，性格沉稳，负责防御和战术分析",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "米亚罗",
+      "type": "npc",
+      "role_in_chapter": "长泉镇感染者社区的医生，善良且富有责任感，为彩虹小队提供帮助并成为关键联系人",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "奥克芬",
+      "type": "npc",
+      "role_in_chapter": "罗德岛安全屋的看门人，后勤预备干员，在袭击中幸存并最终同意开放安全屋给感染者",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "德鲁奇",
+      "type": "npc",
+      "role_in_chapter": "图拉领主的儿子，叛乱的策划者，雇佣列维和萨卡兹佣兵，试图用畸变体推翻父亲",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "皮加尔·图拉",
+      "type": "npc",
+      "role_in_chapter": "长泉镇领主之女，卫兵队长，因误会驱逐罗德岛，后被德鲁奇埋伏，被黑和灰烬所救，最终与主角团合作，决定重建长泉镇",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "德鲁奇·图拉",
+      "type": "npc",
+      "role_in_chapter": "皮加尔的兄弟，被放逐的领主之子，勾结哥伦比亚势力发动叛乱，后被列维背叛并囚禁，被灰烬痛打",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "列维·克里奇科",
+      "type": "npc",
+      "role_in_chapter": "疯狂科学家，制造源石畸变体，背叛德鲁奇，在矿洞实验室展示其终极造物，发表科学至上主义演说",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Stormeye",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，率领援军赶到地堡防线，解救了战车和巡林者，与巡林者相识",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "矿石病/源石病",
+      "line_range": [
+        540,
+        549
+      ],
+      "discussion_summary": "灰烬分析矿石病的特性：与源石有关、有传染性、不治之症，质疑隔离的必要性，认为病人社区是监牢，镇民与病人之间存在仇恨",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石畸变体",
+      "line_range": [
+        409,
+        448
+      ],
+      "discussion_summary": "列维向德鲁奇解释畸变体是生物进化的产物，德鲁奇认为其不够强，列维要求提供尸体以制造更强大的畸变体，并嘲讽德鲁奇的伦理顾虑",
+      "is_substantive": true
+    },
+    {
+      "concept": "矿石病抑制药",
+      "line_range": [
+        1238,
+        1254
+      ],
+      "discussion_summary": "米亚罗向战车展示罗德岛安全屋的抑制药，称其药效远优于市面产品，且奥克芬慷慨提供，暗示罗德岛的技术实力和宗旨",
+      "is_substantive": true
+    },
+    {
+      "concept": "蚀刻子弹",
+      "line_range": [
+        1350,
+        1362
+      ],
+      "discussion_summary": "巡林者解释蚀刻子弹内装有微型施术单元，与拉特兰铳结构对应，等同于术师的法杖，造价高昂，只有萨科塔人大量使用",
+      "is_substantive": true
+    },
+    {
+      "concept": "通用源石回路",
+      "line_range": [
+        1390,
+        1398
+      ],
+      "discussion_summary": "芙兰卡和雷蛇解释通用源石回路是让不会使用源石技艺的人也能使用源石设备的现代科技成果，可储存简单源石技艺，但供能和维护仍需专业术师",
+      "is_substantive": true
+    },
+    {
+      "concept": "矿石病/感染者",
+      "line_range": [
+        1916,
+        1918
+      ],
+      "discussion_summary": "灰烬反思矿石病不是一种疾病，而是灾难，她和队友对此一无所知却尝试拯救感染者",
+      "is_substantive": true
+    },
+    {
+      "concept": "死亡与葬礼文化",
+      "line_range": [
+        1890,
+        1895
+      ],
+      "discussion_summary": "战车讲述萨尔贡的死亡文化：只有身份显赫者才有葬礼，普通人被简单埋葬，萨尔贡人相信死者回归大地，成为世界的一部分",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石技艺与感染生物控制",
+      "line_range": [
+        2089,
+        2093
+      ],
+      "discussion_summary": "列维质疑只有源石技艺才能操纵感染生物的观点，提出只要成为它们的一部分就能沟通，暗示其通过科学手段实现了控制",
+      "is_substantive": true
+    },
+    {
+      "concept": "科学至上主义/反传统",
+      "line_range": [
+        2102,
+        2105
+      ],
+      "discussion_summary": "列维引用祖国历史，宣称烧死主教、吊死国王、砍皇帝脑袋，将旧日权贵砸得稀烂，表达对王侯贵族和传统血脉观念的蔑视",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石的本质与进化",
+      "line_range": [
+        2353,
+        2360
+      ],
+      "discussion_summary": "列维宣称源石是这个世界的真理，人们应当接纳而非恐惧它，他通过源石创造了全新的生命形态，是生命的进化和存在的迭代",
+      "is_substantive": true
+    },
+    {
+      "concept": "道德与科学的关系",
+      "line_range": [
+        2361,
+        2368
+      ],
+      "discussion_summary": "灰烬质问列维对人命的看法，列维回应人性本质软弱，善恶是主观定义，愧疚感是大脑产生的认知信号，科学不会被这种软弱模糊的概念左右",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "彩虹小队",
+      "line_range": [
+        1,
+        241
+      ],
+      "description": "彩虹小队执行拉马克行动，突入实验室，与列维对峙，被传送到异世界后遭遇巨型生物袭击"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        242,
+        342
+      ],
+      "description": "罗德岛外勤小队在萨尔贡荒地执行任务，讨论巡林者的历史和罗德岛的宗旨"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        817,
+        906
+      ],
+      "description": "米亚罗介绍罗德岛在长泉镇的安全屋，奥克芬作为看门人描述罗德岛的资产和职责"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1184,
+        1221
+      ],
+      "description": "罗德岛小队与彩虹小队会面，讨论罗德岛的立场和彩虹小队的身份"
+    },
+    {
+      "faction": "萨卡兹佣兵",
+      "line_range": [
+        738,
+        750
+      ],
+      "description": "萨卡兹佣兵伪装成镇民袭击感染者社区，与彩虹小队交火"
+    },
+    {
+      "faction": "萨卡兹佣兵",
+      "line_range": [
+        907,
+        931
+      ],
+      "description": "萨卡兹佣兵向德鲁奇报告战况，要求加钱，并建议更换战术"
+    },
+    {
+      "faction": "萨卡兹佣兵",
+      "line_range": [
+        1159,
+        1174
+      ],
+      "description": "萨卡兹佣兵在安全屋攻防战中因火力不足而撤退"
+    },
+    {
+      "faction": "黑钢国际",
+      "line_range": [
+        273,
+        291
+      ],
+      "description": "雷蛇和芙兰卡以黑钢佣兵的习惯讨论问题，并提及黑钢的萨尔贡同行讲述巡林者的故事"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1368,
+        1370
+      ],
+      "description": "雷蛇尝试修复通讯施术单元，但无法供能，显示罗德岛的技术能力",
+      "is_substantive": true
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1463,
+        1470
+      ],
+      "description": "巡林者表明罗德岛身份，声称与图拉家族签署过协议，但被皮加尔斥为背信弃义的伪君子",
+      "is_substantive": true
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1494,
+        1502
+      ],
+      "description": "皮加尔宣布废除与罗德岛的合同，巡林者提醒不要忤逆本地领主，强调代表罗德岛的立场",
+      "is_substantive": true
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2470,
+        2472
+      ],
+      "description": "人事干员将彩虹小队信息录入罗德岛终端，开放任务网络，允许其在各地办事处逗留补给",
+      "is_substantive": true
+    },
+    {
+      "faction": "长泉镇领主/图拉家族",
+      "line_range": [
+        1449,
+        1451
+      ],
+      "description": "皮加尔自称长泉镇领主之女，命令所有人放下武器",
+      "is_substantive": true
+    },
+    {
+      "faction": "长泉镇领主/图拉家族",
+      "line_range": [
+        1971,
+        1984
+      ],
+      "description": "皮加尔讲述父亲建立感染者社区、关闭矿场的历史，以及德鲁奇被放逐的经过",
+      "is_substantive": true
+    },
+    {
+      "faction": "萨卡兹雇佣兵",
+      "line_range": [
+        1604,
+        1605
+      ],
+      "description": "德鲁奇介绍萨卡兹朋友来自哥伦比亚，为钱办事，代表更先进的东西",
+      "is_substantive": true
+    },
+    {
+      "faction": "沃尔沃特科钦斯基",
+      "line_range": [
+        1987,
+        1989
+      ],
+      "description": "皮加尔透露德鲁奇与一个叫做沃尔沃特科钦斯基的哥伦比亚组织勾结，他们贪婪可恶，只想挖矿",
+      "is_substantive": true
+    },
+    {
+      "faction": "沃尔沃特科钦斯基",
+      "line_range": [
+        2125,
+        2128
+      ],
+      "description": "德鲁奇威胁列维，称其半年来所有科研经费由沃尔沃特科钦斯基提供，背叛他就是背叛他们，他们不会饶了他",
+      "is_substantive": true
+    },
+    {
+      "faction": "巴耶勒王酋",
+      "line_range": [
+        1612,
+        1613
+      ],
+      "description": "德鲁奇展示巴耶勒王酋的领主委任书，描述其细纹草纸、绣边签名等特征",
+      "is_substantive": true
+    },
+    {
+      "faction": "巴耶勒王酋",
+      "line_range": [
+        1618,
+        1619
+      ],
+      "description": "皮加尔声称自己现在是领主，德鲁奇违抗领主就是违抗王酋，已死罪难逃",
+      "is_substantive": true
+    }
+  ],
+  "locations": [
+    {
+      "location": "磁山二号实验室",
+      "line_range": [
+        1,
+        100
+      ],
+      "description": "彩虹小队突入的实验室，内有封存核废料和列维的实验设备，是穿越事件的起点"
+    },
+    {
+      "location": "萨尔贡荒地",
+      "line_range": [
+        242,
+        342
+      ],
+      "description": "罗德岛小队徒步穿越的区域，巡林者描述其地貌和危险，小队在此遭遇变异沙地兽"
+    },
+    {
+      "location": "长泉镇",
+      "line_range": [
+        532,
+        549
+      ],
+      "description": "彩虹小队在异世界落脚的小镇，灰烬描述其社会结构：领主、卫兵、隔离的感染者社区和镇民之间的仇恨"
+    },
+    {
+      "location": "长泉镇罗德岛安全屋",
+      "line_range": [
+        817,
+        906
+      ],
+      "description": "米亚罗介绍的安全屋，由罗德岛修建，结构坚固，有地下室和军火储备，成为后续战斗的据点"
+    },
+    {
+      "location": "矿洞",
+      "line_range": [
+        409,
+        476
+      ],
+      "description": "德鲁奇与列维会面的地点，列维在此进行畸变体研究，德鲁奇称半年前在此救了列维"
+    },
+    {
+      "location": "长泉镇",
+      "line_range": [
+        1449,
+        1451
+      ],
+      "description": "皮加尔自称长泉镇领主之女，命令包围建筑",
+      "is_substantive": true
+    },
+    {
+      "location": "长泉镇",
+      "line_range": [
+        1971,
+        1978
+      ],
+      "description": "皮加尔讲述长泉镇的历史：父亲因开采源石获得财富，后因矿石病蔓延关闭矿场，建立感染者社区",
+      "is_substantive": true
+    },
+    {
+      "location": "哥伦比亚",
+      "line_range": [
+        1980,
+        1981
+      ],
+      "description": "皮加尔提到德鲁奇在哥伦比亚留学时接触了某些东西，变得阴险",
+      "is_substantive": true
+    },
+    {
+      "location": "哥伦比亚",
+      "line_range": [
+        2021,
+        2025
+      ],
+      "description": "芙兰卡认出地图上的提卡伦多是哥伦比亚的边境城市，米亚罗存有哥伦比亚金券",
+      "is_substantive": true
+    },
+    {
+      "location": "哥伦比亚",
+      "line_range": [
+        2043,
+        2044
+      ],
+      "description": "芙兰卡讲述哥伦比亚的感染者会被分区管制，大多数人一辈子走不出收治区",
+      "is_substantive": true
+    },
+    {
+      "location": "汐斯塔",
+      "line_range": [
+        2483,
+        2483
+      ],
+      "description": "灰烬提到有一个叫汐斯塔的地方，听起来是个很不错的城市，作为下一个目的地",
+      "is_substantive": true
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:48:18.775175+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 48340,
+    "tokens_out": 11263,
+    "elapsed_s": 104.22080755233765
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "列维",
+    "米亚罗",
+    "奥克芬",
+    "德鲁奇",
+    "皮加尔·图拉",
+    "德鲁奇·图拉",
+    "列维·克里奇科",
+    "Stormeye"
+  ]
+}

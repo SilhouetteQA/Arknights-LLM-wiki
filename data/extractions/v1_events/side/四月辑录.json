@@ -1,0 +1,114 @@
+{
+  "summary": "本章为PRTS系统在1097年4月1日进行的第二季度文献调查记录。PRTS向博士报告，正在处理第122本出土典籍，也是该批次的最后一本。这本书与前一百多本被意外埋入土中的财经杂志不同，是一本正经的古书。根据提供者描述，其出土地点靠近米诺斯数个城邦的移动轨迹。PRTS扫描了书籍内容，总体上这是一本讲述古国「阿加门」历史故事的书籍，书中有多处修改痕迹，其中一页尤为引人注目。该页左侧写着「这是阿加门！！！」，右侧则是一个古人留下的、用于隐藏特殊信息的图形纹章。PRTS提到，现代扫描技术可以读出纹章中隐藏的信息，并指出现代部分编码技术也源自古代研究，古人曾用编码技术传递战况、领主八卦、超市优惠券和游戏攻略等信息。PRTS将这一现象与现代源石技艺的发展进程类比，并提及第一批次时代制式法杖的设计师是创业的系统软件工程师，他们还发明了电子抽水马桶和城际终端彩票刮刮乐。最后，PRTS将所有信息存入数据库，并告知博士，剩余信息需要扫描纹章来解开，并鼓励博士一定会有所发现。",
+  "events": [
+    {
+      "event": "PRTS向博士报告正在进行第二季度文献调查，处理第122本出土典籍。",
+      "type": "investigation",
+      "line_range": [
+        1,
+        3
+      ],
+      "participants": [
+        "PRTS"
+      ],
+      "location": "未知（PRTS系统环境）",
+      "significance": "设定本章的剧情背景为文献调查工作。",
+      "is_imaginary": false
+    },
+    {
+      "event": "PRTS描述出土典籍的内容，指出这是一本关于古国「阿加门」的历史书，并发现其中一页有特殊纹章。",
+      "type": "revelation",
+      "line_range": [
+        8,
+        12
+      ],
+      "participants": [
+        "PRTS"
+      ],
+      "location": "未知（PRTS系统环境）",
+      "significance": "揭示本章核心发现：一本带有隐藏信息的古书。",
+      "is_imaginary": false
+    },
+    {
+      "event": "PRTS将古代编码技术与现代源石技艺、法杖设计及日常发明进行类比和关联。",
+      "type": "reflection",
+      "line_range": [
+        13,
+        17
+      ],
+      "participants": [
+        "PRTS"
+      ],
+      "significance": "通过类比，将古代技术与现代科技联系起来，暗示技术传承。",
+      "is_imaginary": false
+    },
+    {
+      "event": "PRTS告知博士，剩余信息需要扫描纹章来解开，并鼓励博士进行探索。",
+      "type": "planning",
+      "line_range": [
+        18,
+        20
+      ],
+      "participants": [
+        "PRTS"
+      ],
+      "significance": "为后续剧情留下悬念，引导博士（玩家）进行下一步行动。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "PRTS",
+      "type": "npc",
+      "role_in_chapter": "作为文献调查的主持者和信息提供者，向博士汇报工作进展和发现。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "古代编码技术",
+      "line_range": [
+        12,
+        17
+      ],
+      "discussion_summary": "PRTS指出古人通过研究编码技术传递信息，用于分享战况、领主八卦、超市优惠券和游戏攻略等。并将此与现代源石技艺发展进程、第一批次时代制式法杖设计师（系统软件工程师）的发明（电子抽水马桶、城际终端彩票刮刮乐）进行类比。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "米诺斯",
+      "line_range": [
+        5,
+        5
+      ],
+      "description": "PRTS提到出土典籍的出土地点靠近米诺斯数个城邦的移动轨迹。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "阿加门",
+      "line_range": [
+        8,
+        10
+      ],
+      "description": "PRTS描述出土典籍是一本讲述古国「阿加门」历史故事的书籍，并在书中一页左侧写着「这是阿加门！！！」，确认其为史料记载中的一个古国。"
+    }
+  ],
+  "chapter": "四月辑录",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:14:41.099063+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 1654,
+    "tokens_out": 1061,
+    "elapsed_s": 11.431668996810913
+  },
+  "taxonomy_type": "light",
+  "_unmatched_names": [
+    "PRTS"
+  ]
+}

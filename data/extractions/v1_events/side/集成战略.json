@@ -1,0 +1,24 @@
+{
+  "summary": "本章为集成战略IF线剧情，非正史事件。由于提供的对话文本为空，无法提取任何具体剧情内容。",
+  "events": [],
+  "characters": [],
+  "concepts": [],
+  "factions": [],
+  "locations": [],
+  "chapter": "集成战略",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:26:35.190161+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 2048,
+    "tokens_out": 66,
+    "elapsed_s": 1.2377872467041016
+  },
+  "taxonomy_type": "is",
+  "_validation_errors": [
+    "events 数组为空或缺失"
+  ]
+}

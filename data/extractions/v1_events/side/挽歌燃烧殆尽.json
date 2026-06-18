@@ -1,0 +1,1743 @@
+{
+  "chapter": "挽歌燃烧殆尽",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章以作家与神秘女性在酒馆中的对话为框架，讲述了塔拉独立后纳斯尔纱城内的多重危机。红龙爱布拉娜用死火点燃塔拉，使其从维多利亚统治下获得自由，但死火也侵染了城中居民，使他们逐渐走向死亡。拉芙希妮（苇草）回到纳斯尔纱，目睹了姐姐爱布拉娜统治下的城市困境：物资短缺、居民被紫火侵染、社会矛盾激化。爱布拉娜要求拉芙希妮杀死自己以终结死火，但拉芙希妮拒绝并寻求其他解决方案。\n\n城中同时发生了多起事件：铁匠库林收养的维多利亚孤儿提奥失踪，最终被发现死于居民艾玛之手；库林在绝望中摧毁了自己为夏末节打造的红龙雕像，并向居民坦白自己并非英雄，最终力竭而死；深池高层在庆功会上暴露了贪污腐败的本质，被爱布拉娜处置。守灵人涅梅丝在目睹库林之死后，从调和者转变为复仇者，誓言协助拉芙希妮对抗爱布拉娜。\n\n拉芙希妮与爱布拉娜进行了多次对话和一场象征性的舞蹈，爱布拉娜坚持认为死火无法逆转，只有杀死她才能终结一切。拉芙希妮则坚信存在解药，决定离开纳斯尔纱前往守灵人聚落寻求帮助。布莉吉和涅梅丝留在城中，分别协助和监视局势。作家与神秘女性的对话揭示了这些故事是作家基于亲身经历的创作，神秘女性似乎对拼凑真相有着特殊兴趣。\n\n拉芙希妮进入黑林寻找守灵人聚落，在黑林中遭遇幻影和死路，被放逐王拉布雷德的灵魂引导走出困境。她与莫兰等塔拉流民会合，向守灵人请求为库林举行还火仪式。守灵人起初拒绝介入红龙之间的争斗，但最终同意为库林举行葬礼。在还火仪式上，拉芙希妮念诵了涅梅丝写的悼词，莫兰鼓励她将火还给死者，让生者继续生活。\n\n放逐王带拉芙希妮前往旧王城遗址的祭台（熔炉），揭示了还火仪式的历史渊源和紫火的本质。他通过回忆自己的经历，证明爱布拉娜没有说谎——只有杀死她才能终结死火。拉芙希妮坚持要回城为活人还火，放逐王认为她愚蠢倔强。布莉吉带着棺材从城中赶来，描述了城内日益恶化的混乱局面。\n\n作家与神秘女性的对话揭示了故事中的矛盾之处。神秘女性指出作家在故事中加入了大量创作（如财宝诱人、库林拖雕像、黑雾相关情节），并决定用自己的所见所闻来补全结局。她开始讲述第三个故事，作家承认这些补充让他的碎片开始融合。\n\n在回忆片段中，爱布拉娜与拉芙希妮在堡垒阳台对峙。爱布拉娜坚持只有杀死她才能解决死火危机，拉芙希妮则希望找到其他出路。爱布拉娜指出拉芙希妮的高尚让她放跑了最后的机会。涅梅丝发现爱布拉娜的尸体消失，意识到这是陷阱，但拉芙希妮决定继续推进还火仪式。\n\n布莉吉与放逐王打赌，放逐王让她向守灵人传话，解除他们数百年的心结。拉芙希妮在黑雾前坚守，为涅梅丝争取时间。涅梅丝拖着空棺在城中游行，唱起悼歌，最终在莫兰和守灵人的帮助下，纳斯尔纱的居民开始进行还火仪式。\n\n爱布拉娜在死后向作家（歌唱家）揭示了真相：她通过征收血税将死火收归己身，从而在死后仍能存在。她与威灵顿合谋封锁纳斯尔纱，但拉芙希妮的奇迹打乱了计划。拉芙希妮与涅梅丝策划了自导自演的奇迹，拉芙希妮主动走进火焰，用生命的火替换死火，成为塔拉唯一的德拉克后裔。\n\n尾声显示塔拉戒严解除，社会逐渐恢复生机。拉芙希妮在五月盛宴上点燃篝火，发表演讲，倡导和平与生活。开斯特公爵收到塔拉王国的信件，意识到塔拉独立的威胁。爱布拉娜（死芒）与罗德岛的学者对话，表明她已被罗德岛吸引，将以死芒的身份存在。",
+  "events": [
+    {
+      "event": "作家与神秘女性在酒馆中讨论红龙的故事，神秘女性要求作家讲述结局",
+      "type": "revelation",
+      "line_range": [
+        1,
+        24
+      ],
+      "participants": [
+        "作家",
+        "神秘的女性"
+      ],
+      "location": "破败的酒馆",
+      "significance": "建立叙事框架，引出红龙故事的核心冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "红龙（爱布拉娜）唤醒放逐王拉布雷德的灵魂，询问如何消除死火",
+      "type": "confrontation",
+      "line_range": [
+        25,
+        64
+      ],
+      "participants": [
+        "红龙",
+        "放逐王"
+      ],
+      "location": "塔拉王城旧址深处",
+      "significance": "揭示死火的本质和可能的解决方法：需要另一条能温暖生命的红龙",
+      "is_imaginary": true
+    },
+    {
+      "event": "红龙（爱布拉娜）拜访一位老人，收回其子基斯身上的死火",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        65,
+        89
+      ],
+      "participants": [
+        "红龙",
+        "衰朽的老人"
+      ],
+      "location": "老人的住所",
+      "significance": "展示死火对普通人的影响，以及红龙收回死火的行为",
+      "is_imaginary": true
+    },
+    {
+      "event": "拉芙希妮带领塔拉流民抵达纳斯尔纱，与校官和守灵人涅梅丝交涉安置问题",
+      "type": "arrival",
+      "line_range": [
+        100,
+        154
+      ],
+      "participants": [
+        "拉芙希妮",
+        "校官",
+        "守灵人",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "纳斯尔纱城外",
+      "significance": "拉芙希妮回到塔拉，面临身份暴露和流民安置的困境",
+      "is_imaginary": false
+    },
+    {
+      "event": "涅梅丝向守灵人请求祭器被拒，守灵人强调不与生者团结的传统",
+      "type": "confrontation",
+      "line_range": [
+        155,
+        184
+      ],
+      "participants": [
+        "守灵人",
+        "严肃的守灵人"
+      ],
+      "location": "守灵人聚落",
+      "significance": "揭示守灵人的传统和与深池的隔阂",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮在纳斯尔纱街头观察战后重建，居民为夏末节雕像捐献物资",
+      "type": "investigation",
+      "line_range": [
+        185,
+        262
+      ],
+      "participants": [
+        "拉芙希妮",
+        "库林",
+        "友善的居民",
+        "焦急的居民"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "展示战后纳斯尔纱的物资匮乏和居民对红龙的崇拜",
+      "is_imaginary": false
+    },
+    {
+      "event": "提奥被居民辱骂为维多利亚坏种，布莉吉试图带他离开城市",
+      "type": "confrontation",
+      "line_range": [
+        263,
+        307
+      ],
+      "participants": [
+        "提奥",
+        "布莉吉",
+        "焦急的居民"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "揭示城中反维多利亚情绪和提奥的困境",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮与爱布拉娜在堡垒会面，爱布拉娜要求拉芙希妮杀死自己以终结死火",
+      "type": "confrontation",
+      "line_range": [
+        318,
+        393
+      ],
+      "participants": [
+        "拉芙希妮",
+        "爱布拉娜",
+        "校官"
+      ],
+      "location": "纳斯尔纱堡垒",
+      "significance": "核心冲突：爱布拉娜认为死火无法逆转，要求拉芙希妮杀死她",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮尝试祛除居民身上的紫火，发现祛除火焰会导致居民惊恐",
+      "type": "investigation",
+      "line_range": [
+        394,
+        435
+      ],
+      "participants": [
+        "拉芙希妮",
+        "友善的居民",
+        "守灵人"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "揭示紫火已深入侵染居民，直接祛除会引发恐慌",
+      "is_imaginary": false
+    },
+    {
+      "event": "放逐王的灵魂出现，嘲讽拉芙希妮的动机，预言城市将被火焰焚尽",
+      "type": "confrontation",
+      "line_range": [
+        451,
+        469
+      ],
+      "participants": [
+        "拉芙希妮",
+        "放逐王"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "放逐王揭示红龙本性中对权力和争斗的渴望",
+      "is_imaginary": true
+    },
+    {
+      "event": "官僚与粮店老板艾玛密谋走私粮食，并嫁祸维多利亚人",
+      "type": "political_intrigue",
+      "line_range": [
+        470,
+        509
+      ],
+      "participants": [
+        "官僚",
+        "担忧的居民",
+        "匆忙的士兵"
+      ],
+      "location": "纳斯尔纱",
+      "significance": "揭示城中粮食短缺的真相：官僚走私和嫁祸",
+      "is_imaginary": false
+    },
+    {
+      "event": "布莉吉试图离开纳斯尔纱，被黑雾阻拦五次",
+      "type": "departure",
+      "line_range": [
+        510,
+        529
+      ],
+      "participants": [
+        "布莉吉",
+        "烦躁的守卫"
+      ],
+      "location": "纳斯尔纱城门",
+      "significance": "黑雾阻止布莉吉离开，暗示城市被封锁",
+      "is_imaginary": false
+    },
+    {
+      "event": "城中粮食短缺引发居民愤怒，开始追查维多利亚间谍，提奥失踪",
+      "type": "riot",
+      "line_range": [
+        530,
+        561
+      ],
+      "participants": [
+        "提奥",
+        "急切的居民",
+        "愤怒的居民"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "粮食危机导致居民情绪失控，提奥处境危险",
+      "is_imaginary": false
+    },
+    {
+      "event": "库林分发存粮，居民罗里质疑库林和涅梅丝是间谍",
+      "type": "confrontation",
+      "line_range": [
+        562,
+        599
+      ],
+      "participants": [
+        "库林",
+        "阴沉的居民",
+        "友善的居民",
+        "焦急的居民"
+      ],
+      "location": "库林的工坊",
+      "significance": "库林试图维持秩序，但居民间的信任已经破裂",
+      "is_imaginary": false
+    },
+    {
+      "event": "涅梅丝寻找提奥未果，歌唱家提醒她庆功会即将开始",
+      "type": "investigation",
+      "line_range": [
+        600,
+        641
+      ],
+      "participants": [
+        "涅梅丝",
+        "库林",
+        "歌唱家"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "提奥失踪，涅梅丝面临寻找孩子和参加庆功会的两难",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮和布莉吉寻找提奥，发现粮店老板艾玛的异常行为",
+      "type": "investigation",
+      "line_range": [
+        642,
+        707
+      ],
+      "participants": [
+        "拉芙希妮",
+        "布莉吉"
+      ],
+      "location": "纳斯尔纱",
+      "significance": "发现艾玛走私粮食的线索",
+      "is_imaginary": false
+    },
+    {
+      "event": "深池庆功会上，涅梅丝因祭器问题被责难，校官揭示深池高层的腐败",
+      "type": "ceremony",
+      "line_range": [
+        708,
+        753
+      ],
+      "participants": [
+        "涅梅丝",
+        "校官",
+        "拷问者",
+        "酷吏",
+        "歌唱家",
+        "监察官",
+        "官僚"
+      ],
+      "location": "纳斯尔纱堡垒",
+      "significance": "揭示深池高层在战争中的贡献和战后的腐败",
+      "is_imaginary": false
+    },
+    {
+      "event": "作家和神秘女性讨论故事的真实性，神秘女性质疑布莉吉被黑雾拒绝的情节",
+      "type": "revelation",
+      "line_range": [
+        754,
+        759
+      ],
+      "participants": [
+        "作家",
+        "神秘的女性"
+      ],
+      "location": "酒馆",
+      "significance": "暗示故事中可能包含虚构元素",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜在庆功会上赐予仆臣财宝，随后揭露他们的贪婪并处置他们",
+      "type": "betrayal",
+      "line_range": [
+        760,
+        785
+      ],
+      "participants": [
+        "爱布拉娜",
+        "官僚",
+        "酷吏",
+        "监察官",
+        "拷问者"
+      ],
+      "location": "纳斯尔纱堡垒",
+      "significance": "爱布拉娜清除腐败的仆臣，展示其冷酷的统治手段",
+      "is_imaginary": false
+    },
+    {
+      "event": "作家和神秘女性讨论故事风格差异，神秘女性暗示布莉吉被黑雾拒绝可能是创作",
+      "type": "revelation",
+      "line_range": [
+        810,
+        819
+      ],
+      "participants": [
+        "作家",
+        "神秘的女性"
+      ],
+      "location": "酒馆",
+      "significance": "进一步模糊故事与现实的界限",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮和布莉吉从艾玛的梦话中得知粮食走私和提奥遇害的真相",
+      "type": "revelation",
+      "line_range": [
+        820,
+        860
+      ],
+      "participants": [
+        "拉芙希妮",
+        "布莉吉",
+        "担忧的居民"
+      ],
+      "location": "艾玛的粮店",
+      "significance": "揭示艾玛因丧夫之痛和流产而仇恨维多利亚人，杀害了提奥",
+      "is_imaginary": false
+    },
+    {
+      "event": "校官在庆功会后失魂落魄，拒绝透露发生了什么，警告拉芙希妮不要上街",
+      "type": "confrontation",
+      "line_range": [
+        861,
+        892
+      ],
+      "participants": [
+        "拉芙希妮",
+        "布莉吉",
+        "校官"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "校官目睹了爱布拉娜处置仆臣，精神受到冲击",
+      "is_imaginary": false
+    },
+    {
+      "event": "涅梅丝警告拉芙希妮和布莉姬不要在街上逗留",
+      "type": "confrontation",
+      "line_range": [
+        893,
+        908
+      ],
+      "participants": [
+        "拉芙希妮",
+        "布莉吉",
+        "涅梅丝"
+      ],
+      "location": "涅梅丝家附近",
+      "significance": "城市局势进一步恶化",
+      "is_imaginary": false
+    },
+    {
+      "event": "提奥被驮兽车撞伤，向艾玛求救，艾玛因丧子之痛拒绝帮助",
+      "type": "betrayal",
+      "line_range": [
+        909,
+        950
+      ],
+      "participants": [
+        "提奥",
+        "阴沉的居民",
+        "担忧的居民"
+      ],
+      "location": "纳斯尔纱巷子",
+      "significance": "提奥最终被艾玛抛弃，暗示其死亡",
+      "is_imaginary": false
+    },
+    {
+      "event": "库林得知提奥死讯后崩溃，与内心中的巨龙对话，决定摧毁雕像",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        951,
+        1014
+      ],
+      "participants": [
+        "库林",
+        "布莉吉",
+        "巨龙"
+      ],
+      "location": "库林的工坊",
+      "significance": "库林意识到自己建造雕像的行为助长了居民的盲目崇拜，决定纠正错误",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮决定出面安抚混乱，涅梅丝建议布莉吉出城",
+      "type": "planning",
+      "line_range": [
+        1015,
+        1043
+      ],
+      "participants": [
+        "拉芙希妮",
+        "涅梅丝",
+        "布莉吉"
+      ],
+      "location": "涅梅丝家",
+      "significance": "拉芙希妮决定不再做影子，主动承担责任",
+      "is_imaginary": false
+    },
+    {
+      "event": "库林将红龙雕像拖到广场，向居民坦白自己并非英雄，并摧毁雕像",
+      "type": "confrontation",
+      "line_range": [
+        1044,
+        1136
+      ],
+      "participants": [
+        "库林",
+        "狂热的居民",
+        "焦急的居民",
+        "寡言的居民",
+        "涅梅丝",
+        "拉芙希妮"
+      ],
+      "location": "纳斯尔纱广场",
+      "significance": "库林以自我毁灭的方式唤醒居民，但最终力竭而死",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜出现，宣布宵禁开始，居民散去",
+      "type": "confrontation",
+      "line_range": [
+        1137,
+        1140
+      ],
+      "participants": [
+        "爱布拉娜"
+      ],
+      "location": "纳斯尔纱广场",
+      "significance": "爱布拉娜重新控制局面",
+      "is_imaginary": false
+    },
+    {
+      "event": "作家和神秘女性讨论库林之死，神秘女性质疑深池高层是否沾染紫火",
+      "type": "revelation",
+      "line_range": [
+        1141,
+        1176
+      ],
+      "participants": [
+        "作家",
+        "神秘的女性"
+      ],
+      "location": "酒馆",
+      "significance": "暗示深池高层并未被紫火侵染，他们的腐败源于自身欲望",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮回忆与爱布拉娜的童年往事，爱布拉娜再次要求她杀死自己",
+      "type": "flashback",
+      "line_range": [
+        1177,
+        1243
+      ],
+      "participants": [
+        "拉芙希妮",
+        "爱布拉娜"
+      ],
+      "location": "纳斯尔纱堡垒",
+      "significance": "揭示姐妹关系的根源，爱布拉娜坚持死火无法逆转",
+      "is_imaginary": false
+    },
+    {
+      "event": "涅梅丝在库林死后彻底转变，发誓协助拉芙希妮对抗爱布拉娜",
+      "type": "character_development",
+      "line_range": [
+        1244,
+        1301
+      ],
+      "participants": [
+        "涅梅丝",
+        "拉芙希妮",
+        "布莉吉"
+      ],
+      "location": "纳斯尔纱",
+      "significance": "涅梅丝从调和者转变为复仇者，拉芙希妮决定前往守灵人聚落寻求帮助",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮在黑林中迷路，被放逐王引导走出困境",
+      "type": "rescue",
+      "line_range": [
+        1302,
+        1333
+      ],
+      "participants": [
+        "拉芙希妮",
+        "放逐王"
+      ],
+      "location": "黑林",
+      "significance": "放逐王首次主动帮助拉芙希妮，揭示黑林具有意识",
+      "is_imaginary": false
+    },
+    {
+      "event": "莫兰和塔拉流民进入黑林寻找拉芙希妮，表达信任",
+      "type": "reunion",
+      "line_range": [
+        1344,
+        1355
+      ],
+      "participants": [
+        "拉芙希妮",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "黑林边缘",
+      "significance": "展现塔拉流民对拉芙希妮的忠诚和信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "守灵人拒绝介入红龙争斗，但同意为库林举行葬礼",
+      "type": "negotiation",
+      "line_range": [
+        1358,
+        1384
+      ],
+      "participants": [
+        "拉芙希妮",
+        "严肃的守灵人",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "守灵人聚落",
+      "significance": "守灵人坚守不干涉生者事务的原则，但葬礼成为突破口",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮和塔拉流民为库林准备葬礼花环",
+      "type": "ceremony",
+      "line_range": [
+        1385,
+        1397
+      ],
+      "participants": [
+        "拉芙希妮",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "守灵人聚落",
+      "significance": "展现塔拉流民与拉芙希妮的亲密关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "校官向爱布拉娜汇报城中混乱，质疑未来的真实性",
+      "type": "confrontation",
+      "line_range": [
+        1409,
+        1457
+      ],
+      "participants": [
+        "爱布拉娜",
+        "校官"
+      ],
+      "location": "纳斯尔纱堡垒",
+      "significance": "校官对深池理想的动摇，爱布拉娜坚持未来绝无虚假",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜听到黑林外的歌声，确认拉芙希妮已与守灵人会合",
+      "type": "revelation",
+      "line_range": [
+        1464,
+        1467
+      ],
+      "participants": [
+        "爱布拉娜",
+        "校官"
+      ],
+      "location": "纳斯尔纱堡垒",
+      "significance": "爱布拉娜对拉芙希妮的行动了如指掌",
+      "is_imaginary": false
+    },
+    {
+      "event": "歌唱家从黑林逃出，被旧王城熔炉的歌声吸引",
+      "type": "revelation",
+      "line_range": [
+        1498,
+        1509
+      ],
+      "participants": [
+        "歌唱家"
+      ],
+      "location": "旧王城遗址",
+      "significance": "歌唱家内心挣扎，决定返回纳斯尔纱",
+      "is_imaginary": false
+    },
+    {
+      "event": "城中居民艾玛病重，居民之间出现抢夺和道德沦丧",
+      "type": "disaster",
+      "line_range": [
+        1510,
+        1522
+      ],
+      "participants": [
+        "焦急的居民",
+        "担忧的居民"
+      ],
+      "location": "纳斯尔纱城内",
+      "significance": "展现紫火导致的社会崩溃",
+      "is_imaginary": false
+    },
+    {
+      "event": "守灵人为库林举行还火仪式，拉芙希妮念诵涅梅丝的悼词",
+      "type": "ceremony",
+      "line_range": [
+        1523,
+        1550
+      ],
+      "participants": [
+        "拉芙希妮",
+        "严肃的守灵人",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "守灵人聚落",
+      "significance": "还火仪式的首次完整呈现，莫兰鼓励拉芙希妮让生者继续生活",
+      "is_imaginary": false
+    },
+    {
+      "event": "守灵人拒绝进城帮助，拉芙希妮决定独自返回纳斯尔纱",
+      "type": "departure",
+      "line_range": [
+        1551,
+        1559
+      ],
+      "participants": [
+        "拉芙希妮",
+        "严肃的守灵人"
+      ],
+      "location": "守灵人聚落",
+      "significance": "拉芙希妮决心已定，独自面对危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "放逐王带拉芙希妮前往旧王城祭台，揭示还火仪式的历史",
+      "type": "revelation",
+      "line_range": [
+        1560,
+        1614
+      ],
+      "participants": [
+        "拉芙希妮",
+        "放逐王"
+      ],
+      "location": "旧王城遗址",
+      "significance": "揭示还火仪式的起源和紫火的历史，放逐王证明爱布拉娜没有说谎",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮通过祭台看到战争记忆，理解紫火的根源是悲伤和仇恨",
+      "type": "flashback",
+      "line_range": [
+        1615,
+        1637
+      ],
+      "participants": [
+        "拉芙希妮",
+        "放逐王",
+        "担忧的居民"
+      ],
+      "location": "旧王城祭台",
+      "significance": "拉芙希妮认识到紫火源于塔拉人千年的痛苦和压迫",
+      "is_imaginary": false
+    },
+    {
+      "event": "放逐王展示自己的记忆，证明只有杀死爱布拉娜才能终结死火",
+      "type": "flashback",
+      "line_range": [
+        1641,
+        1657
+      ],
+      "participants": [
+        "拉芙希妮",
+        "放逐王",
+        "伤心的女孩"
+      ],
+      "location": "旧王城祭台/纳斯尔纱堡垒",
+      "significance": "放逐王用自己的经历证明爱布拉娜所言非虚",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮坚持要回城为活人还火，放逐王认为她愚蠢倔强",
+      "type": "confrontation",
+      "line_range": [
+        1658,
+        1668
+      ],
+      "participants": [
+        "拉芙希妮",
+        "放逐王"
+      ],
+      "location": "旧王城遗址",
+      "significance": "拉芙希妮决心已定，即使给活人还火也要尝试",
+      "is_imaginary": false
+    },
+    {
+      "event": "布莉吉带着棺材从城中赶来，描述城内混乱",
+      "type": "arrival",
+      "line_range": [
+        1669,
+        1687
+      ],
+      "participants": [
+        "拉芙希妮",
+        "布莉吉",
+        "放逐王"
+      ],
+      "location": "守灵人聚落附近",
+      "significance": "城内局势恶化，棺材不够用",
+      "is_imaginary": false
+    },
+    {
+      "event": "涅梅丝在城中整理遗物，遭遇居民罗里的攻击和居民的道德沦丧",
+      "type": "confrontation",
+      "line_range": [
+        1688,
+        1722
+      ],
+      "participants": [
+        "涅梅丝",
+        "阴沉的居民",
+        "焦急的居民",
+        "友善的居民"
+      ],
+      "location": "纳斯尔纱城内",
+      "significance": "展现紫火导致的社会彻底崩溃",
+      "is_imaginary": false
+    },
+    {
+      "event": "布莉吉决定和拉芙希妮一起回城，因为城市需要她",
+      "type": "character_development",
+      "line_range": [
+        1723,
+        1733
+      ],
+      "participants": [
+        "拉芙希妮",
+        "布莉吉"
+      ],
+      "location": "守灵人聚落附近",
+      "significance": "布莉吉从局外人转变为城市守护者",
+      "is_imaginary": false
+    },
+    {
+      "event": "守灵人向莫兰揭示先祖是导致拉布雷德死亡的祭司，因此自我放逐",
+      "type": "revelation",
+      "line_range": [
+        1734,
+        1752
+      ],
+      "participants": [
+        "严肃的守灵人",
+        "莫兰"
+      ],
+      "location": "守灵人聚落",
+      "significance": "揭示守灵人的起源和心结",
+      "is_imaginary": false
+    },
+    {
+      "event": "作家与神秘女性对话，神秘女性指出故事中的创作成分，决定补全结局",
+      "type": "revelation",
+      "line_range": [
+        1753,
+        1785
+      ],
+      "participants": [
+        "作家",
+        "神秘的女性"
+      ],
+      "location": "酒馆",
+      "significance": "神秘女性揭示故事中的虚构部分，开始讲述第三个故事",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆：幼年爱布拉娜用死火复活羽兽，拉芙希妮试图保护姐姐",
+      "type": "flashback",
+      "line_range": [
+        1786,
+        1804
+      ],
+      "participants": [
+        "冰冷的幼龙",
+        "温热的幼龙"
+      ],
+      "location": "童年住所",
+      "significance": "展现姐妹童年性格差异和爱布拉娜对死火的早期使用",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆：爱布拉娜处理探子，拉芙希妮因与探子交谈诗歌而自责",
+      "type": "flashback",
+      "line_range": [
+        1805,
+        1821
+      ],
+      "participants": [
+        "高尚的红龙",
+        "贪婪的红龙"
+      ],
+      "location": "伯爵府",
+      "significance": "展现沃里克伯爵对姐妹的控制和爱布拉娜的冷酷",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜与拉芙希妮在堡垒阳台对峙，爱布拉娜坚持只有杀死她才能解决危机",
+      "type": "confrontation",
+      "line_range": [
+        1822,
+        1888
+      ],
+      "participants": [
+        "拉芙希妮",
+        "爱布拉娜"
+      ],
+      "location": "纳斯尔纱堡垒阳台",
+      "significance": "姐妹最终对峙，爱布拉娜指出拉芙希妮的高尚让她放跑了最后的机会",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆：拉芙希妮在小丘郡前犹豫，请求阿赫茉妮传话给爱布拉娜",
+      "type": "flashback",
+      "line_range": [
+        1889,
+        1905
+      ],
+      "participants": [
+        "领袖",
+        "阿赫茉妮"
+      ],
+      "location": "小丘郡途中",
+      "significance": "揭示拉芙希妮曾试图逃避成为领袖的命运",
+      "is_imaginary": false
+    },
+    {
+      "event": "涅梅丝发现爱布拉娜尸体消失，意识到是陷阱，但拉芙希妮决定继续推进还火",
+      "type": "revelation",
+      "line_range": [
+        1906,
+        1933
+      ],
+      "participants": [
+        "涅梅丝",
+        "拉芙希妮"
+      ],
+      "location": "纳斯尔纱堡垒",
+      "significance": "拉芙希妮决定拖住黑雾，为涅梅丝争取时间",
+      "is_imaginary": false
+    },
+    {
+      "event": "神秘女性继续讲述故事，作家承认她的补充让碎片开始融合",
+      "type": "revelation",
+      "line_range": [
+        1934,
+        1966
+      ],
+      "participants": [
+        "作家",
+        "神秘的女性"
+      ],
+      "location": "酒馆",
+      "significance": "作家决定与神秘女性合作完成故事",
+      "is_imaginary": false
+    },
+    {
+      "event": "放逐王警告布莉吉离开城市，布莉吉与他打赌",
+      "type": "confrontation",
+      "line_range": [
+        1967,
+        2021
+      ],
+      "participants": [
+        "布莉吉",
+        "放逐王"
+      ],
+      "location": "纳斯尔纱城外",
+      "significance": "放逐王让布莉吉向守灵人传话，解除他们数百年的心结",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮在黑雾前坚守，为涅梅丝争取时间",
+      "type": "confrontation",
+      "line_range": [
+        2022,
+        2035
+      ],
+      "participants": [
+        "拉芙希妮"
+      ],
+      "location": "纳斯尔纱城内",
+      "significance": "拉芙希妮以决心对抗黑雾",
+      "is_imaginary": false
+    },
+    {
+      "event": "涅梅丝拖着空棺在城中游行，宣告红龙之死",
+      "type": "ceremony",
+      "line_range": [
+        2036,
+        2054
+      ],
+      "participants": [
+        "涅梅丝"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "涅梅丝开始她的复仇，但内心矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "涅梅丝在城中唱起悼歌，居民们逐渐被唤醒",
+      "type": "ceremony",
+      "line_range": [
+        2055,
+        2090
+      ],
+      "participants": [
+        "涅梅丝",
+        "好奇的居民",
+        "烂醉的居民",
+        "不舍的居民",
+        "厌烦的居民",
+        "震惊的居民",
+        "提奥"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "歌声唤醒居民的记忆，但他们对红龙之死的反应各异",
+      "is_imaginary": false
+    },
+    {
+      "event": "放逐王希望布莉吉不要回来，认为城市不值得她牺牲",
+      "type": "reflection",
+      "line_range": [
+        2091,
+        2096
+      ],
+      "participants": [
+        "放逐王"
+      ],
+      "location": "纳斯尔纱",
+      "significance": "放逐王对布莉吉产生感情",
+      "is_imaginary": false
+    },
+    {
+      "event": "濒死的艾玛质问涅梅丝谁杀了红龙，想要复仇",
+      "type": "confrontation",
+      "line_range": [
+        2097,
+        2117
+      ],
+      "participants": [
+        "涅梅丝",
+        "濒死的居民"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "居民仍想复仇，涅梅丝面临抉择",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮与黑雾对峙，宣称爱布拉娜已死，要求人们还火",
+      "type": "confrontation",
+      "line_range": [
+        2118,
+        2130
+      ],
+      "participants": [
+        "拉芙希妮"
+      ],
+      "location": "纳斯尔纱",
+      "significance": "拉芙希妮以狂妄的姿态对抗黑雾",
+      "is_imaginary": false
+    },
+    {
+      "event": "涅梅丝宣布红龙杀死了自己，阻止居民复仇",
+      "type": "revelation",
+      "line_range": [
+        2131,
+        2150
+      ],
+      "participants": [
+        "涅梅丝",
+        "濒死的居民"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "涅梅丝用谎言阻止复仇，但艾玛陷入绝望",
+      "is_imaginary": false
+    },
+    {
+      "event": "布莉吉和莫兰返回，莫兰为战歌续上新节，鼓励居民还火",
+      "type": "arrival",
+      "line_range": [
+        2151,
+        2180
+      ],
+      "participants": [
+        "布莉吉",
+        "莫兰",
+        "濒死的居民",
+        "涅梅丝"
+      ],
+      "location": "纳斯尔纱街道",
+      "significance": "莫兰的劝说让艾玛接受还火",
+      "is_imaginary": false
+    },
+    {
+      "event": "守灵人抵达，宣布纳斯尔纱将举行盛大的还火仪式",
+      "type": "arrival",
+      "line_range": [
+        2181,
+        2190
+      ],
+      "participants": [
+        "严肃的守灵人",
+        "涅梅丝",
+        "放逐王"
+      ],
+      "location": "纳斯尔纱广场",
+      "significance": "守灵人终于介入，放逐王与守灵人和解",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮在还火仪式中与爱布拉娜最后对话，爱布拉娜揭示真相",
+      "type": "confrontation",
+      "line_range": [
+        2191,
+        2198
+      ],
+      "participants": [
+        "拉芙希妮",
+        "爱布拉娜"
+      ],
+      "location": "纳斯尔纱广场",
+      "significance": "拉芙希妮最后一次陪伴姐姐",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆：爱布拉娜拒绝阻止雄辩家挟持拉芙希妮前往小丘郡",
+      "type": "flashback",
+      "line_range": [
+        2199,
+        2219
+      ],
+      "participants": [
+        "校官",
+        "爱布拉娜",
+        "阿赫茉妮"
+      ],
+      "location": "深池营地",
+      "significance": "爱布拉娜让拉芙希妮自己解决问题",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜与拉芙希妮在精神世界最后对话，揭示爱布拉娜的真相",
+      "type": "confrontation",
+      "line_range": [
+        2220,
+        2275
+      ],
+      "participants": [
+        "拉芙希妮",
+        "爱布拉娜"
+      ],
+      "location": "精神世界",
+      "significance": "爱布拉娜揭示她从未被权力改变，而是权力碰巧适合她；她将嘲弄死亡",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮从火焰中复活，宣布成为塔拉唯一的德拉克后裔",
+      "type": "revelation",
+      "line_range": [
+        2276,
+        2296
+      ],
+      "participants": [
+        "拉芙希妮",
+        "布莉吉",
+        "涅梅丝",
+        "敏感的居民"
+      ],
+      "location": "纳斯尔纱广场",
+      "significance": "拉芙希妮用生命的火替换死火，成为塔拉新领袖",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮建议布莉吉联系罗德岛",
+      "type": "planning",
+      "line_range": [
+        2305,
+        2314
+      ],
+      "participants": [
+        "拉芙希妮",
+        "布莉吉"
+      ],
+      "location": "纳斯尔纱广场",
+      "significance": "为布莉吉后续剧情铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "放逐王拉布雷德履行赌约，将紫火从自己体内取出，回归死亡",
+      "type": "sacrifice",
+      "line_range": [
+        2315,
+        2335
+      ],
+      "participants": [
+        "放逐王",
+        "布莉吉",
+        "拉芙希妮"
+      ],
+      "location": "纳斯尔纱广场",
+      "significance": "放逐王最终选择安息",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜向作家揭示真相：她通过征收血税在死后仍能存在",
+      "type": "revelation",
+      "line_range": [
+        2336,
+        2400
+      ],
+      "participants": [
+        "歌唱家",
+        "爱布拉娜"
+      ],
+      "location": "酒馆",
+      "significance": "揭示爱布拉娜未死，她与威灵顿合谋，拉芙希妮的奇迹是自导自演",
+      "is_imaginary": false
+    },
+    {
+      "event": "开斯特公爵收到塔拉王国的信件，意识到塔拉独立的威胁",
+      "type": "political_intrigue",
+      "line_range": [
+        2401,
+        2413
+      ],
+      "participants": [
+        "开斯特公爵",
+        "严肃的近侍"
+      ],
+      "location": "维多利亚",
+      "significance": "维多利亚对塔拉独立的反应",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔拉戒严解除，社会逐渐恢复生机，艾玛在农业地块服役",
+      "type": "revelation",
+      "line_range": [
+        2415,
+        2443
+      ],
+      "participants": [
+        "报童",
+        "悠闲的居民",
+        "酒馆老板",
+        "担忧的居民"
+      ],
+      "location": "塔拉酒馆",
+      "significance": "展现塔拉战后重建的日常",
+      "is_imaginary": false
+    },
+    {
+      "event": "布莉吉告别莫兰，准备前往罗德岛",
+      "type": "departure",
+      "line_range": [
+        2444,
+        2465
+      ],
+      "participants": [
+        "布莉吉",
+        "莫兰",
+        "校官"
+      ],
+      "location": "纳斯尔纱",
+      "significance": "布莉吉选择继续游牧生活，校官与莫兰和解",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮在五月盛宴上点燃篝火，发表和平演讲",
+      "type": "ceremony",
+      "line_range": [
+        2466,
+        2499
+      ],
+      "participants": [
+        "拉芙希妮",
+        "涅梅丝",
+        "提醒的声音"
+      ],
+      "location": "纳斯尔纱",
+      "significance": "拉芙希妮正式成为塔拉领袖，倡导和平与生活",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉芙希妮向涅梅丝揭示奇迹的真相：自导自演的还火",
+      "type": "revelation",
+      "line_range": [
+        2500,
+        2522
+      ],
+      "participants": [
+        "拉芙希妮",
+        "涅梅丝"
+      ],
+      "location": "纳斯尔纱",
+      "significance": "揭示拉芙希妮与爱布拉娜合谋策划了红龙复生的奇迹",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜让作家失语，揭示她已与死亡不可分割",
+      "type": "confrontation",
+      "line_range": [
+        2523,
+        2566
+      ],
+      "participants": [
+        "歌唱家",
+        "爱布拉娜"
+      ],
+      "location": "酒馆",
+      "significance": "爱布拉娜夺走故事的所有权，作家失语",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜（死芒）与罗德岛学者对话，表明她被罗德岛吸引",
+      "type": "revelation",
+      "line_range": [
+        2567,
+        2588
+      ],
+      "participants": [
+        "死芒"
+      ],
+      "location": "未知",
+      "significance": "爱布拉娜以死芒身份加入罗德岛，为后续剧情铺垫",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "作家",
+      "type": "npc",
+      "role_in_chapter": "叙事框架中的讲述者，曾亲身经历纳斯尔纱事件，向神秘女性讲述故事",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "神秘的女性",
+      "type": "npc",
+      "role_in_chapter": "叙事框架中的听众，对拼凑真相有特殊兴趣，引导作家讲述故事",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "红龙（爱布拉娜）",
+      "type": "npc",
+      "role_in_chapter": "塔拉领袖，使用死火点燃塔拉获得独立，但死火也侵染了居民，要求拉芙希妮杀死自己",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "放逐王（拉布雷德）",
+      "type": "npc",
+      "role_in_chapter": "被爱布拉娜唤醒的古代红龙灵魂，提供关于死火的建议，后以灵魂形态出现嘲讽拉芙希妮",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "衰朽的老人",
+      "type": "npc",
+      "role_in_chapter": "儿子基斯被死火侵染，爱布拉娜收回死火后他得以安息",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "拉芙希妮（苇草）",
+      "type": "operator",
+      "role_in_chapter": "另一条红龙，回到纳斯尔纱寻求解决死火的方法，拒绝杀死姐姐，决定寻找解药",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "校官",
+      "type": "npc",
+      "role_in_chapter": "深池高层，负责迎接拉芙希妮，目睹爱布拉娜处置仆臣后精神受创",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "守灵人（涅梅丝）",
+      "type": "npc",
+      "role_in_chapter": "离群的守灵人，在深池工作，负责安置流民和庆功会事务，库林死后转变为复仇者",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莫兰",
+      "type": "npc",
+      "role_in_chapter": "塔拉流民，曾梦想成为吟游诗人，信任守灵人",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "严肃的守灵人",
+      "type": "npc",
+      "role_in_chapter": "守灵人聚落的代表，拒绝提供祭器，强调守灵人的传统",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "林",
+      "type": "operator",
+      "role_in_chapter": "铁匠，被居民视为英雄，收养维多利亚孤儿提奥，最终在广场上坦白真相并力竭而死",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "提奥",
+      "type": "npc",
+      "role_in_chapter": "库林收养的维多利亚孤儿，被居民歧视，最终被艾玛杀害",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "水灯心",
+      "type": "operator",
+      "role_in_chapter": "游牧人，能闻到紫火的气味，关心提奥，试图离开城市被黑雾阻拦",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "友善的居民",
+      "type": "npc",
+      "role_in_chapter": "纳斯尔纱居民，热情接待拉芙希妮，后卷入粮食危机",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "焦急的居民",
+      "type": "npc",
+      "role_in_chapter": "纳斯尔纱居民，积极捐献物资，后参与追查间谍",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阴沉的居民（罗里）",
+      "type": "npc",
+      "role_in_chapter": "纳斯尔纱居民，因古董被烧而精神失常，怀疑库林是间谍",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "担忧的居民（艾玛）",
+      "type": "npc",
+      "role_in_chapter": "粮店老板，受官僚指使走私粮食，因丧夫和流产而仇恨维多利亚人，杀害了提奥",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "官僚",
+      "type": "npc",
+      "role_in_chapter": "深池高层，负责后勤，走私粮食并嫁祸维多利亚人，被爱布拉娜处置",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "酷吏",
+      "type": "npc",
+      "role_in_chapter": "深池高层，战争期间震慑豪商贵族，战后腐败，被爱布拉娜处置",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "拷问者",
+      "type": "npc",
+      "role_in_chapter": "深池高层，以听人哀号为乐，战争期间勇猛，被爱布拉娜处置",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "监察官",
+      "type": "npc",
+      "role_in_chapter": "深池高层，为官僚出谋划策嫁祸维多利亚人，被爱布拉娜处置",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "歌唱家",
+      "type": "npc",
+      "role_in_chapter": "被涅梅丝和库林救过，对守灵人文化感兴趣，提醒涅梅丝参加庆功会",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "巨龙",
+      "type": "npc",
+      "role_in_chapter": "库林内心幻象，代表其自我怀疑和愧疚，促使库林摧毁雕像",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "拉芙希妮",
+      "type": "operator",
+      "role_in_chapter": "主角，塔拉德拉克后裔，从守灵人聚落返回纳斯尔纱，最终杀死爱布拉娜并复活，成为塔拉新领袖",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "爱布拉娜",
+      "type": "npc",
+      "role_in_chapter": "拉芙希妮的姐姐，喷吐死火的红龙，被拉芙希妮杀死后通过血税复活，以死芒身份存在",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "放逐王",
+      "type": "npc",
+      "role_in_chapter": "拉布雷德的灵魂，引导拉芙希妮了解历史，最终履行赌约回归死亡",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "涅梅丝",
+      "type": "npc",
+      "role_in_chapter": "守灵人，在城中拖棺游行宣告红龙之死，协助拉芙希妮策划奇迹",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "歌唱家/作家",
+      "type": "npc",
+      "role_in_chapter": "深池成员，故事的讲述者，最终被爱布拉娜夺走故事并失语",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "神秘的女性/死芒",
+      "type": "npc",
+      "role_in_chapter": "爱布拉娜的化身，与作家对话补全故事，最终揭示身份为死芒",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿赫茉妮",
+      "type": "npc",
+      "role_in_chapter": "深池成员，替拉芙希妮传话给爱布拉娜",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "开斯特公爵",
+      "type": "npc",
+      "role_in_chapter": "维多利亚大公爵，收到塔拉王国信件，意识到塔拉独立的威胁",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "夏末节",
+      "line_range": [
+        169,
+        227
+      ],
+      "discussion_summary": "严肃的守灵人解释夏末节是丰收节日的正式称呼，守灵人不会送出祭器，因为深池从未尊重过守灵人帮助逝者的传统。\n\n友善的居民解释夏末节的传统：打扫房屋、设宴待客、点起篝火，在生与死交汇之日款待赴宴者。这是塔拉新生后的第一个夏末节。",
+      "is_substantive": true
+    },
+    {
+      "concept": "黑雾",
+      "line_range": [
+        252,
+        256
+      ],
+      "discussion_summary": "友善的居民解释黑雾保护纳斯尔纱，但也会进入城市街道。宵禁是为了避免任何人遇上黑雾，未经许可闯进雾中的人再也回不来。",
+      "is_substantive": true
+    },
+    {
+      "concept": "红龙的祝福",
+      "line_range": [
+        399,
+        405
+      ],
+      "discussion_summary": "友善的居民将紫火视为红龙的祝福，认为城市一切向好，紫火是祝福的体现。拉芙希妮尝试祛除火焰，但居民感到惊恐。",
+      "is_substantive": true
+    },
+    {
+      "concept": "还火仪式",
+      "line_range": [
+        1523,
+        1550
+      ],
+      "discussion_summary": "守灵人详细说明还火仪式的步骤：将烛火放在火堆旁或投入火中，把火还给死者，对着火焰说话，守灵直到火焰熄灭",
+      "is_substantive": true
+    },
+    {
+      "concept": "还火仪式（历史）",
+      "line_range": [
+        1593,
+        1603
+      ],
+      "discussion_summary": "放逐王揭示还火仪式的历史：最初在盖尔王加冕的祭台举行，后来演变为将手伸入火中烫泡，更早时兄弟姐妹要一起殉葬",
+      "is_substantive": true
+    },
+    {
+      "concept": "紫火/死火",
+      "line_range": [
+        1631,
+        1657
+      ],
+      "discussion_summary": "拉芙希妮认识到紫火源于塔拉人千年的悲伤和仇恨，放逐王证明只有杀死红龙才能终结死火，沾染紫火的生灵都会化为灰烬",
+      "is_substantive": true
+    },
+    {
+      "concept": "血税",
+      "line_range": [
+        2365,
+        2373
+      ],
+      "discussion_summary": "爱布拉娜解释她征收血税，将死火收归己身，将生命与死亡连通，让困于生死之间的人将她仰望",
+      "is_substantive": true
+    },
+    {
+      "concept": "奇迹",
+      "line_range": [
+        2500,
+        2522
+      ],
+      "discussion_summary": "拉芙希妮向涅梅丝揭示奇迹的真相：自导自演的还火，她主动走进火焰用生命的火替换死火",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "深池",
+      "line_range": [
+        174,
+        184
+      ],
+      "description": "守灵人拒绝深池请求祭器的要求，认为深池从未尊重守灵人的传统，只是用传统装点门面。"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        708,
+        753
+      ],
+      "description": "深池高层在庆功会上暴露腐败本质：官僚走私粮食，监察官出谋划策嫁祸维多利亚人，拷问者和酷吏贪图享乐。校官揭示他们战争期间的贡献。"
+    },
+    {
+      "faction": "守灵人",
+      "line_range": [
+        155,
+        184
+      ],
+      "description": "守灵人过着近乎苦修的生活，与普通人的唯一接点是举办葬礼。他们不与生者团结，也不需要生者的尊重，除非他们已经死去。"
+    },
+    {
+      "faction": "守灵人",
+      "line_range": [
+        1255,
+        1265
+      ],
+      "description": "严肃的守灵人指出涅梅丝被城市浸染得黯淡了，她执着于等待、斡旋、调和，但冲突本就无法避免。"
+    },
+    {
+      "faction": "维多利亚",
+      "line_range": [
+        252,
+        256
+      ],
+      "description": "居民解释维多利亚的熄火钟是为了压制塔拉人，而纳斯尔纱的宵禁是为了保护。"
+    },
+    {
+      "faction": "维多利亚",
+      "line_range": [
+        542,
+        548
+      ],
+      "description": "居民认为维多利亚间谍破坏了农业地块，导致粮食短缺，要求揪出叛徒。"
+    },
+    {
+      "faction": "守灵人",
+      "line_range": [
+        1358,
+        1384
+      ],
+      "description": "守灵人拒绝介入红龙争斗，坚守不干涉生者事务的原则，但同意为库林举行葬礼"
+    },
+    {
+      "faction": "守灵人（历史）",
+      "line_range": [
+        1734,
+        1752
+      ],
+      "description": "守灵人向莫兰揭示先祖是导致拉布雷德死亡的祭司，因此自我放逐，永远不忘记教训"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        2336,
+        2400
+      ],
+      "description": "爱布拉娜向作家揭示深池的真相，包括与威灵顿的合谋和对纳斯尔纱的封锁"
+    },
+    {
+      "faction": "维多利亚大公爵",
+      "line_range": [
+        2401,
+        2413
+      ],
+      "description": "开斯特公爵收到塔拉王国信件，意识到塔拉独立的威胁，决定与威灵顿继续商谈"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2567,
+        2588
+      ],
+      "description": "死芒与罗德岛学者对话，表明她被罗德岛吸引，将以死芒身份存在"
+    }
+  ],
+  "locations": [
+    {
+      "location": "塔拉王城旧址",
+      "line_range": [
+        25,
+        28
+      ],
+      "description": "被天灾摧毁的塔拉王城旧址最深处，爱布拉娜在此唤醒放逐王拉布雷德。"
+    },
+    {
+      "location": "纳斯尔纱",
+      "line_range": [
+        100,
+        105
+      ],
+      "description": "塔拉首府，红龙的巢穴。没有直接介入伦蒂尼姆战火，但附近有低烈度渗透和贵族叛乱。红龙进军伦蒂尼姆后，这里打了一场局部战争。"
+    },
+    {
+      "location": "纳斯尔纱",
+      "line_range": [
+        252,
+        256
+      ],
+      "description": "黑雾盘踞在黑林之中保护纳斯尔纱，但有时也会进入城市街道。宵禁是为了避免任何人遇上黑雾。"
+    },
+    {
+      "location": "守灵人聚落",
+      "line_range": [
+        155,
+        184
+      ],
+      "description": "守灵人居住的遗迹附近，他们过着苦修般的生活，与普通人的唯一接点是举办葬礼。"
+    },
+    {
+      "location": "纳斯尔纱堡垒",
+      "line_range": [
+        318,
+        320
+      ],
+      "description": "纳斯尔纱的制高点，爱布拉娜最常停留的地方。"
+    },
+    {
+      "location": "黑林",
+      "line_range": [
+        521,
+        524
+      ],
+      "description": "环绕纳斯尔纱的森林，黑雾盘踞其中。布莉吉试图穿过黑林离开，但黑雾阻拦了她。"
+    },
+    {
+      "location": "黑林",
+      "line_range": [
+        1302,
+        1333
+      ],
+      "description": "拉芙希妮在黑林中迷路，发现黑林具有意识，会拒绝或冷漠对待进入者"
+    },
+    {
+      "location": "守灵人聚落",
+      "line_range": [
+        1358,
+        1384
+      ],
+      "description": "守灵人聚落，守灵人过着苦修生活，不喝酒不开宴会，每天有仪式"
+    },
+    {
+      "location": "旧王城遗址",
+      "line_range": [
+        1579,
+        1603
+      ],
+      "description": "塔拉旧王城遗址，中央有祭台（熔炉），是盖尔王加冕和还火仪式举行的地方"
+    },
+    {
+      "location": "纳斯尔纱",
+      "line_range": [
+        1688,
+        1722
+      ],
+      "description": "城内局势恶化，居民互相抢夺，道德沦丧，棺材不够用"
+    },
+    {
+      "location": "塔拉酒馆",
+      "line_range": [
+        2415,
+        2443
+      ],
+      "description": "塔拉戒严解除后，酒馆恢复营业，居民开始正常生活"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:35:24.562884+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 61438,
+    "tokens_out": 14992,
+    "elapsed_s": 108.68992686271667
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "作家",
+    "神秘的女性",
+    "红龙（爱布拉娜）",
+    "放逐王（拉布雷德）",
+    "衰朽的老人",
+    "拉芙希妮（苇草）",
+    "校官",
+    "守灵人（涅梅丝）",
+    "莫兰",
+    "严肃的守灵人",
+    "提奥",
+    "友善的居民",
+    "焦急的居民",
+    "阴沉的居民（罗里）",
+    "担忧的居民（艾玛）",
+    "官僚",
+    "酷吏",
+    "拷问者",
+    "监察官",
+    "歌唱家",
+    "巨龙",
+    "拉芙希妮",
+    "爱布拉娜",
+    "放逐王",
+    "涅梅丝",
+    "歌唱家/作家",
+    "神秘的女性/死芒",
+    "阿赫茉妮",
+    "开斯特公爵"
+  ]
+}

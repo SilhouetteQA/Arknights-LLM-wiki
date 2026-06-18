@@ -1,0 +1,447 @@
+{
+  "summary": "本章围绕卡兹戴尔魂灵熔炉的安抚仪式展开。仪式因死魂灵之间的冲突而失败，导致熔炉爆炸，大量沾染死魂灵意识的碎片散落全城。主角妮芙受巫妖朋友埃芒加德委托，负责回收这些危险的碎片。在寻找碎片的过程中，妮芙结识了贫民窟的顾问珀耳，并与他一同深入卡兹戴尔的各个角落，与不同阶层和背景的居民打交道。\n\n妮芙和珀耳先后遭遇了因碎片而陷入疯狂争夺的帮派、被碎片附身而失控的巨像、以及一位被碎片影响却浑然不觉的服装设计师克伦妮。通过与这些人的互动，妮芙不仅回收了碎片，也见证了卡兹戴尔在战后重建中的复杂面貌——既有帮派间的冲突与排外，也有外族人的艰难融入，以及普通人对美好生活的向往。\n\n在寻找最后一块碎片时，妮芙意外闯入了食腐者卡莱莎的梦境小屋，窥见了她作为北风女巫的过往记忆，并与食腐者之王孽茨雷进行了短暂交流。最终，妮芙在街头遇到了自称锡人的神秘盔甲人，他身上携带着最大的死魂灵碎片。锡人并非被附身，而是一位主动回归的古老死魂灵。\n\n在埃芒加德的带领下，妮芙、珀耳、克伦妮、泥岩、卡莱莎以及锡人一同进入了魂灵熔炉深处。埃芒加德试图完成老师未竟的安抚仪式，但死魂灵们毫无回应。锡人提议众人将自己的愿望和想法写在纸上烧给死魂灵。众人写下了对卡兹戴尔未来的不同构想，死魂灵们似乎被这些“不一样的故事”所吸引，仪式以一种出乎意料的方式取得了进展。",
+  "events": [
+    {
+      "event": "魂灵熔炉安抚仪式失败，发生爆炸，死魂灵碎片散落全城",
+      "type": "disaster",
+      "line_range": [
+        55,
+        131
+      ],
+      "participants": [
+        "弗莱蒙特",
+        "埃芒加德",
+        "维什戴尔",
+        "曼弗雷德",
+        "死魂灵长者"
+      ],
+      "location": "魂灵熔炉",
+      "significance": "引发本章核心冲突，妮芙受命回收碎片",
+      "is_imaginary": false
+    },
+    {
+      "event": "妮芙受埃芒加德委托，开始寻找散落的死魂灵碎片",
+      "type": "planning",
+      "line_range": [
+        173,
+        199
+      ],
+      "participants": [
+        "妮芙",
+        "埃芒加德"
+      ],
+      "location": "妮芙家附近的节点炉旁",
+      "significance": "确立妮芙在本章的主要任务",
+      "is_imaginary": false
+    },
+    {
+      "event": "妮芙在梦中与死魂灵碎片中的意识初次对话",
+      "type": "dream_vision",
+      "line_range": [
+        206,
+        229
+      ],
+      "participants": [
+        "妮芙",
+        "炉渣的阴影"
+      ],
+      "location": "妮芙的梦境",
+      "significance": "揭示死魂灵对卡兹戴尔现状的失望与不满",
+      "is_imaginary": true
+    },
+    {
+      "event": "珀耳以顾问身份调解帮派大会，帮助妮芙取得第一块碎片",
+      "type": "negotiation",
+      "line_range": [
+        399,
+        496
+      ],
+      "participants": [
+        "珀耳",
+        "妮芙",
+        "断角帮老大",
+        "严肃的雇佣兵",
+        "沉稳的女性"
+      ],
+      "location": "断角帮地盘内的帮派大会",
+      "significance": "展现珀耳的智慧和影响力，妮芙获得重要盟友",
+      "is_imaginary": false
+    },
+    {
+      "event": "妮芙和珀耳调查闹鬼棚屋，遭遇泥岩和失控的巨像",
+      "type": "confrontation",
+      "line_range": [
+        616,
+        744
+      ],
+      "participants": [
+        "妮芙",
+        "珀耳",
+        "泥岩",
+        "受伤的感染者"
+      ],
+      "location": "城东闹鬼的棚屋",
+      "significance": "揭示外族人在卡兹戴尔的生存困境，回收第二块碎片",
+      "is_imaginary": false
+    },
+    {
+      "event": "妮芙与泥岩讨论外族人进城生活的可能性",
+      "type": "ideological_clash",
+      "line_range": [
+        748,
+        767
+      ],
+      "participants": [
+        "妮芙",
+        "泥岩"
+      ],
+      "location": "棚屋外",
+      "significance": "探讨卡兹戴尔包容性与未来道路的冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "妮芙追踪被碎片附身的克伦妮，在城外遇到信使莫斯提马",
+      "type": "investigation",
+      "line_range": [
+        867,
+        1034
+      ],
+      "participants": [
+        "妮芙",
+        "克伦妮",
+        "莫斯提马"
+      ],
+      "location": "卡兹戴尔城区边缘及城外",
+      "significance": "引入新角色克伦妮和莫斯提马，回收第三块碎片",
+      "is_imaginary": false
+    },
+    {
+      "event": "克伦妮讲述自己的经历和对卡兹戴尔未来的憧憬",
+      "type": "character_development",
+      "line_range": [
+        1044,
+        1107
+      ],
+      "participants": [
+        "妮芙",
+        "克伦妮"
+      ],
+      "location": "克伦妮的仓库住所",
+      "significance": "展现卡兹戴尔个体对美和未来的追求",
+      "is_imaginary": false
+    },
+    {
+      "event": "妮芙在卡莱莎家中误触梦境装置，进入食腐者的记忆",
+      "type": "flashback",
+      "line_range": [
+        1193,
+        1314
+      ],
+      "participants": [
+        "妮芙",
+        "卡莱莎",
+        "食腐者之王"
+      ],
+      "location": "卡莱莎的梦境小屋/记忆中的雪原",
+      "significance": "揭示卡莱莎的过往和食腐者的理念分歧",
+      "is_imaginary": true
+    },
+    {
+      "event": "妮芙在街头遇到自称锡人的神秘盔甲人，发现其携带最大碎片",
+      "type": "revelation",
+      "line_range": [
+        1375,
+        1397
+      ],
+      "participants": [
+        "妮芙",
+        "珀耳",
+        "锡人"
+      ],
+      "location": "卡兹戴尔街头",
+      "significance": "引入关键角色锡人，揭示其并非被附身而是主动回归的死魂灵",
+      "is_imaginary": false
+    },
+    {
+      "event": "众人进入魂灵熔炉深处，尝试完成安抚仪式",
+      "type": "ceremony",
+      "line_range": [
+        1496,
+        1624
+      ],
+      "participants": [
+        "妮芙",
+        "埃芒加德",
+        "珀耳",
+        "克伦妮",
+        "泥岩",
+        "卡莱莎",
+        "锡人"
+      ],
+      "location": "魂灵熔炉最深处",
+      "significance": "本章高潮，众人通过书写愿望与死魂灵沟通，仪式以意外方式推进",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "妮芙",
+      "type": "operator",
+      "role_in_chapter": "主角，笞心魔，受埃芒加德委托回收死魂灵碎片，在过程中结识各方人物并深入了解卡兹戴尔现状",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "埃芒加德",
+      "type": "npc",
+      "role_in_chapter": "巫妖，弗莱蒙特的学生，委托妮芙寻找碎片，最终带领众人进入熔炉尝试完成仪式",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "渡桥",
+      "type": "operator",
+      "role_in_chapter": "贫民窟的顾问，帮助妮芙调解帮派冲突并一同寻找碎片，是妮芙的重要盟友",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "弗莱蒙特",
+      "type": "npc",
+      "role_in_chapter": "巫妖，主持安抚仪式但失败，与死魂灵和维什戴尔争吵",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "维什戴尔",
+      "type": "operator",
+      "role_in_chapter": "旁观仪式并与弗莱蒙特争吵，对死魂灵态度不敬",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "曼弗雷德",
+      "type": "npc",
+      "role_in_chapter": "军事委员会将军，在仪式期间负责警戒",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "死魂灵长者",
+      "type": "npc",
+      "role_in_chapter": "被特蕾西娅恢复理智的死魂灵，试图平息其他死魂灵的怒火",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "泥岩",
+      "type": "operator",
+      "role_in_chapter": "石翼魔，带领一群外族人在卡兹戴尔生活，帮助妮芙回收碎片",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克伦妮",
+      "type": "npc",
+      "role_in_chapter": "服装设计师，被死魂灵碎片附身，梦想在卡兹戴尔发展时尚产业",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莫斯提马",
+      "type": "operator",
+      "role_in_chapter": "企鹅物流信使，萨科塔，为克伦妮送货，与妮芙短暂交流",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "卡莱莎",
+      "type": "npc",
+      "role_in_chapter": "食腐者，北风女巫，脱离族群在卡兹戴尔生活，其梦境装置被妮芙误触",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "食腐者之王",
+      "type": "npc",
+      "role_in_chapter": "孽茨雷，在卡莱莎的记忆中出现，与妮芙短暂交谈",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "锡人",
+      "type": "npc",
+      "role_in_chapter": "从哥伦比亚归来的古老死魂灵，附身于盔甲中，帮助众人完成仪式",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "死魂灵",
+      "line_range": [
+        19,
+        52
+      ],
+      "discussion_summary": "弗莱蒙特与死魂灵对话，解释仪式目的是释放他们，并警告他们安分守己。死魂灵被描述为被关在熔炉中燃烧了上万年的存在，充满愤怒和痛苦。",
+      "is_substantive": true
+    },
+    {
+      "concept": "死魂灵碎片",
+      "line_range": [
+        159,
+        172
+      ],
+      "discussion_summary": "埃芒加德向妮芙解释死魂灵碎片的危险性：它们会影响附近人的情绪，改变触觉，如同定时炸弹。碎片数量不多，但难以寻找。",
+      "is_substantive": true
+    },
+    {
+      "concept": "笞心魔的能力",
+      "line_range": [
+        512,
+        517
+      ],
+      "discussion_summary": "妮芙向珀耳解释笞心魔的能力：可以感知他人的恐惧，但施展法术很费心力，且不能随意读取内心。澄清了人们对笞心魔能力的误解。",
+      "is_substantive": true
+    },
+    {
+      "concept": "卡兹戴尔的未来/道路",
+      "line_range": [
+        748,
+        761
+      ],
+      "discussion_summary": "妮芙与泥岩争论外族人能否进城生活。妮芙认为卡兹戴尔脆弱，无法再承受巴别塔那样的变革；泥岩则认为卡兹戴尔没那么脆弱，好的事物终究是好的。",
+      "is_substantive": true
+    },
+    {
+      "concept": "食腐者的理念/道路",
+      "line_range": [
+        1248,
+        1257
+      ],
+      "discussion_summary": "北风女巫向妮芙解释食腐者远离战争会变得弱小，并暗示她与宗长孽茨雷选择了相反的道路，就像她当初那样。",
+      "is_substantive": true
+    },
+    {
+      "concept": "安抚仪式/与死魂灵沟通",
+      "line_range": [
+        1545,
+        1624
+      ],
+      "discussion_summary": "埃芒加德尝试完成仪式但失败，锡人提议众人将愿望写在纸上烧给死魂灵。众人写下对卡兹戴尔的不同构想，死魂灵被这些故事吸引，仪式以非传统方式推进。妮芙提出只要人们生活变好，就没有歧途。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "军事委员会",
+      "line_range": [
+        60,
+        65
+      ],
+      "description": "曼弗雷德将军指挥卫士在仪式期间警戒，确保不出岔子。",
+      "is_substantive": true
+    },
+    {
+      "faction": "断角帮",
+      "line_range": [
+        399,
+        495
+      ],
+      "description": "断角帮老大巴库在帮派大会上与雇佣兵争夺铁疙瘩，对顾问珀耳不满，认为他偏帮外来的雇佣兵。",
+      "is_substantive": true
+    },
+    {
+      "faction": "老兵之家/归乡雇佣兵",
+      "line_range": [
+        399,
+        495
+      ],
+      "description": "以桶子为代表的归乡雇佣兵在帮派大会上与断角帮争夺铁疙瘩和地盘，认为自己是替城里人挨刀子。",
+      "is_substantive": true
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        762,
+        765
+      ],
+      "description": "泥岩提到阿米娅和罗德岛的理念，并邀请妮芙去见阿米娅。",
+      "is_substantive": true
+    },
+    {
+      "faction": "企鹅物流",
+      "line_range": [
+        984,
+        985
+      ],
+      "description": "莫斯提马自我介绍为企鹅物流的信使，为克伦妮送货。",
+      "is_substantive": true
+    },
+    {
+      "faction": "食腐者王庭",
+      "line_range": [
+        1281,
+        1314
+      ],
+      "description": "食腐者之王孽茨雷在卡莱莎的记忆中出现，与妮芙交谈，关心伦蒂尼姆战争的结果和卡兹戴尔的存续。",
+      "is_substantive": true
+    }
+  ],
+  "locations": [
+    {
+      "location": "魂灵熔炉",
+      "line_range": [
+        1,
+        55
+      ],
+      "description": "卡兹戴尔的核心设施，燃烧死魂灵供能。仪式在此举行，后发生爆炸。被描述为卡兹戴尔难得的好地方。",
+      "is_substantive": true
+    },
+    {
+      "location": "卡兹戴尔/城区",
+      "line_range": [
+        230,
+        271
+      ],
+      "description": "通过豆芽菜与大脑袋的对话，描述了卡兹戴尔城区的混乱现状：工地被砸、帮派争斗、物资匮乏。",
+      "is_substantive": true
+    },
+    {
+      "location": "城东闹鬼棚屋",
+      "line_range": [
+        616,
+        645
+      ],
+      "description": "被描述为年久失修、无人敢住的棚屋，实际上是泥岩和她的外族同伴的藏身之处。他们因被排挤只能住在这里。",
+      "is_substantive": true
+    },
+    {
+      "location": "卡莱莎的梦境小屋/雪原",
+      "line_range": [
+        1238,
+        1273
+      ],
+      "description": "卡莱莎用记忆制作的梦境空间，包含一片雪原和一汪不冻泉。北风女巫在此为食腐者士兵提供治疗和慰藉。",
+      "is_substantive": true
+    },
+    {
+      "location": "魂灵熔炉最深处",
+      "line_range": [
+        1496,
+        1510
+      ],
+      "description": "熔炉的核心区域，只有巫妖涉足。卡莱莎指出这里是举行安抚仪式的地方，有巫术核心在发光。",
+      "is_substantive": true
+    }
+  ],
+  "chapter": "熔炉“还魂”记",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:42:40.311329+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 39575,
+    "tokens_out": 3995,
+    "elapsed_s": 32.62467646598816
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "埃芒加德",
+    "弗莱蒙特",
+    "曼弗雷德",
+    "死魂灵长者",
+    "克伦妮",
+    "卡莱莎",
+    "食腐者之王"
+  ]
+}

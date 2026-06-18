@@ -1,0 +1,586 @@
+{
+  "summary": "本章「生于黑夜」以萨卡兹雇佣兵小队为核心，讲述了从卡兹戴尔内战末期到切尔诺伯格事件期间，赫德雷、伊内丝与W三人的命运交织与分离。故事始于一场伏击后，赫德雷与伊内丝接纳了继承战友遗物与代号的陌生萨卡兹女性作为新的「W」。随后，他们受雇于巴别塔，护卫一艘名为「罗德岛」的神秘舰船，并首次接触到特蕾西娅殿下、凯尔希医生以及神秘的「博士」。在巴别塔的短暂停留中，W与特蕾西娅产生了深刻的联系，而赫德雷与伊内丝则因对战争本质的思考和对巴别塔内部「异类」的警惕，选择离开，并将W留在了特蕾西娅身边。\n\n特蕾西娅遇刺后，卡兹戴尔局势剧变，摄政王特雷西斯掌权。W独自展开了对参与刺杀者的漫长追杀，内心充满复仇的执念。赫德雷与伊内丝则被迫接受摄政王的统合，以加入整合运动为名，远赴乌萨斯。三人在卡兹戴尔边境的废墟中重逢，W决定加入他们，但明确表示要按自己的方式行事。在整合运动中，W凭借狠辣手段迅速成为萨卡兹佣兵的领袖，而赫德雷与伊内丝则察觉到整合运动领袖塔露拉身上存在异常。\n\n切尔诺伯格事件爆发，W与赫德雷、伊内丝在整合运动内部周旋。伊内丝通过源石技艺窥探到塔露拉存在「两个影子」的诡异真相，认为她正在刻意葬送整合运动。在试图向W传递这一关键情报时，伊内丝遭到整合运动士兵的伏击，疑似身亡。赫德雷在确认伊内丝的死讯后，决定前往维多利亚向摄政王述职，以掩护W的行动，并试图从更高层面探寻真相。\n\n赫德雷抵达伦蒂尼姆后，受到赦罪师的接见，意识到摄政王对一切了如指掌。他利用早年埋下的秘密发报站，试图与W保持联系。与此同时，W在切尔诺伯格的废墟中遇到了两名乌萨斯孤儿。她通过残酷的考验，逼迫那个被救的孩子去为救他的同伴冒险取药，并最终将一把萨卡兹军刀赠予了那个坚强的孩子，完成了一次关于信任与成长的残酷教导。故事以W独自面对塔露拉的身影结束，暗示着更大的冲突即将到来。",
+  "events": [
+    {
+      "event": "赫德雷与伊内丝在伏击后接纳了继承W遗物与代号的陌生萨卡兹女性",
+      "type": "reunion_and_recruitment",
+      "line_range": [
+        1,
+        94
+      ],
+      "participants": [
+        "赫德雷",
+        "伊内丝",
+        "W"
+      ],
+      "location": "卡兹戴尔战场废墟",
+      "significance": "确立了新W的身份，开启了三人小队的新篇章",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫德雷与伊内丝讨论中介人被杀及巴别塔的拦截命令，决定接受护卫任务",
+      "type": "planning",
+      "line_range": [
+        168,
+        246
+      ],
+      "participants": [
+        "赫德雷",
+        "伊内丝"
+      ],
+      "location": "雇佣兵营地",
+      "significance": "揭示了巴别塔的介入，将小队卷入更大的阴谋",
+      "is_imaginary": false
+    },
+    {
+      "event": "W为掩护队伍撤退，出卖了营地中的其他萨卡兹小队",
+      "type": "betrayal",
+      "line_range": [
+        247,
+        266
+      ],
+      "participants": [
+        "W",
+        "萨卡兹战士"
+      ],
+      "location": "雇佣兵营地",
+      "significance": "展现了W冷酷果断的行事风格",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊内丝与W在汇合后发生冲突与试探，伊内丝揭露W最初接近赫德雷是为了刺杀",
+      "type": "confrontation",
+      "line_range": [
+        297,
+        338
+      ],
+      "participants": [
+        "伊内丝",
+        "W"
+      ],
+      "location": "汇合点篝火旁",
+      "significance": "揭示了W的过去动机，加深了两人之间的不信任与相互了解",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊内丝用法术窥探运输队，发现其运送的是一艘船的骨架",
+      "type": "revelation",
+      "line_range": [
+        370,
+        378
+      ],
+      "participants": [
+        "赫德雷",
+        "伊内丝"
+      ],
+      "location": "运输队附近",
+      "significance": "首次揭示罗德岛舰船的存在，是剧情关键转折点",
+      "is_imaginary": false
+    },
+    {
+      "event": "W与伊内丝在伏击后联手对抗追兵，伊内丝从俘虏口中得知敌人来自卡兹戴尔",
+      "type": "battle_and_investigation",
+      "line_range": [
+        379,
+        479
+      ],
+      "participants": [
+        "W",
+        "伊内丝",
+        "萨卡兹战士"
+      ],
+      "location": "战场废墟",
+      "significance": "展现了两人在危机中的合作与生存智慧",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊内丝通过法术感知到白发的萨卡兹女性，怀疑是萨卡兹的王",
+      "type": "revelation",
+      "line_range": [
+        577,
+        594
+      ],
+      "participants": [
+        "伊内丝",
+        "赫德雷"
+      ],
+      "location": "战场废墟",
+      "significance": "暗示特蕾西娅的存在，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "W与伊内丝被罗德岛救下，W在舰船上与特蕾西娅相遇并交谈",
+      "type": "revelation_and_character_development",
+      "line_range": [
+        595,
+        746
+      ],
+      "participants": [
+        "W",
+        "伊内丝",
+        "特蕾西娅",
+        "凯尔希",
+        "博士"
+      ],
+      "location": "罗德岛舰船",
+      "significance": "W与特蕾西娅的初次会面，特蕾西娅对W产生了深远影响",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫德雷与伊内丝决定离开巴别塔，并将W留下",
+      "type": "departure",
+      "line_range": [
+        747,
+        852
+      ],
+      "participants": [
+        "赫德雷",
+        "伊内丝",
+        "凯尔希"
+      ],
+      "location": "罗德岛舰船外",
+      "significance": "三人小队第一次分裂，赫德雷与伊内丝选择远离核心漩涡",
+      "is_imaginary": false
+    },
+    {
+      "event": "W在巴别塔期间执行任务，并偷拍了一张与特蕾西娅的合影",
+      "type": "character_development",
+      "line_range": [
+        853,
+        906
+      ],
+      "participants": [
+        "W",
+        "Scout",
+        "萨卡兹俘虏"
+      ],
+      "location": "罗德岛舰船",
+      "significance": "展现了W对特蕾西娅的亲近感，以及她作为雇佣兵的冷酷一面",
+      "is_imaginary": false
+    },
+    {
+      "event": "特蕾西娅遇刺后，W独自追杀参与者，赫德雷与伊内丝找到她并提议加入整合运动",
+      "type": "reunion_and_planning",
+      "line_range": [
+        907,
+        1060
+      ],
+      "participants": [
+        "赫德雷",
+        "伊内丝",
+        "W",
+        "萨卡兹战士"
+      ],
+      "location": "卡兹戴尔边境废墟",
+      "significance": "三人再次集结，确立了前往乌萨斯加入整合运动的计划",
+      "is_imaginary": false
+    },
+    {
+      "event": "W在天灾云下与线人接头，确认罗德岛号已离开卡兹戴尔",
+      "type": "investigation",
+      "line_range": [
+        1119,
+        1133
+      ],
+      "participants": [
+        "W",
+        "萨卡兹战士"
+      ],
+      "location": "天灾云下",
+      "significance": "W开始追踪罗德岛的踪迹，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊内丝与Scout在切尔诺伯格对峙，揭露了W与Scout的交易",
+      "type": "confrontation_and_revelation",
+      "line_range": [
+        1137,
+        1238
+      ],
+      "participants": [
+        "伊内丝",
+        "Scout",
+        "赫德雷"
+      ],
+      "location": "切尔诺伯格",
+      "significance": "揭示了W在整合运动内部的复杂布局，以及Scout的牺牲",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊内丝用法术窥探塔露拉，发现其存在「两个影子」的异常",
+      "type": "revelation",
+      "line_range": [
+        1212,
+        1238
+      ],
+      "participants": [
+        "伊内丝",
+        "Scout",
+        "赫德雷",
+        "塔露拉"
+      ],
+      "location": "切尔诺伯格核心城附近",
+      "significance": "揭示了塔露拉被操控或取代的真相，是本章核心谜题",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊内丝向赫德雷解释塔露拉的异常，认为她在刻意葬送整合运动",
+      "type": "investigation_and_analysis",
+      "line_range": [
+        1239,
+        1276
+      ],
+      "participants": [
+        "赫德雷",
+        "伊内丝"
+      ],
+      "location": "切尔诺伯格",
+      "significance": "深化了塔露拉异常的设定，为后续冲突提供动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊内丝在寻找W的途中被整合运动士兵伏击，疑似身亡",
+      "type": "ambush_and_sacrifice",
+      "line_range": [
+        1277,
+        1312
+      ],
+      "participants": [
+        "伊内丝",
+        "整合运动士兵"
+      ],
+      "location": "切尔诺伯格街道",
+      "significance": "伊内丝疑似死亡，导致W与整合运动关系彻底破裂",
+      "is_imaginary": false
+    },
+    {
+      "event": "W与赫德雷就伊内丝之死及未来计划进行激烈争论，赫德雷决定前往维多利亚",
+      "type": "confrontation_and_planning",
+      "line_range": [
+        1313,
+        1511
+      ],
+      "participants": [
+        "W",
+        "赫德雷"
+      ],
+      "location": "切尔诺伯格营地",
+      "significance": "赫德雷与W分道扬镳，赫德雷选择深入敌营探查真相",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫德雷在出发前试探整合运动士兵，确认伊内丝之死有蹊跷",
+      "type": "investigation",
+      "line_range": [
+        1512,
+        1531
+      ],
+      "participants": [
+        "赫德雷",
+        "整合运动士兵"
+      ],
+      "location": "切尔诺伯格",
+      "significance": "暗示伊内丝可能未死，为后续剧情留下悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫德雷在伦蒂尼姆受到赦罪师接见，意识到摄政王掌控一切",
+      "type": "political_intrigue",
+      "line_range": [
+        1532,
+        1568
+      ],
+      "participants": [
+        "赫德雷",
+        "赦罪师"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "揭示了摄政王特雷西斯的深谋远虑，赫德雷处境危险",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫德雷利用秘密发报站，试图向W传递信息",
+      "type": "planning",
+      "line_range": [
+        1569,
+        1643
+      ],
+      "participants": [
+        "赫德雷",
+        "萨卡兹信使"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "赫德雷开始布局，试图在摄政王的监视下与W保持联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "W在切尔诺伯格废墟中考验两名乌萨斯孤儿，并赠予一把萨卡兹军刀",
+      "type": "character_development",
+      "line_range": [
+        1664,
+        1901
+      ],
+      "participants": [
+        "W",
+        "坚强的孩子",
+        "孱弱的孩子"
+      ],
+      "location": "切尔诺伯格废墟",
+      "significance": "展现了W在复仇之外的另一面，以及她对萨卡兹传承的理解",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "赫德雷",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹雇佣兵副队长，后成为队长。是三人小队的核心决策者，深谋远虑，试图在战争中为萨卡兹寻找出路。最终选择前往维多利亚，深入敌营探查摄政王的意图。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伊内丝",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹雇佣兵，拥有能窥探他人「影子」的源石技艺。性格谨慎多疑，与W关系紧张。在发现塔露拉的异常后，试图警告W时被整合运动伏击，疑似身亡。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "W",
+      "type": "operator",
+      "role_in_chapter": "继承死去雇佣兵代号与遗物的萨卡兹女性。行事疯狂狠辣，但内心深受特蕾西娅影响。在特蕾西娅遇刺后，以复仇为驱动，成为萨卡兹佣兵领袖，并试图在整合运动中寻找机会。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "魔王",
+      "type": "operator",
+      "role_in_chapter": "萨卡兹的殿下，巴别塔的领袖。温和而伟大，对W产生了深远影响。在故事中期被刺杀，成为W复仇的根源。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的医生，巴别塔的核心成员。对雇佣兵保持警惕，但行事公正。平等地看待所有种族，包括萨卡兹。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "巴别塔的战地指挥官，身份神秘。被伊内丝视为「异类」，其存在让W感到莫名的恐惧。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Scout",
+      "type": "npc",
+      "role_in_chapter": "巴别塔的精英干员，与W有旧。在切尔诺伯格执行秘密任务，与W达成交易，最终被赫德雷杀死。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "赦罪师",
+      "type": "npc",
+      "role_in_chapter": "摄政王特雷西斯的手下，在伦蒂尼姆接见赫德雷，言语中充满威胁与试探。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "塔露拉",
+      "type": "npc",
+      "role_in_chapter": "整合运动的领袖。在故事中被伊内丝发现存在「两个影子」的异常，被认为正在刻意葬送整合运动。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "坚强的孩子",
+      "type": "npc",
+      "role_in_chapter": "名为卢布廖夫的乌萨斯孤儿，性格坚强。在切尔诺伯格废墟中被W考验，最终获赠一把萨卡兹军刀。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "孱弱的孩子",
+      "type": "npc",
+      "role_in_chapter": "名为安德烈的乌萨斯孤儿，性格怯懦。被卢布廖夫所救，后为救卢布廖夫冒险偷取医疗箱，完成了自我成长。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "雇佣兵的价码与意义",
+      "line_range": [
+        118,
+        120
+      ],
+      "discussion_summary": "赫德雷解释雇佣兵的行规：越强大的佣兵越昂贵，越昂贵的佣兵越危险，越危险的佣兵越该死，而没死成的佣兵会更强大。战争给了他们活下去的余地。",
+      "is_substantive": true
+    },
+    {
+      "concept": "雇佣兵的价码与意义",
+      "line_range": [
+        1610,
+        1619
+      ],
+      "discussion_summary": "W提出新的理念：每一个萨卡兹雇佣兵都应该明码标价，但不必被他人赋予，他们应该亲手写下自己的价码，用所有与萨卡兹为敌之人的鲜血。",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹的旗帜与传承",
+      "line_range": [
+        789,
+        803
+      ],
+      "discussion_summary": "赫德雷回忆雇佣兵旗帜的历史，从西部到东部，旗帜从未倒下。但在护卫罗德岛时，旗帜被毁，他本可以接住旗杆却没有。他表示自己一直不喜欢雇佣兵的旗帜，它明明应该倒下。",
+      "is_substantive": true
+    },
+    {
+      "concept": "棋手与棋子",
+      "line_range": [
+        826,
+        836
+      ],
+      "discussion_summary": "伊内丝用棋手与棋子的比喻来形容博士与普通战士的关系。棋手赢了能回家吃饭，棋子则被装回棋篓。她认为在博士眼中，他们都是死物，只有博士自己才是那个人。",
+      "is_substantive": true
+    },
+    {
+      "concept": "名字的意义",
+      "line_range": [
+        711,
+        723
+      ],
+      "discussion_summary": "特蕾西娅询问W的真名，认为「W」只代表一个雇佣兵，名字才能代表她自己。她希望等到卡兹戴尔的命运尘埃落定，W能拥有一个更好的名字，就像罗德岛一样，有名字会听上去更温暖。",
+      "is_substantive": true
+    },
+    {
+      "concept": "信任与怀疑",
+      "line_range": [
+        1857,
+        1865
+      ],
+      "discussion_summary": "W教导卢布廖夫：决定一个人所作所为的不是出身、身份或过去，而是他生命中的一切对他产生的影响，以及他到底多么相信自己的信念。她指出卢布廖夫救了他却瞧不起他，而那个孩子想救他，在这方面比他强。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "巴别塔",
+      "line_range": [
+        243,
+        246
+      ],
+      "description": "赫德雷向伊内丝透露，他们的信使被巴别塔在卡兹戴尔留下的暗桩拦截，并接到了一道命令。"
+    },
+    {
+      "faction": "巴别塔",
+      "line_range": [
+        618,
+        746
+      ],
+      "description": "赫德雷、W和伊内丝与巴别塔的核心成员凯尔希、特蕾西娅和博士会面，并登上罗德岛舰船。"
+    },
+    {
+      "faction": "巴别塔",
+      "line_range": [
+        747,
+        776
+      ],
+      "description": "赫德雷与凯尔希讨论离开巴别塔的决定，凯尔希表示惋惜，但尊重他们的选择。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1042,
+        1046
+      ],
+      "description": "赫德雷向W介绍整合运动，称其为聚集了各个种族被压迫、被歧视者的势力，正适合被摄政王摆放在下一个需要的位置上。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1282,
+        1304
+      ],
+      "description": "整合运动士兵伏击伊内丝，指责萨卡兹雇佣兵的失职，并策划伪造伊内丝的战死现场。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1356,
+        1396
+      ],
+      "description": "整合运动士兵向W兴师问罪，指责其队伍叛逃、失职，W则强硬回应，双方关系紧张。"
+    },
+    {
+      "faction": "摄政王/特雷西斯势力",
+      "line_range": [
+        1532,
+        1568
+      ],
+      "description": "赦罪师代表摄政王接见赫德雷，暗示摄政王对整合运动的一切了如指掌，并警告赫德雷不要多管闲事。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        662,
+        693
+      ],
+      "description": "特蕾西娅向W介绍罗德岛号，称这是她从舰船深处资料中翻阅到的名字，她想这么命名它。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "卡兹戴尔",
+      "line_range": [
+        174,
+        175
+      ],
+      "description": "赫德雷提到他们的中介人在卡兹戴尔的工业区被杀，尸体被丢在锻炉里。"
+    },
+    {
+      "location": "卡兹戴尔",
+      "line_range": [
+        754,
+        755
+      ],
+      "description": "赫德雷回忆卡兹戴尔巨大的工业区，和围绕在它周围延绵百里，充斥着犯罪与死亡的腐烂城市。"
+    },
+    {
+      "location": "罗德岛舰船",
+      "line_range": [
+        604,
+        605
+      ],
+      "description": "伊内丝描述罗德岛舰船，称其是正在搭建中的设施，闻所未闻。"
+    },
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        1198,
+        1199
+      ],
+      "description": "伊内丝发现Scout正在向切尔诺伯格的核心城转移。"
+    },
+    {
+      "location": "伦蒂尼姆",
+      "line_range": [
+        1532,
+        1568
+      ],
+      "description": "赫德雷抵达伦蒂尼姆，在赦罪师的殿堂中接受质询。"
+    }
+  ],
+  "chapter": "生于黑夜",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:58:22.597996+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 37130,
+    "tokens_out": 5472,
+    "elapsed_s": 52.98698401451111
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "博士",
+    "Scout",
+    "赦罪师",
+    "塔露拉",
+    "坚强的孩子",
+    "孱弱的孩子"
+  ]
+}

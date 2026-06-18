@@ -1,0 +1,687 @@
+{
+  "summary": "本章讲述了运载车驾驶员阿兰娜与被她收养的感染者女孩小锅盖（温米）在运载车即将停运之际，被神秘女子莱伊劫车，被迫前往偏远之地「咧嘴谷」寻找传说中「巨兽」的故事。途中，她们遭遇了检查站的感染者排查危机，在莱伊的帮助下强行冲关，并结识了胆小逃婚的保险推销员杰里。一行人伪装车辆，前往移动平台补给，并从探险家石棉处获得了关于「巨兽」的模糊线索。\n\n在继续前行的路上，小锅盖因过度使用源石技艺调节动力炉而引发矿石病急性发作，幸得偶遇的罗德岛干员阿米娅、博士和暴行出手相救。阿米娅稳定了小锅盖的病情后，一行人决定结伴同行。在躲避天灾的过程中，莱伊与众人走散，独自在沙地兽的引导下，于一个封闭岩穴中找到了一个自称被困数百年的巨大生物，对方否认了自己是莱伊记忆中拯救过她的「巨兽」。\n\n最终，众人未能真正抵达咧嘴谷，因活性源石覆盖而被迫折返。莱伊在见过那个自称「巨兽」的生物后，似乎解开了心结，并决定加入罗德岛。小锅盖在阿兰娜和暴行的陪同下，准备前往罗德岛本舰接受治疗。故事以阿米娅在罗德岛舰上与博士的对话收尾，她意识到莱伊记忆中那道拯救她的光，或许正是当年被挖掘出来、正在荒野中行进的罗德岛本舰。",
+  "events": [
+    {
+      "event": "阿兰娜与小锅盖在运载车上准备最后一趟行程，小锅盖因使用源石技艺热菜而被阿兰娜责备。",
+      "type": "character_development",
+      "line_range": [
+        1,
+        44
+      ],
+      "participants": [
+        "阿兰娜",
+        "小锅盖"
+      ],
+      "location": "运载车上",
+      "significance": "揭示小锅盖的感染者身份和阿兰娜对她的保护态度，为后续冲突埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "小锅盖独自去百货店卖二手厨具并采购物资，遇到百货店老板和沉默寡言的顾客（暴行）。",
+      "type": "investigation",
+      "line_range": [
+        82,
+        143
+      ],
+      "participants": [
+        "小锅盖",
+        "百货店老板",
+        "暴行"
+      ],
+      "location": "合金长耳朵百货店",
+      "significance": "展现小锅盖的独立和坚强，并让暴行注意到她感染者的身份，为后续相遇铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿兰娜与工友小查理打保龄球，小查理试图用赌局挽留阿兰娜，但阿兰娜坚持要去钢铁萝卜城。",
+      "type": "confrontation",
+      "line_range": [
+        145,
+        213
+      ],
+      "participants": [
+        "阿兰娜",
+        "小查理"
+      ],
+      "location": "锈渣子镇载具厂",
+      "significance": "展现阿兰娜与小锅盖之间深厚的羁绊，以及她为小锅盖的未来所做的牺牲。",
+      "is_imaginary": false
+    },
+    {
+      "event": "小锅盖在车站遇到畏畏缩缩的乘客（杰里），并帮助他确认车次。",
+      "type": "encounter",
+      "line_range": [
+        171,
+        178
+      ],
+      "participants": [
+        "小锅盖",
+        "杰里"
+      ],
+      "location": "车站",
+      "significance": "引入杰里这个角色，为后续剧情增加变数。",
+      "is_imaginary": false
+    },
+    {
+      "event": "小锅盖在办事处排队提交停运报告书，遇到暴行，暴行帮她递交文件并给了她罗德岛的名片。",
+      "type": "revelation",
+      "line_range": [
+        278,
+        304
+      ],
+      "participants": [
+        "小锅盖",
+        "暴行"
+      ],
+      "location": "办事处",
+      "significance": "暴行正式登场，并埋下罗德岛这条线索。",
+      "is_imaginary": false
+    },
+    {
+      "event": "运载车被莱伊劫持，广播宣布改道前往咧嘴谷。",
+      "type": "ambush",
+      "line_range": [
+        322,
+        325
+      ],
+      "participants": [
+        "阿兰娜",
+        "莱伊",
+        "小锅盖",
+        "杰里"
+      ],
+      "location": "运载车上",
+      "significance": "剧情核心冲突爆发，劫车事件将所有人卷入一场意外的旅程。",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱伊在驾驶室与阿兰娜对峙，解释劫车是为了去咧嘴谷找一个巨大的阴影。",
+      "type": "confrontation",
+      "line_range": [
+        326,
+        383
+      ],
+      "participants": [
+        "阿兰娜",
+        "莱伊"
+      ],
+      "location": "运载车驾驶室",
+      "significance": "揭示莱伊劫车的动机，引出「巨兽」的传说。",
+      "is_imaginary": false
+    },
+    {
+      "event": "运载车在检查站被拦下，小锅盖和莱伊的感染者身份暴露，阿兰娜试图求情未果。",
+      "type": "confrontation",
+      "line_range": [
+        454,
+        523
+      ],
+      "participants": [
+        "阿兰娜",
+        "小锅盖",
+        "莱伊",
+        "检验官A",
+        "检验官B"
+      ],
+      "location": "格林梅多自治州检查站",
+      "significance": "展现雷姆必拓对感染者的歧视和压迫，激化矛盾，迫使众人冲关。",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱伊和杰里出手打倒安保人员，阿兰娜驾驶运载车强行冲关。",
+      "type": "battle",
+      "line_range": [
+        524,
+        561
+      ],
+      "participants": [
+        "阿兰娜",
+        "莱伊",
+        "杰里"
+      ],
+      "location": "格林梅多自治州检查站",
+      "significance": "众人彻底成为同伙，剧情进入逃亡模式。",
+      "is_imaginary": false
+    },
+    {
+      "event": "众人伪装运载车，前往移动平台补给，阿兰娜拜访老朋友石棉询问「巨兽」的情报。",
+      "type": "investigation",
+      "line_range": [
+        603,
+        654
+      ],
+      "participants": [
+        "阿兰娜",
+        "小锅盖",
+        "莱伊",
+        "杰里"
+      ],
+      "location": "移动平台",
+      "significance": "通过伪装躲避追查，并从石棉处获得「巨兽」这一关键概念。",
+      "is_imaginary": false
+    },
+    {
+      "event": "杰里向莱伊坦白自己逃婚的经历，并解释自己为何不下车。",
+      "type": "revelation",
+      "line_range": [
+        684,
+        708
+      ],
+      "participants": [
+        "杰里",
+        "莱伊"
+      ],
+      "location": "移动平台",
+      "significance": "丰富杰里的角色背景，展现其懦弱但善良的性格。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿兰娜和小锅盖拜访石棉，石棉告知「巨兽」是萨尔贡语中的一个概念，但拒绝详细解释。",
+      "type": "revelation",
+      "line_range": [
+        723,
+        835
+      ],
+      "participants": [
+        "阿兰娜",
+        "小锅盖",
+        "石棉"
+      ],
+      "location": "石棉的临时工作间",
+      "significance": "确认「巨兽」的存在，但信息模糊，增加了神秘感。",
+      "is_imaginary": false
+    },
+    {
+      "event": "杰里在躲避追查时误入陌生女性（吉拉）的藏身处，两人一起逃跑并建立了联系。",
+      "type": "alliance",
+      "line_range": [
+        731,
+        963
+      ],
+      "participants": [
+        "杰里",
+        "吉拉"
+      ],
+      "location": "移动平台下水道及工厂",
+      "significance": "杰里的副线剧情，他与吉拉相遇并最终走到一起，为结局的婚礼埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "小锅盖因过度使用源石技艺导致矿石病急性发作，体温急剧升高。",
+      "type": "disaster",
+      "line_range": [
+        991,
+        1040
+      ],
+      "participants": [
+        "阿兰娜",
+        "小锅盖",
+        "莱伊"
+      ],
+      "location": "运载车动力室",
+      "significance": "剧情转折点，小锅盖的病情将众人推向绝境，并引出罗德岛的救援。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿兰娜与前来查看情况的暴行发生冲突，车内发生爆燃。",
+      "type": "confrontation",
+      "line_range": [
+        1053,
+        1068
+      ],
+      "participants": [
+        "阿兰娜",
+        "暴行"
+      ],
+      "location": "运载车外",
+      "significance": "展现阿兰娜的绝望和暴躁，以及暴行的正义感。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅用源石技艺稳定了小锅盖的病情，罗德岛一行人加入队伍。",
+      "type": "rescue",
+      "line_range": [
+        1132,
+        1143
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "暴行",
+        "阿兰娜",
+        "小锅盖"
+      ],
+      "location": "运载车内",
+      "significance": "罗德岛正式介入，小锅盖获救，剧情转向合作。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿兰娜向阿米娅和暴行讲述小锅盖的身世，她一直在等待离家的父亲。",
+      "type": "flashback",
+      "line_range": [
+        1215,
+        1231
+      ],
+      "participants": [
+        "阿兰娜",
+        "阿米娅",
+        "暴行"
+      ],
+      "location": "运载车外营地",
+      "significance": "揭示小锅盖坚持开心的原因，深化角色情感。",
+      "is_imaginary": false
+    },
+    {
+      "event": "暴行与博士在夜晚篝火旁回忆过去，暴行讲述了自己因「围栏事件」而失望并离开的经历。",
+      "type": "flashback",
+      "line_range": [
+        1257,
+        1321
+      ],
+      "participants": [
+        "暴行",
+        "博士"
+      ],
+      "location": "运载车外营地",
+      "significance": "补充暴行的背景故事，展现雷姆必拓的社会矛盾。",
+      "is_imaginary": false
+    },
+    {
+      "event": "暴行与莱伊交谈，莱伊表达了对小锅盖病情的后怕和自责。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1328,
+        1364
+      ],
+      "participants": [
+        "暴行",
+        "莱伊"
+      ],
+      "location": "运载车外营地",
+      "significance": "展现莱伊内心柔软的一面，为她的转变做铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱伊回忆自己作为探井人的过去，以及沙地兽因毒气泄漏而死去的经历。",
+      "type": "flashback",
+      "line_range": [
+        1365,
+        1454
+      ],
+      "participants": [
+        "莱伊"
+      ],
+      "location": "矿场及回忆中的荒野",
+      "significance": "揭示莱伊的过去，解释她为何执着于寻找「巨兽」——那是她黑暗生活中的一束光。",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱伊在躲避天灾时与众人走散，被一群沙地兽驮着带到了一个封闭岩穴，遇到了一个自称被困的「巨兽」。",
+      "type": "revelation",
+      "line_range": [
+        1533,
+        1626
+      ],
+      "participants": [
+        "莱伊",
+        "巨兽"
+      ],
+      "location": "封闭岩穴",
+      "significance": "剧情高潮，莱伊找到了「巨兽」，但对方否认是拯救过她的那一只，并询问莱伊的愿望。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿兰娜在钢铁萝卜城与杰里重逢，得知杰里与吉拉已经结婚并正在蜜月旅行。",
+      "type": "reunion",
+      "line_range": [
+        1627,
+        1687
+      ],
+      "participants": [
+        "阿兰娜",
+        "杰里"
+      ],
+      "location": "钢铁萝卜城",
+      "significance": "杰里副线的圆满结局，并意外解决了运载车缺少安全阀的问题。",
+      "is_imaginary": false
+    },
+    {
+      "event": "小锅盖在暴行的指导下学习使用法杖，并最终在阿兰娜面前释放情绪，哭了出来。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1689,
+        1740
+      ],
+      "participants": [
+        "小锅盖",
+        "暴行",
+        "阿兰娜"
+      ],
+      "location": "钢铁萝卜城",
+      "significance": "小锅盖情感上的成长，她终于不再强迫自己开心，接受了阿兰娜的安慰。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅与博士在罗德岛舰上交谈，阿米娅意识到莱伊记忆中拯救她的光，可能是当年被挖掘出来的罗德岛本舰。",
+      "type": "revelation",
+      "line_range": [
+        1741,
+        1840
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "莱伊"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "揭示本章最大的谜题，将莱伊的个人经历与罗德岛的历史联系起来，升华主题。",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱伊加入罗德岛，并告诉阿米娅和博士，她想要一个答案。",
+      "type": "departure",
+      "line_range": [
+        1792,
+        1814
+      ],
+      "participants": [
+        "莱伊",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "莱伊的角色弧光完成，她找到了新的目标和归属。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "阿兰娜",
+      "type": "npc",
+      "role_in_chapter": "运载车驾驶员，小锅盖的监护人。性格豪爽、急躁但重情义。为保护小锅盖不惜一切，最终决定带她去罗德岛治病。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "小锅盖（温米）",
+      "type": "npc",
+      "role_in_chapter": "被阿兰娜收养的感染者女孩，乐观坚强但内心悲伤。因过度使用源石技艺导致矿石病发作，后被罗德岛所救。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莱伊",
+      "type": "operator",
+      "role_in_chapter": "劫车人，前探井人。为寻找记忆中拯救过自己的「巨兽」而劫车。最终加入罗德岛，寻求答案。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "杰里",
+      "type": "npc",
+      "role_in_chapter": "胆小怕事的保险推销员，因逃婚而搭上这辆车。在旅途中与吉拉相遇并结婚，最终获得成长。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "暴行",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，阿米娅和博士的同伴。在检查站注意到小锅盖，后出手相助。与博士回忆过去，并最终决定带小锅盖回罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，用源石技艺稳定了小锅盖的病情。在故事结尾意识到莱伊记忆中的光可能是罗德岛本舰。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的指挥官，与阿米娅和暴行同行。对「巨兽」表现出兴趣，并在故事结尾收到阿米娅的生态箱礼物。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "石棉",
+      "type": "operator",
+      "role_in_chapter": "阿兰娜的老朋友，一位探险家。向阿兰娜提供了关于「巨兽」的线索，但拒绝深入解释。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "吉拉",
+      "type": "npc",
+      "role_in_chapter": "五金店老板，为逃避家庭安排而假装失踪。与杰里相遇后，两人结婚并开始蜜月旅行。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "小查理",
+      "type": "npc",
+      "role_in_chapter": "阿兰娜的工友，试图用保龄球赌局挽留阿兰娜。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "百货店老板",
+      "type": "npc",
+      "role_in_chapter": "合金长耳朵百货店的老板，认识阿兰娜，帮助了小锅盖。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "检验官A",
+      "type": "npc",
+      "role_in_chapter": "格林梅多自治州检查站的检验官，严格执行对感染者的排查。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "检验官B",
+      "type": "npc",
+      "role_in_chapter": "格林梅多自治州检查站的检验官，协助A进行排查。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "矿队队长",
+      "type": "npc",
+      "role_in_chapter": "出现在莱伊回忆中，雇佣莱伊下井的矿队队长。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "活体动物商贩",
+      "type": "npc",
+      "role_in_chapter": "出现在莱伊回忆中，拒绝为沙地兽提供药物并嘲讽莱伊的商贩。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "巨兽",
+      "type": "npc",
+      "role_in_chapter": "被困在岩穴中的巨大生物，自称不是莱伊要找的那一只，但询问了莱伊的愿望。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "巨兽",
+      "line_range": [
+        594,
+        602
+      ],
+      "discussion_summary": "莱伊向阿兰娜描述她要找的东西：一个像山一样巨大的影子，在雾中会散发光线，还会说话。",
+      "is_substantive": true
+    },
+    {
+      "concept": "巨兽",
+      "line_range": [
+        824,
+        831
+      ],
+      "discussion_summary": "石棉向阿兰娜解释「巨兽」是萨尔贡语中的一个概念，知道的人很少，她无法解释清楚，并警告阿兰娜不要乱传。",
+      "is_substantive": true
+    },
+    {
+      "concept": "巨兽",
+      "line_range": [
+        1592,
+        1626
+      ],
+      "discussion_summary": "莱伊与自称「巨兽」的生物对话，对方否认是莱伊要找的那只，并询问莱伊的愿望。莱伊请求它将沙地兽们送到安全的地表。",
+      "is_substantive": true
+    },
+    {
+      "concept": "矿石病/感染者",
+      "line_range": [
+        454,
+        523
+      ],
+      "discussion_summary": "检查站的检验官以排查感染者为由，强行检查运载车，并试图带走小锅盖和莱伊，展现了雷姆必拓对感染者的歧视和高压政策。",
+      "is_substantive": true
+    },
+    {
+      "concept": "矿石病/感染者",
+      "line_range": [
+        1126,
+        1131
+      ],
+      "discussion_summary": "阿兰娜在绝望中承认自己知道矿石病是绝症，但为了小锅盖，她只能选择相信那些偏方和药物，表达了对绝症的无力感。",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石技艺",
+      "line_range": [
+        38,
+        43
+      ],
+      "discussion_summary": "阿兰娜责备小锅盖擅自使用源石技艺热菜，小锅盖辩解称这是最快的方法，阿兰娜警告她这样对身体不好。",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石技艺",
+      "line_range": [
+        1027,
+        1029
+      ],
+      "discussion_summary": "阿兰娜指出小锅盖偷偷用源石技艺调节动力炉温度，导致自己发烧，并再次强调不许她徒手施法。",
+      "is_substantive": true
+    },
+    {
+      "concept": "规范化",
+      "line_range": [
+        232,
+        235
+      ],
+      "discussion_summary": "阿兰娜向小锅盖解释运载车需要检修升级的原因，是因为比格皮勒自治州的几家工会商量着要「规范化」，即定规矩。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1142,
+        1155
+      ],
+      "description": "阿米娅向阿兰娜介绍罗德岛，说明救治感染者是罗德岛的职责，并邀请他们前往罗德岛办事处进行更全面的检查。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1792,
+        1806
+      ],
+      "description": "莱伊加入罗德岛，阿米娅表示罗德岛日后可以成为她的家。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1830,
+        1839
+      ],
+      "description": "阿米娅回忆起罗德岛被挖掘出来，在雷姆必拓荒野中行进的历史，并意识到它可能就是莱伊记忆中的那道光。"
+    },
+    {
+      "faction": "比格皮勒自治州工会",
+      "line_range": [
+        232,
+        235
+      ],
+      "description": "阿兰娜提到比格皮勒自治州的几家工会商量着要「规范化」，导致运载车需要检修升级。"
+    },
+    {
+      "faction": "格林梅多自治州检查站",
+      "line_range": [
+        454,
+        523
+      ],
+      "description": "检查站的检验官以排查感染者为由，强行检查运载车，展现了其官僚和压迫性。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "锈渣子镇",
+      "line_range": [
+        145,
+        213
+      ],
+      "description": "阿兰娜与工友们打保龄球的地方，也是运载车出发的起点。阿兰娜在这里与朋友们告别。"
+    },
+    {
+      "location": "钢铁萝卜城",
+      "line_range": [
+        44,
+        48
+      ],
+      "description": "阿兰娜计划带小锅盖去的地方，也是运载车最终要交还的目的地。"
+    },
+    {
+      "location": "咧嘴谷",
+      "line_range": [
+        389,
+        391
+      ],
+      "description": "莱伊劫车后要求前往的目的地，被描述为基本上不通车，几乎都是被天灾摧毁的荒地废墟。"
+    },
+    {
+      "location": "咧嘴谷",
+      "line_range": [
+        1752,
+        1759
+      ],
+      "description": "阿米娅和博士讨论咧嘴谷，指出那里已被活性源石覆盖，变得面目全非，众人未能真正抵达。"
+    },
+    {
+      "location": "双倍黑尔梅特矿区",
+      "line_range": [
+        411,
+        419
+      ],
+      "description": "发生矿难的矿区，导致大量灾民逃往格林梅多自治州，是检查站加强排查的背景原因。"
+    },
+    {
+      "location": "大风滩",
+      "line_range": [
+        603,
+        604
+      ],
+      "description": "杰里指出从大风滩到咧嘴谷是天灾频发区域，非常危险。"
+    }
+  ],
+  "chapter": "去咧嘴谷",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:33:44.996812+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 40752,
+    "tokens_out": 6003,
+    "elapsed_s": 54.90698575973511
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "小锅盖（温米）",
+    "杰里",
+    "博士",
+    "吉拉",
+    "小查理",
+    "百货店老板",
+    "检验官A",
+    "检验官B",
+    "矿队队长",
+    "活体动物商贩",
+    "巨兽"
+  ]
+}

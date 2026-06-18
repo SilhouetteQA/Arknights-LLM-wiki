@@ -1,0 +1,453 @@
+{
+  "summary": "本章为「黑暗时代·下」，紧接上章剧情。罗德岛行动组E0在切尔诺伯格执行博士营救行动的第三阶段，面临天灾降临和整合运动围堵的双重危机。队伍在杜宾、临光、Ace的带领下，穿越被整合运动占据的城区，途中经过已被摧毁的感染者诊所阿撒兹勒，引发阿米娅对感染者处境的深刻反思。整合运动利用天灾彻底毁灭切尔诺伯格，罗德岛在突围过程中遭遇整合运动领袖塔露拉，她展现出毁灭性的源石技艺。Ace率队断后，掩护阿米娅和博士撤退，最终牺牲。在撤退至南面出口时，又遭遇整合运动干部W的拦截，W对阿米娅和博士表现出特殊的兴趣，但最终在塔露拉的命令下放行。罗德岛残部在悲痛中撤离切尔诺伯格。",
+  "events": [
+    {
+      "event": "罗德岛行动组E0在切尔诺伯格执行博士营救行动，准备出发侦察",
+      "type": "planning",
+      "line_range": [
+        1,
+        34
+      ],
+      "participants": [
+        "杜宾",
+        "临光",
+        "医疗干员",
+        "阿米娅",
+        "Ace"
+      ],
+      "location": "切尔诺伯格下城区",
+      "significance": "确立本章行动背景和队伍构成",
+      "is_imaginary": false
+    },
+    {
+      "event": "队伍发现感染者诊所阿撒兹勒已被摧毁，阿米娅阐述感染者的悲惨处境",
+      "type": "revelation",
+      "line_range": [
+        35,
+        95
+      ],
+      "participants": [
+        "阿米娅",
+        "医疗干员",
+        "近卫干员",
+        "Ace",
+        "杜宾",
+        "临光"
+      ],
+      "location": "切尔诺伯格，阿撒兹勒诊所旧址",
+      "significance": "深化主题，揭示感染者社会困境，为罗德岛的使命做注脚",
+      "is_imaginary": false
+    },
+    {
+      "event": "杜宾和临光制定快速突破整合运动封锁线的战术",
+      "type": "planning",
+      "line_range": [
+        96,
+        134
+      ],
+      "participants": [
+        "杜宾",
+        "临光",
+        "阿米娅"
+      ],
+      "location": "切尔诺伯格，行动组E0所在地",
+      "significance": "展现战术决策和团队信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队成功突破整合运动的封锁线",
+      "type": "battle",
+      "line_range": [
+        135,
+        145
+      ],
+      "participants": [
+        "临光",
+        "杜宾",
+        "近卫干员"
+      ],
+      "location": "切尔诺伯格中城区",
+      "significance": "展示罗德岛的战斗力和战术执行力",
+      "is_imaginary": false
+    },
+    {
+      "event": "队伍在广场废墟遭遇整合运动大规模包围，天灾降临",
+      "type": "ambush",
+      "line_range": [
+        146,
+        182
+      ],
+      "participants": [
+        "杜宾",
+        "Ace",
+        "阿米娅",
+        "临光"
+      ],
+      "location": "切尔诺伯格中城区广场废墟",
+      "significance": "局势恶化，天灾和敌人双重威胁",
+      "is_imaginary": false
+    },
+    {
+      "event": "整合运动领袖塔露拉现身，天灾源石坠落，切尔诺伯格被毁灭",
+      "type": "disaster",
+      "line_range": [
+        183,
+        242
+      ],
+      "participants": [
+        "梅菲斯特",
+        "弑君者",
+        "塔露拉",
+        "杜宾",
+        "临光",
+        "Ace",
+        "阿米娅",
+        "医疗干员",
+        "近卫干员"
+      ],
+      "location": "切尔诺伯格中城区",
+      "significance": "揭示整合运动利用天灾毁灭城市的计划，塔露拉首次正式登场",
+      "is_imaginary": false
+    },
+    {
+      "event": "天灾中罗德岛小队奋力抵抗，临光救下博士，众人幸存",
+      "type": "rescue",
+      "line_range": [
+        243,
+        318
+      ],
+      "participants": [
+        "杜宾",
+        "Ace",
+        "临光",
+        "阿米娅",
+        "医疗干员",
+        "近卫干员"
+      ],
+      "location": "切尔诺伯格中城区",
+      "significance": "展现团队协作和牺牲精神，临光的高光时刻",
+      "is_imaginary": false
+    },
+    {
+      "event": "天灾过后，罗德岛小队被大量整合运动包围，塔露拉逼近",
+      "type": "confrontation",
+      "line_range": [
+        319,
+        383
+      ],
+      "participants": [
+        "杜宾",
+        "临光",
+        "阿米娅",
+        "Ace",
+        "塔露拉"
+      ],
+      "location": "切尔诺伯格中城区广场",
+      "significance": "塔露拉展现压倒性力量，局势危急",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉与罗德岛正面交锋，Ace率队断后掩护阿米娅和博士撤退",
+      "type": "sacrifice",
+      "line_range": [
+        384,
+        523
+      ],
+      "participants": [
+        "临光",
+        "阿米娅",
+        "杜宾",
+        "Ace",
+        "塔露拉",
+        "医疗干员",
+        "近卫干员"
+      ],
+      "location": "切尔诺伯格中城区广场",
+      "significance": "Ace牺牲，阿米娅展现强大意志，博士被托付重任",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛残部突破拦截，确认Ace小队牺牲，阿米娅情绪崩溃",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        524,
+        570
+      ],
+      "participants": [
+        "杜宾",
+        "临光",
+        "阿米娅",
+        "塔露拉",
+        "梅菲斯特"
+      ],
+      "location": "切尔诺伯格，通往南面出口的路上",
+      "significance": "展现角色对牺牲的反应，阿米娅的脆弱与坚强",
+      "is_imaginary": false
+    },
+    {
+      "event": "在撤退至南面出口时，遭遇整合运动干部W拦截",
+      "type": "confrontation",
+      "line_range": [
+        571,
+        618
+      ],
+      "participants": [
+        "杜宾",
+        "临光",
+        "阿米娅",
+        "W"
+      ],
+      "location": "切尔诺伯格南面出口",
+      "significance": "W登场，对博士和阿米娅表现出特殊兴趣，制造悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "W在试探后放行罗德岛，Ace小队最后幸存者确认全员阵亡，罗德岛撤离",
+      "type": "departure",
+      "line_range": [
+        619,
+        701
+      ],
+      "participants": [
+        "W",
+        "阿米娅",
+        "杜宾",
+        "临光",
+        "Ace",
+        "近卫干员",
+        "医疗干员"
+      ],
+      "location": "切尔诺伯格南面出口",
+      "significance": "本章结束，罗德岛带着牺牲和悲痛撤离，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的领袖，博士的护卫，在行动中展现领导力、同情心和强大的意志力，面对牺牲和敌人挑衅时表现出成熟与脆弱",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "杜宾",
+      "type": "operator",
+      "role_in_chapter": "行动组E0的指挥官，负责战术决策和队伍指挥，对阿米娅的成长既关心又严格",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "临光",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的重装干员，战斗中的核心力量，多次保护博士和阿米娅，展现耀骑士的勇气和责任感",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Ace",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，率队断后掩护主力撤退，最终牺牲，临终前将博士和阿米娅托付给彼此",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "医疗干员",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的医疗人员，在战斗中表现出恐惧和脆弱，但也得到阿米娅的安慰和鼓励",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "近卫干员",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的近战干员，参与战斗和对话，对阿撒兹勒诊所的遭遇感到愤怒，后目睹Ace牺牲",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "塔露拉",
+      "type": "npc",
+      "role_in_chapter": "整合运动的领袖，暴君，拥有毁灭性的源石技艺，主导了切尔诺伯格的毁灭，对罗德岛表现出兴趣但最终下令放行",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "W",
+      "type": "npc",
+      "role_in_chapter": "整合运动干部，在撤退出口拦截罗德岛，对博士和阿米娅表现出特殊的兴趣和敌意，最终放行",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "梅菲斯特",
+      "type": "npc",
+      "role_in_chapter": "整合运动干部，向塔露拉汇报罗德岛的情报，并目睹Ace的奋战",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "弑君者",
+      "type": "npc",
+      "role_in_chapter": "整合运动干部，在天灾降临前与塔露拉对话，接受处理漏网之鱼的任务",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "矿石病",
+      "line_range": [
+        66,
+        82
+      ],
+      "discussion_summary": "阿米娅向博士解释矿石病：一种不治之症，会杀死感染者并赋予他们特殊力量，同时导致他们被正常社会驱逐、恐惧和鄙夷。感染者的遗体会成为新的传染源。",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者的处境",
+      "line_range": [
+        61,
+        87
+      ],
+      "discussion_summary": "阿米娅和杜宾讨论感染者的社会地位：他们被驱逐、消灭、鄙夷、恐惧，无法像正常人一样生活。大多数感染者失去了所有，只能在绝望中死去。罗德岛和整合运动是少数例外。",
+      "is_substantive": true
+    },
+    {
+      "concept": "天灾",
+      "line_range": [
+        215,
+        232
+      ],
+      "discussion_summary": "杜宾和塔露拉讨论天灾：整合运动利用天灾作为复仇工具，彻底毁灭切尔诺伯格。杜宾认为这不仅是报复，更是宣誓感染者的时代到来。",
+      "is_substantive": true
+    },
+    {
+      "concept": "牺牲与价值",
+      "line_range": [
+        600,
+        616
+      ],
+      "discussion_summary": "W挑衅阿米娅，质疑她是否配得上别人的牺牲。阿米娅坚定回应：每个人的生命都有价值，这不是W能玷污的事。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        25,
+        26
+      ],
+      "description": "阿米娅阐述罗德岛的宗旨：希望让所有人都能绽放笑容，而不是哭丧着脸。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        86,
+        93
+      ],
+      "description": "杜宾和阿米娅讨论罗德岛的性质：像阿撒兹勒一样，是一个不分彼此、帮助感染者的组织，但比阿撒兹勒更开放，能解开误会。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        65,
+        65
+      ],
+      "description": "阿米娅推测阿撒兹勒诊所被毁是因为拒绝了整合运动的合作要求。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        107,
+        115
+      ],
+      "description": "杜宾和临光分析整合运动的战术特点：依赖人海战术，通信方式原始，没有构筑防御工事，布置松散。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        183,
+        187
+      ],
+      "description": "梅菲斯特向塔露拉汇报罗德岛的情报，认为他们是可能干扰计划的虫子，建议铲除。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        229,
+        232
+      ],
+      "description": "杜宾分析整合运动的动机：利用天灾复仇，彻底毁灭切尔诺伯格，这不仅是报复，更是宣誓感染者的时代。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        355,
+        360
+      ],
+      "description": "杜宾和临光感叹整合运动的庞大规模，质疑他们从哪里纠集起这么多感染者，认为这种包围网显示整合运动很看得起罗德岛。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        438,
+        443
+      ],
+      "description": "塔露拉宣称切尔诺伯格已得解放，指责罗德岛做出了错误的选择，要求他们真正站在感染者这边。"
+    },
+    {
+      "faction": "阿撒兹勒诊所",
+      "line_range": [
+        45,
+        65
+      ],
+      "description": "近卫干员和阿米娅讨论阿撒兹勒：一家只医治感染者的黑市诊所，掌握切尔诺伯格地下情报网，但拒绝与罗德岛合作，与整合运动关系模棱两可，最终被摧毁。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        71,
+        72
+      ],
+      "description": "阿米娅将切尔诺伯格描述为所有规则的象征，驱逐、消灭、鄙夷、恐惧感染者的城市。"
+    },
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        151,
+        156
+      ],
+      "description": "Ace观察到一个开阔区域曾是广场，如今只剩废墟，感叹是虐待感染者的城市遭到了感染者的报复。"
+    },
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        229,
+        230
+      ],
+      "description": "杜宾确认整合运动选择让天灾彻底毁灭切尔诺伯格。"
+    },
+    {
+      "location": "阿撒兹勒诊所",
+      "line_range": [
+        38,
+        44
+      ],
+      "description": "医疗干员和阿米娅发现诊所已人去楼空，遭到整合运动袭击，变成废墟。"
+    }
+  ],
+  "chapter": "黑暗时代·下",
+  "batch_count": 1,
+  "category": "main",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:58:44.517628+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 12529,
+    "tokens_out": 3652,
+    "elapsed_s": 33.946534633636475
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "Ace",
+    "医疗干员",
+    "近卫干员",
+    "塔露拉",
+    "梅菲斯特"
+  ]
+}

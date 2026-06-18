@@ -1,0 +1,627 @@
+{
+  "summary": "本章「红松林」以红松骑士团的组建与行动为主线，穿插了临光家族的内部冲突、无胄盟的暗杀活动以及商业联合会发言人马克维茨的内心挣扎。故事从索娜（焰尾）在竞技场招募格蕾纳蒂（灰毫）开始，逐步展开红松骑士团救助感染者、对抗无胄盟的行动。同时，玛嘉烈·临光（耀骑士）回归卡西米尔，与叔叔玛恩纳决斗后决定参加特锦赛，而玛莉娅则愿意让渡积分支持姐姐。无胄盟的白金与青金之间权力更迭，马克维茨被意外提拔为商业联合会发言人，却陷入身份焦虑。多条线索共同描绘了卡西米尔社会在骑士竞技、感染者歧视与商业利益交织下的复杂图景。",
+  "events": [
+    {
+      "event": "索娜在竞技场招募格蕾纳蒂，两人回忆初次相遇并讨论建立红松骑士团",
+      "type": "recruitment",
+      "line_range": [
+        4,
+        70
+      ],
+      "participants": [
+        "索娜",
+        "格蕾纳蒂"
+      ],
+      "location": "竞技场",
+      "significance": "奠定红松骑士团核心成员关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "红松骑士团成员讨论无胄盟威胁和感染者安置问题，索娜决定接触监正会",
+      "type": "planning",
+      "line_range": [
+        99,
+        175
+      ],
+      "participants": [
+        "索娜",
+        "格蕾纳蒂",
+        "艾沃娜",
+        "查丝汀娜"
+      ],
+      "location": "大骑士领",
+      "significance": "揭示红松骑士团面临的核心困境与策略转向",
+      "is_imaginary": false
+    },
+    {
+      "event": "无胄盟袭击红松骑士团据点，索娜与监正会副会长德米安接触，得知大隔断计划",
+      "type": "ambush",
+      "line_range": [
+        176,
+        241
+      ],
+      "participants": [
+        "索娜",
+        "格蕾纳蒂",
+        "无胄盟成员",
+        "白金"
+      ],
+      "location": "大骑士领",
+      "significance": "红松骑士团与无胄盟正面冲突，引入监正会高层计划",
+      "is_imaginary": false
+    },
+    {
+      "event": "格蕾纳蒂在竞技场与锈铜骑士英格拉对战，回忆童年训练经历",
+      "type": "battle",
+      "line_range": [
+        309,
+        530
+      ],
+      "participants": [
+        "格蕾纳蒂",
+        "锈铜骑士",
+        "索娜",
+        "艾沃娜",
+        "查丝汀娜"
+      ],
+      "location": "竞技场",
+      "significance": "展现格蕾纳蒂的战斗风格与家族背景，深化角色",
+      "is_imaginary": false
+    },
+    {
+      "event": "索娜和格蕾纳蒂招募艾沃娜（野鬃）加入红松骑士团",
+      "type": "recruitment",
+      "line_range": [
+        590,
+        690
+      ],
+      "participants": [
+        "索娜",
+        "格蕾纳蒂",
+        "艾沃娜"
+      ],
+      "location": "商业联合会外",
+      "significance": "红松骑士团迎来第三位核心成员",
+      "is_imaginary": false
+    },
+    {
+      "event": "艾沃娜主动寻找红松骑士团，参与救助感染者行动并正式宣誓加入",
+      "type": "alliance",
+      "line_range": [
+        691,
+        781
+      ],
+      "participants": [
+        "艾沃娜",
+        "索娜",
+        "红松骑士团成员"
+      ],
+      "location": "感染者社区",
+      "significance": "艾沃娜认同红松理念，成为正式成员",
+      "is_imaginary": false
+    },
+    {
+      "event": "查丝汀娜（远牙）从医院救出塑料骑士瑟奇亚克，两人躲避无胄盟追杀",
+      "type": "rescue",
+      "line_range": [
+        855,
+        903
+      ],
+      "participants": [
+        "查丝汀娜",
+        "塑料骑士"
+      ],
+      "location": "大骑士领街道",
+      "significance": "塑料骑士与红松骑士团暂时联手对抗无胄盟",
+      "is_imaginary": false
+    },
+    {
+      "event": "查丝汀娜回忆被索娜招募加入红松骑士团的经历",
+      "type": "flashback",
+      "line_range": [
+        904,
+        1027
+      ],
+      "participants": [
+        "查丝汀娜",
+        "索娜",
+        "格蕾纳蒂"
+      ],
+      "location": "红松骑士团据点",
+      "significance": "揭示查丝汀娜的过去与加入红松的动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "查丝汀娜与塑料骑士抵达据点，查丝汀娜解释自己主动救人的原因",
+      "type": "revelation",
+      "line_range": [
+        1028,
+        1065
+      ],
+      "participants": [
+        "查丝汀娜",
+        "塑料骑士"
+      ],
+      "location": "红松骑士团据点",
+      "significance": "展现查丝汀娜对家庭与归属的渴望",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛嘉烈·临光与叔叔玛恩纳决斗，讨论骑士精神与现实",
+      "type": "confrontation",
+      "line_range": [
+        1066,
+        1096
+      ],
+      "participants": [
+        "玛嘉烈",
+        "玛恩纳"
+      ],
+      "location": "临光家",
+      "significance": "揭示临光家族内部理念冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛嘉烈与玛莉娅、佐菲娅讨论参加特锦赛的计划，玛莉娅愿让渡积分",
+      "type": "planning",
+      "line_range": [
+        1097,
+        1207
+      ],
+      "participants": [
+        "玛嘉烈",
+        "玛莉娅",
+        "佐菲娅"
+      ],
+      "location": "临光家",
+      "significance": "玛嘉烈决心参赛，玛莉娅做出牺牲",
+      "is_imaginary": false
+    },
+    {
+      "event": "无胄盟白金与青金讨论监视耀骑士的任务",
+      "type": "political_intrigue",
+      "line_range": [
+        1211,
+        1226
+      ],
+      "participants": [
+        "白金",
+        "无胄盟成员"
+      ],
+      "location": "大骑士领",
+      "significance": "无胄盟对临光家族的监视",
+      "is_imaginary": false
+    },
+    {
+      "event": "闪灵和夜莺在大骑士领发现感染者聚落被拆除",
+      "type": "investigation",
+      "line_range": [
+        1252,
+        1267
+      ],
+      "participants": [
+        "闪灵",
+        "夜莺"
+      ],
+      "location": "大骑士领",
+      "significance": "揭示卡西米尔对感染者的压迫",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛嘉烈在冠军墙前与发言人马克维茨交谈，回忆过往经历",
+      "type": "reflection",
+      "line_range": [
+        1268,
+        1332
+      ],
+      "participants": [
+        "玛嘉烈",
+        "马克维茨"
+      ],
+      "location": "冠军墙",
+      "significance": "玛嘉烈坚定参赛决心",
+      "is_imaginary": false
+    },
+    {
+      "event": "马克维茨在前往座谈会的路上与旧同事杰拉德交谈，表达对身份转变的惶恐",
+      "type": "character_development",
+      "line_range": [
+        1333,
+        1514
+      ],
+      "participants": [
+        "马克维茨",
+        "杰拉德"
+      ],
+      "location": "商业联合会大楼",
+      "significance": "展现马克维茨的内心矛盾与商业联合会的权力运作",
+      "is_imaginary": false
+    },
+    {
+      "event": "马克维茨在座谈会上被酒泼湿，意识到自己已无法摆脱大人物身份",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1515,
+        1552
+      ],
+      "participants": [
+        "马克维茨",
+        "企业员工"
+      ],
+      "location": "座谈会会场",
+      "significance": "马克维茨接受现实，完成角色转变",
+      "is_imaginary": false
+    },
+    {
+      "event": "欣特莱雅被无胄盟招募，成为白金，并接受暗杀董事的任务",
+      "type": "recruitment",
+      "line_range": [
+        1553,
+        1626
+      ],
+      "participants": [
+        "欣特莱雅",
+        "白金",
+        "青金",
+        "无胄盟成员"
+      ],
+      "location": "大骑士领",
+      "significance": "揭示无胄盟内部权力更迭与白金的身世",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "焰尾",
+      "type": "operator",
+      "role_in_chapter": "红松骑士团领袖，招募格蕾纳蒂、艾沃娜、查丝汀娜，策划救助感染者行动，与监正会接触",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "灰毫",
+      "type": "operator",
+      "role_in_chapter": "红松骑士团核心成员，竞技骑士，与锈铜骑士对战，参与招募艾沃娜",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "野鬃",
+      "type": "operator",
+      "role_in_chapter": "野鬃骑士，被索娜招募加入红松骑士团，参与救助感染者行动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "远牙",
+      "type": "operator",
+      "role_in_chapter": "远牙骑士，加入红松骑士团，救出塑料骑士，回忆被招募经历",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "塑料骑士",
+      "type": "npc",
+      "role_in_chapter": "被查丝汀娜从医院救出，与红松骑士团暂时联手对抗无胄盟",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "临光",
+      "type": "operator",
+      "role_in_chapter": "耀骑士，回归卡西米尔，与玛恩纳决斗，决定参加特锦赛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "玛恩纳",
+      "type": "operator",
+      "role_in_chapter": "临光家族成员，与玛嘉烈决斗，表达对现实的失望",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "瑕光",
+      "type": "operator",
+      "role_in_chapter": "临光家族成员，愿让渡积分支持姐姐玛嘉烈参赛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "鞭刃",
+      "type": "operator",
+      "role_in_chapter": "临光家族成员，调解玛嘉烈与玛恩纳的矛盾",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "闪灵",
+      "type": "operator",
+      "role_in_chapter": "与夜莺在大骑士领调查感染者聚落被拆除",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "夜莺",
+      "type": "operator",
+      "role_in_chapter": "与闪灵一起调查感染者聚落",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "白金",
+      "type": "npc",
+      "role_in_chapter": "无胄盟白金大位，对感染者任务有恻隐之心，监视耀骑士，后叛逃被青金取代",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "白金",
+      "type": "operator",
+      "role_in_chapter": "被无胄盟招募成为新任白金，接受暗杀董事的任务",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "青金",
+      "type": "npc",
+      "role_in_chapter": "无胄盟青金大位，告知欣特莱雅白金已死，任命她为新白金",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "马克维茨",
+      "type": "npc",
+      "role_in_chapter": "商业联合会发言人，对身份转变感到惶恐，最终接受现实",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "杰拉德",
+      "type": "npc",
+      "role_in_chapter": "商业联合会工作人员，马克维茨的旧同事，给予他忠告",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "锈铜骑士",
+      "type": "npc",
+      "role_in_chapter": "竞技骑士，与格蕾纳蒂对战，被击败",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "感染者骑士的处境",
+      "line_range": [
+        24,
+        37
+      ],
+      "discussion_summary": "索娜向格蕾纳蒂分析感染者骑士的几种类型：被大老板买下作为赌博消遣、渴望被相中成为工具、以及像她们这样试图反抗的。指出比赛有黑幕，有人为了生存踩着其他人往上爬。",
+      "is_substantive": true
+    },
+    {
+      "concept": "红松骑士团的理念",
+      "line_range": [
+        66,
+        70
+      ],
+      "discussion_summary": "索娜向格蕾纳蒂解释红松骑士团的名字来源，来自她家乡的松树，暗示这是一个为感染者而建的骑士团。",
+      "is_substantive": true
+    },
+    {
+      "concept": "监正会与商业联合会的区别",
+      "line_range": [
+        136,
+        144
+      ],
+      "discussion_summary": "艾沃娜认为监正会比商业联合会好几百倍，格蕾纳蒂指出她对征战骑士有好感，艾沃娜回应征战骑士是在草原上战胜过乌萨斯的骑士。",
+      "is_substantive": true
+    },
+    {
+      "concept": "乌萨斯与东国的战争史",
+      "line_range": [
+        155,
+        166
+      ],
+      "discussion_summary": "艾沃娜详细叙述了乌萨斯与东国的战争：乌萨斯皇帝病重，贵族操纵权力，两个集团军为转移视线向东国发兵，东国主动迎击并在乌萨斯境内决战。艾沃娜的祖父母在那场战争中牺牲。",
+      "is_substantive": true
+    },
+    {
+      "concept": "无胄盟的性质与手段",
+      "line_range": [
+        176,
+        188
+      ],
+      "discussion_summary": "无胄盟成员声称索娜涉嫌非法窝藏感染者，索娜质问无胄盟何时有权替警察和骑士做决定。无胄盟回应被联合会盯上与死无异，并指出卡西米尔赋予了他们更多生存机会，也就有了更多次的死亡。",
+      "is_substantive": true
+    },
+    {
+      "concept": "大隔断计划",
+      "line_range": [
+        240,
+        241
+      ],
+      "discussion_summary": "索娜向同伴透露监正会副会长德米安的条件：借红松骑士团的手让这座城市沉睡。",
+      "is_substantive": true
+    },
+    {
+      "concept": "卡利斯卡家族的衰落",
+      "line_range": [
+        301,
+        303
+      ],
+      "discussion_summary": "格蕾纳蒂的祖母批评家族后代忘记了卡利斯卡的繁荣是靠功勋和火炮换来的，连格言都记不住了。",
+      "is_substantive": true
+    },
+    {
+      "concept": "骑士竞技的商业化",
+      "line_range": [
+        331,
+        334
+      ],
+      "discussion_summary": "解说大嘴莫布在比赛间隙推销下注和赞助商品，将竞技完全商业化。",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者骑士的待遇与困境",
+      "line_range": [
+        646,
+        654
+      ],
+      "discussion_summary": "艾沃娜描述感染者骑士的处境：要名分就得在地下竞技场疯抢，或苟活着打到什么程度全凭出资人说了算，他们只爱看能见血的东西。",
+      "is_substantive": true
+    },
+    {
+      "concept": "红松骑士团的真正使命",
+      "line_range": [
+        757,
+        761
+      ],
+      "discussion_summary": "艾沃娜总结红松骑士团不仅是为感染者骑士身份，而是想帮助更多感染者，只有感染者之间才会互相同情，大家守着同一个秘密和愿望。",
+      "is_substantive": true
+    },
+    {
+      "concept": "无胄盟作为骑士杀手",
+      "line_range": [
+        971,
+        977
+      ],
+      "discussion_summary": "索娜向查丝汀娜解释无胄盟为商业联合会卖命，暗地里解决不听话的骑士，自称对付骑士的专家。查丝汀娜因表现耀眼又不肯加入骑士团，被无胄盟盯上。",
+      "is_substantive": true
+    },
+    {
+      "concept": "血骑士对感染者骑士制度的影响",
+      "line_range": [
+        985,
+        987
+      ],
+      "discussion_summary": "查丝汀娜回忆血骑士赢得特锦赛后，面向感染者的骑士注册窗口正式建立并对外开放，她因此才能成为骑士。",
+      "is_substantive": true
+    },
+    {
+      "concept": "骑士精神与现实",
+      "line_range": [
+        1066,
+        1092
+      ],
+      "discussion_summary": "玛恩纳与玛嘉烈决斗后，批评她优柔寡断，认为她应该正视现实，看看他人的柴米油盐，别再因为自己的荣耀对他人抱有幻想。",
+      "is_substantive": true
+    },
+    {
+      "concept": "临光家族的荣耀与责任",
+      "line_range": [
+        1153,
+        1161
+      ],
+      "discussion_summary": "玛嘉烈表示如果所有人都怯懦地躲藏，用无可奈何安慰自己，就永远无法取回荣耀。照亮大地的苦难不只是驱散黑暗，有时是为了照亮前路，为迷途者开辟新视野。",
+      "is_substantive": true
+    },
+    {
+      "concept": "大人物身份与自我认知",
+      "line_range": [
+        1494,
+        1512
+      ],
+      "discussion_summary": "马克维茨认为自己从头到脚换上大人物衣饰也不代表真的变成大人物。杰拉德忠告他：在所有人眼里他已经是个大人物了，不论他自己怎么想。",
+      "is_substantive": true
+    },
+    {
+      "concept": "无胄盟的权力更迭",
+      "line_range": [
+        1599,
+        1608
+      ],
+      "discussion_summary": "青金告诉欣特莱雅白金已死，位置空出来，提议由欣特莱雅来当白金。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "红松骑士团",
+      "line_range": [
+        66,
+        70
+      ],
+      "description": "索娜向格蕾纳蒂解释红松骑士团的名字来源和建立初衷。"
+    },
+    {
+      "faction": "无胄盟",
+      "line_range": [
+        176,
+        188
+      ],
+      "description": "无胄盟成员包围索娜，声称她涉嫌非法窝藏感染者，索娜质问其权力来源。"
+    },
+    {
+      "faction": "监正会",
+      "line_range": [
+        136,
+        144
+      ],
+      "description": "艾沃娜和格蕾纳蒂讨论监正会与商业联合会的区别，艾沃娜对监正会更有好感。"
+    },
+    {
+      "faction": "商业联合会",
+      "line_range": [
+        184,
+        184
+      ],
+      "description": "无胄盟成员警告索娜被联合会盯上与死无异。"
+    },
+    {
+      "faction": "卡利斯卡家族",
+      "line_range": [
+        301,
+        303
+      ],
+      "description": "格蕾纳蒂的祖母批评家族后代忘记了卡利斯卡的繁荣是靠功勋和火炮换来的。"
+    },
+    {
+      "faction": "临光家族",
+      "line_range": [
+        1153,
+        1161
+      ],
+      "description": "玛嘉烈讨论临光家族的荣耀与责任，认为不能怯懦地躲藏。"
+    },
+    {
+      "faction": "征战骑士",
+      "line_range": [
+        142,
+        144
+      ],
+      "description": "艾沃娜称赞征战骑士在草原上战胜过乌萨斯，格蕾纳蒂指出她对征战骑士很有好感。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "大骑士领",
+      "line_range": [
+        99,
+        103
+      ],
+      "description": "艾沃娜指出只要还躲藏在大骑士领，感染者就无路可去，迟早会被发现。"
+    },
+    {
+      "location": "卡西米尔",
+      "line_range": [
+        155,
+        166
+      ],
+      "description": "艾沃娜叙述卡西米尔在乌萨斯与东国战争期间的历史背景，以及骑士们试图夺回十年前丢失的城市。"
+    },
+    {
+      "location": "感染者社区",
+      "line_range": [
+        727,
+        728
+      ],
+      "description": "红松骑士团成员告诉艾沃娜，索娜和格蕾纳蒂去了有感染者聚集的社区疏散他们。"
+    }
+  ],
+  "chapter": "红松林",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:44:13.411213+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 33816,
+    "tokens_out": 5288,
+    "elapsed_s": 38.48756718635559
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "塑料骑士",
+    "青金",
+    "马克维茨",
+    "杰拉德",
+    "锈铜骑士"
+  ]
+}

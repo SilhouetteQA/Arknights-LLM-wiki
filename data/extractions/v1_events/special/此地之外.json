@@ -1,0 +1,791 @@
+{
+  "summary": "本章由七个独立的故事组成，展现了《明日方舟》世界中不同角色的生活片段与内心世界。Scene 1 聚焦于龙门近卫局的星熊与诗怀雅，在陈离开后的日常与思念，以及星熊与文月夫人的一场赛车邂逅。Scene 2 讲述了贾维、奥斯塔和布洛卡三名叙拉古青年逃离家族、在荒野上挣扎求生，最终被罗德岛搭救并加入的经历。Scene 3 描绘了来自童话城堡的爱丽丝，为履行约定寻找多年前的孩子，在维多利亚的村庄中遇到感染矿石病的小女孩朵拉，并得到罗德岛干员帮助的故事。Scene 4 记录了兰登修道院的席德佳修士为修道院生计来到龙门，与峯驰物流的欧厄尔先生洽谈合作，并在此过程中对自身信仰和未来道路产生新的思考。Scene 5 跟随天灾信使莱恩哈特、断崖和年轻干员格雷伊，前往雷姆必拓执行救援任务，途中探讨了天灾信使的职责、感染者的处境以及个人奋斗的意义。Scene 6 深入陈的内心世界，她在哥伦比亚执行任务时，面对一名被冤枉的感染者逃犯，陷入了关于法律、正义与个人裁决权的深刻矛盾，并最终坚定了自己的道路。Scene 7 以轻松的氛围开场，末药、宴和豆苗在野外采药时闲聊关于伊比利亚的恐怖传说，随后场景切换至一段回忆，一位伊比利亚主教用拉特兰的教条开导两名犯错的孩子，探讨了律法、忏悔与心灵的力量。",
+  "events": [
+    {
+      "event": "星熊与诗怀雅在休息日早晨的日常互动，谈及陈的离开和近卫局的工作",
+      "type": "character_development",
+      "line_range": [
+        1,
+        64
+      ],
+      "participants": [
+        "星熊",
+        "诗怀雅"
+      ],
+      "location": "龙门近卫局宿舍",
+      "significance": "展现星熊与诗怀雅的深厚友谊，以及陈离开后两人的心境变化",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊在近卫局大楼与下属交谈，提及罗德岛办事处和龙门现状",
+      "type": "planning",
+      "line_range": [
+        65,
+        105
+      ],
+      "participants": [
+        "星熊",
+        "近卫局成员",
+        "疲惫的近卫局成员"
+      ],
+      "location": "龙门近卫局大楼",
+      "significance": "侧面反映龙门在整合运动事件后的重建工作，以及罗德岛在龙门的活动",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊与白雪相遇，谈论陈在罗德岛的情况，白雪赠予星熊一本漫画",
+      "type": "revelation",
+      "line_range": [
+        119,
+        195
+      ],
+      "participants": [
+        "星熊",
+        "白雪"
+      ],
+      "location": "龙门街道",
+      "significance": "通过白雪之口确认陈在罗德岛状态良好，漫画暗示了星熊的过去",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊在赛道上与文月夫人赛车，文月透露魏彦吾的机车并非其本人所有",
+      "type": "revelation",
+      "line_range": [
+        196,
+        232
+      ],
+      "participants": [
+        "星熊",
+        "文月"
+      ],
+      "location": "龙门赛道",
+      "significance": "展现文月夫人的另一面，并暗示魏彦吾的私人生活",
+      "is_imaginary": false
+    },
+    {
+      "event": "贾维、奥斯塔和布洛卡在荒野上逃亡，遭遇强盗并成功脱险",
+      "type": "escape",
+      "line_range": [
+        233,
+        434
+      ],
+      "participants": [
+        "贾维",
+        "奥斯塔",
+        "布洛卡",
+        "商人",
+        "强盗头领"
+      ],
+      "location": "叙拉古荒野",
+      "significance": "展现三人的生存状态和深厚情谊，为后续加入罗德岛埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "贾维病情加重，三人回忆过去并展望未来，最终被罗德岛搭救",
+      "type": "rescue",
+      "line_range": [
+        435,
+        530
+      ],
+      "participants": [
+        "贾维",
+        "奥斯塔",
+        "布洛卡",
+        "孑"
+      ],
+      "location": "叙拉古荒野 / 罗德岛",
+      "significance": "揭示三人感染矿石病的背景，以及他们加入罗德岛的契机",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱丽丝离开城堡，踏上寻找多年前的孩子玛佩尔的旅程",
+      "type": "departure",
+      "line_range": [
+        531,
+        564
+      ],
+      "participants": [
+        "爱丽丝"
+      ],
+      "location": "城堡",
+      "significance": "交代爱丽丝的使命和信念，引出童话永存的主题",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱丽丝在维多利亚的村庄寻找玛佩尔，发现村庄已变为工厂",
+      "type": "investigation",
+      "line_range": [
+        565,
+        613
+      ],
+      "participants": [
+        "爱丽丝",
+        "工人"
+      ],
+      "location": "维多利亚托内尔村旧址",
+      "significance": "展现维多利亚工业化对乡村的冲击，以及爱丽丝寻找的困难",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱丽丝遇到感染矿石病的小女孩朵拉，试图用童话安慰她但感到无力",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        614,
+        842
+      ],
+      "participants": [
+        "爱丽丝",
+        "小女孩",
+        "男人",
+        "女人"
+      ],
+      "location": "维多利亚村庄",
+      "significance": "爱丽丝意识到童话的局限性，开始思考更实际的问题",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛干员为朵拉一家提供帮助，并告知爱丽丝关于玛佩尔的线索",
+      "type": "revelation",
+      "line_range": [
+        843,
+        885
+      ],
+      "participants": [
+        "爱丽丝",
+        "外勤干员"
+      ],
+      "location": "维多利亚村庄",
+      "significance": "罗德岛干员为感染者提供出路，并推动爱丽丝寻找玛佩尔的主线",
+      "is_imaginary": false
+    },
+    {
+      "event": "席德佳修士抵达龙门，与峯驰物流的拜松会面，并独自游览龙门",
+      "type": "arrival",
+      "line_range": [
+        886,
+        922
+      ],
+      "participants": [
+        "席德佳",
+        "拜松"
+      ],
+      "location": "龙门",
+      "significance": "介绍席德佳的身份和来龙门的目的是为修道院寻求合作",
+      "is_imaginary": false
+    },
+    {
+      "event": "席德佳在龙门偶遇雪雉，两人交谈，席德佳倾诉修道院面临的财政危机",
+      "type": "character_development",
+      "line_range": [
+        923,
+        982
+      ],
+      "participants": [
+        "席德佳",
+        "雪雉"
+      ],
+      "location": "龙门",
+      "significance": "展现席德佳的性格和修道院的困境，为后续与欧厄尔的会面铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "席德佳与欧厄尔会面，欧厄尔阐述其建立全球信使网络的宏伟蓝图",
+      "type": "negotiation",
+      "line_range": [
+        983,
+        1030
+      ],
+      "participants": [
+        "席德佳",
+        "欧厄尔"
+      ],
+      "location": "龙门峯驰物流",
+      "significance": "揭示欧厄尔的远大理想，以及此次合作对双方的意义",
+      "is_imaginary": false
+    },
+    {
+      "event": "席德佳在酒店与雪雉观看偶像演出，并遇到企鹅物流和大帝",
+      "type": "encounter",
+      "line_range": [
+        1031,
+        1111
+      ],
+      "participants": [
+        "席德佳",
+        "雪雉",
+        "大帝",
+        "德克萨斯",
+        "可颂",
+        "空"
+      ],
+      "location": "龙门酒店",
+      "significance": "席德佳接触到龙门的多元文化，大帝的言论启发她重新思考信仰",
+      "is_imaginary": false
+    },
+    {
+      "event": "席德佳与欧厄尔再次会面，席德佳决定改变行程，继续探索大地",
+      "type": "character_development",
+      "line_range": [
+        1112,
+        1179
+      ],
+      "participants": [
+        "席德佳",
+        "欧厄尔"
+      ],
+      "location": "龙门酒吧「大地的尽头」",
+      "significance": "席德佳找到新的方向，决定不局限于修道院，而是去探索更广阔的世界",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱恩哈特、断崖和格雷伊驾车前往雷姆必拓执行救援任务",
+      "type": "departure",
+      "line_range": [
+        1180,
+        1207
+      ],
+      "participants": [
+        "莱恩哈特",
+        "断崖",
+        "格雷伊"
+      ],
+      "location": "雷姆必拓荒野",
+      "significance": "介绍任务背景和三人组",
+      "is_imaginary": false
+    },
+    {
+      "event": "三人途中讨论天灾信使的职责、感染者的处境以及个人奋斗的意义",
+      "type": "ideological_clash",
+      "line_range": [
+        1208,
+        1349
+      ],
+      "participants": [
+        "莱恩哈特",
+        "断崖",
+        "格雷伊"
+      ],
+      "location": "雷姆必拓荒野",
+      "significance": "深入探讨天灾信使的困境和格雷伊的成长困惑",
+      "is_imaginary": false
+    },
+    {
+      "event": "三人抵达目标地点附近，莱恩哈特发现情况有异，可能并非单纯的救援任务",
+      "type": "revelation",
+      "line_range": [
+        1350,
+        1382
+      ],
+      "participants": [
+        "莱恩哈特",
+        "断崖",
+        "格雷伊"
+      ],
+      "location": "雷姆必拓目标地点附近",
+      "significance": "任务出现变数，为后续可能的冲突埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈在哥伦比亚追捕一名被冤枉的感染者逃犯，两人发生激烈争执",
+      "type": "confrontation",
+      "line_range": [
+        1383,
+        1442
+      ],
+      "participants": [
+        "陈",
+        "感染者"
+      ],
+      "location": "哥伦比亚某城市",
+      "significance": "展现陈对法律与正义的坚持，以及感染者对司法系统的不信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈回忆与阿米娅的对话，阿米娅提醒她哥伦比亚的公正可能只是表象",
+      "type": "flashback",
+      "line_range": [
+        1403,
+        1419
+      ],
+      "participants": [
+        "陈",
+        "阿米娅"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示陈离开龙门后的心路历程，以及她对公正的追求",
+      "is_imaginary": false
+    },
+    {
+      "event": "感染者讲述老汤姆的悲惨遭遇，陈陷入对自身权力的深刻反思",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1443,
+        1495
+      ],
+      "participants": [
+        "陈",
+        "感染者"
+      ],
+      "location": "哥伦比亚某城市",
+      "significance": "陈意识到系统性的不公，开始思考个人行动与制度变革的关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与迷迭香讨论审判与惩罚，陈坚定了自己的道路",
+      "type": "ideological_clash",
+      "line_range": [
+        1458,
+        1509
+      ],
+      "participants": [
+        "陈",
+        "迷迭香"
+      ],
+      "location": "罗德岛",
+      "significance": "迷迭香的朴素正义观与陈的复杂思考形成对比，陈最终选择行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈完成任务后，从办事员处得知神秘人将真凶绳之以法的消息",
+      "type": "revelation",
+      "line_range": [
+        1510,
+        1552
+      ],
+      "participants": [
+        "陈",
+        "办事员"
+      ],
+      "location": "哥伦比亚罗德岛办事处",
+      "significance": "暗示陈可能以神秘人的身份行动，践行自己的正义",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与一名蒙面干员离开，陈表达了自己不会放弃的决心",
+      "type": "farewell",
+      "line_range": [
+        1553,
+        1562
+      ],
+      "participants": [
+        "陈",
+        "蒙着脸的罗德岛干员"
+      ],
+      "location": "哥伦比亚",
+      "significance": "陈的独白总结了她对正义的追求，为本章画上句号",
+      "is_imaginary": false
+    },
+    {
+      "event": "末药、宴和豆苗在野外采药，闲聊关于伊比利亚的恐怖传说",
+      "type": "revelation",
+      "line_range": [
+        1563,
+        1694
+      ],
+      "participants": [
+        "末药",
+        "宴",
+        "豆苗"
+      ],
+      "location": "罗德岛附近野外",
+      "significance": "通过流言侧面描绘伊比利亚的神秘与封闭",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆中，一位伊比利亚主教用拉特兰教条开导两名犯错的孩子",
+      "type": "ideological_clash",
+      "line_range": [
+        1695,
+        1856
+      ],
+      "participants": [
+        "伊比利亚主教",
+        "安东尼奥",
+        "何塞"
+      ],
+      "location": "伊比利亚村庄",
+      "significance": "探讨律法、忏悔、善意谎言与心灵力量的主题，与席德佳的故事形成呼应",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "星熊",
+      "type": "operator",
+      "role_in_chapter": "龙门近卫局督察，在休息日与诗怀雅互动，与白雪交谈，与文月赛车，展现其对陈的关心和自身的生活态度",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "诗怀雅",
+      "type": "operator",
+      "role_in_chapter": "龙门近卫局高级警司，因工作压力和陈的离开而烦躁，与星熊互动，展现其要强的性格",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "白雪",
+      "type": "operator",
+      "role_in_chapter": "文月夫人的护卫，与星熊交谈，告知陈在罗德岛的情况，并赠予星熊漫画",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "文月",
+      "type": "npc",
+      "role_in_chapter": "魏彦吾的妻子，与星熊赛车，展现其不为人知的一面",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "贾维",
+      "type": "operator",
+      "role_in_chapter": "叙拉古青年，与奥斯塔和布洛卡一起逃亡，感染矿石病，最终被罗德岛搭救并加入",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "奥斯塔",
+      "type": "operator",
+      "role_in_chapter": "贾维的同伴，三人中的智囊，负责规划和决策",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "布洛卡",
+      "type": "operator",
+      "role_in_chapter": "贾维的同伴，三人中的战斗主力，沉默寡言",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "孑",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在龙门经营小吃摊，听贾维讲述他们的故事",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "爱丽丝",
+      "type": "operator",
+      "role_in_chapter": "来自童话城堡的少女，为履行约定寻找玛佩尔，在维多利亚遇到感染矿石病的朵拉",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "席德佳",
+      "type": "operator",
+      "role_in_chapter": "兰登修道院修士，为修道院生计来到龙门，与欧厄尔洽谈合作，后决定继续探索大地",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "拜松",
+      "type": "operator",
+      "role_in_chapter": "峯驰物流员工，负责接待席德佳",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "雪雉",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，工程师，在龙门偶遇席德佳，两人成为朋友",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "欧厄尔",
+      "type": "npc",
+      "role_in_chapter": "峯驰物流老板，拜松的父亲，与席德佳洽谈合作，阐述其建立全球信使网络的宏伟蓝图",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "大帝",
+      "type": "npc",
+      "role_in_chapter": "企鹅物流老板，在龙门与席德佳相遇，鼓励她探索世界",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "莱恩哈特",
+      "type": "operator",
+      "role_in_chapter": "罗德岛天灾信使，与断崖和格雷伊前往雷姆必拓执行任务",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "断崖",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与莱恩哈特和格雷伊一同执行任务",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "格雷伊",
+      "type": "operator",
+      "role_in_chapter": "罗德岛年轻干员，首次执行外勤任务，渴望成长和帮助他人",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "前龙门近卫局高级警司，现罗德岛干员，在哥伦比亚执行任务，面对正义与法律的矛盾",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，在陈的回忆中出现，与陈讨论哥伦比亚的公正问题",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "迷迭香",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与陈讨论审判与惩罚，展现其朴素的正义观",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "末药",
+      "type": "operator",
+      "role_in_chapter": "罗德岛医疗干员，与宴和豆苗外出采药",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "宴",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与末药和豆苗外出采药，性格开朗",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "豆苗",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与末药和宴外出采药，饲养宠物",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "伊比利亚主教",
+      "type": "npc",
+      "role_in_chapter": "在回忆中出现，用拉特兰教条开导两名犯错的孩子",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "童话与约定",
+      "line_range": [
+        531,
+        564
+      ],
+      "discussion_summary": "爱丽丝与同伴讨论履行约定的重要性，强调童话永存，不能失信于孩子",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者的处境",
+      "line_range": [
+        720,
+        740
+      ],
+      "discussion_summary": "罗德岛干员向爱丽丝解释维多利亚对感染者的政策，私藏感染者是重罪，感染者会被隔离",
+      "is_substantive": true
+    },
+    {
+      "concept": "童话的局限性",
+      "line_range": [
+        810,
+        870
+      ],
+      "discussion_summary": "爱丽丝因无法帮助朵拉而自责，罗德岛干员安慰她，指出故事和美梦能给人希望",
+      "is_substantive": true
+    },
+    {
+      "concept": "信使的职责与桥梁",
+      "line_range": [
+        997,
+        1013
+      ],
+      "discussion_summary": "欧厄尔阐述其建立全球信使网络的蓝图，旨在打破文化与种族的壁垒，连接整片大地",
+      "is_substantive": true
+    },
+    {
+      "concept": "天灾信使的困境",
+      "line_range": [
+        1219,
+        1239
+      ],
+      "discussion_summary": "断崖向格雷伊解释天灾信使因带来预警而常被误解和冷遇的处境",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者的处境（哥伦比亚）",
+      "line_range": [
+        1420,
+        1432
+      ],
+      "discussion_summary": "感染者控诉哥伦比亚司法系统对感染者的不公，认为所谓的公正只是谎言",
+      "is_substantive": true
+    },
+    {
+      "concept": "正义与审判",
+      "line_range": [
+        1458,
+        1474
+      ],
+      "discussion_summary": "陈与迷迭香讨论谁有权力审判他人，迷迭香提出朴素的以牙还牙的正义观",
+      "is_substantive": true
+    },
+    {
+      "concept": "律法、忏悔与心灵",
+      "line_range": [
+        1792,
+        1840
+      ],
+      "discussion_summary": "伊比利亚主教向两个孩子解释律法的意义，强调忏悔、善意谎言与心灵的力量",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        20,
+        30
+      ],
+      "description": "诗怀雅抱怨近卫局工作繁忙，星熊升职可能被调走，魏先生有意锻炼诗怀雅"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        77,
+        90
+      ],
+      "description": "近卫局成员谈论罗德岛办事处，提及罗德岛与近卫局关系尚可，有成员一起喝酒"
+    },
+    {
+      "faction": "西西里联盟",
+      "line_range": [
+        301,
+        304
+      ],
+      "description": "奥斯塔解释西西里联盟是由许多大小家族组成的松散组织，大家族不会在乎他们这些无名小卒"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        507,
+        530
+      ],
+      "description": "贾维讲述他们被罗德岛干员直尺搭救，并在其引荐下加入罗德岛的经过"
+    },
+    {
+      "faction": "兰登修道院",
+      "line_range": [
+        966,
+        975
+      ],
+      "description": "席德佳向雪雉介绍兰登修道院的历史和现状，因财政问题面临倒闭"
+    },
+    {
+      "faction": "峯驰物流",
+      "line_range": [
+        997,
+        1013
+      ],
+      "description": "欧厄尔阐述峯驰物流的宏伟蓝图，旨在建立连接整片大地的信使网络"
+    },
+    {
+      "faction": "企鹅物流",
+      "line_range": [
+        1051,
+        1057
+      ],
+      "description": "雪雉向席德佳介绍企鹅物流的成员，她们正在追捕小偷"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1268,
+        1279
+      ],
+      "description": "格雷伊表达对罗德岛的感激，以及想要更多了解罗德岛、帮助罗德岛的愿望"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1496,
+        1509
+      ],
+      "description": "陈反思罗德岛的理念，认为虽然天真但值得坚持，并庆幸有罗德岛同行"
+    }
+  ],
+  "locations": [
+    {
+      "location": "龙门",
+      "line_range": [
+        65,
+        105
+      ],
+      "description": "近卫局成员谈论龙门在整合运动事件后的重建工作，以及罗德岛在龙门的办事处"
+    },
+    {
+      "location": "叙拉古荒野",
+      "line_range": [
+        320,
+        332
+      ],
+      "description": "奥斯塔解释荒野的危险性，以及他们毫无准备就逃入荒野的鲁莽"
+    },
+    {
+      "location": "拉克玛蒂瓦城",
+      "line_range": [
+        424,
+        432
+      ],
+      "description": "贾维等人逃亡的目标城市，看起来比怀特城气派"
+    },
+    {
+      "location": "维多利亚",
+      "line_range": [
+        575,
+        580
+      ],
+      "description": "工人向爱丽丝介绍维多利亚的情况，贵族征用土地建工厂，村庄被迫搬迁"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        920,
+        925
+      ],
+      "description": "席德佳独自游览龙门，感受这座城市的氛围"
+    },
+    {
+      "location": "雷姆必拓",
+      "line_range": [
+        1194,
+        1199
+      ],
+      "description": "莱恩哈特提到求援信号来自雷姆必拓地方城镇，心情复杂"
+    },
+    {
+      "location": "哥伦比亚",
+      "line_range": [
+        1400,
+        1402
+      ],
+      "description": "陈向感染者介绍哥伦比亚的司法制度，认为这里有公正"
+    },
+    {
+      "location": "伊比利亚",
+      "line_range": [
+        1610,
+        1622
+      ],
+      "description": "豆苗和末药分享关于伊比利亚的恐怖传说，描绘其神秘与封闭"
+    }
+  ],
+  "chapter": "此地之外",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:40:31.195648+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 40379,
+    "tokens_out": 6420,
+    "elapsed_s": 49.088279485702515
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "文月",
+    "席德佳",
+    "欧厄尔",
+    "大帝",
+    "伊比利亚主教"
+  ]
+}

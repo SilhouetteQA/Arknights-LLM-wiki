@@ -1,0 +1,1088 @@
+{
+  "chapter": "人们，我们",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章以「卡托加事件」听证会为主线，通过多位证人的证词，回溯了乌萨斯圣骏堡学生运动从示威到被镇压的全过程。听证会上，苦艾（卓娅）作为一号证人，讲述了学生联合大会的成立、围绕营救被捕学生拉列亚的争论，以及最终决定在冬季舞会期间举行示威的经过。她同时透露了皇帝在舞会当晚遇刺失踪的关键信息，将事件引向更复杂的政治层面。\n\n二号证人乌克西克则从底层流浪儿的视角，讲述了另一个学生组织「无缚者同盟」的起源与行动。该组织由前彼得拉设夫斯基小组成员安托沙领导，主张通过暴力刺杀贵族来实现社会变革。乌克西克的证词揭示了卡托加封锁区内的残酷现实：被关押的学生与工人面临暴徒「十六人议会」的威胁，而负责管理该区的枢密官巴普洛维奇则利用职权谋取私利。\n\n在封锁区内，凛冬（索尼娅）带领乌萨斯学生自治团与无缚者同盟合作，共同对抗暴徒。她试图团结所有被关押的学生，包括贵族出身的「研讨会」和「学生近卫军」成员，但内部矛盾重重。在一次营救行动中，学生列昂尼德被杀，凛冬发誓要打倒暴徒头目格罗莫夫。与此同时，早露（娜塔莉娅）在封锁区外奔走，利用贵族身份与政治手腕，试图从外部瓦解巴普洛维奇的势力。\n\n真理（安娜）在示威失败后，于废弃剧院中重新凝聚了学生们的斗志。她痛斥了各派的怯懦与自私，号召大家为营救同伴而战。奥尔佳作为学生联合大会的主席，在压力下选择与学生们决裂，并成为听证会上的关键证人，指证真理等人「绑架」了她。最终，早露通过一封「忏悔信」揭露了巴普洛维奇的罪行，并成功说服了部分贵族倒戈，为封锁区内的学生争取到了一线生机。\n\n听证会继续，奥尔佳作为证人陈述了被真理软禁的经历，但在最后关头突然改口，主动承担所有责任，令全场震惊。真理在剧院中组织学生调查封锁区情报，通过伪装警察查账的方式获取了关键线索，并最终说服奥尔佳交出通往特里波列夫庄园的密道，为营救行动铺平道路。\n\n封锁区内，凛冬带领学生进行军事训练，准备对巴普洛维奇发动总攻。费佳（实为皇帝费奥多尔）在营地中与通讯学生伯塔尼相遇，通过无线电指导她成功俘虏了暴徒的账房帕夫洛男爵。学生军攻破格罗莫夫的老巢，凛冬举起传说中的锤斧击败了格罗莫夫，但随后与安托沙因是否处决帕夫洛而决裂，无缚者同盟退出合作。\n\n弑君者在圣骏堡地下活动，为工人提供廉价能源，并试图联系远北的线人。她与古米、坚雷一同行动，通过凛冬提供的通讯设备意外联系上了古米的父亲，获得了一组包含军用设施识别码的暗语，指向「石棺」和「卫星城」。弑君者随后进入封锁区与凛冬会面，并当面揭露了费佳的真实身份——乌萨斯皇帝费奥多尔。\n\n最终决战中，学生军与无缚者同盟内外夹击，推倒伊戈尔雕像砸开城墙，巴普洛维奇被凛冬杀死。但无缚者同盟在战斗中损失惨重，马特维等人牺牲。安托沙试图与凛冬决斗，被烈夏阻止。听证会结束后，凛冬等人策划并成功劫狱，救出了被捕学生。弑君者决定前往卫星城调查古米父母的线索，古米与她立下约定。安托沙在废墟中见到马特维的幻影，决心继续战斗。",
+  "events": [
+    {
+      "event": "听证会开始，苦艾作为一号证人陈述学生联合大会的示威计划",
+      "type": "testimony",
+      "line_range": [
+        1,
+        269
+      ],
+      "participants": [
+        "仲裁人",
+        "苦艾",
+        "刻薄的贵族",
+        "台下的贵族",
+        "凛冬",
+        "真理",
+        "早露",
+        "古米",
+        "烈夏",
+        "奥尔佳",
+        "法杰伊",
+        "列昂尼德"
+      ],
+      "location": "圣骏堡议会大厦听证会现场",
+      "significance": "确立听证会背景，引出「卡托加事件」的核心矛盾与学生运动的全貌",
+      "is_imaginary": false
+    },
+    {
+      "event": "早露以贵族身份参加冬季舞会，探查情报并遭遇贵族间的政治对话",
+      "type": "infiltration",
+      "line_range": [
+        270,
+        418
+      ],
+      "participants": [
+        "早露",
+        "沃伦佐娃夫人",
+        "巴普洛维奇",
+        "骄傲的贵族",
+        "担忧的贵族"
+      ],
+      "location": "圣骏堡皇宫冬季舞会厅",
+      "significance": "展现贵族阶层的政治生态与对卡托加区的态度，为后续冲突埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "维特议长与瓦西里副议长复盘舞会当晚皇帝失踪的真相",
+      "type": "revelation",
+      "line_range": [
+        462,
+        556
+      ],
+      "participants": [
+        "维特",
+        "瓦西里",
+        "紧张的刺客",
+        "松弛的刺客",
+        "皇帝的利刃"
+      ],
+      "location": "圣骏堡议会/皇宫",
+      "significance": "揭示皇帝失踪与内卫的复杂关系，点明乌萨斯最高层的权力博弈",
+      "is_imaginary": false
+    },
+    {
+      "event": "学生示威行动失控，警察镇压，凛冬为掩护同伴被捕",
+      "type": "confrontation",
+      "line_range": [
+        557,
+        605
+      ],
+      "participants": [
+        "凛冬",
+        "奥尔佳",
+        "烈夏",
+        "真理",
+        "古米",
+        "苦艾"
+      ],
+      "location": "圣骏堡舞会厅外街道",
+      "significance": "示威行动失败，凛冬等学生领袖被关入卡托加封锁区，事件升级",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌克西克作为二号证人，讲述无缚者同盟的起源与刺杀计划",
+      "type": "testimony",
+      "line_range": [
+        626,
+        803
+      ],
+      "participants": [
+        "仲裁人",
+        "乌克西克",
+        "安托沙",
+        "马特维",
+        "尤拉"
+      ],
+      "location": "圣骏堡议会大厦听证会现场",
+      "significance": "引入另一条学生运动线，揭示底层学生的激进反抗与卡托加区的真实状况",
+      "is_imaginary": false
+    },
+    {
+      "event": "凛冬在卡托加封锁区内与安托沙会面，双方达成初步合作",
+      "type": "alliance",
+      "line_range": [
+        962,
+        989
+      ],
+      "participants": [
+        "凛冬",
+        "安托沙",
+        "烈夏",
+        "乌克西克",
+        "马特维"
+      ],
+      "location": "卡托加封锁区",
+      "significance": "自治团与无缚者同盟建立联系，为后续联合反抗奠定基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "凛冬在封锁区内团结各派学生，决定营救被暴徒抓走的同伴",
+      "type": "planning",
+      "line_range": [
+        1039,
+        1103
+      ],
+      "participants": [
+        "凛冬",
+        "烈夏",
+        "法杰伊",
+        "研讨会成员",
+        "近卫军成员"
+      ],
+      "location": "卡托加封锁区学生营地",
+      "significance": "凛冬展现领导力，打破学生内部派系隔阂，组织统一行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "营救行动中，学生列昂尼德被杀，凛冬发誓要打倒暴徒头目格罗莫夫",
+      "type": "confrontation",
+      "line_range": [
+        1144,
+        1195
+      ],
+      "participants": [
+        "凛冬",
+        "尼卡",
+        "叶列梅",
+        "马特维",
+        "憔悴的工人"
+      ],
+      "location": "卡托加封锁区",
+      "significance": "揭示封锁区内的残酷生存法则，凛冬的决心进一步坚定",
+      "is_imaginary": false
+    },
+    {
+      "event": "早露与巴普洛维奇谈判，发现其利用封锁区谋取政治资本",
+      "type": "negotiation",
+      "line_range": [
+        1419,
+        1476
+      ],
+      "participants": [
+        "早露",
+        "巴普洛维奇"
+      ],
+      "location": "卡托加封锁区巴普洛维奇的办公室",
+      "significance": "早露深入虎穴，获取关键情报并意识到外部政治斗争的复杂性",
+      "is_imaginary": false
+    },
+    {
+      "event": "早露与凛冬在封锁区内秘密会面，交换情报并制定内外联动计划",
+      "type": "reunion",
+      "line_range": [
+        1489,
+        1538
+      ],
+      "participants": [
+        "早露",
+        "凛冬"
+      ],
+      "location": "卡托加封锁区",
+      "significance": "内外两条剧情线交汇，明确后续行动方向：切断武装供应",
+      "is_imaginary": false
+    },
+    {
+      "event": "早露通过政治手腕，成功迫使支持巴普洛维奇的公爵倒戈",
+      "type": "political_intrigue",
+      "line_range": [
+        1632,
+        1662
+      ],
+      "participants": [
+        "早露",
+        "某位公爵"
+      ],
+      "location": "圣骏堡公爵府邸",
+      "significance": "早露展现成熟的政治智慧，从内部瓦解巴普洛维奇的势力",
+      "is_imaginary": false
+    },
+    {
+      "event": "早露向沃伦佐娃夫人递交真正的「忏悔信」，表明自己选择承担责任",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1681,
+        1716
+      ],
+      "participants": [
+        "早露",
+        "沃伦佐娃夫人"
+      ],
+      "location": "沃伦佐娃夫人府邸",
+      "significance": "早露完成角色成长，从被动接受保护到主动选择背负使命",
+      "is_imaginary": false
+    },
+    {
+      "event": "奥尔佳在听证会上作证，指证真理等人绑架了她",
+      "type": "testimony",
+      "line_range": [
+        1736,
+        1745
+      ],
+      "participants": [
+        "仲裁人",
+        "奥尔佳"
+      ],
+      "location": "圣骏堡议会大厦听证会现场",
+      "significance": "奥尔佳与学生们决裂，成为贵族阵营的证人，加剧内部矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "真理在废弃剧院中重新凝聚学生，号召大家为营救同伴而战",
+      "type": "speech",
+      "line_range": [
+        1805,
+        1857
+      ],
+      "participants": [
+        "真理",
+        "古米",
+        "奥尔佳",
+        "研讨会成员",
+        "近卫军成员",
+        "失望的学生"
+      ],
+      "location": "圣骏堡废弃剧院",
+      "significance": "真理接替凛冬成为外部学生运动的领导者，重整旗鼓",
+      "is_imaginary": false
+    },
+    {
+      "event": "奥尔佳在听证会上陈述被真理软禁的经历，但最后突然改口，主动承担所有责任",
+      "type": "testimony",
+      "line_range": [
+        1881,
+        2040
+      ],
+      "participants": [
+        "仲裁人",
+        "奥尔佳",
+        "特里波列夫公爵"
+      ],
+      "location": "听证会现场",
+      "significance": "奥尔佳的证词从指控真理转向自我牺牲，改变了听证会的走向",
+      "is_imaginary": false
+    },
+    {
+      "event": "真理在剧院中组织学生调查封锁区情报，通过伪装警察查账获取关键线索",
+      "type": "investigation",
+      "line_range": [
+        1924,
+        1971
+      ],
+      "participants": [
+        "真理",
+        "急切的学生",
+        "谢尔戈",
+        "安娜的朋友"
+      ],
+      "location": "剧院",
+      "significance": "真理通过巧妙手段获取了封锁区军需订单的源头信息",
+      "is_imaginary": false
+    },
+    {
+      "event": "真理说服奥尔佳交出通往特里波列夫庄园的密道，奥尔佳决定与家族决裂",
+      "type": "negotiation",
+      "line_range": [
+        1989,
+        2079
+      ],
+      "participants": [
+        "真理",
+        "奥尔佳"
+      ],
+      "location": "学校",
+      "significance": "奥尔佳最终选择背叛家族，为营救行动提供了关键通道",
+      "is_imaginary": false
+    },
+    {
+      "event": "凛冬在封锁区内训练学生，准备对巴普洛维奇发动总攻",
+      "type": "training",
+      "line_range": [
+        2080,
+        2107
+      ],
+      "participants": [
+        "凛冬",
+        "烈夏",
+        "乌萨斯学生A",
+        "乌萨斯学生B"
+      ],
+      "location": "封锁区营地",
+      "significance": "凛冬通过军事训练凝聚学生力量，为决战做准备",
+      "is_imaginary": false
+    },
+    {
+      "event": "费佳（皇帝费奥多尔）通过无线电指导伯塔尼，成功俘虏暴徒账房帕夫洛男爵",
+      "type": "rescue",
+      "line_range": [
+        2221,
+        2296
+      ],
+      "participants": [
+        "费奥多尔",
+        "伯塔尼",
+        "帕夫洛"
+      ],
+      "location": "封锁区暴徒驻地",
+      "significance": "伯塔尼在费佳的鼓励下勇敢行动，为后续行动获取了关键情报",
+      "is_imaginary": false
+    },
+    {
+      "event": "学生军攻破格罗莫夫老巢，凛冬举起传说锤斧击败格罗莫夫",
+      "type": "battle",
+      "line_range": [
+        2405,
+        2461
+      ],
+      "participants": [
+        "凛冬",
+        "烈夏",
+        "格罗莫夫",
+        "安托沙",
+        "马特维"
+      ],
+      "location": "格罗莫夫荣誉室",
+      "significance": "凛冬击败暴徒头目，但随后与安托沙因理念分歧决裂",
+      "is_imaginary": false
+    },
+    {
+      "event": "凛冬与安托沙因是否处决帕夫洛而决裂，无缚者同盟退出合作",
+      "type": "ideological_clash",
+      "line_range": [
+        2462,
+        2519
+      ],
+      "participants": [
+        "凛冬",
+        "安托沙",
+        "马特维",
+        "烈夏",
+        "帕夫洛"
+      ],
+      "location": "格罗莫夫荣誉室",
+      "significance": "安托沙主张彻底消灭贵族，凛冬主张团结利用，两人道路分岔",
+      "is_imaginary": false
+    },
+    {
+      "event": "弑君者在圣骏堡地下为工人提供廉价能源，并试图联系远北线人",
+      "type": "investigation",
+      "line_range": [
+        2584,
+        2660
+      ],
+      "participants": [
+        "弑君者",
+        "被捕的工人",
+        "热情的工人",
+        "？？？"
+      ],
+      "location": "圣骏堡地下动力层",
+      "significance": "揭示弑君者在圣骏堡的秘密活动，为后续能源危机埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "弑君者进入封锁区与凛冬会面，并当面揭露费佳的真实身份是皇帝费奥多尔",
+      "type": "confrontation",
+      "line_range": [
+        2775,
+        2834
+      ],
+      "participants": [
+        "弑君者",
+        "费奥多尔"
+      ],
+      "location": "封锁区营地",
+      "significance": "弑君者当面斥责皇帝的无能，揭示了皇帝在封锁区的真实处境",
+      "is_imaginary": false
+    },
+    {
+      "event": "弑君者与古米、坚雷通过通讯设备意外联系上古米的父亲，获得军用设施暗语",
+      "type": "revelation",
+      "line_range": [
+        2912,
+        2990
+      ],
+      "participants": [
+        "弑君者",
+        "古米",
+        "坚雷",
+        "通讯器中的声音"
+      ],
+      "location": "圣骏堡地下",
+      "significance": "古米父亲通过暗语传递了关于石棺和卫星城的关键信息",
+      "is_imaginary": false
+    },
+    {
+      "event": "安托沙回忆童年经历，讲述自己与家族决裂的原因",
+      "type": "flashback",
+      "line_range": [
+        3108,
+        3130
+      ],
+      "participants": [
+        "安托沙",
+        "马特维",
+        "乌克西克"
+      ],
+      "location": "无缚者同盟营地",
+      "significance": "揭示安托沙激进思想的根源，深化角色背景",
+      "is_imaginary": false
+    },
+    {
+      "event": "巴普洛维奇获得军用通讯终端，准备呼叫炮火覆盖",
+      "type": "planning",
+      "line_range": [
+        3207,
+        3259
+      ],
+      "participants": [
+        "巴普洛维奇",
+        "安保队长",
+        "乌萨斯军官"
+      ],
+      "location": "封锁区城墙",
+      "significance": "巴普洛维奇获得最后手段，为决战增加变数",
+      "is_imaginary": false
+    },
+    {
+      "event": "学生军与暴徒展开决战，推倒伊戈尔雕像砸开城墙",
+      "type": "battle",
+      "line_range": [
+        3260,
+        3362
+      ],
+      "participants": [
+        "凛冬",
+        "烈夏",
+        "坚雷",
+        "古米",
+        "伯塔尼",
+        "费奥多尔"
+      ],
+      "location": "封锁区城墙",
+      "significance": "学生军最终攻破封锁区，凛冬杀死巴普洛维奇",
+      "is_imaginary": false
+    },
+    {
+      "event": "无缚者同盟在战斗中损失惨重，马特维等人牺牲",
+      "type": "sacrifice",
+      "line_range": [
+        3378,
+        3397
+      ],
+      "participants": [
+        "安托沙",
+        "凛冬",
+        "烈夏",
+        "马特维",
+        "尤拉"
+      ],
+      "location": "封锁区",
+      "significance": "马特维的牺牲加深了安托沙的绝望与激进",
+      "is_imaginary": false
+    },
+    {
+      "event": "安托沙试图与凛冬决斗，被烈夏阻止",
+      "type": "confrontation",
+      "line_range": [
+        3398,
+        3437
+      ],
+      "participants": [
+        "安托沙",
+        "凛冬",
+        "烈夏"
+      ],
+      "location": "封锁区",
+      "significance": "凛冬拒绝以杀戮解决问题，两人道路彻底分岔",
+      "is_imaginary": false
+    },
+    {
+      "event": "凛冬等人策划并成功劫狱，救出被捕学生",
+      "type": "rescue",
+      "line_range": [
+        3468,
+        3546
+      ],
+      "participants": [
+        "凛冬",
+        "真理",
+        "早露",
+        "烈夏",
+        "苦艾",
+        "古米"
+      ],
+      "location": "三号监狱",
+      "significance": "学生利用听证会拖延时间，成功营救同伴",
+      "is_imaginary": false
+    },
+    {
+      "event": "弑君者决定前往卫星城调查古米父母的线索，古米与她立下约定",
+      "type": "departure",
+      "line_range": [
+        3553,
+        3600
+      ],
+      "participants": [
+        "弑君者",
+        "古米",
+        "凛冬",
+        "真理",
+        "早露",
+        "烈夏",
+        "苦艾"
+      ],
+      "location": "罗德岛安全屋",
+      "significance": "弑君者踏上寻找真相的旅程，古米选择信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "安托沙在废墟中见到马特维的幻影，决心继续战斗",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        3601,
+        3642
+      ],
+      "participants": [
+        "安托沙",
+        "马特维"
+      ],
+      "location": "封锁区废墟",
+      "significance": "安托沙从幻影中获得力量，决定为战友正名",
+      "is_imaginary": true
+    },
+    {
+      "event": "第一集团军总司令召集军官，宣布新型武器进入试验阶段",
+      "type": "planning",
+      "line_range": [
+        3643,
+        3664
+      ],
+      "participants": [
+        "威严的军人",
+        "紧张的军官",
+        "严肃的军官"
+      ],
+      "location": "第一集团军驻地",
+      "significance": "为后续剧情埋下伏笔，暗示乌萨斯即将发生重大事件",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "苦艾",
+      "type": "operator",
+      "role_in_chapter": "作为一号证人出席听证会，陈述学生联合大会的示威计划与卡托加事件经过，是连接过去与现在的关键叙述者",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凛冬",
+      "type": "operator",
+      "role_in_chapter": "乌萨斯学生自治团团长，在示威中被捕，后在卡托加封锁区内团结各派学生，领导反抗暴徒的行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "真理",
+      "type": "operator",
+      "role_in_chapter": "自治团成员，在凛冬被捕后于外部重新凝聚学生，组织营救行动，并在废弃剧院发表鼓舞人心的演讲",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "早露",
+      "type": "operator",
+      "role_in_chapter": "自治团成员，以贵族身份潜入舞会探查情报，后通过政治手腕与巴普洛维奇周旋，并成功说服部分贵族倒戈",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "古米",
+      "type": "operator",
+      "role_in_chapter": "自治团成员，在示威中与凛冬失散，后在真理的领导下参与营救行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "烈夏",
+      "type": "operator",
+      "role_in_chapter": "自治团成员，独自潜入卡托加封锁区寻找凛冬，并参与后续战斗",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "仲裁人",
+      "type": "npc",
+      "role_in_chapter": "主持听证会的官员，负责引导证人陈述并维持秩序，试图将事件定性为学生叛乱",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "奥尔佳",
+      "type": "npc",
+      "role_in_chapter": "学生联合大会主席，特里波列夫公爵之女，在示威失败后与学生们决裂，成为听证会上的关键证人",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "法杰伊",
+      "type": "npc",
+      "role_in_chapter": "学生近卫军领袖，主张武力营救，后在封锁区内被凛冬说服，参与营救行动并牺牲",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "列昂尼德",
+      "type": "npc",
+      "role_in_chapter": "研讨会成员，在封锁区内被暴徒杀害",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "乌克西克",
+      "type": "npc",
+      "role_in_chapter": "流浪儿，被无缚者同盟收留，后作为二号证人出席听证会，讲述该组织的起源",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "安托沙",
+      "type": "npc",
+      "role_in_chapter": "无缚者同盟领袖，前彼得拉设夫斯基小组组长，主张暴力反抗，在封锁区内与凛冬合作",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "马特维",
+      "type": "npc",
+      "role_in_chapter": "无缚者同盟成员，负责后勤与医疗，协助凛冬的行动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "巴普洛维奇",
+      "type": "npc",
+      "role_in_chapter": "卡托加区特别全权代表，枢密官，利用封锁区谋取政治资本，是学生们的直接压迫者",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "沃伦佐娃夫人",
+      "type": "npc",
+      "role_in_chapter": "早露父母的老友，试图保护早露，但最终被早露的选择所触动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "维特",
+      "type": "npc",
+      "role_in_chapter": "帝国议会议长，在幕后处理皇帝失踪事件，与内卫存在分歧",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "瓦西里",
+      "type": "npc",
+      "role_in_chapter": "帝国议会常务副议长，维特的助手，协助处理皇帝失踪事件",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "格罗莫夫",
+      "type": "npc",
+      "role_in_chapter": "暴徒组织「十六人议会」的头目，在封锁区内对学生施以暴行",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "特里波列夫公爵",
+      "type": "npc",
+      "role_in_chapter": "奥尔佳的父亲，旧贵族代表，在听证会上为女儿辩护并指证早露",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "谢尔戈",
+      "type": "npc",
+      "role_in_chapter": "看守奥尔佳的学生，参与伪装警察查账行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "费奥多尔",
+      "type": "npc",
+      "role_in_chapter": "以费佳身份潜伏在封锁区，指导伯塔尼俘虏帕夫洛，被弑君者揭露身份",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "伯塔尼",
+      "type": "npc",
+      "role_in_chapter": "通讯学生，在费佳鼓励下勇敢行动，俘虏帕夫洛男爵",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "帕夫洛",
+      "type": "npc",
+      "role_in_chapter": "暴徒账房，被伯塔尼俘虏，提供情报",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "弑君者",
+      "type": "operator",
+      "role_in_chapter": "在圣骏堡地下活动，联系上古米父亲，揭露费奥多尔身份，决定前往卫星城",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "坚雷",
+      "type": "operator",
+      "role_in_chapter": "协助弑君者和古米，参与封锁区决战",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "尤拉",
+      "type": "npc",
+      "role_in_chapter": "无缚者同盟成员，诗人，在战斗中牺牲",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "威严的军人",
+      "type": "npc",
+      "role_in_chapter": "第一集团军总司令，宣布新型武器进入试验阶段",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "新乌萨斯民族",
+      "line_range": [
+        89,
+        98
+      ],
+      "discussion_summary": "研讨会成员引用尼古拉·伊林斯基的著作，主张乌萨斯应剜去骏鹰传统的毒疮，建立以乌萨斯人为主体的新国家。近卫军成员则反驳该理论排外且不切实际。",
+      "is_substantive": true
+    },
+    {
+      "concept": "忏悔信",
+      "line_range": [
+        1681,
+        1716
+      ],
+      "discussion_summary": "早露向沃伦佐娃夫人解释她所写的忏悔信并非认罪，而是对自身行为的反思与对责任的承担，她选择揭露真相而非保全自己。",
+      "is_substantive": true
+    },
+    {
+      "concept": "选择权",
+      "line_range": [
+        1701,
+        1711
+      ],
+      "discussion_summary": "早露在与沃伦佐娃夫人的辩论中提出，她希望所有人都能拥有选择权，而非被动接受与生俱来的贵族特权与责任。",
+      "is_substantive": true
+    },
+    {
+      "concept": "自由与毁灭",
+      "line_range": [
+        791,
+        799
+      ],
+      "discussion_summary": "安托沙带领无缚者同盟成员高呼口号，认为只有通过毁灭旧的法律与机关，才能在废墟上迎来乌萨斯的新生与真正的自由。",
+      "is_substantive": true
+    },
+    {
+      "concept": "真正的失败",
+      "line_range": [
+        1836,
+        1839
+      ],
+      "discussion_summary": "真理在演讲中定义真正的失败不是被打倒，而是自愿熄灭心中的火焰、放弃反抗不公的勇气。",
+      "is_substantive": true
+    },
+    {
+      "concept": "团结与毁灭",
+      "line_range": [
+        2462,
+        2518
+      ],
+      "discussion_summary": "凛冬主张团结利用贵族矛盾，安托沙主张彻底消灭贵族阶级，两人就手段与目的展开激烈辩论",
+      "is_substantive": true
+    },
+    {
+      "concept": "贵族的体罚权",
+      "line_range": [
+        3116,
+        3130
+      ],
+      "discussion_summary": "安托沙回忆祖父滥用体罚权杀死女仆，揭示贵族特权如何成为压迫工具",
+      "is_substantive": true
+    },
+    {
+      "concept": "皇帝的责任",
+      "line_range": [
+        2802,
+        2834
+      ],
+      "discussion_summary": "弑君者当面斥责费奥多尔，指出他作为皇帝却逃避责任，抱怨无人支持，实际上从未真正努力改变",
+      "is_substantive": true
+    },
+    {
+      "concept": "一个人需要的土地",
+      "line_range": [
+        2947,
+        2966
+      ],
+      "discussion_summary": "古米通过父亲讲述的童话，领悟到一个人一生需要的土地只有棺材大小，暗示对贪婪和压迫的批判",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "学生联合大会",
+      "line_range": [
+        73,
+        206
+      ],
+      "description": "由圣骏堡多个学生社团联合成立的组织，在奥尔佳的领导下决定在冬季舞会期间举行示威，内部存在研讨会、学生近卫军等派系分歧。"
+    },
+    {
+      "faction": "乌萨斯学生自治团",
+      "line_range": [
+        59,
+        257
+      ],
+      "description": "由凛冬领导的、来自切尔诺伯格的学生团体，加入学生联合大会但保持独立判断，在示威中试图控制风险。"
+    },
+    {
+      "faction": "无缚者同盟",
+      "line_range": [
+        768,
+        800
+      ],
+      "description": "由安托沙领导的激进学生组织，主张通过暴力刺杀贵族来实现社会变革，在卡托加封锁区内活动。"
+    },
+    {
+      "faction": "十六人议会（十六勇士）",
+      "line_range": [
+        1222,
+        1246
+      ],
+      "description": "由格罗莫夫领导的暴徒组织，受雇于巴普洛维奇管理卡托加封锁区，对学生施以暴行并进行所谓的竞拍会。"
+    },
+    {
+      "faction": "旧贵族（军事贵族）",
+      "line_range": [
+        1577,
+        1583
+      ],
+      "description": "以特里波列夫公爵为代表的世袭贵族群体，支持巴普洛维奇，主张对学生实施重刑，与新兴贵族存在对立。"
+    },
+    {
+      "faction": "新贵族（产业贵族）",
+      "line_range": [
+        1577,
+        1583
+      ],
+      "description": "以某位议员为代表的、通过财富获得爵位的贵族群体，在议会中与旧贵族对立，对巴普洛维奇的态度更为复杂。"
+    },
+    {
+      "faction": "学生联合大会",
+      "line_range": [
+        1881,
+        2079
+      ],
+      "description": "奥尔佳陈述被真理软禁的经历，真理组织学生调查情报，最终说服奥尔佳合作"
+    },
+    {
+      "faction": "无缚者同盟",
+      "line_range": [
+        2462,
+        2519
+      ],
+      "description": "安托沙与凛冬因是否处决帕夫洛而决裂，无缚者同盟退出合作"
+    },
+    {
+      "faction": "无缚者同盟",
+      "line_range": [
+        3108,
+        3152
+      ],
+      "description": "安托沙回忆童年经历，马特维讲述两人相识过程，为决战做准备"
+    },
+    {
+      "faction": "无缚者同盟",
+      "line_range": [
+        3378,
+        3397
+      ],
+      "description": "无缚者同盟在战斗中损失惨重，马特维等人牺牲"
+    },
+    {
+      "faction": "十六勇士",
+      "line_range": [
+        2405,
+        2461
+      ],
+      "description": "学生军攻破格罗莫夫老巢，凛冬击败格罗莫夫"
+    },
+    {
+      "faction": "十六勇士",
+      "line_range": [
+        3207,
+        3259
+      ],
+      "description": "巴普洛维奇召集剩余暴徒，准备与学生军决战"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2553,
+        2583
+      ],
+      "description": "凛冬与弑君者在办事处交谈，凛冬表示愿意互相帮助"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        3553,
+        3600
+      ],
+      "description": "弑君者在安全屋与众人会面，决定前往卫星城"
+    },
+    {
+      "faction": "乌萨斯议会",
+      "line_range": [
+        3038,
+        3048
+      ],
+      "description": "维特与瓦西里讨论如何利用皇帝失踪的机会一网打尽投机者"
+    },
+    {
+      "faction": "第一集团军",
+      "line_range": [
+        3643,
+        3664
+      ],
+      "description": "总司令召集军官，宣布新型武器进入试验阶段"
+    }
+  ],
+  "locations": [
+    {
+      "location": "圣骏堡议会大厦",
+      "line_range": [
+        1,
+        269
+      ],
+      "description": "听证会举办地，贵族与学生们在此就卡托加事件进行辩论与质证。"
+    },
+    {
+      "location": "卡托加封锁区",
+      "line_range": [
+        969,
+        976
+      ],
+      "description": "圣骏堡废弃的工业地块，被用作关押被捕学生的临时监狱，由巴普洛维奇和暴徒管理，环境恶劣，缺乏基本生存资源。"
+    },
+    {
+      "location": "圣骏堡皇宫冬季舞会厅",
+      "line_range": [
+        270,
+        418
+      ],
+      "description": "贵族们举办年度舞会的场所，也是学生示威的目标地点，舞会期间发生了皇帝失踪事件。"
+    },
+    {
+      "location": "萨列夫格勒区",
+      "line_range": [
+        1720,
+        1729
+      ],
+      "description": "圣骏堡的贵族居住区，学生示威队伍在此与警察发生冲突，导致多人被捕。"
+    },
+    {
+      "location": "废弃剧院",
+      "line_range": [
+        1735,
+        1880
+      ],
+      "description": "示威失败后，学生们聚集的临时据点，真理在此重新凝聚人心并组织营救行动。"
+    },
+    {
+      "location": "圣骏堡",
+      "line_range": [
+        1924,
+        1971
+      ],
+      "description": "真理在剧院组织学生调查封锁区情报，通过伪装警察查账获取线索"
+    },
+    {
+      "location": "圣骏堡",
+      "line_range": [
+        2584,
+        2660
+      ],
+      "description": "弑君者在圣骏堡地下动力层活动，为工人提供廉价能源"
+    },
+    {
+      "location": "封锁区",
+      "line_range": [
+        2080,
+        2107
+      ],
+      "description": "凛冬在封锁区内训练学生，准备对巴普洛维奇发动总攻"
+    },
+    {
+      "location": "封锁区",
+      "line_range": [
+        2405,
+        2461
+      ],
+      "description": "学生军攻破格罗莫夫老巢，凛冬击败格罗莫夫"
+    },
+    {
+      "location": "封锁区",
+      "line_range": [
+        3260,
+        3362
+      ],
+      "description": "学生军与暴徒展开决战，推倒伊戈尔雕像砸开城墙"
+    },
+    {
+      "location": "卡托加区",
+      "line_range": [
+        2707,
+        2774
+      ],
+      "description": "弑君者进入封锁区与凛冬会面，讨论突围计划"
+    },
+    {
+      "location": "卫星城",
+      "line_range": [
+        2980,
+        2990
+      ],
+      "description": "古米父亲通过暗语传递了关于石棺和卫星城的信息"
+    },
+    {
+      "location": "三号监狱",
+      "line_range": [
+        3468,
+        3546
+      ],
+      "description": "凛冬等人策划并成功劫狱，救出被捕学生"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:03:41.717286+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 85692,
+    "tokens_out": 9987,
+    "elapsed_s": 98.51295018196106
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "仲裁人",
+    "奥尔佳",
+    "法杰伊",
+    "列昂尼德",
+    "乌克西克",
+    "安托沙",
+    "马特维",
+    "巴普洛维奇",
+    "沃伦佐娃夫人",
+    "维特",
+    "瓦西里",
+    "格罗莫夫",
+    "特里波列夫公爵",
+    "谢尔戈",
+    "费奥多尔",
+    "帕夫洛",
+    "尤拉",
+    "威严的军人"
+  ]
+}

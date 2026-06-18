@@ -1,0 +1,473 @@
+{
+  "summary": "本章讲述了小黑、阿根和小白三个来自异世界的孩子在龙门意外重逢的故事。小黑被老鲤收留，在事务所帮忙，并受托寻找一只乌云兽。阿根和小白则跟随罗德岛干员洛洛和铃兰来到龙门办事处，帮助一位名叫小沅的矿石病感染者寻找她走失的宠物六十七。三条线索在寻找宠物的过程中逐渐交织，最终在贫民窟的纪念地意外相遇。\n\n小黑在寻找乌云兽的过程中，遇到了大帝酒吧的鼷兽事件，并结识了可颂、空和德克萨斯。他坚持保护小动物，最终说服大帝收养了鼷兽。随后，大帝带他前往贫民窟的医生处检查动物，医生透露了乌云兽前主人的线索——一位已故的矿石病感染者，留下了六十七龙门币。\n\n阿根为了寻找乌云兽的线索，与一位脾气暴躁的前黑帮成员合作，潜入近卫局大楼探望被收容的警用循兽扬尼。在洛洛的无人机协助下，他们成功进入循兽舍，并了解到扬尼与已故警员谢明的过往。最终，循兽训练员被感动，允许扬尼回到前主人身边。\n\n小白在办事处努力帮忙，为小沅策划了一场宠物的葬礼。她前往殡仪馆，却因误会对方将她当作袁家大小姐而获得了免费服务。在寻找铃兰主持葬礼时，小白在感染者的纪念地发现了六十七的照片，意识到乌云兽的前主人是一位已故的感染者。\n\n三条线索在纪念地交汇，小黑带着乌云兽六十七与小白、阿根重逢。小沅与六十七团聚，并得知六十七并非被遗弃，而是前主人用全部积蓄托付给她的礼物。孩子们决定跟随洛洛前往罗德岛本舰，小黑则受老鲤委托，要送一件东西给博士。\n\n最后，比丢被托付给罗德岛的三个机器人照顾。机器人严格按照宠物指南行事，却导致比丢产生应激反应。洛洛以更灵活的方式照顾比丢，让机器人意识到规则之外，理解和陪伴同样重要。",
+  "events": [
+    {
+      "event": "小黑受托寻找袁家丢失的乌云兽，但发现乌云兽另有其主",
+      "type": "investigation",
+      "line_range": [
+        46,
+        64
+      ],
+      "participants": [
+        "小黑",
+        "老鲤",
+        "吽"
+      ],
+      "location": "老鲤事务所",
+      "significance": "引出小黑寻找乌云兽的主线，并暗示乌云兽并非袁家所丢",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿根和小白随洛洛、铃兰抵达龙门办事处，结识小沅并答应帮她寻找走失的乌云兽六十七",
+      "type": "arrival",
+      "line_range": [
+        82,
+        184
+      ],
+      "participants": [
+        "洛洛",
+        "铃兰",
+        "阿根",
+        "小白",
+        "小沅"
+      ],
+      "location": "龙门罗德岛办事处",
+      "significance": "建立阿根和小白在龙门的行动线，引出寻找六十七的任务",
+      "is_imaginary": false
+    },
+    {
+      "event": "小黑在天台上向乌云兽倾诉自己来自异世界，与朋友失散的遭遇",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        268,
+        280
+      ],
+      "participants": [
+        "小黑",
+        "乌云兽"
+      ],
+      "location": "天台",
+      "significance": "揭示小黑、阿根和小白的异世界背景，深化角色情感",
+      "is_imaginary": false
+    },
+    {
+      "event": "小黑在大帝酒吧处理鼷兽事件，坚持保护小动物，最终说服大帝收养鼷兽",
+      "type": "confrontation",
+      "line_range": [
+        337,
+        498
+      ],
+      "participants": [
+        "小黑",
+        "大帝",
+        "可颂",
+        "空",
+        "酒保"
+      ],
+      "location": "大帝酒吧",
+      "significance": "展现小黑的正义感和坚持，建立与大帝的关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "大帝带小黑前往贫民窟医生处检查动物，医生透露乌云兽前主人是已故感染者，留下六十七龙门币",
+      "type": "revelation",
+      "line_range": [
+        541,
+        594
+      ],
+      "participants": [
+        "小黑",
+        "大帝",
+        "医生"
+      ],
+      "location": "贫民窟诊所",
+      "significance": "揭示六十七名字的由来，将乌云兽与已故感染者联系起来",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿根与救助站老板合作，潜入近卫局大楼探望被收容的警用循兽扬尼",
+      "type": "infiltration",
+      "line_range": [
+        595,
+        954
+      ],
+      "participants": [
+        "阿根",
+        "老板",
+        "洛洛",
+        "循兽训练员",
+        "扬尼"
+      ],
+      "location": "龙门近卫局",
+      "significance": "展现阿根的源石技艺和应变能力，揭示扬尼与已故警员谢明的过往",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿根在救助站档案中找到乌云兽六十七的记录，发现其已死亡，项圈上刻有六十七",
+      "type": "revelation",
+      "line_range": [
+        955,
+        981
+      ],
+      "participants": [
+        "阿根",
+        "老板"
+      ],
+      "location": "救助站",
+      "significance": "确认六十七的死亡，与医生线索呼应，为后续转折埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "小白为小沅策划六十七的葬礼，前往殡仪馆因误会获得免费服务",
+      "type": "planning",
+      "line_range": [
+        1067,
+        1144
+      ],
+      "participants": [
+        "小白",
+        "礼仪社员工"
+      ],
+      "location": "殡仪馆",
+      "significance": "展现小白的善良和行动力，揭示龙门社会对感染者的歧视",
+      "is_imaginary": false
+    },
+    {
+      "event": "小白在感染者纪念地发现六十七的照片，意识到其前主人是已故感染者",
+      "type": "revelation",
+      "line_range": [
+        1180,
+        1211
+      ],
+      "participants": [
+        "小白",
+        "铃兰"
+      ],
+      "location": "感染者纪念地",
+      "significance": "揭示六十七前主人的身份，为最终团聚做铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "小黑、阿根和小白在感染者纪念地意外重逢，小沅与六十七团聚",
+      "type": "reunion",
+      "line_range": [
+        1265,
+        1382
+      ],
+      "participants": [
+        "小黑",
+        "阿根",
+        "小白",
+        "小沅",
+        "六十七",
+        "洛洛",
+        "铃兰"
+      ],
+      "location": "感染者纪念地",
+      "significance": "本章核心事件，三条线索交汇，角色团聚，揭示六十七的真相",
+      "is_imaginary": false
+    },
+    {
+      "event": "孩子们决定跟随洛洛前往罗德岛本舰，小黑受老鲤委托送东西给博士",
+      "type": "departure",
+      "line_range": [
+        1404,
+        1439
+      ],
+      "participants": [
+        "小黑",
+        "阿根",
+        "小白",
+        "洛洛",
+        "小沅",
+        "铃兰"
+      ],
+      "location": "罗德岛办事处外",
+      "significance": "推动剧情向罗德岛本舰发展，建立与博士的联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛机器人照顾比丢，因过于死板导致比丢应激，洛洛以灵活方式解决问题",
+      "type": "character_development",
+      "line_range": [
+        1497,
+        1785
+      ],
+      "participants": [
+        "比丢",
+        "Castle-3",
+        "Thermal-EX",
+        "Lancet-2",
+        "洛洛"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "展现机器人的成长，强调规则之外理解和陪伴的重要性",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "罗小黑",
+      "type": "operator",
+      "role_in_chapter": "来自异世界的菲林少年，被老鲤收留，受托寻找乌云兽，最终与朋友重逢并前往罗德岛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿",
+      "type": "operator",
+      "role_in_chapter": "来自异世界的少年，小白的哥哥，拥有源石技艺，帮助小沅寻找乌云兽，与小黑重逢",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "小白",
+      "type": "npc",
+      "role_in_chapter": "来自异世界的女孩，阿根的妹妹，善良热心，为小沅策划葬礼，最终与小黑重逢",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老鲤",
+      "type": "operator",
+      "role_in_chapter": "龙门事务所老板，收留小黑，委托他寻找乌云兽和去大帝酒吧处理事件",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "吽",
+      "type": "operator",
+      "role_in_chapter": "老鲤事务所的厨师，照顾小黑的生活",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "槐琥",
+      "type": "operator",
+      "role_in_chapter": "老鲤事务所成员，关心小黑",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿",
+      "type": "operator",
+      "role_in_chapter": "老鲤事务所成员，与小黑斗嘴",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "洛洛",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，带领阿根和小白来到龙门办事处，帮助小沅，最终带孩子们前往本舰",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "铃兰",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与洛洛同行，为感染者举行告别仪式，主持六十七的葬礼",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "小沅",
+      "type": "npc",
+      "role_in_chapter": "矿石病感染者，六十七的主人，因宠物走失而悲伤，最终与六十七团聚",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "大帝",
+      "type": "operator",
+      "role_in_chapter": "酒吧老板，委托小黑处理鼷兽事件，最终收养鼷兽，带小黑去贫民窟",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "可颂",
+      "type": "operator",
+      "role_in_chapter": "大帝酒吧员工，与空一起接待小黑，讲恐怖故事",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "空",
+      "type": "operator",
+      "role_in_chapter": "大帝酒吧员工，胆小善良，关心小动物",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "德克萨斯",
+      "type": "operator",
+      "role_in_chapter": "大帝酒吧员工，透露大帝曾养过鼷兽的往事",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "医生",
+      "type": "npc",
+      "role_in_chapter": "贫民窟的医生，能治人和动物，透露乌云兽前主人的线索",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老板",
+      "type": "npc",
+      "role_in_chapter": "前黑帮成员，现经营动物救助站，与阿根合作潜入近卫局探望循兽扬尼",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "循兽训练员",
+      "type": "npc",
+      "role_in_chapter": "近卫局文职转岗的循兽训练员，与老板争夺扬尼，最终被感动允许扬尼离开",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "礼仪社员工",
+      "type": "npc",
+      "role_in_chapter": "殡仪馆员工，因误会小白是袁家大小姐而提供免费服务，后因真相而收回",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "比丢",
+      "type": "npc",
+      "role_in_chapter": "小黑等人的宠物，能变色，喜欢吃木头，被托付给罗德岛机器人照顾",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Castle-3",
+      "type": "operator",
+      "role_in_chapter": "罗德岛机器人，负责照顾比丢，严格遵循指南，后学会灵活变通",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Thermal-EX",
+      "type": "operator",
+      "role_in_chapter": "罗德岛机器人，热情洋溢，负责照顾比丢",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Lancet-2",
+      "type": "operator",
+      "role_in_chapter": "罗德岛机器人，医疗辅助，负责照顾比丢，后学会灵活变通",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "矿石病",
+      "line_range": [
+        88,
+        93
+      ],
+      "discussion_summary": "洛洛和铃兰讨论龙门在经历浩劫后表面恢复但内里创伤犹存，洛洛指出记忆不会消失，铃兰认为人的记性很差。",
+      "is_substantive": true
+    },
+    {
+      "concept": "矿石病",
+      "line_range": [
+        1194,
+        1203
+      ],
+      "discussion_summary": "小白发现感染者死后只能将照片挂在空地上，没有葬礼和墓地，质问为什么得了矿石病不能好好活着，死了也不能被好好安葬。",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石技艺",
+      "line_range": [
+        695,
+        696
+      ],
+      "discussion_summary": "老板询问阿根是否会源石技艺，阿根含糊承认。",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石技艺",
+      "line_range": [
+        820,
+        823
+      ],
+      "discussion_summary": "近卫局警员发现温度变低、墙面结冰，判断是源石技艺，请求支援。",
+      "is_substantive": true
+    },
+    {
+      "concept": "鼷兽",
+      "line_range": [
+        439,
+        455
+      ],
+      "discussion_summary": "可颂、空和酒保讨论鼷兽的习性、被弃养的原因、对城市设施的破坏以及即将出台的禁养政策。",
+      "is_substantive": true
+    },
+    {
+      "concept": "云兽/乌云兽",
+      "line_range": [
+        52,
+        58
+      ],
+      "discussion_summary": "老鲤和吽向小黑解释云兽是大炎特有的叫法，按颜色分为雪云兽、彤云兽等，乌云兽是纯黑色的云兽。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        116,
+        123
+      ],
+      "description": "洛洛邀请阿根和小白去罗德岛办事处暂住，铃兰介绍罗德岛的任务是转移护送龙门当地的病患去本舰接受治疗，阿根称赞罗德岛是个了不起的地方。"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        639,
+        643
+      ],
+      "description": "邻居告诉阿根，有近卫局的人来找救助站老板，指控他非法藏匿扣留警用循兽。"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        850,
+        854
+      ],
+      "description": "循兽训练员与老板争执，指出扬尼（梅团）是近卫局一等功勋循兽，在切城事件中执行搜救、排爆、追踪任务无数，主人是高级警司谢明。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "龙门",
+      "line_range": [
+        82,
+        93
+      ],
+      "description": "洛洛和铃兰在深夜抵达龙门，洛洛感叹龙门灯火通明、充满活力，难以想象几年前曾遭受浩劫，铃兰认为城市和人一样有自愈能力。"
+    },
+    {
+      "location": "贫民窟",
+      "line_range": [
+        542,
+        548
+      ],
+      "description": "大帝带小黑来到贫民窟，小黑知道这里是得了石头病的人住的地方，老鲤曾告诫他不要靠近。大帝表示这里对不想被找到的人来说是安全的。"
+    },
+    {
+      "location": "感染者纪念地",
+      "line_range": [
+        1180,
+        1196
+      ],
+      "description": "小白找到铃兰，发现这里是感染者举办葬礼的地方，只有照片挂在空地上供人吊唁，很多人连照片也没有。"
+    }
+  ],
+  "chapter": "好久不见",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:34:25.856597+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 35460,
+    "tokens_out": 4141,
+    "elapsed_s": 40.381200075149536
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "小白",
+    "小沅",
+    "大帝",
+    "老板",
+    "循兽训练员",
+    "礼仪社员工",
+    "比丢",
+    "Thermal-EX"
+  ]
+}

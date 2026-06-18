@@ -1,0 +1,750 @@
+{
+  "chapter": "多索雷斯假日",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "Scene 1 通过鼠王与文月的对话，交代了多索雷斯市长坎黛拉·桑切斯每年向龙门发出邀请的背景。文月夫人安排林雨霞代表魏彦吾前往多索雷斯，同时写信给正在汐斯塔度假的陈，促成两人在坎黛拉的接待下意外重逢。坎黛拉以度假为名，委托两人调查一起武器走私事件，并指派埃内斯托作为向导。Scene 2 和 Scene 3 中，陈与林雨霞因性格不合而分头行动，林雨霞为获取情报而砸了一家赌场，两人在追逃中误入混战海选赛场并被迫联手获胜，组成了「鼠胆龙威队」。Scene 4 详细介绍了极限铁人大奖赛的规则，包括赤金争夺、铁人三项和最终混战三个阶段，以及观众投票决定胜负的机制。陈为控制杀伤力而换用高压水铳，并与林雨霞在训练场中爆发冲突。Scene 5 至 Scene 8 描绘了第一轮比赛的过程：陈与林雨霞分头行动，陈救下被围攻的水月并获得赤金，林雨霞则发现灰羽队（拉菲艾拉）在居民区安装炸弹。两人在赛后交换情报，林雨霞怀疑埃内斯托与此有关。Scene 9 揭示了埃内斯托的真实身份——他是潘乔的儿子，拉菲艾拉的哥哥，正是策划在比赛中安装炸弹、意图接近「老头子」的主谋。他因欣赏陈与林雨霞的为人而决定不直接除掉她们，而是设法拖住她们。同时，诗怀雅与星熊也来到多索雷斯，诗怀雅通过观察城市的经济结构，推断出多索雷斯表面混乱实则根基稳固，其掌控者坎黛拉是一个强大而疯狂的人物。\n\n第二轮铁人三项比赛开始，D.D.D.宣布规则。陈与林雨霞在埃内斯托的建议下共同行动，但比赛中遭到其他队伍针对。埃内斯托为掩护两人殿后，并给钥匙让她们进入自己的武器店。然而武器店被炸，两人被困。林雨霞用第一轮找到的炸弹炸开出口。两人共用一辆自行车追赶，林雨霞用沙子在海面上造出玻璃跳板，最终逆转获得第一名。赛后，陈与埃内斯托对峙，埃内斯托坦白自己是主谋，并讲述玻利瓦尔的历史，试图说服陈袖手旁观。陈识破埃内斯托并非真正主谋，背后另有其人。潘乔通过广播宣布夺取城市，坎黛拉将事件转化为大奖赛高潮，鼓励市民和选手反击。陈与林雨霞分工，陈吸引注意，林雨霞救出人质。陈与潘乔对峙，林雨霞用炸弹炸毁游轮，两人逃脱。坎黛拉宴请潘乔，并宣布陈与林雨霞为胜利者和英雄。事后，埃内斯托与陈、林雨霞告别，表示将离开。诗怀雅、星熊、铸铁等人与陈、林雨霞重聚，合影留念。魏彦吾与文月在龙门讨论此事，文月展示四人合影。",
+  "events": [
+    {
+      "event": "文月安排林雨霞代表魏彦吾前往多索雷斯，并写信给陈促成两人重逢",
+      "type": "planning",
+      "line_range": [
+        44,
+        100
+      ],
+      "participants": [
+        "文月",
+        "魏彦吾",
+        "鼠王",
+        "林雨霞"
+      ],
+      "location": "龙门",
+      "significance": "为后续剧情中陈与林雨霞的冲突与合作奠定基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与林雨霞在坎黛拉的接待下意外重逢，并接受调查武器走私的委托",
+      "type": "reunion",
+      "line_range": [
+        134,
+        253
+      ],
+      "participants": [
+        "陈",
+        "林雨霞",
+        "坎黛拉",
+        "埃内斯托"
+      ],
+      "location": "多索雷斯",
+      "significance": "确立主线任务：调查走私事件，同时展现两人关系紧张",
+      "is_imaginary": false
+    },
+    {
+      "event": "林雨霞为获取情报砸毁赌场，两人误入混战海选并被迫组队获胜",
+      "type": "battle",
+      "line_range": [
+        425,
+        481
+      ],
+      "participants": [
+        "陈",
+        "林雨霞",
+        "埃内斯托"
+      ],
+      "location": "多索雷斯赌场及海选会场",
+      "significance": "两人被迫合作参赛，为后续比赛剧情铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃内斯托详细讲解极限铁人大奖赛规则",
+      "type": "planning",
+      "line_range": [
+        643,
+        741
+      ],
+      "participants": [
+        "埃内斯托",
+        "陈",
+        "林雨霞"
+      ],
+      "location": "埃内斯托的武器店",
+      "significance": "交代比赛机制，为后续剧情提供背景",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与林雨霞在训练场爆发冲突",
+      "type": "confrontation",
+      "line_range": [
+        749,
+        754
+      ],
+      "participants": [
+        "陈",
+        "林雨霞"
+      ],
+      "location": "埃内斯托的武器店训练场",
+      "significance": "展现两人性格不合，为后续分头行动埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "第一轮比赛开始，陈救下水月，林雨霞发现灰羽队安装炸弹",
+      "type": "investigation",
+      "line_range": [
+        960,
+        997
+      ],
+      "participants": [
+        "陈",
+        "林雨霞",
+        "水月",
+        "拉菲艾拉"
+      ],
+      "location": "多索雷斯居民区",
+      "significance": "揭示阴谋集团的存在，林雨霞获得关键情报",
+      "is_imaginary": false
+    },
+    {
+      "event": "林雨霞与陈交换情报，林雨霞怀疑埃内斯托",
+      "type": "revelation",
+      "line_range": [
+        1042,
+        1081
+      ],
+      "participants": [
+        "陈",
+        "林雨霞"
+      ],
+      "location": "林雨霞控制的赌场",
+      "significance": "两人就如何处理情报产生分歧，林雨霞指责陈的正义感",
+      "is_imaginary": false
+    },
+    {
+      "event": "诗怀雅与星熊分析多索雷斯的城市本质",
+      "type": "investigation",
+      "line_range": [
+        1110,
+        1189
+      ],
+      "participants": [
+        "诗怀雅",
+        "星熊"
+      ],
+      "location": "多索雷斯街头",
+      "significance": "从外部视角揭示城市运作逻辑，丰富世界观",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃内斯托与拉菲艾拉密谋，揭示其为主谋",
+      "type": "revelation",
+      "line_range": [
+        1270,
+        1329
+      ],
+      "participants": [
+        "埃内斯托",
+        "拉菲艾拉"
+      ],
+      "location": "埃内斯托的武器店",
+      "significance": "揭示埃内斯托的真实身份和计划，为后续冲突铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "第二轮铁人三项比赛开始，陈与林雨霞共同行动",
+      "type": "competition",
+      "line_range": [
+        1369,
+        1433
+      ],
+      "participants": [
+        "陈",
+        "林雨霞",
+        "埃内斯托",
+        "D.D.D.",
+        "坎黛拉"
+      ],
+      "location": "多索雷斯",
+      "significance": "推进大奖赛剧情，展现陈与林雨霞的合作关系变化",
+      "is_imaginary": false
+    },
+    {
+      "event": "诗怀雅与星熊分析坎黛拉和城市本质",
+      "type": "investigation",
+      "line_range": [
+        1444,
+        1481
+      ],
+      "participants": [
+        "诗怀雅",
+        "星熊"
+      ],
+      "location": "多索雷斯",
+      "significance": "揭示坎黛拉的政治手腕和城市根基",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与林雨霞在骑行阶段被针对，埃内斯托殿后并给钥匙",
+      "type": "ambush",
+      "line_range": [
+        1505,
+        1538
+      ],
+      "participants": [
+        "陈",
+        "林雨霞",
+        "埃内斯托"
+      ],
+      "location": "多索雷斯",
+      "significance": "埃内斯托暴露身份的开始，为后续对峙铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "武器店被炸，陈与林雨霞被困后脱困",
+      "type": "explosion",
+      "line_range": [
+        1552,
+        1624
+      ],
+      "participants": [
+        "陈",
+        "林雨霞"
+      ],
+      "location": "多索雷斯",
+      "significance": "确认埃内斯托有问题，林雨霞展示其手段",
+      "is_imaginary": false
+    },
+    {
+      "event": "林雨霞用玻璃跳板在海面上奔跑，逆转获得第一名",
+      "type": "competition",
+      "line_range": [
+        1665,
+        1714
+      ],
+      "participants": [
+        "陈",
+        "林雨霞"
+      ],
+      "location": "多索雷斯",
+      "significance": "展现林雨霞的能力和两人配合，赢得比赛",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与埃内斯托对峙，埃内斯托坦白并试图说服陈",
+      "type": "confrontation",
+      "line_range": [
+        1737,
+        1824
+      ],
+      "participants": [
+        "陈",
+        "埃内斯托"
+      ],
+      "location": "多索雷斯",
+      "significance": "揭示埃内斯托的动机和玻利瓦尔背景，陈识破其并非主谋",
+      "is_imaginary": false
+    },
+    {
+      "event": "潘乔通过广播宣布夺取城市",
+      "type": "rebellion",
+      "line_range": [
+        1827,
+        1844
+      ],
+      "participants": [
+        "潘乔"
+      ],
+      "location": "多索雷斯",
+      "significance": "潘乔正式发动政变，剧情进入高潮",
+      "is_imaginary": false
+    },
+    {
+      "event": "坎黛拉将政变转化为大奖赛高潮，鼓励反击",
+      "type": "planning",
+      "line_range": [
+        1915,
+        1968
+      ],
+      "participants": [
+        "坎黛拉",
+        "诗怀雅",
+        "星熊"
+      ],
+      "location": "多索雷斯",
+      "significance": "展现坎黛拉的疯狂和掌控力，将危机娱乐化",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与林雨霞分工，陈吸引注意，林雨霞救出人质",
+      "type": "rescue",
+      "line_range": [
+        1969,
+        2010
+      ],
+      "participants": [
+        "陈",
+        "林雨霞"
+      ],
+      "location": "多索雷斯",
+      "significance": "两人合作破坏潘乔计划的关键行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与潘乔对峙，林雨霞用炸弹炸毁游轮",
+      "type": "confrontation",
+      "line_range": [
+        2124,
+        2154
+      ],
+      "participants": [
+        "陈",
+        "林雨霞",
+        "潘乔"
+      ],
+      "location": "多索雷斯",
+      "significance": "陈无法反驳潘乔的动机，林雨霞用炸弹解围",
+      "is_imaginary": false
+    },
+    {
+      "event": "坎黛拉宴请潘乔并宣布陈与林雨霞为英雄",
+      "type": "ceremony",
+      "line_range": [
+        2155,
+        2280
+      ],
+      "participants": [
+        "坎黛拉",
+        "潘乔",
+        "陈",
+        "林雨霞",
+        "星熊",
+        "诗怀雅"
+      ],
+      "location": "多索雷斯",
+      "significance": "事件收尾，坎黛拉展示其哲学，陈与林雨霞获得荣誉",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃内斯托与陈、林雨霞告别，表示将离开",
+      "type": "farewell",
+      "line_range": [
+        2391,
+        2430
+      ],
+      "participants": [
+        "埃内斯托",
+        "陈",
+        "林雨霞"
+      ],
+      "location": "多索雷斯",
+      "significance": "埃内斯托的结局，为后续可能的发展留白",
+      "is_imaginary": false
+    },
+    {
+      "event": "诗怀雅、星熊、铸铁与陈、林雨霞重聚并合影",
+      "type": "reunion",
+      "line_range": [
+        2431,
+        2456
+      ],
+      "participants": [
+        "陈",
+        "林雨霞",
+        "诗怀雅",
+        "星熊",
+        "铸铁"
+      ],
+      "location": "多索雷斯",
+      "significance": "展现角色间的友谊，为本章画上温馨句号",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏彦吾与文月在龙门讨论多索雷斯事件",
+      "type": "reflection",
+      "line_range": [
+        2457,
+        2486
+      ],
+      "participants": [
+        "魏彦吾",
+        "文月"
+      ],
+      "location": "龙门",
+      "significance": "从龙门视角总结事件，文月展示合影，表达对陈的关心",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "受文月夫人邀请来到多索雷斯度假，意外与林雨霞重逢并被迫组队参加大奖赛，同时调查坎黛拉委托的武器走私事件。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "林",
+      "type": "operator",
+      "role_in_chapter": "代表魏彦吾前往多索雷斯，与陈重逢后被迫组队，通过砸赌场和跟踪灰羽队发现阴谋集团安装炸弹，怀疑埃内斯托。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "坎黛拉·桑切斯",
+      "type": "npc",
+      "role_in_chapter": "多索雷斯市长，热情接待陈与林雨霞，委托她们调查武器走私事件，展现其自信、高傲且掌控力极强的性格。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "龙舌兰",
+      "type": "operator",
+      "role_in_chapter": "坎黛拉指派的向导，表面是国际贸易管理部副主任，实为阴谋集团主谋，计划在比赛中安装炸弹接近父亲潘乔。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "鼠王",
+      "type": "npc",
+      "role_in_chapter": "林雨霞的父亲，与文月讨论林雨霞代表龙门前往多索雷斯的事宜，对女儿的决定表示支持但担忧。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "文月",
+      "type": "npc",
+      "role_in_chapter": "魏彦吾的妻子，安排林雨霞代表龙门前往多索雷斯，并写信给陈促成两人重逢，目的是让陈度假并让林雨霞获得机会。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "魏彦吾",
+      "type": "npc",
+      "role_in_chapter": "龙门总督，与文月争论林雨霞代表龙门前往多索雷斯的安排，担心陈和林雨霞太年轻应付不了坎黛拉。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "诗怀雅",
+      "type": "operator",
+      "role_in_chapter": "与星熊来到多索雷斯，本想找林雨霞麻烦，后转而分析城市本质，展现其敏锐的观察力和商业头脑。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "星熊",
+      "type": "operator",
+      "role_in_chapter": "诗怀雅的保镖兼朋友，陪同诗怀雅来到多索雷斯，对城市运作有直观理解，与诗怀雅讨论城市本质。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾拉",
+      "type": "operator",
+      "role_in_chapter": "灰羽队队长，埃内斯托的妹妹（养女），参与安装炸弹的阴谋，被林雨霞跟踪。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "潘乔",
+      "type": "npc",
+      "role_in_chapter": "埃内斯托的父亲，前军人上校，现为大奖赛颁奖嘉宾，是埃内斯托计划中要接近的「老头子」。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "水月",
+      "type": "operator",
+      "role_in_chapter": "单人参赛选手，因被围攻而被陈救下，为表感谢将赤金赠予陈。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "D.D.D.",
+      "type": "npc",
+      "role_in_chapter": "塞壬唱片旗下音乐人，担任本次大奖赛的主持人，对鼠胆龙威队表现出浓厚兴趣。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "埃内斯托",
+      "type": "npc",
+      "role_in_chapter": "作为向导和队友，实为潘乔计划的执行者，向陈坦白并试图说服她，最终被放逐并决定离开",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "坎黛拉",
+      "type": "npc",
+      "role_in_chapter": "市长，将政变转化为大奖赛高潮，宴请潘乔，宣布陈与林雨霞为英雄，阐述其城市哲学",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "铸铁",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，带艾雅法拉和苏苏洛来多索雷斯度假，在政变中与星熊合作，为四人合影",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "艾雅法拉",
+      "type": "operator",
+      "role_in_chapter": "随铸铁来多索雷斯度假，观看比赛，享受阳光",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "苏苏洛",
+      "type": "operator",
+      "role_in_chapter": "作为医生陪同艾雅法拉，认为她需要阳光和休假",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "多索雷斯的城市本质",
+      "line_range": [
+        1114,
+        1246
+      ],
+      "discussion_summary": "诗怀雅与星熊讨论多索雷斯的反常繁荣：在战乱的玻利瓦尔中，这座城市依靠娱乐业和奢侈品产业（酒、咖啡、糖）维持稳固根基，表面混乱实则由强大掌控者控制。\n\n林雨霞与陈争论城市本质：林雨霞指出坎黛拉纵容腐败，陈质疑其是否值得帮助，林雨霞强调自己只关心魏彦吾的形象，并指责陈的正义感是「假惺惺」。",
+      "is_substantive": true
+    },
+    {
+      "concept": "多索雷斯名字的来历",
+      "line_range": [
+        1332,
+        1354
+      ],
+      "discussion_summary": "埃内斯托向拉菲艾拉解释城市名含义：两个太阳分别指天上的太阳和水中的倒影，第三个太阳（曾想改名为三日城）指船头的纯金雕像。",
+      "is_substantive": true
+    },
+    {
+      "concept": "玻利瓦尔的历史",
+      "line_range": [
+        1754,
+        1772
+      ],
+      "discussion_summary": "埃内斯托向陈详细讲述了玻利瓦尔从伊比利亚附属地到莱塔尼亚附属地，再到辛嘉斯王朝、哥伦比亚与莱塔尼亚割据，以及真正玻利瓦尔人反抗军成立的历史，解释了玻利瓦尔陷入三方战火的根源。",
+      "is_substantive": true
+    },
+    {
+      "concept": "多索雷斯的本质",
+      "line_range": [
+        1774,
+        1784
+      ],
+      "discussion_summary": "埃内斯托指出多索雷斯的繁荣建立在玻利瓦尔的痛苦之上，它越繁荣，国家就越没有希望，这是许多热爱玻利瓦尔的人无法接受的。",
+      "is_substantive": true
+    },
+    {
+      "concept": "正义与恐惧",
+      "line_range": [
+        1802,
+        1803
+      ],
+      "discussion_summary": "陈反驳埃内斯托，断言没有一种给他人带去恐惧的东西可以自称正义。",
+      "is_substantive": true
+    },
+    {
+      "concept": "坎黛拉的城市治理哲学",
+      "line_range": [
+        2257,
+        2269
+      ],
+      "discussion_summary": "坎黛拉向陈阐述她对威胁的定义：真正的威胁是人们不再有欲望和追求享乐，而只要欲望存在，多索雷斯这样的城市就会永远存在。",
+      "is_substantive": true
+    },
+    {
+      "concept": "金钱与娱乐的意义",
+      "line_range": [
+        2044,
+        2054
+      ],
+      "discussion_summary": "埃内斯托讲述坎黛拉的经历，认为她通过金钱、娱乐和奢侈品让各方势力甘愿遵守规则，从结果上比盲目追求国家意象的父亲更热爱玻利瓦尔。",
+      "is_substantive": true
+    },
+    {
+      "concept": "玻利瓦尔的气节与象征",
+      "line_range": [
+        2216,
+        2219
+      ],
+      "discussion_summary": "坎黛拉批评潘乔这类人对完整、独立等词汇有不切实际的期待，认为玻利瓦尔从未独立过，没有历史就没有气节和象征。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "龙门",
+      "line_range": [
+        19,
+        35
+      ],
+      "description": "鼠王与文月讨论龙门与多索雷斯的贸易协定，魏彦吾因公事缠身且对城市印象不佳而拒绝亲自前往。"
+    },
+    {
+      "faction": "龙门",
+      "line_range": [
+        73,
+        100
+      ],
+      "description": "魏彦吾与文月争论林雨霞代表龙门前往多索雷斯的安排，魏彦吾担心陈和林雨霞太年轻应付不了坎黛拉。"
+    },
+    {
+      "faction": "玻利瓦尔三方政府",
+      "line_range": [
+        1115,
+        1117
+      ],
+      "description": "诗怀雅介绍玻利瓦尔被三方政府割据：莱塔尼亚扶持的辛嘉斯政府、哥伦比亚支持的联合政府、真正玻利瓦尔人。"
+    },
+    {
+      "faction": "玻利瓦尔三方政府",
+      "line_range": [
+        1169,
+        1171
+      ],
+      "description": "诗怀雅指出多索雷斯的奢侈品（酒、咖啡、糖）销往全玻利瓦尔，包括三方政府的大人物。"
+    },
+    {
+      "faction": "埃内斯托的阴谋集团",
+      "line_range": [
+        1270,
+        1329
+      ],
+      "description": "埃内斯托与拉菲艾拉密谋：在比赛中安装炸弹，目的是接近「老头子」（潘乔），计划让己方队伍晋级并排除其他队伍。"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        1460,
+        1461
+      ],
+      "description": "诗怀雅作为龙门近卫局成员，表示不会佩服建造多索雷斯的人，但作为诗怀雅家女儿，承认其厉害。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1400,
+        1401
+      ],
+      "description": "铸铁说明罗德岛想要在多索雷斯设立办事处，但未获市长同意，阿米娅派她们来当说客。"
+    },
+    {
+      "faction": "真正玻利瓦尔人",
+      "line_range": [
+        1769,
+        1772
+      ],
+      "description": "埃内斯托提到无法忍受现状的玻利瓦尔人成立反抗军「真正玻利瓦尔人」，但他们的建立将玻利瓦尔拖入更深的泥潭。"
+    },
+    {
+      "faction": "联合政府",
+      "line_range": [
+        1765,
+        1766
+      ],
+      "description": "埃内斯托说明哥伦比亚入侵后建立联合政府，玻利瓦尔进入哥伦比亚和莱塔尼亚割据的状态。"
+    },
+    {
+      "faction": "辛嘉斯王朝",
+      "line_range": [
+        1762,
+        1763
+      ],
+      "description": "埃内斯托提到玻利瓦尔从附属地演变为附属国辛嘉斯王朝，但王朝的人从不自称玻利瓦尔人。"
+    },
+    {
+      "faction": "莱塔尼亚",
+      "line_range": [
+        1760,
+        1764
+      ],
+      "description": "埃内斯托说明莱塔尼亚人到来后玻利瓦尔成为其附属地，巫王时期试图通过玻利瓦尔在哥伦比亚掀起内乱。"
+    },
+    {
+      "faction": "哥伦比亚",
+      "line_range": [
+        1765,
+        1767
+      ],
+      "description": "埃内斯托说明哥伦比亚入侵玻利瓦尔并建立联合政府，与莱塔尼亚形成拉锯状态。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "多索雷斯",
+      "line_range": [
+        206,
+        218
+      ],
+      "description": "坎黛拉介绍城市特征：城区环绕的「海」、从伊比利亚技术复原的船、每年换水两次的机制，以及由此衍生的大奖赛。"
+    },
+    {
+      "location": "多索雷斯",
+      "line_range": [
+        134,
+        135
+      ],
+      "description": "陈抵达多索雷斯后的第一印象：踏入这里后让人忘了自己身处玻利瓦尔。"
+    },
+    {
+      "location": "多索雷斯",
+      "line_range": [
+        348,
+        349
+      ],
+      "description": "陈观察城市氛围：到处都是酒吧、赌场、餐厅，与汐斯塔氛围完全不同。"
+    },
+    {
+      "location": "多索雷斯",
+      "line_range": [
+        1118,
+        1128
+      ],
+      "description": "诗怀雅描述多索雷斯：繁华奢侈，具有一种「让人讨厌的活力」，心脏比喻为黑色血液输入却比健康龙门更强烈。"
+    },
+    {
+      "location": "多索雷斯",
+      "line_range": [
+        1158,
+        1163
+      ],
+      "description": "诗怀雅指出中心城区外有大量工厂，城市必须掌握自己的命脉。"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        1125,
+        1127
+      ],
+      "description": "诗怀雅将龙门心脏比喻为生机勃勃、鲜红健康的血液，与多索雷斯形成对比。"
+    },
+    {
+      "location": "多索雷斯",
+      "line_range": [
+        1774,
+        1784
+      ],
+      "description": "埃内斯托描述多索雷斯在三方政府中都吃得开，成为玻利瓦尔人人向往的地方，但其繁荣建立在国家的痛苦之上。"
+    },
+    {
+      "location": "玻利瓦尔",
+      "line_range": [
+        1754,
+        1772
+      ],
+      "description": "埃内斯托详细讲述玻利瓦尔从伊比利亚附属地到三方割据的完整历史，说明其陷入永无止境战火的原因。"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        2457,
+        2486
+      ],
+      "description": "魏彦吾与文月在龙门讨论多索雷斯事件，文月展示四人合影，魏彦吾认为陈会回来。"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-18T05:24:27.701627+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 53283,
+    "tokens_out": 7653,
+    "elapsed_s": 61.28555750846863
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "坎黛拉·桑切斯",
+    "鼠王",
+    "文月",
+    "魏彦吾",
+    "潘乔",
+    "D.D.D.",
+    "埃内斯托",
+    "坎黛拉"
+  ]
+}

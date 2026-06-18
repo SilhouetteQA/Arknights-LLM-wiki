@@ -1,0 +1,918 @@
+{
+  "chapter": "风雪过境",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章为「风雪过境」剧情的第一批次，主要围绕谢拉格三族议会后权力格局的剧变展开。恩希欧迪斯·希瓦艾什在三族议会上提出将希瓦艾什家的谷地和矿区交给蔓珠院，由圣女恩雅（其妹）接管三族大权，以化解与佩尔罗契家和布朗陶家的矛盾。这一提案表面上是为了和平，实则暗藏玄机。与此同时，罗德岛的博士受邀来到谢拉格，被卷入这场政治漩涡，先是被佩尔罗契家软禁监视，后又遭遇不明势力的袭击。\n\n另一条剧情线聚焦于被恩希欧迪斯革职的前首席技术执行官诺希斯·埃德怀斯。诺希斯在被逐出喀兰贸易后，主动接触布朗陶家的家主菈塔托丝，试图与其结盟对抗恩希欧迪斯。他向菈塔托丝揭露了恩希欧迪斯暗中训练名为「山雪鬼」的秘密部队，并修建了隐藏的铁路线以运送武装力量进入谢拉格。诺希斯带领菈塔托丝摧毁了这条运输线，迫使布朗陶家成为其共犯。\n\n在圣山猎场举行的圣猎仪式上，各方势力暗流涌动。圣女恩雅决定亲自参与狩猎，展现领导力。恩希欧迪斯在猎场中遭遇刺客莫希的袭击，但被罗德岛的干员Sharp所救。莫希在行动失败后跳崖自尽。恩希欧迪斯虽受伤，但仍坚持继续狩猎，以维护仪式的庄严。博士的护卫Sharp与极光在暗中行动，试图保护博士并调查幕后黑手。\n\n大典上的冲突以恩希欧迪斯的全面胜利告终。他当众指控阿克托斯毒害大长老、菈塔托丝派遣刺客，将两家打成叛徒，并宣布只派兵保护蔓珠院，实则控制了圣山。诺希斯在关键时刻现身煽动菈塔托丝反抗，但被锏制服，随后被押送。博士命令Sharp和极光出手，救走了阿克托斯和菈塔托丝，打破了恩希欧迪斯将两人当场处决的计划。恩希欧迪斯虽感意外，但认为大局已定，对博士的下一步行动产生好奇。\n\n博士救下两位家主后，开始布局反制。他让Sharp和极光护送恩希亚潜入圣山寻找圣女恩雅，同时指挥阿克托斯和休露丝分兵行动：阿克托斯率主力从圣猎山区绕道突袭圣山，休露丝和古罗则佯攻车站和科林斯镇以吸引希瓦艾什家的兵力。诺希斯被释放后接管指挥权，他识破了博士的佯攻策略，但恩希欧迪斯判断博士的真正目标是圣女，派锏去拦截博士的主力部队。\n\n在圣山上，大长老苏醒后与恩雅进行了一场关于信仰本质的激烈辩论。大长老认为信仰是停滞和逃避，恩雅则反驳信仰本身无属性，停滞源于蔓珠院的傲慢，并宣布要以自己的方式引导谢拉格前进。恩希亚通过攀岩成功潜入蔓珠院与姐姐重逢，恩雅决定下山直面局势。雅儿在关键时刻展现出超越侍女的身份，暗示自己与耶拉冈德有特殊联系，并祝福了恩雅的选择。\n\nSharp与锏展开激战，成功拖延了时间。阿克托斯的部队在博士的接应下突破防线，与恩希欧迪斯对峙。就在双方即将开战之际，圣山上空出现异象，乌云裂开，神迹显现。阿克托斯当场向圣女宣誓效忠，局势瞬间逆转。恩希欧迪斯承认自己虽未完全失败，但博士为他开辟了另一种和平收场的可能性。\n\n最终，恩雅以圣女身份发表宣言，宣布蔓珠院将接受外国信仰并鼓励民众追求进步，实质上成为谢拉格的领导者。恩希欧迪斯接受了这一结果，与博士复盘了整个棋局，承认博士看破并影响了局面。诺希斯被派往罗德岛进行研究和监视。恩希亚在离开前表达了对修复兄妹关系的期望。各方势力达成新的平衡，谢拉格迎来了变革的曙光。",
+  "events": [
+    {
+      "event": "恩希欧迪斯在三族议会上提出将权力交给圣女，以化解三族矛盾",
+      "type": "political_intrigue",
+      "line_range": [
+        114,
+        425
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "阿克托斯",
+        "菈塔托丝",
+        "大长老",
+        "恩雅"
+      ],
+      "location": "喀兰圣山三族议会大殿",
+      "significance": "确立本章核心政治冲突，恩希欧迪斯以退为进，将权力移交圣女，实则另有图谋",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士在车站被佩尔罗契家的古罗将军强行带走软禁",
+      "type": "ambush",
+      "line_range": [
+        478,
+        573
+      ],
+      "participants": [
+        "博士",
+        "恩希亚",
+        "古罗",
+        "Sharp",
+        "锏"
+      ],
+      "location": "希瓦艾什家领地车站",
+      "significance": "博士被卷入谢拉格政治斗争，成为各方势力博弈的棋子",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯正式将诺希斯从喀兰贸易开除，诺希斯开始寻求与布朗陶家合作",
+      "type": "betrayal",
+      "line_range": [
+        623,
+        658
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "诺希斯",
+        "切斯特"
+      ],
+      "location": "喀兰贸易公司",
+      "significance": "诺希斯被推出来顶罪，成为恩希欧迪斯的弃子，转而投靠布朗陶家",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺希斯与休露丝会面，暗示恩希欧迪斯在大典上有阴谋",
+      "type": "negotiation",
+      "line_range": [
+        995,
+        1027
+      ],
+      "participants": [
+        "诺希斯",
+        "休露丝"
+      ],
+      "location": "布朗陶家领地",
+      "significance": "诺希斯开始策反布朗陶家，透露恩希欧迪斯可能利用大典做文章",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士在谷地工厂巡视时遭遇不明武装领民袭击，被Sharp和极光救走",
+      "type": "ambush",
+      "line_range": [
+        1190,
+        1311
+      ],
+      "participants": [
+        "博士",
+        "Sharp",
+        "极光",
+        "瓦莱丝",
+        "切斯特"
+      ],
+      "location": "希瓦艾什家谷地工厂",
+      "significance": "有人试图挑拨三族关系，嫁祸给博士和佩尔罗契家",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺希斯向菈塔托丝揭露恩希欧迪斯秘密训练「山雪鬼」部队并修建隐藏铁路",
+      "type": "revelation",
+      "line_range": [
+        1390,
+        1445
+      ],
+      "participants": [
+        "诺希斯",
+        "菈塔托丝",
+        "山雪鬼"
+      ],
+      "location": "谢拉格边境废弃峡谷",
+      "significance": "揭示恩希欧迪斯暗中准备武力，诺希斯与布朗陶家正式结盟对抗",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯徒步前往圣山参拜，展现虔诚姿态",
+      "type": "ceremony",
+      "line_range": [
+        1490,
+        1567
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "魏斯",
+        "谢拉格平民"
+      ],
+      "location": "从图里卡姆到喀兰圣山的路上",
+      "significance": "恩希欧迪斯通过传统仪式收买人心，为后续行动铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "圣猎仪式开始，圣女恩雅决定亲自参与狩猎",
+      "type": "ceremony",
+      "line_range": [
+        1640,
+        1695
+      ],
+      "participants": [
+        "恩雅",
+        "恩希欧迪斯",
+        "阿克托斯",
+        "菈塔托丝",
+        "大长老"
+      ],
+      "location": "喀兰圣山猎场",
+      "significance": "圣女主动介入世俗事务，展现领导力，各方势力在猎场集结",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯在圣猎中遭遇刺客莫希袭击，被Sharp所救",
+      "type": "assassination",
+      "line_range": [
+        1898,
+        2001
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "莫希",
+        "Sharp",
+        "角峰",
+        "阿克托斯"
+      ],
+      "location": "喀兰圣山猎场",
+      "significance": "圣猎中的刺杀事件将各方矛盾推向高潮，莫希跳崖自尽",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯在大典上指控阿克托斯和菈塔托丝为叛徒，并宣布只派兵保护蔓珠院，实则控制了圣山",
+      "type": "political_intrigue",
+      "line_range": [
+        2081,
+        2436
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "大长老",
+        "恩雅",
+        "阿克托斯",
+        "菈塔托丝",
+        "休露丝",
+        "莫希",
+        "诺希斯"
+      ],
+      "location": "大典广场",
+      "significance": "恩希欧迪斯通过栽赃陷害，一举将两家打成叛徒，为后续行动奠定合法性基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士命令Sharp和极光救走阿克托斯和菈塔托丝，打破恩希欧迪斯当场处决两人的计划",
+      "type": "rescue",
+      "line_range": [
+        2306,
+        2391
+      ],
+      "participants": [
+        "博士",
+        "Sharp",
+        "极光",
+        "阿克托斯",
+        "菈塔托丝",
+        "魏斯"
+      ],
+      "location": "大典广场",
+      "significance": "博士的干预使恩希欧迪斯无法彻底掌控局面，为后续反制留下空间",
+      "is_imaginary": false
+    },
+    {
+      "event": "菈塔托丝识破家族内奸，与休露丝进行姐妹间的坦诚对话，决定独自行动",
+      "type": "character_development",
+      "line_range": [
+        2479,
+        2552
+      ],
+      "participants": [
+        "菈塔托丝",
+        "休露丝"
+      ],
+      "location": "布朗陶家领地",
+      "significance": "展现菈塔托丝的疲惫和休露丝的成长，为休露丝后续承担重任铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "瓦莱丝揭露阿克托斯父亲当年被大长老用灵药毒害的真相，并背叛佩尔罗契家",
+      "type": "revelation",
+      "line_range": [
+        2570,
+        2596
+      ],
+      "participants": [
+        "瓦莱丝",
+        "阿克托斯",
+        "古罗"
+      ],
+      "location": "佩尔罗契家领地",
+      "significance": "揭示大长老的黑暗面，动摇阿克托斯的立场，为瓦莱丝倒向恩希欧迪斯提供动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "通过闪回揭示诺希斯与恩希欧迪斯的少年友谊和青年合作，以及诺希斯主动提出扮演叛徒的计划",
+      "type": "flashback",
+      "line_range": [
+        2603,
+        2716
+      ],
+      "participants": [
+        "少年恩希欧迪斯",
+        "少年诺希斯",
+        "青年恩希欧迪斯",
+        "青年诺希斯"
+      ],
+      "location": "谢拉格/维多利亚",
+      "significance": "揭示诺希斯的背叛是两人合谋的苦肉计，为后续剧情反转提供依据",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺希斯向莫希坦白刺杀计划是恩希欧迪斯与他的合谋，莫希感到被利用和背叛",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2783,
+        2836
+      ],
+      "participants": [
+        "诺希斯",
+        "莫希"
+      ],
+      "location": "希瓦艾什家牢房",
+      "significance": "展现诺希斯对部下的冷酷利用，以及莫希的忠诚与失望，为后续莫希的抉择埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "菈塔托丝约见恩希欧迪斯，揭露其祖父曾计划暗杀恩希欧迪斯父母，并试图与恩希欧迪斯同归于尽",
+      "type": "confrontation",
+      "line_range": [
+        2837,
+        2924
+      ],
+      "participants": [
+        "菈塔托丝",
+        "恩希欧迪斯",
+        "锏"
+      ],
+      "location": "埃德怀斯家旧宅",
+      "significance": "揭示希瓦艾什家父母之死的真相，展现菈塔托丝对谢拉格的复杂情感和绝望",
+      "is_imaginary": false
+    },
+    {
+      "event": "菈塔托丝向恩希欧迪斯坦白自己反对他的真正原因：担心他将谢拉格变成自己的私有物，而非真正团结三族",
+      "type": "ideological_clash",
+      "line_range": [
+        2925,
+        2991
+      ],
+      "participants": [
+        "菈塔托丝",
+        "恩希欧迪斯"
+      ],
+      "location": "埃德怀斯家旧宅",
+      "significance": "展现两人理念的根本分歧，以及恩希欧迪斯对国际形势的紧迫感，为最终和解提供思想基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏破墙救出被困火海的恩希欧迪斯和菈塔托丝，恩希欧迪斯为菈塔托丝披上大衣，展现宽容姿态",
+      "type": "rescue",
+      "line_range": [
+        2992,
+        3029
+      ],
+      "participants": [
+        "锏",
+        "恩希欧迪斯",
+        "菈塔托丝",
+        "休露丝"
+      ],
+      "location": "埃德怀斯家旧宅",
+      "significance": "恩希欧迪斯通过公开的仁慈举动进一步赢得民心，菈塔托丝彻底失败",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士制定分兵计划：阿克托斯绕道突袭圣山，休露丝和古罗佯攻车站和科林斯镇以吸引兵力",
+      "type": "planning",
+      "line_range": [
+        3193,
+        3226
+      ],
+      "participants": [
+        "博士",
+        "阿克托斯",
+        "菈塔托丝",
+        "休露丝",
+        "Sharp"
+      ],
+      "location": "博士营地",
+      "significance": "博士的军事部署成功调动了希瓦艾什家的兵力，为阿克托斯突袭圣山创造机会",
+      "is_imaginary": false
+    },
+    {
+      "event": "大长老苏醒后与恩雅辩论信仰的本质，恩雅反驳大长老的停滞论，宣布要以自己的方式引导谢拉格",
+      "type": "ideological_clash",
+      "line_range": [
+        3359,
+        3423
+      ],
+      "participants": [
+        "大长老",
+        "恩雅"
+      ],
+      "location": "蔓珠院正殿",
+      "significance": "恩雅确立了自己的信仰观和领导理念，与蔓珠院的保守传统决裂，为后续宣言奠定思想基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "Sharp与锏激战，成功拖延时间，Sharp受伤但完成任务",
+      "type": "battle",
+      "line_range": [
+        3596,
+        3616
+      ],
+      "participants": [
+        "Sharp",
+        "锏"
+      ],
+      "location": "关口附近",
+      "significance": "Sharp的拖延为阿克托斯和博士的部队争取了宝贵时间，是计划成功的关键一环",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希亚通过攀岩潜入蔓珠院与恩雅重逢，恩雅决定下山直面局势",
+      "type": "reunion",
+      "line_range": [
+        3631,
+        3716
+      ],
+      "participants": [
+        "恩希亚",
+        "恩雅",
+        "雅儿"
+      ],
+      "location": "蔓珠院",
+      "significance": "姐妹重逢为恩雅提供了情感支持和行动决心，恩希亚成为恩雅与博士之间的桥梁",
+      "is_imaginary": false
+    },
+    {
+      "event": "休露丝救出丈夫尤卡坦，两人并肩作战对抗魏斯",
+      "type": "rescue",
+      "line_range": [
+        3717,
+        3758
+      ],
+      "participants": [
+        "休露丝",
+        "尤卡坦",
+        "魏斯"
+      ],
+      "location": "科林斯镇",
+      "significance": "休露丝的成长和夫妻情深，为布朗陶家保留了有生力量",
+      "is_imaginary": false
+    },
+    {
+      "event": "圣山上空出现神迹，乌云裂开，阿克托斯当场向圣女宣誓效忠，局势逆转",
+      "type": "ceremony",
+      "line_range": [
+        3877,
+        3926
+      ],
+      "participants": [
+        "阿克托斯",
+        "恩希欧迪斯",
+        "恩雅",
+        "诺希斯",
+        "雅儿"
+      ],
+      "location": "圣山脚下",
+      "significance": "神迹的出现使恩雅获得神圣合法性，阿克托斯的效忠标志着冲突和平解决",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅发表宣言，宣布蔓珠院接受外国信仰并鼓励民众追求进步，成为谢拉格实质领导者",
+      "type": "ceremony",
+      "line_range": [
+        3927,
+        3946
+      ],
+      "participants": [
+        "恩雅"
+      ],
+      "location": "蔓珠院",
+      "significance": "恩雅确立了自己的领导地位和开放政策，为谢拉格的变革奠定方向",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯与博士复盘整个棋局，承认博士看破并影响了局面，为谢拉格开辟了和平收场的可能性",
+      "type": "reflection",
+      "line_range": [
+        3947,
+        4010
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "博士"
+      ],
+      "location": "希瓦艾什家",
+      "significance": "恩希欧迪斯对博士的认可，以及两人对谢拉格未来的共识，为罗德岛与谢拉格的合作奠定基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "雅儿向恩雅坦白自己与耶拉冈德的特殊关系，并承诺只要恩雅坚持理想就永远担任她的侍女长",
+      "type": "revelation",
+      "line_range": [
+        4011,
+        4040
+      ],
+      "participants": [
+        "恩雅",
+        "雅儿"
+      ],
+      "location": "蔓珠院",
+      "significance": "揭示雅儿的神性身份，以及恩雅对雅儿的依赖和信任，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺希斯被派往罗德岛作为代表，莫希失踪，诺希斯感到失落",
+      "type": "departure",
+      "line_range": [
+        4041,
+        4067
+      ],
+      "participants": [
+        "诺希斯",
+        "恩希欧迪斯",
+        "切斯特",
+        "莫希"
+      ],
+      "location": "希瓦艾什家",
+      "significance": "诺希斯离开谢拉格，莫希的失踪暗示其可能另有行动，为后续剧情留下悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希亚在离开前表达了对修复兄妹关系的期望，认为信念无法被轻易改变",
+      "type": "farewell",
+      "line_range": [
+        4135,
+        4151
+      ],
+      "participants": [
+        "恩希亚",
+        "博士"
+      ],
+      "location": "谢拉格车站",
+      "significance": "恩希亚的成长和对家庭关系的执着，为后续可能的兄妹和解埋下伏笔",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "银灰",
+      "type": "operator",
+      "role_in_chapter": "希瓦艾什家家主，喀兰贸易总裁。在三族议会上提出还政于圣女，实则暗中训练秘密部队，准备武力夺权。被诺希斯背叛，在圣猎中遭遇刺杀但未遂。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "恩雅（圣女）",
+      "type": "npc",
+      "role_in_chapter": "谢拉格现任圣女，恩希欧迪斯的妹妹。被迫接受三族交权，内心对恩希欧迪斯的动机充满怀疑。决定亲自参与圣猎，展现领导力。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "恩希亚（崖心）",
+      "type": "operator",
+      "role_in_chapter": "恩希欧迪斯和恩雅的妹妹，罗德岛干员。陪同博士来到谢拉格，对家族矛盾感到忧虑，希望博士能帮助修复兄妹关系。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "诺希斯·埃德怀斯",
+      "type": "npc",
+      "role_in_chapter": "原喀兰贸易首席技术执行官，被恩希欧迪斯革职后投靠布朗陶家。向菈塔托丝揭露恩希欧迪斯的秘密部队和隐藏铁路，策划对抗行动。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿克托斯",
+      "type": "npc",
+      "role_in_chapter": "佩尔罗契家家主，虔诚的耶拉冈德信徒。坚决反对恩希欧迪斯的开放政策，要求交出谷地和矿区。在圣猎中因维护仪式秩序而救援恩希欧迪斯。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "菈塔托丝·布朗陶",
+      "type": "npc",
+      "role_in_chapter": "布朗陶家家主，精明务实的政治家。与阿克托斯联手施压恩希欧迪斯，后与诺希斯结盟，共同对抗恩希欧迪斯的武力计划。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "休露丝·布朗陶",
+      "type": "npc",
+      "role_in_chapter": "菈塔托丝的妹妹，性格冲动。渴望证明自己，被莫希利用。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的领袖，受邀来到谢拉格。被卷入政治斗争，先被佩尔罗契家软禁，后遭遇袭击。暗中指挥Sharp和极光行动，似乎有自己的计划。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Sharp",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，博士的护卫。在暗中保护博士，调查各方动向，并在圣猎中救下恩希欧迪斯。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "极光",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，谢拉格本地人。协助Sharp行动，对恩希欧迪斯怀有敬意，但在任务中必须将其视为假想敌。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莫希",
+      "type": "npc",
+      "role_in_chapter": "休露丝的手下，实为诺希斯的间谍。在圣猎中刺杀恩希欧迪斯失败，跳崖自尽。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "大长老",
+      "type": "npc",
+      "role_in_chapter": "蔓珠院的大长老，谢拉格宗教领袖。在三族议会中充当调停人，倾向于维护传统和稳定。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "魏斯",
+      "type": "npc",
+      "role_in_chapter": "希瓦艾什家的管家/秘书，罗德岛干员。在谷地安抚领民，传达恩希欧迪斯的政策。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "角峰",
+      "type": "operator",
+      "role_in_chapter": "希瓦艾什家的护卫，罗德岛干员。保护恩希亚，后随恩希欧迪斯参加圣猎。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "瓦莱丝",
+      "type": "npc",
+      "role_in_chapter": "佩尔罗契家的将军，负责监视博士。在谷地袭击事件中保护博士，后对博士态度转变。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "古罗",
+      "type": "npc",
+      "role_in_chapter": "佩尔罗契家的将军，在车站强行带走博士。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "锏",
+      "type": "npc",
+      "role_in_chapter": "恩希欧迪斯的保镖，身手不凡。在车站接走恩希亚，对博士的洞察力表示警惕。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "切斯特",
+      "type": "npc",
+      "role_in_chapter": "恩希欧迪斯的秘书，陪同博士巡视谷地工厂。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "雅儿",
+      "type": "npc",
+      "role_in_chapter": "圣女的侍女，负责传递消息。帮助博士的部下与博士取得联系。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "耶拉",
+      "type": "npc",
+      "role_in_chapter": "神秘女子，主动与博士接触。对谢拉格的信仰和变革有深刻见解，似乎与耶拉冈德有关。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "恩雅·希瓦艾什",
+      "type": "npc",
+      "role_in_chapter": "当代圣女，与大长老辩论信仰本质后确立自己的领导理念，最终发表宣言成为谢拉格实质领导者",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿克托斯·佩尔罗契",
+      "type": "npc",
+      "role_in_chapter": "佩尔罗契家家主，被瓦莱丝背叛后接受博士指挥，率军突袭圣山，最终在神迹前向圣女宣誓效忠",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "恩希亚·希瓦艾什",
+      "type": "npc",
+      "role_in_chapter": "恩希欧迪斯和恩雅的妹妹，罗德岛干员（崖心），通过攀岩潜入蔓珠院与姐姐重逢，成为沟通桥梁",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "尤卡坦",
+      "type": "npc",
+      "role_in_chapter": "休露丝的丈夫，被关押后获救，与休露丝并肩作战",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "耶拉冈德的信仰",
+      "line_range": [
+        312,
+        339
+      ],
+      "discussion_summary": "恩希欧迪斯引用《耶拉冈德》经文，论证圣山不能真正代表耶拉冈德，勤劳者必将掌权，为自己的开放政策辩护。阿克托斯则坚持蔓珠院和圣女是耶拉冈德在大地的唯一代表。",
+      "is_substantive": true
+    },
+    {
+      "concept": "还政于圣女",
+      "line_range": [
+        237,
+        248
+      ],
+      "discussion_summary": "恩希欧迪斯提出将谷地和矿区交给蔓珠院，由圣女裁决三族事务，以避免直接冲突。菈塔托丝和阿克托斯对此表示怀疑。",
+      "is_substantive": true
+    },
+    {
+      "concept": "谢拉格的变革与停滞",
+      "line_range": [
+        867,
+        884
+      ],
+      "discussion_summary": "耶拉与博士讨论谢拉格的安宁与停滞，认为人们过于依赖信仰，将神意当作停滞的借口，而恩希欧迪斯带来的变革无法停止。",
+      "is_substantive": true
+    },
+    {
+      "concept": "山雪鬼",
+      "line_range": [
+        1437,
+        1441
+      ],
+      "discussion_summary": "诺希斯向菈塔托丝揭露恩希欧迪斯暗中训练的部队代号为「山雪鬼」，他们将像传说中不归化于耶拉冈德的山雪鬼一样，用纯粹的力量挑战信仰。",
+      "is_substantive": true
+    },
+    {
+      "concept": "圣猎与大典的传统",
+      "line_range": [
+        1770,
+        1793
+      ],
+      "discussion_summary": "雅儿向博士解释圣猎和大典的由来：为纪念耶拉冈德初现的日子，圣女需为猎获的山雪鬼战利品驱魔。修士讲述千年前少女献祭的传说。",
+      "is_substantive": true
+    },
+    {
+      "concept": "信仰的本质",
+      "line_range": [
+        3367,
+        3422
+      ],
+      "discussion_summary": "大长老认为信仰是懒惰、逃避、颓废和停滞，是谢拉格存在千年的根基；恩雅反驳信仰本身无属性，停滞源于蔓珠院的傲慢，信仰可以引导人们前进",
+      "is_substantive": true
+    },
+    {
+      "concept": "谢拉格的国际处境",
+      "line_range": [
+        2973,
+        2990
+      ],
+      "discussion_summary": "恩希欧迪斯向菈塔托丝阐述谢拉格面临的国际危机：维多利亚、哥伦比亚、卡西米尔等大国可能染指这片不受天灾侵扰的土地，谢拉格没有时间慢慢变革",
+      "is_substantive": true
+    },
+    {
+      "concept": "谢拉格的团结与分裂",
+      "line_range": [
+        2939,
+        2949
+      ],
+      "discussion_summary": "菈塔托丝指出三大家族制度导致谢拉格人渐行渐远，耶拉冈德还在人们心中，但谢拉格这个名字却在被淡忘，她曾希望恩希欧迪斯的开放政策能重新团结三族",
+      "is_substantive": true
+    },
+    {
+      "concept": "圣女的职责与权力",
+      "line_range": [
+        3418,
+        3422
+      ],
+      "discussion_summary": "恩雅宣布圣女不是蔓珠院的圣女，而是谢拉格的圣女，要用自己的方式引导人民自由前进、探究、冒险",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "希瓦艾什家",
+      "line_range": [
+        165,
+        248
+      ],
+      "description": "恩希欧迪斯领导，主张开放改革，引入外国技术和贸易。在三族议会上被另外两家联合施压，被迫交出谷地和矿区。"
+    },
+    {
+      "faction": "佩尔罗契家",
+      "line_range": [
+        165,
+        248
+      ],
+      "description": "阿克托斯领导，保守派，坚决维护耶拉冈德信仰，反对恩希欧迪斯的开放政策。要求希瓦艾什交出土地并退出议会。"
+    },
+    {
+      "faction": "布朗陶家",
+      "line_range": [
+        165,
+        248
+      ],
+      "description": "菈塔托丝领导，务实派，虽从喀兰贸易中获利，但出于政治和信仰考量与佩尔罗契家联手施压恩希欧迪斯。"
+    },
+    {
+      "faction": "蔓珠院",
+      "line_range": [
+        322,
+        339
+      ],
+      "description": "谢拉格的宗教机构，由大长老领导。在三族议会中充当调停人，主张维护传统和稳定。圣女恩雅名义上是其最高领袖。"
+    },
+    {
+      "faction": "喀兰贸易",
+      "line_range": [
+        623,
+        662
+      ],
+      "description": "恩希欧迪斯创办的公司，推动谢拉格的工业化。因诺希斯的激进策略引发冲突，被迫将其开除以平息众怒。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        574,
+        621
+      ],
+      "description": "博士所在的医疗公司，受邀来到谢拉格。博士被卷入政治斗争，其护卫Sharp和极光在暗中行动保护博士。"
+    },
+    {
+      "faction": "希瓦艾什家",
+      "line_range": [
+        2081,
+        2436
+      ],
+      "description": "恩希欧迪斯在大典上成功将佩尔罗契家和布朗陶家打成叛徒，控制了蔓珠院，成为表面上的胜利者"
+    },
+    {
+      "faction": "佩尔罗契家",
+      "line_range": [
+        2570,
+        2596
+      ],
+      "description": "瓦莱丝因父亲被大长老毒害的真相而背叛阿克托斯，阿克托斯在博士指挥下率军突袭圣山"
+    },
+    {
+      "faction": "布朗陶家",
+      "line_range": [
+        2837,
+        2924
+      ],
+      "description": "菈塔托丝试图与恩希欧迪斯同归于尽失败，最终由休露丝代表家族参与博士的计划"
+    },
+    {
+      "faction": "蔓珠院",
+      "line_range": [
+        3359,
+        3423
+      ],
+      "description": "大长老与恩雅辩论信仰本质后陷入昏迷，恩雅实质上接管了蔓珠院的领导权"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2306,
+        2391
+      ],
+      "description": "博士命令Sharp和极光救走阿克托斯和菈塔托丝，正式介入谢拉格的政治冲突"
+    },
+    {
+      "faction": "喀兰贸易",
+      "line_range": [
+        2676,
+        2716
+      ],
+      "description": "诺希斯被释放后重新接管指挥权，但恩希欧迪斯最终决定派他去罗德岛"
+    }
+  ],
+  "locations": [
+    {
+      "location": "喀兰圣山",
+      "line_range": [
+        114,
+        425
+      ],
+      "description": "谢拉格的圣山，蔓珠院所在地，三族议会在此举行。是谢拉格信仰的中心，也是本章政治斗争的核心舞台。"
+    },
+    {
+      "location": "图里卡姆",
+      "line_range": [
+        81,
+        83
+      ],
+      "description": "谢拉格南侧门户，唯一与外界联通的关口。极光在此安装通讯基站，并感叹其从普通小镇发展为现代化城市的巨大变化。"
+    },
+    {
+      "location": "谷地",
+      "line_range": [
+        928,
+        946
+      ],
+      "description": "希瓦艾什家的工业区，喀兰贸易的大部分工厂建造于此。是此次权力移交的核心区域，博士在此巡视时遭遇袭击。"
+    },
+    {
+      "location": "矿区",
+      "line_range": [
+        928,
+        946
+      ],
+      "description": "希瓦艾什家的重要领地，整个谢拉格使用的矿石几乎都产自这里。因诺希斯的秘密开采引发争议，成为三族冲突的导火索。"
+    },
+    {
+      "location": "大典广场",
+      "line_range": [
+        2081,
+        2436
+      ],
+      "description": "大典举行的地点，恩希欧迪斯在此指控两家为叛徒，博士在此救走两位家主"
+    },
+    {
+      "location": "埃德怀斯家旧宅",
+      "line_range": [
+        2837,
+        2924
+      ],
+      "description": "菈塔托丝与恩希欧迪斯会面的地点，原为布朗陶家为暗杀恩希欧迪斯父母而建的机关房"
+    },
+    {
+      "location": "蔓珠院正殿",
+      "line_range": [
+        3359,
+        3423
+      ],
+      "description": "大长老与恩雅辩论信仰本质的地点，恩雅在此确立自己的领导理念"
+    },
+    {
+      "location": "圣山",
+      "line_range": [
+        3877,
+        3926
+      ],
+      "description": "阿克托斯率军突袭的目标，神迹在此显现，阿克托斯在此向圣女宣誓效忠"
+    },
+    {
+      "location": "科林斯镇",
+      "line_range": [
+        3717,
+        3758
+      ],
+      "description": "尤卡坦被关押的地点，休露丝在此救出丈夫并与魏斯交战"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:29:40.913685+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 92077,
+    "tokens_out": 10065,
+    "elapsed_s": 89.80342888832092
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "恩雅（圣女）",
+    "恩希亚（崖心）",
+    "诺希斯·埃德怀斯",
+    "阿克托斯",
+    "菈塔托丝·布朗陶",
+    "休露丝·布朗陶",
+    "博士",
+    "Sharp",
+    "莫希",
+    "大长老",
+    "魏斯",
+    "瓦莱丝",
+    "古罗",
+    "切斯特",
+    "雅儿",
+    "恩雅·希瓦艾什",
+    "阿克托斯·佩尔罗契",
+    "恩希亚·希瓦艾什",
+    "尤卡坦"
+  ]
+}

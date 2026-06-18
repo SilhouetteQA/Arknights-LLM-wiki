@@ -296,10 +296,31 @@ def run_trial(
     return results
 
 
+def _chapter_already_extracted(category: str, chapter: str, output_base: str = "data/extractions/v1_events") -> bool:
+    """检查章节是否已有提取结果"""
+    out_path = os.path.join(output_base, category, f"{chapter}.json")
+    if not os.path.exists(out_path):
+        return False
+    try:
+        with open(out_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return len(data.get("events", [])) > 0 or len(data.get("concepts", [])) > 0
+    except Exception:
+        return False
+
+
+def _estimate_cost(tokens_in: int, tokens_out: int) -> float:
+    """估算 DeepSeek API 成本 (USD)，deepseek-chat 定价"""
+    cost_in = tokens_in / 1_000_000 * 0.27
+    cost_out = tokens_out / 1_000_000 * 1.10
+    return cost_in + cost_out
+
+
 def run_all(
     data_dir: str = "data/stories",
     skip_chapters: set = None,
     taxonomy_path: str = "config/story_taxonomy.json",
+    resume: bool = True,
 ) -> list[dict]:
     """全量章节提取，taxonomy 驱动策略"""
     if skip_chapters is None:
@@ -315,23 +336,161 @@ def run_all(
     chapters = discover_chapters(data_dir)
     results = []
 
-    for category, chapter in chapters:
+    # 统计
+    skipped_resume = 0
+    total_tokens_in = 0
+    total_tokens_out = 0
+    total_elapsed = 0.0
+    t_start_all = time.time()
+
+    for i, (category, chapter) in enumerate(chapters):
+        idx = f"{i+1}/{len(chapters)}"
         if chapter in skip_chapters:
-            print(f"[{category}] {chapter} SKIP (taxonomy)")
+            print(f"[{idx}] [{category}] {chapter} SKIP (taxonomy)")
+            continue
+        if resume and _chapter_already_extracted(category, chapter):
+            skipped_resume += 1
+            print(f"[{idx}] [{category}] {chapter} SKIP (resume: 已提取)")
             continue
         chapter_type = _get_chapter_type(chapter, taxonomy)
-        print(f"[{category}] {chapter} (type={chapter_type}) ...", end=" ", flush=True)
+        print(f"[{idx}] [{category}] {chapter} (type={chapter_type}) ...", end=" ", flush=True)
         try:
             data = extract_chapter(category, chapter, data_dir, chapter_type=chapter_type)
             save_extraction(data)
             n_events = len(data.get("events", []))
+            n_concepts = len(data.get("concepts", []))
             n_chars = len(data.get("characters", []))
-            toks = data.get("stats", {}).get("tokens_in", 0)
-            elapsed = data.get("stats", {}).get("elapsed_s", 0)
-            print(f"events={n_events} chars={n_chars} toks_in={toks} {elapsed:.1f}s")
+            s = data.get("stats", {})
+            tok_in = s.get("tokens_in", 0)
+            tok_out = s.get("tokens_out", 0)
+            elapsed = s.get("elapsed_s", 0)
+            total_tokens_in += tok_in
+            total_tokens_out += tok_out
+            total_elapsed += elapsed
+            print(f"events={n_events} concepts={n_concepts} chars={n_chars} tok={tok_in:,}/{tok_out:,} {elapsed:.1f}s")
             results.append(data)
         except Exception as e:
             print(f"ERROR: {e}")
             results.append({"chapter": chapter, "category": category, "_error": str(e)})
 
+    elapsed_all = time.time() - t_start_all
+    cost = _estimate_cost(total_tokens_in, total_tokens_out)
+
+    print(f"\n{'='*50}")
+    print(f"全量提取完成")
+    print(f"  成功: {len(results)} 章")
+    print(f"  跳过(taxonomy): {len([c for c in chapters if c[1] in skip_chapters])} 章")
+    print(f"  跳过(resume): {skipped_resume} 章")
+    print(f"  失败: {len([r for r in results if '_error' in r])} 章")
+    print(f"  tokens: in={total_tokens_in:,} out={total_tokens_out:,}")
+    print(f"  估算成本: ${cost:.3f} USD")
+    print(f"  总耗时: {elapsed_all:.0f}s ({elapsed_all/60:.1f}m)")
+
     return results
+
+
+def generate_run_report(output_base: str = "data/extractions/v1_events", taxonomy_path: str = "config/story_taxonomy.json") -> str:
+    """生成全量提取统计报告 Markdown"""
+    taxonomy = _load_taxonomy(taxonomy_path)
+    tax_chapters = taxonomy.get("chapters", {})
+
+    rows = []
+    totals = {"events": 0, "concepts": 0, "factions": 0, "locations": 0, "tokens_in": 0, "tokens_out": 0, "elapsed": 0.0, "count": 0}
+    by_taxonomy = {}
+
+    for cat in ["main", "side", "special"]:
+        cat_dir = os.path.join(output_base, cat)
+        if not os.path.isdir(cat_dir):
+            continue
+        for fname in sorted(os.listdir(cat_dir)):
+            if not fname.endswith(".json"):
+                continue
+            chapter = fname[:-5]
+            fpath = os.path.join(cat_dir, fname)
+            with open(fpath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            typ = data.get("taxonomy_type", tax_chapters.get(chapter, "?"))
+            s = data.get("stats", {})
+            ev = len(data.get("events", []))
+            cc = len(data.get("concepts", []))
+            fa = len(data.get("factions", []))
+            lo = len(data.get("locations", []))
+            ti = s.get("tokens_in", 0)
+            to = s.get("tokens_out", 0)
+            el = s.get("elapsed_s", 0)
+            errs = len(data.get("_validation_errors", []))
+            ec = s.get("errors", 0) if isinstance(s, dict) else 0
+
+            rows.append({
+                "chapter": chapter, "category": cat, "type": typ,
+                "events": ev, "concepts": cc, "factions": fa, "locations": lo,
+                "tokens_in": ti, "tokens_out": to, "elapsed": el,
+                "errors": errs + ec,
+            })
+
+            totals["events"] += ev
+            totals["concepts"] += cc
+            totals["factions"] += fa
+            totals["locations"] += lo
+            totals["tokens_in"] += ti
+            totals["tokens_out"] += to
+            totals["elapsed"] += el
+            totals["count"] += 1
+
+            if typ not in by_taxonomy:
+                by_taxonomy[typ] = {"count": 0, "events": 0, "concepts": 0, "tokens_in": 0, "tokens_out": 0, "elapsed": 0.0}
+            bt = by_taxonomy[typ]
+            bt["count"] += 1
+            bt["events"] += ev
+            bt["concepts"] += cc
+            bt["tokens_in"] += ti
+            bt["tokens_out"] += to
+            bt["elapsed"] += el
+
+    cost = _estimate_cost(totals["tokens_in"], totals["tokens_out"])
+
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    md = f"""# Pass 1 全量提取报告
+
+**生成时间:** {now}
+**模型:** {_get_model_label()}
+
+---
+
+## 总览
+
+| 指标 | 值 |
+|------|-----|
+| 已提取章节 | {totals['count']} |
+| 总事件数 | {totals['events']} |
+| 总概念数 | {totals['concepts']} |
+| 总阵营数 | {totals['factions']} |
+| 总地点数 | {totals['locations']} |
+| 总输入 tokens | {totals['tokens_in']:,} |
+| 总输出 tokens | {totals['tokens_out']:,} |
+| 估算成本 | ${cost:.3f} USD |
+| 总耗时 | {totals['elapsed']:.0f}s ({totals['elapsed']/60:.1f}m) |
+
+## 按 Taxonomy 类型统计
+
+| 类型 | 章节数 | 事件数 | 概念数 | 输入 tokens | 耗时 |
+|------|--------|--------|--------|-------------|------|
+"""
+    for typ in ["full", "is", "ra", "light"]:
+        bt = by_taxonomy.get(typ)
+        if bt:
+            md += f"| {typ} | {bt['count']} | {bt['events']} | {bt['concepts']} | {bt['tokens_in']:,} | {bt['elapsed']:.0f}s |\n"
+
+    md += f"""
+## 各章明细
+
+| # | 章节 | 类别 | 类型 | 事件 | 概念 | 阵营 | 地点 | tok_in | tok_out | 耗时 | 校验 |
+|---|------|------|------|------|------|------|------|--------|---------|------|------|
+"""
+    for i, r in enumerate(rows, 1):
+        err_flag = f"ERR={r['errors']}" if r["errors"] else ""
+        md += f"| {i} | {r['chapter']} | {r['category']} | {r['type']} | {r['events']} | {r['concepts']} | {r['factions']} | {r['locations']} | {r['tokens_in']:,} | {r['tokens_out']:,} | {r['elapsed']:.0f}s | {err_flag} |\n"
+
+    md += "\n"
+    return md

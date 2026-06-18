@@ -1,0 +1,197 @@
+{
+  "summary": "本章呈现了「生息演算」的三种结局。Scene 1 描绘了部族击败王酋军队后的胜利庆典，联络员试图与新兴势力建立商业合作，但老伊辛和沙卒认为他们还不够格成为沙卒想要的人。Scene 2 中，寻宝人和部族人在意外中发现了一座古老遗迹和大量金币宝藏，众人兴奋地计划用这笔财富离开萨尔贡去外面享乐。Scene 3 展现了王酋被杀死后的混乱场面，部族人为争夺王冠和财宝而内讧，同时揭示了爱麦拉为激励复仇而自杀的真相。",
+  "events": [
+    {
+      "event": "部族庆祝击败王酋军队的胜利，联络员试图拉拢合作",
+      "type": "celebration",
+      "line_range": [
+        1,
+        43
+      ],
+      "participants": [
+        "联络员",
+        "老伊辛",
+        "沙卒",
+        "巴塞尔",
+        "部族人"
+      ],
+      "location": "萨尔贡某部族营地",
+      "significance": "展现新兴势力胜利后的喜悦与外部势力的商业渗透",
+      "is_imaginary": false
+    },
+    {
+      "event": "寻宝人和部族人发现古老遗迹中的金币宝藏",
+      "type": "discovery",
+      "line_range": [
+        1,
+        28
+      ],
+      "participants": [
+        "寻宝人",
+        "部族人"
+      ],
+      "location": "萨尔贡某处古老遗迹",
+      "significance": "意外发现巨额财富，引发部族人离开萨尔贡的幻想",
+      "is_imaginary": false
+    },
+    {
+      "event": "王酋被杀后，部族人为争夺王冠和财宝爆发内讧",
+      "type": "confrontation",
+      "line_range": [
+        44,
+        62
+      ],
+      "participants": [
+        "部族人",
+        "受伤的战士",
+        "陌生战士"
+      ],
+      "location": "王酋的宫殿或营地",
+      "significance": "揭示胜利后的贪婪与分裂，以及爱麦拉自杀的悲剧真相",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "联络员",
+      "type": "npc",
+      "role_in_chapter": "代表太阳谷的商业联络员，在胜利庆典中试图与新兴势力建立合作，并邀请沙卒考虑合作",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老伊辛",
+      "type": "npc",
+      "role_in_chapter": "观察者，认为这些部族人不是沙卒想要的人，对胜利持保留态度",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "沙卒",
+      "type": "npc",
+      "role_in_chapter": "幕后人物，认为这些部族人目前还不够格成为他想要的人，随后离开",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "巴塞尔",
+      "type": "npc",
+      "role_in_chapter": "部族领袖，在庆典中带领众人干杯庆祝胜利",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "寻宝人",
+      "type": "npc",
+      "role_in_chapter": "发现古老遗迹和金币宝藏，担心被王酋知道，但被部族人说服保密",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "利益",
+      "line_range": [
+        7,
+        9
+      ],
+      "discussion_summary": "联络员强调合作伙伴发展带来市场和订单，老伊辛则感叹利益总是如此驱动一切",
+      "is_substantive": true
+    },
+    {
+      "concept": "生存与家园",
+      "line_range": [
+        14,
+        16
+      ],
+      "discussion_summary": "老伊辛认为部族人为了生存和家园在努力，但判断他们不是沙卒想要的人",
+      "is_substantive": true
+    },
+    {
+      "concept": "资格与期望",
+      "line_range": [
+        17,
+        22
+      ],
+      "discussion_summary": "沙卒承认部族人击溃军队做得不错，但认为还不够，他们还不是他想要的人",
+      "is_substantive": true
+    },
+    {
+      "concept": "财富与自由",
+      "line_range": [
+        10,
+        28
+      ],
+      "discussion_summary": "部族人发现金币后幻想用财富离开萨尔贡，去外面过什么都不用干的享乐生活",
+      "is_substantive": true
+    },
+    {
+      "concept": "复仇与牺牲",
+      "line_range": [
+        61,
+        62
+      ],
+      "discussion_summary": "揭示爱麦拉是自杀的，她知道伪装成被王酋军杀害能激励部族人为她和死去的人报仇",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "太阳谷",
+      "line_range": [
+        7,
+        13
+      ],
+      "description": "联络员代表太阳谷，试图与新兴部族势力建立商业合作，并邀请沙卒考虑合作"
+    },
+    {
+      "faction": "王酋军",
+      "line_range": [
+        1,
+        2
+      ],
+      "description": "被部族击败的军队，是胜利庆典的背景"
+    },
+    {
+      "faction": "王酋势力",
+      "line_range": [
+        44,
+        60
+      ],
+      "description": "王酋被杀死后，其财宝和王冠引发部族内讧，众人争相抢夺"
+    }
+  ],
+  "locations": [
+    {
+      "location": "萨尔贡",
+      "line_range": [
+        5,
+        6
+      ],
+      "description": "老伊辛提到千百年来有太多萨尔贡人在此扎根存活，是故事发生的地区"
+    },
+    {
+      "location": "古老遗迹",
+      "line_range": [
+        1,
+        4
+      ],
+      "description": "寻宝人发现一座保存完好的古老遗迹，埋藏着大量金币宝藏"
+    }
+  ],
+  "chapter": "生息演算",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:58:37.823567+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 3004,
+    "tokens_out": 1475,
+    "elapsed_s": 14.70323133468628
+  },
+  "taxonomy_type": "ra",
+  "_unmatched_names": [
+    "联络员",
+    "老伊辛",
+    "沙卒",
+    "巴塞尔",
+    "寻宝人"
+  ]
+}

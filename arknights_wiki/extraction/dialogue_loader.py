@@ -206,15 +206,15 @@ def split_chapter(
 ) -> list[ChapterDialogue]:
     """按 node 自然边界切分章节。
 
-    - 总行 <= 2000: 不分段
-    - 2000 < 总行 <= 5000: 2 段，在最近中点的 node 边界切断
-    - 总行 > 5000: 3 段，在 1/3 和 2/3 处的 node 边界切断
+    - 总行 <= 1500: 不分段
+    - 1500 < 总行 <= 3000: 2 段，在最近中点的 node 边界切断
+    - 总行 > 3000: 3 段，在 1/3 和 2/3 处的 node 边界切断
     """
     total = len(cd.lines)
-    if total <= 2000:
+    if total <= 1500:
         return [cd]
 
-    if total <= 5000:
+    if total <= 3000:
         num_batches = 2
     else:
         num_batches = 3

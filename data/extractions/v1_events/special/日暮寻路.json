@@ -1,0 +1,550 @@
+{
+  "summary": "事后，托兰与玛恩纳在垒石村会面，讨论切斯柏的结局和卡西米尔的现状。托兰转交了罗德岛的邀请信，并暗示玛恩纳的兄嫂可能尚在人世。玛嘉烈·临光在大骑士领与老工匠们交谈，谈及祖父西里尔的去世、临光家的现状以及她作为耀骑士所面临的威胁。她表达了对父母（斯尼茨和约兰塔）的怀念，并决心继续为感染者权益而斗争。玛恩纳最终表示自己将继续寻找兄嫂的下落，并拒绝了托兰的拉拢，称自己只是一个不识路的漫游者。",
+  "events": [
+    {
+      "event": "玛恩纳在荒野村庄与年老的莱塔尼亚流亡者交谈，得知当地有强盗袭击和征战骑士的异常活动。",
+      "type": "revelation",
+      "line_range": [
+        1,
+        34
+      ],
+      "participants": [
+        "玛恩纳",
+        "年老的村民"
+      ],
+      "location": "荒野村庄",
+      "significance": "揭示玛恩纳离开大骑士领的缘由，并埋下茨沃涅克局势紧张的伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "托兰与切斯柏在村庄会面，切斯柏警告托兰不要介入茨沃涅克的企业调查，并提及玛恩纳。",
+      "type": "negotiation",
+      "line_range": [
+        36,
+        91
+      ],
+      "participants": [
+        "托兰",
+        "切斯柏"
+      ],
+      "location": "荒野村庄",
+      "significance": "揭示切斯柏与托兰的旧识关系，以及切斯柏对玛恩纳的复杂态度，暗示切斯柏有秘密计划。",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛恩纳与盖尔工业律师黛丝特同行，黛丝特在垒石村与村民律师哈姆就土地收购补偿金进行谈判。",
+      "type": "negotiation",
+      "line_range": [
+        203,
+        332
+      ],
+      "participants": [
+        "玛恩纳",
+        "黛丝特",
+        "哈姆"
+      ],
+      "location": "垒石村",
+      "significance": "展现卡西米尔大企业通过法律手段压榨平民的现状，为后续盖尔工业的阴谋提供背景。",
+      "is_imaginary": false
+    },
+    {
+      "event": "黛丝特在谈判后私下将盖尔工业合同的关键漏洞透露给哈姆，帮助村民争取权益。",
+      "type": "betrayal",
+      "line_range": [
+        421,
+        453
+      ],
+      "participants": [
+        "黛丝特",
+        "哈姆"
+      ],
+      "location": "垒石村",
+      "significance": "展现黛丝特内心的良知转变，为后续盖尔工业阴谋的败露埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "焰尾和灰毫在茨沃涅克调查感染者暴动，被暴民袭击，后被感染者泽诺所救。",
+      "type": "ambush",
+      "line_range": [
+        467,
+        509
+      ],
+      "participants": [
+        "焰尾",
+        "灰毫",
+        "泽诺"
+      ],
+      "location": "茨沃涅克新城区",
+      "significance": "引入红松骑士团调查感染者暴动的剧情线，并引出关键人物泽诺。",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛恩纳在茨沃涅克与莱塔尼亚贵族狄洛夫伯爵相遇，就雕塑和和平的意义进行辩论。",
+      "type": "ideological_clash",
+      "line_range": [
+        578,
+        603
+      ],
+      "participants": [
+        "玛恩纳",
+        "狄洛夫伯爵"
+      ],
+      "location": "茨沃涅克广场",
+      "significance": "展现玛恩纳对卡西米尔现状的批判态度，以及狄洛夫伯爵对卡西米尔的向往。",
+      "is_imaginary": false
+    },
+    {
+      "event": "焰尾和灰毫找到被盖尔工业囚禁的泽诺，但泽诺拒绝逃走，暗示背后有隐情。",
+      "type": "confrontation",
+      "line_range": [
+        604,
+        627
+      ],
+      "participants": [
+        "焰尾",
+        "灰毫",
+        "泽诺"
+      ],
+      "location": "茨沃涅克新城区未完工建筑",
+      "significance": "揭示泽诺被胁迫担下暴动罪名的真相，加深剧情悬疑。",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛恩纳与焰尾、灰毫相遇，同意帮助调查，并利用商业关系说服盖尔工业释放泽诺。",
+      "type": "alliance",
+      "line_range": [
+        632,
+        694
+      ],
+      "participants": [
+        "玛恩纳",
+        "焰尾",
+        "灰毫",
+        "泽诺"
+      ],
+      "location": "茨沃涅克",
+      "significance": "玛恩纳与红松骑士团达成临时合作，并得知泽诺是被一名征战骑士胁迫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "茨沃涅克废弃街区发生爆炸，瑟奇亚克骑士寻找儿子，狄洛夫伯爵被困火场。",
+      "type": "disaster",
+      "line_range": [
+        775,
+        802
+      ],
+      "participants": [
+        "瑟奇亚克",
+        "狄洛夫伯爵",
+        "贵族侍卫"
+      ],
+      "location": "茨沃涅克废弃街区",
+      "significance": "引爆剧情冲突，将多个角色卷入同一事件。",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛恩纳与狄洛夫伯爵在火场中相遇，狄洛夫伯爵无意中听到征战骑士的军事通讯，身份暴露。",
+      "type": "revelation",
+      "line_range": [
+        803,
+        912
+      ],
+      "participants": [
+        "玛恩纳",
+        "狄洛夫伯爵",
+        "泽诺"
+      ],
+      "location": "茨沃涅克废弃街区",
+      "significance": "揭示征战骑士策划袭击莱塔尼亚贵族的阴谋，狄洛夫伯爵成为目标。",
+      "is_imaginary": false
+    },
+    {
+      "event": "切斯柏向年轻骑士解释自己的动机，并烧毁瑟莉娜的笔记，决心发动袭击。",
+      "type": "planning",
+      "line_range": [
+        1029,
+        1142
+      ],
+      "participants": [
+        "切斯柏",
+        "征战骑士"
+      ],
+      "location": "征战骑士驻地",
+      "significance": "深入揭示切斯柏的内心世界和发动战争的动机，为后续冲突做铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛恩纳与托兰会面，分析切斯柏的计划，决定分头行动：托兰保护莱塔尼亚贵族，玛恩纳去劝阻切斯柏。",
+      "type": "planning",
+      "line_range": [
+        1004,
+        1181
+      ],
+      "participants": [
+        "玛恩纳",
+        "托兰"
+      ],
+      "location": "赏金猎人据点村庄",
+      "significance": "明确玛恩纳和托兰的行动计划，推动剧情走向高潮。",
+      "is_imaginary": false
+    },
+    {
+      "event": "大骑士长下令调离切斯柏的骑士团，切斯柏抗命，继续执行袭击计划。",
+      "type": "rebellion",
+      "line_range": [
+        1196,
+        1216
+      ],
+      "participants": [
+        "切斯柏",
+        "征战骑士"
+      ],
+      "location": "茨沃涅克城外出入口",
+      "significance": "切斯柏彻底走上叛变之路，与监正会决裂。",
+      "is_imaginary": false
+    },
+    {
+      "event": "托兰拦截并保护了试图逃离的狄洛夫伯爵，将其带往安全地点。",
+      "type": "rescue",
+      "line_range": [
+        1275,
+        1357
+      ],
+      "participants": [
+        "托兰",
+        "狄洛夫伯爵",
+        "贵族侍卫"
+      ],
+      "location": "茨沃涅克城外出入口",
+      "significance": "托兰成功执行保护任务，挫败切斯柏计划的一部分。",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛恩纳与切斯柏在城外出入口展开决斗，玛恩纳最终杀死了切斯柏。",
+      "type": "confrontation",
+      "line_range": [
+        1229,
+        1423
+      ],
+      "participants": [
+        "玛恩纳",
+        "切斯柏"
+      ],
+      "location": "茨沃涅克城外出入口",
+      "significance": "本章核心冲突的顶点，玛恩纳被迫杀死老友，并得知兄嫂可能尚在人世的消息。",
+      "is_imaginary": false
+    },
+    {
+      "event": "托兰与玛恩纳在垒石村会面，讨论切斯柏的结局和卡西米尔的现状。",
+      "type": "reflection",
+      "line_range": [
+        1439,
+        1615
+      ],
+      "participants": [
+        "玛恩纳",
+        "托兰"
+      ],
+      "location": "垒石村",
+      "significance": "战后反思，托兰转交罗德岛邀请信，玛恩纳决定继续寻找兄嫂。",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛嘉烈在大骑士领与老工匠们交谈，谈及祖父、父母和临光家的现状。",
+      "type": "family_moment",
+      "line_range": [
+        1424,
+        1568
+      ],
+      "participants": [
+        "玛嘉烈",
+        "老工匠",
+        "光头马丁",
+        "老骑士"
+      ],
+      "location": "大骑士领马丁工坊",
+      "significance": "展现玛嘉烈作为临光家现任家长的责任与挑战，补充临光家历史背景。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "玛恩纳",
+      "type": "operator",
+      "role_in_chapter": "主角，离开大骑士领寻找兄嫂，在茨沃涅克卷入切斯柏的阴谋，最终杀死老友切斯柏。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "年老的村民",
+      "type": "npc",
+      "role_in_chapter": "莱塔尼亚流亡者，与玛恩纳交谈，提供当地信息。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "托兰",
+      "type": "npc",
+      "role_in_chapter": "赏金猎人首领，玛恩纳的老友，协助保护莱塔尼亚贵族，战后与玛恩纳交谈。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "切斯柏",
+      "type": "npc",
+      "role_in_chapter": "征战骑士团长，玛恩纳和托兰的老友，策划袭击莱塔尼亚贵族以引发战争，最终被玛恩纳杀死。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "但书",
+      "type": "operator",
+      "role_in_chapter": "盖尔工业的律师，与玛恩纳同行，在垒石村谈判后暗中帮助村民。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "哈姆",
+      "type": "npc",
+      "role_in_chapter": "垒石村村民的代理律师，与黛丝特谈判。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "焰尾",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，原红松骑士团成员，与灰毫调查茨沃涅克感染者暴动。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "灰毫",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，原红松骑士团成员，与焰尾调查茨沃涅克感染者暴动。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "泽诺",
+      "type": "npc",
+      "role_in_chapter": "感染者工人，被诬陷为暴动主谋，后被玛恩纳和红松骑士团救出。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "狄洛夫伯爵",
+      "type": "npc",
+      "role_in_chapter": "莱塔尼亚访问团贵族，对卡西米尔抱有幻想，成为切斯柏的袭击目标，后被托兰所救。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "瑟奇亚克",
+      "type": "npc",
+      "role_in_chapter": "前竞技骑士「塑料骑士」，在爆炸中寻找儿子，与玛恩纳发生冲突。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "贵族侍卫",
+      "type": "npc",
+      "role_in_chapter": "狄洛夫伯爵的侍卫，名为阿洛希亚，保护伯爵。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "临光",
+      "type": "operator",
+      "role_in_chapter": "耀骑士，临光家现任家长，在大骑士领与老工匠们交谈，处理罗德岛事务。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老工匠",
+      "type": "npc",
+      "role_in_chapter": "科瓦尔师傅，临光家的老朋友，与玛嘉烈交谈。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "光头马丁",
+      "type": "npc",
+      "role_in_chapter": "工坊主，临光家的老朋友，与玛嘉烈交谈。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老骑士",
+      "type": "npc",
+      "role_in_chapter": "临光家的老朋友，前征战骑士，与玛嘉烈交谈。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "骑士精神",
+      "line_range": [
+        177,
+        185
+      ],
+      "discussion_summary": "切斯柏向托兰倾诉，认为骑士的准则虽然迂腐，但至少不吃人，不会容许瑟莉娜枉死，表达了对骑士精神的坚守与对现实的失望。",
+      "is_substantive": true
+    },
+    {
+      "concept": "公正",
+      "line_range": [
+        371,
+        374
+      ],
+      "discussion_summary": "哈姆与黛丝特讨论法律与公正，哈姆认为规则只能带来荒诞，不能带来公正，黛丝特引用法学名言「期待人为制定律法能够实现公正的想法，本身就是一种荒诞」。",
+      "is_substantive": true
+    },
+    {
+      "concept": "战争与和平",
+      "line_range": [
+        584,
+        588
+      ],
+      "discussion_summary": "玛恩纳与狄洛夫伯爵在雕塑前辩论，狄洛夫伯爵认为和平与交流好过战争与对立，玛恩纳则质疑和平的代价与价值，认为骑士的武器不应奏出平缓典雅的乐章。",
+      "is_substantive": true
+    },
+    {
+      "concept": "骑士的职责",
+      "line_range": [
+        1116,
+        1117
+      ],
+      "discussion_summary": "切斯柏对年轻骑士说，战争本来就是骑士的职责，他们替平民打仗，让平民相信他们。",
+      "is_substantive": true
+    },
+    {
+      "concept": "牺牲与理想",
+      "line_range": [
+        1362,
+        1364
+      ],
+      "discussion_summary": "切斯柏向玛恩纳阐述自己的信念，认为骑士精神的光彩在于人们可以选择为他人牺牲，骑士的血是为牺牲而流的。",
+      "is_substantive": true
+    },
+    {
+      "concept": "希望与失望",
+      "line_range": [
+        1597,
+        1601
+      ],
+      "discussion_summary": "玛恩纳对托兰说，他没有必要放弃希望，即使只是毫无来由的希望也够了，并称在大骑士领的十年里，他怀有的全部希望并不比这更多。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "征战骑士",
+      "line_range": [
+        27,
+        34
+      ],
+      "description": "年老的村民提到征战骑士在关心平民百姓的死活，从天灾下抢救幸存者，玛恩纳认为这是他该做的。"
+    },
+    {
+      "faction": "盖尔工业",
+      "line_range": [
+        227,
+        232
+      ],
+      "description": "黛丝特向玛恩纳介绍垒石村土地收购案，盖尔工业是收购方，与贵族马雷克存在土地所有权纠纷。"
+    },
+    {
+      "faction": "红松骑士团",
+      "line_range": [
+        532,
+        534
+      ],
+      "description": "泽诺表示喜欢红松骑士团，喜欢他们暴揍目中无人的贵族、替感染者出气的样子。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        527,
+        529
+      ],
+      "description": "焰尾向泽诺介绍，她们正在与一家致力于治愈矿石病的制药公司合作，帮助更多感染者的理想不会改变。"
+    },
+    {
+      "faction": "莱塔尼亚访问团",
+      "line_range": [
+        728,
+        743
+      ],
+      "description": "茨沃涅克代表向莱塔尼亚贵族狄洛夫伯爵介绍城市，伯爵对废弃街区表现出兴趣。"
+    },
+    {
+      "faction": "监正会",
+      "line_range": [
+        1192,
+        1195
+      ],
+      "description": "大骑士长亲自签署调令，要求切斯柏的整支骑士团即刻调离茨沃涅克，前往大骑士领报到。"
+    },
+    {
+      "faction": "商业联合会",
+      "line_range": [
+        1518,
+        1519
+      ],
+      "description": "玛嘉烈提到她的宣讲得罪了商业联合会中的一些人，他们寄来匿名信函警告她注意言辞。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "茨沃涅克",
+      "line_range": [
+        27,
+        29
+      ],
+      "description": "年老的村民提到茨沃涅克城内出现了袭击案，征战骑士提醒村民注意安全。"
+    },
+    {
+      "location": "垒石村",
+      "line_range": [
+        228,
+        232
+      ],
+      "description": "黛丝特介绍垒石村的土地所有权纠纷，贵族马雷克将土地抵押给盖尔工业后又售卖给村民。"
+    },
+    {
+      "location": "大骑士领",
+      "line_range": [
+        311,
+        315
+      ],
+      "description": "黛丝特以书报亭的消失为例，说明大骑士领因城际网络和物流业兴起而发生的变迁。"
+    },
+    {
+      "location": "莱塔尼亚",
+      "line_range": [
+        898,
+        903
+      ],
+      "description": "狄洛夫伯爵回忆巫王威光消散那天，有人试图点燃伯爵的高塔，他反思自己的生活安然无恙或许就是人们引火的原因。"
+    },
+    {
+      "location": "帕伦尼斯科家族的庄园",
+      "line_range": [
+        1057,
+        1058
+      ],
+      "description": "托兰和切斯柏在村庄眺望河谷对面的工业园区，切斯柏指出那里原本是帕伦尼斯科家族的庄园。"
+    }
+  ],
+  "chapter": "日暮寻路",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:37:51.603268+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 39142,
+    "tokens_out": 5072,
+    "elapsed_s": 47.61579370498657
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "年老的村民",
+    "托兰",
+    "切斯柏",
+    "哈姆",
+    "泽诺",
+    "狄洛夫伯爵",
+    "瑟奇亚克",
+    "贵族侍卫",
+    "老工匠",
+    "光头马丁",
+    "老骑士"
+  ]
+}

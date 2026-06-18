@@ -1,0 +1,806 @@
+{
+  "summary": "Scene 1 以龙门近卫局迎接年关的紧张氛围开场，通过近卫局成员的对话、陈与雪雉的互动、陈与鬼姐的赌酒、以及罗德岛阿米娅与博士抵达龙门等多条并行线，展现了龙门在年关前夕的全面戒备状态。魏文月向罗德岛委托任务，但近卫局突然发现市区内出现无法识别的整合运动队伍，事态升级。\n\nScene 2 中，整合运动的幻影「兵俑」在龙门市区内大量出现，近卫局陷入苦战。魏文月指挥全局，雪雉提出反向监测热源的方法。罗德岛干员炎熔与「年」正面交锋，揭示了年的能力是利用数据创造幻影，并发现年对爆竹声和火光存在某种畏惧。年展现出强大的冶炼能力，将城市作为冶炉，局势危急。\n\nScene 3 中，陈、阿米娅与炎熔商议对策，炎熔提出利用护城炮核心制造巨型爆竹来对付年。年攻入近卫局大楼，炎熔与其对峙，引爆护城炮核心，但年利用爆炸热量制造假象逃脱。随后剧情转折，揭示这一切实际上是炎熔与年合作拍摄的贺岁电影《洪炉示岁》的剧本内容。年与可露希尔对话，表达了对罗德岛的喜爱，并透露了关于自己与兄弟姐妹的真相。最终，炎熔面对新剧本，决定即兴发挥。",
+  "events": [
+    {
+      "event": "近卫局成员讨论年关传说与警戒任务",
+      "type": "planning",
+      "line_range": [
+        1,
+        25
+      ],
+      "participants": [
+        "轻浮的近卫局成员",
+        "认真的近卫局成员"
+      ],
+      "location": "龙门近卫局屋顶",
+      "significance": "交代年关背景和近卫局的日常警戒状态",
+      "is_imaginary": false
+    },
+    {
+      "event": "雪雉迷路并与陈汇合，了解年关真相",
+      "type": "revelation",
+      "line_range": [
+        26,
+        72
+      ],
+      "participants": [
+        "雪雉",
+        "陈"
+      ],
+      "location": "龙门近卫局",
+      "significance": "引入雪雉角色，揭示年兽并非传说而是真实威胁",
+      "is_imaginary": false
+    },
+    {
+      "event": "雪雉向魏文月汇报，魏文月提及合作方舰船即将抵达",
+      "type": "revelation",
+      "line_range": [
+        73,
+        98
+      ],
+      "participants": [
+        "雪雉",
+        "陈",
+        "魏文月",
+        "近卫局成员"
+      ],
+      "location": "龙门近卫局总监控室",
+      "significance": "建立魏文月对雪雉的信任，暗示罗德岛即将到来",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与鬼姐赌酒，阻止帮派外出闹事",
+      "type": "confrontation",
+      "line_range": [
+        114,
+        147
+      ],
+      "participants": [
+        "鬼姐",
+        "陈",
+        "小弟"
+      ],
+      "location": "龙门下城区某帮派据点",
+      "significance": "展现陈与地下势力的关系，为后续鬼姐协助近卫局埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "两位退休老警察下棋回忆往昔",
+      "type": "flashback",
+      "line_range": [
+        148,
+        159
+      ],
+      "participants": [
+        "普通市民魏先生",
+        "退休老人"
+      ],
+      "location": "龙门某处",
+      "significance": "侧面烘托年关的长期威胁和近卫局的历史",
+      "is_imaginary": false
+    },
+    {
+      "event": "诗怀雅与高材生朋友闲聊，提及近卫局考核和投资",
+      "type": "character_development",
+      "line_range": [
+        160,
+        202
+      ],
+      "participants": [
+        "富家女",
+        "高材生"
+      ],
+      "location": "龙门街道",
+      "significance": "展现龙门上层社会的生活，暗示诗怀雅的身份",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅与博士抵达龙门，介绍年关任务",
+      "type": "arrival",
+      "line_range": [
+        203,
+        216
+      ],
+      "participants": [
+        "阿米娅"
+      ],
+      "location": "龙门",
+      "significance": "罗德岛正式介入龙门年关事件",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈醉酒后透露近卫局发现年的线索",
+      "type": "revelation",
+      "line_range": [
+        229,
+        247
+      ],
+      "participants": [
+        "陈",
+        "小弟"
+      ],
+      "location": "龙门下城区帮派据点",
+      "significance": "揭示年确实存在并留下了痕迹",
+      "is_imaginary": false
+    },
+    {
+      "event": "雪雉调试实验室系统，发现异常热源和绝缘材料",
+      "type": "investigation",
+      "line_range": [
+        278,
+        295
+      ],
+      "participants": [
+        "雪雉"
+      ],
+      "location": "龙门实验室",
+      "significance": "雪雉的技术能力为后续追踪年提供可能",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏文月向罗德岛委托任务，近卫局发现整合运动队伍",
+      "type": "planning",
+      "line_range": [
+        296,
+        308
+      ],
+      "participants": [
+        "魏文月",
+        "阿米娅",
+        "近卫局成员"
+      ],
+      "location": "龙门近卫局",
+      "significance": "剧情转折点，整合运动幻影出现，危机爆发",
+      "is_imaginary": false
+    },
+    {
+      "event": "神秘人观察痕迹，决心阻止年",
+      "type": "planning",
+      "line_range": [
+        309,
+        314
+      ],
+      "participants": [
+        "？？？"
+      ],
+      "location": "龙门",
+      "significance": "引入神秘角色，暗示其与年有旧怨",
+      "is_imaginary": false
+    },
+    {
+      "event": "兵俑在龙门市区大量出现，近卫局陷入苦战",
+      "type": "battle",
+      "line_range": [
+        315,
+        339
+      ],
+      "participants": [
+        "近卫局成员",
+        "魏文月",
+        "兵俑"
+      ],
+      "location": "龙门市区",
+      "significance": "年关危机正式爆发，兵俑特性诡异",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏文月指挥全局，罗德岛协助近卫局",
+      "type": "planning",
+      "line_range": [
+        340,
+        343
+      ],
+      "participants": [
+        "魏文月",
+        "阿米娅"
+      ],
+      "location": "龙门近卫局",
+      "significance": "罗德岛与近卫局正式合作应对危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与魏文月讨论兵俑特性，确认其非真实整合运动",
+      "type": "revelation",
+      "line_range": [
+        355,
+        374
+      ],
+      "participants": [
+        "陈",
+        "魏文月"
+      ],
+      "location": "龙门市区",
+      "significance": "揭示兵俑是幻象，与源石完全绝缘",
+      "is_imaginary": false
+    },
+    {
+      "event": "兵俑伪装成近卫局成员，鬼姐出手相助",
+      "type": "battle",
+      "line_range": [
+        380,
+        414
+      ],
+      "participants": [
+        "鬼姐",
+        "近卫局成员",
+        "兵俑"
+      ],
+      "location": "龙门市区",
+      "significance": "鬼姐协助近卫局，展现其战斗力",
+      "is_imaginary": false
+    },
+    {
+      "event": "兵俑进化，掌握武器技巧，近卫局压力增大",
+      "type": "battle",
+      "line_range": [
+        414,
+        424
+      ],
+      "participants": [
+        "近卫局成员",
+        "魏文月"
+      ],
+      "location": "龙门近卫局",
+      "significance": "兵俑威胁升级，从幻象变为实体",
+      "is_imaginary": false
+    },
+    {
+      "event": "雪雉提出反向监测热源的方法，魏文月采纳",
+      "type": "planning",
+      "line_range": [
+        427,
+        457
+      ],
+      "participants": [
+        "雪雉",
+        "魏文月",
+        "近卫局成员"
+      ],
+      "location": "龙门近卫局",
+      "significance": "雪雉的技术方案成为追踪年的关键",
+      "is_imaginary": false
+    },
+    {
+      "event": "近卫局防线被突破，退休老警察林警长出手相助",
+      "type": "battle",
+      "line_range": [
+        479,
+        512
+      ],
+      "participants": [
+        "近卫局成员",
+        "魏文月",
+        "退休老人",
+        "普通市民魏先生"
+      ],
+      "location": "龙门市区",
+      "significance": "展现龙门老一辈的力量，魏文月决定反击",
+      "is_imaginary": false
+    },
+    {
+      "event": "槐琥、阿、吽三人组在街头对抗兵俑",
+      "type": "battle",
+      "line_range": [
+        513,
+        573
+      ],
+      "participants": [
+        "行侠仗义第一人",
+        "地下怪医",
+        "事务所全职保安"
+      ],
+      "location": "龙门街道",
+      "significance": "引入龙门民间力量，丰富剧情",
+      "is_imaginary": false
+    },
+    {
+      "event": "年与炎熔首次正面交锋，揭示年的能力与弱点",
+      "type": "confrontation",
+      "line_range": [
+        574,
+        740
+      ],
+      "participants": [
+        "年",
+        "炎熔"
+      ],
+      "location": "龙门市区",
+      "significance": "核心冲突，揭示年的身份、能力、对爆竹的畏惧，以及炎熔的使命",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈、阿米娅、炎熔商议对策，炎熔提出爆竹弱点",
+      "type": "planning",
+      "line_range": [
+        741,
+        812
+      ],
+      "participants": [
+        "陈",
+        "阿米娅",
+        "炎熔"
+      ],
+      "location": "龙门防线",
+      "significance": "制定对付年的策略，利用爆竹和护城炮",
+      "is_imaginary": false
+    },
+    {
+      "event": "年攻破龙门哨卡，展示剑盾威力",
+      "type": "battle",
+      "line_range": [
+        813,
+        850
+      ],
+      "participants": [
+        "年",
+        "阿米娅",
+        "陈"
+      ],
+      "location": "龙门哨卡",
+      "significance": "年展示压倒性力量，兵俑升级",
+      "is_imaginary": false
+    },
+    {
+      "event": "炎熔向雪雉索要构造图，计划利用护城炮",
+      "type": "planning",
+      "line_range": [
+        851,
+        888
+      ],
+      "participants": [
+        "炎熔",
+        "雪雉",
+        "魏文月"
+      ],
+      "location": "龙门近卫局",
+      "significance": "制定最终作战计划",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与阿米娅阻击年，年盾牌被击碎后再生",
+      "type": "battle",
+      "line_range": [
+        889,
+        916
+      ],
+      "participants": [
+        "陈",
+        "阿米娅",
+        "年"
+      ],
+      "location": "龙门街道",
+      "significance": "展示年的再生能力，近卫局被迫撤退",
+      "is_imaginary": false
+    },
+    {
+      "event": "炎熔引爆护城炮核心，年救下炎熔并投降",
+      "type": "confrontation",
+      "line_range": [
+        933,
+        1057
+      ],
+      "participants": [
+        "炎熔",
+        "年"
+      ],
+      "location": "龙门近卫局地下",
+      "significance": "高潮对决，年投降后逃脱，揭示其真实意图",
+      "is_imaginary": false
+    },
+    {
+      "event": "年制造玄极巨兵，剧情突转揭示为电影拍摄",
+      "type": "revelation",
+      "line_range": [
+        1058,
+        1130
+      ],
+      "participants": [
+        "年",
+        "炎熔"
+      ],
+      "location": "龙门",
+      "significance": "剧情大转折，揭示整个事件是炎熔与年合作的贺岁电影",
+      "is_imaginary": true
+    },
+    {
+      "event": "年与可露希尔对话，透露关于兄弟姐妹和罗德岛的真相",
+      "type": "revelation",
+      "line_range": [
+        1131,
+        1202
+      ],
+      "participants": [
+        "年",
+        "可露希尔"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示年的背景、与兄弟姐妹的关系、对罗德岛的喜爱",
+      "is_imaginary": false
+    },
+    {
+      "event": "炎熔面对新剧本，决定即兴发挥",
+      "type": "character_development",
+      "line_range": [
+        1203,
+        1215
+      ],
+      "participants": [
+        "炎熔",
+        "罗德岛干员"
+      ],
+      "location": "罗德岛",
+      "significance": "炎熔理解年的用意，展现成长",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "轻浮的近卫局成员",
+      "type": "npc",
+      "role_in_chapter": "与同事讨论年关传说，值班时吃泡面被罚",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "认真的近卫局成员",
+      "type": "npc",
+      "role_in_chapter": "值夜班，与同事交接，在战斗中鼓舞士气",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "雪雉",
+      "type": "operator",
+      "role_in_chapter": "龙门近卫局高级工程师，从哥伦比亚返回，迷路后向魏文月汇报，提出反向监测热源的方法，为炎熔绘制构造图",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "龙门近卫局警官，负责年关警戒，与鬼姐赌酒，指挥战斗，与阿米娅、炎熔商议对策",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "魏文月",
+      "type": "npc",
+      "role_in_chapter": "龙门近卫局长官，全局指挥年关防御，信任雪雉和罗德岛，做出关键决策",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "鬼姐",
+      "type": "npc",
+      "role_in_chapter": "龙门帮派头目，与陈赌酒，后协助近卫局对抗兵俑",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "小弟",
+      "type": "npc",
+      "role_in_chapter": "鬼姐的手下，参与赌酒和战斗",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "普通市民魏先生",
+      "type": "npc",
+      "role_in_chapter": "退休老警察，与退休老人下棋回忆往昔",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "退休老人",
+      "type": "npc",
+      "role_in_chapter": "退休老警察，与魏先生下棋，后出手帮助近卫局",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "富家女",
+      "type": "npc",
+      "role_in_chapter": "龙门富家女，与高材生朋友闲聊，提及投资和近卫局考核",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "高材生",
+      "type": "npc",
+      "role_in_chapter": "通过近卫局考核的高材生，与富家女对话，展现其洞察力",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，与博士抵达龙门，接受魏文月委托，与陈、炎熔共同对抗年",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "炎熔",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，灾害专家，与年正面交锋，利用爆竹弱点对抗年，实为贺岁片导演",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "年",
+      "type": "operator",
+      "role_in_chapter": "传说中的年兽，拥有创造幻影和冶炼的能力，与炎熔交锋后投降，实为贺岁片主演，透露关于兄弟姐妹的真相",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "行侠仗义第一人",
+      "type": "npc",
+      "role_in_chapter": "龙门民间武者，与阿、吽一起对抗兵俑",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "地下怪医",
+      "type": "npc",
+      "role_in_chapter": "龙门地下医生，为近卫局成员治疗，与槐琥、吽同行",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "事务所全职保安",
+      "type": "npc",
+      "role_in_chapter": "龙门保安，与槐琥、阿同行",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "可露希尔",
+      "type": "operator",
+      "role_in_chapter": "罗德岛工程师，与年对话，讨论电影和年的背景",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "年关/年兽传说",
+      "line_range": [
+        11,
+        16
+      ],
+      "discussion_summary": "近卫局成员讨论年关传说，认为年兽是吐火巨人或巨大野兽，但从未亲眼见过，质疑其真实性",
+      "is_substantive": true
+    },
+    {
+      "concept": "年关/年兽传说",
+      "line_range": [
+        48,
+        55
+      ],
+      "discussion_summary": "陈向雪雉解释年兽并非传说，龙门历史上遭受过真实损失，需要警戒",
+      "is_substantive": true
+    },
+    {
+      "concept": "年关/年兽传说",
+      "line_range": [
+        206,
+        211
+      ],
+      "discussion_summary": "阿米娅向博士介绍年关是确有其事的奇异现象，袭击范围广泛，形态多样",
+      "is_substantive": true
+    },
+    {
+      "concept": "兵俑",
+      "line_range": [
+        356,
+        372
+      ],
+      "discussion_summary": "陈和魏文月讨论兵俑的特性：不会说话、不流血、尸体消失、与源石完全绝缘、无法追踪来源",
+      "is_substantive": true
+    },
+    {
+      "concept": "兵俑",
+      "line_range": [
+        420,
+        424
+      ],
+      "discussion_summary": "近卫局成员发现兵俑进化，掌握武器技巧，出现个体差异，从幻象变为实体",
+      "is_substantive": true
+    },
+    {
+      "concept": "年的能力",
+      "line_range": [
+        614,
+        615
+      ],
+      "discussion_summary": "炎熔指出年利用记录和数据制造幻影，能力与源石技艺截然不同",
+      "is_substantive": true
+    },
+    {
+      "concept": "年的能力",
+      "line_range": [
+        678,
+        682
+      ],
+      "discussion_summary": "年解释其能力是将语言、法术拆解为简单单元，利用数据、恐惧和不安制造泡沫般的幻影",
+      "is_substantive": true
+    },
+    {
+      "concept": "年的弱点（爆竹）",
+      "line_range": [
+        700,
+        717
+      ],
+      "discussion_summary": "炎熔使用爆竹口诀使年退缩，年惊讶于人类知道其弱点，炎熔解释这是从古老传说中发现的",
+      "is_substantive": true
+    },
+    {
+      "concept": "年的弱点（爆竹）",
+      "line_range": [
+        773,
+        791
+      ],
+      "discussion_summary": "炎熔向陈和阿米娅详细解释爆竹作为弱点的理论：年自称匠人，畏惧火光和响声，但爆竹本身不构成威胁，她恐惧的是自己",
+      "is_substantive": true
+    },
+    {
+      "concept": "年的兄弟姐妹",
+      "line_range": [
+        962,
+        966
+      ],
+      "discussion_summary": "年透露有十二位兄弟姐妹，在悠久岁月里互相厮杀，认为这是徒劳无功",
+      "is_substantive": true
+    },
+    {
+      "concept": "年的兄弟姐妹",
+      "line_range": [
+        1098,
+        1112
+      ],
+      "discussion_summary": "年的妹妹通过通讯质问年，透露她曾在炎国散布谣言，喜欢龙门，并暗示要熄灭大地的火种",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        1,
+        25
+      ],
+      "description": "近卫局成员讨论年关警戒任务，值班、交班、吃泡面等日常"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        73,
+        98
+      ],
+      "description": "雪雉向魏文月汇报，魏文月指挥近卫局接待合作方"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        315,
+        339
+      ],
+      "description": "近卫局与兵俑交战，魏文月指挥全局"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        479,
+        502
+      ],
+      "description": "近卫局防线被突破，魏文月决定反击"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        203,
+        216
+      ],
+      "description": "阿米娅与博士抵达龙门，接受年关任务"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        340,
+        343
+      ],
+      "description": "阿米娅表示罗德岛将协助近卫局行动"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1131,
+        1202
+      ],
+      "description": "年与可露希尔对话，年表达对罗德岛的喜爱，并推销罗德岛"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        307,
+        308
+      ],
+      "description": "近卫局发现市区内出现带有整合运动标志的无法识别的队伍"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        315,
+        324
+      ],
+      "description": "近卫局确认兵俑是整合运动的幻影，但并非真实"
+    }
+  ],
+  "locations": [
+    {
+      "location": "龙门",
+      "line_range": [
+        11,
+        16
+      ],
+      "description": "近卫局成员讨论龙门年关警戒，从未见过年兽"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        53,
+        55
+      ],
+      "description": "陈向雪雉说明龙门历史上遭受过年兽损失"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        206,
+        211
+      ],
+      "description": "阿米娅介绍年关袭击范围包括龙门、炎国、乌萨斯部分国土"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        450,
+        452
+      ],
+      "description": "魏文月提到移动城邦技术发达后，年的出现频率减少"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        1062,
+        1066
+      ],
+      "description": "年利用整座城市的物质与热量炼化怪物玄极巨兵"
+    },
+    {
+      "location": "炎国",
+      "line_range": [
+        775,
+        776
+      ],
+      "description": "炎熔提到在炎国的发现，关于爆竹的起源"
+    },
+    {
+      "location": "炎国",
+      "line_range": [
+        1103,
+        1104
+      ],
+      "description": "年的妹妹提到很久以前去炎国散布了关于弱点的谣言"
+    }
+  ],
+  "chapter": "洪炉示岁",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:41:16.729584+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 25474,
+    "tokens_out": 6097,
+    "elapsed_s": 45.084211587905884
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "轻浮的近卫局成员",
+    "认真的近卫局成员",
+    "魏文月",
+    "鬼姐",
+    "小弟",
+    "普通市民魏先生",
+    "退休老人",
+    "富家女",
+    "高材生",
+    "行侠仗义第一人",
+    "地下怪医",
+    "事务所全职保安"
+  ]
+}

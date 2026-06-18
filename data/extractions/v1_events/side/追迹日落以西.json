@@ -1,0 +1,1724 @@
+{
+  "chapter": "追迹日落以西",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章以摩根回忆格拉斯哥帮在诺伯特区的街头生活开场，展现了维娜（亚历山德莉娜）与伙伴们的深厚情谊。随后，剧情转向伦蒂尼姆战后重建的复杂局面：维娜作为新任议长，面临药物短缺、感染者激增、地下势力「铣痕」的非法活动以及公爵们的政治博弈。阿勒黛·坎伯兰以「铣痕」的身份暗中活动，与克洛维希娅合作，试图在混乱中为维娜铺路。同时，典范军成员在战后陷入迷茫，希勒少尉与维娜就军队的未来展开对话。\n\n在议会中，维娜与代表不同公爵利益的议员们周旋，最终颁布了对「铣痕」的特别通缉令。然而，「铣痕」（阿勒黛）主动现身，通过伤害典范军家属的方式向维娜施压，并留下了一份「礼物」——她故意让自己成为众矢之的，以巩固维娜作为「安全」象征的权威。与此同时，罗德岛的博士与戴菲恩等人持续调查萨卡兹遗留的祭坛和「铣痕」背后的势力。\n\n回忆线中，维娜与伙伴们发现了卡文迪许公爵走私源石武器的阴谋，并因此暴露了王储身份，被迫逃离伦蒂尼姆。贝尔德留守诺伯特区，格拉斯哥帮分崩离析。这条线解释了维娜与公爵们对抗的根源，以及她与阿勒黛之间复杂关系的起点。\n\n在战后时间线，维娜与典范军成员在酒馆中对话，直面士兵们对未来的恐惧和对「典范军」身份的执着。她意识到自己必须超越个人情感，以议长的身份做出艰难决定。同时，来自哥伦比亚的医药代表埃利西奥试图与议会合作，却因政治阻力而受挫。\n\n最后，剧情聚焦于「铣痕」阿勒黛的内心挣扎。她拒绝了开斯特公爵的招揽，选择以「死亡」作为自己的结局，以此切断与过去的联系，并确保维娜能获得市民的信任。她的行动与克洛维希娅的暗中协助，共同构成了维娜政治道路上的关键助力。\n\nScene 1 中，维娜在工厂区与费斯特和工人马丁叔会面，马丁叔因工厂停工和药物短缺问题向维娜抱怨，维娜情绪激动但最终克制。费斯特和凯瑟琳代表工人群体表达了对维娜的支持，同时凯瑟琳与整合运动的珀茜瓦尔进行了一次秘密物资交易，戴菲恩则下令对整合运动保持低强度监视。Scene 2 中，海蒂在贵族宴会上与埃利西奥和黛安相遇，并暗中给予埃利西奥信息。维娜拒绝了拉特兰信使奥伦关于万国峰会的邀请。格拉斯哥帮成员因陀罗、达格达和摩根汇报了打击抢劫团伙的战果，并给维娜带来怪味糖。希勒少尉因药物成瘾和矿石病痛苦不堪，被戴菲恩发现并命令她一起回丽茵卡登疗养。",
+  "events": [
+    {
+      "event": "格拉斯哥帮回忆在诺伯特区的街头生活，维娜与伙伴们打赌玩乐。",
+      "type": "flashback",
+      "line_range": [
+        1,
+        56
+      ],
+      "participants": [
+        "摩根",
+        "因陀罗",
+        "维娜",
+        "贝尔德",
+        "达格达"
+      ],
+      "location": "诺伯特区拳馆",
+      "significance": "展现维娜与伙伴们的深厚情谊和街头背景，为后续剧情铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿勒黛在贵族宴会上与莫里尔伯爵就戏剧和伦蒂尼姆局势进行交锋。",
+      "type": "political_intrigue",
+      "line_range": [
+        57,
+        97
+      ],
+      "participants": [
+        "阿勒黛",
+        "莫里尔伯爵"
+      ],
+      "location": "伦蒂尼姆贵族宴会",
+      "significance": "揭示阿勒黛作为开斯特公爵代理人的身份，以及公爵们对萨卡兹和维娜的关注。",
+      "is_imaginary": false
+    },
+    {
+      "event": "克洛维希娅以裁缝身份接触阿勒黛，并传递《伦蒂尼姆日报》。",
+      "type": "revelation",
+      "line_range": [
+        99,
+        109
+      ],
+      "participants": [
+        "阿勒黛",
+        "克洛维希娅"
+      ],
+      "location": "伦蒂尼姆贵族宴会",
+      "significance": "克洛维希娅首次登场，暗示其情报网络和对阿勒黛的关注。",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉斯哥帮调查工厂工会问题，发现卡文迪许公爵走私源石武器的阴谋。",
+      "type": "investigation",
+      "line_range": [
+        112,
+        182
+      ],
+      "participants": [
+        "因陀罗",
+        "贝尔德",
+        "摩根",
+        "维娜",
+        "达格达"
+      ],
+      "location": "诺伯特区工厂",
+      "significance": "维娜首次直接对抗公爵势力，导致其王储身份暴露。",
+      "is_imaginary": false
+    },
+    {
+      "event": "莫里尔伯爵拦截维娜，揭露其王储身份并试图带走她。",
+      "type": "confrontation",
+      "line_range": [
+        195,
+        215
+      ],
+      "participants": [
+        "维娜",
+        "莫里尔伯爵",
+        "达格达"
+      ],
+      "location": "伦蒂尼姆街头",
+      "significance": "维娜身份正式暴露，被迫与伙伴分离。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜身份暴露后，贝尔德决定留守，维娜与摩根、因陀罗、达格达逃离伦蒂尼姆。",
+      "type": "departure",
+      "line_range": [
+        216,
+        258
+      ],
+      "participants": [
+        "维娜",
+        "摩根",
+        "因陀罗",
+        "达格达",
+        "贝尔德"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "格拉斯哥帮分裂，维娜踏上流亡与成长之路。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿勒黛前往格拉斯哥帮拳馆寻找维娜，得知其已离开。",
+      "type": "investigation",
+      "line_range": [
+        270,
+        284
+      ],
+      "participants": [
+        "阿勒黛",
+        "贝尔德"
+      ],
+      "location": "格拉斯哥帮拳馆",
+      "significance": "阿勒黛与维娜的线索首次交汇，但未能直接接触。",
+      "is_imaginary": false
+    },
+    {
+      "event": "战后伦蒂尼姆，维娜与戴菲恩讨论梅杰女士之死和药物短缺问题。",
+      "type": "planning",
+      "line_range": [
+        318,
+        366
+      ],
+      "participants": [
+        "维娜",
+        "摩根",
+        "戴菲恩"
+      ],
+      "location": "伦蒂尼姆议会",
+      "significance": "展现战后重建的困境和维娜作为议长的初步决策。",
+      "is_imaginary": false
+    },
+    {
+      "event": "议会中，维娜与议员们就萨卡兹凶手「长弩」的处置进行辩论。",
+      "type": "confrontation",
+      "line_range": [
+        408,
+        427
+      ],
+      "participants": [
+        "维娜",
+        "长弩",
+        "戴菲恩"
+      ],
+      "location": "伦蒂尼姆议会厅",
+      "significance": "揭示战后萨卡兹与维多利亚人的矛盾，以及维娜面临的道德困境。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜与因陀罗、达格达、戴菲恩就萨卡兹撤军和贝尔德之死发生激烈争执。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        428,
+        465
+      ],
+      "participants": [
+        "维娜",
+        "因陀罗",
+        "达格达",
+        "戴菲恩",
+        "摩根"
+      ],
+      "location": "伦蒂尼姆议会",
+      "significance": "展现维娜团队内部因战争创伤和政治现实产生的裂痕。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜与「小公爵」艾莉诺、高多汀公爵、开斯特公爵在旧议会厅会面，讨论伦蒂尼姆的未来。",
+      "type": "political_intrigue",
+      "line_range": [
+        466,
+        568
+      ],
+      "participants": [
+        "维娜",
+        "小公爵",
+        "高多汀公爵",
+        "开斯特公爵"
+      ],
+      "location": "伦蒂尼姆旧议会厅",
+      "significance": "公爵们正式提出议长任命，维娜发表关于「剑」和「责任」的演讲，确立自己的立场。",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士突然闯入公爵会议，开斯特公爵警告罗德岛不要越界。",
+      "type": "confrontation",
+      "line_range": [
+        569,
+        583
+      ],
+      "participants": [
+        "博士",
+        "开斯特公爵",
+        "高多汀公爵",
+        "小公爵"
+      ],
+      "location": "伦蒂尼姆旧议会厅",
+      "significance": "罗德岛与公爵们的矛盾公开化，博士的行动引发公爵警惕。",
+      "is_imaginary": false
+    },
+    {
+      "event": "戴菲恩审问萨卡兹凶手「长弩」，发现其与「铣痕」的关联。",
+      "type": "investigation",
+      "line_range": [
+        586,
+        608
+      ],
+      "participants": [
+        "戴菲恩",
+        "长弩",
+        "维娜"
+      ],
+      "location": "伦蒂尼姆议会厅",
+      "significance": "揭示「铣痕」在战后地下活动中的角色，为后续追查埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "「铣痕」与手下讨论生意，决定继续冒险送货。",
+      "type": "planning",
+      "line_range": [
+        610,
+        629
+      ],
+      "participants": [
+        "铣痕"
+      ],
+      "location": "伦蒂尼姆地下据点",
+      "significance": "展现「铣痕」作为地下势力的运作方式和冷酷决策。",
+      "is_imaginary": false
+    },
+    {
+      "event": "哥伦比亚医药代表埃利西奥抵达伦蒂尼姆，得知梅杰女士去世的消息。",
+      "type": "arrival",
+      "line_range": [
+        630,
+        652
+      ],
+      "participants": [
+        "埃利西奥",
+        "黛安"
+      ],
+      "location": "伦蒂尼姆街头",
+      "significance": "引入外部势力对伦蒂尼姆药物危机的关注。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜与博士在办公室私下交谈，回顾战争与个人选择。",
+      "type": "character_development",
+      "line_range": [
+        653,
+        681
+      ],
+      "participants": [
+        "维娜",
+        "博士"
+      ],
+      "location": "议长办公室",
+      "significance": "深入维娜的内心世界，揭示她对身份、家庭和责任的复杂感受。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜与戴菲恩讨论「铣痕」问题，戴菲恩决定回温德米尔领取回遗产。",
+      "type": "planning",
+      "line_range": [
+        682,
+        716
+      ],
+      "participants": [
+        "维娜",
+        "戴菲恩"
+      ],
+      "location": "议长办公室",
+      "significance": "戴菲恩的个人成长线，她决定继承母亲的力量以帮助维娜。",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角与受伤的典范军士兵沃克就城防军申请和药物问题进行对话。",
+      "type": "confrontation",
+      "line_range": [
+        717,
+        735
+      ],
+      "participants": [
+        "号角",
+        "沃克"
+      ],
+      "location": "伦蒂尼姆营地",
+      "significance": "展现战后士兵的困境和「铣痕」药物的泛滥。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：维娜与典范军突破萨卡兹防线，得到市民和部分联军士兵的支持。",
+      "type": "battle",
+      "line_range": [
+        761,
+        798
+      ],
+      "participants": [
+        "维娜",
+        "因陀罗",
+        "达格达",
+        "摩根",
+        "黛安"
+      ],
+      "location": "伦蒂尼姆城墙",
+      "significance": "展现维娜领导典范军夺回家园的关键战役，以及市民的觉醒。",
+      "is_imaginary": false
+    },
+    {
+      "event": "战后时间线，维娜通过电话确认「铣痕」的下落，准备行动。",
+      "type": "planning",
+      "line_range": [
+        799,
+        805
+      ],
+      "participants": [
+        "维娜"
+      ],
+      "location": "议长办公室",
+      "significance": "维娜决定主动出击，追查阿勒黛。",
+      "is_imaginary": false
+    },
+    {
+      "event": "风笛处理街头冲突，商人因妻子是萨卡兹而遭报复。",
+      "type": "confrontation",
+      "line_range": [
+        806,
+        838
+      ],
+      "participants": [
+        "风笛"
+      ],
+      "location": "伦蒂尼姆街头",
+      "significance": "展现战后种族矛盾的延续和城防军的日常挑战。",
+      "is_imaginary": false
+    },
+    {
+      "event": "「铣痕」阿勒黛帮助一名萨卡兹妇女和孩子逃离，并透露自己的真名。",
+      "type": "character_development",
+      "line_range": [
+        839,
+        886
+      ],
+      "participants": [
+        "铣痕",
+        "年长的女性"
+      ],
+      "location": "伦蒂尼姆地下据点",
+      "significance": "揭示「铣痕」并非完全冷酷，其行动背后有复杂动机，并首次公开真名。",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃利西奥在行政机构碰壁，黛安带他去找维娜，途中被戴菲恩拦截。",
+      "type": "investigation",
+      "line_range": [
+        887,
+        960
+      ],
+      "participants": [
+        "埃利西奥",
+        "戴菲恩",
+        "黛安"
+      ],
+      "location": "伦蒂尼姆行政办公室",
+      "significance": "揭示赤心医疗背后的哥伦比亚军方背景，以及戴菲恩对埃利西奥的警惕。",
+      "is_imaginary": false
+    },
+    {
+      "event": "因陀罗和达格达在追查「铣痕」时被神秘人「玫瑰河畔的航船」拦截。",
+      "type": "ambush",
+      "line_range": [
+        961,
+        978
+      ],
+      "participants": [
+        "因陀罗",
+        "达格达"
+      ],
+      "location": "伦蒂尼姆某处",
+      "significance": "引入新的神秘势力，暗示「铣痕」背后有更强大的保护者。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：「铣痕」阿勒黛与手下探索萨卡兹祭坛，遭遇血魔娜汀和神秘血魔。",
+      "type": "revelation",
+      "line_range": [
+        979,
+        1035
+      ],
+      "participants": [
+        "铣痕",
+        "娜汀",
+        "神秘的血魔"
+      ],
+      "location": "伦蒂尼姆地下祭坛",
+      "significance": "揭示萨卡兹在城内隐藏的祭坛网络，以及阿勒黛与血魔势力的接触。",
+      "is_imaginary": false
+    },
+    {
+      "event": "克洛维希娅与「铣痕」阿勒黛重逢，并告知其公爵们准备抛弃伦蒂尼姆的流言。",
+      "type": "revelation",
+      "line_range": [
+        1042,
+        1061
+      ],
+      "participants": [
+        "铣痕",
+        "克洛维希娅"
+      ],
+      "location": "伦蒂尼姆地下",
+      "significance": "克洛维希娅揭示其真实身份和目的，与阿勒黛达成合作。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：维娜与摩根在议会清点物资，讨论战局。",
+      "type": "planning",
+      "line_range": [
+        1062,
+        1081
+      ],
+      "participants": [
+        "维娜",
+        "摩根"
+      ],
+      "location": "伦蒂尼姆议会",
+      "significance": "展现战前准备和维娜对局势的判断。",
+      "is_imaginary": false
+    },
+    {
+      "event": "「铣痕」阿勒黛决定在决战中为典范军提供帮助，并留下「礼物」。",
+      "type": "planning",
+      "line_range": [
+        1082,
+        1097
+      ],
+      "participants": [
+        "铣痕"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "阿勒黛决定以自身为代价，为维娜铺路。",
+      "is_imaginary": false
+    },
+    {
+      "event": "战后时间线，议会就「铣痕」问题展开辩论，维娜颁布特别通缉令。",
+      "type": "political_intrigue",
+      "line_range": [
+        1098,
+        1176
+      ],
+      "participants": [
+        "维娜",
+        "号角",
+        "戴菲恩",
+        "艾瑞莎子爵"
+      ],
+      "location": "伦蒂尼姆议会厅",
+      "significance": "维娜正式将「铣痕」定为敌人，展现其作为议长的决断力。",
+      "is_imaginary": false
+    },
+    {
+      "event": "「铣痕」阿勒黛派人伤害典范军家属劳伦斯女士，作为对通缉令的回应。",
+      "type": "confrontation",
+      "line_range": [
+        1139,
+        1164
+      ],
+      "participants": [
+        "铣痕",
+        "戴菲恩",
+        "维娜"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "阿勒黛以极端方式向维娜施压，迫使她做出更严厉的决定。",
+      "is_imaginary": false
+    },
+    {
+      "event": "「铣痕」阿勒黛在逃亡途中拒绝开斯特公爵的招揽，并留下「礼物」后消失。",
+      "type": "betrayal",
+      "line_range": [
+        1197,
+        1218
+      ],
+      "participants": [
+        "铣痕"
+      ],
+      "location": "伦蒂尼姆街头",
+      "significance": "阿勒黛彻底切断与公爵的联系，选择自我牺牲以成就维娜。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜决定穿上议长礼服，接受自己的新身份。",
+      "type": "character_development",
+      "line_range": [
+        1219,
+        1228
+      ],
+      "participants": [
+        "维娜",
+        "戴菲恩"
+      ],
+      "location": "伦蒂尼姆议会",
+      "significance": "维娜完成从街头领袖到政治领袖的转变。",
+      "is_imaginary": false
+    },
+    {
+      "event": "战后时间线，维娜与希勒少尉在酒馆就典范军的未来进行深入对话。",
+      "type": "ideological_clash",
+      "line_range": [
+        1274,
+        1313
+      ],
+      "participants": [
+        "维娜",
+        "希勒少尉",
+        "摩根"
+      ],
+      "location": "伦蒂尼姆地下酒馆",
+      "significance": "揭示典范军成员对未来的迷茫，以及维娜作为领袖的困境。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：维娜与伙伴们讨论如何突破萨卡兹防线，决定冒险佯攻。",
+      "type": "planning",
+      "line_range": [
+        1314,
+        1356
+      ],
+      "participants": [
+        "维娜",
+        "戴菲恩",
+        "因陀罗",
+        "达格达",
+        "摩根"
+      ],
+      "location": "伦蒂尼姆城外营地",
+      "significance": "展现维娜在战争中的领导力和冒险精神。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：希勒少尉在转移伤员时遭遇食腐者王庭军，被神秘火焰所救。",
+      "type": "battle",
+      "line_range": [
+        1357,
+        1385
+      ],
+      "participants": [
+        "希勒少尉"
+      ],
+      "location": "伦蒂尼姆城墙附近",
+      "significance": "展现战争的残酷和神秘力量的介入。",
+      "is_imaginary": false
+    },
+    {
+      "event": "战后时间线，维娜在酒馆与典范军士兵们对话，回应他们对未来的担忧。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1469,
+        1498
+      ],
+      "participants": [
+        "维娜",
+        "希勒少尉",
+        "摩根"
+      ],
+      "location": "伦蒂尼姆地下酒馆",
+      "significance": "维娜直面士兵们的恐惧，并表达自己对典范军未来的担忧。",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃利西奥在疗养院采访感染者莎拉，记录其源石技艺异变。",
+      "type": "investigation",
+      "line_range": [
+        1499,
+        1527
+      ],
+      "participants": [
+        "埃利西奥",
+        "莎拉"
+      ],
+      "location": "伦蒂尼姆疗养院",
+      "significance": "揭示战后感染者的新症状，为后续剧情埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "黛安与埃利西奥在疗养院外讨论维娜，表达对议长能否改变伦蒂尼姆的怀疑。",
+      "type": "reflection",
+      "line_range": [
+        1528,
+        1539
+      ],
+      "participants": [
+        "黛安",
+        "埃利西奥"
+      ],
+      "location": "伦蒂尼姆疗养院",
+      "significance": "从普通市民视角审视维娜的领导，为本章收尾。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜在工厂区与工人马丁叔发生冲突，马丁叔抱怨议会政策导致工厂停工和药物短缺，维娜情绪激动但最终被费斯特劝解。",
+      "type": "confrontation",
+      "line_range": [
+        1567,
+        1637
+      ],
+      "participants": [
+        "维娜",
+        "费斯特",
+        "马修"
+      ],
+      "location": "伦蒂尼姆工厂区",
+      "significance": "展现了战后重建中工人阶层与议会的矛盾，以及维娜作为议长面临的现实压力。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯瑟琳与整合运动成员珀茜瓦尔进行秘密物资交易，珀茜瓦尔透露整合运动主力已离开，凯瑟琳默许了这条灰色贸易通道。",
+      "type": "negotiation",
+      "line_range": [
+        1647,
+        1675
+      ],
+      "participants": [
+        "凯瑟琳",
+        "珀茜瓦尔"
+      ],
+      "location": "伦蒂尼姆城外某处",
+      "significance": "揭示了战后整合运动在伦蒂尼姆的残余活动，以及凯瑟琳为维持物资供应采取的务实手段。",
+      "is_imaginary": false
+    },
+    {
+      "event": "戴菲恩下令对整合运动保持低强度监视，认为其当前威胁不高，甚至可私下接触以改善感染者问题。",
+      "type": "planning",
+      "line_range": [
+        1676,
+        1689
+      ],
+      "participants": [
+        "戴菲恩"
+      ],
+      "location": "伦蒂尼姆议会",
+      "significance": "展现了戴菲恩作为情报负责人的务实态度，为后续与整合运动的互动埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "海蒂在贵族宴会上为埃利西奥和黛安解围，并暗中给予埃利西奥一份包含信息的纸条。",
+      "type": "revelation",
+      "line_range": [
+        1690,
+        1737
+      ],
+      "participants": [
+        "海蒂",
+        "埃利西奥",
+        "黛安"
+      ],
+      "location": "伦蒂尼姆贵族宴会厅",
+      "significance": "海蒂作为情报提供者，向埃利西奥揭示了贵族中感染者的普遍存在，并建立了联系。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜拒绝拉特兰信使奥伦关于参加万国峰会的邀请，并识破其背后有公爵指使。",
+      "type": "political_intrigue",
+      "line_range": [
+        1738,
+        1755
+      ],
+      "participants": [
+        "维娜",
+        "奥伦",
+        "戴菲恩"
+      ],
+      "location": "伦蒂尼姆议长办公室",
+      "significance": "展现了维娜对拉特兰和公爵们政治意图的警惕，以及她专注于伦蒂尼姆内部事务的决心。",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉斯哥帮成员因陀罗、达格达和摩根向维娜汇报打击抢劫团伙的战果，并带来怪味糖作为礼物。",
+      "type": "reunion",
+      "line_range": [
+        1759,
+        1786
+      ],
+      "participants": [
+        "维娜",
+        "因陀罗",
+        "达格达",
+        "摩根",
+        "戴菲恩"
+      ],
+      "location": "伦蒂尼姆议长办公室",
+      "significance": "展现了格拉斯哥帮成员之间的深厚情谊，以及他们在战后继续为维娜分忧的行动。",
+      "is_imaginary": false
+    },
+    {
+      "event": "希勒少尉因止痛剂成瘾和矿石病恶化，在街头昏倒，被戴菲恩发现并命令她一起回丽茵卡登疗养。",
+      "type": "rescue",
+      "line_range": [
+        1787,
+        1848
+      ],
+      "participants": [
+        "希勒少尉",
+        "戴菲恩"
+      ],
+      "location": "伦蒂尼姆街头",
+      "significance": "揭示了战后士兵的心理创伤和医疗资源短缺问题，戴菲恩决定带希勒少尉回家乡，体现了她的责任感。",
+      "is_imaginary": false
+    },
+    {
+      "event": "达格达在塔楼骑士博物馆雕刻纪念碑，向维娜介绍已故的同伴，并宣布塔楼骑士的使命已经结束。",
+      "type": "reflection",
+      "line_range": [
+        1849,
+        1875
+      ],
+      "participants": [
+        "维娜",
+        "达格达"
+      ],
+      "location": "伦蒂尼姆塔楼骑士博物馆",
+      "significance": "达格达正式告别塔楼骑士身份，回归格拉斯哥帮，象征着旧时代的终结。",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃利西奥在学校与老师茉莉和孩子们互动，了解到议会默许他们与外界接触，并决定留下观看孩子们的戏剧彩排。",
+      "type": "character_development",
+      "line_range": [
+        1876,
+        1925
+      ],
+      "participants": [
+        "埃利西奥",
+        "茉莉"
+      ],
+      "location": "伦蒂尼姆某学校",
+      "significance": "展现了埃利西奥对伦蒂尼姆感染者儿童问题的关注，以及他决定深入参与当地事务的决心。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜发表全城广播演讲，宣布典范军番号永久保留，并承诺安顿每一位成员。",
+      "type": "ceremony",
+      "line_range": [
+        1926,
+        1969
+      ],
+      "participants": [
+        "维娜",
+        "戴菲恩"
+      ],
+      "location": "伦蒂尼姆议会广播室",
+      "significance": "维娜通过广播向市民传递了战后重建的信心，但演讲被公爵们打断。",
+      "is_imaginary": false
+    },
+    {
+      "event": "小公爵艾莉诺突然到访，并邀请其他公爵在皇家科学院小聚，同时故意切断了维娜的广播。",
+      "type": "political_intrigue",
+      "line_range": [
+        1970,
+        2041
+      ],
+      "participants": [
+        "维娜",
+        "小公爵",
+        "戴菲恩",
+        "高多汀公爵",
+        "开斯特公爵"
+      ],
+      "location": "伦蒂尼姆议会广播室及皇家科学院",
+      "significance": "公爵们集体施压，打断了维娜的演讲，并透露了威灵顿公爵与王位继承的复杂关系。",
+      "is_imaginary": false
+    },
+    {
+      "event": "王座厅的王冠被偷，维娜得知后震惊，公爵们建议她先去处理此事。",
+      "type": "revelation",
+      "line_range": [
+        2031,
+        2041
+      ],
+      "participants": [
+        "维娜",
+        "因陀罗",
+        "戴菲恩",
+        "高多汀公爵",
+        "开斯特公爵",
+        "小公爵"
+      ],
+      "location": "伦蒂尼姆皇家科学院",
+      "significance": "王冠失窃事件成为本章核心冲突，引发了关于王权与议会权力的讨论。",
+      "is_imaginary": false
+    },
+    {
+      "event": "偷走王冠的黛安被抓获，她向维娜坦白自己希望维娜加冕为王，认为议长权力不够。",
+      "type": "confrontation",
+      "line_range": [
+        2091,
+        2122
+      ],
+      "participants": [
+        "维娜",
+        "黛安",
+        "戴菲恩",
+        "摩根"
+      ],
+      "location": "伦蒂尼姆议长办公室",
+      "significance": "黛安的行为代表了部分市民对王权的渴望，与维娜坚持议会制的理念形成冲突。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜在贝尔德的墓前独白，倾诉作为议长的压力和孤独，表达了对伙伴们的依赖。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2125,
+        2142
+      ],
+      "participants": [
+        "维娜"
+      ],
+      "location": "伦蒂尼姆某墓地",
+      "significance": "展现了维娜内心的脆弱和对已故导师贝尔德的思念，深化了她的角色塑造。",
+      "is_imaginary": false
+    },
+    {
+      "event": "摩根向维娜报告黛安的真实身份——她正是战争中从维娜手中接过诸王之息冲向食腐者的士兵，且因药物短缺病情恶化。",
+      "type": "revelation",
+      "line_range": [
+        2143,
+        2171
+      ],
+      "participants": [
+        "维娜",
+        "摩根"
+      ],
+      "location": "伦蒂尼姆墓地",
+      "significance": "揭示了黛安作为战争英雄的身份，使维娜面临情与法的艰难抉择。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：维娜与典范军在T1阵地与食腐者军队激战，得到小公爵艾莉诺派出的掷弹团第八营支援。",
+      "type": "battle",
+      "line_range": [
+        2172,
+        2223
+      ],
+      "participants": [
+        "维娜",
+        "号角",
+        "风笛",
+        "戴菲恩",
+        "摩根",
+        "因陀罗",
+        "达格达",
+        "小公爵"
+      ],
+      "location": "伦蒂尼姆T1阵地",
+      "significance": "展现了战争中的关键战斗，小公爵的支援暗示了她与维娜之间复杂的关系。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：费斯特和洛洛在地下通道检修时与凯瑟琳重逢，凯瑟琳展示了他们秘密建造的巨型载具「爬行号」。",
+      "type": "revelation",
+      "line_range": [
+        2224,
+        2246
+      ],
+      "participants": [
+        "费斯特",
+        "洛洛",
+        "凯瑟琳"
+      ],
+      "location": "伦蒂尼姆地下通道",
+      "significance": "揭示了工人自救军为最终决战准备的秘密武器。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：铣痕阿勒黛与神秘血魔会面，归还了耳坠，并得知阿斯卡纶已前往圣王会西部大堂寻找摄政王。",
+      "type": "revelation",
+      "line_range": [
+        2247,
+        2284
+      ],
+      "participants": [
+        "铣痕",
+        "神秘的血魔",
+        "阿斯卡纶"
+      ],
+      "location": "伦蒂尼姆某处",
+      "significance": "揭示了血魔与阿斯卡纶的过往，以及巴别塔与摄政王的最终对决即将展开。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：维娜将诸王之息交给士兵黛安，黛安带领部队高唱战歌冲锋。",
+      "type": "battle",
+      "line_range": [
+        2285,
+        2304
+      ],
+      "participants": [
+        "维娜",
+        "黛安"
+      ],
+      "location": "伦蒂尼姆战场",
+      "significance": "展现了维娜与黛安在战争中的信任与传承，为后续黛安的行为埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：维什戴尔通过广播宣布巴别塔已占领军事委员会指挥中心，联军士气大振，蒸汽骑士查尔斯·林奇冲入浓雾与食腐者之王战斗。",
+      "type": "revelation",
+      "line_range": [
+        2314,
+        2336
+      ],
+      "participants": [
+        "维娜",
+        "号角",
+        "戴菲恩",
+        "因陀罗",
+        "达格达",
+        "摩根"
+      ],
+      "location": "伦蒂尼姆战场",
+      "significance": "维什戴尔的行动扭转了战局，蒸汽骑士的牺牲精神激励了所有人。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：凯瑟琳和费斯特驾驶「爬行号」从地下钻出，加入最终决战。",
+      "type": "arrival",
+      "line_range": [
+        2337,
+        2358
+      ],
+      "participants": [
+        "维娜",
+        "凯瑟琳",
+        "费斯特",
+        "号角"
+      ],
+      "location": "伦蒂尼姆战场",
+      "significance": "工人力量的加入标志着全民抗战的胜利。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：战后，维娜与濒死的蒸汽骑士查尔斯·林奇对话，林奇注视着圣王会西部大堂，维娜承诺会回来。",
+      "type": "farewell",
+      "line_range": [
+        2359,
+        2384
+      ],
+      "participants": [
+        "维娜",
+        "查尔斯·林奇",
+        "摩根",
+        "达格达",
+        "号角",
+        "因陀罗"
+      ],
+      "location": "伦蒂尼姆战场",
+      "significance": "蒸汽骑士的牺牲与坚守，象征着旧时代骑士精神的终结。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：维娜从圣王会西部大堂走出，扯下萨卡兹旗帜，宣布战争结束，并呼吁不要以仇恨回报仇恨。",
+      "type": "ceremony",
+      "line_range": [
+        2398,
+        2410
+      ],
+      "participants": [
+        "维娜"
+      ],
+      "location": "圣王会西部大堂前",
+      "significance": "维娜以胜利者的姿态宣告战争结束，并展现了她的宽容与远见。",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆线：铣痕阿勒黛为死去的蒸汽骑士查尔斯·林奇卸甲，并承诺保存其核心，见证维多利亚的未来。",
+      "type": "farewell",
+      "line_range": [
+        2411,
+        2428
+      ],
+      "participants": [
+        "铣痕",
+        "查尔斯·林奇"
+      ],
+      "location": "伦蒂尼姆战场",
+      "significance": "阿勒黛为蒸汽骑士送行，体现了她对英雄的敬意，也暗示了她与维娜不同的道路。",
+      "is_imaginary": false
+    },
+    {
+      "event": "战后时间线：市民和战友为黛安求情，但维娜坚持议会判决，拒绝改变。戴菲恩向埃利西奥解释，维持法律尊严比个人情感更重要。",
+      "type": "ideological_clash",
+      "line_range": [
+        2443,
+        2506
+      ],
+      "participants": [
+        "维娜",
+        "号角",
+        "埃利西奥",
+        "费斯特",
+        "凯瑟琳",
+        "戴菲恩"
+      ],
+      "location": "伦蒂尼姆城防军营地及议会",
+      "significance": "维娜面临情与法的抉择，最终选择维护议会权威，体现了她从街头领袖向政治家的转变。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜在行刑前夜探望黛安，两人饮酒交谈，维娜讲述了在圣王会西部大堂与父亲阿利斯泰尔二世幽灵相遇的经历。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2507,
+        2645
+      ],
+      "participants": [
+        "维娜",
+        "黛安"
+      ],
+      "location": "伦蒂尼姆城防军禁闭室",
+      "significance": "维娜向黛安揭示了王座厅的秘密，以及她拒绝王冠的原因，深化了关于王权与责任的讨论。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜向黛安讲述在圣王会西部大堂与父亲阿利斯泰尔二世的幽灵对话，阿利斯泰尔试图说服维娜加冕，但维娜拒绝。",
+      "type": "flashback",
+      "line_range": [
+        2607,
+        2645
+      ],
+      "participants": [
+        "维娜",
+        "阿利斯泰尔二世"
+      ],
+      "location": "圣王会西部大堂王座厅",
+      "significance": "揭示了王座厅的秘密和阿利斯泰尔二世的执念，维娜最终拒绝了王权，选择了自己的道路。",
+      "is_imaginary": true
+    },
+    {
+      "event": "维娜向黛安讲述在圣王会西部大堂与克洛维希娅（独角兽）的会面，克洛维希娅自称护国公，提出帮助维娜实现理想，但被维娜拒绝。",
+      "type": "revelation",
+      "line_range": [
+        2654,
+        2691
+      ],
+      "participants": [
+        "维娜",
+        "克洛维希娅"
+      ],
+      "location": "圣王会西部大堂",
+      "significance": "揭示了克洛维希娅的真实身份和长生者背景，维娜拒绝了她提供的捷径，坚持自己的道路。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜与公爵们进行谈判，成功争取到物资通道、感染者部队数据共享和外交渠道重启等利益。",
+      "type": "negotiation",
+      "line_range": [
+        2752,
+        2791
+      ],
+      "participants": [
+        "维娜",
+        "小公爵",
+        "开斯特公爵",
+        "高多汀公爵"
+      ],
+      "location": "伦蒂尼姆皇家科学院",
+      "significance": "维娜在与公爵们的交锋中展现了强硬手腕，为伦蒂尼姆争取到了实际利益。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜在议会外面对抗议市民，坚持黛安的判决不可更改，并得到凯瑟琳、希勒少尉和孩子们的支持。",
+      "type": "confrontation",
+      "line_range": [
+        2792,
+        2846
+      ],
+      "participants": [
+        "维娜",
+        "凯瑟琳",
+        "希勒少尉"
+      ],
+      "location": "伦蒂尼姆议会外",
+      "significance": "维娜在压力下坚持原则，赢得了更多市民的理解和支持。",
+      "is_imaginary": false
+    },
+    {
+      "event": "议会通过广播宣布王冠由议会保管，未来国王人选需经议会审核和全民公投。",
+      "type": "political_intrigue",
+      "line_range": [
+        2847,
+        2850
+      ],
+      "participants": [],
+      "location": "伦蒂尼姆",
+      "significance": "议会正式确立了王权受议会监督的原则，标志着维多利亚政治体制的重大变革。",
+      "is_imaginary": false
+    },
+    {
+      "event": "公爵们在伦蒂尼姆日落时分离去，各自心怀鬼胎，开斯特公爵强调伦蒂尼姆必须是首都。",
+      "type": "departure",
+      "line_range": [
+        2851,
+        2888
+      ],
+      "participants": [
+        "小公爵",
+        "高多汀公爵",
+        "开斯特公爵"
+      ],
+      "location": "伦蒂尼姆皇家科学院外",
+      "significance": "公爵们暂时退让，但暗流涌动，为后续政治斗争埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉斯哥帮成员回到诺伯特区，发现物是人非，卡铎尔归还了贝尔德的蝴蝶刀后离开。",
+      "type": "reunion",
+      "line_range": [
+        2889,
+        2957
+      ],
+      "participants": [
+        "因陀罗",
+        "达格达",
+        "摩根",
+        "卡铎尔"
+      ],
+      "location": "诺伯特区格拉斯哥帮拳馆",
+      "significance": "展现了战后诺伯特区的变化和格拉斯哥帮成员的离散，贝尔德的遗物被找回。",
+      "is_imaginary": false
+    },
+    {
+      "event": "铣痕阿勒黛安排埃利西奥将假死的黛安秘密送出伦蒂尼姆，前往哥伦比亚。",
+      "type": "rescue",
+      "line_range": [
+        2958,
+        2993
+      ],
+      "participants": [
+        "铣痕",
+        "埃利西奥"
+      ],
+      "location": "伦蒂尼姆某处",
+      "significance": "阿勒黛暗中救下黛安，解决了维娜的难题，也展现了她的务实和冷酷。",
+      "is_imaginary": false
+    },
+    {
+      "event": "黛安苏醒，得知自己将被送往哥伦比亚，接受了命运，并请求埃利西奥将来带她回家。",
+      "type": "departure",
+      "line_range": [
+        2994,
+        3018
+      ],
+      "participants": [
+        "黛安",
+        "埃利西奥"
+      ],
+      "location": "伦蒂尼姆城外某处",
+      "significance": "黛安的离开为她的故事画上句号，也象征着战争英雄在新时代的无奈。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜回到诺伯特区拳馆与格拉斯哥帮成员团聚，众人举杯敬贝尔德、敬格拉斯哥帮、敬维多利亚。",
+      "type": "reunion",
+      "line_range": [
+        3019,
+        3105
+      ],
+      "participants": [
+        "维娜",
+        "摩根",
+        "因陀罗",
+        "达格达",
+        "戴菲恩"
+      ],
+      "location": "诺伯特区格拉斯哥帮拳馆",
+      "significance": "格拉斯哥帮在战后首次团聚，维娜在伙伴们的支持下坚定了继续前行的决心。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "推进之王",
+      "type": "operator",
+      "role_in_chapter": "伦蒂尼姆新任议长，前格拉斯哥帮领袖，维多利亚王储。在战后重建中平衡各方势力，追查「铣痕」，同时面对自身身份和责任的转变。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "摩根",
+      "type": "operator",
+      "role_in_chapter": "格拉斯哥帮成员，维娜的军师和好友。在战后议会中协助维娜，但内心对政治生活感到不适。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "因陀罗（汉娜）",
+      "type": "operator",
+      "role_in_chapter": "格拉斯哥帮成员，维娜的忠诚打手。性格冲动，对萨卡兹和公爵充满仇恨，难以接受战后妥协。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "达格达",
+      "type": "operator",
+      "role_in_chapter": "格拉斯哥帮成员，维娜的守护者。冷静理智，时刻提醒维娜她的使命。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "贝尔德",
+      "type": "npc",
+      "role_in_chapter": "格拉斯哥帮成员，在维娜身份暴露后留守诺伯特区。在回忆线中活跃，战后已去世。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿勒黛·坎伯兰（「铣痕」）",
+      "type": "npc",
+      "role_in_chapter": "坎伯兰公爵的遗孤，以「铣痕」的身份在战后伦蒂尼姆从事地下活动。与维娜有复杂关系，最终选择自我牺牲以成就维娜。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克洛维希娅",
+      "type": "npc",
+      "role_in_chapter": "神秘的白发女性，以裁缝身份活动，实为情报人员。与阿勒黛合作，协助维娜。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "戴菲恩",
+      "type": "operator",
+      "role_in_chapter": "温德米尔公爵之女，维娜的盟友和顾问。协助维娜处理政务，并决定回领地取回母亲遗产。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "号角（斯卡曼德罗斯）",
+      "type": "operator",
+      "role_in_chapter": "典范军成员，战后负责重组城防军。在议会中提供军事建议，并处理士兵事务。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "希勒少尉",
+      "type": "npc",
+      "role_in_chapter": "典范军军医，战后在酒馆与维娜就典范军未来进行对话。在回忆线中参与突破城墙的战斗。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "埃利西奥",
+      "type": "npc",
+      "role_in_chapter": "哥伦比亚赤心医疗的代表，试图与伦蒂尼姆议会合作解决药物短缺问题，但遭遇政治阻力。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "黛安",
+      "type": "npc",
+      "role_in_chapter": "典范军退伍女兵，在战后帮助埃利西奥，并表达对维娜领导的怀疑。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莫里尔伯爵",
+      "type": "npc",
+      "role_in_chapter": "卡文迪许公爵的门客，在宴会和街头与阿勒黛和维娜交锋，试图控制维娜。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "开斯特公爵",
+      "type": "npc",
+      "role_in_chapter": "维多利亚大公爵之一，在战后与维娜会面，试图将伦蒂尼姆纳入掌控。对罗德岛持警惕态度。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "高多汀公爵",
+      "type": "npc",
+      "role_in_chapter": "维多利亚大公爵之一，在公爵会议中扮演调和角色，对维娜的演讲表示赞赏。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "「小公爵」艾莉诺",
+      "type": "npc",
+      "role_in_chapter": "诺曼底公爵的代表，马奇伯爵。在公爵会议中与维娜单独会面，试图以药物合作拉拢她。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "长弩",
+      "type": "npc",
+      "role_in_chapter": "战后留在伦蒂尼姆的萨卡兹佣兵，因伤人被捕，在议会中质问维娜。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "风笛",
+      "type": "operator",
+      "role_in_chapter": "城防军巡逻队队长，在街头处理冲突，展现战后日常治安工作。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的指挥官，在公爵会议中突然现身，与公爵们发生冲突。与维娜私下交谈，提供建议。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "娜汀",
+      "type": "npc",
+      "role_in_chapter": "血魔，在回忆线中与「铣痕」阿勒黛在祭坛处交战。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "神秘的血魔",
+      "type": "npc",
+      "role_in_chapter": "强大的血魔，在回忆线中帮助阿勒黛，并提及凯尔希勋爵。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯瑟琳",
+      "type": "npc",
+      "role_in_chapter": "老工人，在回忆线中组织工厂重启以支持典范军。在战后与希勒少尉在酒馆对话。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "沃克",
+      "type": "npc",
+      "role_in_chapter": "受伤的典范军士兵，因使用「铣痕」的药物而被号角拒绝加入城防军。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莎拉",
+      "type": "npc",
+      "role_in_chapter": "典范军护士，在回忆线中因保护伤员而急性感染。在战后疗养院接受埃利西奥采访。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "推进之王",
+      "type": "operator",
+      "role_in_chapter": "伦蒂尼姆议会议长，在战后重建中面临工人抗议、公爵施压和王冠失窃等多重挑战，坚持议会制，拒绝加冕为王。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "费斯特",
+      "type": "operator",
+      "role_in_chapter": "前自救军领袖，现为工业振兴协会顾问，在工人与议会之间充当桥梁，支持维娜。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "珀茜瓦尔",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，负责与凯瑟琳进行物资交易，透露整合运动主力已离开伦蒂尼姆。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "戴菲恩",
+      "type": "operator",
+      "role_in_chapter": "温德米尔公爵之女，维娜的助手，负责情报和决策，决定带希勒少尉回丽茵卡登疗养。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "海蒂",
+      "type": "npc",
+      "role_in_chapter": "小说家，在贵族宴会上为埃利西奥解围，并暗中提供信息。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "奥伦",
+      "type": "npc",
+      "role_in_chapter": "拉特兰信使，邀请维娜参加万国峰会，被维娜拒绝。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "因陀罗",
+      "type": "operator",
+      "role_in_chapter": "格拉斯哥帮成员，维娜的伙伴，在战后继续为维娜处理街头事务。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "小公爵",
+      "type": "npc",
+      "role_in_chapter": "马奇伯爵艾莉诺，年轻的女公爵，在战争中支援过维娜，战后与维娜进行政治博弈。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "号角",
+      "type": "operator",
+      "role_in_chapter": "典范军军官，战后加入城防军，负责维持秩序。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "铣痕",
+      "type": "npc",
+      "role_in_chapter": "阿勒黛·坎伯兰，地下势力领袖，暗中救下黛安并安排其离开伦蒂尼姆。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿斯卡纶",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，前往圣王会西部大堂寻找摄政王，与神秘血魔告别。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "查尔斯·林奇",
+      "type": "npc",
+      "role_in_chapter": "最后的蒸汽骑士，在与食腐者之王的战斗中牺牲，被阿勒黛卸甲。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿利斯泰尔二世",
+      "type": "npc",
+      "role_in_chapter": "维娜的父亲，已故国王，其幽灵出现在王座厅试图说服维娜加冕。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "卡铎尔",
+      "type": "npc",
+      "role_in_chapter": "前格拉斯哥帮成员，战后回到诺伯特区，归还贝尔德的蝴蝶刀后离开。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "茉莉",
+      "type": "npc",
+      "role_in_chapter": "学校老师，收留感染者儿童，组织戏剧排练，感谢埃利西奥的帮助。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "诸王之息（重铸之剑）",
+      "line_range": [
+        538,
+        560
+      ],
+      "discussion_summary": "维娜在公爵会议上讨论这把由工人重铸的剑，它不再代表王权，而是代表市民的责任和希望。她以此表达自己与公爵们不同的政治理念。",
+      "is_substantive": true
+    },
+    {
+      "concept": "议长的职责与权力",
+      "line_range": [
+        515,
+        568
+      ],
+      "discussion_summary": "公爵们与维娜就议长的任命和权力范围进行辩论。维娜拒绝成为傀儡，强调自己代表市民而非帝国。",
+      "is_substantive": true
+    },
+    {
+      "concept": "典范军的未来",
+      "line_range": [
+        1274,
+        1313
+      ],
+      "discussion_summary": "希勒少尉与维娜在酒馆讨论典范军战后何去何从。士兵们渴望继续存在，但维娜担忧其成为私军，陷入两难。",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹的身份认同",
+      "line_range": [
+        413,
+        427
+      ],
+      "discussion_summary": "萨卡兹凶手「长弩」在议会质问：生在伦蒂尼姆的萨卡兹还算不算维多利亚人？引发对战后种族矛盾的讨论。",
+      "is_substantive": true
+    },
+    {
+      "concept": "战后药物短缺与劣质药物",
+      "line_range": [
+        318,
+        366
+      ],
+      "discussion_summary": "维娜与戴菲恩讨论梅杰女士之死和药物短缺问题，指出「铣痕」的劣质药物在市场上流通，加剧了危机。",
+      "is_substantive": true
+    },
+    {
+      "concept": "公爵们的政治博弈",
+      "line_range": [
+        494,
+        533
+      ],
+      "discussion_summary": "高多汀公爵和开斯特公爵在会议中讨论其他公爵的动向，包括威灵顿、诺曼底等，揭示维多利亚高层权力的分裂。",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石技艺异变",
+      "line_range": [
+        1499,
+        1527
+      ],
+      "discussion_summary": "埃利西奥采访感染者莎拉，记录其源石技艺出现跨越式强化和共济失调等新症状，暗示战后环境对感染者的影响。",
+      "is_substantive": true
+    },
+    {
+      "concept": "英雄与牺牲",
+      "line_range": [
+        2443,
+        2606
+      ],
+      "discussion_summary": "市民和战友为黛安求情，认为她是战争英雄，不应因偷窃王冠被判死刑；戴菲恩和维娜则坚持法律面前人人平等，英雄也不能凌驾于法律之上。\n\n维娜和黛安讨论英雄的定义，黛安认为英雄终当加冕为王，维娜则认为英雄也会犯错，并分享了她在王座厅的经历。",
+      "is_substantive": true
+    },
+    {
+      "concept": "战后重建与资源分配",
+      "line_range": [
+        1567,
+        1637
+      ],
+      "discussion_summary": "工人马丁叔抱怨议会政策导致工厂停工和药物短缺，认为议会牺牲了部分人的利益；维娜承认问题存在，但强调需要时间。",
+      "is_substantive": true
+    },
+    {
+      "concept": "长生者与历史干预",
+      "line_range": [
+        2654,
+        2691
+      ],
+      "discussion_summary": "克洛维希娅自称护国公，透露自己数百年来以不同身份干预维多利亚历史，提出帮助维娜实现理想，但被维娜拒绝。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "格拉斯哥帮",
+      "line_range": [
+        24,
+        56
+      ],
+      "description": "回忆中，格拉斯哥帮成员在拳馆聚会，讨论地盘和保护费，展现其街头帮派性质。"
+    },
+    {
+      "faction": "卡文迪许公爵",
+      "line_range": [
+        112,
+        182
+      ],
+      "description": "格拉斯哥帮发现卡文迪许公爵的人控制工厂，走私源石武器，意图在伦蒂尼姆制造混乱。"
+    },
+    {
+      "faction": "开斯特公爵",
+      "line_range": [
+        57,
+        97
+      ],
+      "description": "阿勒黛在宴会上代表开斯特公爵发言，警告莫里尔伯爵警惕萨卡兹，并提及开斯特公爵对维娜的关注。"
+    },
+    {
+      "faction": "典范军",
+      "line_range": [
+        1274,
+        1313
+      ],
+      "description": "希勒少尉与维娜在酒馆讨论典范军的未来，士兵们渴望继续存在，但维娜担忧其成为私军。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        569,
+        583
+      ],
+      "description": "博士闯入公爵会议，开斯特公爵警告罗德岛不要越界，高多汀公爵也质疑罗德岛在伦蒂尼姆的角色。"
+    },
+    {
+      "faction": "「铣痕」团伙",
+      "line_range": [
+        610,
+        629
+      ],
+      "description": "「铣痕」与手下讨论生意，决定继续冒险送货，展现其作为地下势力的运作方式。"
+    },
+    {
+      "faction": "赤心医疗（哥伦比亚）",
+      "line_range": [
+        887,
+        960
+      ],
+      "description": "埃利西奥代表赤心医疗试图与议会合作，但戴菲恩指出其背后有哥伦比亚国防部和梅兰德基金会，暗示其政治背景。"
+    },
+    {
+      "faction": "萨卡兹军事委员会",
+      "line_range": [
+        979,
+        1035
+      ],
+      "description": "回忆线中，阿勒黛发现萨卡兹在城内隐藏的祭坛，暗示军事委员会在战前就有长期部署。"
+    },
+    {
+      "faction": "食腐者王庭军",
+      "line_range": [
+        1357,
+        1385
+      ],
+      "description": "回忆线中，食腐者王庭军发现并攻击希勒少尉的小队，展现其在城墙附近的布防。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1647,
+        1689
+      ],
+      "description": "珀茜瓦尔代表整合运动与凯瑟琳进行物资交易，透露主力已离开伦蒂尼姆；戴菲恩下令对整合运动保持低强度监视，认为其当前威胁不高。"
+    },
+    {
+      "faction": "拉特兰",
+      "line_range": [
+        1738,
+        1755
+      ],
+      "description": "奥伦作为拉特兰信使邀请维娜参加万国峰会，维娜拒绝，并识破其背后有公爵指使。"
+    },
+    {
+      "faction": "维多利亚公爵（开斯特、高多汀、马奇）",
+      "line_range": [
+        1970,
+        2041
+      ],
+      "description": "小公爵艾莉诺邀请其他公爵在皇家科学院小聚，故意切断维娜的广播，讨论威灵顿公爵的态度和王位继承问题。"
+    },
+    {
+      "faction": "维多利亚公爵（开斯特、高多汀、马奇）",
+      "line_range": [
+        2752,
+        2791
+      ],
+      "description": "维娜与公爵们进行谈判，成功争取到物资通道、感染者部队数据共享和外交渠道重启等利益。"
+    },
+    {
+      "faction": "维多利亚公爵（开斯特、高多汀、马奇）",
+      "line_range": [
+        2851,
+        2888
+      ],
+      "description": "公爵们在伦蒂尼姆日落时分离去，开斯特公爵强调伦蒂尼姆必须是首都，高多汀公爵感叹太阳落得太快。"
+    },
+    {
+      "faction": "巴别塔",
+      "line_range": [
+        2314,
+        2321
+      ],
+      "description": "维什戴尔通过广播宣布巴别塔已占领军事委员会指挥中心，联军士气大振。"
+    },
+    {
+      "faction": "玫瑰河畔航船",
+      "line_range": [
+        2247,
+        2284
+      ],
+      "description": "神秘的血魔与铣痕和阿斯卡纶会面，透露正在追查一位离开伦蒂尼姆的姐妹，并承诺不再参与巴别塔相关事务。"
+    },
+    {
+      "faction": "伦蒂尼姆议会",
+      "line_range": [
+        2847,
+        2850
+      ],
+      "description": "议会通过广播宣布王冠由议会保管，未来国王人选需经议会审核和全民公投，确立了议会监督王权的原则。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "伦蒂尼姆",
+      "line_range": [
+        1,
+        56
+      ],
+      "description": "格拉斯哥帮在诺伯特区的拳馆聚会，讨论伦蒂尼姆的街头事务。"
+    },
+    {
+      "location": "诺伯特区",
+      "line_range": [
+        112,
+        182
+      ],
+      "description": "格拉斯哥帮调查诺伯特区工厂，发现卡文迪许公爵走私武器的阴谋。"
+    },
+    {
+      "location": "伦蒂尼姆工厂区",
+      "line_range": [
+        1540,
+        1637
+      ],
+      "description": "维娜与费斯特和工人马丁叔会面，讨论工厂停工和药物短缺问题，展现了战后工业区的困境。"
+    },
+    {
+      "location": "圣王会西部大堂王座厅",
+      "line_range": [
+        2607,
+        2645
+      ],
+      "description": "维娜向黛安讲述在此与父亲阿利斯泰尔二世幽灵相遇的经历，揭示了王座厅"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:18:02.198238+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 73838,
+    "tokens_out": 16383,
+    "elapsed_s": 125.75535368919373
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "因陀罗（汉娜）",
+    "贝尔德",
+    "阿勒黛·坎伯兰（「铣痕」）",
+    "克洛维希娅",
+    "号角（斯卡曼德罗斯）",
+    "希勒少尉",
+    "埃利西奥",
+    "黛安",
+    "莫里尔伯爵",
+    "开斯特公爵",
+    "高多汀公爵",
+    "「小公爵」艾莉诺",
+    "长弩",
+    "博士",
+    "娜汀",
+    "神秘的血魔",
+    "沃克",
+    "莎拉",
+    "费斯特",
+    "珀茜瓦尔",
+    "奥伦",
+    "小公爵",
+    "铣痕",
+    "查尔斯·林奇",
+    "阿利斯泰尔二世",
+    "卡铎尔",
+    "茉莉"
+  ]
+}

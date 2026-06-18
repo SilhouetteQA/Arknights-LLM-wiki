@@ -1,0 +1,270 @@
+{
+  "summary": "本章讲述了尤里卡（主播U）从一名负债累累、运气极差的流浪者，在卡达的帮助下成为网络主播，经历直播事业的起伏、与粉丝的复杂互动，最终在经历一系列荒诞事件后，被引荐至罗德岛的故事。故事以尤里卡与卡达的对话开场，卡达鼓励她利用自身经历成为主播，并承诺为她联系罗德岛。随后，剧情以跳跃式蒙太奇手法，展现了尤里卡作为主播U的职业生涯：她策划了一场‘直播事故’来讽刺一座旅游城市，尝试了诵经、电影、游戏、吃播等多种直播形式但均告失败，在论坛上与喷子对线，最终通过一场成功的直播还清债务并实现财富自由。然而，成功并未带来平静，她遭遇了黑粉的恶作剧，甚至误伤了自己的榜一粉丝。在短暂停播后，她发现自己的粉丝竟开发了一个AI分身‘U-Gigamax’来替代她直播，这促使她决定进行身体改造，以‘U-G-Official’的身份回归。最后，尤里卡在罗德岛接受体检，并与一位神秘前辈进行了一场关于自由意志的哲学对话，在经历一次‘顿悟’后，她被告知未来可能成为导游，并因听到龙舌兰的名字而惊恐尖叫。",
+  "events": [
+    {
+      "event": "卡达鼓励尤里卡成为网络主播，并承诺为她联系罗德岛。",
+      "type": "planning",
+      "line_range": [
+        1,
+        57
+      ],
+      "participants": [
+        "卡达",
+        "尤里卡"
+      ],
+      "location": "尤里卡的出租屋",
+      "significance": "奠定尤里卡成为主播的起点，并引出罗德岛这条主线。",
+      "is_imaginary": false
+    },
+    {
+      "event": "主播U策划并执行了一场‘忘记关麦’的直播事故，公开批评当地城市不如多索雷斯。",
+      "type": "revelation",
+      "line_range": [
+        64,
+        105
+      ],
+      "participants": [
+        "主播U",
+        "工作人员"
+      ],
+      "location": "某旅游城市的电视台演播室",
+      "significance": "展现主播U的策划能力和叛逆性格，标志其直播风格的成型。",
+      "is_imaginary": false
+    },
+    {
+      "event": "主播U尝试诵经直播，但被助手的美食描述打断，导致直播失败。",
+      "type": "character_development",
+      "line_range": [
+        106,
+        125
+      ],
+      "participants": [
+        "主播U",
+        "可疑的东国人"
+      ],
+      "location": "直播间",
+      "significance": "展示主播U在直播内容上的盲目尝试和失败。",
+      "is_imaginary": false
+    },
+    {
+      "event": "主播U频繁更换直播主题（电影、游戏、吃播），并在论坛上与喷子激烈对线。",
+      "type": "character_development",
+      "line_range": [
+        126,
+        167
+      ],
+      "participants": [
+        "主播U"
+      ],
+      "location": "直播间及网络论坛",
+      "significance": "深入刻画主播U的焦虑、自大和与观众脱节的困境。",
+      "is_imaginary": false
+    },
+    {
+      "event": "主播U通过一场成功的直播还清所有贷款，实现财富自由，并签约平台推出三个AI分身。",
+      "type": "revelation",
+      "line_range": [
+        168,
+        201
+      ],
+      "participants": [
+        "主播U",
+        "主播V",
+        "主播X",
+        "主播Y",
+        "工作人员",
+        "粉丝代表"
+      ],
+      "location": "直播间",
+      "significance": "尤里卡事业达到顶峰，但随后发现粉丝数和欠款数相同，暗示成功背后的空虚。",
+      "is_imaginary": false
+    },
+    {
+      "event": "主播U设下机关抓住黑粉，却误伤了自己的榜一粉丝。",
+      "type": "confrontation",
+      "line_range": [
+        202,
+        233
+      ],
+      "participants": [
+        "主播U",
+        "陌生人（榜一）"
+      ],
+      "location": "主播U的住所",
+      "significance": "展现主播U与粉丝关系的荒诞与错位，以及她处理问题的暴力方式。",
+      "is_imaginary": false
+    },
+    {
+      "event": "主播U停播一周后回归，发现粉丝开发了AI分身‘U-Gigamax’，她决定进行身体改造，以‘U-G-Official’身份重新开播。",
+      "type": "revelation",
+      "line_range": [
+        234,
+        265
+      ],
+      "participants": [
+        "主播U",
+        "U-Gigamax"
+      ],
+      "location": "直播间",
+      "significance": "标志主播U身份的异化和与粉丝关系的彻底扭曲，她选择通过改造身体来迎合粉丝。",
+      "is_imaginary": false
+    },
+    {
+      "event": "尤里卡在罗德岛与一位神秘前辈进行哲学对话，经历‘顿悟’，并被告知未来可能成为导游。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        266,
+        346
+      ],
+      "participants": [
+        "尤里卡",
+        "Medic",
+        "？？？（神秘前辈）"
+      ],
+      "location": "罗德岛",
+      "significance": "尤里卡对自身经历产生怀疑，经历思想转变，并引出龙舌兰这一关键人物，为后续剧情埋下伏笔。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "卡达",
+      "type": "operator",
+      "role_in_chapter": "尤里卡的恩人和导师，鼓励她成为主播，并为其联系罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "尤里卡",
+      "type": "operator",
+      "role_in_chapter": "故事主角，一名运气极差的负债者，在卡达帮助下成为网络主播‘主播U’，经历事业起伏后加入罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "可疑的东国人",
+      "type": "npc",
+      "role_in_chapter": "在主播U的诵经直播中扮演助手，以美食打断直播。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "主播V",
+      "type": "npc",
+      "role_in_chapter": "主播U的AI分身之一，擅长唱跳。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "主播X",
+      "type": "npc",
+      "role_in_chapter": "主播U的AI分身之一，喜欢看电影。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "主播Y",
+      "type": "npc",
+      "role_in_chapter": "主播U的AI分身之一，喜欢打游戏。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "陌生人（榜一）",
+      "type": "npc",
+      "role_in_chapter": "主播U的榜一粉丝，被主播U误伤。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "U-Gigamax",
+      "type": "npc",
+      "role_in_chapter": "由粉丝开发的AI主播，模仿主播U的外形和语言习惯。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Medic",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的医疗干员，为尤里卡进行体检并解答她的问题。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "？？？（神秘前辈）",
+      "type": "npc",
+      "role_in_chapter": "一位神秘人物，与尤里卡进行关于自由意志的哲学对话，并预言她将成为导游。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "自由意志",
+      "line_range": [
+        300,
+        313
+      ],
+      "discussion_summary": "神秘前辈向尤里卡提出关于自由意志的哲学问题，讨论个体是否可能是更高意志的傀儡，以及这种怀疑本身是否也被允许。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        51,
+        52
+      ],
+      "description": "卡达提到将启程去罗德岛反馈尤里卡的情况，并希望尤里卡能与罗德岛签订合同。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        272,
+        276
+      ],
+      "description": "Medic为尤里卡进行体检，并提到卡达因紧急任务出外勤。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "多索雷斯",
+      "line_range": [
+        12,
+        12
+      ],
+      "description": "尤里卡提到自己曾在多索雷斯被人解雇。"
+    },
+    {
+      "location": "多索雷斯",
+      "line_range": [
+        102,
+        102
+      ],
+      "description": "主播U在直播中评价当地城市‘不如多索雷斯’。"
+    },
+    {
+      "location": "多索雷斯",
+      "line_range": [
+        317,
+        317
+      ],
+      "description": "尤里卡认出神秘前辈的穿搭风格来自多索雷斯，并质疑其身份。"
+    }
+  ],
+  "chapter": "主播U：全能系美少女",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:02:02.655725+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 8573,
+    "tokens_out": 2259,
+    "elapsed_s": 22.690049409866333
+  },
+  "taxonomy_type": "light",
+  "_unmatched_names": [
+    "尤里卡",
+    "可疑的东国人",
+    "主播V",
+    "主播X",
+    "主播Y",
+    "陌生人（榜一）",
+    "U-Gigamax",
+    "Medic",
+    "？？？（神秘前辈）"
+  ]
+}

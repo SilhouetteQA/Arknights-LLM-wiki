@@ -1,0 +1,97 @@
+{
+  "summary": "Scene 1中，坎诺特以金牌讲师的身份向博士推销一门名为「好得不能再好了！泰拉投资大师课」的投资课程。他先以一系列欲擒故纵的对话试探博士，然后指出博士在旅程中因缺少源石锭而错失机会的经历，并强调自己贩卖的是增加财富的方式。课程定价999源石锭，承诺一对一指导，并邀请博士试听一节课，但需要博士结束当前旅程与他一同离开。Scene 2中，博士完成了初级课程，坎诺特称赞其学习速度，并带博士来到青草城对战中心进行实践。他解释这里的比赛规则宽松，但建议博士不要亲自参赛，而是通过投资队伍来获取胜利报酬，强调商业投资的理念，并询问博士是否准备好迎接自己的时代。",
+  "events": [
+    {
+      "event": "坎诺特向博士推销投资课程，并邀请试听",
+      "type": "negotiation",
+      "line_range": [
+        1,
+        25
+      ],
+      "participants": [
+        "坎诺特"
+      ],
+      "location": "未明确指定",
+      "significance": "引出本章核心主题：投资课程与财富积累",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士完成初级课程，坎诺特带其前往青草城对战中心进行实践",
+      "type": "planning",
+      "line_range": [
+        26,
+        39
+      ],
+      "participants": [
+        "坎诺特"
+      ],
+      "location": "青草城对战中心",
+      "significance": "将投资理论付诸实践，引入投资队伍的比赛机制",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "坎诺特",
+      "type": "npc",
+      "role_in_chapter": "作为推销员和导师，向博士推销投资课程并指导其实践",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "投资课程",
+      "line_range": [
+        15,
+        20
+      ],
+      "discussion_summary": "坎诺特解释自己贩卖增加财富的方式，并介绍课程内容：一对一指导、手把手教学，从入门到精通，承诺每选必赢、每投必中",
+      "is_substantive": true
+    },
+    {
+      "concept": "投资队伍",
+      "line_range": [
+        33,
+        38
+      ],
+      "discussion_summary": "坎诺特建议博士不要亲自比赛，而是通过投资队伍来获取胜利报酬，强调冠军会换人但眼光独到的投资者能成为永远的胜利者",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "联盟大赛",
+      "line_range": [
+        29,
+        32
+      ],
+      "description": "坎诺特介绍青草城对战中心是无数队伍争夺联盟大赛冠军头衔的地方，比赛规则宽松，没有赞助和参赛资格限制"
+    }
+  ],
+  "locations": [
+    {
+      "location": "青草城对战中心",
+      "line_range": [
+        29,
+        32
+      ],
+      "description": "坎诺特描述此地为无数队伍争夺联盟大赛冠军的竞技场，规则宽松，任何人都可以参赛"
+    }
+  ],
+  "chapter": "好得不能再好了！泰拉投资大师课",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:19:01.457317+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 2021,
+    "tokens_out": 782,
+    "elapsed_s": 7.638828754425049
+  },
+  "taxonomy_type": "light",
+  "_unmatched_names": [
+    "坎诺特"
+  ]
+}

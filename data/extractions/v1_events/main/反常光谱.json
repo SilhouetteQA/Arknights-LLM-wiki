@@ -1,0 +1,1265 @@
+{
+  "chapter": "反常光谱",
+  "category": "main",
+  "batch_count": 2,
+  "summary": "本章分为两条并行剧情线。第一条线以罗德岛干员阿米娅、博士、Mantra小队和近卫军阿洛伊泽为主视角，他们为寻找失联的Raidian小队和调查感染者异变事件，前往乌萨斯远北的布列斯克矿区。在矿区研究所，他们发现了名为「奥卡」的神秘物质、非感染者的人体实验痕迹，以及一名精神恍惚的研究员科谢尼娅。科谢尼娅透露了关于石棺的线索、内卫的死亡，以及矿工暴动逃离的真相。第二条线以矿工领袖雷尔金为主视角，他带领矿工拆除体内定位芯片、击败纠察队，试图逃往乌卡边境的整合运动农庄。雷尔金在反抗过程中展现出强烈的愤怒与理想主义，但也因复仇行为导致同伴霍里精神崩溃。最终，两条线在矿工与罗德岛干员的潜在会合中交汇，同时揭示了圣愚传说、邪魔污染与乌萨斯内部矛盾的深层关联。\n\n本段剧情分为三条并行线。第一条线以罗德岛干员阿米娅、Mantra小队和近卫军阿洛伊泽为主视角，他们在被烧毁的村庄外找到了Raidian和部分矿工。Mantra发现矿工们被伪装成娜迦奶奶的圣愚控制，陷入消极绝望。Mantra通过揭示圣愚的本质和别乔克的觉醒，成功解除了圣愚的影响。随后，他们收到博士关于矿脉枯竭和集团军清洗的广播，决定公开真相并撤离。在涅瓦湖冰面上，他们遭到第四集团军的轰炸和驱赶，矿工们以生命点燃火带照亮道路，最终在博士、Mon3tr和弑君者的接应下成功撤离。\n\n第二条线以矿工领袖雷尔金为主视角。他因霍里纵火事件而自责，决定放弃领袖地位，将选择权交还给矿工。别乔克和Raidian选择留下照顾伤员，尼克托则决定继续跟随雷尔金。雷尔金带领剩余矿工通过地下矿道前进，意外发现了一个由上千名矿工组成的地下社区。雷尔金发表演说，号召他们一起占领涅瓦湖岗哨，为前往乌卡边境的整合运动农庄开辟道路。他们成功占领岗哨，但随后发现第四集团军的大规模部队正在逼近。\n\n第三条线以博士、Mon3tr和研究员科谢尼娅为主视角。他们深入矿井，发现了名为「奥卡」的流体物质。Mon3tr分析出「奥卡」是抽空能量后的源石残余，并推断出乌萨斯主矿脉正在枯竭，四个月内储量将降至30%。科谢尼娅在矿洞中发现了疑似前文明留下的声波信息。他们遭遇了变异生物的攻击，逃离矿井后，利用研究所的军用通讯器向Raidian发送了警告信息，随后在弑君者的接应下与阿米娅等人会合。\n\n尾声部分展示了事件的多方影响：阿洛伊泽向维特议长汇报，揭示了女大公与集团军的合谋；圣骏堡的学生和工人开始觉醒和抗议；整合运动的塔露拉和九在农庄中反思，并迎来了从远北逃出的矿工；集团军内部出现对军需品质量的质疑；以及一个名为希尔达的神秘人物在救助感染者矿工。",
+  "events": [
+    {
+      "event": "圣愚在圣骏堡发表最后演讲，预言乌萨斯陷落，并请求皇帝采取行动。",
+      "type": "prophecy",
+      "line_range": [
+        16,
+        39
+      ],
+      "participants": [
+        "圣愚"
+      ],
+      "location": "圣骏堡",
+      "significance": "揭示乌萨斯内部对帝国未来的深刻分歧，以及圣愚作为民间精神领袖的角色。",
+      "is_imaginary": false
+    },
+    {
+      "event": "「皇帝的利刃」在雪原追杀感染者，并与一名疑似圣愚的神秘人（迦弗里伊尔）发生冲突。",
+      "type": "confrontation",
+      "line_range": [
+        40,
+        125
+      ],
+      "participants": [
+        "「皇帝的利刃」",
+        "迦弗里伊尔",
+        "感染者"
+      ],
+      "location": "乌萨斯远北雪原",
+      "significance": "展示内卫的恐怖力量与邪魔污染，同时引出圣愚传说与感染者逃亡的绝望处境。",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队在布列斯克遭遇卫兵拦截，阿洛伊泽以近卫军身份解围并提议合作。",
+      "type": "negotiation",
+      "line_range": [
+        215,
+        270
+      ],
+      "participants": [
+        "阿米娅",
+        "Mon3tr",
+        "阿洛伊泽",
+        "远北卫兵"
+      ],
+      "location": "布列斯克城区",
+      "significance": "建立罗德岛与近卫军阿洛伊泽的合作关系，为进入矿区铺路。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿洛伊泽向罗德岛透露矿区感染者异变事件，并指出女大公的封锁政策。",
+      "type": "revelation",
+      "line_range": [
+        332,
+        360
+      ],
+      "participants": [
+        "阿米娅",
+        "阿洛伊泽"
+      ],
+      "location": "布列斯克废弃居民楼",
+      "significance": "揭示本章核心谜团：矿区感染者异变与女大公的隐瞒。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷尔金带领矿工反抗纠察队，并计划拆除体内定位芯片以逃离矿区。",
+      "type": "rebellion",
+      "line_range": [
+        417,
+        481
+      ],
+      "participants": [
+        "雷尔金",
+        "尼克托",
+        "别乔克",
+        "矿工",
+        "纠察队"
+      ],
+      "location": "远北中心矿区",
+      "significance": "展现矿工觉醒与反抗的起点，雷尔金成为领袖。",
+      "is_imaginary": false
+    },
+    {
+      "event": "Raidian协助雷尔金拆除芯片，并确认芯片含有爆炸装置。",
+      "type": "rescue",
+      "line_range": [
+        483,
+        527
+      ],
+      "participants": [
+        "Raidian",
+        "雷尔金"
+      ],
+      "location": "远北中心矿区",
+      "significance": "建立Raidian与矿工的联系，为后续剧情埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷尔金与尼克托就反抗的正当性与未来计划发生激烈争论。",
+      "type": "ideological_clash",
+      "line_range": [
+        546,
+        610
+      ],
+      "participants": [
+        "雷尔金",
+        "尼克托"
+      ],
+      "location": "远北中心矿区",
+      "significance": "揭示雷尔金的激进理想主义与尼克托的现实主义之间的冲突。",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士被女大公叶莉莎单独召见，阿洛伊泽为其担保，获得进入矿区的许可。",
+      "type": "negotiation",
+      "line_range": [
+        674,
+        741
+      ],
+      "participants": [
+        "叶莉莎女大公",
+        "阿洛伊泽",
+        "博士"
+      ],
+      "location": "布列斯克行政中枢",
+      "significance": "女大公表面仁慈但暗藏控制，阿洛伊泽的担保是关键转折。",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队在矿区研究所地下室发现大量非感染者尸体，确认曾进行人体实验。",
+      "type": "revelation",
+      "line_range": [
+        923,
+        944
+      ],
+      "participants": [
+        "阿米娅",
+        "阿洛伊泽"
+      ],
+      "location": "远北中心矿区研究所地下室",
+      "significance": "揭露矿区研究所的黑暗真相，将事件从感染者异变升级为系统性犯罪。",
+      "is_imaginary": false
+    },
+    {
+      "event": "Mon3tr和博士在研究所找到精神恍惚的研究员科谢尼娅，她提及「奥卡」物质和内卫死亡。",
+      "type": "revelation",
+      "line_range": [
+        961,
+        995
+      ],
+      "participants": [
+        "Mon3tr",
+        "科谢尼娅",
+        "博士"
+      ],
+      "location": "远北中心矿区研究所",
+      "significance": "引入关键概念「奥卡」和内卫被杀的信息，将剧情推向更深层的阴谋。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷尔金带领矿工设伏击败纠察队，并发现集装箱中关押的「货物」实为被贩卖的感染者。",
+      "type": "battle",
+      "line_range": [
+        1101,
+        1181
+      ],
+      "participants": [
+        "雷尔金",
+        "尼克托",
+        "矿工",
+        "纠察队"
+      ],
+      "location": "矿区南出口附近",
+      "significance": "雷尔金的行动升级，揭露女大公治下的人口贩卖黑幕。",
+      "is_imaginary": false
+    },
+    {
+      "event": "霍里被迫亲手杀死自己加入纠察队的儿子加尼亚，精神崩溃。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1293,
+        1316
+      ],
+      "participants": [
+        "霍里",
+        "加尼亚",
+        "雷尔金"
+      ],
+      "location": "矿区南出口附近",
+      "significance": "展现反抗的残酷代价，霍里的悲剧成为后续剧情的关键转折点。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷尔金与尼克托在篝火旁就复仇与道德展开深刻对话，雷尔金承认自己失控。",
+      "type": "character_development",
+      "line_range": [
+        1364,
+        1397
+      ],
+      "participants": [
+        "雷尔金",
+        "尼克托"
+      ],
+      "location": "矿区外营地",
+      "significance": "深化雷尔金的内心挣扎，揭示其英雄外表下的脆弱与矛盾。",
+      "is_imaginary": false
+    },
+    {
+      "event": "科谢尼娅回忆「奥卡」实验的起源，以及Raidian如何揭露实验真相并带她逃离。",
+      "type": "flashback",
+      "line_range": [
+        1429,
+        1489
+      ],
+      "participants": [
+        "科谢尼娅",
+        "Raidian",
+        "研究员"
+      ],
+      "location": "远北中心矿区研究所",
+      "significance": "完整揭示「奥卡」实验的来龙去脉，以及Raidian在事件中的关键作用。",
+      "is_imaginary": false
+    },
+    {
+      "event": "科谢尼娅同意带博士和Mon3tr下矿井寻找「奥卡」样本。",
+      "type": "planning",
+      "line_range": [
+        1504,
+        1508
+      ],
+      "participants": [
+        "科谢尼娅",
+        "Mon3tr",
+        "博士"
+      ],
+      "location": "远北中心矿区研究所",
+      "significance": "决定下一步行动方向，将调查引向矿井深处。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷尔金带领矿工成功从友善村庄换得粮食，但霍里已陷入疯狂。",
+      "type": "negotiation",
+      "line_range": [
+        1600,
+        1741
+      ],
+      "participants": [
+        "雷尔金",
+        "尼克托",
+        "别乔克",
+        "友善的村民"
+      ],
+      "location": "矿区外村庄",
+      "significance": "展现矿工与普通民众的脆弱联盟，同时预示霍里的背叛。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷尔金在幻觉中与「皇帝的利刃」战斗，并最终获胜，但现实中的村庄已燃起大火。",
+      "type": "battle",
+      "line_range": [
+        1745,
+        1781
+      ],
+      "participants": [
+        "雷尔金",
+        "「皇帝的利刃」",
+        "矿工"
+      ],
+      "location": "矿区外村庄",
+      "significance": "雷尔金疑似获得圣愚力量，但胜利的代价是村庄被霍里纵火焚烧。",
+      "is_imaginary": true
+    },
+    {
+      "event": "霍里纵火烧村，声称要「净化」所有人的灵魂，雷尔金和别乔克试图救人。",
+      "type": "disaster",
+      "line_range": [
+        1782,
+        1830
+      ],
+      "participants": [
+        "霍里",
+        "雷尔金",
+        "尼克托",
+        "别乔克"
+      ],
+      "location": "矿区外村庄",
+      "significance": "霍里的疯狂导致灾难性后果，矿工队伍面临分裂与生存危机。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷尔金因霍里纵火事件自责，决定放弃领袖地位，将选择权交还给矿工",
+      "type": "character_development",
+      "line_range": [
+        1851,
+        1999
+      ],
+      "participants": [
+        "雷尔金",
+        "尼克托",
+        "别乔克",
+        "Raidian"
+      ],
+      "location": "被烧毁的村庄外",
+      "significance": "雷尔金意识到自己的独断专行导致了悲剧，开始反思领导方式",
+      "is_imaginary": false
+    },
+    {
+      "event": "别乔克与娜迦奶奶进行关于爱、痛苦和分离的哲学对话",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2026,
+        2077
+      ],
+      "participants": [
+        "别乔克",
+        "娜迦"
+      ],
+      "location": "被烧毁的村庄外",
+      "significance": "揭示了别乔克内心的痛苦和对亲情的渴望，为后续圣愚的揭露埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队在烧毁的村庄外找到Raidian和部分矿工",
+      "type": "reunion",
+      "line_range": [
+        2078,
+        2145
+      ],
+      "participants": [
+        "阿米娅",
+        "极境",
+        "Mantra",
+        "阿洛伊泽",
+        "Raidian",
+        "别乔克"
+      ],
+      "location": "被烧毁的村庄外",
+      "significance": "两条主线正式会合，Raidian小队归队",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿洛伊泽提议将矿工带到圣骏堡作为证人，与Raidian发生激烈争论",
+      "type": "ideological_clash",
+      "line_range": [
+        2163,
+        2222
+      ],
+      "participants": [
+        "阿洛伊泽",
+        "Raidian",
+        "阿米娅"
+      ],
+      "location": "被烧毁的村庄外",
+      "significance": "展现了乌萨斯内部改革派与对乌萨斯失望的流亡者之间的信任危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "矿工们集体陷入精神恍惚状态，Mantra感知到圣愚的存在",
+      "type": "revelation",
+      "line_range": [
+        2263,
+        2299
+      ],
+      "participants": [
+        "Mantra",
+        "Raidian",
+        "阿米娅",
+        "矿工"
+      ],
+      "location": "被烧毁的村庄外",
+      "significance": "揭示圣愚隐藏在矿工中并施加精神影响",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士、Mon3tr和科谢尼娅深入矿井，发现「奥卡」流体",
+      "type": "investigation",
+      "line_range": [
+        2300,
+        2357
+      ],
+      "participants": [
+        "科谢尼娅",
+        "Mon3tr",
+        "博士"
+      ],
+      "location": "布列斯克矿区矿井深处",
+      "significance": "发现关键物质「奥卡」，为后续揭示矿脉枯竭真相提供线索",
+      "is_imaginary": false
+    },
+    {
+      "event": "Mon3tr分析「奥卡」本质，推断乌萨斯矿脉即将枯竭",
+      "type": "revelation",
+      "line_range": [
+        2359,
+        2379
+      ],
+      "participants": [
+        "Mon3tr",
+        "博士"
+      ],
+      "location": "布列斯克矿区矿井深处",
+      "significance": "揭示乌萨斯能源危机的核心真相，解释集团军行动的动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "科谢尼娅在矿洞中发现疑似前文明留下的声波信息",
+      "type": "revelation",
+      "line_range": [
+        2387,
+        2405
+      ],
+      "participants": [
+        "科谢尼娅",
+        "Mon3tr",
+        "博士"
+      ],
+      "location": "布列斯克矿区矿井深处",
+      "significance": "暗示「奥卡」与前文明和普瑞赛斯有关联",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士一行在矿井中遭遇变异生物攻击，Mon3tr结束其痛苦",
+      "type": "battle",
+      "line_range": [
+        2422,
+        2442
+      ],
+      "participants": [
+        "Mon3tr",
+        "博士",
+        "科谢尼娅"
+      ],
+      "location": "布列斯克矿区矿井深处",
+      "significance": "展示「奥卡」导致的生物异变，Mon3tr展现同情心",
+      "is_imaginary": false
+    },
+    {
+      "event": "Mantra与圣愚（娜迦）进行精神层面的对峙，揭露圣愚的本质",
+      "type": "confrontation",
+      "line_range": [
+        2505,
+        2569
+      ],
+      "participants": [
+        "Mantra",
+        "娜迦（圣愚）"
+      ],
+      "location": "被烧毁的村庄外",
+      "significance": "揭示圣愚是内卫实验的源头，Mantra决定解除其对矿工的控制",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷尔金与尼克托就前进路线发生激烈争论",
+      "type": "ideological_clash",
+      "line_range": [
+        2570,
+        2600
+      ],
+      "participants": [
+        "雷尔金",
+        "尼克托"
+      ],
+      "location": "涅瓦湖附近",
+      "significance": "展现雷尔金的激进理想与尼克托的务实求生之间的冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷尔金带领矿工通过地下矿道，发现一个由上千名矿工组成的地下社区",
+      "type": "revelation",
+      "line_range": [
+        2619,
+        2693
+      ],
+      "participants": [
+        "雷尔金",
+        "尼克托",
+        "兴奋的矿工"
+      ],
+      "location": "远北地下矿道",
+      "significance": "揭示雷尔金多年前提出的矿区互联计划已产生实际影响，为反抗力量提供基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷尔金发表演说，号召矿工们占领涅瓦湖岗哨，为前往乌卡边境开辟道路",
+      "type": "planning",
+      "line_range": [
+        2698,
+        2752
+      ],
+      "participants": [
+        "雷尔金",
+        "尼克托",
+        "矿工"
+      ],
+      "location": "远北地下矿道",
+      "significance": "雷尔金从自责中恢复，重新确立领导地位，提出激进的反抗计划",
+      "is_imaginary": false
+    },
+    {
+      "event": "第四集团军军官与叶莉莎女大公进行秘密谈判，要求她保持沉默",
+      "type": "political_intrigue",
+      "line_range": [
+        2753,
+        2789
+      ],
+      "participants": [
+        "叶莉莎女大公",
+        "严肃的乌萨斯军官"
+      ],
+      "location": "布列斯克",
+      "significance": "揭示女大公与集团军之间的合谋关系，以及集团军陈兵圣骏堡的野心",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士一行逃离矿井，利用军用通讯器向Raidian发送矿脉枯竭的警告",
+      "type": "rescue",
+      "line_range": [
+        2790,
+        2833
+      ],
+      "participants": [
+        "Mon3tr",
+        "科谢尼娅",
+        "博士",
+        "弑君者"
+      ],
+      "location": "布列斯克研究所",
+      "significance": "关键信息成功传递，弑君者出现接应，三条主线即将会合",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷尔金带领矿工成功占领涅瓦湖岗哨",
+      "type": "battle",
+      "line_range": [
+        2834,
+        2879
+      ],
+      "participants": [
+        "雷尔金",
+        "尼克托",
+        "矿工"
+      ],
+      "location": "涅瓦湖岗哨",
+      "significance": "矿工反抗取得阶段性胜利，但随即发现集团军大部队逼近",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿洛伊泽透露真实身份，承认受维特议长指派与罗德岛联系",
+      "type": "revelation",
+      "line_range": [
+        2903,
+        2926
+      ],
+      "participants": [
+        "阿洛伊泽",
+        "阿米娅",
+        "Raidian"
+      ],
+      "location": "被烧毁的村庄外",
+      "significance": "揭示阿洛伊泽的真实立场和任务，为后续合作奠定基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "Mantra通过引导别乔克回忆真相，成功解除圣愚对矿工的精神控制",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2927,
+        3070
+      ],
+      "participants": [
+        "Mantra",
+        "别乔克",
+        "娜迦（圣愚）"
+      ],
+      "location": "被烧毁的村庄外",
+      "significance": "别乔克识破圣愚伪装，Mantra成功解除控制，矿工们恢复清醒",
+      "is_imaginary": false
+    },
+    {
+      "event": "Mantra与圣愚进行最终精神对决，圣愚消失",
+      "type": "confrontation",
+      "line_range": [
+        3071,
+        3125
+      ],
+      "participants": [
+        "Mantra",
+        "圣愚"
+      ],
+      "location": "精神空间",
+      "significance": "Mantra以自身意志对抗圣愚，揭示圣愚的本质是邪魔造物",
+      "is_imaginary": false
+    },
+    {
+      "event": "Mantra向矿工揭示圣愚操纵的真相，矿工们开始觉醒",
+      "type": "revelation",
+      "line_range": [
+        3126,
+        3185
+      ],
+      "participants": [
+        "Mantra",
+        "矿工",
+        "别乔克"
+      ],
+      "location": "被烧毁的村庄外",
+      "significance": "矿工们认识到圣愚的欺骗，开始重新选择活下去",
+      "is_imaginary": false
+    },
+    {
+      "event": "Raidian截获集团军通讯，发现集团军正在对远北矿区进行清洗",
+      "type": "revelation",
+      "line_range": [
+        3230,
+        3259
+      ],
+      "participants": [
+        "Raidian",
+        "阿洛伊泽",
+        "别乔克"
+      ],
+      "location": "撤离途中",
+      "significance": "揭示集团军屠杀矿工的真相，别乔克决定公开此事",
+      "is_imaginary": false
+    },
+    {
+      "event": "Mantra和别乔克通过全域广播公开集团军的屠杀行径",
+      "type": "rebellion",
+      "line_range": [
+        3280,
+        3318
+      ],
+      "participants": [
+        "Mantra",
+        "别乔克",
+        "Raidian",
+        "阿米娅"
+      ],
+      "location": "撤离途中",
+      "significance": "矿工的反抗从逃亡升级为公开揭露真相，引发乌萨斯全国关注",
+      "is_imaginary": false
+    },
+    {
+      "event": "集团军对撤离队伍发动轰炸，矿工们以生命点燃火带照亮道路",
+      "type": "sacrifice",
+      "line_range": [
+        3347,
+        3451
+      ],
+      "participants": [
+        "阿米娅",
+        "Raidian",
+        "Mantra",
+        "矿工",
+        "别乔克"
+      ],
+      "location": "涅瓦湖冰面",
+      "significance": "矿工们自愿牺牲以掩护同伴撤离，展现反抗精神的升华",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅使用影霄之力阻挡炮火，博士、Mon3tr和弑君者驾车接应",
+      "type": "rescue",
+      "line_range": [
+        3452,
+        3488
+      ],
+      "participants": [
+        "阿米娅",
+        "极境",
+        "Raidian",
+        "Mon3tr",
+        "博士",
+        "弑君者"
+      ],
+      "location": "涅瓦湖冰面",
+      "significance": "三条主线最终会合，全员成功撤离",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿洛伊泽向维特议长汇报远北事件经过，分析女大公与集团军的合谋",
+      "type": "political_intrigue",
+      "line_range": [
+        3489,
+        3523
+      ],
+      "participants": [
+        "阿洛伊泽",
+        "维特"
+      ],
+      "location": "圣骏堡",
+      "significance": "揭示事件全貌，维特议长开始布局应对",
+      "is_imaginary": false
+    },
+    {
+      "event": "维特议长与阿洛伊泽讨论罗德岛和凯尔希，阿洛伊泽透露凯尔希已死的假消息",
+      "type": "negotiation",
+      "line_range": [
+        3524,
+        3570
+      ],
+      "participants": [
+        "阿洛伊泽",
+        "维特"
+      ],
+      "location": "圣骏堡",
+      "significance": "乌萨斯高层开始关注罗德岛，阿洛伊泽对罗德岛产生信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "圣骏堡的学生和工人开始觉醒，组织抗议活动",
+      "type": "rebellion",
+      "line_range": [
+        3571,
+        3601
+      ],
+      "participants": [
+        "学生A",
+        "学生B",
+        "学生C",
+        "早露",
+        "苦艾",
+        "工人"
+      ],
+      "location": "圣骏堡",
+      "significance": "矿工的消息引发全国性反响，反抗情绪在圣骏堡蔓延",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉和九在整合运动农庄中反思，决定等待时机再次行动",
+      "type": "planning",
+      "line_range": [
+        3602,
+        3677
+      ],
+      "participants": [
+        "塔露拉",
+        "九",
+        "喜悦的农妇"
+      ],
+      "location": "乌卡边境整合运动农庄",
+      "significance": "整合运动在稳定发展后准备再次介入乌萨斯局势",
+      "is_imaginary": false
+    },
+    {
+      "event": "从远北逃出的矿工抵达整合运动农庄，向塔露拉报告屠杀事件",
+      "type": "reunion",
+      "line_range": [
+        3678,
+        3691
+      ],
+      "participants": [
+        "塔露拉",
+        "九",
+        "雷德",
+        "忧虑的矿工"
+      ],
+      "location": "乌卡边境整合运动农庄",
+      "significance": "雷尔金带领的矿工成功与整合运动取得联系，两条反抗线交汇",
+      "is_imaginary": false
+    },
+    {
+      "event": "矿工在矿道中留下矿灯和信件，记录抗争历史",
+      "type": "reflection",
+      "line_range": [
+        3692,
+        3708
+      ],
+      "participants": [
+        "忧虑的矿工",
+        "胆小的矿工"
+      ],
+      "location": "远北地下矿道",
+      "significance": "矿工们意识到记录历史的重要性，为后人留下证据",
+      "is_imaginary": false
+    },
+    {
+      "event": "集团军对矿工进行集体处决，矿工试图反抗",
+      "type": "disaster",
+      "line_range": [
+        3709,
+        3738
+      ],
+      "participants": [
+        "集团军士官",
+        "卫兵",
+        "矿工"
+      ],
+      "location": "涅瓦湖冰面",
+      "significance": "揭示集团军屠杀的残酷性，矿工在绝望中反抗",
+      "is_imaginary": false
+    },
+    {
+      "event": "青年工匠发现矿灯和信件，决定将其带到圣骏堡",
+      "type": "character_development",
+      "line_range": [
+        3739,
+        3765
+      ],
+      "participants": [
+        "青年工匠",
+        "卡谢娜",
+        "勤奋的矿工"
+      ],
+      "location": "远北矿区",
+      "significance": "矿工的抗争精神通过物品传承，将在圣骏堡引发更大反响",
+      "is_imaginary": false
+    },
+    {
+      "event": "集团军内部出现对军需品质量的质疑，军官暗示将采取极端行动",
+      "type": "political_intrigue",
+      "line_range": [
+        3766,
+        3814
+      ],
+      "participants": [
+        "军官",
+        "愤怒的士兵",
+        "冷漠的士兵"
+      ],
+      "location": "集团军驻地",
+      "significance": "揭示集团军内部腐败和矛盾，军官暗示将发动更大规模的行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "神秘人物希尔达救助感染者矿工，被追随者视为神迹",
+      "type": "revelation",
+      "line_range": [
+        3815,
+        3860
+      ],
+      "participants": [
+        "希尔达",
+        "感染者矿工",
+        "虔诚的声音"
+      ],
+      "location": "未知地点",
+      "significance": "引入新的神秘角色，其能力与圣愚相似，可能成为后续关键人物",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "圣愚",
+      "type": "npc",
+      "role_in_chapter": "在圣骏堡发表预言性演讲，被视为乌萨斯的精神象征。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "「皇帝的利刃」",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯内卫，追杀感染者并与迦弗里伊尔/雷尔金发生冲突，最终疑似被击败。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "迦弗里伊尔",
+      "type": "npc",
+      "role_in_chapter": "疑似圣愚的神秘人，保护感染者并与内卫对抗，被感染者称为圣愚。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖之一，与博士、Mantra小队一同调查矿区事件，与阿洛伊泽合作。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Mon3tr",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，沉默寡言但能力强大，负责侦察与情报分析。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "极境",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，Mantra的搭档，负责通讯与侦察。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Mon3tr",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与博士一同行动，负责保护与调查，与科谢尼娅建立联系。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官，与女大公会面，决定下矿井调查「奥卡」。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿洛伊泽",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯近卫军中士，主动与罗德岛合作，寻求矿区真相，性格直率且富有正义感。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "叶莉莎女大公",
+      "type": "npc",
+      "role_in_chapter": "布列斯克总督，表面仁慈但手段冷酷，对矿区事件有所隐瞒。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "雷尔金",
+      "type": "npc",
+      "role_in_chapter": "矿工领袖，带领矿工反抗纠察队，理想主义但内心充满愤怒与矛盾，疑似获得圣愚力量。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "尼克托",
+      "type": "npc",
+      "role_in_chapter": "矿工，雷尔金的战友与质疑者，现实主义，试图平衡雷尔金的激进。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "别乔克",
+      "type": "npc",
+      "role_in_chapter": "少年矿工，雷尔金的学生，善良但口吃，试图在暴力中保持人性。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "霍里",
+      "type": "npc",
+      "role_in_chapter": "老年矿工，被迫杀死儿子后精神崩溃，最终纵火烧村。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "科谢尼娅",
+      "type": "npc",
+      "role_in_chapter": "矿区研究所研究员，曾参与石棺项目，因「奥卡」实验失败而精神恍惚，后与罗德岛合作。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Raidian",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，流动医疗队队长，在矿区协助矿工并揭露实验真相，后失联。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伊利亚",
+      "type": "npc",
+      "role_in_chapter": "科谢尼娅的老师，切城研究所成员，已故。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，科谢尼娅回忆中的前所长，本章未直接出场。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "娜迦（圣愚）",
+      "type": "npc",
+      "role_in_chapter": "伪装成别乔克奶奶的圣愚，控制矿工精神，与Mantra对决后消失",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "弑君者",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，驾车接应博士一行，与阿米娅等人会合",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "维特",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯议长，听取阿洛伊泽汇报，关注罗德岛和凯尔希，布局应对集团军",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "塔露拉",
+      "type": "npc",
+      "role_in_chapter": "整合运动领袖，在农庄中反思，决定等待时机，迎接从远北逃出的矿工",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "九",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，与塔露拉讨论未来计划",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "希尔达",
+      "type": "npc",
+      "role_in_chapter": "神秘人物，能缓解矿石病痛苦，被追随者视为神迹，救助感染者矿工",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "邪魔污染",
+      "line_range": [
+        133,
+        142
+      ],
+      "discussion_summary": "Mantra和Mon3tr讨论前方发现的邪魔污染，确认其形状与「国度」留下的污染相似，推测发生过与内卫的战斗。",
+      "is_substantive": true
+    },
+    {
+      "concept": "石棺",
+      "line_range": [
+        361,
+        380
+      ],
+      "discussion_summary": "Mon3tr向博士和阿米娅汇报石棺的线索：被乌萨斯回收后去向不明，谢尔盖和阿尔乔姆是关键人物，科谢尼娅是潜在突破口。",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动",
+      "line_range": [
+        549,
+        556
+      ],
+      "discussion_summary": "雷尔金相信乌卡边境存在由感染者建立的整合运动农庄，并计划带领矿工投奔；尼克托对此表示怀疑。",
+      "is_substantive": true
+    },
+    {
+      "concept": "矿脉枯竭",
+      "line_range": [
+        2373,
+        2379
+      ],
+      "discussion_summary": "Mon3tr推断科罗萨主矿脉正在枯竭，四个月内乌萨斯境内源石矿储量将降至30%，进程无法逆转，乌萨斯必将走向崩溃",
+      "is_substantive": true
+    },
+    {
+      "concept": "前文明遗留",
+      "line_range": [
+        2380,
+        2383
+      ],
+      "discussion_summary": "Mon3tr推测「奥卡」是前文明的遗留和博士曾经实验的副产物，可能包含有用信息",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "乌萨斯帝国议会",
+      "line_range": [
+        1,
+        8
+      ],
+      "description": "贵族在议会中抱怨圣愚的审判拖延太久，并提及议会将发起投票。"
+    },
+    {
+      "faction": "乌萨斯近卫军",
+      "line_range": [
+        245,
+        261
+      ],
+      "description": "阿洛伊泽以近卫军中士身份为罗德岛解围，并提及近卫军与女大公的关系。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        298,
+        304
+      ],
+      "description": "阿洛伊泽提及罗德岛在感染者研究方面的学术成就，并指出其在乌萨斯的情报能力受限。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        381,
+        397
+      ],
+      "description": "华法琳和Raidian讨论罗德岛重建工作的风险，Raidian主动请缨前往乌萨斯。"
+    },
+    {
+      "faction": "乌萨斯纠察队",
+      "line_range": [
+        417,
+        438
+      ],
+      "description": "纠察队队员透露矿工体内芯片具有定位和爆炸功能，并威胁矿工无法逃脱。"
+    },
+    {
+      "faction": "乌萨斯纠察队",
+      "line_range": [
+        1074,
+        1104
+      ],
+      "description": "两支纠察队为争夺抓捕矿工的功劳发生争执，随后被雷尔金伏击。"
+    },
+    {
+      "faction": "布列斯克女大公政权",
+      "line_range": [
+        674,
+        741
+      ],
+      "description": "女大公叶莉莎与博士会面，表面仁慈但拒绝透露矿区真相，最终在阿洛伊泽担保下允许罗德岛进入矿区。"
+    },
+    {
+      "faction": "布列斯克女大公政权",
+      "line_range": [
+        1283,
+        1287
+      ],
+      "description": "纠察队队员供认女大公为弥补矿工缺口，默许贩卖感染者甚至非感染者。"
+    },
+    {
+      "faction": "第四集团军",
+      "line_range": [
+        2753,
+        2789
+      ],
+      "description": "叶莉莎女大公与第四集团军军官秘密谈判，集团军以协助剿灭叛乱为名，要求女大公保持沉默，以便陈兵圣骏堡城下"
+    },
+    {
+      "faction": "第四集团军",
+      "line_range": [
+        3230,
+        3259
+      ],
+      "description": "Raidian截获集团军通讯，发现集团军正在对远北矿区进行清洗，以封锁矿脉枯竭的消息"
+    },
+    {
+      "faction": "第四集团军",
+      "line_range": [
+        3347,
+        3357
+      ],
+      "description": "阿洛伊泽分析集团军以平叛为幌子陈兵圣骏堡城下，用炮口对准城门与议会谈判"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        3602,
+        3677
+      ],
+      "description": "塔露拉和九在农庄中反思，决定团结所有能团结的人，等待时机打破枷锁"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        3678,
+        3691
+      ],
+      "description": "从远北逃出的矿工抵达整合运动农庄，向塔露拉报告屠杀事件"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        3528,
+        3538
+      ],
+      "description": "维特议长与阿洛伊泽讨论罗德岛，认为其力量值得警惕但也可为己所用"
+    }
+  ],
+  "locations": [
+    {
+      "location": "圣骏堡",
+      "line_range": [
+        1,
+        39
+      ],
+      "description": "圣愚在此发表最后演讲，贵族在议会中讨论审判事宜。"
+    },
+    {
+      "location": "布列斯克",
+      "line_range": [
+        350,
+        360
+      ],
+      "description": "阿洛伊泽介绍布列斯克是乌萨斯北方最大的移动城市，负责管理远北矿区和二十万感染者。"
+    },
+    {
+      "location": "远北中心矿区",
+      "line_range": [
+        356,
+        360
+      ],
+      "description": "阿洛伊泽透露三个月前在中心矿区发现大量变异感染者，矿区已被戒严。"
+    },
+    {
+      "location": "远北中心矿区研究所",
+      "line_range": [
+        923,
+        944
+      ],
+      "description": "阿米娅和阿洛伊泽在地下室发现非感染者尸体，确认曾进行人体实验。"
+    },
+    {
+      "location": "远北中心矿区矿井",
+      "line_range": [
+        1441,
+        1448
+      ],
+      "description": "科谢尼娅回忆在矿井中发现「奥卡」物质，源石矿脉发生断层并变质为黑色流体。"
+    },
+    {
+      "location": "涅瓦湖",
+      "line_range": [
+        2570,
+        2572
+      ],
+      "description": "雷尔金提到涅瓦湖已经结冰，回忆起伊戈尔大帝在此击溃骏鹰军队的历史"
+    },
+    {
+      "location": "涅瓦湖",
+      "line_range": [
+        3378,
+        3380
+      ],
+      "description": "Raidian指出穿过涅瓦湖就到圣骏堡，集团军未经允许不能踏上涅瓦湖西岸土地"
+    },
+    {
+      "location": "圣骏堡",
+      "line_range": [
+        2229,
+        2232
+      ],
+      "description": "别乔克回忆母亲对圣骏堡的描述：街上种着洋槐和樱桃，天空是亮的，有春天"
+    },
+    {
+      "location": "圣骏堡",
+      "line_range": [
+        3571,
+        3601
+      ],
+      "description": "圣骏堡的学生和工人开始觉醒，组织抗议活动，警方逮捕涂鸦示威的学生"
+    },
+    {
+      "location": "乌卡边境整合运动农庄",
+      "line_range": [
+        3602,
+        3677
+      ],
+      "description": "塔露拉和九在农庄中反思，农庄已能自给自足，但塔露拉认为这种安宁无法长久"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:32:35.472741+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 85417,
+    "tokens_out": 12034,
+    "elapsed_s": 94.72237157821655
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "圣愚",
+    "「皇帝的利刃」",
+    "迦弗里伊尔",
+    "博士",
+    "阿洛伊泽",
+    "叶莉莎女大公",
+    "雷尔金",
+    "尼克托",
+    "别乔克",
+    "霍里",
+    "科谢尼娅",
+    "Raidian",
+    "伊利亚",
+    "娜迦（圣愚）",
+    "维特",
+    "塔露拉",
+    "九",
+    "希尔达"
+  ]
+}

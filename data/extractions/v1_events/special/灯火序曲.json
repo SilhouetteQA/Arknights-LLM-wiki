@@ -1,0 +1,821 @@
+{
+  "summary": "本章包含六条并行剧情线。第一条线讲述前整合运动成员加勒斯和依拉在乌萨斯边境的荒地上寻找锈锤组织，他们通过一个月的生存考验后正式加入锈锤，并共同击退了前来追捕的乌萨斯士兵。第二条线发生在米诺斯与萨尔贡的边境，祭司帕拉斯和一名萨卡兹佣兵救助了一名从萨尔贡逃亡的库兰塔士兵暴雨，随后一名萨卡兹杀手前来追杀暴雨，帕拉斯与萨卡兹佣兵决定保护她。第三条线是罗德岛上的日常，干员绮良在玩恐怖游戏时被两名神秘女孩贝娜和安妮接近，贝娜讲述了一个维多利亚都市怪谈，随后揭示安妮是一个玩偶，两人关系亲密。第四条线中，干员蓝毒和格劳克斯在伊比利亚一处废弃建筑中探索，发现这是一座被摧毁的灯塔，并遇到一名自称艾莉亚的灯塔见习管理员，艾莉亚讲述了伊比利亚灯塔的辉煌与灾难后的沉寂，并希望加入罗德岛。第五条线中，莱塔尼亚贵族霍恩洛厄伯爵的侍从卡涅利安在拜访费尔巴哈爵士后，发现一名被追捕的感染者少女，她出手相助，并与一名莱塔尼亚术师对峙，最终将少女托付给罗德岛干员。第六条线围绕谢拉格展开，崖心想通过讯使给在圣山当圣女的姐姐恩雅送信，但讯使因局势复杂而拒绝，崖心便计划独自登山，讯使最终追赶上她并答应帮忙送信，故事以讯使带回一封银灰老爷要转交给博士的邀请函结束。",
+  "events": [
+    {
+      "event": "加勒斯和依拉在荒地上寻找锈锤组织，并讲述锈锤袭击乌萨斯边境哨站的故事",
+      "type": "flashback_and_exposition",
+      "line_range": [
+        1,
+        82
+      ],
+      "participants": [
+        "加勒斯",
+        "依拉"
+      ],
+      "location": "乌萨斯边境荒地",
+      "significance": "揭示锈锤组织的背景和行事风格，为加勒斯和依拉的加入动机做铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "加勒斯和依拉找到锈锤成员，接受为期一个月的生存考验",
+      "type": "initiation",
+      "line_range": [
+        83,
+        153
+      ],
+      "participants": [
+        "加勒斯",
+        "依拉",
+        "锈锤成员",
+        "锈锤成员布恩"
+      ],
+      "location": "荒地中的巨大岩石处",
+      "significance": "锈锤组织正式登场，展示其独特的入会仪式和价值观",
+      "is_imaginary": false
+    },
+    {
+      "event": "加勒斯和依拉在峡谷中成功生存一个月，种植苔麦并狩猎",
+      "type": "survival",
+      "line_range": [
+        154,
+        221
+      ],
+      "participants": [
+        "加勒斯",
+        "依拉"
+      ],
+      "location": "峡谷中的古老矿洞",
+      "significance": "展现两人在荒地中自力更生的能力，为后续加入锈锤奠定基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌萨斯士兵追踪到峡谷，加勒斯和依拉决定不再逃跑，选择战斗",
+      "type": "confrontation",
+      "line_range": [
+        222,
+        258
+      ],
+      "participants": [
+        "加勒斯",
+        "依拉"
+      ],
+      "location": "峡谷",
+      "significance": "依拉决心不再逃跑，标志着角色成长的关键转折",
+      "is_imaginary": false
+    },
+    {
+      "event": "锈锤成员出现，宣布加勒斯和依拉通过考验，并带领锈锤战士伏击乌萨斯士兵",
+      "type": "battle",
+      "line_range": [
+        259,
+        312
+      ],
+      "participants": [
+        "加勒斯",
+        "依拉",
+        "锈锤成员",
+        "锈锤战士",
+        "乌萨斯士兵"
+      ],
+      "location": "峡谷",
+      "significance": "加勒斯和依拉正式加入锈锤，锈锤战士发表关于摧毁文明的演说",
+      "is_imaginary": false
+    },
+    {
+      "event": "帕拉斯和萨卡兹佣兵在米诺斯边境救助了从萨尔贡逃亡的库兰塔士兵暴雨",
+      "type": "rescue",
+      "line_range": [
+        313,
+        378
+      ],
+      "participants": [
+        "帕拉斯",
+        "萨卡兹佣兵",
+        "暴雨"
+      ],
+      "location": "米诺斯与萨尔贡边境",
+      "significance": "引入新角色暴雨，展现帕拉斯的善良与萨卡兹佣兵的警惕",
+      "is_imaginary": false
+    },
+    {
+      "event": "暴雨醒来后与帕拉斯对峙，最终接受食物并决定离开",
+      "type": "negotiation",
+      "line_range": [
+        379,
+        512
+      ],
+      "participants": [
+        "帕拉斯",
+        "暴雨",
+        "萨卡兹佣兵"
+      ],
+      "location": "帕拉斯的帐篷",
+      "significance": "揭示暴雨的逃亡者身份和迷茫状态，帕拉斯赠予指南针",
+      "is_imaginary": false
+    },
+    {
+      "event": "萨卡兹杀手出现，意图追杀暴雨，帕拉斯和萨卡兹佣兵决定保护她",
+      "type": "confrontation",
+      "line_range": [
+        513,
+        583
+      ],
+      "participants": [
+        "帕拉斯",
+        "萨卡兹佣兵",
+        "萨卡兹杀手"
+      ],
+      "location": "米诺斯边境营地",
+      "significance": "帕拉斯和萨卡兹佣兵联手对抗杀手，展现帕拉斯的战斗意志",
+      "is_imaginary": false
+    },
+    {
+      "event": "绮良在罗德岛玩恐怖游戏时，被贝娜和安妮接近，贝娜讲述维多利亚都市怪谈",
+      "type": "revelation",
+      "line_range": [
+        584,
+        914
+      ],
+      "participants": [
+        "绮良",
+        "贝娜",
+        "安妮"
+      ],
+      "location": "罗德岛",
+      "significance": "引入贝娜和安妮两个神秘角色，通过怪谈故事暗示她们的非人身份",
+      "is_imaginary": false
+    },
+    {
+      "event": "贝娜和安妮私下交谈，揭示安妮是一个玩偶，两人关系亲密",
+      "type": "character_development",
+      "line_range": [
+        915,
+        969
+      ],
+      "participants": [
+        "贝娜",
+        "安妮"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示贝娜和安妮的真实关系，安妮是玩偶但拥有意识",
+      "is_imaginary": false
+    },
+    {
+      "event": "蓝毒和格劳克斯在伊比利亚废弃建筑中探索，发现一具赏金猎人的尸体",
+      "type": "investigation",
+      "line_range": [
+        970,
+        1079
+      ],
+      "participants": [
+        "蓝毒",
+        "格劳克斯"
+      ],
+      "location": "伊比利亚废弃建筑",
+      "significance": "展现伊比利亚遗迹的危险和神秘，为后续发现灯塔做铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "蓝毒和格劳克斯讨论伊比利亚的历史和阿戈尔人的秘密",
+      "type": "revelation",
+      "line_range": [
+        1080,
+        1112
+      ],
+      "participants": [
+        "蓝毒",
+        "格劳克斯"
+      ],
+      "location": "伊比利亚废弃建筑",
+      "significance": "揭示阿戈尔人上岸的历史和深海中的巨大威胁",
+      "is_imaginary": false
+    },
+    {
+      "event": "蓝毒和格劳克斯遇到艾莉亚，艾莉亚指出这座建筑是一座灯塔",
+      "type": "revelation",
+      "line_range": [
+        1113,
+        1249
+      ],
+      "participants": [
+        "蓝毒",
+        "格劳克斯",
+        "艾莉亚"
+      ],
+      "location": "伊比利亚废弃灯塔",
+      "significance": "揭示建筑的真实身份，艾莉亚讲述伊比利亚灯塔的历史和灾难",
+      "is_imaginary": false
+    },
+    {
+      "event": "艾莉亚希望加入罗德岛，蓝毒和格劳克斯决定带她回去",
+      "type": "departure",
+      "line_range": [
+        1250,
+        1291
+      ],
+      "participants": [
+        "蓝毒",
+        "格劳克斯",
+        "艾莉亚",
+        "极境"
+      ],
+      "location": "伊比利亚废弃灯塔外",
+      "significance": "艾莉亚加入罗德岛，灯塔可能成为罗德岛新办事处",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡涅利安在莱塔尼亚拜访费尔巴哈爵士，与侍从讨论源石结晶装饰和矿区事故",
+      "type": "political_intrigue",
+      "line_range": [
+        1292,
+        1383
+      ],
+      "participants": [
+        "卡涅利安",
+        "贵族侍从"
+      ],
+      "location": "莱塔尼亚费尔巴哈爵士的宅邸",
+      "significance": "揭示莱塔尼亚贵族对感染者的残酷态度和矿区事故的掩盖",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡涅利安救助一名被追捕的感染者少女，并讲述萨尔贡的故事",
+      "type": "rescue",
+      "line_range": [
+        1384,
+        1491
+      ],
+      "participants": [
+        "卡涅利安",
+        "少女"
+      ],
+      "location": "莱塔尼亚城外",
+      "significance": "展现卡涅利安的正义感和对感染者的同情",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡涅利安与莱塔尼亚术师对峙，揭露贵族利用感染者进行残酷法术研究",
+      "type": "confrontation",
+      "line_range": [
+        1492,
+        1564
+      ],
+      "participants": [
+        "卡涅利安",
+        "莱塔尼亚术师",
+        "少女"
+      ],
+      "location": "莱塔尼亚城外",
+      "significance": "揭示莱塔尼亚贵族延续巫王时代的残酷法术，卡涅利安保护少女",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡涅利安将少女托付给罗德岛干员，少女决定离开莱塔尼亚",
+      "type": "departure",
+      "line_range": [
+        1565,
+        1617
+      ],
+      "participants": [
+        "卡涅利安",
+        "少女",
+        "罗德岛干员"
+      ],
+      "location": "莱塔尼亚城外",
+      "significance": "少女被罗德岛接收，卡涅利安与罗德岛的合作关系进一步深化",
+      "is_imaginary": false
+    },
+    {
+      "event": "崖心请求讯使帮忙送信给在圣山当圣女的姐姐恩雅，但讯使因局势复杂而拒绝",
+      "type": "planning",
+      "line_range": [
+        1618,
+        1715
+      ],
+      "participants": [
+        "崖心",
+        "讯使",
+        "角峰"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示谢拉格局势紧张，崖心对姐姐的思念和对哥哥银灰的不满",
+      "is_imaginary": false
+    },
+    {
+      "event": "崖心计划独自登山送信，讯使追赶上她并最终答应帮忙",
+      "type": "reunion",
+      "line_range": [
+        1716,
+        1839
+      ],
+      "participants": [
+        "崖心",
+        "讯使"
+      ],
+      "location": "谢拉格边境",
+      "significance": "崖心表达对家庭分裂的担忧，讯使被说服并承诺帮忙",
+      "is_imaginary": false
+    },
+    {
+      "event": "讯使带回银灰老爷要转交给博士的邀请函",
+      "type": "revelation",
+      "line_range": [
+        1840,
+        1869
+      ],
+      "participants": [
+        "崖心",
+        "讯使",
+        "可露希尔"
+      ],
+      "location": "罗德岛",
+      "significance": "为后续剧情埋下伏笔，银灰老爷邀请博士前往谢拉格",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "加勒斯",
+      "type": "npc",
+      "role_in_chapter": "前整合运动成员，与依拉一起寻找锈锤组织，通过生存考验后加入锈锤，并参与对抗乌萨斯士兵的战斗",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "依拉",
+      "type": "npc",
+      "role_in_chapter": "前整合运动成员，与加勒斯一起寻找锈锤组织，表现出坚强的意志，最终加入锈锤",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "锈锤成员",
+      "type": "npc",
+      "role_in_chapter": "锈锤组织的成员，负责考验加勒斯和依拉，并带领锈锤战士伏击乌萨斯士兵",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "锈锤成员布恩",
+      "type": "npc",
+      "role_in_chapter": "锈锤组织的成员，前整合运动成员，被锈锤成员叫来展示锈锤对感染者的态度",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "帕拉斯",
+      "type": "operator",
+      "role_in_chapter": "米诺斯边境的祭司和指挥官，救助了从萨尔贡逃亡的暴雨，并与萨卡兹佣兵一起对抗萨卡兹杀手",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "萨卡兹佣兵",
+      "type": "npc",
+      "role_in_chapter": "被米诺斯人雇佣的萨卡兹佣兵，起初冷漠但逐渐被帕拉斯影响，最终决定保护暴雨",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "暴雨",
+      "type": "operator",
+      "role_in_chapter": "从萨尔贡逃亡的库兰塔士兵，被帕拉斯救助，因被追杀而匆忙离开",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "萨卡兹杀手",
+      "type": "npc",
+      "role_in_chapter": "受雇追杀暴雨的萨卡兹杀手，与帕拉斯和萨卡兹佣兵发生冲突",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "绮良",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在玩恐怖游戏时被贝娜和安妮接近，听贝娜讲述都市怪谈",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "贝娜",
+      "type": "operator",
+      "role_in_chapter": "神秘女孩，与安妮关系亲密，主动接近绮良并讲述维多利亚都市怪谈，暗示安妮是一个玩偶",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "安妮",
+      "type": "operator",
+      "role_in_chapter": "贝娜的同伴，一个拥有意识的玩偶，沉默寡言，通过贝娜与外界交流",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "蓝毒",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与格劳克斯一起探索伊比利亚废弃建筑，发现这是一座灯塔，并遇到艾莉亚",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "格劳克斯",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与蓝毒一起探索伊比利亚废弃建筑，对技术遗迹着迷，并决定带回能源核心研究",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾莉亚",
+      "type": "npc",
+      "role_in_chapter": "伊比利亚灯塔的见习管理员，因被骗而进入废弃灯塔，希望加入罗德岛以修复灯塔",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "极境",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，负责与蓝毒和格劳克斯通讯，得知灯塔可能成为新办事处",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "卡涅利安",
+      "type": "operator",
+      "role_in_chapter": "霍恩洛厄伯爵的侍从，萨尔贡人，在莱塔尼亚拜访贵族时救助了一名感染者少女，并与莱塔尼亚术师对峙",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "贵族侍从",
+      "type": "npc",
+      "role_in_chapter": "费尔巴哈爵士的侍从，与卡涅利安讨论合作，对感染者的遭遇漠不关心",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "少女",
+      "type": "npc",
+      "role_in_chapter": "从莱塔尼亚矿区逃出的感染者少女，被卡涅利安救助，最终被托付给罗德岛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莱塔尼亚术师",
+      "type": "npc",
+      "role_in_chapter": "为费尔巴哈爵士服务的术师，追捕感染者少女，与卡涅利安对峙后撤退",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "罗德岛干员",
+      "type": "npc",
+      "role_in_chapter": "罗德岛干员，负责接收卡涅利安救助的感染者少女",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "崖心",
+      "type": "operator",
+      "role_in_chapter": "谢拉格银灰家的二小姐，罗德岛干员，想给在圣山当圣女的姐姐恩雅送信，最终说服讯使帮忙",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "讯使",
+      "type": "operator",
+      "role_in_chapter": "谢拉格银灰家的护卫，罗德岛干员，起初拒绝崖心的请求，但最终被说服并答应帮忙送信",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "角峰",
+      "type": "operator",
+      "role_in_chapter": "谢拉格银灰家的护卫，罗德岛干员，与讯使一起准备回谢拉格",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "可露希尔",
+      "type": "operator",
+      "role_in_chapter": "罗德岛工程师，与崖心在食堂相遇，讨论登山装备",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "锈锤的价值观",
+      "line_range": [
+        89,
+        112
+      ],
+      "discussion_summary": "锈锤成员解释锈锤的象征意义，强调坚忍和征服荒地，不照顾弱者，需要证明自己属于荒地",
+      "is_substantive": true
+    },
+    {
+      "concept": "锈锤对文明和国家的看法",
+      "line_range": [
+        296,
+        306
+      ],
+      "discussion_summary": "锈锤战士发表演说，认为国家和文明从根本上透着邪恶，掠夺大地，奴役人民，锈锤要摧毁这些枷锁",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹人的生存之道",
+      "line_range": [
+        346,
+        359
+      ],
+      "discussion_summary": "帕拉斯评论萨卡兹人以冷酷无情为生存之道，将冷漠视作骄傲，但认为萨卡兹佣兵已被米诺斯人改变",
+      "is_substantive": true
+    },
+    {
+      "concept": "怪谈的生存与传播",
+      "line_range": [
+        769,
+        776
+      ],
+      "discussion_summary": "绮良解释怪谈需要足够神秘、被人铭记才能生存和传播，如果被知道真相，神秘感消失，怪谈就会不成立",
+      "is_substantive": true
+    },
+    {
+      "concept": "伊比利亚的沉默与遗忘",
+      "line_range": [
+        1060,
+        1082
+      ],
+      "discussion_summary": "蓝毒和格劳克斯讨论伊比利亚对灾难的沉默，认为这是阿戈尔人上岸后的自我保护机制，用遗忘来摆脱恐惧",
+      "is_substantive": true
+    },
+    {
+      "concept": "阿戈尔人上岸的历史与深海威胁",
+      "line_range": [
+        1083,
+        1112
+      ],
+      "discussion_summary": "蓝毒讲述阿戈尔人抓走她的祖先提取毒素，是为了对付一种巨大的、陆上不存在的可怕生物，暗示来自深海的威胁",
+      "is_substantive": true
+    },
+    {
+      "concept": "伊比利亚灯塔的意义",
+      "line_range": [
+        1217,
+        1231
+      ],
+      "discussion_summary": "艾莉亚描述灯塔守望的海岸景象，认为即使灾难后灯塔无法亮起，她和老师依然在守望，这是一种坚持",
+      "is_substantive": true
+    },
+    {
+      "concept": "巫王的恐怖统治",
+      "line_range": [
+        1360,
+        1374
+      ],
+      "discussion_summary": "贵族侍从描述巫王时代，高塔上的红色水晶，小镇一夜之间寂静无声，人们噤若寒蝉，没有原因和规律的恐怖",
+      "is_substantive": true
+    },
+    {
+      "concept": "莱塔尼亚贵族对感染者的处理方式",
+      "line_range": [
+        1533,
+        1540
+      ],
+      "discussion_summary": "卡涅利安质问莱塔尼亚术师，揭露贵族利用感染者进行残酷法术研究，延续巫王时代的黑暗记忆",
+      "is_substantive": true
+    },
+    {
+      "concept": "谢拉格圣女的处境",
+      "line_range": [
+        1791,
+        1803
+      ],
+      "discussion_summary": "崖心描述她远远看到的圣女恩雅，像被冰霜凝固一样，认为恩雅在圣山上过的一定不是她真正想要的生活",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "锈锤",
+      "line_range": [
+        25,
+        35
+      ],
+      "description": "加勒斯和依拉讨论锈锤组织，依拉听说锈锤是残暴野蛮的暴徒，加勒斯认为流言不一定是真的"
+    },
+    {
+      "faction": "锈锤",
+      "line_range": [
+        89,
+        112
+      ],
+      "description": "锈锤成员解释锈锤的象征意义和入会要求，强调坚忍和征服荒地"
+    },
+    {
+      "faction": "锈锤",
+      "line_range": [
+        296,
+        312
+      ],
+      "description": "锈锤战士发表演说，阐述锈锤对文明和国家的看法，号召摧毁枷锁"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        33,
+        34
+      ],
+      "description": "依拉提到乌萨斯贵族称整合运动为贪婪残忍的强盗，加勒斯认为这是谣言"
+    },
+    {
+      "faction": "乌萨斯军队",
+      "line_range": [
+        37,
+        75
+      ],
+      "description": "加勒斯讲述乌萨斯边境守军进入卡西米尔劫掠的故事，以及锈锤袭击乌萨斯哨站的事件"
+    },
+    {
+      "faction": "乌萨斯军队",
+      "line_range": [
+        277,
+        283
+      ],
+      "description": "乌萨斯士兵追捕加勒斯，称他为逃兵，要将他带回给洛蒙诺上校"
+    },
+    {
+      "faction": "萨尔贡部族",
+      "line_range": [
+        319,
+        320
+      ],
+      "description": "萨卡兹佣兵提到萨尔贡人的阴险狡诈，认为暴雨可能是诱饵"
+    },
+    {
+      "faction": "米诺斯军队",
+      "line_range": [
+        393,
+        394
+      ],
+      "description": "帕拉斯告诉暴雨外面有米诺斯士兵，这里正在和萨尔贡的部族发生战争"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1239,
+        1241
+      ],
+      "description": "格劳克斯提出将灯塔能源核心带回罗德岛研究"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1284,
+        1285
+      ],
+      "description": "蓝毒通知极境，灯塔有成为罗德岛新办事处的潜力"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1593,
+        1604
+      ],
+      "description": "卡涅利安将感染者少女托付给罗德岛干员，罗德岛干员称卡涅利安也是罗德岛的一员"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1618,
+        1715
+      ],
+      "description": "崖心、讯使和角峰在罗德岛活动，讨论任务和送信事宜"
+    },
+    {
+      "faction": "莱塔尼亚贵族",
+      "line_range": [
+        1292,
+        1383
+      ],
+      "description": "卡涅利安与贵族侍从讨论合作，侍从展示源石结晶装饰，卡涅利安暗示矿区事故和感染者的悲惨遭遇"
+    },
+    {
+      "faction": "莱塔尼亚术师",
+      "line_range": [
+        1533,
+        1540
+      ],
+      "description": "卡涅利安质问莱塔尼亚术师，揭露他们利用感染者进行残酷法术研究"
+    },
+    {
+      "faction": "谢拉格蔓珠院",
+      "line_range": [
+        1685,
+        1687
+      ],
+      "description": "讯使告诉崖心，蔓珠院不允许他们与圣女接触，送信也很难被收到"
+    },
+    {
+      "faction": "谢拉格银灰家",
+      "line_range": [
+        1652,
+        1653
+      ],
+      "description": "讯使和角峰要回谢拉格处理银灰老爷的事务"
+    }
+  ],
+  "locations": [
+    {
+      "location": "乌萨斯边境荒地",
+      "line_range": [
+        4,
+        11
+      ],
+      "description": "加勒斯和依拉离开乌萨斯，进入荒地，讨论翻过山头后是卡西米尔人的土地"
+    },
+    {
+      "location": "卡西米尔",
+      "line_range": [
+        10,
+        11
+      ],
+      "description": "加勒斯指出东北边的山翻过去是卡西米尔人的土地，但他们不去那边"
+    },
+    {
+      "location": "峡谷中的古老矿洞",
+      "line_range": [
+        187,
+        195
+      ],
+      "description": "加勒斯和依拉发现一个古老的矿洞，加勒斯讲述古代国家在这片大地上崛起又覆灭的历史"
+    },
+    {
+      "location": "米诺斯与萨尔贡边境",
+      "line_range": [
+        395,
+        396
+      ],
+      "description": "帕拉斯告诉暴雨，她自萨尔贡领土而来，倒在米诺斯领土边界里"
+    },
+    {
+      "location": "阿克罗蒂",
+      "line_range": [
+        406,
+        407
+      ],
+      "description": "暴雨询问这里是否是阿克罗蒂附近，帕拉斯确认"
+    },
+    {
+      "location": "新安芸市",
+      "line_range": [
+        746,
+        750
+      ],
+      "description": "绮良介绍游戏背景，新安芸市是真实存在的城市，以都市怪谈多而闻名"
+    },
+    {
+      "location": "伊比利亚海岸",
+      "line_range": [
+        1197,
+        1199
+      ],
+      "description": "艾莉亚描述几十年前灾难到来的那一天，整个伊比利亚海岸线一齐暗了下去"
+    },
+    {
+      "location": "莱塔尼亚",
+      "line_range": [
+        1339,
+        1340
+      ],
+      "description": "贵族侍从说莱塔尼亚接纳一个外族人不容易，卡涅利安是外族人"
+    },
+    {
+      "location": "萨尔贡",
+      "line_range": [
+        1448,
+        1450
+      ],
+      "description": "卡涅利安向少女描述萨尔贡，有沙漠和雨林，王酋统领领地，自由的地方"
+    },
+    {
+      "location": "谢拉格圣山",
+      "line_range": [
+        1670,
+        1671
+      ],
+      "description": "崖心询问讯使是否有上圣山的计划，她想给在圣山当圣女的姐姐恩雅送信"
+    },
+    {
+      "location": "谢拉格",
+      "line_range": [
+        1753,
+        1755
+      ],
+      "description": "崖心从远处看到谢拉格的雪山，感叹圣山从外面看很可爱"
+    }
+  ],
+  "chapter": "灯火序曲",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:42:07.216978+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 39642,
+    "tokens_out": 6950,
+    "elapsed_s": 50.00542211532593
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "加勒斯",
+    "依拉",
+    "锈锤成员",
+    "锈锤成员布恩",
+    "萨卡兹佣兵",
+    "萨卡兹杀手",
+    "安妮",
+    "艾莉亚",
+    "贵族侍从",
+    "少女",
+    "莱塔尼亚术师",
+    "罗德岛干员"
+  ]
+}

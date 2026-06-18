@@ -1,0 +1,645 @@
+{
+  "summary": "本章节以汐斯塔市一年一度的黑曜石节为背景，讲述了罗德岛干员们度假期间卷入的一场城市危机。市长之女锡兰·道尔科斯发现汐斯塔火山活动异常，可能即将爆发，但她的警告被市长助理兼天灾信使克洛宁以各种理由驳回。锡兰在罗德岛干员普罗旺斯和天火的帮助下，获得了火山即将爆发的科学证据，并试图说服市政厅，却遭到克洛宁的阻挠和追捕。与此同时，罗德岛的博士和其他干员也陆续介入此事，与锡兰一同对抗克洛宁的势力。\n\n在冲突过程中，锡兰与她的贴身保镖黑之间产生了深刻的信任危机。黑曾是哥伦比亚的知名杀手，受市长赫尔曼之命暗中调查克洛宁，却因误解而与锡兰对立。经过一番情感交锋，锡兰成功说服黑重新站在自己这边，两人联手对抗克洛宁。与此同时，罗德岛的赫拉格将军、红豆等干员也在市政厅与克洛宁的手下展开激战，最终揭穿了克洛宁的阴谋。\n\n克洛宁的阴谋败露后，他试图利用火山爆发毁灭城市并卷款潜逃。然而，罗德岛的艾雅法拉、普罗旺斯和天火等人通过研究发现，火山异常活动是由一种特殊的熔岩源石虫母虫引起的。锡兰、普罗旺斯和天火深入火山洞穴，成功击败了母虫，暂时阻止了火山爆发，为市民疏散争取了宝贵时间。市长赫尔曼随后宣布，汐斯塔将迁移至新建的移动城市，而锡兰和黑则决定加入罗德岛。\n\n本章节还穿插了多条支线剧情：棘刺在音乐节上偶遇日落即逝乐队成员Aya，两人就阿戈尔人的身份和海洋的威胁进行了神秘对话；大帝在音乐节现场遭遇刺杀，企鹅物流成员出手相助；D.D.D.在演出后与经纪人讨论音乐与源石技艺的关系；以及凯尔希在罗德岛本舰上与日落即逝乐队贝斯手Alty就阿戈尔人和深海猎人的秘密进行了意味深长的交谈。",
+  "events": [
+    {
+      "event": "锡兰发现火山异常并试图警告市政厅，但被克洛宁拒绝",
+      "type": "confrontation",
+      "line_range": [
+        16,
+        38
+      ],
+      "participants": [
+        "锡兰",
+        "克洛宁"
+      ],
+      "location": "汐斯塔市政厅",
+      "significance": "揭示核心冲突：火山危机与官方掩盖",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛干员抵达汐斯塔，享受黑曜石节",
+      "type": "arrival",
+      "line_range": [
+        60,
+        95
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "空"
+      ],
+      "location": "汐斯塔第二大道",
+      "significance": "引入罗德岛度假背景，建立轻松氛围",
+      "is_imaginary": false
+    },
+    {
+      "event": "普罗旺斯和天火在火山脚下发现异常，并救下锡兰",
+      "type": "rescue",
+      "line_range": [
+        194,
+        238
+      ],
+      "participants": [
+        "普罗旺斯",
+        "天火",
+        "锡兰"
+      ],
+      "location": "汐斯塔火山脚下森林",
+      "significance": "罗德岛干员与锡兰首次接触，共同发现火山异常",
+      "is_imaginary": false
+    },
+    {
+      "event": "锡兰向罗德岛求助，艾雅法拉远程分析确认火山即将爆发",
+      "type": "revelation",
+      "line_range": [
+        285,
+        307
+      ],
+      "participants": [
+        "艾雅法拉",
+        "普罗旺斯",
+        "天火",
+        "锡兰",
+        "博士"
+      ],
+      "location": "罗德岛远程通讯",
+      "significance": "科学证据确认火山危机，推动剧情进入行动阶段",
+      "is_imaginary": false
+    },
+    {
+      "event": "锡兰带博士前往市政厅，与克洛宁发生激烈冲突",
+      "type": "confrontation",
+      "line_range": [
+        360,
+        411
+      ],
+      "participants": [
+        "锡兰",
+        "克洛宁",
+        "博士"
+      ],
+      "location": "汐斯塔市政厅",
+      "significance": "克洛宁公开阻挠，矛盾激化",
+      "is_imaginary": false
+    },
+    {
+      "event": "黑奉命抓捕锡兰，锡兰与博士逃跑，伊芙利特和赫拉格出手相助",
+      "type": "ambush",
+      "line_range": [
+        412,
+        424
+      ],
+      "participants": [
+        "锡兰",
+        "博士",
+        "黑",
+        "伊芙利特",
+        "赫拉格"
+      ],
+      "location": "汐斯塔市政厅外",
+      "significance": "黑与锡兰对立，赫拉格和伊芙利特介入",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫拉格与黑短暂交手，并揭露黑曾是哥伦比亚知名杀手",
+      "type": "revelation",
+      "line_range": [
+        497,
+        529
+      ],
+      "participants": [
+        "赫拉格",
+        "锡兰",
+        "博士"
+      ],
+      "location": "汐斯塔某处",
+      "significance": "揭示黑的神秘过去，加深锡兰的信任危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "锡兰与博士散步，回忆与黑的往事，决定继续行动",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        530,
+        588
+      ],
+      "participants": [
+        "锡兰",
+        "博士",
+        "赫拉格"
+      ],
+      "location": "汐斯塔沙滩",
+      "significance": "锡兰情感成长，决心为城市而战",
+      "is_imaginary": false
+    },
+    {
+      "event": "锡兰以自己为诱饵吸引黑，罗德岛干员突袭市政厅",
+      "type": "infiltration",
+      "line_range": [
+        589,
+        641
+      ],
+      "participants": [
+        "锡兰",
+        "黑",
+        "红豆",
+        "博士"
+      ],
+      "location": "汐斯塔广播塔外",
+      "significance": "双线行动：锡兰牵制黑，罗德岛进攻市政厅",
+      "is_imaginary": false
+    },
+    {
+      "event": "锡兰与黑情感对峙，黑最终选择支持锡兰",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        713,
+        763
+      ],
+      "participants": [
+        "锡兰",
+        "黑"
+      ],
+      "location": "汐斯塔广播塔附近",
+      "significance": "黑与锡兰和解，黑倒戈，剧情转折点",
+      "is_imaginary": false
+    },
+    {
+      "event": "市长赫尔曼突然现身，揭穿克洛宁的阴谋",
+      "type": "revelation",
+      "line_range": [
+        823,
+        854
+      ],
+      "participants": [
+        "赫尔曼",
+        "克洛宁",
+        "锡兰",
+        "黑",
+        "赫拉格"
+      ],
+      "location": "汐斯塔市政厅",
+      "significance": "幕后黑手克洛宁阴谋败露，市长掌控局面",
+      "is_imaginary": false
+    },
+    {
+      "event": "克洛宁垂死挣扎，火山开始震动，危机升级",
+      "type": "disaster",
+      "line_range": [
+        906,
+        918
+      ],
+      "participants": [
+        "克洛宁",
+        "赫尔曼",
+        "锡兰",
+        "赫拉格"
+      ],
+      "location": "汐斯塔市政厅",
+      "significance": "火山危机迫在眉睫，剧情进入高潮",
+      "is_imaginary": false
+    },
+    {
+      "event": "艾雅法拉远程提供方案，锡兰、普罗旺斯和天火深入火山洞穴",
+      "type": "planning",
+      "line_range": [
+        921,
+        942
+      ],
+      "participants": [
+        "艾雅法拉",
+        "普罗旺斯",
+        "天火",
+        "锡兰",
+        "赫拉格"
+      ],
+      "location": "汐斯塔火山洞穴",
+      "significance": "确定行动方案：阻止火山爆发的关键",
+      "is_imaginary": false
+    },
+    {
+      "event": "锡兰、普罗旺斯和天火在火山洞穴中与熔岩源石虫母虫激战",
+      "type": "battle",
+      "line_range": [
+        951,
+        1007
+      ],
+      "participants": [
+        "锡兰",
+        "普罗旺斯",
+        "天火"
+      ],
+      "location": "汐斯塔火山洞穴深处",
+      "significance": "核心战斗，阻止火山爆发的直接行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "三人成功击败母虫，暂时阻止火山爆发",
+      "type": "victory",
+      "line_range": [
+        1008,
+        1039
+      ],
+      "participants": [
+        "锡兰",
+        "普罗旺斯",
+        "天火"
+      ],
+      "location": "汐斯塔火山洞穴深处",
+      "significance": "成功化解即时危机，为城市迁移争取时间",
+      "is_imaginary": false
+    },
+    {
+      "event": "市长赫尔曼与博士散步，透露城市迁移计划，并同意锡兰加入罗德岛",
+      "type": "revelation",
+      "line_range": [
+        1065,
+        1107
+      ],
+      "participants": [
+        "赫尔曼",
+        "博士"
+      ],
+      "location": "汐斯塔海滩",
+      "significance": "揭示城市未来规划，锡兰和黑加入罗德岛的铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "锡兰宣布加入罗德岛，黑随行",
+      "type": "departure",
+      "line_range": [
+        1122,
+        1142
+      ],
+      "participants": [
+        "锡兰",
+        "黑",
+        "博士"
+      ],
+      "location": "汐斯塔海滩",
+      "significance": "锡兰和黑正式加入罗德岛，角色关系确立",
+      "is_imaginary": false
+    },
+    {
+      "event": "棘刺在音乐节上偶遇日落即逝乐队成员Aya，进行关于阿戈尔和海洋的神秘对话",
+      "type": "revelation",
+      "line_range": [
+        1403,
+        1516
+      ],
+      "participants": [
+        "棘刺",
+        "Aya"
+      ],
+      "location": "汐斯塔音乐节现场",
+      "significance": "引入阿戈尔人和海洋威胁的伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "大帝在音乐节现场遭遇刺杀，企鹅物流成员出手保护",
+      "type": "assassination",
+      "line_range": [
+        1567,
+        1643
+      ],
+      "participants": [
+        "大帝",
+        "德克萨斯",
+        "能天使",
+        "可颂",
+        "空"
+      ],
+      "location": "汐斯塔音乐节现场",
+      "significance": "展示企鹅物流的实力，丰富支线剧情",
+      "is_imaginary": false
+    },
+    {
+      "event": "日落即逝乐队贝斯手Alty潜入罗德岛本舰，与凯尔希就阿戈尔和深海猎人秘密进行对话",
+      "type": "revelation",
+      "line_range": [
+        1644,
+        1727
+      ],
+      "participants": [
+        "Alty",
+        "凯尔希"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "揭示深海猎人和阿戈尔人的深层秘密，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "锡兰",
+      "type": "npc",
+      "role_in_chapter": "汐斯塔市市长之女，维多利亚国立大学毕业的源石学者。发现火山异常后积极寻求帮助，与罗德岛合作对抗克洛宁，最终与黑一同加入罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克洛丝",
+      "type": "operator",
+      "role_in_chapter": "汐斯塔市市长助理兼天灾信使，幕后黑手。篡改火山监测数据，私自开采黑曜石，企图利用火山爆发毁灭城市并卷款潜逃，最终阴谋败露被逮捕。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "黑",
+      "type": "npc",
+      "role_in_chapter": "锡兰的贴身保镖，曾是哥伦比亚知名杀手。受市长赫尔曼之命暗中调查克洛宁，因误解与锡兰对立，最终和解并加入罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "赫尔曼",
+      "type": "npc",
+      "role_in_chapter": "汐斯塔市市长，锡兰的父亲。表面出差实则暗中布局调查克洛宁，最终揭穿阴谋并宣布城市迁移计划，同意锡兰加入罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛公开领袖，与博士一同来汐斯塔度假，前期与博士一起游玩，后期批评博士参与危险行动。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的指挥官，全程参与事件决策，与锡兰一同行动，是连接各方势力的核心人物。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "普罗旺斯",
+      "type": "operator",
+      "role_in_chapter": "罗德岛天灾信使，与天火一同发现火山异常，救下锡兰，并深入火山洞穴参与战斗。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "天火",
+      "type": "operator",
+      "role_in_chapter": "罗德岛术师，与普罗旺斯一同调查火山，参与火山洞穴战斗，以强大的源石技艺协助击败母虫。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "艾雅法拉",
+      "type": "operator",
+      "role_in_chapter": "罗德岛火山学家，通过远程通讯分析样本，确认火山即将爆发，并提供阻止火山爆发的方案。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "赫拉格",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，乌萨斯老将军。在冲突中保护博士和锡兰，与黑交手并揭露其过去，协助市长疏散群众。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "伊芙利特",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，强大的火系术师。在街头救下博士和锡兰，后在沙滩摆摊烤肉。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "红豆",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，萨卡兹少女。参与突袭市政厅的行动，以暴力方式打开大门。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "棘刺",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，阿戈尔人。在音乐节上抓小偷、帮助刻刀和伊芙利特，并与日落即逝乐队成员Aya进行关于阿戈尔和海洋的神秘对话。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛高层领导人。在本章末尾与日落即逝乐队贝斯手Alty就阿戈尔人和深海猎人的秘密进行对话。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "大帝",
+      "type": "npc",
+      "role_in_chapter": "著名说唱歌手，企鹅物流老板。在音乐节现场遭遇刺杀，企鹅物流成员出手保护。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Aya",
+      "type": "npc",
+      "role_in_chapter": "日落即逝乐队成员，阿戈尔人。与棘刺进行关于阿戈尔和海洋威胁的神秘对话。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Alty",
+      "type": "npc",
+      "role_in_chapter": "日落即逝乐队贝斯手，阿戈尔人。潜入罗德岛本舰与凯尔希就阿戈尔和深海猎人的秘密进行对话。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "空",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，偶像歌手。在汐斯塔与博士和阿米娅相遇，后与企鹅物流一同保护大帝。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "古米",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在沙滩摆摊卖冷饮，并拉阿米娅帮忙。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "刻刀",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在沙滩帮伊芙利特烤肉，因失误导致炉子爆炸，在棘刺鼓励下重新尝试。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "蜜蜡",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在沙滩遇到伊芙利特和刻刀，帮忙挖出卡在沙子里的箱子。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "D.D.D.",
+      "type": "npc",
+      "role_in_chapter": "黑曜石节主持人兼音乐人，与经纪人讨论音乐与源石技艺的关系，并提及与克洛宁的会面。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "德克萨斯",
+      "type": "operator",
+      "role_in_chapter": "企鹅物流成员，在大帝遭遇刺杀时出手保护。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "能天使",
+      "type": "operator",
+      "role_in_chapter": "企鹅物流成员，在大帝遭遇刺杀时出手保护。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "可颂",
+      "type": "operator",
+      "role_in_chapter": "企鹅物流成员，在大帝遭遇刺杀时出手保护。",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "黑曜石抑制矿石病",
+      "line_range": [
+        108,
+        119
+      ],
+      "discussion_summary": "克洛宁在广播中宣称黑曜石有抑制矿石病的功效，并以汐斯塔市感染者数量低作为证据。阿米娅对此表示怀疑，认为这种说法从未听过。",
+      "is_substantive": true
+    },
+    {
+      "concept": "火山活动与天灾",
+      "line_range": [
+        285,
+        289
+      ],
+      "discussion_summary": "艾雅法拉通过同位素对比和样本分析，确认火山活动频率异常爬升，将在二至四周内到达临界点，引发火山天灾。",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石虫狂躁化与环境改变",
+      "line_range": [
+        272,
+        284
+      ],
+      "discussion_summary": "普罗旺斯和锡兰讨论源石虫的狂躁化现象，认为这是环境改变带来的结果，并以此作为火山异常的证据之一。",
+      "is_substantive": true
+    },
+    {
+      "concept": "熔岩源石虫与火山活动的关系",
+      "line_range": [
+        958,
+        968
+      ],
+      "discussion_summary": "天火解释熔岩源石虫以火山为巢穴，以特殊黑曜石为食，过度开采破坏了它们的居住环境，导致它们行为躁动，大量不正常的火山内部活动是它们开辟居住地的行为导致的。",
+      "is_substantive": true
+    },
+    {
+      "concept": "音乐与源石技艺的关系",
+      "line_range": [
+        1544,
+        1547
+      ],
+      "discussion_summary": "D.D.D.与经纪人讨论莱塔尼亚人将音符、调子、曲式、织体与源石技艺的编织联系在一起的做法，认为这是一种假说。",
+      "is_substantive": true
+    },
+    {
+      "concept": "阿戈尔人与海洋的威胁",
+      "line_range": [
+        1697,
+        1727
+      ],
+      "discussion_summary": "Alty与凯尔希讨论阿戈尔人的平静只是表面现象，大海的威胁可能无法坚持太久，并询问凯尔希关于深海猎人诞生的秘密。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        60,
+        70
+      ],
+      "description": "阿米娅和博士带领罗德岛干员来汐斯塔度假，凯尔希医生推荐了此地。"
+    },
+    {
+      "faction": "汐斯塔市政厅",
+      "line_range": [
+        98,
+        114
+      ],
+      "description": "克洛宁作为市长助理和天灾信使，在广播中宣传汐斯塔和黑曜石，否认火山危险。"
+    },
+    {
+      "faction": "企鹅物流",
+      "line_range": [
+        1625,
+        1638
+      ],
+      "description": "大帝自称企鹅物流是其私人保镖，德克萨斯、能天使、可颂和空出手保护大帝免受刺杀。"
+    },
+    {
+      "faction": "日落即逝乐队",
+      "line_range": [
+        1403,
+        1516
+      ],
+      "description": "乐队成员Aya与棘刺进行关于阿戈尔人和海洋威胁的神秘对话。"
+    },
+    {
+      "faction": "深海猎人",
+      "line_range": [
+        1686,
+        1687
+      ],
+      "description": "凯尔希对Alty表示深海猎人们在做他们应该做的事情。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "汐斯塔市",
+      "line_range": [
+        39,
+        59
+      ],
+      "description": "广播介绍汐斯塔市是一个旅游度假都市，拥有碧海蓝天、阳光沙滩，正在举办黑曜石节。"
+    },
+    {
+      "location": "汐斯塔火山",
+      "line_range": [
+        103,
+        111
+      ],
+      "description": "克洛宁在广播中介绍汐斯塔火山是城市的朋友，曾保护城市免受天灾，黑曜石开采因环境破坏被禁止。"
+    },
+    {
+      "location": "加里森游乐场",
+      "line_range": [
+        52,
+        53
+      ],
+      "description": "广播介绍加里森游乐场位于城东火山脚下，搭建了城中最大的音乐舞台，是黑曜石节主LIVE的举办地。"
+    },
+    {
+      "location": "第二大道",
+      "line_range": [
+        50,
+        51
+      ],
+      "description": "广播介绍第二大道的赫尔曼大酒店门前广场是爵士乐的天堂。"
+    },
+    {
+      "location": "汐斯塔火山洞穴",
+      "line_range": [
+        951,
+        954
+      ],
+      "description": "锡兰、普罗旺斯和天火深入火山洞穴，发现这是一个因黑曜石开采形成的深矿洞，是熔岩源石虫的巢穴。"
+    }
+  ],
+  "chapter": "火蓝之心",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:51:27.606109+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 36946,
+    "tokens_out": 5618,
+    "elapsed_s": 51.43552374839783
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "赫尔曼",
+    "博士",
+    "大帝",
+    "Aya",
+    "Alty",
+    "D.D.D."
+  ]
+}

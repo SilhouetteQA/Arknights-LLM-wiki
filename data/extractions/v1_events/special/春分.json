@@ -1,0 +1,554 @@
+{
+  "summary": "本章讲述了剑客仇白将离家出走的少年方小石送回谋善村后，卷入一场由贫困和绝望引发的集体骗局。方小石三年前因炸毁村中移山庙而逃离，仇白在荒野中制服了与山海众混迹的他，并执意送其回家。回到村子后，仇白发现村民对方小石的态度充满恐惧和敌意，而村长老族长正策划利用一具无名少年的尸体，冒用方小石的名字骗取驰道工程殉职赔偿款，以缓解村子的生存危机。方小石拒绝成为「死人」，被村民囚禁并试图带往山上，最终在冲突中跳崖，被仇白救下。与此同时，灾害救援组织成员桑葚和云游僧嵯峨分别从不同角度介入此事：桑葚调查泥石流成因时发现火药残留，嵯峨则在移山庙中多次撞见老族长的忏悔。最终，一笔迟到的政府补贴送达，老族长的计划败露，他在嵯峨的劝诫下放弃自杀并决定向官府坦白。方小石在跳崖后被仇白救起，决定跟随她离开村子，踏上新的旅程。尾声通过信使铎铃的视角，展现了山区生活的平凡与坚韧，以及方小石最终被摄像机记录下的意气风发的瞬间。",
+  "events": [
+    {
+      "event": "仇白在荒野中制服并抓获与山海众混迹的少年方小石",
+      "type": "confrontation",
+      "line_range": [
+        1,
+        80
+      ],
+      "participants": [
+        "仇白",
+        "方小石"
+      ],
+      "location": "荒野山区",
+      "significance": "引出核心人物方小石，展现其叛逆性格和仇白的侠义心肠",
+      "is_imaginary": false
+    },
+    {
+      "event": "仇白与方小石在饭馆和荒野中互动，方小石试图逃跑未果",
+      "type": "pursuit",
+      "line_range": [
+        81,
+        219
+      ],
+      "participants": [
+        "仇白",
+        "方小石"
+      ],
+      "location": "镇子饭馆及荒野",
+      "significance": "深化仇白与方小石的关系，展现方小石的倔强与仇白的耐心",
+      "is_imaginary": false
+    },
+    {
+      "event": "仇白与方小石抵达谋善村，村民对方小石的归来反应异常",
+      "type": "arrival",
+      "line_range": [
+        220,
+        283
+      ],
+      "participants": [
+        "仇白",
+        "方小石",
+        "耕作的村民"
+      ],
+      "location": "谋善村村口",
+      "significance": "揭示村民对方小石的恐惧，为后续冲突埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "方小石与村民因移山庙迁址问题发生冲突，仇白介入调解",
+      "type": "confrontation",
+      "line_range": [
+        284,
+        319
+      ],
+      "participants": [
+        "仇白",
+        "方小石",
+        "愤怒的村民",
+        "猎户"
+      ],
+      "location": "谋善村移山庙",
+      "significance": "揭示方小石三年前炸庙的往事，展现其与村民的深层矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "仇白与老族长交谈，了解谋善村的困境和方小石的过往",
+      "type": "investigation",
+      "line_range": [
+        320,
+        458
+      ],
+      "participants": [
+        "仇白",
+        "老族长"
+      ],
+      "location": "谋善村",
+      "significance": "交代村子贫困背景，老族长展现明事理的一面",
+      "is_imaginary": false
+    },
+    {
+      "event": "猎户与方小石父子重逢，猎户透露自己已同意让方小石成为「死人」以换取赔偿款",
+      "type": "revelation",
+      "line_range": [
+        459,
+        496
+      ],
+      "participants": [
+        "猎户",
+        "方小石"
+      ],
+      "location": "猎户家中",
+      "significance": "揭示核心骗局，展现父子间的观念冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "老族长在全村大会上宣布，要求方小石「当一回死人」以骗取赔偿款",
+      "type": "planning",
+      "line_range": [
+        497,
+        548
+      ],
+      "participants": [
+        "老族长",
+        "方小石",
+        "猎户",
+        "围观的村民"
+      ],
+      "location": "谋善村",
+      "significance": "骗局正式公开，方小石面临道德与生存的抉择",
+      "is_imaginary": false
+    },
+    {
+      "event": "嵯峨在移山庙中偷听到老族长的忏悔，得知其计划利用无名少年的尸体和方小石的名字骗取赔偿款",
+      "type": "revelation",
+      "line_range": [
+        549,
+        622
+      ],
+      "participants": [
+        "嵯峨",
+        "老族长"
+      ],
+      "location": "谋善村移山庙",
+      "significance": "揭示老族长内心的挣扎和计划的细节，嵯峨成为关键见证者",
+      "is_imaginary": false
+    },
+    {
+      "event": "方小石被囚禁，村民试图说服他接受「死亡」安排",
+      "type": "confrontation",
+      "line_range": [
+        623,
+        685
+      ],
+      "participants": [
+        "方小石",
+        "送饭的村民"
+      ],
+      "location": "谋善村仓库",
+      "significance": "展现方小石的倔强和村民的无奈，深化道德困境",
+      "is_imaginary": false
+    },
+    {
+      "event": "仇白发现猎户在做墓碑，两人就方小石的命运进行激烈对话",
+      "type": "confrontation",
+      "line_range": [
+        718,
+        771
+      ],
+      "participants": [
+        "仇白",
+        "猎户"
+      ],
+      "location": "猎户家中",
+      "significance": "仇白表达对骗局的担忧，猎户展现其无力与妥协",
+      "is_imaginary": false
+    },
+    {
+      "event": "村民发现无名少年的摄像机中有影像，意识到他不是独自一人前来",
+      "type": "revelation",
+      "line_range": [
+        772,
+        790
+      ],
+      "participants": [
+        "霸道的小孩",
+        "着急的小孩",
+        "老族长"
+      ],
+      "location": "谋善村",
+      "significance": "暗示无名少年身份可能带来更多变数",
+      "is_imaginary": false
+    },
+    {
+      "event": "桑葚作为灾害救援队成员来到谋善村，被村民误认为是官府调查员",
+      "type": "arrival",
+      "line_range": [
+        803,
+        858
+      ],
+      "participants": [
+        "桑葚",
+        "路过的村民A",
+        "路过的村民B"
+      ],
+      "location": "谋善村附近山路",
+      "significance": "引入第三方势力，加剧村民的紧张情绪",
+      "is_imaginary": false
+    },
+    {
+      "event": "村民试图阻止信使进入村子，信使与村民发生冲突",
+      "type": "confrontation",
+      "line_range": [
+        908,
+        937
+      ],
+      "participants": [
+        "信使",
+        "慌乱的村民"
+      ],
+      "location": "谋善村附近山路",
+      "significance": "展现村民为掩盖骗局不择手段",
+      "is_imaginary": false
+    },
+    {
+      "event": "老族长向桑葚谎称方小石死于泥石流，桑葚提出要上山检查防护工事",
+      "type": "deception",
+      "line_range": [
+        884,
+        955
+      ],
+      "participants": [
+        "老族长",
+        "桑葚"
+      ],
+      "location": "谋善村",
+      "significance": "骗局进一步展开，桑葚的专业性开始发挥作用",
+      "is_imaginary": false
+    },
+    {
+      "event": "嵯峨主动提出为桑葚带路上山，老族长无法阻拦",
+      "type": "alliance",
+      "line_range": [
+        956,
+        962
+      ],
+      "participants": [
+        "嵯峨",
+        "桑葚",
+        "老族长"
+      ],
+      "location": "谋善村",
+      "significance": "嵯峨介入调查，推动真相揭露",
+      "is_imaginary": false
+    },
+    {
+      "event": "村民逼迫猎户立下方小石的墓碑，仇白出面阻止",
+      "type": "confrontation",
+      "line_range": [
+        970,
+        1020
+      ],
+      "participants": [
+        "仇白",
+        "猎户",
+        "村民"
+      ],
+      "location": "谋善村墓地",
+      "significance": "仇白正式表明立场，阻止骗局的关键一步",
+      "is_imaginary": false
+    },
+    {
+      "event": "桑葚在山上发现火药残留，怀疑泥石流并非自然发生",
+      "type": "investigation",
+      "line_range": [
+        1032,
+        1061
+      ],
+      "participants": [
+        "桑葚",
+        "嵯峨"
+      ],
+      "location": "谋善村附近山上",
+      "significance": "揭示泥石流真相，老族长的罪行即将败露",
+      "is_imaginary": false
+    },
+    {
+      "event": "信使送来迟到的政府补贴，老族长意识到计划失败，但方小石已从山上跳下",
+      "type": "revelation",
+      "line_range": [
+        1062,
+        1076
+      ],
+      "participants": [
+        "信使",
+        "老族长",
+        "村民"
+      ],
+      "location": "谋善村",
+      "significance": "剧情转折点，补贴的到来使骗局失去意义，方小石跳崖引发危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "嵯峨与老族长在移山庙中对话，嵯峨劝诫老族长面对罪行",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1158,
+        1417
+      ],
+      "participants": [
+        "嵯峨",
+        "老族长"
+      ],
+      "location": "谋善村移山庙",
+      "significance": "嵯峨以佛理劝诫，老族长最终决定向官府坦白",
+      "is_imaginary": false
+    },
+    {
+      "event": "方小石在山上与村民和父亲对峙，最终跳崖",
+      "type": "sacrifice",
+      "line_range": [
+        1117,
+        1371
+      ],
+      "participants": [
+        "方小石",
+        "猎户",
+        "着急的村民",
+        "紧张的村民"
+      ],
+      "location": "谋善村后山",
+      "significance": "方小石以死抗争，展现其宁死不屈的性格",
+      "is_imaginary": false
+    },
+    {
+      "event": "仇白救下跳崖的方小石，并决定带他离开村子",
+      "type": "rescue",
+      "line_range": [
+        1418,
+        1437
+      ],
+      "participants": [
+        "仇白",
+        "方小石"
+      ],
+      "location": "谋善村后山悬崖下",
+      "significance": "仇白第三次救下方小石，两人开启新的旅程",
+      "is_imaginary": false
+    },
+    {
+      "event": "信使铎铃与拍摄纪录片的少年对话，讲述山区生活的平凡与坚韧",
+      "type": "reflection",
+      "line_range": [
+        1438,
+        1544
+      ],
+      "participants": [
+        "铎铃",
+        "卡达"
+      ],
+      "location": "山区邮路",
+      "significance": "展现山区人民的生活态度，与谋善村的悲剧形成对比",
+      "is_imaginary": false
+    },
+    {
+      "event": "铎铃与桑葚讨论无名少年的身份，决定继续寻找线索",
+      "type": "investigation",
+      "line_range": [
+        1545,
+        1578
+      ],
+      "participants": [
+        "铎铃",
+        "桑葚",
+        "卡达"
+      ],
+      "location": "罗德岛",
+      "significance": "无名少年的故事留下悬念，展现罗德岛的人道关怀",
+      "is_imaginary": false
+    },
+    {
+      "event": "铎铃回到谋善村，为孩子们拍照，并意外录下方小石意气风发的宣言",
+      "type": "reunion",
+      "line_range": [
+        1579,
+        1616
+      ],
+      "participants": [
+        "铎铃",
+        "开朗的小孩",
+        "犹豫的小孩",
+        "方小石"
+      ],
+      "location": "谋善村",
+      "significance": "以方小石的乐观宣言收尾，为故事留下希望",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "仇白",
+      "type": "operator",
+      "role_in_chapter": "核心主角，剑客。在荒野中制服方小石并送其回家，后介入谋善村的骗局，多次救下方小石，最终决定带他离开村子。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "方小石",
+      "type": "npc",
+      "role_in_chapter": "核心主角，叛逆少年。三年前炸毁移山庙后离家出走，与山海众混迹。被仇白送回家后，拒绝成为「死人」以骗取赔偿款，最终跳崖被救，跟随仇白离开。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老族长",
+      "type": "npc",
+      "role_in_chapter": "谋善村族长，策划了冒用方小石名字骗取赔偿款的骗局。在嵯峨的劝诫下最终决定向官府坦白。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "猎户",
+      "type": "npc",
+      "role_in_chapter": "方小石的父亲，性格隐忍。为了村子的生存和儿子的未来，同意让方小石成为「死人」，但在最后关头试图阻止方小石跳崖。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "嵯峨",
+      "type": "operator",
+      "role_in_chapter": "云游僧，偶然在移山庙中偷听到老族长的计划。多次与老族长对话，以佛理劝诫其面对罪行，最终阻止其自杀。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "桑葚",
+      "type": "operator",
+      "role_in_chapter": "灾害救援组织「春乾」成员，前来调查泥石流。在山上发现火药残留，揭露了泥石流的人为真相。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "铎铃",
+      "type": "operator",
+      "role_in_chapter": "信使，负责山区邮路。在尾声中出现，与拍摄纪录片的少年对话，展现山区生活的坚韧。后与桑葚讨论无名少年的身份。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "卡达",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，帮助铎铃修复摄像机。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "名字与身份",
+      "line_range": [
+        623,
+        640
+      ],
+      "discussion_summary": "送饭的村民试图说服方小石接受名字被安在死人身上，认为「不过就是个名字」，方小石反驳说「名字是我的，我不会同意」，并比喻说「村里拉磨的驮兽活得安稳，它的名字可以随便起，随便用」，强调名字与人格尊严的关联。",
+      "is_substantive": true
+    },
+    {
+      "concept": "恶念与恶行",
+      "line_range": [
+        1158,
+        1322
+      ],
+      "discussion_summary": "嵯峨通过讲述捕快的故事和刀客不开刃的刀，与老族长讨论恶念与恶行的区别。嵯峨认为「恶念」是人心中的猛兽，需要时时敲打，而「恶行」一旦开始便不再受控制。老族长承认自己「没有想到」事情会发展到不可收拾的地步。",
+      "is_substantive": true
+    },
+    {
+      "concept": "活路与尊严",
+      "line_range": [
+        1324,
+        1371
+      ],
+      "discussion_summary": "方小石与父亲在山上激烈争论。猎户认为名字能换来粮食和安宁，方小石反驳「活路是自己挣的，不是别人给的」，并说「方小石不是这山上的一根野草，荒地上的一头畜生」，强调尊严比生存更重要。",
+      "is_substantive": true
+    },
+    {
+      "concept": "改变与坚守",
+      "line_range": [
+        1506,
+        1543
+      ],
+      "discussion_summary": "信使铎铃与拍摄纪录片的少年争论。少年认为需要「改变」山区，铎铃反驳他「什么都不知道」，并说「留在这里的人还是在用自己的方式，尽最大努力活下去」，批评少年的「关怀」是「居高临下的同情」。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "山海众",
+      "line_range": [
+        27,
+        48
+      ],
+      "description": "方小石曾与山海众混迹，仇白提到「早就知道山海众无恶不作」，并指出他们将孩子牵扯进来。方小石回忆山海众曾计划去玉门干一票大的。"
+    },
+    {
+      "faction": "谋善村村民",
+      "line_range": [
+        284,
+        548
+      ],
+      "description": "村民集体策划冒用方小石的名字骗取赔偿款，老族长在全村大会上宣布此事，村民大多表示支持或默许。"
+    },
+    {
+      "faction": "春乾",
+      "line_range": [
+        903,
+        906
+      ],
+      "description": "桑葚自我介绍是「春乾」灾害救援组织的成员，来调查泥石流发生的原因。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1545,
+        1578
+      ],
+      "description": "铎铃来到罗德岛体检，桑葚告诉她「多亏你告诉我还有罗德岛这样的地方」，卡达帮助修复摄像机。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "谋善村",
+      "line_range": [
+        245,
+        283
+      ],
+      "description": "方小石的家所在村庄，位于炎国西北山沟中，村民以周姓为主，生活贫困，靠种地和承包驰道工程维生。村口有土地庙和一座新坟。"
+    },
+    {
+      "location": "移山庙",
+      "line_range": [
+        383,
+        393
+      ],
+      "description": "谋善村的庙宇，供奉挖山开村的老祖宗。老族长介绍其历史：老祖宗一人一锄挖开大山，为后人垦出土地。庙名寓意不忘先祖精神。"
+    },
+    {
+      "location": "玉门",
+      "line_range": [
+        233,
+        239
+      ],
+      "description": "仇白曾去过的地方，方小石向往之地。仇白描述玉门「奔行大漠之上，常年与风沙作伴」，生活不易。"
+    },
+    {
+      "location": "姜齐",
+      "line_range": [
+        63,
+        64
+      ],
+      "description": "仇白的出生地，老族长听出她有姜齐口音。仇白后来回忆「官军攻破姜齐水寨，我爹和其他水匪尽数伏诛」。"
+    }
+  ],
+  "chapter": "春分",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-18T05:02:11.665390+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 35197,
+    "tokens_out": 4736,
+    "elapsed_s": 41.30467224121094
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "方小石",
+    "老族长",
+    "猎户"
+  ]
+}

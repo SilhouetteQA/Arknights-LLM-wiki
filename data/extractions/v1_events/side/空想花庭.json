@@ -1,0 +1,1333 @@
+{
+  "chapter": "空想花庭",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章开场于拉特兰，教宗伊万杰利斯塔十一世将费德里科封为圣徒，并透露一份预示危机的名单。费德里科被派往安布罗修修道院，调查失联的特使蕾缪安与奥伦。修道院位于荒原，由主教斯特凡诺管理，居民包括萨科塔与一群萨卡兹难民，双方长期共存但资源匮乏。拉特兰的援助条件要求萨卡兹离开，引发内部矛盾。\n\n费德里科、里凯莱与斯普莉雅抵达修道院后，发现蕾缪安自愿留下谈判，而奥伦已逃脱。修道院面临强盗威胁与物资短缺，萨卡兹领袖杰拉尔德决定带领族人离开。同时，萨科塔少女福尔图娜与好友德尔菲娜因拉特兰问题发生激烈争执，福尔图娜的守护铳意外走火，导致德尔菲娜死亡，福尔图娜因此堕天。\n\n堕天事件加剧了修道院的紧张局势。费德里科试图控制局面，但主教斯特凡诺对拉特兰的冷漠感到失望。蕾缪安追踪一个闯入她房间的怪物，费德里科则被琴声引向圣堂，途中遇到两个自称在等他的孩子。修道院突然起火，局势进一步失控。\n\nScene 1 中，圣堂大火被扑灭，费德里科判断为人为纵火，引发萨科塔与萨卡兹居民间的猜疑。莱蒙德因出现在现场被怀疑，费德里科指出所有在场者均有嫌疑。杰拉尔德与主教斯特凡诺在远处目睹了居民的争吵，揭示了双方日益加深的隔阂。Scene 2 中，蕾缪安追踪怪物时被伊比利亚教士奥卢斯阻拦，两人就「净土」的定义展开辩论。杰拉尔德邀请费德里科参观萨卡兹聚落，费德里科得知两个孩子艾伦戴尔和艾丝塔拉被失踪的萨卡兹妇女赫曼秘密收养。Scene 3 中，费德里科在赫曼家中发现已异化为怪物的赫曼，杰拉尔德恳求他不要动手。里凯莱与主教斯特凡诺对峙，发现主教曾计划利用旧军火制造火灾。克莱芒告知莱蒙德德尔菲娜的死讯，莱蒙德激动地去找福尔图娜。Scene 4 中，费德里科揭露杰拉尔德实为卡兹戴尔雇佣兵霍斯特·蒂芬达尔。奥伦与斯普莉雅密谋提前行动，准备接管修道院。杰拉尔德得知拉特兰军队逼近，决定以死谢罪。Scene 5 中，福尔图娜拒绝莱蒙德的营救，坚持为自己的罪行负责。奥伦与费德里科等人会合，计划以莱蒙德为借口行动。克莱芒带来杰拉尔德的首级，请求放过其他萨卡兹。Scene 6 为闪回，展现杰拉尔德与爱琳的过去，以及他决定赴死的内心独白。克莱芒与费德里科在花圃前讨论伤痕与希望。Scene 7 中，主教斯特凡诺主持最后一次圣餐，暗中将深海教会的血肉掺入面包。奥伦与蕾缪安就如何处理萨卡兹爆发激烈冲突。莱蒙德与福尔图娜试图逃离，在正门被拉特兰特勤队拦截。Scene 8 中，主教斯特凡诺在晨会上发表感人演讲，宣布同意返回拉特兰。费德里科鸣铳制止奥伦与蕾缪安的争斗，并下令各方行动。里凯莱发现圣餐已被偷走。Scene 9 中，费德里科与阿尔图罗对峙，随后锁定克莱芒为一系列事件的幕后黑手。克莱芒承认自己因绝望而计划纵火，并试图服下深海教会的血肉以求答案。Scene 10 中，克莱芒服下血肉后死亡，阿尔图罗将其视为一曲「美妙的音乐」。费德里科在莱塔尼亚选帝侯使者的干预下未能逮捕阿尔图罗。两个孩子将赫曼留下的毯子盖在克莱芒身上。Scene 11 为尾声，莱蒙德向费德里科挑战，誓言要夺回杰拉尔德的尊严。福尔图娜决定跟随萨卡兹离开，斯普莉雅默许。主教斯特凡诺决定独自徒步返回拉特兰以赎罪。费德里科向教宗汇报任务，并首次对律法的适用性提出疑问。",
+  "events": [
+    {
+      "event": "教宗伊万杰利斯塔十一世将费德里科封为圣徒，并派其前往安布罗修修道院调查特使失联事件",
+      "type": "ceremony",
+      "line_range": [
+        1,
+        92
+      ],
+      "participants": [
+        "伊万杰利斯塔十一世",
+        "教宗骑士",
+        "费德里科"
+      ],
+      "location": "拉特兰",
+      "significance": "确立费德里科圣徒身份，启动本章主要任务线",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿尔图罗与修道院主教斯特凡诺在花圃前交谈，讨论信仰、苦难与拉特兰的援助",
+      "type": "conversation",
+      "line_range": [
+        93,
+        148
+      ],
+      "participants": [
+        "阿尔图罗",
+        "修道院主教"
+      ],
+      "location": "安布罗修修道院花圃",
+      "significance": "揭示修道院困境与主教内心的矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "猎户杰拉尔德与莱蒙德讨论狩猎收获与修道院现状，莱蒙德对拉特兰的解决方案表示不满",
+      "type": "conversation",
+      "line_range": [
+        149,
+        189
+      ],
+      "participants": [
+        "杰拉尔德",
+        "莱蒙德"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "展现萨卡兹群体的困境与莱蒙德的愤怒",
+      "is_imaginary": false
+    },
+    {
+      "event": "福尔图娜与德尔菲娜因拉特兰使者蕾缪安发生争执，德尔菲娜对拉特兰充满敌意",
+      "type": "confrontation",
+      "line_range": [
+        210,
+        264
+      ],
+      "participants": [
+        "福尔图娜",
+        "德尔菲娜",
+        "克莱芒"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "揭示萨科塔年轻一代对拉特兰的不同态度",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科、里凯莱与斯普莉雅抵达安布罗修修道院，费德里科建议正面突击",
+      "type": "arrival",
+      "line_range": [
+        275,
+        302
+      ],
+      "participants": [
+        "费德里科",
+        "里凯莱",
+        "斯普莉雅"
+      ],
+      "location": "安布罗修修道院外围",
+      "significance": "拉特兰小队正式介入修道院事件",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱蒙德在修道院外拦住费德里科等人，双方对峙，克莱芒报告强盗来袭",
+      "type": "confrontation",
+      "line_range": [
+        354,
+        454
+      ],
+      "participants": [
+        "莱蒙德",
+        "费德里科",
+        "里凯莱",
+        "斯普莉雅",
+        "克莱芒"
+      ],
+      "location": "安布罗修修道院入口",
+      "significance": "拉特兰小队与修道院居民的首次冲突，引入外部威胁",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯普莉雅潜入修道院，遇到福尔图娜并询问蕾缪安的下落",
+      "type": "infiltration",
+      "line_range": [
+        455,
+        515
+      ],
+      "participants": [
+        "斯普莉雅",
+        "福尔图娜"
+      ],
+      "location": "安布罗修修道院内部",
+      "significance": "斯普莉雅与福尔图娜建立联系，为后续事件铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科与里凯莱击退强盗，随后与主教斯特凡诺及杰拉尔德会面，费德里科揭露杰拉尔德的萨卡兹身份",
+      "type": "revelation",
+      "line_range": [
+        516,
+        629
+      ],
+      "participants": [
+        "费德里科",
+        "里凯莱",
+        "修道院主教",
+        "杰拉尔德",
+        "克莱芒",
+        "莱蒙德"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "揭示修道院的核心矛盾：萨卡兹与萨科塔的共存问题",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿尔图罗给孩子们讲故事，并与教士奥卢斯讨论决心与行动的矛盾",
+      "type": "conversation",
+      "line_range": [
+        630,
+        682
+      ],
+      "participants": [
+        "阿尔图罗",
+        "奥卢斯"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "展现阿尔图罗的哲学思考与奥卢斯的立场",
+      "is_imaginary": false
+    },
+    {
+      "event": "主教斯特凡诺向费德里科解释收留萨卡兹的缘由，并恳求拉特兰接受所有人，但费德里科坚持拉特兰不容萨卡兹",
+      "type": "negotiation",
+      "line_range": [
+        683,
+        772
+      ],
+      "participants": [
+        "费德里科",
+        "里凯莱",
+        "修道院主教",
+        "杰拉尔德"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "核心冲突：拉特兰的排他性政策与修道院包容现实的矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "德尔菲娜发现萨卡兹居民卡洛琳在吃糠皮和木屑，意识到物资短缺的严重性",
+      "type": "revelation",
+      "line_range": [
+        780,
+        803
+      ],
+      "participants": [
+        "德尔菲娜",
+        "卡洛琳"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "揭示修道院物资匮乏的真实状况，激化矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯普莉雅与蕾缪安会面，蕾缪安解释自己自愿留下谈判，并透露修道院曾派出三位信使",
+      "type": "revelation",
+      "line_range": [
+        804,
+        862
+      ],
+      "participants": [
+        "斯普莉雅",
+        "蕾缪安"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "揭示蕾缪安的策略与修道院求援的紧迫性",
+      "is_imaginary": false
+    },
+    {
+      "event": "福尔图娜准备制作青草格子饼作为谢礼，德尔菲娜指责她天真，两人激烈争吵",
+      "type": "confrontation",
+      "line_range": [
+        878,
+        918
+      ],
+      "participants": [
+        "福尔图娜",
+        "德尔菲娜"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "福尔图娜与德尔菲娜的友谊因拉特兰问题出现裂痕",
+      "is_imaginary": false
+    },
+    {
+      "event": "杰拉尔德与克莱芒在钟楼前回忆过去，杰拉尔德决定带领萨卡兹离开修道院",
+      "type": "farewell",
+      "line_range": [
+        935,
+        989
+      ],
+      "participants": [
+        "杰拉尔德",
+        "克莱芒"
+      ],
+      "location": "安布罗修修道院钟楼",
+      "significance": "杰拉尔德做出艰难决定，为萨卡兹群体寻找出路",
+      "is_imaginary": false
+    },
+    {
+      "event": "福尔图娜与德尔菲娜的争吵升级，福尔图娜的守护铳意外走火，击中德尔菲娜",
+      "type": "accident",
+      "line_range": [
+        990,
+        1061
+      ],
+      "participants": [
+        "福尔图娜",
+        "德尔菲娜"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "悲剧性转折，导致德尔菲娜死亡与福尔图娜堕天",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯普莉雅确认德尔菲娜死亡，费德里科宣布福尔图娜堕天，并提议封锁消息",
+      "type": "revelation",
+      "line_range": [
+        1062,
+        1202
+      ],
+      "participants": [
+        "斯普莉雅",
+        "费德里科",
+        "里凯莱",
+        "修道院主教",
+        "克莱芒",
+        "福尔图娜"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "堕天事件引发拉特兰与修道院之间的信任危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "里凯莱发现奥伦，奥伦透露他与斯普莉雅另有计划",
+      "type": "revelation",
+      "line_range": [
+        1310,
+        1336
+      ],
+      "participants": [
+        "里凯莱",
+        "奥伦"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "揭示奥伦与斯普莉雅的秘密行动，增加剧情悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科与主教斯特凡诺就堕天事件处理方式发生冲突，主教质疑拉特兰的信仰",
+      "type": "confrontation",
+      "line_range": [
+        1337,
+        1387
+      ],
+      "participants": [
+        "费德里科",
+        "修道院主教",
+        "斯普莉雅"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "主教对拉特兰的信仰产生动摇，为后续行动铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "蕾缪安阅读手记后决定行动，一个扭曲的怪物闯入她的房间",
+      "type": "ambush",
+      "line_range": [
+        1388,
+        1399
+      ],
+      "participants": [
+        "蕾缪安"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "引入新的威胁，蕾缪安被迫主动出击",
+      "is_imaginary": false
+    },
+    {
+      "event": "克莱芒在花圃与阿尔图罗交谈，表达绝望与无力感，阿尔图罗暗示自己有能力影响他人",
+      "type": "conversation",
+      "line_range": [
+        1419,
+        1469
+      ],
+      "participants": [
+        "克莱芒",
+        "阿尔图罗"
+      ],
+      "location": "安布罗修修道院花圃",
+      "significance": "展现阿尔图罗的操纵能力与克莱芒的绝望",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科被琴声引向圣堂，途中遇到两个自称在等他的孩子，修道院突然起火",
+      "type": "disaster",
+      "line_range": [
+        1470,
+        1553
+      ],
+      "participants": [
+        "费德里科"
+      ],
+      "location": "安布罗修修道院圣堂",
+      "significance": "琴声与火灾将多条线索汇聚，推动剧情高潮",
+      "is_imaginary": false
+    },
+    {
+      "event": "蕾缪安追踪怪物，与费德里科相遇，请求协助，费德里科决定分头行动",
+      "type": "planning",
+      "line_range": [
+        1551,
+        1585
+      ],
+      "participants": [
+        "蕾缪安",
+        "费德里科",
+        "克莱芒"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "蕾缪安与费德里科分工，分别处理怪物与琴声问题",
+      "is_imaginary": false
+    },
+    {
+      "event": "奥卢斯与主教斯特凡诺深夜对话，主教决定背叛信仰，奥卢斯表示欢迎",
+      "type": "betrayal",
+      "line_range": [
+        1586,
+        1619
+      ],
+      "participants": [
+        "奥卢斯",
+        "修道院主教"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "主教斯特凡诺的信仰彻底动摇，选择与奥卢斯合作",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯普莉雅与福尔图娜交谈，福尔图娜接受堕天事实，认为自己终于与萨卡兹朋友一样",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1620,
+        1646
+      ],
+      "participants": [
+        "斯普莉雅",
+        "福尔图娜"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "福尔图娜的心理转变，接受自己的新身份",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱蒙德在花圃中自言自语，似乎在做最后的告别",
+      "type": "farewell",
+      "line_range": [
+        1647,
+        1652
+      ],
+      "participants": [
+        "莱蒙德"
+      ],
+      "location": "安布罗修修道院花圃",
+      "significance": "莱蒙德的行动暗示其可能参与后续事件",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科在圣堂找到两个孩子，修道院起火，他带领孩子们撤离",
+      "type": "rescue",
+      "line_range": [
+        1704,
+        1739
+      ],
+      "participants": [
+        "费德里科",
+        "艾伦戴尔",
+        "艾丝塔拉"
+      ],
+      "location": "安布罗修修道院圣堂",
+      "significance": "费德里科面临新的危机，火灾加剧混乱",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科判断圣堂大火为人为纵火，引发居民间猜疑",
+      "type": "investigation",
+      "line_range": [
+        1875,
+        1897
+      ],
+      "participants": [
+        "费德里科",
+        "莱蒙德",
+        "惊慌的居民",
+        "冷静的居民",
+        "谨慎的萨卡兹居民"
+      ],
+      "location": "安布罗修修道院圣堂外",
+      "significance": "揭示火灾并非意外，加剧萨科塔与萨卡兹之间的信任危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "杰拉尔德与主教斯特凡诺在远处目睹居民争吵，揭示隔阂",
+      "type": "revelation",
+      "line_range": [
+        1898,
+        1912
+      ],
+      "participants": [
+        "修道院主教",
+        "杰拉尔德"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "点明双方矛盾已无法调和，为杰拉尔德赴死埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "蕾缪安追踪怪物，被伊比利亚教士奥卢斯阻拦",
+      "type": "confrontation",
+      "line_range": [
+        1988,
+        2007
+      ],
+      "participants": [
+        "蕾缪安",
+        "扭曲的怪物",
+        "奥卢斯"
+      ],
+      "location": "安布罗修修道院萨卡兹居住区",
+      "significance": "引入深海教会势力，揭示修道院隐藏的更大危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科得知艾伦戴尔和艾丝塔拉被失踪的萨卡兹赫曼秘密收养",
+      "type": "revelation",
+      "line_range": [
+        2009,
+        2052
+      ],
+      "participants": [
+        "费德里科",
+        "杰拉尔德",
+        "艾伦戴尔",
+        "艾丝塔拉"
+      ],
+      "location": "安布罗修修道院萨卡兹聚落",
+      "significance": "揭示赫曼的失踪与两个孩子的来历，为后续发现赫曼异化做铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "蕾缪安与奥卢斯就「净土」的定义展开辩论",
+      "type": "ideological_clash",
+      "line_range": [
+        2095,
+        2158
+      ],
+      "participants": [
+        "蕾缪安",
+        "奥卢斯"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "探讨拉特兰的援助与牺牲萨卡兹之间的矛盾，深化主题",
+      "is_imaginary": false
+    },
+    {
+      "event": "里凯莱与主教斯特凡诺对峙，发现主教曾计划利用旧军火制造火灾",
+      "type": "revelation",
+      "line_range": [
+        2247,
+        2281
+      ],
+      "participants": [
+        "里凯莱",
+        "修道院主教"
+      ],
+      "location": "安布罗修修道院告解室",
+      "significance": "揭示主教内心的绝望与挣扎，他曾考虑过极端手段",
+      "is_imaginary": false
+    },
+    {
+      "event": "克莱芒告知莱蒙德德尔菲娜的死讯，莱蒙德激动地去找福尔图娜",
+      "type": "revelation",
+      "line_range": [
+        2282,
+        2297
+      ],
+      "participants": [
+        "克莱芒",
+        "莱蒙德"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "推动莱蒙德采取行动，引发后续冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科在赫曼家中发现已异化为怪物的赫曼，杰拉尔德恳求他不要动手",
+      "type": "confrontation",
+      "line_range": [
+        2298,
+        2335
+      ],
+      "participants": [
+        "费德里科",
+        "扭曲的怪物",
+        "杰拉尔德",
+        "赫曼"
+      ],
+      "location": "赫曼的屋子",
+      "significance": "揭示赫曼的悲惨命运，展现杰拉尔德对同伴的守护",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科揭露杰拉尔德实为卡兹戴尔雇佣兵霍斯特·蒂芬达尔",
+      "type": "revelation",
+      "line_range": [
+        2367,
+        2378
+      ],
+      "participants": [
+        "费德里科",
+        "杰拉尔德"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "揭示杰拉尔德的真实身份，为拉特兰军队的行动提供理由",
+      "is_imaginary": false
+    },
+    {
+      "event": "奥伦与斯普莉雅密谋提前行动，准备接管修道院",
+      "type": "planning",
+      "line_range": [
+        2379,
+        2423
+      ],
+      "participants": [
+        "奥伦",
+        "斯普莉雅"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "揭示奥伦的强硬计划，与蕾缪安的温和路线形成对比",
+      "is_imaginary": false
+    },
+    {
+      "event": "杰拉尔德得知拉特兰军队逼近，决定以死谢罪",
+      "type": "farewell",
+      "line_range": [
+        2548,
+        2570
+      ],
+      "participants": [
+        "杰拉尔德",
+        "克莱芒",
+        "谨慎的萨卡兹居民"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "杰拉尔德选择牺牲自己以换取其他萨卡兹的生路",
+      "is_imaginary": false
+    },
+    {
+      "event": "福尔图娜拒绝莱蒙德的营救，坚持为自己的罪行负责",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2571,
+        2611
+      ],
+      "participants": [
+        "福尔图娜",
+        "莱蒙德"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "福尔图娜接受自己的罪责，展现其成长",
+      "is_imaginary": false
+    },
+    {
+      "event": "奥伦与费德里科等人会合，计划以莱蒙德为借口行动",
+      "type": "confrontation",
+      "line_range": [
+        2666,
+        2722
+      ],
+      "participants": [
+        "费德里科",
+        "蕾缪安",
+        "里凯莱",
+        "奥伦",
+        "斯普莉雅"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "奥伦与蕾缪安就行动方针产生激烈冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "克莱芒带来杰拉尔德的首级，请求放过其他萨卡兹",
+      "type": "sacrifice",
+      "line_range": [
+        2723,
+        2737
+      ],
+      "participants": [
+        "克莱芒",
+        "费德里科"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "杰拉尔德以死谢罪，试图平息冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "闪回展现杰拉尔德与爱琳的过去，以及他决定赴死的内心独白",
+      "type": "flashback",
+      "line_range": [
+        2738,
+        2794
+      ],
+      "participants": [
+        "杰拉尔德",
+        "爱琳"
+      ],
+      "location": "安布罗修修道院花圃",
+      "significance": "揭示杰拉尔德的过去与内心挣扎，深化其人物形象",
+      "is_imaginary": false
+    },
+    {
+      "event": "克莱芒与费德里科在花圃前讨论伤痕与希望",
+      "type": "reflection",
+      "line_range": [
+        2795,
+        2856
+      ],
+      "participants": [
+        "克莱芒",
+        "费德里科"
+      ],
+      "location": "安布罗修修道院花圃",
+      "significance": "克莱芒对友谊与希望的幻灭，为后续行动提供动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "主教斯特凡诺主持最后一次圣餐，暗中将深海教会的血肉掺入面包",
+      "type": "planning",
+      "line_range": [
+        2873,
+        2903
+      ],
+      "participants": [
+        "修道院主教",
+        "约里"
+      ],
+      "location": "安布罗修修道院礼拜堂",
+      "significance": "揭示主教的绝望计划，试图通过极端手段解决问题",
+      "is_imaginary": false
+    },
+    {
+      "event": "奥伦与蕾缪安就如何处理萨卡兹爆发激烈冲突",
+      "type": "ideological_clash",
+      "line_range": [
+        2922,
+        2972
+      ],
+      "participants": [
+        "奥伦",
+        "蕾缪安",
+        "斯普莉雅"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "奥伦主张强硬手段以维护拉特兰形象，蕾缪安反对屠杀",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱蒙德与福尔图娜试图逃离，在正门被拉特兰特勤队拦截",
+      "type": "ambush",
+      "line_range": [
+        2992,
+        3022
+      ],
+      "participants": [
+        "莱蒙德",
+        "福尔图娜",
+        "老练的拉特兰特勤队成员"
+      ],
+      "location": "安布罗修修道院正门",
+      "significance": "冲突一触即发，局势紧张",
+      "is_imaginary": false
+    },
+    {
+      "event": "主教斯特凡诺在晨会上发表感人演讲，宣布同意返回拉特兰",
+      "type": "ceremony",
+      "line_range": [
+        3023,
+        3053
+      ],
+      "participants": [
+        "修道院主教",
+        "约里",
+        "胆怯的萨卡兹居民"
+      ],
+      "location": "安布罗修修道院礼拜堂",
+      "significance": "主教放弃极端计划，选择和平回归",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科鸣铳制止奥伦与蕾缪安的争斗，并下令各方行动",
+      "type": "confrontation",
+      "line_range": [
+        3071,
+        3085
+      ],
+      "participants": [
+        "费德里科",
+        "蕾缪安",
+        "奥伦",
+        "斯普莉雅"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "费德里科强行维持秩序，推动事件解决",
+      "is_imaginary": false
+    },
+    {
+      "event": "里凯莱发现圣餐已被偷走",
+      "type": "revelation",
+      "line_range": [
+        3086,
+        3095
+      ],
+      "participants": [
+        "里凯莱"
+      ],
+      "location": "安布罗修修道院地窖",
+      "significance": "暗示有人偷走了掺有深海教会血肉的面包",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科与阿尔图罗对峙，随后锁定克莱芒为幕后黑手",
+      "type": "confrontation",
+      "line_range": [
+        3162,
+        3182
+      ],
+      "participants": [
+        "费德里科",
+        "阿尔图罗"
+      ],
+      "location": "安布罗修修道院圣堂",
+      "significance": "揭示阿尔图罗的源石技艺对事件的影响",
+      "is_imaginary": false
+    },
+    {
+      "event": "克莱芒承认自己因绝望而计划纵火，并试图服下深海教会的血肉以求答案",
+      "type": "revelation",
+      "line_range": [
+        3183,
+        3235
+      ],
+      "participants": [
+        "费德里科",
+        "克莱芒"
+      ],
+      "location": "安布罗修修道院圣堂",
+      "significance": "揭示克莱芒是纵火者，并解释其动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "克莱芒服下血肉后死亡，阿尔图罗将其视为一曲「美妙的音乐」",
+      "type": "death",
+      "line_range": [
+        3236,
+        3297
+      ],
+      "participants": [
+        "克莱芒",
+        "费德里科",
+        "阿尔图罗"
+      ],
+      "location": "安布罗修修道院花圃",
+      "significance": "克莱芒以死证明没有救世主，阿尔图罗将其作为艺术素材",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科在莱塔尼亚选帝侯使者的干预下未能逮捕阿尔图罗",
+      "type": "confrontation",
+      "line_range": [
+        3298,
+        3358
+      ],
+      "participants": [
+        "费德里科",
+        "阿尔图罗",
+        "奥伦",
+        "里凯莱",
+        "大贵族使者"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "阿尔图罗因外交豁免权逃脱，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "两个孩子将赫曼留下的毯子盖在克莱芒身上",
+      "type": "family_moment",
+      "line_range": [
+        3361,
+        3376
+      ],
+      "participants": [
+        "艾伦戴尔",
+        "艾丝塔拉"
+      ],
+      "location": "安布罗修修道院墓地",
+      "significance": "展现孩子的纯真与善意，与成人世界的残酷形成对比",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱蒙德向费德里科挑战，誓言要夺回杰拉尔德的尊严",
+      "type": "farewell",
+      "line_range": [
+        3377,
+        3422
+      ],
+      "participants": [
+        "莱蒙德",
+        "费德里科"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "莱蒙德继承杰拉尔德的意志，为未来剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "福尔图娜决定跟随萨卡兹离开，斯普莉雅默许",
+      "type": "farewell",
+      "line_range": [
+        3423,
+        3466
+      ],
+      "participants": [
+        "福尔图娜",
+        "斯普莉雅"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "福尔图娜选择与萨卡兹同行，开启新的人生",
+      "is_imaginary": false
+    },
+    {
+      "event": "主教斯特凡诺决定独自徒步返回拉特兰以赎罪",
+      "type": "farewell",
+      "line_range": [
+        3516,
+        3564
+      ],
+      "participants": [
+        "蕾缪安",
+        "修道院主教"
+      ],
+      "location": "安布罗修修道院",
+      "significance": "主教踏上自我救赎之路，寻求信仰的重建",
+      "is_imaginary": false
+    },
+    {
+      "event": "费德里科向教宗汇报任务，并首次对律法的适用性提出疑问",
+      "type": "reflection",
+      "line_range": [
+        3565,
+        3592
+      ],
+      "participants": [
+        "费德里科",
+        "伊万杰利斯塔十一世"
+      ],
+      "location": "拉特兰",
+      "significance": "费德里科开始质疑律法的绝对性，标志其角色成长",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "伊万杰利斯塔十一世",
+      "type": "npc",
+      "role_in_chapter": "拉特兰教宗，将费德里科封为圣徒并派其前往修道院",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "教宗骑士",
+      "type": "npc",
+      "role_in_chapter": "教宗的顾问，对封圣徒一事表示担忧",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "费德里科",
+      "type": "operator",
+      "role_in_chapter": "拉特兰公证所执行者，新晋圣徒，带队前往修道院调查",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿尔图罗",
+      "type": "operator",
+      "role_in_chapter": "神秘的旅人，在修道院逗留，与主教和居民交谈，暗示能影响他人",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "修道院主教",
+      "type": "npc",
+      "role_in_chapter": "安布罗修修道院主教斯特凡诺·托雷格罗萨，在信仰与现实间挣扎，最终决定背叛拉特兰",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "杰拉尔德",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹猎户领袖，决定带领族人离开修道院",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莱蒙德",
+      "type": "npc",
+      "role_in_chapter": "年轻的萨卡兹，对拉特兰充满敌意，与福尔图娜关系密切",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克莱芒",
+      "type": "npc",
+      "role_in_chapter": "修道院花匠，负责修缮工作，目睹堕天事件后陷入绝望",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "福尔图娜",
+      "type": "npc",
+      "role_in_chapter": "萨科塔少女，因意外导致好友死亡而堕天，接受新身份",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "德尔菲娜",
+      "type": "npc",
+      "role_in_chapter": "萨科塔少女，福尔图娜的好友，因争执被误杀",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "里凯莱",
+      "type": "operator",
+      "role_in_chapter": "拉特兰公证所执行者，费德里科的同事，负责协调与调查",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "空构",
+      "type": "operator",
+      "role_in_chapter": "拉特兰执行者，主动申请加入任务，与奥伦有秘密计划",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "蕾缪安",
+      "type": "operator",
+      "role_in_chapter": "拉特兰特使，枢机辅佐官，自愿留在修道院谈判，追踪怪物",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "奥伦",
+      "type": "operator",
+      "role_in_chapter": "拉特兰万国信使，从修道院逃脱，与斯普莉雅有秘密计划",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "奥斯塔",
+      "type": "operator",
+      "role_in_chapter": "异教教士，与主教斯特凡诺有旧，劝其做出选择",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "卡洛琳",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹居民，被德尔菲娜发现食用劣质食物",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾伦戴尔",
+      "type": "npc",
+      "role_in_chapter": "活泼的孩子，在圣堂等待费德里科",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾拉",
+      "type": "operator",
+      "role_in_chapter": "害羞的孩子，在圣堂等待费德里科",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "赫曼",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹妇女，因异化为怪物，被杰拉尔德保护，后被奥卢斯带走",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "爱琳",
+      "type": "npc",
+      "role_in_chapter": "杰拉尔德的已故同伴，出现在闪回中",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "约里",
+      "type": "npc",
+      "role_in_chapter": "修道院居民，与主教在晨会前交谈",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "大贵族使者",
+      "type": "npc",
+      "role_in_chapter": "莱塔尼亚选帝侯的使者，接走阿尔图罗",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "圣徒",
+      "line_range": [
+        1,
+        26
+      ],
+      "discussion_summary": "教宗与教宗骑士讨论将费德里科封为圣徒的合理性，教宗骑士认为此头衔过于特殊和沉重，教宗则认为是必要的冒险。",
+      "is_substantive": true
+    },
+    {
+      "concept": "堕天",
+      "line_range": [
+        1197,
+        1202
+      ],
+      "discussion_summary": "费德里科确认福尔图娜堕天，描述其表现为光环反应波动、头顶生角，并指出这是违反戒律的结果。",
+      "is_substantive": true
+    },
+    {
+      "concept": "戒律",
+      "line_range": [
+        1197,
+        1202
+      ],
+      "discussion_summary": "费德里科指出福尔图娜堕天是因为违反了戒律，但未具体说明戒律内容。",
+      "is_substantive": true
+    },
+    {
+      "concept": "乐园",
+      "line_range": [
+        715,
+        717
+      ],
+      "discussion_summary": "主教斯特凡诺转述蕾缪安的条件「乐园不容萨卡兹」，并对此表示强烈质疑。",
+      "is_substantive": true
+    },
+    {
+      "concept": "净土",
+      "line_range": [
+        2116,
+        2125
+      ],
+      "discussion_summary": "蕾缪安与奥卢斯就安布罗修修道院是否算得上净土展开辩论。蕾缪安认为与世隔绝、安稳生活即是净土，奥卢斯则指出其代价是忍饥挨冻和抛弃一部分人。",
+      "is_substantive": true
+    },
+    {
+      "concept": "互相理解",
+      "line_range": [
+        2128,
+        2132
+      ],
+      "discussion_summary": "奥卢斯质疑人与人之间是否存在真正的互相理解，认为个体差异导致思想不同。蕾缪安以萨科塔的共感能力回应，暗示萨科塔可能更容易理解彼此。",
+      "is_substantive": true
+    },
+    {
+      "concept": "律法",
+      "line_range": [
+        3565,
+        3584
+      ],
+      "discussion_summary": "费德里科向教宗汇报时提出疑问：如果不存在错误的环节，为何无法得出最优结局？律法是否适用于所有情况？他对此怀有疑问。",
+      "is_substantive": true
+    },
+    {
+      "concept": "伤痕与希望",
+      "line_range": [
+        2814,
+        2845
+      ],
+      "discussion_summary": "克莱芒与费德里科讨论一朵被圣像压住但幸存的花。克莱芒认为花茎已断、花瓣被燎，伤痕累累，已不是他想要的那一朵。费德里科则认为「它还在」。克莱芒指出，许多东西有了瑕疵就无法修复。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "拉特兰",
+      "line_range": [
+        1,
+        26
+      ],
+      "description": "教宗与教宗骑士讨论封圣徒事宜，体现拉特兰的宗教与政治体系。"
+    },
+    {
+      "faction": "拉特兰",
+      "line_range": [
+        715,
+        727
+      ],
+      "description": "主教斯特凡诺与费德里科就拉特兰的排他性政策进行辩论，费德里科明确表示拉特兰不容萨卡兹。"
+    },
+    {
+      "faction": "拉特兰",
+      "line_range": [
+        1114,
+        1127
+      ],
+      "description": "斯普莉雅与里凯莱讨论拉特兰的万国联合计划，指出与萨卡兹牵扯不清会危及该计划。"
+    },
+    {
+      "faction": "萨卡兹",
+      "line_range": [
+        622,
+        629
+      ],
+      "description": "费德里科揭露杰拉尔德的萨卡兹身份，引发拉特兰小队与修道院之间的紧张关系。"
+    },
+    {
+      "faction": "萨卡兹",
+      "line_range": [
+        702,
+        712
+      ],
+      "description": "主教斯特凡诺解释收留萨卡兹的缘由，强调双方相互依赖的关系。"
+    },
+    {
+      "faction": "萨卡兹",
+      "line_range": [
+        1114,
+        1122
+      ],
+      "description": "斯普莉雅提及萨卡兹在伦蒂尼姆的行动，强调拉特兰不能与萨卡兹牵扯不清的政治现实。"
+    },
+    {
+      "faction": "伊比利亚",
+      "line_range": [
+        116,
+        121
+      ],
+      "description": "主教斯特凡诺回忆自海洋灾难爆发后离开伊比利亚，并质疑居民现在属于伊比利亚还是拉特兰。"
+    },
+    {
+      "faction": "伊比利亚",
+      "line_range": [
+        287,
+        288
+      ],
+      "description": "费德里科确认修道院原属国为伊比利亚，于六十一年前偏离航线失去踪迹。"
+    },
+    {
+      "faction": "拉特兰公证所",
+      "line_range": [
+        1875,
+        1887
+      ],
+      "description": "费德里科作为公证所执行者，根据现场证据判断火灾为人为纵火，并指出所有在场者均有嫌疑。"
+    },
+    {
+      "faction": "深海教会",
+      "line_range": [
+        2102,
+        2105
+      ],
+      "description": "蕾缪安认出奥卢斯来自伊比利亚，并推测他是来掩护那个扭曲的怪物。"
+    },
+    {
+      "faction": "拉特兰特勤队",
+      "line_range": [
+        2379,
+        2386
+      ],
+      "description": "拉特兰特勤队成员在修道院外部署，准备包围并清剿萨卡兹，认为「只要是萨卡兹，就一个都别想跑」。"
+    },
+    {
+      "faction": "拉特兰教皇厅",
+      "line_range": [
+        2666,
+        2722
+      ],
+      "description": "奥伦作为万国信使，私下调动特勤部队，意图以莱蒙德为借口接管修道院，维护拉特兰的外交形象。"
+    },
+    {
+      "faction": "萨卡兹",
+      "line_range": [
+        2367,
+        2378
+      ],
+      "description": "费德里科揭露杰拉尔德实为卡兹戴尔雇佣兵霍斯特·蒂芬达尔，曾灭杀教皇厅旗下三支执行小队。"
+    },
+    {
+      "faction": "伊比利亚审判庭",
+      "line_range": [
+        2000,
+        2000
+      ],
+      "description": "蕾缪安提到会联系伊比利亚审判庭来处理扭曲的怪物，暗示双方有合作。"
+    },
+    {
+      "faction": "莱塔尼亚选帝侯",
+      "line_range": [
+        3320,
+        3330
+      ],
+      "description": "一位自称大贵族使者的女性出现，其身上的纹章属于某位选帝侯，她来接走阿尔图罗。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "拉特兰",
+      "line_range": [
+        1,
+        26
+      ],
+      "description": "教宗与教宗骑士在拉特兰讨论封圣徒事宜，体现拉特兰作为萨科塔圣城的地位。"
+    },
+    {
+      "location": "安布罗修修道院",
+      "line_range": [
+        93,
+        148
+      ],
+      "description": "阿尔图罗与主教斯特凡诺在修道院花圃交谈，描述修道院的历史与现状。"
+    },
+    {
+      "location": "安布罗修修道院",
+      "line_range": [
+        287,
+        288
+      ],
+      "description": "费德里科确认修道院为伊比利亚与拉特兰合资修建的可移动大型综合设施，官方名称为安布罗修修道院。"
+    },
+    {
+      "location": "安布罗修修道院",
+      "line_range": [
+        779,
+        781
+      ],
+      "description": "主教斯特凡诺描述修道院因躲避天灾误入荒野，燃料耗尽，被困于此，土壤贫瘠。"
+    },
+    {
+      "location": "安布罗修修道院圣堂",
+      "line_range": [
+        1740,
+        1774
+      ],
+      "description": "圣堂发生大火，居民们奋力救火，费德里科判断火势有古怪，怀疑有人蓄意纵火。"
+    },
+    {
+      "location": "安布罗修修道院萨卡兹聚落",
+      "line_range": [
+        2009,
+        2052
+      ],
+      "description": "杰拉尔德邀请费德里科参观萨卡兹聚落，费德里科得知两个孩子被赫曼秘密收养，并承诺会找到他们的母亲。"
+    },
+    {
+      "location": "赫曼的屋子",
+      "line_range": [
+        2298,
+        2335
+      ],
+      "description": "费德里科在赫曼家中发现已异化为怪物的赫曼，杰拉尔德恳求他不要动手，因为孩子们还在睡觉。"
+    },
+    {
+      "location": "安布罗修修道院花圃",
+      "line_range": [
+        2795,
+        2856
+      ],
+      "description": "克莱芒与费德里科在花圃前讨论一朵幸存的花，克莱芒认为它已伤痕累累，不是他想要的那一朵。"
+    },
+    {
+      "location": "安布罗修修道院礼拜堂",
+      "line_range": [
+        3023,
+        3053
+      ],
+      "description": "主教斯特凡诺主持最后一次圣餐，发表感人演讲，宣布同意返回拉特兰。"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:08:16.238045+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 77785,
+    "tokens_out": 12774,
+    "elapsed_s": 95.00352072715759
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "伊万杰利斯塔十一世",
+    "教宗骑士",
+    "费德里科",
+    "阿尔图罗",
+    "修道院主教",
+    "杰拉尔德",
+    "莱蒙德",
+    "克莱芒",
+    "福尔图娜",
+    "德尔菲娜",
+    "里凯莱",
+    "奥伦",
+    "卡洛琳",
+    "艾伦戴尔",
+    "赫曼",
+    "爱琳",
+    "约里",
+    "大贵族使者"
+  ]
+}

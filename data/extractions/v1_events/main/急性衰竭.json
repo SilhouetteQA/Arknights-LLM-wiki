@@ -1,0 +1,738 @@
+{
+  "summary": "本章「急性衰竭」围绕罗德岛在龙门及切尔诺伯格废城分区的行动展开。开篇，凯尔希与阿米娅就切尔诺伯格事件后的心理压力进行对话，凯尔希要求博士关注阿米娅的状态。随后，罗德岛接到任务，探索在龙门城外发现的废弃城区「14号设施」，以搜寻情报和幸存者，并警惕整合运动的威胁。同时，黑钢和企鹅物流的干员们因各自任务需要暂时离开罗德岛，阿米娅在龙门贫民区偶遇一名感染者的孩童，内心受到触动，并目睹了陈警官复杂的神情。\n\n在废城探索中，由陨星、霜叶和杰西卡组成的侦察小队遭遇了整合运动的伏击，并发现了异常的温度下降现象，霜叶推测这可能与传说中的「雪怪小队」有关。小队与整合运动领袖梅菲斯特和W正面交锋，在战斗中，霜叶感知到雪怪小队的逼近，小队被迫撤退。阿米娅在罗德岛舰桥与凯尔希和陈进行情报交换，请求龙门近卫局配合救援，陈最终同意联合行动。\n\n罗德岛与龙门近卫局联合进入废城，阿米娅、星熊和陈深入源石多生地带。陈因疑似看到塔露拉的身影而独自追击，阿米娅和星熊则负责清理沿途的整合运动。星熊决定让身为感染者的罗德岛干员继续深入，自己率近卫局守住入口。凯尔希则与红在龙门贫民区东入口会合，准备应对整合运动的渗透。\n\n阿米娅在废城深处找到了受伤的霜叶，并得知陨星和杰西卡被困。她们在营救过程中遭遇梅菲斯特的威胁，并目睹了梅菲斯特用尸体堆砌的恐怖标志。阿米娅展现出坚定的意志，带领小队突破防线。在最后的战斗中，雪怪小队的领袖霜星登场，展现出强大的冰系源石技艺，罗德岛小队陷入苦战。阿米娅通过分析发现霜星的力量依赖于小队埋设的源石，并成功击碎它们，为小队创造了撤退机会。\n\n在成功撤退后，阿米娅收到陈的紧急通讯，得知整合运动已攻占龙门近卫局的重要设施，正在打开贫民区与外城的通路，龙门陷入危机。梅菲斯特向塔露拉汇报，称W成功引诱了罗德岛和龙门，浮士德和弑君者已破坏龙门防御，整合运动即将对龙门发动总攻。",
+  "events": [
+    {
+      "event": "凯尔希与阿米娅就切尔诺伯格事件后的心理压力进行对话，要求博士关注阿米娅状态",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1,
+        50
+      ],
+      "participants": [
+        "凯尔希",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示阿米娅内心的脆弱与压力，为后续剧情铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希向阿米娅和博士布置探索废弃城区14号设施的任务",
+      "type": "planning",
+      "line_range": [
+        51,
+        91
+      ],
+      "participants": [
+        "凯尔希",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛",
+      "significance": "引出本章主要任务，推动剧情发展",
+      "is_imaginary": false
+    },
+    {
+      "event": "黑钢和企鹅物流的干员因任务需要暂时离开罗德岛，并鼓励阿米娅",
+      "type": "departure",
+      "line_range": [
+        126,
+        167
+      ],
+      "participants": [
+        "阿米娅",
+        "德克萨斯",
+        "能天使",
+        "雷蛇",
+        "芙兰卡",
+        "博士"
+      ],
+      "location": "罗德岛",
+      "significance": "展现罗德岛与其他组织的合作关系，以及干员们对阿米娅的关心",
+      "is_imaginary": false
+    },
+    {
+      "event": "陨星小队在废城与整合运动交火，发现异常降温现象",
+      "type": "battle",
+      "line_range": [
+        168,
+        247
+      ],
+      "participants": [
+        "陨星",
+        "霜叶",
+        "杰西卡",
+        "凯尔希"
+      ],
+      "location": "14号设施",
+      "significance": "引入雪怪小队的传说，制造悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅在龙门贫民区帮助一名感染者的孩童，内心受到触动",
+      "type": "character_development",
+      "line_range": [
+        248,
+        303
+      ],
+      "participants": [
+        "阿米娅",
+        "孩童"
+      ],
+      "location": "龙门贫民区",
+      "significance": "深化阿米娅对感染者处境的思考，强化其使命感",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅在贫民区目睹陈警官与一名小女孩互动，看到陈复杂的神情",
+      "type": "revelation",
+      "line_range": [
+        304,
+        342
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "小女孩"
+      ],
+      "location": "龙门贫民区",
+      "significance": "揭示陈警官不为人知的一面，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅与博士就陈警官和自身责任进行深入对话",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        358,
+        388
+      ],
+      "participants": [
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛",
+      "significance": "阿米娅明确自己的决心，角色成长",
+      "is_imaginary": false
+    },
+    {
+      "event": "陨星小队遭遇整合运动精锐小队，确认雪怪小队的存在",
+      "type": "confrontation",
+      "line_range": [
+        393,
+        465
+      ],
+      "participants": [
+        "陨星",
+        "霜叶",
+        "杰西卡"
+      ],
+      "location": "14号设施",
+      "significance": "确认雪怪小队是整合运动的一部分，提升威胁等级",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅与陈和星熊进行情报交换，请求联合行动",
+      "type": "negotiation",
+      "line_range": [
+        466,
+        502
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "星熊"
+      ],
+      "location": "龙门近卫局",
+      "significance": "推动罗德岛与龙门近卫局的合作",
+      "is_imaginary": false
+    },
+    {
+      "event": "杰西卡通讯报告发现整合运动领袖梅菲斯特和W",
+      "type": "revelation",
+      "line_range": [
+        503,
+        543
+      ],
+      "participants": [
+        "阿米娅",
+        "杰西卡",
+        "梅菲斯特",
+        "W",
+        "陨星",
+        "霜叶"
+      ],
+      "location": "14号设施",
+      "significance": "揭示整合运动高层在废城活动，提升剧情紧张度",
+      "is_imaginary": false
+    },
+    {
+      "event": "陨星小队与梅菲斯特交战，被迫撤退",
+      "type": "retreat",
+      "line_range": [
+        544,
+        594
+      ],
+      "participants": [
+        "霜叶",
+        "杰西卡",
+        "陨星",
+        "梅菲斯特"
+      ],
+      "location": "14号设施",
+      "significance": "展现梅菲斯特的残忍和雪怪小队的威胁",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅请求陈出动近卫局进行救援，陈同意联合行动",
+      "type": "alliance",
+      "line_range": [
+        595,
+        620
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "凯尔希",
+        "星熊"
+      ],
+      "location": "龙门近卫局",
+      "significance": "正式确立罗德岛与龙门近卫局的联合行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅、陈和星熊进入废城，陈因看到塔露拉的身影而独自追击",
+      "type": "infiltration",
+      "line_range": [
+        658,
+        699
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "星熊",
+        "博士"
+      ],
+      "location": "14号设施",
+      "significance": "揭示塔露拉可能出现在废城，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊决定让罗德岛干员继续深入，自己率近卫局守住入口",
+      "type": "planning",
+      "line_range": [
+        700,
+        732
+      ],
+      "participants": [
+        "阿米娅",
+        "星熊"
+      ],
+      "location": "14号设施",
+      "significance": "展现星熊的决断力和对感染者的理解",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与红在龙门贫民区会合，准备应对整合运动",
+      "type": "planning",
+      "line_range": [
+        770,
+        775
+      ],
+      "participants": [
+        "凯尔希",
+        "红"
+      ],
+      "location": "龙门贫民区",
+      "significance": "展现凯尔希的独立行动，为后续剧情铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅找到陈，陈承认自己冲动并同意返回近卫局队伍",
+      "type": "reunion",
+      "line_range": [
+        776,
+        815
+      ],
+      "participants": [
+        "阿米娅",
+        "陈"
+      ],
+      "location": "14号设施",
+      "significance": "陈与阿米娅达成共识，继续联合行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅找到受伤的霜叶，得知陨星和杰西卡被困",
+      "type": "rescue",
+      "line_range": [
+        816,
+        885
+      ],
+      "participants": [
+        "阿米娅",
+        "霜叶",
+        "梅菲斯特"
+      ],
+      "location": "14号设施",
+      "significance": "推进营救任务，揭示雪怪小队的威胁",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅成功安抚受惊的杰西卡，展现其领导力和共情能力",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        886,
+        952
+      ],
+      "participants": [
+        "阿米娅",
+        "陨星",
+        "霜叶",
+        "杰西卡"
+      ],
+      "location": "14号设施",
+      "significance": "阿米娅使用特殊能力安抚杰西卡，角色成长",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅目睹梅菲斯特用尸体堆砌的恐怖标志，坚定战斗决心",
+      "type": "confrontation",
+      "line_range": [
+        953,
+        1020
+      ],
+      "participants": [
+        "阿米娅",
+        "梅菲斯特",
+        "陨星",
+        "霜叶",
+        "杰西卡",
+        "博士"
+      ],
+      "location": "14号设施",
+      "significance": "展现梅菲斯特的残忍，阿米娅决心面对一切",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队与雪怪小队领袖霜星交战，陷入苦战",
+      "type": "battle",
+      "line_range": [
+        1021,
+        1081
+      ],
+      "participants": [
+        "阿米娅",
+        "霜叶",
+        "陨星",
+        "梅菲斯特",
+        "霜星"
+      ],
+      "location": "14号设施",
+      "significance": "霜星登场，展现其强大实力，罗德岛面临生死危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅分析出霜星的力量来源，成功击碎源石，为小队创造撤退机会",
+      "type": "revelation",
+      "line_range": [
+        1082,
+        1189
+      ],
+      "participants": [
+        "阿米娅",
+        "霜叶",
+        "陨星",
+        "杰西卡",
+        "霜星"
+      ],
+      "location": "14号设施",
+      "significance": "阿米娅展现战术分析能力，成功带领小队突围",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队成功撤退，但收到陈的紧急通讯，得知龙门陷入危机",
+      "type": "retreat",
+      "line_range": [
+        1190,
+        1335
+      ],
+      "participants": [
+        "阿米娅",
+        "陨星",
+        "霜叶",
+        "杰西卡",
+        "霜星",
+        "陈"
+      ],
+      "location": "14号设施",
+      "significance": "揭示整合运动的真正目标是龙门，剧情推向高潮",
+      "is_imaginary": false
+    },
+    {
+      "event": "梅菲斯特向塔露拉汇报，整合运动即将对龙门发动总攻",
+      "type": "planning",
+      "line_range": [
+        1336,
+        1346
+      ],
+      "participants": [
+        "梅菲斯特",
+        "塔露拉"
+      ],
+      "location": "14号设施",
+      "significance": "揭示整合运动的整体计划，为下一章剧情铺垫",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的领导者之一，负责指挥和情报分析，关注阿米娅的身心状态，并与龙门近卫局进行交涉",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的领袖，负责与龙门近卫局沟通，并亲自带队深入废城营救侦察小队，展现出坚定的意志和领导力",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛的指挥官，负责陪伴阿米娅并指挥战斗，但行动受限",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陨星",
+      "type": "operator",
+      "role_in_chapter": "罗德岛侦察小队的成员，负责在废城执行侦察任务，与整合运动交战，并最终被阿米娅营救",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "霜叶",
+      "type": "operator",
+      "role_in_chapter": "罗德岛侦察小队的成员，拥有冰系源石技艺，在废城战斗中受伤，并认出雪怪小队",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "杰西卡",
+      "type": "operator",
+      "role_in_chapter": "黑钢干员，罗德岛侦察小队成员，在废城战斗中受到心理创伤，后被阿米娅安抚",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "德克萨斯",
+      "type": "operator",
+      "role_in_chapter": "企鹅物流干员，暂时离开罗德岛休假",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "能天使",
+      "type": "operator",
+      "role_in_chapter": "企鹅物流干员，暂时离开罗德岛休假",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "雷蛇",
+      "type": "operator",
+      "role_in_chapter": "黑钢干员，暂时离开罗德岛复命",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "芙兰卡",
+      "type": "operator",
+      "role_in_chapter": "黑钢干员，暂时离开罗德岛复命",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陈",
+      "type": "npc",
+      "role_in_chapter": "龙门近卫局高级警司，负责与罗德岛合作，因看到塔露拉而冲动追击，后同意联合行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "星熊",
+      "type": "npc",
+      "role_in_chapter": "龙门近卫局督察，与陈一同行动，展现出对感染者的理解和决断力",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "梅菲斯特",
+      "type": "npc",
+      "role_in_chapter": "整合运动领袖之一，残忍且善于心理战术，在废城指挥行动，并负责向塔露拉汇报",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "W",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，与梅菲斯特一同行动，负责引诱罗德岛和龙门",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "霜星",
+      "type": "npc",
+      "role_in_chapter": "雪怪小队的领袖，拥有强大的冰系源石技艺，在废城与罗德岛交战",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "塔露拉",
+      "type": "npc",
+      "role_in_chapter": "整合运动的最高领袖，在幕后指挥行动，计划对龙门发动总攻",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "红",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在龙门执行其他任务，后与凯尔希会合",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "雪怪小队",
+      "line_range": [
+        244,
+        247
+      ],
+      "discussion_summary": "霜叶提到一个关于雪怪的传说，描述一支能冻结一切的感染者游击队",
+      "is_substantive": true
+    },
+    {
+      "concept": "雪怪小队",
+      "line_range": [
+        447,
+        460
+      ],
+      "discussion_summary": "霜叶详细描述乌萨斯西北域的感染者游击队，其中有一支被称为雪怪小队，能冻结一切",
+      "is_substantive": true
+    },
+    {
+      "concept": "雪怪小队",
+      "line_range": [
+        868,
+        872
+      ],
+      "discussion_summary": "霜叶向阿米娅解释雪怪小队是整合运动的一支队伍，在废城中划下自己的地盘，制造低温",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石技艺",
+      "line_range": [
+        1150,
+        1151
+      ],
+      "discussion_summary": "霜星评价阿米娅的源石技艺很强大",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石技艺",
+      "line_range": [
+        1260,
+        1261
+      ],
+      "discussion_summary": "阿米娅分析霜星是靠小队埋设的源石来创造寒潮",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        51,
+        58
+      ],
+      "description": "凯尔希向阿米娅布置探索废弃城区14号设施的任务，以发掘信息和搜救幸存者"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        475,
+        487
+      ],
+      "description": "阿米娅向陈汇报罗德岛侦察小队的情报，建议发动联合作战剿灭龙门内部的整合运动"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        621,
+        623
+      ],
+      "description": "阿米娅表示如果陈拒绝，罗德岛将单方面出动，且不破坏与龙门的协约"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        800,
+        803
+      ],
+      "description": "阿米娅强调罗德岛不会放弃任何一个人，作战方针不会改变"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        480,
+        481
+      ],
+      "description": "陈表示龙门近卫局被小看了，对整合运动的嚣张感到不满"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        624,
+        633
+      ],
+      "description": "陈同意出动近卫局，但表示会以处理整合运动为最优先"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        178,
+        179
+      ],
+      "description": "霜叶确认整合运动在废城中有活动的迹象"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        509,
+        511
+      ],
+      "description": "杰西卡报告在废城发现整合运动的领袖梅菲斯特和W"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        964,
+        978
+      ],
+      "description": "梅菲斯特阐述整合运动接管切尔诺伯格并向乌萨斯复仇的计划"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1333,
+        1346
+      ],
+      "description": "梅菲斯特向塔露拉汇报，整合运动已攻占龙门近卫局设施，即将对龙门发动总攻"
+    },
+    {
+      "faction": "黑钢",
+      "line_range": [
+        62,
+        63
+      ],
+      "description": "凯尔希提到芙兰卡提交报告，需要回黑钢复命"
+    },
+    {
+      "faction": "企鹅物流",
+      "line_range": [
+        63,
+        64
+      ],
+      "description": "凯尔希提到企鹅物流认为应在龙门贫民区内进行意见交换"
+    },
+    {
+      "faction": "企鹅物流",
+      "line_range": [
+        132,
+        135
+      ],
+      "description": "能天使表示企鹅物流要回去休假一天"
+    },
+    {
+      "faction": "雪怪小队",
+      "line_range": [
+        1052,
+        1053
+      ],
+      "description": "陨星发现雪怪小队聚拢起来，包围了罗德岛小队"
+    },
+    {
+      "faction": "雪怪小队",
+      "line_range": [
+        1127,
+        1131
+      ],
+      "description": "霜星命令雪怪小队散开就位，摧毁掩体，冻结敌人血液"
+    }
+  ],
+  "locations": [
+    {
+      "location": "罗德岛",
+      "line_range": [
+        2,
+        3
+      ],
+      "description": "凯尔希与阿米娅和博士对话的地点，罗德岛本舰"
+    },
+    {
+      "location": "14号设施",
+      "line_range": [
+        93,
+        94
+      ],
+      "description": "龙门外荒漠中发现的一处废弃移动城市区块，是本章主要探索和战斗地点"
+    },
+    {
+      "location": "14号设施",
+      "line_range": [
+        168,
+        247
+      ],
+      "description": "陨星小队在此与整合运动交火，并发现异常降温现象"
+    },
+    {
+      "location": "龙门贫民区",
+      "line_range": [
+        248,
+        342
+      ],
+      "description": "阿米娅在此帮助一名感染者的孩童，并目睹陈警官与小女孩互动"
+    },
+    {
+      "location": "龙门贫民区",
+      "line_range": [
+        770,
+        775
+      ],
+      "description": "凯尔希与红在此会合，准备应对整合运动"
+    },
+    {
+      "location": "龙门近卫局",
+      "line_range": [
+        466,
+        502
+      ],
+      "description": "阿米娅与陈和星熊进行情报交换和谈判的地点"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        1333,
+        1335
+      ],
+      "description": "陈报告整合运动已攻占近卫局设施，龙门陷入危机"
+    }
+  ],
+  "chapter": "急性衰竭",
+  "batch_count": 1,
+  "category": "main",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-18T04:59:46.855547+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 22337,
+    "tokens_out": 5833,
+    "elapsed_s": 47.4154851436615
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "博士",
+    "梅菲斯特",
+    "霜星",
+    "塔露拉"
+  ]
+}

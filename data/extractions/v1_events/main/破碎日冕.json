@@ -1,0 +1,2470 @@
+{
+  "chapter": "破碎日冕",
+  "category": "main",
+  "batch_count": 3,
+  "summary": "本章以萨卡兹摄政王特雷西斯与特蕾西娅在碎片大厦塔顶的对话开篇，揭示了他们利用飞空艇和城防炮发动一场席卷泰拉的风暴的计划。与此同时，罗德岛分两路行动：凯尔希与华法琳在本舰处理危机，而阿米娅、博士与推进之王率领的小队已接近伦蒂尼姆。在城外，阿米娅小队从深池手中救出了一位名为托马斯的伦蒂尼姆市民，他自称能带路进城。然而，在萨迪恩区出入口，萨卡兹巡逻队与深池部队发生冲突，罗德岛被迫介入，导致托马斯被深池指挥官蔓德拉重新抓获。萨卡兹将军曼弗雷德趁机启动城防副炮轰击出入口，意图一石二鸟，既打击深池，又逼出反抗军。在炮火中，一位自称费斯特的本地人用无人机挟持博士，将罗德岛小队引入地下通道，带往伦蒂尼姆市民自救军的据点。在自救军据点，阿米娅见到了年轻的指挥官克洛维希娅，双方开始接触。另一条线中，凯尔希在罗德岛本舰遭遇食腐者之王，后者质问温迪戈博卓卡斯替的死因，并暗示阿米娅将在伦蒂尼姆面临考验。同时，赦罪师与特雷西斯得知罗德岛已至，派出血魔大君前往萨迪恩区，并提及特蕾西娅可能见到故人。此外，维多利亚士兵号角正带领一支残兵在深池与萨卡兹的夹缝中艰难求生，并计划再次冒险为伤员寻找药物。\n\n罗德岛与自救军成功会合后，双方就合作展开深入讨论。阿米娅向克洛维希娅阐述了罗德岛的理念，强调萨卡兹并非问题本身，战争才是。克洛维希娅在确认罗德岛的立场后，同意合作，共同营救被萨卡兹关押的信使海蒂。与此同时，自救军侦察小队遭遇萨卡兹雇佣兵袭击，战士比尔为掩护洛洛而被俘。号角带领的维多利亚残兵在获取情报后，也计划前往同一座工厂营救战友。\n\n在制醇厂，海蒂利用智慧与萨卡兹周旋，并组织平民准备反抗。罗德岛与自救军分三路进攻工厂：摩根与达格达负责正面佯攻吸引火力，阿米娅与博士率小队翻墙潜入，号角则利用深池开辟的通道潜入。W突然现身，以爆破手段协助海蒂等人撤离，但自身陷入与赫德雷的苦战。赫德雷透露伊内丝已死，并试图杀死W，但被阿斯卡纶阻止。\n\n曼弗雷德在工厂外拦截号角，双方展开激战。罗德岛精英干员Misery现身，以独特的源石技艺救下号角及其士兵，并与曼弗雷德短暂交锋后撤离。深池指挥官蔓德拉在试图带着塔拉密探撤离时遭萨卡兹伏击，密探身亡，蔓德拉陷入绝境。自救军六队接应点被不明萨卡兹以恐怖源石技艺屠杀，罗德岛与自救军被迫改变撤退路线。\n\n本段剧情紧接制醇厂救援行动之后，聚焦于罗德岛与自救军从萨迪恩区突围的艰难历程。蔓德拉在与曼弗雷德的最终对决中落败，被其言语羞辱后，在绝望中听到了神秘声音的指引，跳入下水道，生死未卜。罗德岛与自救军在地下据点遭遇了血魔大君的恐怖袭击，损失惨重。同时，一个伪装成战士比尔的变形者潜入据点，试图动摇阿米娅的意志，被费斯特识破后，在城防炮的轰炸中消失。曼弗雷德启动城防炮对据点进行毁灭性打击，罗德岛与自救军被迫分头行动：阿米娅与博士、费斯特、可露希尔登上城墙试图关闭城防炮，而推进之王与克洛维希娅则在地下通道中遭遇血魔大君的追杀。在城墙上，阿米娅与曼弗雷德展开激战，号角带领残兵及时赶到支援，最终在Misery的协助下成功炸毁控制室，关闭了城防炮。地下通道中，推进之王在绝境中激活了隐藏机关，带领众人逃脱。达格达带领贵族雇佣兵及时赶到车站接应，众人成功登上列车撤离。在列车抵达中央区后，推进之王与坎伯兰公爵之女阿勒黛会面，后者确认了她的身份并欢迎她回家。凯尔希与海蒂、W会面，W愤怒地质问特蕾西娅复活一事。阿米娅向博士坦白，她在车站亲眼见到了特蕾西娅，并决心探寻真相。最后，剧情线切换至乌萨斯，塔露拉与科西切（卡谢娜）在一所大学中展开了一场关于意志、历史与未来的哲学对话，塔露拉最终决定与整合运动一同前往维多利亚。",
+  "events": [
+    {
+      "event": "特雷西斯与特蕾西娅在碎片大厦塔顶讨论飞空艇工程和战争计划",
+      "type": "planning",
+      "line_range": [
+        1,
+        73
+      ],
+      "participants": [
+        "特雷西斯",
+        "特蕾西娅"
+      ],
+      "location": "碎片大厦塔顶",
+      "significance": "揭示萨卡兹核心计划：利用飞空艇和风暴力量对抗所有国家，特蕾西娅将随飞空艇行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛本舰停泊，凯尔希与华法琳讨论行动进展",
+      "type": "planning",
+      "line_range": [
+        74,
+        115
+      ],
+      "participants": [
+        "凯尔希",
+        "华法琳"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "交代罗德岛以废品回收为名潜入维多利亚，凯尔希留守本舰，阿米娅和推进之王负责入城",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅小队在伦蒂尼姆城外推进，推进之王先锋小组清理贵族巡逻兵",
+      "type": "infiltration",
+      "line_range": [
+        95,
+        136
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "推进之王",
+        "因陀罗",
+        "摩根",
+        "达格达"
+      ],
+      "location": "伦蒂尼姆城外",
+      "significance": "罗德岛小队接近伦蒂尼姆，阿米娅收到杰西卡消息，需营救两人：黑钢的朋友和线人",
+      "is_imaginary": false
+    },
+    {
+      "event": "因陀罗和达格达突袭深池控制的飞行器，营救托马斯",
+      "type": "rescue",
+      "line_range": [
+        137,
+        233
+      ],
+      "participants": [
+        "因陀罗",
+        "达格达",
+        "罗德岛干员",
+        "深池士兵A",
+        "深池士兵B",
+        "伦蒂尼姆市民"
+      ],
+      "location": "伦蒂尼姆城外飞行器残骸处",
+      "significance": "罗德岛成功救出托马斯，但黑钢驾驶员被杀，飞行器被毁，与深池结仇",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅与托马斯交谈，请求他带路进入伦蒂尼姆",
+      "type": "negotiation",
+      "line_range": [
+        382,
+        409
+      ],
+      "participants": [
+        "阿米娅",
+        "伦蒂尼姆市民",
+        "博士"
+      ],
+      "location": "伦蒂尼姆城外罗德岛临时营地",
+      "significance": "托马斯同意带路，但阿米娅察觉其情绪异常",
+      "is_imaginary": false
+    },
+    {
+      "event": "深池指挥官蔓德拉训斥部下，决定回城守株待兔",
+      "type": "planning",
+      "line_range": [
+        427,
+        463
+      ],
+      "participants": [
+        "蔓德拉",
+        "深池士兵"
+      ],
+      "location": "伦蒂尼姆城外深池据点",
+      "significance": "蔓德拉意识到托马斯能带路找到重要人物，决定回城拦截",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角突袭深池据点，救出被俘的维多利亚士兵",
+      "type": "rescue",
+      "line_range": [
+        464,
+        496
+      ],
+      "participants": [
+        "号角",
+        "深池士兵",
+        "维多利亚士兵"
+      ],
+      "location": "伦蒂尼姆城外深池据点",
+      "significance": "号角自报身份：第七前线步兵营第二风暴突击队队长，开始集结残兵",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅小队在萨迪恩区出入口遭遇萨卡兹巡逻队搜查，托马斯惊慌逃跑",
+      "type": "ambush",
+      "line_range": [
+        497,
+        641
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "推进之王",
+        "伦蒂尼姆市民",
+        "萨卡兹战士",
+        "号角",
+        "蔓德拉"
+      ],
+      "location": "伦蒂尼姆萨迪恩区出入口",
+      "significance": "萨卡兹搜捕反抗军，托马斯因恐惧暴露身份逃跑，被蔓德拉抓获",
+      "is_imaginary": false
+    },
+    {
+      "event": "萨卡兹与深池在出入口对峙，罗德岛和号角介入引发混战",
+      "type": "battle",
+      "line_range": [
+        642,
+        815
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "推进之王",
+        "因陀罗",
+        "达格达",
+        "蔓德拉",
+        "萨卡兹战士",
+        "号角",
+        "罗德岛干员"
+      ],
+      "location": "伦蒂尼姆萨迪恩区三零九号出入口",
+      "significance": "多方混战，萨卡兹发现反抗军踪迹，派人通报曼弗雷德",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德与赫德雷在高墙上观察战局，启动城防副炮轰击出入口",
+      "type": "siege",
+      "line_range": [
+        816,
+        1006
+      ],
+      "participants": [
+        "曼弗雷德",
+        "赫德雷",
+        "萨卡兹战士"
+      ],
+      "location": "伦蒂尼姆城墙",
+      "significance": "曼弗雷德利用城防炮试验威力，意图打击深池和反抗军，展示萨卡兹对城市的控制力",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特用无人机挟持博士，将罗德岛小队带入地下通道",
+      "type": "infiltration",
+      "line_range": [
+        1150,
+        1180
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "推进之王",
+        "费斯特",
+        "可露希尔"
+      ],
+      "location": "伦蒂尼姆萨迪恩区地下通道",
+      "significance": "费斯特自称伦蒂尼姆市民自救军成员，带罗德岛进入城内",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特与罗德岛在地下通道互相试探，推进之王认出这是伦蒂尼姆的铁路系统",
+      "type": "revelation",
+      "line_range": [
+        1181,
+        1243
+      ],
+      "participants": [
+        "推进之王",
+        "费斯特",
+        "阿米娅",
+        "博士",
+        "可露希尔",
+        "因陀罗",
+        "摩根"
+      ],
+      "location": "伦蒂尼姆地下通道",
+      "significance": "推进之王展现对伦蒂尼姆的熟悉，费斯特介绍自救军，双方建立初步信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德向赫德雷解释为何保留萨迪恩区作为陷阱，并讨论萨卡兹的团结",
+      "type": "political_intrigue",
+      "line_range": [
+        1244,
+        1275
+      ],
+      "participants": [
+        "曼弗雷德",
+        "赫德雷"
+      ],
+      "location": "伦蒂尼姆城墙",
+      "significance": "揭示曼弗雷德的策略：利用萨迪恩区的混乱吸引敌人，同时避免激怒大公爵",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特向罗德岛介绍伦蒂尼姆城内情况，自救军与城防军的历史",
+      "type": "revelation",
+      "line_range": [
+        1276,
+        1314
+      ],
+      "participants": [
+        "费斯特",
+        "推进之王",
+        "因陀罗",
+        "摩根",
+        "达格达"
+      ],
+      "location": "伦蒂尼姆地下通道",
+      "significance": "揭示萨卡兹控制伦蒂尼姆的过程，城防军叛变，萨迪恩区是最后抵抗阵地",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角带领士兵在萨迪恩区废墟中行动，计划与同伴会合",
+      "type": "planning",
+      "line_range": [
+        1315,
+        1332
+      ],
+      "participants": [
+        "号角",
+        "伦蒂尼姆市民"
+      ],
+      "location": "伦蒂尼姆萨迪恩区废弃厂区",
+      "significance": "号角利用深池驻地作为掩护，躲避萨卡兹",
+      "is_imaginary": false
+    },
+    {
+      "event": "食腐者之王在罗德岛本舰质问凯尔希关于博卓卡斯替的死",
+      "type": "confrontation",
+      "line_range": [
+        1354,
+        1444
+      ],
+      "participants": [
+        "凯尔希",
+        "华法琳",
+        "样貌奇特的老者",
+        "闪灵"
+      ],
+      "location": "罗德岛本舰外",
+      "significance": "食腐者之王为温迪戈之死而来，凯尔希解释博卓卡斯替选择了战斗与对话，食腐者之王暂时退去，但暗示阿米娅将在伦蒂尼姆经受考验",
+      "is_imaginary": false
+    },
+    {
+      "event": "赦罪师与阿斯卡纶对峙，特雷西斯下令血魔大君前往萨迪恩区",
+      "type": "political_intrigue",
+      "line_range": [
+        1461,
+        1522
+      ],
+      "participants": [
+        "赦罪师",
+        "赦罪师直属卫兵",
+        "特雷西斯",
+        "阿斯卡纶"
+      ],
+      "location": "伦蒂尼姆中央城区",
+      "significance": "阿斯卡纶潜入伦蒂尼姆，赦罪师发现但未动手；特雷西斯得知罗德岛已至，派血魔大君去抓捕博士和阿米娅，并允许特蕾西娅见故人",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特带罗德岛到达自救军据点，洛洛因可露希尔是萨卡兹而质疑",
+      "type": "negotiation",
+      "line_range": [
+        1523,
+        1573
+      ],
+      "participants": [
+        "费斯特",
+        "洛洛",
+        "阿米娅",
+        "可露希尔",
+        "因陀罗",
+        "推进之王"
+      ],
+      "location": "伦蒂尼姆自救军据点外",
+      "significance": "洛洛对萨卡兹不信任，阿米娅坚持用行动证明立场，费斯特决定带他们见指挥官",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角在据点内安抚新兵，计划再次冒险为伤员寻找药物",
+      "type": "planning",
+      "line_range": [
+        1574,
+        1605
+      ],
+      "participants": [
+        "号角",
+        "罗本",
+        "维多利亚士兵"
+      ],
+      "location": "伦蒂尼姆萨迪恩区号角据点",
+      "significance": "号角强调首要目标是活着，但为救伤员不得不再次冒险",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德与蔓德拉会面，要求深池展现诚意以展开真正合作",
+      "type": "negotiation",
+      "line_range": [
+        1606,
+        1726
+      ],
+      "participants": [
+        "曼弗雷德",
+        "赫德雷",
+        "蔓德拉",
+        "萨卡兹战士"
+      ],
+      "location": "伦蒂尼姆城墙",
+      "significance": "曼弗雷德利用城防炮示威后，迫使蔓德拉低头，要求深池提供实质性合作",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛在自救军据点见到指挥官克洛维希娅",
+      "type": "reunion",
+      "line_range": [
+        1637,
+        1699
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "推进之王",
+        "费斯特",
+        "克洛维希娅",
+        "可露希尔"
+      ],
+      "location": "伦蒂尼姆自救军据点",
+      "significance": "克洛维希娅自称一直在等待罗德岛，双方正式接触",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角决定带人再次袭击深池据点以获取药物",
+      "type": "planning",
+      "line_range": [
+        1727,
+        1746
+      ],
+      "participants": [
+        "号角",
+        "维多利亚士兵",
+        "罗本"
+      ],
+      "location": "伦蒂尼姆萨迪恩区号角据点",
+      "significance": "为救伤员，号角不得不冒险行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "洛洛与费斯特就罗德岛是否值得信任发生争执，洛洛透露曾目睹一位萨卡兹殿下处决其父，对萨卡兹充满仇恨",
+      "type": "ideological_clash",
+      "line_range": [
+        1747,
+        1782
+      ],
+      "participants": [
+        "洛洛",
+        "费斯特"
+      ],
+      "location": "自救军据点",
+      "significance": "揭示洛洛对萨卡兹的仇恨根源，为后续角色冲突埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅向博士倾诉对特蕾西娅的思念与恐惧，怀疑洛洛所见之人可能是特蕾西娅的某种再现",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1784,
+        1845
+      ],
+      "participants": [
+        "阿米娅",
+        "博士"
+      ],
+      "location": "自救军据点",
+      "significance": "深化阿米娅对特蕾西娅的情感，揭示她对伦蒂尼姆萨卡兹愤怒的感知",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角独自追踪深池部队，制服一名深池士兵并逼问出萨卡兹的关押地点",
+      "type": "investigation",
+      "line_range": [
+        1847,
+        1884
+      ],
+      "participants": [
+        "号角",
+        "深池士兵"
+      ],
+      "location": "萨迪恩区街道",
+      "significance": "号角获得关键情报，为后续营救行动奠定基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德与伪装成托马斯的萨卡兹密使会面，密使透露曾与罗德岛接触，曼弗雷德请求其继续协助设下陷阱",
+      "type": "political_intrigue",
+      "line_range": [
+        1885,
+        1912
+      ],
+      "participants": [
+        "曼弗雷德",
+        "伦蒂尼姆市民？"
+      ],
+      "location": "萨迪恩区高墙",
+      "significance": "揭示曼弗雷德早已布下陷阱，且存在一个能伪装成他人的萨卡兹密使",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王与达格达、因陀罗就留在自救军还是投奔贵族发生激烈争执，推进之王最终表示达格达可自由选择效忠对象",
+      "type": "ideological_clash",
+      "line_range": [
+        1913,
+        1983
+      ],
+      "participants": [
+        "推进之王",
+        "达格达",
+        "因陀罗",
+        "摩根"
+      ],
+      "location": "自救军据点",
+      "significance": "展现格拉斯哥帮内部对行动路线的分歧，推进之王展现领袖气度",
+      "is_imaginary": false
+    },
+    {
+      "event": "克洛维希娅与阿米娅、博士正式谈判合作，博士坦诚罗德岛的目标是推翻特雷西斯，双方达成合作",
+      "type": "negotiation",
+      "line_range": [
+        1984,
+        2035
+      ],
+      "participants": [
+        "克洛维希娅",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "自救军据点",
+      "significance": "罗德岛与自救军正式结盟，确立共同行动目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "洛洛与战士比尔外出侦察时遭遇萨卡兹雇佣兵袭击，比尔为掩护洛洛被俘",
+      "type": "ambush",
+      "line_range": [
+        2036,
+        2119
+      ],
+      "participants": [
+        "洛洛",
+        "战士比尔",
+        "赫德雷",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "伦蒂尼姆街道",
+      "significance": "自救军损失一名重要战士，比尔被俘加深了洛洛对萨卡兹的仇恨",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫德雷与神秘萨卡兹对话，对方提醒他注意脚下影子，并告知「她」已在路上",
+      "type": "revelation",
+      "line_range": [
+        2120,
+        2142
+      ],
+      "participants": [
+        "赫德雷",
+        "？？？"
+      ],
+      "location": "制醇厂附近",
+      "significance": "暗示赫德雷身边有内鬼，且一位重要人物即将到来",
+      "is_imaginary": false
+    },
+    {
+      "event": "蔓德拉部署深池部队，计划在协助萨卡兹守门的同时，趁机救出深池的间谍",
+      "type": "planning",
+      "line_range": [
+        2143,
+        2169
+      ],
+      "participants": [
+        "蔓德拉",
+        "深池士兵"
+      ],
+      "location": "深池据点",
+      "significance": "揭示深池在萨卡兹内部安插了间谍，蔓德拉计划在今晚行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角得知战友萨利牺牲，强忍悲痛，决定当晚袭击萨卡兹监狱营救被俘士兵",
+      "type": "planning",
+      "line_range": [
+        2170,
+        2212
+      ],
+      "participants": [
+        "号角",
+        "维多利亚士兵"
+      ],
+      "location": "维多利亚残兵据点",
+      "significance": "号角化悲痛为力量，决心营救更多战友",
+      "is_imaginary": false
+    },
+    {
+      "event": "克洛维希娅与阿米娅分析情报，确定制醇厂为最可能的关押地点，但得知信使海蒂已被捕，救援计划提前",
+      "type": "planning",
+      "line_range": [
+        2213,
+        2257
+      ],
+      "participants": [
+        "克洛维希娅",
+        "阿米娅",
+        "博士",
+        "洛洛"
+      ],
+      "location": "自救军据点",
+      "significance": "确认救援目标为海蒂，行动时间提前",
+      "is_imaginary": false
+    },
+    {
+      "event": "海蒂在制醇厂内保护被虐待的市民，与萨卡兹守卫周旋，并察觉到雇佣兵的异常",
+      "type": "confrontation",
+      "line_range": [
+        2258,
+        2303
+      ],
+      "participants": [
+        "海蒂",
+        "萨卡兹战士",
+        "萨卡兹雇佣兵",
+        "伦蒂尼姆市民"
+      ],
+      "location": "制醇厂",
+      "significance": "展现海蒂的机智与领导力，为后续内部暴动做准备",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特与洛洛和解，费斯特承诺救回比尔，两人率队出发执行救援任务",
+      "type": "reunion",
+      "line_range": [
+        2304,
+        2331
+      ],
+      "participants": [
+        "费斯特",
+        "洛洛"
+      ],
+      "location": "自救军据点",
+      "significance": "小队内部矛盾化解，团结一致执行任务",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王决定留守接应，博士与阿米娅率队前往地面与费斯特会合",
+      "type": "planning",
+      "line_range": [
+        2332,
+        2347
+      ],
+      "participants": [
+        "推进之王",
+        "博士",
+        "阿米娅"
+      ],
+      "location": "地下通道出口",
+      "significance": "分兵行动，博士与阿米娅负责前线指挥",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德在制醇厂内与伪装成自救军战士的萨卡兹密使会面，确认陷阱已布好",
+      "type": "political_intrigue",
+      "line_range": [
+        2364,
+        2381
+      ],
+      "participants": [
+        "曼弗雷德",
+        "自救军战士",
+        "萨卡兹战士"
+      ],
+      "location": "制醇厂审讯室",
+      "significance": "确认制醇厂是曼弗雷德设下的陷阱",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫德雷发现雇佣兵施瓦布背叛，将其重伤，曼弗雷德要求赫德雷继续效力",
+      "type": "betrayal",
+      "line_range": [
+        2355,
+        2382
+      ],
+      "participants": [
+        "赫德雷",
+        "曼弗雷德",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "制醇厂",
+      "significance": "赫德雷手下出现叛徒，但曼弗雷德仍选择信任他",
+      "is_imaginary": false
+    },
+    {
+      "event": "海蒂察觉制醇厂是陷阱，但仍决定抓住机会，组织平民准备暴动",
+      "type": "planning",
+      "line_range": [
+        2396,
+        2406
+      ],
+      "participants": [
+        "海蒂",
+        "伦蒂尼姆市民"
+      ],
+      "location": "制醇厂厂房",
+      "significance": "海蒂决定冒险一搏，利用雇佣兵暗示的薄弱点突围",
+      "is_imaginary": false
+    },
+    {
+      "event": "可露希尔用无人机侦察制醇厂布防，发现南墙巡逻队空缺，博士决定翻墙潜入",
+      "type": "infiltration",
+      "line_range": [
+        2407,
+        2471
+      ],
+      "participants": [
+        "可露希尔",
+        "阿米娅",
+        "博士",
+        "费斯特",
+        "洛洛"
+      ],
+      "location": "制醇厂外墙",
+      "significance": "罗德岛与自救军利用滑索翻墙潜入工厂",
+      "is_imaginary": false
+    },
+    {
+      "event": "摩根与达格达在正面佯攻，吸引萨卡兹守卫注意，达格达杀意过重被摩根劝阻",
+      "type": "battle",
+      "line_range": [
+        2472,
+        2493
+      ],
+      "participants": [
+        "摩根",
+        "达格达",
+        "萨卡兹战士"
+      ],
+      "location": "制醇厂北门",
+      "significance": "佯攻部队成功吸引火力，但达格达的复仇心态令人担忧",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角利用深池开辟的通道潜入工厂，与蔓德拉短暂对峙后各自行动",
+      "type": "infiltration",
+      "line_range": [
+        2494,
+        2527
+      ],
+      "participants": [
+        "号角",
+        "维多利亚士兵",
+        "蔓德拉"
+      ],
+      "location": "制醇厂外围",
+      "significance": "号角利用深池的路线潜入，与蔓德拉形成微妙默契",
+      "is_imaginary": false
+    },
+    {
+      "event": "海蒂组织平民暴动，用试剂制服萨卡兹守卫，控制厂房",
+      "type": "rebellion",
+      "line_range": [
+        2510,
+        2541
+      ],
+      "participants": [
+        "海蒂",
+        "伦蒂尼姆市民",
+        "萨卡兹战士"
+      ],
+      "location": "制醇厂厂房",
+      "significance": "海蒂成功发动内部暴动，为突围创造条件",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅小队潜入后遭遇萨卡兹战士，阿米娅使用法术震慑对方，海蒂现身接应",
+      "type": "confrontation",
+      "line_range": [
+        2586,
+        2610
+      ],
+      "participants": [
+        "阿米娅",
+        "海蒂",
+        "萨卡兹战士",
+        "费斯特",
+        "洛洛"
+      ],
+      "location": "制醇厂内部",
+      "significance": "罗德岛与海蒂成功会合",
+      "is_imaginary": false
+    },
+    {
+      "event": "W现身，以爆破手段炸开围墙，声称受凯尔希委托来接海蒂",
+      "type": "rescue",
+      "line_range": [
+        2684,
+        2706
+      ],
+      "participants": [
+        "W",
+        "海蒂",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "制醇厂南墙",
+      "significance": "W作为凯尔希派来的援军登场，但态度恶劣",
+      "is_imaginary": false
+    },
+    {
+      "event": "W炸毁追兵路线，但导致费斯特小队与主力失散，费斯特小队在工厂内遭遇赫德雷追杀",
+      "type": "battle",
+      "line_range": [
+        2707,
+        2741
+      ],
+      "participants": [
+        "W",
+        "海蒂",
+        "费斯特",
+        "洛洛"
+      ],
+      "location": "制醇厂",
+      "significance": "W的爆破导致小队分散，费斯特小队陷入险境",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角在审讯室找到被俘的维多利亚士兵，以强硬手段说服他们重新拿起武器",
+      "type": "rescue",
+      "line_range": [
+        2742,
+        2803
+      ],
+      "participants": [
+        "号角",
+        "维多利亚士兵",
+        "被俘的士兵"
+      ],
+      "location": "制醇厂审讯室",
+      "significance": "号角成功营救并重新激励被俘士兵",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特小队在工厂内被赫德雷追杀，强尼和加比牺牲，可露希尔远程协助洛洛用滑索逃生",
+      "type": "battle",
+      "line_range": [
+        2804,
+        2921
+      ],
+      "participants": [
+        "费斯特",
+        "洛洛",
+        "战士比尔",
+        "赫德雷",
+        "可露希尔"
+      ],
+      "location": "制醇厂内部",
+      "significance": "自救军损失两名战士，赫德雷展现压倒性实力",
+      "is_imaginary": false
+    },
+    {
+      "event": "W的地雷被神秘高手全部破解，W误以为是塔露拉，决定独自断后让阿米娅等人先撤",
+      "type": "confrontation",
+      "line_range": [
+        2922,
+        2982
+      ],
+      "participants": [
+        "W",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "制醇厂",
+      "significance": "W的陷阱被破解，她选择独自面对强敌",
+      "is_imaginary": false
+    },
+    {
+      "event": "W与赫德雷对峙，赫德雷透露伊内丝已死，两人展开激战，W重伤",
+      "type": "confrontation",
+      "line_range": [
+        2983,
+        3026
+      ],
+      "participants": [
+        "W",
+        "赫德雷"
+      ],
+      "location": "制醇厂",
+      "significance": "揭示伊内丝的死讯，赫德雷与W彻底决裂",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角与蔓德拉在工厂外再次对峙，双方因各自目标不同而暂时停火",
+      "type": "confrontation",
+      "line_range": [
+        3027,
+        3065
+      ],
+      "participants": [
+        "号角",
+        "蔓德拉"
+      ],
+      "location": "制醇厂出口",
+      "significance": "号角与蔓德拉形成微妙默契，各自撤离",
+      "is_imaginary": false
+    },
+    {
+      "event": "摩根与达格达返回接应主力，阿米娅表达对W的担忧",
+      "type": "reunion",
+      "line_range": [
+        3066,
+        3098
+      ],
+      "participants": [
+        "摩根",
+        "达格达",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "制醇厂外围",
+      "significance": "佯攻部队成功返回，阿米娅对W产生信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫德雷即将杀死W时，阿斯卡纶现身阻止，三人形成对峙",
+      "type": "rescue",
+      "line_range": [
+        3099,
+        3153
+      ],
+      "participants": [
+        "W",
+        "赫德雷",
+        "阿斯卡纶"
+      ],
+      "location": "制醇厂",
+      "significance": "阿斯卡纶救下W，赫德雷行动失败",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德从部下处得知赫德雷失败，但决定继续信任他，并计划先收拾深池",
+      "type": "political_intrigue",
+      "line_range": [
+        3154,
+        3179
+      ],
+      "participants": [
+        "曼弗雷德",
+        "萨卡兹战士"
+      ],
+      "location": "制醇厂外",
+      "significance": "曼弗雷德展现对赫德雷的信任，并调整目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王因担心地面队伍，决定与因陀罗一起前往接应点查看",
+      "type": "planning",
+      "line_range": [
+        3180,
+        3223
+      ],
+      "participants": [
+        "推进之王",
+        "因陀罗"
+      ],
+      "location": "地下通道",
+      "significance": "推进之王决定不再躲藏，主动出击",
+      "is_imaginary": false
+    },
+    {
+      "event": "蔓德拉带着塔拉密探撤离，密探透露领袖已抛弃他们，随后被萨卡兹射杀",
+      "type": "betrayal",
+      "line_range": [
+        3224,
+        3246
+      ],
+      "participants": [
+        "蔓德拉",
+        "塔拉密探",
+        "深池士兵"
+      ],
+      "location": "制醇厂出口",
+      "significance": "深池间谍被杀，蔓德拉陷入绝境",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角在撤离途中遭遇曼弗雷德，双方展开激战，号角不敌",
+      "type": "battle",
+      "line_range": [
+        3247,
+        3280
+      ],
+      "participants": [
+        "号角",
+        "曼弗雷德",
+        "罗本"
+      ],
+      "location": "制醇厂外街道",
+      "significance": "号角与曼弗雷德正面交锋，展现曼弗雷德的强大实力",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛精英干员Misery现身，以独特的空间源石技艺救下号角，并与曼弗雷德短暂交锋后撤离",
+      "type": "rescue",
+      "line_range": [
+        3281,
+        3415
+      ],
+      "participants": [
+        "Misery",
+        "号角",
+        "曼弗雷德",
+        "萨卡兹战士"
+      ],
+      "location": "制醇厂外街道",
+      "significance": "罗德岛精英干员Misery首次正式登场，展现强大实力",
+      "is_imaginary": false
+    },
+    {
+      "event": "自救军六队接应点被不明萨卡兹以恐怖源石技艺屠杀，罗德岛与自救军被迫改变撤退路线",
+      "type": "ambush",
+      "line_range": [
+        3281,
+        3307
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "推进之王",
+        "因陀罗",
+        "费斯特"
+      ],
+      "location": "自救军六队接应点",
+      "significance": "揭示存在一个拥有恐怖源石技艺的萨卡兹敌人，罗德岛撤退受阻",
+      "is_imaginary": false
+    },
+    {
+      "event": "Misery向号角表明身份，并告知蔓德拉已无法活着离开工厂",
+      "type": "revelation",
+      "line_range": [
+        3416,
+        3441
+      ],
+      "participants": [
+        "Misery",
+        "号角"
+      ],
+      "location": "制醇厂外街道",
+      "significance": "Misery与号角建立联系，蔓德拉的命运被预示",
+      "is_imaginary": false
+    },
+    {
+      "event": "蔓德拉在密探死后陷入疯狂，决心与萨卡兹同归于尽",
+      "type": "confrontation",
+      "line_range": [
+        3442,
+        3480
+      ],
+      "participants": [
+        "蔓德拉",
+        "曼弗雷德",
+        "萨卡兹战士"
+      ],
+      "location": "制醇厂出口",
+      "significance": "蔓德拉失去理智，决心拼死一搏",
+      "is_imaginary": false
+    },
+    {
+      "event": "蔓德拉在与曼弗雷德的战斗中落败，被其言语羞辱后，在绝望中听到神秘声音的指引，跳入下水道",
+      "type": "confrontation",
+      "line_range": [
+        3481,
+        3583
+      ],
+      "participants": [
+        "蔓德拉",
+        "曼弗雷德"
+      ],
+      "location": "萨迪恩区交叉路口",
+      "significance": "深池指挥官蔓德拉的剧情线暂时终结，其生死未卜，为后续剧情留下悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛与自救军在地下据点遭遇血魔大君的恐怖袭击，损失惨重，被迫撤退",
+      "type": "ambush",
+      "line_range": [
+        3584,
+        3652
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "推进之王",
+        "费斯特",
+        "海蒂",
+        "因陀罗",
+        "摩根",
+        "可露希尔"
+      ],
+      "location": "萨迪恩区地下通道入口",
+      "significance": "揭示了血魔大君的恐怖实力，迫使罗德岛与自救军改变撤退计划，并导致达格达离队",
+      "is_imaginary": false
+    },
+    {
+      "event": "达格达因恐惧血魔大君而请求离开，推进之王同意她离开，让她去寻找自己该找的人",
+      "type": "departure",
+      "line_range": [
+        3617,
+        3631
+      ],
+      "participants": [
+        "推进之王",
+        "达格达",
+        "因陀罗",
+        "摩根"
+      ],
+      "location": "萨迪恩区地下通道入口",
+      "significance": "推进之王小组内部出现分歧，达格达的离开为后续她带领贵族援军回归埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德与赦罪师信使交谈，得知血魔大君对进度不满，并准备进行下一阶段行动",
+      "type": "political_intrigue",
+      "line_range": [
+        3653,
+        3679
+      ],
+      "participants": [
+        "曼弗雷德",
+        "赦罪师直属卫兵"
+      ],
+      "location": "萨迪恩区",
+      "significance": "展现了萨卡兹内部王庭与军事委员会之间的权力博弈和矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫德雷向曼弗雷德汇报伤势，曼弗雷德命令他继续投入战斗",
+      "type": "planning",
+      "line_range": [
+        3680,
+        3691
+      ],
+      "participants": [
+        "曼弗雷德",
+        "赫德雷"
+      ],
+      "location": "萨迪恩区",
+      "significance": "赫德雷的伤势和曼弗雷德的态度，暗示了赫德雷在萨卡兹阵营中的微妙处境",
+      "is_imaginary": false
+    },
+    {
+      "event": "克洛维希娅与推进之王讨论血魔大君的恐怖，阿米娅确认其身份为血魔，可露希尔警告众人遇到血魔必须逃跑",
+      "type": "revelation",
+      "line_range": [
+        3698,
+        3751
+      ],
+      "participants": [
+        "克洛维希娅",
+        "推进之王",
+        "海蒂",
+        "阿米娅",
+        "可露希尔",
+        "费斯特"
+      ],
+      "location": "自救军据点",
+      "significance": "明确了血魔大君的身份和威胁，为后续的恐怖袭击做铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王向博士坦白自己的姓氏和身份，表达了对未来的迷茫和对现在的珍视",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        3752,
+        3784
+      ],
+      "participants": [
+        "推进之王",
+        "博士"
+      ],
+      "location": "自救军据点",
+      "significance": "推进之王正式向博士揭示自己的王室身份，深化了角色内心世界",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅与海蒂交谈，阿米娅自责将自救军卷入危险，海蒂安慰她并指出机遇伴随风险",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        3786,
+        3807
+      ],
+      "participants": [
+        "阿米娅",
+        "海蒂"
+      ],
+      "location": "自救军据点",
+      "significance": "阿米娅展现出领导者的责任感与自我怀疑，海蒂的鼓励坚定了她的决心",
+      "is_imaginary": false
+    },
+    {
+      "event": "萨卡兹雇佣兵在城内大肆抓捕反抗军，号角目睹后决定行动，Misery出现警告地下也不安全",
+      "type": "ambush",
+      "line_range": [
+        3808,
+        3842
+      ],
+      "participants": [
+        "号角",
+        "Misery",
+        "伦蒂尼姆市民",
+        "萨卡兹雇佣兵",
+        "自救军战士"
+      ],
+      "location": "萨迪恩区街道",
+      "significance": "萨卡兹开始全面清剿反抗军，局势恶化，Misery带来地下据点已暴露的警告",
+      "is_imaginary": false
+    },
+    {
+      "event": "克洛维希娅与博士分析情报，怀疑有叛徒泄露了联络点位置，并计划找出内奸",
+      "type": "investigation",
+      "line_range": [
+        3849,
+        3872
+      ],
+      "participants": [
+        "克洛维希娅",
+        "博士"
+      ],
+      "location": "自救军据点",
+      "significance": "揭示了自救军内部可能存在叛徒，为后续变形者伪装成比尔的情节埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特因战友牺牲而自责，想辞去队长职务，被洛洛用战友遗物激励后重新振作",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        3873,
+        3884
+      ],
+      "participants": [
+        "费斯特",
+        "洛洛"
+      ],
+      "location": "自救军据点",
+      "significance": "展现了费斯特在战争中的成长与坚韧，以及战友间深厚的情谊",
+      "is_imaginary": false
+    },
+    {
+      "event": "伪装成战士比尔的变形者与阿米娅对话，质疑她的身份和信念，试图动摇她的意志",
+      "type": "confrontation",
+      "line_range": [
+        3885,
+        3934
+      ],
+      "participants": [
+        "阿米娅",
+        "战士比尔？"
+      ],
+      "location": "自救军据点",
+      "significance": "变形者王庭的成员首次现身，对阿米娅进行心理层面的试探和攻击",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特通过磐蟹识破变形者的伪装，洛洛在痛苦中确认比尔已死，变形者身份暴露",
+      "type": "revelation",
+      "line_range": [
+        3935,
+        3985
+      ],
+      "participants": [
+        "费斯特",
+        "洛洛",
+        "克洛维希娅",
+        "阿米娅",
+        "战士比尔？"
+      ],
+      "location": "自救军据点",
+      "significance": "费斯特的机智和洛洛的信任揭露了萨卡兹的渗透，但变形者成功拖延了时间",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德下令城防炮瞄准自救军据点，准备进行毁灭性打击，并提及血魔大君将进入地下",
+      "type": "siege",
+      "line_range": [
+        3986,
+        4000
+      ],
+      "participants": [
+        "曼弗雷德",
+        "萨卡兹战士"
+      ],
+      "location": "萨迪恩区城墙",
+      "significance": "萨卡兹发动总攻，城防炮的威胁迫使罗德岛和自救军必须立刻撤离",
+      "is_imaginary": false
+    },
+    {
+      "event": "城防炮即将轰炸，可露希尔发出警报，变形者伪装成比尔与费斯特、洛洛告别后消失",
+      "type": "disaster",
+      "line_range": [
+        4001,
+        4015
+      ],
+      "participants": [
+        "可露希尔",
+        "克洛维希娅",
+        "费斯特",
+        "洛洛",
+        "战士比尔？"
+      ],
+      "location": "自救军据点",
+      "significance": "城防炮的轰炸迫使所有人立刻行动，变形者的告别为后续剧情留下悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "克洛维希娅决定启动列车从车站撤离，阿米娅提议登上城墙关闭城防炮为撤退争取时间",
+      "type": "planning",
+      "line_range": [
+        4016,
+        4043
+      ],
+      "participants": [
+        "克洛维希娅",
+        "阿米娅",
+        "可露希尔",
+        "海蒂"
+      ],
+      "location": "自救军据点",
+      "significance": "确立了本段剧情的核心目标：分头行动，夺取车站和关闭城防炮",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德加强防御并修改城防炮口令，变形者以特雷西斯形象出现，汇报与阿米娅接触的情况",
+      "type": "political_intrigue",
+      "line_range": [
+        4044,
+        4078
+      ],
+      "participants": [
+        "曼弗雷德",
+        "特雷西斯？",
+        "？？？"
+      ],
+      "location": "萨迪恩区城墙",
+      "significance": "揭示了变形者王庭与曼弗雷德的合作关系，以及他们对阿米娅的关注",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王决定留下与克洛维希娅一起断后，预感最强大的敌人在地下",
+      "type": "planning",
+      "line_range": [
+        4079,
+        4097
+      ],
+      "participants": [
+        "推进之王",
+        "摩根",
+        "克洛维希娅"
+      ],
+      "location": "地下通道",
+      "significance": "推进之王展现出领导者的担当，为后续与血魔大君的对峙埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角目睹城防炮轰炸，决定带领城防军残兵夺回城墙控制权",
+      "type": "planning",
+      "line_range": [
+        4098,
+        4114
+      ],
+      "participants": [
+        "号角",
+        "罗本"
+      ],
+      "location": "萨迪恩区街道",
+      "significance": "号角决定主动出击，与罗德岛的目标不谋而合，为后续合作奠定基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特与可露希尔互相安慰，阿米娅提议帮助费斯特平复情绪，费斯特拒绝并决定继续战斗",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        4115,
+        4136
+      ],
+      "participants": [
+        "费斯特",
+        "可露希尔",
+        "阿米娅"
+      ],
+      "location": "地下通道",
+      "significance": "展现了角色在战争创伤下的坚韧与相互扶持",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅小队在城墙下遭遇赫德雷拦截，费斯特主动请缨拖住赫德雷，利用其攻击炸开城墙缝隙",
+      "type": "battle",
+      "line_range": [
+        4137,
+        4213
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "费斯特",
+        "可露希尔",
+        "赫德雷"
+      ],
+      "location": "萨迪恩区城墙下",
+      "significance": "费斯特展现出惊人的战术智慧和勇气，成功为阿米娅和博士登上城墙创造了机会",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角带领士兵突袭城墙控制室，制服萨卡兹守卫，从维多利亚军官口中得知关闭城防炮的两种方法",
+      "type": "infiltration",
+      "line_range": [
+        4214,
+        4266
+      ],
+      "participants": [
+        "号角",
+        "维多利亚军官",
+        "获救士兵"
+      ],
+      "location": "萨迪恩区城墙控制室",
+      "significance": "号角成功渗透，获取了关键情报，并展现了其作为军官的决断力和对战友的关怀",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫德雷与神秘人（伊内丝）会面，汇报W的情况，并讨论萨卡兹内部的阴谋",
+      "type": "revelation",
+      "line_range": [
+        4275,
+        4300
+      ],
+      "participants": [
+        "赫德雷",
+        "？？？"
+      ],
+      "location": "萨迪恩区废墟",
+      "significance": "揭示了赫德雷与W、伊内丝之间可能存在更深的计划，伊内丝并未死亡",
+      "is_imaginary": false
+    },
+    {
+      "event": "赦罪师直属卫兵识破赫德雷的背叛，准备处决他，被阿斯卡纶及时出现救下",
+      "type": "rescue",
+      "line_range": [
+        4301,
+        4327
+      ],
+      "participants": [
+        "赫德雷",
+        "赦罪师直属卫兵",
+        "？？？",
+        "阿斯卡纶"
+      ],
+      "location": "萨迪恩区废墟",
+      "significance": "赫德雷的间谍身份暴露，阿斯卡纶的介入表明罗德岛在萨卡兹内部也有布局",
+      "is_imaginary": false
+    },
+    {
+      "event": "血魔大君在地下通道追杀推进之王和克洛维希娅，以恐怖手段屠杀自救军战士",
+      "type": "ambush",
+      "line_range": [
+        4328,
+        4373
+      ],
+      "participants": [
+        "推进之王",
+        "克洛维希娅",
+        "摩根",
+        "因陀罗",
+        "自救军战士"
+      ],
+      "location": "地下通道",
+      "significance": "血魔大君的恐怖实力得到充分展现，推进之王等人陷入绝境",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅与曼弗雷德在城墙上展开激战，阿米娅试图用言语动摇曼弗雷德，但曼弗雷德决心将她困住",
+      "type": "confrontation",
+      "line_range": [
+        4374,
+        4513
+      ],
+      "participants": [
+        "阿米娅",
+        "曼弗雷德",
+        "费斯特",
+        "可露希尔"
+      ],
+      "location": "萨迪恩区城墙",
+      "significance": "阿米娅与曼弗雷德首次正面交锋，展现了双方的理念冲突和实力差距",
+      "is_imaginary": false
+    },
+    {
+      "event": "Misery及时赶到，利用源石技艺救下阿米娅等人，号角带领残兵出现，与曼弗雷德对峙",
+      "type": "rescue",
+      "line_range": [
+        4514,
+        4552
+      ],
+      "participants": [
+        "Misery",
+        "阿米娅",
+        "博士",
+        "号角",
+        "曼弗雷德"
+      ],
+      "location": "萨迪恩区城墙",
+      "significance": "Misery和号角的加入扭转了战局，为炸毁控制室创造了机会",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角与曼弗雷德激战，号角的士兵几乎全部牺牲，但她依然坚持战斗，为阿米娅争取时间",
+      "type": "battle",
+      "line_range": [
+        4553,
+        4591
+      ],
+      "participants": [
+        "号角",
+        "曼弗雷德",
+        "罗本"
+      ],
+      "location": "萨迪恩区城墙",
+      "significance": "号角展现出惊人的意志力和领导力，她的牺牲精神感染了所有人",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅小队成功潜入控制室，安装炸弹，阿米娅准备独自断后，被博士阻止",
+      "type": "infiltration",
+      "line_range": [
+        4592,
+        4699
+      ],
+      "participants": [
+        "阿米娅",
+        "博士",
+        "费斯特",
+        "可露希尔",
+        "Misery"
+      ],
+      "location": "萨迪恩区城墙控制室",
+      "significance": "博士的介入和阿米娅的成长，展现了团队间的信任与默契",
+      "is_imaginary": false
+    },
+    {
+      "event": "控制室被成功引爆，城防炮停止，曼弗雷德被迫撤退，号角力竭倒下",
+      "type": "sacrifice",
+      "line_range": [
+        4700,
+        4717
+      ],
+      "participants": [
+        "曼弗雷德",
+        "号角",
+        "萨卡兹战士"
+      ],
+      "location": "萨迪恩区城墙",
+      "significance": "城防炮被关闭，罗德岛和自救军获得喘息之机，号角的英勇表现赢得了曼弗雷德的尊重",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗本和Misery救下即将坠落的号角，号角被战友的呼唤唤醒",
+      "type": "rescue",
+      "line_range": [
+        4718,
+        4733
+      ],
+      "participants": [
+        "号角",
+        "罗本",
+        "Misery"
+      ],
+      "location": "萨迪恩区城墙",
+      "significance": "号角被救，为后续剧情保留了重要战力",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王在地下通道激活隐藏机关，带领众人逃脱血魔大君的追杀",
+      "type": "escape",
+      "line_range": [
+        4734,
+        4747
+      ],
+      "participants": [
+        "推进之王",
+        "克洛维希娅",
+        "因陀罗",
+        "摩根"
+      ],
+      "location": "地下通道",
+      "significance": "推进之王展现出对伦蒂尼姆地下结构的熟悉，暗示其王室身份带来的知识",
+      "is_imaginary": false
+    },
+    {
+      "event": "血魔大君察觉到推进之王的不同，但被女妖（阿斯卡纶）和另一位神秘人物阻止，未能继续追击",
+      "type": "confrontation",
+      "line_range": [
+        4748,
+        4761
+      ],
+      "participants": [
+        "血魔大君",
+        "？？？"
+      ],
+      "location": "地下通道",
+      "significance": "揭示了阿斯卡纶和另一位王庭成员（可能是女妖）也在暗中行动，牵制了血魔大君",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德下令包围车站，但达格达带领贵族雇佣兵及时赶到，为自救军打开通道",
+      "type": "rescue",
+      "line_range": [
+        4762,
+        4803
+      ],
+      "participants": [
+        "曼弗雷德",
+        "达格达",
+        "洛洛",
+        "维多利亚雇佣兵"
+      ],
+      "location": "萨迪恩区车站",
+      "significance": "达格达的回归带来了关键援军，确保了自救军的成功撤离",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王小组重聚，阿米娅小队安全返回，众人登上列车成功撤离萨迪恩区",
+      "type": "reunion",
+      "line_range": [
+        4804,
+        4855
+      ],
+      "participants": [
+        "推进之王",
+        "达格达",
+        "因陀罗",
+        "摩根",
+        "阿米娅",
+        "博士",
+        "费斯特",
+        "克洛维希娅"
+      ],
+      "location": "萨迪恩区车站",
+      "significance": "萨迪恩区突围战以罗德岛和自救军的成功撤离告一段落，为下一阶段的剧情开启序幕",
+      "is_imaginary": false
+    },
+    {
+      "event": "特蕾西娅在城墙边与曼弗雷德交谈，表达了对阿米娅的思念，并承认自己不会流泪",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        4856,
+        4881
+      ],
+      "participants": [
+        "特蕾西娅",
+        "曼弗雷德"
+      ],
+      "location": "萨迪恩区城墙",
+      "significance": "揭示了特蕾西娅的复活及其复杂的情感状态，她对阿米娅的关心为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "特雷西斯与赦罪师讨论魔王的力量，特雷西斯表示要打破魔王冠冕的枷锁，赦罪师则计划研究阿米娅",
+      "type": "political_intrigue",
+      "line_range": [
+        4882,
+        4903
+      ],
+      "participants": [
+        "特雷西斯",
+        "赦罪师"
+      ],
+      "location": "碎片大厦",
+      "significance": "揭示了萨卡兹高层对魔王力量的态度分歧，以及赦罪师的野心",
+      "is_imaginary": false
+    },
+    {
+      "event": "血魔大君向赦罪师抱怨女妖的阻挠，赦罪师将追捕魔王的任务交给他，并暗示有更大的计划",
+      "type": "political_intrigue",
+      "line_range": [
+        4904,
+        4926
+      ],
+      "participants": [
+        "血魔大君",
+        "赦罪师"
+      ],
+      "location": "碎片大厦",
+      "significance": "赦罪师利用血魔大君，并暗示了萨卡兹内部的不和与更大的阴谋",
+      "is_imaginary": false
+    },
+    {
+      "event": "赦罪师得知闪灵和夜莺已回到伦蒂尼姆，决定安排一场家庭聚会",
+      "type": "planning",
+      "line_range": [
+        4927,
+        4942
+      ],
+      "participants": [
+        "赦罪师",
+        "赦罪师直属卫兵"
+      ],
+      "location": "碎片大厦",
+      "significance": "闪灵和夜莺的回归，将赦罪师与萨卡兹王庭的复杂关系引入剧情",
+      "is_imaginary": false
+    },
+    {
+      "event": "闪灵与夜莺抵达伦蒂尼姆，夜莺表示想找回失去的东西，闪灵承诺会一直陪伴她",
+      "type": "reunion",
+      "line_range": [
+        4943,
+        4959
+      ],
+      "participants": [
+        "闪灵",
+        "夜莺"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "夜莺的回归为后续剧情增添了新的变数，她与赦罪师的关系即将揭晓",
+      "is_imaginary": false
+    },
+    {
+      "event": "洛洛在安全后崩溃大哭，费斯特安慰她，表示在下一场战斗开始前，他们有权利停下来哀悼",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        4960,
+        4970
+      ],
+      "participants": [
+        "洛洛",
+        "费斯特"
+      ],
+      "location": "列车上",
+      "significance": "展现了战争对普通人的创伤，以及战友间相互慰藉的温情",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王在中央区与坎伯兰公爵之女阿勒黛会面，阿勒黛确认了她的身份，并欢迎她回家",
+      "type": "reunion",
+      "line_range": [
+        4971,
+        5014
+      ],
+      "participants": [
+        "推进之王",
+        "阿勒黛"
+      ],
+      "location": "伦蒂尼姆中央区",
+      "significance": "推进之王的王室身份被正式确认，她将领导伦蒂尼姆的反抗势力",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与海蒂、W会面，W愤怒地质问凯尔希为何让特蕾西娅的身体落入特雷西斯手中",
+      "type": "confrontation",
+      "line_range": [
+        5015,
+        5041
+      ],
+      "participants": [
+        "凯尔希",
+        "海蒂",
+        "W"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "W的愤怒揭示了特蕾西娅复活事件对巴别塔旧部的巨大冲击，凯尔希的沉默暗示她可能知情",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅向博士坦白，她在车站亲眼见到了特蕾西娅，并决心探寻真相",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        5042,
+        5069
+      ],
+      "participants": [
+        "阿米娅",
+        "博士"
+      ],
+      "location": "伦蒂尼姆中央区",
+      "significance": "阿米娅直面内心的恐惧与困惑，坚定了寻找真相的决心，这是她成长的关键一步",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿勒黛向博士询问爱德华·雅特利亚斯的遗物是否在博士手中",
+      "type": "investigation",
+      "line_range": [
+        5070,
+        5074
+      ],
+      "participants": [
+        "阿勒黛",
+        "博士"
+      ],
+      "location": "伦蒂尼姆中央区",
+      "significance": "引入了新的关键道具和人物关系，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉在乌萨斯的一所大学中找到科西切（卡谢娜），两人就意志、历史与未来展开哲学对话",
+      "type": "confrontation",
+      "line_range": [
+        5075,
+        5179
+      ],
+      "participants": [
+        "塔露拉",
+        "卡谢娜"
+      ],
+      "location": "乌萨斯某大学",
+      "significance": "塔露拉与科西切的对话揭示了黑蛇的本质和乌萨斯的未来走向，深化了塔露拉的角色弧光",
+      "is_imaginary": false
+    },
+    {
+      "event": "深池领袖与阿赫茉妮讨论伦蒂尼姆局势，得知塔露拉可能也是德拉克",
+      "type": "political_intrigue",
+      "line_range": [
+        5180,
+        5196
+      ],
+      "participants": [
+        "阿赫茉妮",
+        "？？？"
+      ],
+      "location": "深池据点",
+      "significance": "揭示了深池对塔露拉的关注，以及塔露拉德拉克身份可能带来的政治影响",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与风笛交谈，陈决定继续追查鬼魂部队的真相，并最终会去找塔露拉",
+      "type": "planning",
+      "line_range": [
+        5197,
+        5220
+      ],
+      "participants": [
+        "陈",
+        "风笛"
+      ],
+      "location": "维多利亚某郡",
+      "significance": "陈明确了下一步的行动目标，为后续与塔露拉的会面埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉与科西切对峙后，决定不杀死她，并预言乌萨斯会杀死黑蛇",
+      "type": "ideological_clash",
+      "line_range": [
+        5221,
+        5266
+      ],
+      "participants": [
+        "塔露拉",
+        "卡谢娜"
+      ],
+      "location": "乌萨斯某大学",
+      "significance": "塔露拉超越了个人复仇，展现出更宏大的政治视野，她决定前往维多利亚",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉回到整合运动营地，决定与九一同前往维多利亚，帮助那里的感染者",
+      "type": "departure",
+      "line_range": [
+        5243,
+        5271
+      ],
+      "participants": [
+        "塔露拉",
+        "九",
+        "整合运动战士"
+      ],
+      "location": "乌萨斯某城外",
+      "significance": "塔露拉正式加入整合运动的新行动，将剧情线引向维多利亚，与主线汇合",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "特雷西斯",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹摄政王，在碎片大厦与特蕾西娅讨论飞空艇和战争计划，下令抓捕博士和阿米娅",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "魔王",
+      "type": "operator",
+      "role_in_chapter": "萨卡兹君主，与特雷西斯讨论风暴和战争，将随飞空艇行动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，留守本舰，与食腐者之王对峙，安排闪灵行动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "华法琳",
+      "type": "operator",
+      "role_in_chapter": "罗德岛医疗干员，与凯尔希讨论行动，遭遇食腐者之王时感到恐惧",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛小队领袖，带领队伍接近伦蒂尼姆，与自救军接触，感受到魔王的力量",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官，随阿米娅行动，被费斯特挟持但保持冷静",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "推进之王",
+      "type": "operator",
+      "role_in_chapter": "格拉斯哥帮领袖，伦蒂尼姆本地人，带领先锋小组清理敌人，对回家感到复杂",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "因陀罗",
+      "type": "operator",
+      "role_in_chapter": "格拉斯哥帮成员，参与营救托马斯和混战，性格冲动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "摩根",
+      "type": "operator",
+      "role_in_chapter": "格拉斯哥帮成员，负责协调和劝阻因陀罗与达格达的争执",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "达格达",
+      "type": "operator",
+      "role_in_chapter": "前塔楼骑士，格拉斯哥帮成员，参与战斗，对深池和萨卡兹充满仇恨",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "可露希尔",
+      "type": "operator",
+      "role_in_chapter": "罗德岛工程干员，操控无人机，参与侦察和战斗，被洛洛认出是萨卡兹",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "杰西卡",
+      "type": "operator",
+      "role_in_chapter": "黑钢干员，与阿米娅通讯，提供托马斯的情报",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "闪灵",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，赦罪师出身，与食腐者之王对峙，决定与丽兹前往伦蒂尼姆",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "蔓德拉",
+      "type": "npc",
+      "role_in_chapter": "深池指挥官，抓捕托马斯，与萨卡兹和罗德岛交战，后被曼弗雷德逼迫合作",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "曼弗雷德",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹将军，负责伦蒂尼姆防务，启动城防炮，与赫德雷讨论策略，逼迫蔓德拉合作",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "赫德雷",
+      "type": "npc",
+      "role_in_chapter": "雇佣兵头领，曼弗雷德的盟友，曾与罗德岛共事，被派去追踪罗德岛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "号角",
+      "type": "npc",
+      "role_in_chapter": "维多利亚第七前线步兵营第二风暴突击队队长，救出被俘士兵，在萨迪恩区领导残兵，计划再次冒险取药",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "费斯特",
+      "type": "npc",
+      "role_in_chapter": "伦蒂尼姆市民自救军小队长，用无人机挟持博士，带罗德岛进入地下通道",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "洛洛",
+      "type": "npc",
+      "role_in_chapter": "自救军副队长，对萨卡兹充满不信任，质疑罗德岛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克洛维希娅",
+      "type": "npc",
+      "role_in_chapter": "伦蒂尼姆市民自救军指挥官，年轻但受尊敬，一直在等待罗德岛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "样貌奇特的老者",
+      "type": "npc",
+      "role_in_chapter": "食腐者之王，质问凯尔希关于博卓卡斯替的死，暂时放过罗德岛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "赦罪师",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹王庭成员，与阿斯卡纶对峙，向特雷西斯汇报罗德岛动向",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿斯卡纶",
+      "type": "npc",
+      "role_in_chapter": "巴别塔刺客，潜入伦蒂尼姆中央城区，与赦罪师对峙",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伦蒂尼姆市民",
+      "type": "npc",
+      "role_in_chapter": "托马斯，炼糖厂主，为萨卡兹开车，被罗德岛和深池争夺，后被蔓德拉抓获",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "罗本",
+      "type": "npc",
+      "role_in_chapter": "被号角救出的维多利亚士兵，渴望战斗，被号角编入侦察队",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "W",
+      "type": "operator",
+      "role_in_chapter": "萨卡兹雇佣兵，受凯尔希委托救援海蒂，与赫德雷激战重伤，被阿斯卡纶救下",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "海蒂",
+      "type": "npc",
+      "role_in_chapter": "信使，被萨卡兹关押在制醇厂，组织平民暴动，与罗德岛会合，被W救出",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "战士比尔",
+      "type": "npc",
+      "role_in_chapter": "自救军战士，为掩护洛洛被赫德雷俘虏，后被费斯特救出，重伤",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Misery",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，以空间源石技艺救下号角，与曼弗雷德短暂交锋后撤离",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伦蒂尼姆市民？",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹密使，伪装成托马斯与曼弗雷德会面，透露曾与罗德岛接触，同意继续协助曼弗雷德",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "塔拉密探",
+      "type": "npc",
+      "role_in_chapter": "深池间谍，被蔓德拉救出，透露领袖已抛弃他们，被萨卡兹射杀",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿赫茉妮",
+      "type": "npc",
+      "role_in_chapter": "深池成员，传达领袖的命令，放弃蔓德拉，并与领袖讨论塔露拉的情报",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "赦罪师直属卫兵",
+      "type": "npc",
+      "role_in_chapter": "赦罪师的部下，监视曼弗雷德，识破赫德雷的背叛",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "血魔大君",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹王庭成员，在地下通道追杀推进之王等人，被女妖阻止",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "风暴",
+      "line_range": [
+        2,
+        50
+      ],
+      "discussion_summary": "特蕾西娅和特雷西斯讨论风暴作为萨卡兹力量的象征，飞空艇将引领风暴，风暴将摧毁敌人并让萨卡兹获得新生",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹的流浪与家园",
+      "line_range": [
+        27,
+        48
+      ],
+      "discussion_summary": "特雷西斯阐述萨卡兹两百年来的流浪与重建循环，认为战争是打破循环的唯一方式，要让敌人畏惧萨卡兹",
+      "is_substantive": true
+    },
+    {
+      "concept": "魔王",
+      "line_range": [
+        677,
+        691
+      ],
+      "discussion_summary": "阿米娅听到萨卡兹战士提及魔王，感受到体内情感躁动，意识到萨卡兹君主控制着伦蒂尼姆，但强调这不改变罗德岛的使命",
+      "is_substantive": true
+    },
+    {
+      "concept": "雇佣兵的身份转变",
+      "line_range": [
+        915,
+        950
+      ],
+      "discussion_summary": "曼弗雷德和赫德雷讨论萨卡兹雇佣兵如何从利益驱动转向追随摄政王的愿景，获得新的身份和家园",
+      "is_substantive": true
+    },
+    {
+      "concept": "城防炮的控制与使用",
+      "line_range": [
+        1031,
+        1055
+      ],
+      "discussion_summary": "曼弗雷德向赫德雷展示城防副炮的威力，解释调整炮口朝向的过程，强调控制城防炮意味着控制伦蒂尼姆",
+      "is_substantive": true
+    },
+    {
+      "concept": "伦蒂尼姆的血管（地下通道）",
+      "line_range": [
+        1197,
+        1207
+      ],
+      "discussion_summary": "推进之王认出地下通道是伦蒂尼姆的铁路系统，能绕开萨卡兹守卫从墙外抵达城内",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨迪恩区的战略价值",
+      "line_range": [
+        1244,
+        1275
+      ],
+      "discussion_summary": "曼弗雷德向赫德雷解释为何保留萨迪恩区作为陷阱，利用其复杂地形吸引敌人，同时避免激怒大公爵",
+      "is_substantive": true
+    },
+    {
+      "concept": "食腐者的力量与忠诚",
+      "line_range": [
+        1363,
+        1378
+      ],
+      "discussion_summary": "食腐者之王自称只忠于萨卡兹而非王座，啖食敌人血肉，见证英雄陨落，质问温迪戈之死",
+      "is_substantive": true
+    },
+    {
+      "concept": "赦罪师的巫术与傀儡",
+      "line_range": [
+        1511,
+        1522
+      ],
+      "discussion_summary": "赦罪师直属卫兵担心特蕾西娅见到故人会有风险，特雷西斯强调傀儡无法号令萨卡兹，拒绝侮辱特蕾西娅",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹的死亡与精魂",
+      "line_range": [
+        1821,
+        1824
+      ],
+      "discussion_summary": "阿米娅向博士解释萨卡兹重视死亡，死者的精魂会回归族群，任何萨卡兹都不该被剥夺这最后的平静",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹的愤怒",
+      "line_range": [
+        1826,
+        1830
+      ],
+      "discussion_summary": "阿米娅感知到伦蒂尼姆中心凝聚的萨卡兹愤怒，认为有人将萨卡兹千百年的怨恨凝聚成实体火焰，需要确认焰心是什么",
+      "is_substantive": true
+    },
+    {
+      "concept": "罗德岛的理念",
+      "line_range": [
+        1991,
+        2000
+      ],
+      "discussion_summary": "阿米娅向克洛维希娅阐述罗德岛为感染者、萨卡兹和所有受压迫者而战，视线不会从真正需要帮助的人身上移开",
+      "is_substantive": true
+    },
+    {
+      "concept": "自救军的目标",
+      "line_range": [
+        2003,
+        2005
+      ],
+      "discussion_summary": "克洛维希娅说明自救军战士出身不同阶层但目标只有一个：夺回伦蒂尼姆",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹的信任",
+      "line_range": [
+        3172,
+        3177
+      ],
+      "discussion_summary": "曼弗雷德向部下解释萨卡兹之间建立信任的不易，以及现在有了新的机会",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石技艺的本质",
+      "line_range": [
+        3366,
+        3367
+      ],
+      "discussion_summary": "Misery向曼弗雷德指出萨卡兹并不仅仅依靠源石技艺，但也绝对不会只用刀剑战斗",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "萨卡兹军事委员会",
+      "line_range": [
+        1,
+        73
+      ],
+      "description": "特雷西斯和特蕾西娅讨论飞空艇工程和战争计划，萨卡兹将利用风暴对抗所有国家"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        74,
+        115
+      ],
+      "description": "凯尔希和华法琳讨论罗德岛以废品回收为名潜入维多利亚，阿米娅小队负责入城"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        167,
+        233
+      ],
+      "description": "深池士兵绑架托马斯，与罗德岛交战，蔓德拉指挥行动，目标是找到重要人物"
+    },
+    {
+      "faction": "格拉斯哥帮",
+      "line_range": [
+        292,
+        357
+      ],
+      "description": "推进之王与因陀罗、摩根、达格达讨论回家，达格达对深池和萨卡兹充满仇恨"
+    },
+    {
+      "faction": "伦蒂尼姆市民自救军",
+      "line_range": [
+        1243,
+        1314
+      ],
+      "description": "费斯特介绍自救军，在萨迪恩区活动，由克洛维希娅指挥，成员多为被萨卡兹迫害的平民"
+    },
+    {
+      "faction": "维多利亚城防军",
+      "line_range": [
+        1300,
+        1314
+      ],
+      "description": "费斯特描述城防军叛变，大部分投向萨卡兹，最后一支队伍在萨迪恩区战败"
+    },
+    {
+      "faction": "食腐者王庭",
+      "line_range": [
+        1354,
+        1444
+      ],
+      "description": "食腐者之王质问凯尔希关于博卓卡斯替的死，自称只忠于萨卡兹，暂时放过罗德岛"
+    },
+    {
+      "faction": "赦罪师",
+      "line_range": [
+        1461,
+        1522
+      ],
+      "description": "赦罪师与阿斯卡纶对峙，向特雷西斯汇报，派出血魔大君前往萨迪恩区"
+    },
+    {
+      "faction": "维多利亚第七前线步兵营",
+      "line_range": [
+        482,
+        496
+      ],
+      "description": "号角自报身份，救出被俘士兵，在萨迪恩区领导残兵"
+    },
+    {
+      "faction": "伦蒂尼姆市民自救军",
+      "line_range": [
+        1747,
+        1782
+      ],
+      "description": "洛洛与费斯特讨论自救军的人手不足和转移计划，以及是否应该信任罗德岛"
+    },
+    {
+      "faction": "伦蒂尼姆市民自救军",
+      "line_range": [
+        1984,
+        2035
+      ],
+      "description": "克洛维希娅与罗德岛谈判合作，说明自救军的目标是夺回伦蒂尼姆"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        1847,
+        1884
+      ],
+      "description": "号角追踪深池部队，制服深池士兵逼问情报"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        2143,
+        2169
+      ],
+      "description": "蔓德拉部署深池部队，计划救出塔拉密探后离开伦蒂尼姆"
+    },
+    {
+      "faction": "萨卡兹军",
+      "line_range": [
+        1885,
+        1912
+      ],
+      "description": "曼弗雷德与萨卡兹密使会面，讨论设下陷阱的计划"
+    },
+    {
+      "faction": "萨卡兹军",
+      "line_range": [
+        3154,
+        3179
+      ],
+      "description": "曼弗雷德与部下讨论对赫德雷的信任问题，以及萨卡兹之间的信任"
+    },
+    {
+      "faction": "萨卡兹雇佣兵",
+      "line_range": [
+        2120,
+        2142
+      ],
+      "description": "赫德雷与神秘萨卡兹对话，讨论雇佣兵的信任问题"
+    },
+    {
+      "faction": "萨卡兹雇佣兵",
+      "line_range": [
+        2983,
+        3026
+      ],
+      "description": "W与赫德雷对峙，讨论雇佣兵的身份和背叛"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1987,
+        2000
+      ],
+      "description": "阿米娅向克洛维希娅阐述罗德岛的理念和目标"
+    },
+    {
+      "faction": "格拉斯哥帮",
+      "line_range": [
+        1913,
+        1983
+      ],
+      "description": "推进之王与达格达、因陀罗讨论格拉斯哥帮的目标和行动路线"
+    },
+    {
+      "faction": "维多利亚士兵",
+      "line_range": [
+        2170,
+        2212
+      ],
+      "description": "号角与部下讨论战友的牺牲和继续战斗的决心"
+    },
+    {
+      "faction": "塔拉人",
+      "line_range": [
+        3224,
+        3246
+      ],
+      "description": "蔓德拉与塔拉密探对话，密探透露领袖已抛弃他们"
+    }
+  ],
+  "locations": [
+    {
+      "location": "碎片大厦",
+      "line_range": [
+        1,
+        73
+      ],
+      "description": "特雷西斯和特蕾西娅在塔顶讨论飞空艇和战争计划，风暴聚集于此"
+    },
+    {
+      "location": "伦蒂尼姆",
+      "line_range": [
+        57,
+        62
+      ],
+      "description": "特雷西斯描述伦蒂尼姆现状，萨卡兹接近团结，战争将改变城市"
+    },
+    {
+      "location": "伦蒂尼姆萨迪恩区出入口",
+      "line_range": [
+        497,
+        641
+      ],
+      "description": "阿米娅小队在此遭遇萨卡兹巡逻队，托马斯逃跑被蔓德拉抓获，随后发生混战"
+    },
+    {
+      "location": "伦蒂尼姆城墙",
+      "line_range": [
+        816,
+        1006
+      ],
+      "description": "曼弗雷德和赫德雷在此观察战局，启动城防副炮轰击出入口"
+    },
+    {
+      "location": "伦蒂尼姆地下通道",
+      "line_range": [
+        1181,
+        1243
+      ],
+      "description": "费斯特带罗德岛进入地下通道，推进之王认出是铁路系统，能绕开萨卡兹守卫"
+    },
+    {
+      "location": "伦蒂尼姆萨迪恩区废弃厂区",
+      "line_range": [
+        1315,
+        1332
+      ],
+      "description": "号角带领士兵在此行动，利用深池驻地作为掩护"
+    },
+    {
+      "location": "罗德岛本舰",
+      "line_range": [
+        1354,
+        1444
+      ],
+      "description": "食腐者之王在此质问凯尔希，凯尔希解释博卓卡斯替的死"
+    },
+    {
+      "location": "伦蒂尼姆中央城区",
+      "line_range": [
+        1461,
+        1522
+      ],
+      "description": "赦罪师与阿斯卡纶对峙，特雷西斯下令血魔大君前往萨迪恩区"
+    },
+    {
+      "location": "伦蒂尼姆自救军据点",
+      "line_range": [
+        1637,
+        1699
+      ],
+      "description": "费斯特带罗德岛到达据点，克洛维希娅在此指挥，等待罗德岛"
+    },
+    {
+      "location": "伦蒂尼姆",
+      "line_range": [
+        1826,
+        1830
+      ],
+      "description": "阿米娅感知到伦蒂尼姆中心凝聚的萨卡兹愤怒"
+    },
+    {
+      "location": "制醇厂",
+      "line_range": [
+        2225,
+        2232
+      ],
+      "description": "克洛维希娅说明制醇厂是关押俘虏的八个可能地点之一，位于通往中央区的干道附近"
+    },
+    {
+      "location": "制醇厂",
+      "line_range": [
+        2258,
+        2303
+      ],
+      "description": "海蒂在制醇厂内与萨卡兹守卫周旋，组织平民准备暴动"
+    },
+    {
+      "location": "萨迪恩区",
+      "line_range": [
+        1847,
+        1884
+      ],
+      "description": "号角在萨迪恩区街道追踪深池部队"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:51:48.120597+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 118620,
+    "tokens_out": 23047,
+    "elapsed_s": 176.23901319503784
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "特雷西斯",
+    "博士",
+    "蔓德拉",
+    "曼弗雷德",
+    "费斯特",
+    "克洛维希娅",
+    "样貌奇特的老者",
+    "赦罪师",
+    "伦蒂尼姆市民",
+    "罗本",
+    "战士比尔",
+    "Misery",
+    "伦蒂尼姆市民？",
+    "塔拉密探",
+    "阿赫茉妮",
+    "赦罪师直属卫兵",
+    "血魔大君"
+  ]
+}

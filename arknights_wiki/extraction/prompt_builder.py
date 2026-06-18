@@ -85,23 +85,6 @@ OUTPUT_SCHEMA = """```json
 {
   "summary": "按 Scene 顺序概述本章剧情，3-5段，覆盖所有主要剧情线",
 
-  "events": [{
-    "event": "事件描述（一句话）",
-    "type": "snake_case 事件类型",
-    "line_range": {"scene": 场景编号, "lines": [起始行号, 结束行号]},
-    "participants": ["参与角色名"],
-    "location": "发生地点（如能确定）",
-    "significance": "剧情意义（一句话）",
-    "is_imaginary": false
-  }],
-
-  "characters": [{
-    "name": "角色名（对话中的称呼）",
-    "type": "operator|npc",
-    "role_in_chapter": "本章中的角色和行动",
-    "first_appearance_chapter": true
-  }],
-
   "concepts": [{
     "concept": "概念名",
     "line_range": {"scene": 场景编号, "lines": [起始行号, 结束行号]},
@@ -119,6 +102,23 @@ OUTPUT_SCHEMA = """```json
     "location": "地区/地点名",
     "line_range": {"scene": 场景编号, "lines": [起始行号, 结束行号]},
     "description": "该段对话中如何涉及此地点"
+  }],
+
+  "events": [{
+    "event": "事件描述（一句话）",
+    "type": "snake_case 事件类型",
+    "line_range": {"scene": 场景编号, "lines": [起始行号, 结束行号]},
+    "participants": ["参与角色名"],
+    "location": "发生地点（如能确定）",
+    "significance": "剧情意义（一句话）",
+    "is_imaginary": false
+  }],
+
+  "characters": [{
+    "name": "角色名（对话中的称呼）",
+    "type": "operator|npc",
+    "role_in_chapter": "本章中的角色和行动",
+    "first_appearance_chapter": true
   }]
 }
 ```"""

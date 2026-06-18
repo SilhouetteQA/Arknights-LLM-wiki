@@ -1,0 +1,1131 @@
+{
+  "chapter": "苦难摇篮",
+  "category": "main",
+  "batch_count": 2,
+  "summary": "本章以博士在生物处理室与迷迭香的相遇开场，博士抱着霜星的遗体，迷迭香以她独特的方式安慰博士并协助处理遗体。随后剧情转向龙门权力核心，魏彦吾与凯尔希、陈等人就切尔诺伯格核心城撞击龙门的危机展开激烈辩论。魏彦吾认为攻击核心城等同于向乌萨斯宣战，但凯尔希揭露乌萨斯内部势力（第三、第四集团军）的松动和帝国议会的袖手旁观，暗示乌萨斯可能故意让道给整合运动。陈在得知魏彦吾对贫民区的冷酷态度后，公开自己感染者的身份，与魏彦吾决裂，决心独自前往核心城阻止塔露拉。\n\n陈在出城途中遭遇星熊的阻拦，两人进行了一场深刻的对话和战斗。星熊试图以友情和责任说服陈留下，但陈最终以坚定的意志和剑术突破阻拦，与星熊告别。与此同时，罗德岛方面，阿米娅向全舰发表动员讲话，阐述罗德岛参与核心城行动的深层原因——阻止感染者被污名化并引发全面战争。凯尔希与阿米娅、博士共同制定潜入计划，利用沙尘暴和空中诱饵掩护，从核心城底层工业结构潜入。\n\n罗德岛小队成功潜入核心城后，遭遇了萨卡兹雇佣兵布设的古老仪式法术。迷迭香展现出强大的歼灭战能力，但她的战斗方式和记忆问题也引发了博士和干员们的关注。凯尔希解释了迷迭香的背景和罗德岛对她的培养逻辑。在仓库区，罗德岛遇到了前干员Guard，他正以整合运动身份保护乌萨斯平民。通过Guard的叙述，罗德岛了解到爱国者及其游击队与塔露拉领导的整合运动主流之间的裂痕。\n\n凯尔希通过分析，指出塔露拉可能正在故意激化矛盾，意图毁掉整合运动。她警告博士，真正的威胁不是塔露拉，而是爱国者——博卓卡斯替，这位北原游击队领袖、感染者的盾。Guard在得知霜星死讯和塔露拉可能背叛爱国者的消息后，决定冒险去通知爱国者，但在途中被萨卡兹雇佣兵拦截。本章以凯尔希对爱国者部队的警告和Guard的险境收尾，为后续的冲突埋下伏笔。\n\n罗德岛小队在核心城中央区边缘展开行动前准备。凯尔希向博士详细解释了作战计划：利用精英干员Raidian的通讯能力和迷迭香的索敌法术瘫痪游击队的传令兵系统，迫使游击队指挥部队现身。迷迭香在施术过程中因精神创伤陷入危机，被凯尔希和阿米娅安抚后重新稳定。作战开始后，罗德岛成功摧毁多个传令兵，迷迭香展现出强大的歼灭战能力。游击队陷入混乱，爱国者（博卓卡斯替）现身，与凯尔希展开一场跨越数十年的重逢对话。\n\n爱国者与凯尔希回忆了在卡兹戴尔的往事，他因厌恶杀人而离开卡兹戴尔，如今却成为整合运动的领袖之一。爱国者拒绝与罗德岛合作，认为罗德岛沾上了霜星的死亡气息，并坚信整合运动不能自毁。他决定与罗德岛决一死战，凯尔希下令准备战斗。在激烈的战斗中，罗德岛干员们拼尽全力攻击爱国者，但温迪戈的体质和源石结晶化使他几乎不可战胜。\n\n战斗中，爱国者陷入对妻子海伦、儿子格罗瓦兹尔和养女霜星的回忆，展现出他深藏的悔恨与痛苦。阿米娅通过法术看到了爱国者的一生，试图给予他慰藉，但爱国者拒绝接受。最终，阿米娅用蕴含她所见一切的法术击中了爱国者，使其无法再移动。爱国者承认罗德岛胜利，并将停下核心城的秘钥交给凯尔希，随后在萨卡兹的仪式中死去。他的死引发了整合运动内部的分裂，游击队与萨卡兹雇佣兵开始内讧。\n\n与此同时，龙门方面，诗怀雅、星熊和林雨霞在近卫局大楼前对话，表达了对陈的担忧。W与凯尔希相遇，两人就博士和特蕾西娅之死展开激烈对峙，但最终达成临时合作。W前往指挥塔与塔露拉对峙，揭露了塔露拉的阴谋并试图刺杀她，但失败被炸飞。塔露拉随后向萨卡兹雇佣兵发表演讲，承诺给他们战争。魏彦吾与文月在龙门进行了一场关于责任、牺牲和未来的深刻对话，魏彦吾决定亲自前往核心城。",
+  "events": [
+    {
+      "event": "博士在生物处理室与迷迭香相遇，处理霜星的遗体",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1,
+        85
+      ],
+      "participants": [
+        "PRTS",
+        "迷迭香",
+        "博士"
+      ],
+      "location": "罗德岛生物综合处理室",
+      "significance": "展现迷迭香独特的感知能力和对死亡的理解，建立博士与迷迭香的初步联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏彦吾、凯尔希、陈等人讨论核心城撞击龙门的危机",
+      "type": "political_intrigue",
+      "line_range": [
+        86,
+        182
+      ],
+      "participants": [
+        "凯尔希",
+        "魏彦吾",
+        "陈",
+        "文月",
+        "阿米娅"
+      ],
+      "location": "龙门魏彦吾办公室",
+      "significance": "揭示乌萨斯内部势力可能故意让道给整合运动，龙门面临两难选择",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈公开感染者身份，与魏彦吾决裂，决心独自前往核心城",
+      "type": "confrontation",
+      "line_range": [
+        183,
+        368
+      ],
+      "participants": [
+        "陈",
+        "魏彦吾",
+        "文月",
+        "凯尔希",
+        "阿米娅"
+      ],
+      "location": "龙门魏彦吾办公室",
+      "significance": "陈与魏彦吾彻底决裂，为后续行动奠定个人动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊在龙门出口阻拦陈，两人进行战斗和对话",
+      "type": "confrontation",
+      "line_range": [
+        408,
+        571
+      ],
+      "participants": [
+        "陈",
+        "星熊"
+      ],
+      "location": "龙门秘密出口",
+      "significance": "展现星熊对陈的深厚友情和对龙门的复杂情感，陈坚定决心",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈突破星熊阻拦，离开龙门前往核心城",
+      "type": "departure",
+      "line_range": [
+        579,
+        602
+      ],
+      "participants": [
+        "陈",
+        "星熊"
+      ],
+      "location": "龙门秘密出口",
+      "significance": "陈正式踏上前往核心城的旅程，与龙门和星熊告别",
+      "is_imaginary": false
+    },
+    {
+      "event": "文月委托罗德岛介入核心城事件，凯尔希提出建议",
+      "type": "negotiation",
+      "line_range": [
+        603,
+        776
+      ],
+      "participants": [
+        "文月",
+        "魏彦吾",
+        "凯尔希",
+        "阿米娅"
+      ],
+      "location": "龙门魏彦吾办公室",
+      "significance": "罗德岛正式获得龙门默许，介入核心城事件，凯尔希揭露科西切公爵与塔露拉的关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅向罗德岛全舰发表动员讲话",
+      "type": "planning",
+      "line_range": [
+        777,
+        854
+      ],
+      "participants": [
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "阐明罗德岛参与核心城行动的深层原因和战略意义",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希、阿米娅和博士共同制定潜入核心城的计划",
+      "type": "planning",
+      "line_range": [
+        855,
+        921
+      ],
+      "participants": [
+        "凯尔希",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛指挥室",
+      "significance": "确立利用沙尘暴和空中诱饵掩护的潜入方案",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队在核心城外围部署沙尘暴装置，临光使用源石技艺改变光线",
+      "type": "infiltration",
+      "line_range": [
+        914,
+        992
+      ],
+      "participants": [
+        "临光",
+        "守林人",
+        "杜宾",
+        "极境"
+      ],
+      "location": "切尔诺伯格核心城外围",
+      "significance": "展现罗德岛干员的协作能力和临光的特殊能力",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队成功潜入核心城底层工业结构",
+      "type": "infiltration",
+      "line_range": [
+        993,
+        1151
+      ],
+      "participants": [
+        "凯尔希",
+        "阿米娅",
+        "博士",
+        "煌",
+        "迷迭香"
+      ],
+      "location": "切尔诺伯格核心城底层",
+      "significance": "罗德岛成功潜入核心城，发现陈的踪迹",
+      "is_imaginary": false
+    },
+    {
+      "event": "迷迭香与煌就参战问题发生争执",
+      "type": "character_development",
+      "line_range": [
+        1026,
+        1071
+      ],
+      "participants": [
+        "煌",
+        "迷迭香"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "展现迷迭香的战斗意志和对逝去同伴的记忆问题",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希向博士介绍核心城内的敌情和整合运动内部矛盾",
+      "type": "revelation",
+      "line_range": [
+        1152,
+        1221
+      ],
+      "participants": [
+        "凯尔希",
+        "博士"
+      ],
+      "location": "切尔诺伯格核心城底层",
+      "significance": "揭示整合运动内部游击队与萨卡兹雇佣兵的分裂，以及通讯切断的异常",
+      "is_imaginary": false
+    },
+    {
+      "event": "迷迭香在战斗中展现其强大的源石技艺",
+      "type": "battle",
+      "line_range": [
+        1222,
+        1246
+      ],
+      "participants": [
+        "迷迭香",
+        "博士"
+      ],
+      "location": "切尔诺伯格核心城底层通道",
+      "significance": "展现迷迭香的战斗方式和心理状态",
+      "is_imaginary": false
+    },
+    {
+      "event": "迷迭香与博士、阿米娅讨论记忆和情感问题",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1247,
+        1319
+      ],
+      "participants": [
+        "迷迭香",
+        "阿米娅",
+        "博士",
+        "凯尔希"
+      ],
+      "location": "切尔诺伯格核心城底层",
+      "significance": "深入探讨迷迭香的记忆问题和她对战斗的理解",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希向博士解释迷迭香的背景和罗德岛的选择",
+      "type": "revelation",
+      "line_range": [
+        1320,
+        1347
+      ],
+      "participants": [
+        "凯尔希",
+        "博士"
+      ],
+      "location": "切尔诺伯格核心城底层",
+      "significance": "揭示迷迭香成为精英干员的深层原因和罗德岛的考量",
+      "is_imaginary": false
+    },
+    {
+      "event": "华法琳与凯尔希就预言和爱国者进行对话",
+      "type": "revelation",
+      "line_range": [
+        1350,
+        1404
+      ],
+      "participants": [
+        "华法琳",
+        "凯尔希"
+      ],
+      "location": "切尔诺伯格核心城底层",
+      "significance": "揭示关于温迪戈和魔王的预言，以及凯尔希对阿米娅的保护",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉接见从龙门返回的幻影弩手，得知浮士德和霜星的死讯",
+      "type": "revelation",
+      "line_range": [
+        1412,
+        1452
+      ],
+      "participants": [
+        "塔露拉",
+        "幻影弩手"
+      ],
+      "location": "切尔诺伯格核心城",
+      "significance": "展现塔露拉对部下死亡的冷漠态度，以及她对梅菲斯特的怀疑",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队发现萨卡兹雇佣兵布设的古老仪式法术",
+      "type": "revelation",
+      "line_range": [
+        1453,
+        1556
+      ],
+      "participants": [
+        "凯尔希",
+        "阿米娅",
+        "迷迭香",
+        "博士"
+      ],
+      "location": "切尔诺伯格核心城穿梭通道",
+      "significance": "揭示萨卡兹雇佣兵使用古老仪式法术，增加潜入难度",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队在仓库区遇到前干员Guard和乌萨斯平民",
+      "type": "revelation",
+      "line_range": [
+        1557,
+        1617
+      ],
+      "participants": [
+        "阿米娅",
+        "凯尔希",
+        "迷迭香",
+        "Guard",
+        "塔季娅娜"
+      ],
+      "location": "切尔诺伯格核心城仓库区",
+      "significance": "揭示爱国者游击队与塔露拉主流之间的裂痕，以及平民的悲惨处境",
+      "is_imaginary": false
+    },
+    {
+      "event": "Guard解释爱国者游击队的情况，迷迭香得知Scout的死讯",
+      "type": "revelation",
+      "line_range": [
+        1618,
+        1748
+      ],
+      "participants": [
+        "Guard",
+        "塔季娅娜",
+        "阿米娅",
+        "凯尔希",
+        "迷迭香",
+        "博士"
+      ],
+      "location": "切尔诺伯格核心城仓库区",
+      "significance": "深入揭示爱国者游击队的信念和行动，以及迷迭香对Scout的记忆问题",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希通过心理战术迫使塔季娅娜承认Guard的清白",
+      "type": "investigation",
+      "line_range": [
+        1686,
+        1748
+      ],
+      "participants": [
+        "凯尔希",
+        "塔季娅娜",
+        "Guard",
+        "迷迭香",
+        "阿米娅"
+      ],
+      "location": "切尔诺伯格核心城仓库区",
+      "significance": "展现凯尔希的冷酷手段和对干员的信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队击退萨卡兹巡逻队，Guard决定留下继续保护平民",
+      "type": "battle",
+      "line_range": [
+        1749,
+        1801
+      ],
+      "participants": [
+        "阿米娅",
+        "迷迭香",
+        "Guard",
+        "塔季娅娜",
+        "凯尔希"
+      ],
+      "location": "切尔诺伯格核心城仓库区",
+      "significance": "展现罗德岛的战斗力和对平民的救助",
+      "is_imaginary": false
+    },
+    {
+      "event": "Guard讲述爱国者游击队的历史和信念，凯尔希分析塔露拉的阴谋",
+      "type": "revelation",
+      "line_range": [
+        1802,
+        2013
+      ],
+      "participants": [
+        "Guard",
+        "凯尔希",
+        "阿米娅",
+        "迷迭香",
+        "博士"
+      ],
+      "location": "切尔诺伯格核心城仓库区",
+      "significance": "揭示爱国者游击队的起源和信念，以及塔露拉可能意图毁掉整合运动",
+      "is_imaginary": false
+    },
+    {
+      "event": "Guard决定冒险通知爱国者，但在途中被萨卡兹雇佣兵拦截",
+      "type": "ambush",
+      "line_range": [
+        2014,
+        2029
+      ],
+      "participants": [
+        "Guard",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "切尔诺伯格核心城",
+      "significance": "为后续冲突埋下伏笔，Guard面临生命危险",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希向博士详细解释作战计划，包括利用Raidian的通讯能力和迷迭香的索敌法术瘫痪游击队传令兵系统",
+      "type": "planning",
+      "line_range": [
+        2030,
+        2132
+      ],
+      "participants": [
+        "凯尔希",
+        "博士",
+        "阿米娅",
+        "迷迭香"
+      ],
+      "location": "核心城中央区边缘",
+      "significance": "确立罗德岛在核心城的斩首行动战术框架",
+      "is_imaginary": false
+    },
+    {
+      "event": "迷迭香在施术过程中因精神创伤陷入危机，被凯尔希和阿米娅安抚后重新稳定",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2133,
+        2209
+      ],
+      "participants": [
+        "迷迭香",
+        "凯尔希",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "核心城中央区边缘",
+      "significance": "展现迷迭香的精神脆弱性和凯尔希、阿米娅对她的支持",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希向博士解释迷迭香的背景和成为精英干员的原因",
+      "type": "revelation",
+      "line_range": [
+        2214,
+        2246
+      ],
+      "participants": [
+        "凯尔希",
+        "博士"
+      ],
+      "location": "核心城中央区边缘",
+      "significance": "揭示迷迭香作为实验感染者的过去和她在罗德岛的角色",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛小队成功瘫痪游击队传令兵系统，迷迭香展现强大的歼灭战能力",
+      "type": "battle",
+      "line_range": [
+        2265,
+        2346
+      ],
+      "participants": [
+        "阿米娅",
+        "迷迭香",
+        "凯尔希",
+        "罗德岛干员",
+        "游击队战士"
+      ],
+      "location": "核心城中央区",
+      "significance": "罗德岛战术成功，游击队陷入混乱",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱国者现身，与凯尔希展开跨越数十年的重逢对话",
+      "type": "reunion",
+      "line_range": [
+        2388,
+        2414
+      ],
+      "participants": [
+        "爱国者",
+        "凯尔希",
+        "迷迭香",
+        "阿米娅"
+      ],
+      "location": "核心城中央区公园废墟",
+      "significance": "揭示凯尔希与爱国者的旧识关系，为后续对话铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱国者与凯尔希回忆在卡兹戴尔的往事，解释他离开卡兹戴尔的原因",
+      "type": "flashback",
+      "line_range": [
+        2415,
+        2457
+      ],
+      "participants": [
+        "爱国者",
+        "凯尔希"
+      ],
+      "location": "核心城中央区",
+      "significance": "揭示爱国者的过去和离开卡兹戴尔的动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱国者拒绝与罗德岛合作，决定与罗德岛决一死战",
+      "type": "confrontation",
+      "line_range": [
+        2458,
+        2631
+      ],
+      "participants": [
+        "爱国者",
+        "凯尔希",
+        "阿米娅",
+        "迷迭香"
+      ],
+      "location": "核心城中央区",
+      "significance": "确立爱国者与罗德岛的敌对关系，为战斗铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛干员与爱国者展开激烈战斗，爱国者展现出不可战胜的体质",
+      "type": "battle",
+      "line_range": [
+        2632,
+        2651
+      ],
+      "participants": [
+        "凯尔希",
+        "Mon3tr",
+        "迷迭香",
+        "爱国者",
+        "罗德岛干员"
+      ],
+      "location": "核心城中央区",
+      "significance": "展现爱国者的强大实力和罗德岛的困境",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱国者在战斗中陷入对妻子海伦、儿子格罗瓦兹尔和养女霜星的回忆",
+      "type": "flashback",
+      "line_range": [
+        2661,
+        2767
+      ],
+      "participants": [
+        "爱国者",
+        "妻子",
+        "儿子",
+        "女儿"
+      ],
+      "location": "核心城中央区",
+      "significance": "揭示爱国者深藏的悔恨与痛苦，丰富角色形象",
+      "is_imaginary": true
+    },
+    {
+      "event": "阿米娅用法术击中爱国者，使其无法再移动，爱国者承认罗德岛胜利",
+      "type": "confrontation",
+      "line_range": [
+        2768,
+        2815
+      ],
+      "participants": [
+        "阿米娅",
+        "爱国者",
+        "迷迭香",
+        "凯尔希"
+      ],
+      "location": "核心城中央区",
+      "significance": "爱国者战败，罗德岛获得通往指挥塔的通行权",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱国者将停下核心城的秘钥交给凯尔希，并在萨卡兹仪式中死去",
+      "type": "sacrifice",
+      "line_range": [
+        2800,
+        2841
+      ],
+      "participants": [
+        "爱国者",
+        "凯尔希"
+      ],
+      "location": "核心城中央区",
+      "significance": "爱国者之死，罗德岛获得关键道具",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱国者认出阿米娅是魔王，预言引发凯尔希的警觉",
+      "type": "revelation",
+      "line_range": [
+        2910,
+        2996
+      ],
+      "participants": [
+        "爱国者",
+        "阿米娅",
+        "凯尔希",
+        "迷迭香"
+      ],
+      "location": "核心城中央区",
+      "significance": "揭示阿米娅的魔王身份，预言引发后续冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "诗怀雅、星熊和林雨霞在近卫局大楼前对话，表达对陈的担忧",
+      "type": "reflection",
+      "line_range": [
+        2997,
+        3043
+      ],
+      "participants": [
+        "诗怀雅",
+        "星熊",
+        "林雨霞"
+      ],
+      "location": "龙门近卫局大楼前",
+      "significance": "展现龙门方面对陈的关切和担忧",
+      "is_imaginary": false
+    },
+    {
+      "event": "W与凯尔希相遇，两人就博士和特蕾西娅之死展开激烈对峙",
+      "type": "confrontation",
+      "line_range": [
+        3287,
+        3374
+      ],
+      "participants": [
+        "W",
+        "凯尔希",
+        "博士"
+      ],
+      "location": "核心城地下能源区附近",
+      "significance": "揭示W对博士的仇恨和凯尔希的立场",
+      "is_imaginary": false
+    },
+    {
+      "event": "W前往指挥塔与塔露拉对峙，揭露塔露拉的阴谋并试图刺杀她",
+      "type": "confrontation",
+      "line_range": [
+        3455,
+        3585
+      ],
+      "participants": [
+        "W",
+        "塔露拉"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "W与塔露拉决裂，W刺杀失败被炸飞",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉向萨卡兹雇佣兵发表演讲，承诺给他们战争",
+      "type": "political_intrigue",
+      "line_range": [
+        3654,
+        3669
+      ],
+      "participants": [
+        "塔露拉",
+        "萨卡兹战士"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "塔露拉拉拢萨卡兹雇佣兵，为后续冲突铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏彦吾与文月在龙门进行关于责任、牺牲和未来的深刻对话",
+      "type": "family_moment",
+      "line_range": [
+        3731,
+        3848
+      ],
+      "participants": [
+        "魏彦吾",
+        "文月"
+      ],
+      "location": "龙门",
+      "significance": "展现魏彦吾和文月对陈和塔露拉的复杂情感",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "迷迭香",
+      "type": "operator",
+      "role_in_chapter": "与博士在生物处理室相遇，展现其独特的感知能力和对死亡的理解；参与潜入核心城行动，展现强大的歼灭战能力；与煌就参战问题发生争执；与博士和阿米娅讨论记忆和情感问题；得知Scout的死讯后情绪波动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "在生物处理室处理霜星遗体；参与核心城行动策划；与迷迭香、凯尔希等人互动；作为战术指挥官参与行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "与魏彦吾讨论核心城危机；制定潜入核心城计划；揭露科西切公爵与塔露拉的关系；向博士介绍敌情和整合运动内部矛盾；解释迷迭香的背景；分析塔露拉的阴谋",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "参与核心城危机讨论；向罗德岛全舰发表动员讲话；参与制定潜入计划；与迷迭香讨论记忆和情感问题；发现萨卡兹仪式法术；与Guard和塔季娅娜交流",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "魏彦吾",
+      "type": "npc",
+      "role_in_chapter": "与凯尔希讨论核心城撞击危机；与陈就贫民区问题激烈辩论；阻止陈前往核心城；最终默许罗德岛介入",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陈",
+      "type": "npc",
+      "role_in_chapter": "公开感染者身份，与魏彦吾决裂；突破星熊阻拦，离开龙门前往核心城",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "星熊",
+      "type": "npc",
+      "role_in_chapter": "在龙门出口阻拦陈，进行战斗和对话，最终放行",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "文月",
+      "type": "npc",
+      "role_in_chapter": "播放乌萨斯信使录音；委托罗德岛介入核心城事件；与魏彦吾就陈的问题发生争执",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "煌",
+      "type": "operator",
+      "role_in_chapter": "与迷迭香就参战问题发生争执，展现对迷迭香的关心",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "临光",
+      "type": "operator",
+      "role_in_chapter": "参与沙尘暴装置部署，使用源石技艺改变光线，协助潜入",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "守林人",
+      "type": "operator",
+      "role_in_chapter": "参与沙尘暴装置部署，与临光讨论乌萨斯和卡西米尔的问题",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "杜宾",
+      "type": "operator",
+      "role_in_chapter": "作为空中诱饵的驾驶员，吸引整合运动注意力",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "极境",
+      "type": "operator",
+      "role_in_chapter": "观察临光的行动，与凯尔希通讯报告情况",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "华法琳",
+      "type": "operator",
+      "role_in_chapter": "与凯尔希就预言和爱国者进行对话，请求凯尔希尽力保护爱国者",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "以整合运动身份保护乌萨斯平民；向罗德岛介绍爱国者游击队的情况；得知霜星死讯后决定通知爱国者；被萨卡兹雇佣兵拦截",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "塔季娅娜",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯平民，被Guard保护，最初敌视感染者，后逐渐接受罗德岛的帮助",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "塔露拉",
+      "type": "npc",
+      "role_in_chapter": "接见从龙门返回的幻影弩手，得知浮士德和霜星的死讯，展现冷漠态度和对梅菲斯特的怀疑",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "PRTS",
+      "type": "npc",
+      "role_in_chapter": "在生物处理室与博士对话，检测博士情绪；在罗德岛本舰与迷迭香互动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "爱国者",
+      "type": "npc",
+      "role_in_chapter": "整合运动指挥官，与凯尔希重逢，拒绝合作，与罗德岛战斗，最终战死",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "W",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹雇佣兵，与凯尔希对峙，前往指挥塔刺杀塔露拉失败",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "诗怀雅",
+      "type": "npc",
+      "role_in_chapter": "龙门近卫局成员，与星熊和林雨霞对话，表达对陈的担忧",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "林",
+      "type": "operator",
+      "role_in_chapter": "鼠王家的小姐，与诗怀雅和星熊对话",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "感染者的身份与处境",
+      "line_range": [
+        249,
+        262
+      ],
+      "discussion_summary": "陈公开自己感染者的身份，指出龙门没有感染者的容身之地，与魏彦吾就感染者的定义和处境展开辩论",
+      "is_substantive": true
+    },
+    {
+      "concept": "乌萨斯的内部政治与阴谋",
+      "line_range": [
+        119,
+        156
+      ],
+      "discussion_summary": "通过乌萨斯信使的录音和凯尔希的分析，揭示乌萨斯第三、第四集团军出现松动，帝国议会可能袖手旁观，乌萨斯可能故意让道给整合运动",
+      "is_substantive": true
+    },
+    {
+      "concept": "罗德岛的使命与立场",
+      "line_range": [
+        783,
+        817
+      ],
+      "discussion_summary": "阿米娅向全舰阐述罗德岛参与核心城行动的深层原因：阻止感染者被污名化并引发全面战争，强调罗德岛一直身在与矿石病的漫长战争中",
+      "is_substantive": true
+    },
+    {
+      "concept": "记忆与情感",
+      "line_range": [
+        1276,
+        1306
+      ],
+      "discussion_summary": "迷迭香与阿米娅讨论记忆和情感问题，迷迭香表达了她对忘记逝去同伴的恐惧和痛苦，以及情感与记忆的复杂关系",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹的古老仪式法术",
+      "line_range": [
+        1497,
+        1524
+      ],
+      "discussion_summary": "凯尔希和阿米娅讨论萨卡兹雇佣兵使用的古老仪式法术，解释其原理、来源和危险性，以及与现代法术的区别",
+      "is_substantive": true
+    },
+    {
+      "concept": "爱国者游击队的信念与行动",
+      "line_range": [
+        1812,
+        1848
+      ],
+      "discussion_summary": "Guard向罗德岛介绍爱国者游击队的信念：首先要消灭所有奴役者，以及他们在切尔诺伯格保护平民的行动",
+      "is_substantive": true
+    },
+    {
+      "concept": "塔露拉的阴谋",
+      "line_range": [
+        1967,
+        1979
+      ],
+      "discussion_summary": "凯尔希分析塔露拉可能意图毁掉整合运动，通过放任暴行激化矛盾，让感染者和市民揭竿而起",
+      "is_substantive": true
+    },
+    {
+      "concept": "斩首行动",
+      "line_range": [
+        2091,
+        2095
+      ],
+      "discussion_summary": "凯尔希将罗德岛在核心城的行动定义为斩首行动，目标是消灭病灶，但强调需要探明病因",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹预言",
+      "line_range": [
+        2974,
+        3111
+      ],
+      "discussion_summary": "凯尔希警告萨卡兹预言不可信，只是源石技艺的生理性残留，但爱国者认为所有预言全都实现\n\n凯尔希向阿米娅解释萨卡兹预言的形成机制，认为大多数无意义，少数是过时信息，并无可参考性",
+      "is_substantive": true
+    },
+    {
+      "concept": "崇高的背叛",
+      "line_range": [
+        3156,
+        3184
+      ],
+      "discussion_summary": "凯尔希和阿米娅讨论爱国者一生中的三次背叛，认为他最终选择无视反抗的东西，跨过心结，将未来交托给阿米娅",
+      "is_substantive": true
+    },
+    {
+      "concept": "复仇",
+      "line_range": [
+        3243,
+        3260
+      ],
+      "discussion_summary": "凯尔希与迷迭香讨论复仇的本质，认为整合运动只是个符号，复仇会导致无法分辨面孔，只能消灭符号本身",
+      "is_substantive": true
+    },
+    {
+      "concept": "恐惧",
+      "line_range": [
+        3462,
+        3469
+      ],
+      "discussion_summary": "W向塔露拉解释魔族这个称呼出于恐惧，萨卡兹佣兵乐意被叫作魔族是因为知道它真正的意思",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        777,
+        817
+      ],
+      "description": "阿米娅向全舰阐述罗德岛的使命和立场，强调罗德岛一直身在与矿石病的战争中，必须阻止整合运动引发全面战争"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        228,
+        233
+      ],
+      "description": "魏彦吾指责陈的职责是保卫龙门，但贫民区已成为龙门的漏洞，被整合运动利用"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1412,
+        1452
+      ],
+      "description": "塔露拉接见从龙门返回的幻影弩手，得知浮士德和霜星的死讯，展现对部下的冷漠态度"
+    },
+    {
+      "faction": "乌萨斯帝国议会",
+      "line_range": [
+        119,
+        156
+      ],
+      "description": "通过乌萨斯信使的录音和凯尔希的分析，揭示帝国议会可能袖手旁观，乌萨斯内部势力出现松动"
+    },
+    {
+      "faction": "乌萨斯第三、第四集团军",
+      "line_range": [
+        122,
+        126
+      ],
+      "description": "乌萨斯信使的录音提到第三和第四集团军出现松动，可能有人暗中策划阴谋"
+    },
+    {
+      "faction": "萨卡兹雇佣兵",
+      "line_range": [
+        1497,
+        1524
+      ],
+      "description": "凯尔希和阿米娅讨论萨卡兹雇佣兵使用的古老仪式法术，揭示其来源和危险性"
+    },
+    {
+      "faction": "爱国者游击队",
+      "line_range": [
+        1812,
+        1848
+      ],
+      "description": "Guard向罗德岛介绍爱国者游击队的信念和行动，强调他们首先要消灭所有奴役者，保护平民"
+    },
+    {
+      "faction": "雪怪小队",
+      "line_range": [
+        1180,
+        1181
+      ],
+      "description": "凯尔希向博士介绍雪怪小队是从属于感染者游击队的一支精锐部队"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2091,
+        2095
+      ],
+      "description": "凯尔希将罗德岛在核心城的行动定义为斩首行动，目标是消灭病灶"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        2483,
+        2488
+      ],
+      "description": "爱国者认为整合运动不能自毁，一旦他背叛，全部感染者的斗争都将失去正当性"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        3242,
+        3248
+      ],
+      "description": "凯尔希认为爱国者死后核心城会陷入混乱，整合运动不复存焉，只是个符号"
+    },
+    {
+      "faction": "游击队",
+      "line_range": [
+        3069,
+        3098
+      ],
+      "description": "盾卫宣布日后就是盾，不只是感染者之盾，是受奴役者之盾，会监视阿米娅"
+    },
+    {
+      "faction": "萨卡兹雇佣兵",
+      "line_range": [
+        3654,
+        3669
+      ],
+      "description": "塔露拉向萨卡兹雇佣兵发表演讲，承诺给他们战争，拉拢他们"
+    },
+    {
+      "faction": "龙门",
+      "line_range": [
+        3738,
+        3739
+      ],
+      "description": "魏彦吾表示龙门城已恢复往日气象，但之后会发生什么尚一无所知"
+    }
+  ],
+  "locations": [
+    {
+      "location": "罗德岛生物综合处理室",
+      "line_range": [
+        1,
+        85
+      ],
+      "description": "博士与迷迭香在此相遇，处理霜星的遗体，迷迭香介绍该设施用于处理罗德岛感染者的遗体"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        86,
+        368
+      ],
+      "description": "魏彦吾办公室，核心城撞击危机的讨论中心，陈与魏彦吾决裂的地点"
+    },
+    {
+      "location": "切尔诺伯格核心城",
+      "line_range": [
+        993,
+        1151
+      ],
+      "description": "罗德岛小队潜入的核心城底层工业结构，发现陈的踪迹"
+    },
+    {
+      "location": "切尔诺伯格核心城仓库区",
+      "line_range": [
+        1557,
+        1617
+      ],
+      "description": "罗德岛小队遇到Guard和乌萨斯平民的地点，展现平民的悲惨处境"
+    },
+    {
+      "location": "乌萨斯圣骏堡",
+      "line_range": [
+        131,
+        133
+      ],
+      "description": "乌萨斯信使从圣骏堡溜出，有人暗中提供方便，暗示乌萨斯内部势力拉锯"
+    },
+    {
+      "location": "乌拉尔裂谷",
+      "line_range": [
+        135,
+        136
+      ],
+      "description": "乌萨斯信使抵达乌拉尔裂谷，征用发报站发送消息"
+    },
+    {
+      "location": "核心城中央区",
+      "line_range": [
+        2030,
+        2031
+      ],
+      "description": "凯尔希报告罗德岛身处核心城中央区的边缘，离仓库区出口四百一十米"
+    },
+    {
+      "location": "核心城指挥塔",
+      "line_range": [
+        3277,
+        3279
+      ],
+      "description": "凯尔希描述在核心城指挥塔，斩首小队会遭到整合运动全方位的攻击，战场不适合博士现场参与"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        3738,
+        3739
+      ],
+      "description": "魏彦吾表示龙门城已恢复往日气象，但之后会发生什么尚一无所知"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:55:08.081969+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 84603,
+    "tokens_out": 10474,
+    "elapsed_s": 80.37384128570557
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "博士",
+    "魏彦吾",
+    "文月",
+    "塔季娅娜",
+    "塔露拉",
+    "PRTS",
+    "爱国者"
+  ]
+}

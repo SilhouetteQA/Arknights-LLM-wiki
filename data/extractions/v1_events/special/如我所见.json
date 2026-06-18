@@ -1,0 +1,724 @@
+{
+  "summary": "本章以罗德岛在哥伦比亚提卡伦多市的遭遇为开端，博士与阿米娅在商人坎诺特的帮助下穿越加斯帕荒原，途中目睹了约翰老妈公司利用假药剥削感染者的残酷现实。博士通过向哥伦比亚管理局自首的计策，迫使约翰老妈交还抢走的药物样品，展现了其深谋远虑。随后场景切换至罗德岛本舰，凯尔希对博士进行记忆检查，揭示了博士失忆的复杂性和其作为源石研究者的身份。博士在舰桥上凭借对源石能量与天灾关系的深刻理解，指挥罗德岛成功穿越一场罕见的雷沙暴天灾，赢得了舰桥成员的信任。\n\n剧情通过回忆和对话穿插了巴别塔时期的往事。特蕾西娅与凯尔希、博士共同面对卡兹戴尔军事委员会的威胁，博士在处理一名萨卡兹谋反者时展现了其洞察人心与宽恕的智慧。可露希尔与PRTS的对话揭示了博士营救行动背后的高风险计算，以及罗德岛成员对博士的复杂情感——既敬佩其能力，又对其捉摸不定的行事风格感到困惑。\n\n本章还描绘了罗德岛内部的日常与情感。米格鲁在遗物室缅怀Ace和Scout，引发对牺牲价值的思考。W在离开罗德岛前往维多利亚前，与萨卡兹锅炉工进行了告别，暗示了未来的冲突。凯尔希与博士的多次对话深入探讨了记忆、身份、使命与自由意志等主题，为博士的内心世界和罗德岛的未来走向埋下伏笔。",
+  "events": [
+    {
+      "event": "罗德岛在提卡伦多遭约翰老妈公司袭击，博士与阿米娅被迫逃离",
+      "type": "ambush",
+      "line_range": [
+        1,
+        21
+      ],
+      "participants": [
+        "煌",
+        "迪伦",
+        "医疗干员",
+        "博士",
+        "阿米娅"
+      ],
+      "location": "提卡伦多",
+      "significance": "引发本章主线冲突，展示哥伦比亚企业的不择手段",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士在昏迷中说出关于希望的梦话，坎诺特出现并救助博士和阿米娅",
+      "type": "rescue",
+      "line_range": [
+        22,
+        60
+      ],
+      "participants": [
+        "博士",
+        "坎诺特",
+        "阿米娅"
+      ],
+      "location": "加斯帕荒原",
+      "significance": "引入关键角色坎诺特，奠定其神秘商人形象",
+      "is_imaginary": false
+    },
+    {
+      "event": "坎诺特揭露约翰老妈公司用假药欺骗感染者的真相",
+      "type": "revelation",
+      "line_range": [
+        196,
+        257
+      ],
+      "participants": [
+        "坎诺特",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "约翰老妈边境拓荒队办事处",
+      "significance": "深化哥伦比亚资本主义的黑暗面，激发博士的反击决心",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士向哥伦比亚边关管理局自首，利用法律迫使约翰老妈归还样品",
+      "type": "planning",
+      "line_range": [
+        274,
+        301
+      ],
+      "participants": [
+        "博士",
+        "阿米娅",
+        "坎诺特"
+      ],
+      "location": "哥伦比亚边关管理局",
+      "significance": "展示博士的智谋和非常规手段，解决危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "坎诺特与锈锤成员对话，表明帮助罗德岛是出于长远考虑",
+      "type": "alliance",
+      "line_range": [
+        319,
+        343
+      ],
+      "participants": [
+        "坎诺特",
+        "恶魔帮成员",
+        "锈锤成员"
+      ],
+      "location": "信使站点附近",
+      "significance": "揭示坎诺特与锈锤的关系，暗示罗德岛的未来盟友",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希对博士进行记忆检查，讨论其失忆状况和恢复情况",
+      "type": "investigation",
+      "line_range": [
+        344,
+        396
+      ],
+      "participants": [
+        "凯尔希",
+        "博士"
+      ],
+      "location": "罗德岛医疗舱",
+      "significance": "明确博士失忆的性质，为后续剧情提供科学依据",
+      "is_imaginary": false
+    },
+    {
+      "event": "地灵发现前方天灾迹象，博士介入并指挥罗德岛穿越雷沙暴",
+      "type": "disaster",
+      "line_range": [
+        397,
+        550
+      ],
+      "participants": [
+        "地灵",
+        "领航员A",
+        "阿米娅",
+        "博士",
+        "领航员B",
+        "中控人员"
+      ],
+      "location": "罗德岛舰桥",
+      "significance": "展示博士的战术指挥能力和对源石天灾的深刻理解，赢得信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与博士深入对话，探讨其记忆恢复的意愿和过去的身份",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        551,
+        609
+      ],
+      "participants": [
+        "凯尔希",
+        "博士"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示博士作为源石研究者的过去，以及凯尔希对其复杂的情感",
+      "is_imaginary": false
+    },
+    {
+      "event": "艾雅法拉向博士汇报研究，博士借给她天灾研究笔记",
+      "type": "character_development",
+      "line_range": [
+        610,
+        641
+      ],
+      "participants": [
+        "艾雅法拉",
+        "博士"
+      ],
+      "location": "博士办公室",
+      "significance": "展现博士对后辈的提携，以及艾雅法拉对研究的热情",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆Ace和Scout关于一台红色机器的赌约",
+      "type": "flashback",
+      "line_range": [
+        642,
+        667
+      ],
+      "participants": [
+        "Ace",
+        "Scout",
+        "博士"
+      ],
+      "location": "巴别塔时期营地",
+      "significance": "引入一个神秘物件，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "米格鲁在遗物室缅怀Ace和Scout，表达对牺牲意义的迷茫",
+      "type": "reflection",
+      "line_range": [
+        691,
+        720
+      ],
+      "participants": [
+        "米格鲁",
+        "博士"
+      ],
+      "location": "罗德岛遗物室",
+      "significance": "探讨战争与牺牲的主题，展现普通干员的情感",
+      "is_imaginary": false
+    },
+    {
+      "event": "W与萨卡兹锅炉工告别，准备前往维多利亚",
+      "type": "departure",
+      "line_range": [
+        721,
+        767
+      ],
+      "participants": [
+        "W",
+        "萨卡兹锅炉工",
+        "阿斯卡纶"
+      ],
+      "location": "罗德岛锅炉房",
+      "significance": "暗示W的下一步行动，以及萨卡兹内部的复杂关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士与萨卡兹锅炉工交谈，锅炉工建议博士多与阿米娅和凯尔希沟通",
+      "type": "conversation",
+      "line_range": [
+        768,
+        789
+      ],
+      "participants": [
+        "萨卡兹锅炉工",
+        "博士"
+      ],
+      "location": "罗德岛锅炉房",
+      "significance": "提供博士内心困惑的解决方向，展现罗德岛成员间的关怀",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士打开Ace和Scout带回的红色机器，发现是一台自动售货机",
+      "type": "revelation",
+      "line_range": [
+        790,
+        820
+      ],
+      "participants": [
+        "阿米娅",
+        "可露希尔",
+        "博士"
+      ],
+      "location": "罗德岛仓库",
+      "significance": "解开红色机器的谜团，但留下更多疑问",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆特蕾西娅与凯尔希讨论博士，并决定去见博士",
+      "type": "flashback",
+      "line_range": [
+        821,
+        828
+      ],
+      "participants": [
+        "特蕾西娅",
+        "凯尔希"
+      ],
+      "location": "巴别塔",
+      "significance": "展现特蕾西娅对博士的好奇和重视",
+      "is_imaginary": false
+    },
+    {
+      "event": "特蕾西娅告知巴别塔面临军事委员会围剿，决定撤离卡兹戴尔",
+      "type": "retreat",
+      "line_range": [
+        829,
+        880
+      ],
+      "participants": [
+        "特蕾西娅",
+        "Scout",
+        "凯尔希",
+        "博士"
+      ],
+      "location": "巴别塔",
+      "significance": "揭示巴别塔面临的危机，为后续剧情奠定背景",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士遭遇萨卡兹谋反者马尔科袭击，Scout介入，博士选择宽恕",
+      "type": "confrontation",
+      "line_range": [
+        881,
+        1047
+      ],
+      "participants": [
+        "博士",
+        "萨卡兹谋反者",
+        "Scout",
+        "特蕾西娅",
+        "凯尔希"
+      ],
+      "location": "巴别塔营地",
+      "significance": "展示博士的洞察力、口才和宽恕之心，以及特蕾西娅的领导困境",
+      "is_imaginary": false
+    },
+    {
+      "event": "马尔科畏罪自杀，特蕾西娅感到悲伤",
+      "type": "sacrifice",
+      "line_range": [
+        1048,
+        1085
+      ],
+      "participants": [
+        "特蕾西娅",
+        "凯尔希",
+        "博士"
+      ],
+      "location": "巴别塔",
+      "significance": "深化特蕾西娅的悲剧色彩，以及战争的残酷",
+      "is_imaginary": false
+    },
+    {
+      "event": "Scout为保护队员瑞卡的名誉而请求免于处分，博士同意并鼓励他",
+      "type": "character_development",
+      "line_range": [
+        1086,
+        1125
+      ],
+      "participants": [
+        "Scout",
+        "博士",
+        "凯尔希"
+      ],
+      "location": "罗德岛办公室",
+      "significance": "展现博士的领导艺术和对下属的关怀",
+      "is_imaginary": false
+    },
+    {
+      "event": "可露希尔与凯尔希讨论伦蒂尼姆之行和待规划区",
+      "type": "planning",
+      "line_range": [
+        1126,
+        1167
+      ],
+      "participants": [
+        "可露希尔",
+        "凯尔希"
+      ],
+      "location": "罗德岛",
+      "significance": "为伦蒂尼姆剧情做铺垫，暗示凯尔希与特蕾西娅的过去",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希进行日常巡房，博士帮忙转移病患",
+      "type": "daily_life",
+      "line_range": [
+        1168,
+        1202
+      ],
+      "participants": [
+        "凯尔希",
+        "医疗干员",
+        "普通感染者A",
+        "普通感染者B",
+        "后勤干员",
+        "博士"
+      ],
+      "location": "罗德岛医疗舱",
+      "significance": "展现罗德岛的日常运作和凯尔希的医者仁心",
+      "is_imaginary": false
+    },
+    {
+      "event": "特蕾西娅与博士、凯尔希讨论战局，阿米娅因担心而出现",
+      "type": "family_moment",
+      "line_range": [
+        1203,
+        1236
+      ],
+      "participants": [
+        "特蕾西娅",
+        "博士",
+        "凯尔希",
+        "阿米娅"
+      ],
+      "location": "巴别塔指挥室",
+      "significance": "展现特蕾西娅、博士、阿米娅之间的信任与温情",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希向博士提出关于活着和为何而战的哲学问题",
+      "type": "ideological_clash",
+      "line_range": [
+        1237,
+        1248
+      ],
+      "participants": [
+        "凯尔希",
+        "博士"
+      ],
+      "location": "罗德岛",
+      "significance": "深化博士的内心挣扎和凯尔希的关切",
+      "is_imaginary": false
+    },
+    {
+      "event": "可露希尔对PRTS进行例行检查，讨论博士营救行动和博士的变化",
+      "type": "investigation",
+      "line_range": [
+        1249,
+        1453
+      ],
+      "participants": [
+        "可露希尔",
+        "PRTS"
+      ],
+      "location": "PRTS终端室",
+      "significance": "揭示博士营救行动的高风险，以及可露希尔对博士的复杂看法",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士来到PRTS终端室，PRTS播放了一段关于其首次功能测验的影像",
+      "type": "revelation",
+      "line_range": [
+        1454,
+        1497
+      ],
+      "participants": [
+        "可露希尔",
+        "PRTS",
+        "博士"
+      ],
+      "location": "PRTS终端室",
+      "significance": "留下关于PRTS起源和博士过去的悬念",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "煌",
+      "type": "operator",
+      "role_in_chapter": "在提卡伦多与敌人交战后，与博士和阿米娅分头行动，后与他们会合",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "迪伦",
+      "type": "operator",
+      "role_in_chapter": "协助煌处理战后事宜",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "坎诺特",
+      "type": "npc",
+      "role_in_chapter": "神秘商人，救助博士和阿米娅，揭露约翰老妈公司的真相，并与锈锤有联系",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "与博士一同经历哥伦比亚危机，在舰桥上支持博士指挥，回忆与博士的过去",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "本章核心人物，展现其智谋、指挥能力和对源石的理解，同时面临记忆和身份的困惑",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "对博士进行记忆检查，讨论其过去和未来，指挥罗德岛日常运作",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "地灵",
+      "type": "operator",
+      "role_in_chapter": "地质学家，发现天灾迹象并协助博士指挥罗德岛穿越风暴",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "艾雅法拉",
+      "type": "operator",
+      "role_in_chapter": "向博士汇报研究，获得博士的天灾研究笔记",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "米格鲁",
+      "type": "operator",
+      "role_in_chapter": "在遗物室缅怀Ace和Scout，表达对牺牲意义的迷茫",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "W",
+      "type": "operator",
+      "role_in_chapter": "与萨卡兹锅炉工告别，准备前往维多利亚，与阿斯卡纶短暂交锋",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "萨卡兹锅炉工",
+      "type": "operator",
+      "role_in_chapter": "罗德岛老员工，与W告别，并给博士提供建议",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "可露希尔",
+      "type": "operator",
+      "role_in_chapter": "罗德岛总工程师，与PRTS对话，讨论博士营救行动和博士的变化",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "PRTS",
+      "type": "npc",
+      "role_in_chapter": "罗德岛人工智能系统，与可露希尔对话，并播放了一段关于其起源的影像",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "魔王",
+      "type": "operator",
+      "role_in_chapter": "巴别塔领袖，在回忆中与博士、凯尔希共同应对危机，展现其理想主义和悲剧命运",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Scout",
+      "type": "operator",
+      "role_in_chapter": "巴别塔精英干员，在回忆中保护博士，并因保护队员名誉而请求免于处分",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Ace",
+      "type": "operator",
+      "role_in_chapter": "在回忆中与Scout打赌，带回一台红色机器",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "萨卡兹谋反者（马尔科）",
+      "type": "npc",
+      "role_in_chapter": "袭击博士的萨卡兹，被博士宽恕后畏罪自杀",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿斯卡纶",
+      "type": "npc",
+      "role_in_chapter": "巴别塔成员，在回忆中与W对话，负责处理叛徒",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "希望",
+      "line_range": [
+        22,
+        29
+      ],
+      "discussion_summary": "博士在昏迷中梦呓，认为怀揣希望是一件残酷的事情，足以逼疯至善之人",
+      "is_substantive": true
+    },
+    {
+      "concept": "希望",
+      "line_range": [
+        252,
+        262
+      ],
+      "discussion_summary": "坎诺特在揭露真相后，再次引用博士的梦话，指出希望对于哥伦比亚的感染者而言并不存在",
+      "is_substantive": true
+    },
+    {
+      "concept": "记忆",
+      "line_range": [
+        146,
+        158
+      ],
+      "discussion_summary": "坎诺特用报纸和油漆的比喻描述博士的失忆状态，并建议不要急于恢复记忆",
+      "is_substantive": true
+    },
+    {
+      "concept": "记忆",
+      "line_range": [
+        344,
+        361
+      ],
+      "discussion_summary": "凯尔希详细解释博士的记忆损伤是情节性的，程序记忆恢复良好，并排除了器质性病变",
+      "is_substantive": true
+    },
+    {
+      "concept": "记忆",
+      "line_range": [
+        551,
+        609
+      ],
+      "discussion_summary": "凯尔希与博士深入讨论恢复记忆的意愿和风险，指出过量的记忆和情绪可能摧毁现在的他",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石",
+      "line_range": [
+        551,
+        560
+      ],
+      "discussion_summary": "凯尔希指出博士将源石自我复制速度和能量增幅的关系应用于风灾轨迹测算，证明其未忘记源石研究者的身份",
+      "is_substantive": true
+    },
+    {
+      "concept": "牺牲",
+      "line_range": [
+        714,
+        718
+      ],
+      "discussion_summary": "米格鲁在遗物室面对整合运动成员的遗物，质疑这一切牺牲是否值得",
+      "is_substantive": true
+    },
+    {
+      "concept": "活着",
+      "line_range": [
+        1237,
+        1248
+      ],
+      "discussion_summary": "凯尔希向博士提出哲学问题：服从他人意志、失去前行理由是否算活着？保有躯体、抽离记忆又是否算活着？",
+      "is_substantive": true
+    },
+    {
+      "concept": "执着",
+      "line_range": [
+        1430,
+        1434
+      ],
+      "discussion_summary": "可露希尔认为PRTS缺少人类会有的「执着」，这是一种能促成伟大事业也能令人变成魔鬼的东西",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "约翰老妈",
+      "line_range": [
+        62,
+        73
+      ],
+      "description": "企业负责人试图与罗德岛合作，被阿米娅婉拒，为后续冲突埋下伏笔"
+    },
+    {
+      "faction": "约翰老妈",
+      "line_range": [
+        196,
+        257
+      ],
+      "description": "坎诺特揭露约翰老妈用镇痛剂冒充矿石病抑制剂剥削拓荒者，并抢走罗德岛的样品"
+    },
+    {
+      "faction": "锈锤",
+      "line_range": [
+        117,
+        127
+      ],
+      "description": "坎诺特介绍锈锤是一个松散的组织，包含恶魔帮、天灾追随者等小团体"
+    },
+    {
+      "faction": "锈锤",
+      "line_range": [
+        337,
+        343
+      ],
+      "description": "坎诺特与锈锤成员对话，表明帮助罗德岛是出于长远考虑，认为罗德岛的存在对他们是好事"
+    },
+    {
+      "faction": "巴别塔",
+      "line_range": [
+        829,
+        880
+      ],
+      "description": "特蕾西娅告知巴别塔面临军事委员会围剿，决定撤离卡兹戴尔"
+    },
+    {
+      "faction": "卡兹戴尔军事委员会",
+      "line_range": [
+        829,
+        880
+      ],
+      "description": "特蕾西娅指出军事委员会获得了更大支持，巴别塔的信息渠道在减少，即将遭到围剿"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1168,
+        1202
+      ],
+      "description": "凯尔希进行日常巡房，安排病患转移至康纳郡，展现罗德岛的医疗运作"
+    }
+  ],
+  "locations": [
+    {
+      "location": "提卡伦多",
+      "line_range": [
+        1,
+        21
+      ],
+      "description": "罗德岛在此遭到约翰老妈公司袭击，博士和阿米娅被迫逃离"
+    },
+    {
+      "location": "加斯帕荒原",
+      "line_range": [
+        45,
+        60
+      ],
+      "description": "坎诺特指出这里是哥伦比亚东侧荒地，博士和阿米娅在此获救"
+    },
+    {
+      "location": "哥伦比亚",
+      "line_range": [
+        196,
+        257
+      ],
+      "description": "坎诺特详细描述哥伦比亚的运作方式，包括企业剥削拓荒者、假药产业链等"
+    },
+    {
+      "location": "卡兹戴尔",
+      "line_range": [
+        829,
+        880
+      ],
+      "description": "巴别塔面临军事委员会围剿，决定撤离卡兹戴尔"
+    },
+    {
+      "location": "伦蒂尼姆",
+      "line_range": [
+        1126,
+        1167
+      ],
+      "description": "可露希尔与凯尔希讨论前往伦蒂尼姆的行动，凯尔希因与特蕾西娅的友谊而无法置身事外"
+    }
+  ],
+  "chapter": "如我所见",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:35:17.862930+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 34380,
+    "tokens_out": 5692,
+    "elapsed_s": 51.54177737236023
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "迪伦",
+    "坎诺特",
+    "博士",
+    "萨卡兹锅炉工",
+    "PRTS",
+    "Scout",
+    "Ace",
+    "萨卡兹谋反者（马尔科）"
+  ]
+}
