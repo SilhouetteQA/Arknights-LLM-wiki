@@ -209,13 +209,15 @@ def filter_targets(
     merged: dict,
     operators: list,
     keep_set: set,
+    min_events_for_single_chapter: int = 8,
 ) -> dict:
-    """过滤目标角色：干员 + 多章 NPC + 用户 KEEP 单章 NPC。
+    """过滤目标角色：干员 + 多章 NPC + 多台词 NPC + 用户 KEEP 单章 NPC。
 
     保留条件（满足任一即保留）：
     1. 规范名精确匹配干员列表中的 name_zh
     2. 出场章节 >= 2 的 NPC
-    3. 在用户 KEEP 集合中的单章 NPC
+    3. 单章 NPC 但出场事件 >= min_events_for_single_chapter（重要配角）
+    4. 在用户 KEEP 集合中的单章 NPC
     """
     op_names = {op["name_zh"] for op in operators}
 
@@ -230,9 +232,14 @@ def filter_targets(
             result[name] = entry
             continue
 
-        if num_chapters == 1 and name in keep_set:
-            result[name] = entry
-            continue
+        if num_chapters == 1:
+            if len(entry["events"]) >= min_events_for_single_chapter:
+                result[name] = entry
+                continue
+
+            if name in keep_set:
+                result[name] = entry
+                continue
 
     return result
 

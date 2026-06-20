@@ -366,6 +366,38 @@ def test_keeps_user_keep_single_chapter():
     assert "Rosmontis" in result
 
 
+def test_keeps_single_chapter_with_min_events():
+    """单章 NPC 但事件数 >= min_events_for_single_chapter 保留"""
+    operators = [{"name_zh": "阿米娅", "id": "R001"}]
+    events = [
+        {"event": f"e{i}", "type": "battle", "line_range": [1, 5],
+         "chapter": "c1", "category": "main", "pass1_index": i,
+         "significance": "", "is_imaginary": False}
+        for i in range(10)
+    ]
+    merged = {
+        "白垩": _make_merged_entry(events, ["c1"]),
+    }
+    result = filter_targets(merged, operators, keep_set=set(), min_events_for_single_chapter=8)
+    assert "白垩" in result
+
+
+def test_drops_single_chapter_below_min_events():
+    """单章 NPC 事件数 < min_events 且不在 KEEP 中被丢弃"""
+    operators = [{"name_zh": "阿米娅", "id": "R001"}]
+    events = [
+        {"event": f"e{i}", "type": "battle", "line_range": [1, 5],
+         "chapter": "c1", "category": "main", "pass1_index": i,
+         "significance": "", "is_imaginary": False}
+        for i in range(5)
+    ]
+    merged = {
+        "路人甲": _make_merged_entry(events, ["c1"]),
+    }
+    result = filter_targets(merged, operators, keep_set=set(), min_events_for_single_chapter=8)
+    assert "路人甲" not in result
+
+
 # ─── TestParseKeepList ───
 
 
