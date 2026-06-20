@@ -199,9 +199,7 @@ CHARACTER_SYSTEM_PROMPT = """你是一位《明日方舟》角色档案编纂者
 
 5. **personality.traits**：2-5 个简短的性格标签词，如「坚毅」「腹黑」「忠诚」。
 
-6. **abilities.description**：一句话概括角色的核心战斗能力或特殊技能。
-
-7. **archive**：仅干员角色填写此字段。从提供的档案数据中复制种族、所属阵营等信息。非干员角色不输出此字段。"""
+6. **abilities.description**：一句话概括角色的核心战斗能力或特殊技能。"""
 
 CHARACTER_OUTPUT_SCHEMA = """```json
 {
@@ -333,6 +331,5 @@ def build_character_user_prompt(
     parts.append("- summary 必须基于提供的对话内容，不编造不存在的设定或情节")
     parts.append("- power_level 按九级战力体系评估，格式为「等级·子级」，不确定时使用「信息不足」")
     parts.append("- participated_events 仅列出有实质剧情意义的重大事件，同一章节同一战役阶段合并为一条，不记录语气词/纯过渡场景")
-    parts.append("- 仅干员角色填写 archive 字段")
 
     return "\n".join(parts)

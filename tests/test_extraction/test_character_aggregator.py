@@ -492,14 +492,19 @@ def test_inject_context_adds_context():
 
 
 def test_finds_operator():
-    """精确匹配找到干员档案"""
+    """精确匹配找到干员完整信息（含顶层字段 race/nation/team/group）"""
     operators = [
-        {"name_zh": "阿米娅", "id": "R001", "archives": {"基础档案": "test"}},
-        {"name_zh": "凯尔希", "id": "R002", "archives": {"基础档案": "test2"}},
+        {"name_zh": "阿米娅", "id": "R001", "race": "卡特斯", "nation": "罗德岛",
+         "archives": {"基础档案": "test"}},
+        {"name_zh": "凯尔希", "id": "R002", "race": "未知", "nation": "罗德岛",
+         "archives": {"基础档案": "test2"}},
     ]
     result = get_operator_archive("阿米娅", operators)
     assert result is not None
-    assert result["基础档案"] == "test"
+    assert result["name_zh"] == "阿米娅"
+    assert result["race"] == "卡特斯"
+    assert result["nation"] == "罗德岛"
+    assert result["archives"]["基础档案"] == "test"
 
 
 def test_returns_none_for_unknown():

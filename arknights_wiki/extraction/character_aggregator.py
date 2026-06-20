@@ -355,12 +355,16 @@ def inject_context(targets: dict, data_dir: str = "data/stories") -> dict:
 
 
 def get_operator_archive(name_zh: str, operators: list) -> dict | None:
-    """从干员列表中按 name_zh 精确查找档案。
+    """从干员列表中按 name_zh 精确查找完整干员信息。
+
+    返回完整干员 dict（包含 race/nation/team/group/archives 等字段），
+    而非仅 archives 子 dict。Task 2 的 build_character_user_prompt 需要
+    顶层字段（race/nation/team/group）来构建档案信息段落。
 
     Returns:
-        archives dict if found, None otherwise
+        Full operator dict if found, None otherwise
     """
     for op in operators:
         if op.get("name_zh") == name_zh:
-            return op.get("archives")
+            return op
     return None
