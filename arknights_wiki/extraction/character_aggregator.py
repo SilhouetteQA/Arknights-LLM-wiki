@@ -5,7 +5,7 @@ import os
 import re
 from difflib import SequenceMatcher
 
-from arknights_wiki.extraction.dialogue_loader import load_chapter
+from arknights_wiki.extraction.dialogue_loader import ChapterDialogue, load_chapter
 
 
 def normalize_participant(name: str, op_names: set, id_map: dict) -> str:
@@ -16,10 +16,10 @@ def normalize_participant(name: str, op_names: set, id_map: dict) -> str:
     2. 去除中英文问号
     3. 去除括号及括号内内容（如 "(幼年)"）
     4. 去除书名号/双引号（「」、『』）
-    5. identity_map 精确映射
-    6. 精确匹配干员名
+    5. 精确匹配干员名
+    6. identity_map 精确映射
     7. 复合名 · 拆分后匹配（id_map + op_names）
-    8. 模糊匹配（SequenceMatcher >= 0.65）
+    8. 模糊匹配（SequenceMatcher >= 0.6）
     """
     name = name.strip()
 
@@ -53,8 +53,6 @@ def normalize_participant(name: str, op_names: set, id_map: dict) -> str:
     if "·" in name:
         segments = name.split("·")
         for part in segments:
-            if part == name:
-                continue
             if part in id_map:
                 canonical = id_map[part]
                 if not canonical.startswith("character:"):
@@ -70,11 +68,11 @@ def normalize_participant(name: str, op_names: set, id_map: dict) -> str:
         if len_diff > 5:
             continue
         ratio = SequenceMatcher(None, name, opn).ratio()
-        if ratio >= 0.65 and ratio > best_ratio:
+        if ratio >= 0.6 and ratio > best_ratio:
             best_ratio = ratio
             best_name = opn
 
-    if best_ratio >= 0.65:
+    if best_ratio >= 0.6:
         return best_name
 
     # 无匹配，保持原名
@@ -286,7 +284,7 @@ def parse_keep_list(md_path: str) -> set[str]:
     return keep_set
 
 
-def _cut_lines(cd, start: int, end: int, buffer: int = 3) -> str:
+def _cut_lines(cd: ChapterDialogue, start: int, end: int, buffer: int = 3) -> str:
     """从 ChapterDialogue 中截取指定行范围 + 前后 buffer 行的文本。
 
     格式: "[global_index] [speaker] text"（旁白无 speaker 时省略）
@@ -323,6 +321,8 @@ def inject_context(targets: dict, data_dir: str = "data/stories") -> dict:
     根据 event 的 line_range 调用 _cut_lines 截取原文。
 
     事件新增 context 字段。
+
+    注意：直接修改传入的 targets 字典（原地注入 context_text），同时返回该字典以支持链式调用。
     """
     chapter_cache: dict = {}
 
