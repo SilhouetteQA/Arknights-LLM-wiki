@@ -143,7 +143,7 @@ def test_collects_all_participants():
         shutil.rmtree(tmpdir)
 
 
-def test_skips_parse_error_events():
+def test_collects_from_parse_error_chapters():
     """含有 _parse_error 的 JSON 仍然收集其 events"""
     tmpdir = tempfile.mkdtemp()
     try:

@@ -33,7 +33,7 @@ def normalize_participant(name: str, op_names: set, id_map: dict) -> str:
     name = re.sub(r"[（(][^）)]*[）)]", "", name).strip()
 
     # 去除书名号、双引号等
-    name = name.strip("「」『』""")
+    name = name.strip("「」")
 
     if not name:
         return name
@@ -67,7 +67,7 @@ def normalize_participant(name: str, op_names: set, id_map: dict) -> str:
     best_name = name
     for opn in op_names:
         len_diff = abs(len(name) - len(opn))
-        if len_diff > 3:
+        if len_diff > 5:
             continue
         ratio = SequenceMatcher(None, name, opn).ratio()
         if ratio >= 0.65 and ratio > best_ratio:
@@ -349,7 +349,7 @@ def inject_context(targets: dict, data_dir: str = "data/stories") -> dict:
             if not isinstance(line_range, list) or len(line_range) != 2:
                 continue
 
-            event["context"] = _cut_lines(cd, line_range[0], line_range[1])
+            event["context_text"] = _cut_lines(cd, line_range[0], line_range[1])
 
     return targets
 
