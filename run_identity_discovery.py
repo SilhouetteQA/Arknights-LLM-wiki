@@ -1,6 +1,5 @@
-"""Pass 2 身份映射发现：用 LLM 知识识别真名/别名→干员的映射"""
-import json
-import sys
+"""Pass 2 身份映射发现：LLM 识别真名/别名→干员映射，全量批处理"""
+import json, sys, os, time
 sys.path.insert(0, ".")
 
 from arknights_wiki.extraction.character_aggregator import collect_from_v1, normalize_and_merge
@@ -16,23 +15,25 @@ def load_data():
     merged = normalize_and_merge(raw, operators, id_map)
 
     op_names = {op["name_zh"] for op in operators}
+    id_map_values = set(id_map.values())
     id_map_keys = set(id_map.keys())
 
-    # Find unmapped names with >=5 events
     unmapped = []
     for name, data in merged.items():
-        if name in op_names:
+        if name in op_names:  # already an operator name
             continue
-        if name in id_map_keys:
+        if name in id_map_keys:  # already mapped via identity_map
+            continue
+        if name in id_map_values:  # this IS an operator codename mapped from elsewhere
             continue
         n_ev = len(data["events"])
-        if n_ev >= 5:
+        if n_ev >= 3:  # lower threshold for broader discovery
             chapters = list(data["chapters"])
             unmapped.append({
                 "name": name,
                 "events": n_ev,
                 "chapters": len(chapters),
-                "sample_chapter": chapters[0],
+                "sample_chapters": chapters[:3],
                 "aliases": list(data.get("aliases", set())),
             })
 
@@ -40,93 +41,131 @@ def load_data():
     return unmapped, operators
 
 
-def build_discovery_prompt(unmapped_batch: list[dict], operators: list[dict]) -> str:
-    """构建身份映射发现提示词"""
-    op_summary = []
-    for op in operators:
-        op_summary.append(f"- {op['name_zh']}（{op.get('race','?')}/{op.get('nation','?')}）")
+def build_discovery_prompt(batch: list[dict], operators: list[dict]) -> str:
+    # Compact operator list: just names, since LLM knows Arknights
+    op_names = [op["name_zh"] for op in operators]
+    op_list_str = "、".join(op_names)
 
-    name_list = []
-    for u in unmapped_batch:
-        alias_str = f" [别名: {', '.join(u['aliases'])}]" if u['aliases'] else ""
-        name_list.append(
-            f"- {u['name']}（{u['events']}次出场, {u['chapters']}章, 如{u['sample_chapter']}）{alias_str}"
-        )
+    name_lines = []
+    for u in batch:
+        alias_str = f" [aka {', '.join(u['aliases'])}]" if u['aliases'] else ""
+        ch_str = "、".join(u["sample_chapters"][:2])
+        name_lines.append(f"{u['name']}（{u['events']}ev/{u['chapters']}ch/{ch_str}）{alias_str}")
 
-    prompt = f"""你是明日方舟角色数据库专家。你的任务是识别以下「未映射角色名」中，哪些是已有干员的真名、别名、或代号变体。
+    return f"""你是明日方舟角色数据库专家。识别以下「未映射角色名」中，哪些是已有干员的真名、别名、代号变体。
 
-## 干员列表（共{len(operators)}人）
+## 当前干员列表
 
-{chr(10).join(op_summary[:200])}
+{op_list_str}
 
-（仅展示前200名干员，完整列表过长省略）
+## 未映射角色名（{len(batch)}个）
 
-## 未映射角色名（{len(unmapped_batch)}个）
+{chr(10).join(name_lines)}
 
-{chr(10).join(name_list)}
+## 规则
 
-## 要求
+判断每个未映射角色名与干员的关系：
+1. real_name: 某干员的本名/真名
+2. alias: 某干员的别名/外号/绰号
+3. variant: 曾用名/异格名/代号变体
+4. none: 独立NPC，与现有干员无关
 
-判断每个未映射角色名是否与某个干员存在以下关系：
-1. **真名/本名**：该角色名是某干员的本名（如「蕾缪乐」是「能天使」的本名）
-2. **别名/外号**：该角色名是某干员的别名或外号（如「苦难陈述者」是「菲亚梅塔」的外号）
-3. **曾用名/代号变体**：该角色名是某干员曾用或变体的代号
-4. **无关联**：该角色名是独立NPC，与现有干员无关
-
-只输出 JSON，不含 markdown 标记。JSON 字符串内禁止英文双引号，用「」代替。
+只输出 JSON，不含 markdown。字符串内禁用英文双引号，用「」代替。
 
 ```json
-{{
-  "mappings": [
-    {{"unmapped_name": "未映射角色名", "operator_name": "对应干员名", "relation": "real_name|alias|variant|none", "confidence": "high|medium|low", "reason": "一句话说明"}}
-  ]
-}}
+{{"mappings": [{{"unmapped_name": "名", "operator_name": "干员或空", "relation": "real_name|alias|variant|none", "reason": "简短理由"}}]}}
 ```
 
-对于 relation=none 的条目，operator_name 留空字符串。
-"""
-    return prompt
+注意：
+- 不要编造不存在的干员名。operator_name 必须在上述干员列表中。
+- 英文名区分大小写（如 Logos、Ace、Scout 如果是干员则映射，否则为 none）。
+- 泛称/无名角色（带「的」「者」「士兵」「矿工」等词）通常是 none。
+- 置信度低的不要输出，只输出你能确定的映射。"""
 
 
 def main():
     unmapped, operators = load_data()
-    print(f"未映射角色（>=5事件）: {len(unmapped)}")
-    print(f"干员总数: {len(operators)}")
+    print(f"未映射角色（>=3事件）: {len(unmapped)}")
 
-    # 分批处理，每批40个未映射名
-    batch_size = 40
-    all_mappings = []
+    # Check for existing results to resume
+    output_path = "output/identity_discovery_all.json"
+    existing = {}
+    if os.path.exists(output_path):
+        with open(output_path, encoding="utf-8") as f:
+            existing = json.load(f)
+        print(f"已有 {len(existing)} 条结果，跳过已处理的")
 
-    for i in range(0, min(len(unmapped), 120), batch_size):
+    batch_size = 50
+    total_cost = 0.0
+    all_found = dict(existing)
+
+    for i in range(0, len(unmapped), batch_size):
         batch = unmapped[i : i + batch_size]
-        print(f"\n处理批次 {i//batch_size + 1}: {len(batch)} 个未映射名...")
 
-        prompt = build_discovery_prompt(batch, operators)
+        # Skip already-processed names
+        new_batch = [u for u in batch if u["name"] not in existing]
+        if not new_batch:
+            continue
+
+        batch_num = i // batch_size + 1
+        total_batches = (len(unmapped) + batch_size - 1) // batch_size
+        print(f"\n批次 {batch_num}/{total_batches}: {len(new_batch)} 个新名...", flush=True)
+
+        prompt = build_discovery_prompt(new_batch, operators)
         client = create_client()
-        result = call_llm(client, "你是明日方舟角色数据库专家。只输出 JSON，不含 markdown。", prompt)
+
+        try:
+            result = call_llm(client, "你是明日方舟角色数据库专家。只输出 JSON。", prompt)
+        except Exception as e:
+            print(f"  API 错误: {e}")
+            continue
+
+        stats = result.get("_stats", {})
+        ti = stats.get("tokens_in", 0)
+        to = stats.get("tokens_out", 0)
+        cost = ti / 1_000_000 * 0.27 + to / 1_000_000 * 1.10
+        total_cost += cost
+        print(f"  tokens: in={ti:,} out={to:,} cost=${cost:.4f}", flush=True)
 
         if result.get("_parse_error"):
-            print(f"  解析失败: {result.get('_raw', '')[:200]}")
+            print(f"  JSON 解析失败")
+            raw = result.get("_raw", "")
+            print(f"  raw: {raw[:200]}")
             continue
 
         mappings = result.get("mappings", [])
-        stats = result.get("_stats", {})
-        print(f"  tokens: in={stats.get('tokens_in',0):,} out={stats.get('tokens_out',0):,}")
-
+        batch_found = 0
         for m in mappings:
-            if m.get("relation") != "none" and m.get("confidence") in ("high", "medium"):
-                all_mappings.append(m)
-                print(f"  {m['unmapped_name']} → {m['operator_name']} ({m['relation']}, {m['confidence']})")
+            name = m.get("unmapped_name", "")
+            rel = m.get("relation", "none")
+            if name and rel != "none":
+                all_found[name] = {
+                    "operator_name": m.get("operator_name", ""),
+                    "relation": rel,
+                    "reason": m.get("reason", ""),
+                }
+                batch_found += 1
+                print(f"  {name} -> {m['operator_name']} ({rel})", flush=True)
 
-    # 输出候选映射
-    print(f"\n=== 候选映射 ({len(all_mappings)} 条) ===")
-    for m in all_mappings:
-        print(f"  \"{m['unmapped_name']}\": \"{m['operator_name']}\",  # {m['relation']}, {m['confidence']}: {m['reason']}")
+        if batch_found == 0:
+            print(f"  (无新映射)")
 
-    # 输出可直接添加到 identity_map 的格式
-    print("\n=== identity_map 格式 ===")
-    for m in all_mappings:
-        print(f'    "{m["unmapped_name"]}": "{m["operator_name"]}",')
+        # Save after each batch
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(all_found, f, ensure_ascii=False, indent=2)
+
+        time.sleep(0.5)  # rate limit
+
+    # Final summary
+    print(f"\n=== 全量发现完成 ===")
+    print(f"总候选映射: {len(all_found)}")
+    print(f"估算成本: ${total_cost:.4f}")
+    print(f"结果: {output_path}")
+
+    # Print candidate identity_map entries
+    print("\n=== 候选 identity_map 条目 ===")
+    for name, info in sorted(all_found.items()):
+        print(f'    "{name}": "{info["operator_name"]}",  # {info["relation"]}: {info["reason"]}')
 
 
 if __name__ == "__main__":
