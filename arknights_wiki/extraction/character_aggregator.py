@@ -333,7 +333,8 @@ def inject_context(targets: dict, data_dir: str = "data/stories") -> dict:
                 continue
 
             if chapter not in chapter_cache:
-                chapter_dir = os.path.join(data_dir, chapter)
+                category = event.get("category", "")
+                chapter_dir = os.path.join(data_dir, category, chapter)
                 try:
                     cd = load_chapter(chapter_dir)
                 except (FileNotFoundError, json.JSONDecodeError):
