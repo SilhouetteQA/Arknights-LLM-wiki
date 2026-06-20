@@ -168,3 +168,171 @@ def build_user_prompt(chapter: str, dialogue_text: str, total_lines: int,
         parts.append("- IS 章节：summary 按「序章 Scene → 每个结局的 Scene（含 PART 1~4 分节）」的层级结构组织，每个结局独立成节、每个 PART 单独概述、不得跨结局合并叙述、不得中途夹断PART的叙事")
 
     return "\n".join(parts)
+
+
+# ====================================================================
+# 角色 Wiki 页面生成 prompt 常量与函数
+# ====================================================================
+
+CHARACTER_SYSTEM_PROMPT = """你是一位《明日方舟》角色档案编纂者。你的任务是基于提供的跨章节对话信息，为一个角色撰写 Wiki 页面级的角色档案。
+
+严格遵守以下规则：
+
+1. **输出格式**：严格输出 JSON，不要包含 ```json 等 markdown 标记。<EXTREMELY_IMPORTANT>JSON 字符串值内禁止使用英文双引号 "，用「」代替。</EXTREMELY_IMPORTANT>
+
+2. **summary（核心字段）**：跨章节角色总结，涵盖性格特征、能力体系、关键剧情弧线、重要转变。必须基于提供的对话内容，不编造不存在的设定或情节。
+
+3. **participated_events**：仅列出有实质剧情意义的重大事件。同一章节的同一战役阶段合并为一条，不记录语气词/纯过渡场景。每条包含 chapter（章节名）、nodes（关键节点名）、event（事件简述）、role（角色在该事件中的作用）。
+
+4. **power_level（战力评估体系）**：
+   九级战力框架（由低到高）：
+   - 战场中坚：下位、标准、上位、顶尖
+   - 军事精锐：下位、标准、上位、顶尖
+   - 大国将军：下位、标准、上位、顶尖
+   - 传奇英雄：下位、标准、上位、顶尖
+   - 王庭之主：下位、标准、上位、顶尖
+   - 神明碎片：下位、标准、上位、顶尖
+   - 崛起之物：下位、标准、上位、顶尖
+   - 文明之敌：下位、标准、上位、顶尖
+   - 灭世灾厄：（无子级）
+   格式为「等级·子级」，如「战场中坚·标准」「王庭之主·上位」。无法确定时使用「信息不足」。
+
+5. **personality.traits**：2-5 个简短的性格标签词，如「坚毅」「腹黑」「忠诚」。
+
+6. **abilities.description**：一句话概括角色的核心战斗能力或特殊技能。
+
+7. **archive**：仅干员角色填写此字段。从提供的档案数据中复制种族、所属阵营等信息。非干员角色不输出此字段。"""
+
+CHARACTER_OUTPUT_SCHEMA = """```json
+{
+  "summary": "跨章角色总结（基于提供的对话内容，不编造）",
+  "personality": {"traits": ["标签1", "标签2"], "description": "1-2句性格描述"},
+  "abilities": {"description": "一句话能力概括", "power_level": "战场中坚·标准 或 信息不足"},
+  "participated_events": [{"chapter": "章节名", "nodes": "关键节点名", "event": "事件简述", "role": "角色作用"}],
+  "first_appearance": "首次出场章节名",
+  "appearance_count": 15
+}
+```"""
+
+
+def get_summary_word_limit(chapter_count: int) -> int:
+    """根据出场章节数返回总结字数上限"""
+    if chapter_count >= 20:
+        return 500
+    elif chapter_count >= 10:
+        return 350
+    elif chapter_count >= 5:
+        return 250
+    elif chapter_count >= 2:
+        return 150
+    else:
+        return 100
+
+
+def build_character_system_prompt() -> str:
+    """返回角色 Wiki 页面生成的 system prompt"""
+    return CHARACTER_SYSTEM_PROMPT
+
+
+def build_character_user_prompt(
+    name_zh: str,
+    chapter_count: int,
+    events_with_context: list,
+    operator_archive: dict = None
+) -> str:
+    """构建角色 Wiki 页面生成的 user prompt
+
+    Args:
+        name_zh: 角色中文名
+        chapter_count: 出场章节数
+        events_with_context: 关联事件列表，每项包含 chapter/event/context_text/line_range/significance/is_imaginary
+        operator_archive: 干员档案信息（可选），包含 race/nation/team/group/archives 字段
+    """
+    word_limit = get_summary_word_limit(chapter_count)
+
+    parts = [f"## 角色：{name_zh}"]
+    parts.append("")
+    parts.append(f"跨章出场章节数：{chapter_count} 章")
+    parts.append(f"总结字数上限：{word_limit} 字")
+    parts.append("")
+
+    # 干员档案信息（如有）
+    if operator_archive:
+        parts.append("## 干员档案信息")
+        parts.append("")
+        if operator_archive.get("race"):
+            parts.append(f"种族：{operator_archive['race']}")
+        if operator_archive.get("nation"):
+            parts.append(f"国家/所属地：{operator_archive['nation']}")
+        if operator_archive.get("team"):
+            parts.append(f"小队/组织：{operator_archive['team']}")
+        if operator_archive.get("group"):
+            parts.append(f"团体/派系：{operator_archive['group']}")
+        parts.append("")
+        archives = operator_archive.get("archives", {})
+        if archives:
+            parts.append("档案文本：")
+            for archive_name, archive_text in archives.items():
+                parts.append(f"### {archive_name}")
+                parts.append(archive_text)
+                parts.append("")
+    else:
+        parts.append("（非干员角色，无档案信息）")
+        parts.append("")
+
+    # 跨章节事件信息
+    parts.append("## 跨章节相关事件")
+    parts.append("")
+
+    if events_with_context:
+        # 按章节分组
+        chapters = {}
+        for ev in events_with_context:
+            ch = ev.get("chapter", "未知章节")
+            if ch not in chapters:
+                chapters[ch] = []
+            chapters[ch].append(ev)
+
+        chapter_idx = 0
+        for ch_name, ch_events in chapters.items():
+            chapter_idx += 1
+            parts.append(f"### 章节 {chapter_idx}：{ch_name}")
+            parts.append("")
+
+            for j, ev in enumerate(ch_events, 1):
+                event_name = ev.get("event", "")
+                is_imaginary = ev.get("is_imaginary", False)
+                imaginary_tag = " 【IS-IF线】" if is_imaginary else ""
+                parts.append(f"事件 {j}：{event_name}{imaginary_tag}")
+
+                line_range = ev.get("line_range", [])
+                if line_range and len(line_range) == 2:
+                    parts.append(f"line_range：[{line_range[0]}, {line_range[1]}]")
+
+                significance = ev.get("significance", "")
+                if significance:
+                    parts.append(f"剧情意义：{significance}")
+
+                context_text = ev.get("context_text", "")
+                if context_text:
+                    parts.append("对话上下文：")
+                    parts.append(context_text)
+
+                parts.append("")
+    else:
+        parts.append("（无相关事件）")
+        parts.append("")
+
+    # 输出格式
+    parts.append("## 输出 JSON 格式")
+    parts.append(CHARACTER_OUTPUT_SCHEMA)
+    parts.append("")
+
+    # 规则总结
+    parts.append("## 规则总结")
+    parts.append("- summary 必须基于提供的对话内容，不编造不存在的设定或情节")
+    parts.append("- power_level 按九级战力体系评估，格式为「等级·子级」，不确定时使用「信息不足」")
+    parts.append("- participated_events 仅列出有实质剧情意义的重大事件，同一章节同一战役阶段合并为一条，不记录语气词/纯过渡场景")
+    parts.append("- 仅干员角色填写 archive 字段")
+
+    return "\n".join(parts)
