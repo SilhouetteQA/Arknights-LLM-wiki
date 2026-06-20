@@ -293,3 +293,49 @@ arknights_wiki/extraction/ (5 模块, 28 tests)
 2. 读本文件末尾 — 最新决策
 3. 读 output/sessions/2026-06-20-1.md — 完整会话记录
 4. 下一步：writing-plans → TDD 开发 → 试跑 17 角色
+
+---
+
+## Pass 2 实施完成 (2026-06-20)
+
+### 架构决策
+
+- **Subagent-Driven TDD**：4 Task（character_aggregator / prompt_builder / post_processor / orchestrator），每 task 经三轮审查（implementer → spec reviewer → code quality reviewer）
+- **filter_targets +min_events=8**：单章 NPC >=8 事件自动纳入，+113 角色（537 → 650）。Why: 原"多章"规则漏掉单章重要配角（白垩19事件、安多恩31事件等）
+- **LLM 辅助身份映射发现**：`run_identity_discovery.py` 批处理，LLM 识别人名→干员映射，错误率 ~60%，必须人工审核
+- **identity_map +27 条**：覆盖异格、真名、别名、英文代号、称号五类
+- **identity_map 错误修正**：删除 Guard→阿米娅（Guard 是独立 NPC），补充埃内斯托→龙舌兰
+
+### 关键 Bug
+
+- `inject_context` 路径缺失 category 前缀（`data/stories/{chapter}` → `data/stories/{category}/{chapter}`），所有原文注入静默失败
+- `get_operator_archive` 只返回 archives 子 dict，已修复为完整 operator 对象
+
+### 试跑基线
+
+| 指标 | 值 |
+|------|-----|
+| 提取角色 | 17/17 成功 |
+| JSON 解析成功率 | 100% |
+| power_level "信息不足" | 2/17（12%） |
+| 成本 | ~$0.50 |
+| 耗时 | ~3.5 min |
+
+### 代码基线
+
+```python
+arknights_wiki/extraction/
+  character_aggregator.py  # 新建 — 8 functions, 31 tests
+  prompt_builder.py        # 扩展 — +3 functions, +9 tests
+  post_processor.py        # 扩展 — +1 function, +6 tests
+  orchestrator.py          # 扩展 — +4 functions, +3 tests
+```
+
+210 tests passing.
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-20-2.md — 完整会话记录
+4. 下一步：用户审阅试跑 → 全量 650 角色提取

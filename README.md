@@ -108,6 +108,19 @@ Arknights LLM Wiki/
 | 试跑 | 6 章全成功, $0.08, ~5 min |
 | 分支 | feature/pass1-event-extraction |
 
+## Pass 2 角色Wiki页面生成完成 (2026-06-20)
+
+| 维度 | 值 |
+|------|-----|
+| 实施 | 4 模块 TDD (character_aggregator/prompt_builder/post_processor/orchestrator) |
+| 测试 | 210 passed |
+| 试跑 | 17/17 角色成功, $0.50, 100% JSON 解析 |
+| 目标角色 | ~650 (干员381 + 多章NPC + 单章>=8事件NPC + KEEP) |
+| identity_map | ~155 条 |
+| 分支 | feature/pass2-entity-extraction |
+
 ## 下一步
 
-审阅试跑质量 → 修复问题 → 全量 109 章 Pass 1 执行
+1. 用户审阅试跑结果 (output/pass2_trial/)
+2. 根据反馈修复质量问题
+3. 全量 ~650 角色提取 (~$2.0 USD)
