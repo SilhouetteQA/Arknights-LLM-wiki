@@ -5,13 +5,21 @@ from datetime import datetime, timezone
 from .dialogue_loader import (
     load_chapter, split_chapter, build_context_prompt, scene_line_to_global,
 )
-from .prompt_builder import build_system_prompt, build_user_prompt
+from .prompt_builder import (
+    build_system_prompt, build_user_prompt,
+    build_character_system_prompt, build_character_user_prompt,
+)
 from .llm_client import create_client, call_llm
 from .post_processor import (
     align_character_names,
     load_identity_map,
     merge_batches,
     validate_extraction,
+    validate_character_output,
+)
+from .character_aggregator import (
+    collect_from_v1, normalize_and_merge, filter_targets,
+    inject_context, parse_keep_list, get_operator_archive,
 )
 
 
@@ -494,3 +502,228 @@ def generate_run_report(output_base: str = "data/extractions/v1_events", taxonom
 
     md += "\n"
     return md
+
+
+# ====================================================================
+# 角色 Wiki 页面提取编排
+# ====================================================================
+
+
+def build_character_pipeline(
+    v1_dir: str = "data/extractions/v1_events",
+    data_dir: str = "data/stories",
+    operators_path: str = "data/operators.json",
+    identity_map_path: str = "config/identity_map.json",
+    keep_list_path: str = "config/npc_single_keep.md",
+    operators: list = None,
+    id_map: dict = None,
+    keep_set: set = None,
+) -> tuple[dict, list]:
+    """构建角色提取流水线：收集 → 规范化 → 过滤 → 注入上下文。
+
+    Args:
+        v1_dir: Pass 1 提取结果目录
+        data_dir: 原始故事数据目录（用于注入上下文）
+        operators_path: 干员 JSON 路径
+        identity_map_path: 身份映射 JSON 路径
+        keep_list_path: 单章 NPC KEEP 列表 markdown 路径
+        operators: 预加载干员列表（用于测试，为 None 时从文件加载）
+        id_map: 预加载身份映射（用于测试，为 None 时从文件加载）
+        keep_set: 预加载 KEEP 集合（用于测试，为 None 时从文件加载）
+
+    Returns:
+        (targets dict, operators list)
+    """
+    # 加载配置数据（如未预加载）
+    if operators is None:
+        with open(operators_path, "r", encoding="utf-8") as f:
+            operators = json.load(f)["operators"]
+    if id_map is None:
+        id_map = load_identity_map(identity_map_path)
+    if keep_set is None:
+        keep_set = parse_keep_list(keep_list_path)
+
+    # 链式调用
+    raw = collect_from_v1(v1_dir)
+    normalized = normalize_and_merge(raw, operators, id_map)
+    targets = filter_targets(normalized, operators, keep_set)
+
+    # 注入上下文（data_dir 为 None 时跳过，用于测试环境无原始数据的情况）
+    if data_dir is not None:
+        targets = inject_context(targets, data_dir)
+
+    return targets, operators
+
+
+def run_character_extraction(
+    name_zh: str,
+    character_data: dict,
+    operator_archive: dict = None
+) -> dict:
+    """对单个角色执行 LLM 提取，生成 Wiki 页面 JSON。
+
+    Args:
+        name_zh: 角色中文名
+        character_data: 聚合后的角色数据，含 chapters（set）和 events（list）
+        operator_archive: 干员档案信息（可选）
+
+    Returns:
+        角色 Wiki JSON dict，包含 name_zh + LLM 输出字段 + _stats
+    """
+    chapter_count = len(character_data.get("chapters", []))
+    events = character_data.get("events", [])
+
+    system_prompt = build_character_system_prompt()
+    user_prompt = build_character_user_prompt(
+        name_zh, chapter_count, events, operator_archive
+    )
+
+    client = create_client()
+    t0 = time.time()
+    llm_result = call_llm(client, system_prompt, user_prompt)
+    elapsed = time.time() - t0
+
+    if llm_result.get("_parse_error"):
+        return {
+            "name_zh": name_zh,
+            "_parse_error": True,
+            "_raw": llm_result.get("_raw", ""),
+            "_stats": llm_result.get("_stats", {}),
+        }
+
+    stats = llm_result.pop("_stats", {})
+    llm_result["_stats"] = {**stats, "elapsed_s": elapsed}
+    llm_result["name_zh"] = name_zh
+
+    return llm_result
+
+
+def save_character_output(
+    data: dict,
+    output_dir: str = "data/extractions/v2_characters"
+) -> str:
+    """保存角色 Wiki JSON 到文件。
+
+    文件名由 name_zh 生成，将 / \\ : 替换为 _ 以避免路径问题。
+
+    Args:
+        data: 角色 Wiki JSON 数据
+        output_dir: 输出目录
+
+    Returns:
+        输出文件路径
+    """
+    name = data["name_zh"]
+    safe_name = name.replace("/", "_").replace("\\", "_").replace(":", "_")
+    os.makedirs(output_dir, exist_ok=True)
+    out_path = os.path.join(output_dir, f"{safe_name}.json")
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    return out_path
+
+
+def run_trial_characters(
+    trial_names: list[str],
+    data_dir: str = "data/stories",
+    v1_dir: str = "data/extractions/v1_events",
+) -> dict[str, dict]:
+    """试跑指定角色列表的 Wiki 页面提取。
+
+    Args:
+        trial_names: 试跑角色中文名列表
+        data_dir: 原始故事数据目录
+        v1_dir: Pass 1 提取结果目录
+
+    Returns:
+        {角色名: 角色 Wiki JSON} 字典
+    """
+    print(f"\n{'='*50}")
+    print(f"角色 Wiki 提取试跑：{len(trial_names)} 个角色")
+    print(f"{'='*50}")
+
+    # 构建流水线，获取目标角色和干员列表
+    targets, operators = build_character_pipeline(
+        v1_dir=v1_dir, data_dir=data_dir
+    )
+    print(f"流水线完成：{len(targets)} 个目标角色")
+
+    results: dict[str, dict] = {}
+    total_tokens_in = 0
+    total_tokens_out = 0
+    t_start = time.time()
+    output_dir = "output/pass2_trial"
+
+    for i, name in enumerate(trial_names, 1):
+        print(f"\n{'='*50}")
+        print(f"[{i}/{len(trial_names)}] {name}")
+        print(f"{'='*50}")
+
+        if name not in targets:
+            print(f"  SKIP: 不在目标角色列表中")
+            continue
+
+        character_data = targets[name]
+        chapter_count = len(character_data.get("chapters", []))
+        event_count = len(character_data.get("events", []))
+        print(f"  出场章节: {chapter_count}, 关联事件: {event_count}")
+
+        # 获取干员档案（如存在）
+        op_archive = get_operator_archive(name, operators)
+
+        # 执行 LLM 提取
+        result = run_character_extraction(
+            name, character_data, operator_archive=op_archive
+        )
+
+        s = result.get("_stats", {})
+        tok_in = s.get("tokens_in", 0)
+        tok_out = s.get("tokens_out", 0)
+        total_tokens_in += tok_in
+        total_tokens_out += tok_out
+
+        if result.get("_parse_error"):
+            print(f"  ERROR: LLM 输出解析失败")
+            results[name] = result
+            continue
+
+        # 校验
+        errors = validate_character_output(result, name)
+        if errors:
+            result["_validation_errors"] = errors
+            print(f"  WARNING: 校验发现 {len(errors)} 个问题")
+            for err in errors:
+                print(f"    - {err}")
+
+        # 填充后处理字段
+        result["aliases"] = list(character_data.get("aliases", []))
+        result["source_pass1_chapters"] = sorted(character_data.get("chapters", []))
+        result["model"] = _get_model_label()
+        result["generated_at"] = datetime.now(timezone.utc).isoformat()
+
+        # 从干员数据填充档案字段
+        if op_archive:
+            result["race"] = op_archive.get("race", "")
+            affiliations = []
+            for field in ["nation", "team", "group"]:
+                val = op_archive.get(field, "")
+                if val:
+                    affiliations.append(val)
+            result["affiliations"] = affiliations
+
+        # 保存
+        path = save_character_output(result, output_dir=output_dir)
+        print(f"  tokens: in={tok_in:,} out={tok_out:,}")
+        print(f"  saved: {path}")
+
+        results[name] = result
+
+    elapsed = time.time() - t_start
+    print(f"\n{'='*50}")
+    print(f"试跑完成")
+    print(f"  成功: {len([r for r in results.values() if not r.get('_parse_error')])} 角色")
+    print(f"  失败: {len([r for r in results.values() if r.get('_parse_error')])} 角色")
+    print(f"  tokens: in={total_tokens_in:,} out={total_tokens_out:,}")
+    print(f"  耗时: {elapsed:.0f}s ({elapsed/60:.1f}m)")
+    print(f"  输出目录: {output_dir}/")
+
+    return results
