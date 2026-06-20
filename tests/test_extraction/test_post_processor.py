@@ -5,8 +5,10 @@ from arknights_wiki.extraction.post_processor import (
     deduplicate_events,
     merge_batches,
     validate_extraction,
+    validate_character_output,
     load_identity_map,
     normalize_character_type,
+    VALID_POWER_LEVELS,
 )
 
 
@@ -172,7 +174,6 @@ def test_validate_extraction_line_range_out_of_bounds():
 
 class TestValidateCharacterOutput:
     def test_valid_output_passes(self):
-        from arknights_wiki.extraction.post_processor import validate_character_output
         data = {
             "summary": "阿米娅是罗德岛的公开领袖...",
             "personality": {"traits": ["坚定", "温柔"], "description": "外表柔弱但内心坚韧"},
@@ -188,12 +189,10 @@ class TestValidateCharacterOutput:
         assert len(errors) == 0
 
     def test_missing_required_field(self):
-        from arknights_wiki.extraction.post_processor import validate_character_output
         errors = validate_character_output({"summary": "test"}, "test")
         assert any("personality" in e for e in errors)
 
     def test_empty_participated_events_is_ok(self):
-        from arknights_wiki.extraction.post_processor import validate_character_output
         data = {
             "summary": "test",
             "personality": {"traits": ["x"], "description": "x"},
@@ -206,7 +205,6 @@ class TestValidateCharacterOutput:
         assert len([e for e in errors if "participated_events" in e]) == 0
 
     def test_invalid_power_level(self):
-        from arknights_wiki.extraction.post_processor import validate_character_output
         data = {
             "summary": "test",
             "personality": {"traits": ["x"], "description": "x"},
@@ -219,7 +217,6 @@ class TestValidateCharacterOutput:
         assert any("power_level" in e for e in errors)
 
     def test_all_valid_power_levels(self):
-        from arknights_wiki.extraction.post_processor import validate_character_output, VALID_POWER_LEVELS
         for level in VALID_POWER_LEVELS:
             data = {
                 "summary": "test",
@@ -233,14 +230,13 @@ class TestValidateCharacterOutput:
             assert not any("power_level" in e for e in errors), f"Failed for: {level}"
 
     def test_validates_participated_event_fields(self):
-        from arknights_wiki.extraction.post_processor import validate_character_output
         data = {
             "summary": "test",
             "personality": {"traits": ["x"], "description": "x"},
             "abilities": {"description": "x", "power_level": "信息不足"},
             "participated_events": [
-                {"chapter": "", "event": ""},  # both empty
-                {},  # missing both
+                {"chapter": "", "event": ""},
+                {},
             ],
             "first_appearance": "",
             "appearance_count": 0,
