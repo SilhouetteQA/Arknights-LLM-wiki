@@ -271,3 +271,78 @@ def validate_extraction(data: dict, total_lines: int) -> list[str]:
             errors.append(f"events[{i}].line_range {lr} 超出总行数 {total_lines}")
 
     return errors
+
+
+# ─── 角色输出校验 ───
+
+VALID_POWER_LEVELS = {
+    "战场中坚·下位", "战场中坚·标准", "战场中坚·上位", "战场中坚·顶尖",
+    "军事精锐·下位", "军事精锐·标准", "军事精锐·上位", "军事精锐·顶尖",
+    "大国将军·下位", "大国将军·标准", "大国将军·上位", "大国将军·顶尖",
+    "传奇英雄·下位", "传奇英雄·标准", "传奇英雄·上位", "传奇英雄·顶尖",
+    "王庭之主·下位", "王庭之主·标准", "王庭之主·上位", "王庭之主·顶尖",
+    "神明碎片·下位", "神明碎片·标准", "神明碎片·上位", "神明碎片·顶尖",
+    "崛起之物·下位", "崛起之物·标准", "崛起之物·上位", "崛起之物·顶尖",
+    "文明之敌·下位", "文明之敌·标准", "文明之敌·上位", "文明之敌·顶尖",
+    "灭世灾厄",
+    "信息不足",
+}
+
+
+def validate_character_output(data: dict, name_zh: str) -> list[str]:
+    """校验角色 Wiki 页面输出 JSON 的合法性。
+
+    Args:
+        data: 角色 Wiki JSON 数据
+        name_zh: 角色中文名（用于错误信息）
+
+    Returns:
+        错误字符串列表，空列表表示校验通过
+    """
+    errors: list[str] = []
+
+    # summary 必须是非空字符串
+    if not isinstance(data.get("summary"), str) or not data["summary"].strip():
+        errors.append(f"{name_zh}: summary 为空或缺失")
+
+    # personality 必须是 dict，且包含非空的 traits (list) 和 description (string)
+    personality = data.get("personality")
+    if not isinstance(personality, dict):
+        errors.append(f"{name_zh}: personality 缺失或不是 dict")
+    else:
+        traits = personality.get("traits")
+        if not isinstance(traits, list) or len(traits) == 0:
+            errors.append(f"{name_zh}: personality.traits 为空或缺失")
+        desc = personality.get("description")
+        if not isinstance(desc, str) or not desc.strip():
+            errors.append(f"{name_zh}: personality.description 为空或缺失")
+
+    # abilities 必须是 dict，包含非空 description (string) 和合法的 power_level
+    abilities = data.get("abilities")
+    if not isinstance(abilities, dict):
+        errors.append(f"{name_zh}: abilities 缺失或不是 dict")
+    else:
+        ab_desc = abilities.get("description")
+        if not isinstance(ab_desc, str) or not ab_desc.strip():
+            errors.append(f"{name_zh}: abilities.description 为空或缺失")
+        power_level = abilities.get("power_level", "")
+        if power_level not in VALID_POWER_LEVELS:
+            errors.append(f"{name_zh}: abilities.power_level 值无效: {power_level}")
+
+    # participated_events 必须是 list；若包含条目，每个条目的 event 和 chapter 必须非空
+    participated = data.get("participated_events")
+    if not isinstance(participated, list):
+        errors.append(f"{name_zh}: participated_events 缺失或不是 list")
+    else:
+        for i, pe in enumerate(participated):
+            if not isinstance(pe, dict):
+                errors.append(f"{name_zh}: participated_events[{i}] 不是 dict")
+                continue
+            ev = pe.get("event")
+            ch = pe.get("chapter")
+            if not isinstance(ev, str) or not ev.strip():
+                errors.append(f"{name_zh}: participated_events[{i}].event 为空")
+            if not isinstance(ch, str) or not ch.strip():
+                errors.append(f"{name_zh}: participated_events[{i}].chapter 为空")
+
+    return errors
