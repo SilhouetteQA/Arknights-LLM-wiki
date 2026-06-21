@@ -1,0 +1,43 @@
+{
+  "summary": "Ave Mujica的鼓手，率直开朗，擅长沟通与察言观色。表面随和，内心却对自己要求严苛，不断逼迫自己前进，嫉妒并憧憬天才。在无忧梦呓的梦境中，她一度迷失于虚假的演员成功，但最终被祥子唤醒，找回了作为鼓手的初心。",
+  "personality": {
+    "traits": [
+      "率直",
+      "开朗",
+      "善良",
+      "严于律己",
+      "敏感"
+    ],
+    "description": "随和开朗，能迅速与人打成一片，但内心敏感，善于察觉他人情绪。对自己要求极高，默默进行高强度练习，不愿停滞不前。"
+  },
+  "abilities": {
+    "description": "作为鼓手拥有极强的体能和精湛的演奏技巧，擅长沟通与协调，能轻松完成高难度任务。",
+    "power_level": "信息不足"
+  },
+  "participated_events": [
+    {
+      "chapter": "无忧梦呓",
+      "nodes": "IS-IF线",
+      "event": "在梦境中成为当红演员，却迷失了打鼓的初心，后被祥子唤醒。",
+      "role": "被拯救的同伴，最终找回自我，参与告别演出。"
+    }
+  ],
+  "first_appearance": "无忧梦呓",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 4866,
+    "tokens_out": 302,
+    "elapsed_s": 3.6022253036499023
+  },
+  "name_zh": "祐天寺若麦",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "无忧梦呓"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T04:57:54.511611+00:00",
+  "race": "未知",
+  "affiliations": [
+    "Ave Mujica"
+  ]
+}

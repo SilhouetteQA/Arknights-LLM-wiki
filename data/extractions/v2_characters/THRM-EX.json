@@ -1,0 +1,65 @@
+{
+  "summary": "THRM-EX是梅尔与可露希尔共同客制化的雷神挑衅者熔岩猫魔鬼高性能版作业平台，性格极度热情，言语中充满「热」字。在离解复合事件中，被Friston-3连接核心代码后恢复正常，并分享了Friston-3的悲伤梦境。在ARKnoNIGHTS中，作为PRTS方案B的执行者之一，参与夺还博士行动。在重启锚点中，为基地建成而欢呼。在好久不见中，与Castle-3、Lancet-2一起照顾宠物比丢，因过于死板导致比丢应激，后在洛洛指导下学会灵活陪伴。",
+  "personality": {
+    "traits": [
+      "热情",
+      "话多",
+      "忠诚",
+      "死板"
+    ],
+    "description": "THRM-EX对所有人都饱含赞美，言语中充满「热」字，热情到让部分人难以适应，但意外地让内向怕生的干员愿意倾听。"
+  },
+  "abilities": {
+    "description": "作为高性能作业平台，具备攻击设备、储能装置和急速冷却模块，但续航能力缺陷，主要依靠热情和语言模块进行交流与陪伴。",
+    "power_level": "信息不足"
+  },
+  "participated_events": [
+    {
+      "chapter": "离解复合",
+      "nodes": "Friston-3连接小车核心代码",
+      "event": "Friston-3通过连接小车们的核心代码，使其恢复正常，并分享了自己的梦境（女儿的婚礼）。",
+      "role": "被Friston-3连接并恢复正常的机器人之一，参与了梦境分享。"
+    },
+    {
+      "chapter": "ARKnoNIGHTS",
+      "nodes": "PRTS方案B",
+      "event": "罗德岛PRTS系统启动方案B，派出机器人部队夺还博士并计划利用天灾消灭整合运动。",
+      "role": "作为方案B的执行者之一，与Castle-3、Lancet-2一同参与夺还博士行动。"
+    },
+    {
+      "chapter": "重启锚点",
+      "nodes": "基地建成庆祝",
+      "event": "全体干员庆祝罗德岛新基地建设完成，可露希尔激动落泪。",
+      "role": "与泡普卡一同欢呼，表达对基地建成的喜悦。"
+    },
+    {
+      "chapter": "好久不见",
+      "nodes": "照顾比丢",
+      "event": "罗德岛机器人（THRM-EX、Castle-3、Lancet-2）照顾宠物比丢，因过于死板导致比丢应激，后在洛洛指导下学会灵活陪伴。",
+      "role": "与Castle-3、Lancet-2一同照顾比丢，最初因死板导致比丢应激，后学会灵活陪伴。"
+    }
+  ],
+  "first_appearance": "离解复合",
+  "appearance_count": 4,
+  "_stats": {
+    "tokens_in": 9874,
+    "tokens_out": 642,
+    "elapsed_s": 8.074159145355225
+  },
+  "name_zh": "THRM-EX",
+  "aliases": [
+    "Thermal-EX"
+  ],
+  "source_pass1_chapters": [
+    "ARKnoNIGHTS",
+    "好久不见",
+    "离解复合",
+    "重启锚点"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T03:58:25.421957+00:00",
+  "race": "",
+  "affiliations": [
+    "罗德岛"
+  ]
+}

@@ -223,6 +223,10 @@ def filter_targets(
 
     result: dict = {}
     for name, entry in merged.items():
+        # 过滤空白名称（旁白/空字符串等）
+        if not name or not name.strip():
+            continue
+
         if name in op_names:
             result[name] = entry
             continue

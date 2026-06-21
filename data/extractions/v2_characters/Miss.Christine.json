@@ -1,0 +1,76 @@
+{
+  "summary": "Miss.Christine 是常伴傀影的神秘黑猫，推测为「兽主」之一。她以干员身份加入罗德岛，拥有操控情绪、影响他人感知的奇异能力，且能免疫常规检测。在「红丝绒」事件中，她协助傀影追踪剧团长，并在关键时刻帮助蒂比突破阻拦。她与傀影羁绊深厚，虽少言但行动中流露关心。",
+  "personality": {
+    "traits": [
+      "神秘",
+      "优雅",
+      "忠诚",
+      "好奇",
+      "独立"
+    ],
+    "description": "Miss.Christine 举止优雅，行踪莫测，对情绪有独特品味，常以沉默和行动表达态度，对傀影展现出深厚的忠诚与关怀。"
+  },
+  "abilities": {
+    "description": "能够感知、抽取并影响他人的情绪，甚至引发情绪转换；拥有免疫常规检测和造影的能力，疑似可实体化或制造幻影。",
+    "power_level": "信息不足"
+  },
+  "participated_events": [
+    {
+      "chapter": "红丝绒",
+      "nodes": "神秘黑猫闯入片场，引荐新演员卢西恩",
+      "event": "Miss.Christine 闯入蓝卡坞片场，引荐卢西恩加入剧组，推动剧情核心人物登场。",
+      "role": "引荐者"
+    },
+    {
+      "chapter": "红丝绒",
+      "nodes": "卢西恩与Miss.Christine确认剧本中有剧团印记",
+      "event": "Miss.Christine 与卢西恩确认剧本中的剧团印记，揭示卢西恩加入剧组的真实目的是追踪剧团长。",
+      "role": "情报确认者"
+    },
+    {
+      "chapter": "红丝绒",
+      "nodes": "卢西恩与Miss.Christine分析局势",
+      "event": "Miss.Christine 提醒卢西恩注意自身情绪，卢西恩决定推动故事发展以引出剧团长。",
+      "role": "情绪观察者与提醒者"
+    },
+    {
+      "chapter": "红丝绒",
+      "nodes": "蒂比在Miss.Christine的帮助下突破阻拦",
+      "event": "Miss.Christine 通过影响阻拦者的情绪，帮助蒂比成功进入备用控制室调整地块航向。",
+      "role": "情绪操控辅助者"
+    },
+    {
+      "chapter": "红丝绒",
+      "nodes": "Miss.Christine与卢西恩对话",
+      "event": "Miss.Christine 表达对卢西恩的关心，承诺即使他变成怪物也会陪伴他。",
+      "role": "情感支持者"
+    },
+    {
+      "chapter": "踏寻往昔之风",
+      "nodes": "人事干员通过Ms.Christine找到傀影",
+      "event": "Miss.Christine 带领博士和人事干员找到傀影，促成档案信息核实。",
+      "role": "引路者"
+    }
+  ],
+  "first_appearance": "红丝绒",
+  "appearance_count": 2,
+  "_stats": {
+    "tokens_in": 12360,
+    "tokens_out": 673,
+    "elapsed_s": 6.880255699157715
+  },
+  "name_zh": "Miss.Christine",
+  "aliases": [
+    "Ms.Christine"
+  ],
+  "source_pass1_chapters": [
+    "红丝绒",
+    "踏寻往昔之风"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T04:41:33.998786+00:00",
+  "race": "未公开",
+  "affiliations": [
+    "维多利亚"
+  ]
+}
