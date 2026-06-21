@@ -63,7 +63,7 @@ class TestCharacterSystemPrompt:
     def test_mentions_power_level_system(self):
         prompt = build_character_system_prompt()
         assert "战场中坚" in prompt
-        assert "灭世灾厄" in prompt
+        assert "文明之敌" in prompt
         assert "信息不足" in prompt
 
 

@@ -276,16 +276,15 @@ def validate_extraction(data: dict, total_lines: int) -> list[str]:
 # ─── 角色输出校验 ───
 
 VALID_POWER_LEVELS = {
-    "战场中坚·下位", "战场中坚·标准", "战场中坚·上位", "战场中坚·顶尖",
-    "军事精锐·下位", "军事精锐·标准", "军事精锐·上位", "军事精锐·顶尖",
-    "大国将军·下位", "大国将军·标准", "大国将军·上位", "大国将军·顶尖",
-    "传奇英雄·下位", "传奇英雄·标准", "传奇英雄·上位", "传奇英雄·顶尖",
-    "王庭之主·下位", "王庭之主·标准", "王庭之主·上位", "王庭之主·顶尖",
-    "神明碎片·下位", "神明碎片·标准", "神明碎片·上位", "神明碎片·顶尖",
-    "崛起之物·下位", "崛起之物·标准", "崛起之物·上位", "崛起之物·顶尖",
-    "文明之敌·下位", "文明之敌·标准", "文明之敌·上位", "文明之敌·顶尖",
-    "灭世灾厄",
     "信息不足",
+    "战场中坚",
+    "军事精锐",
+    "大国将军",
+    "传奇英雄",
+    "王庭之主",
+    "神明碎片",
+    "崛起之物",
+    "文明之敌",
 }
 
 
@@ -328,6 +327,19 @@ def validate_character_output(data: dict, name_zh: str) -> list[str]:
         power_level = abilities.get("power_level", "")
         if power_level not in VALID_POWER_LEVELS:
             errors.append(f"{name_zh}: abilities.power_level 值无效: {power_level}")
+        # power_level_evidence: list of {chapter, evidence}
+        evidence = abilities.get("power_level_evidence")
+        if not isinstance(evidence, list):
+            errors.append(f"{name_zh}: abilities.power_level_evidence 缺失或不是 list")
+        else:
+            for k, ev_item in enumerate(evidence):
+                if not isinstance(ev_item, dict):
+                    errors.append(f"{name_zh}: power_level_evidence[{k}] 不是 dict")
+                    continue
+                if not isinstance(ev_item.get("chapter"), str) or not ev_item["chapter"].strip():
+                    errors.append(f"{name_zh}: power_level_evidence[{k}].chapter 为空")
+                if not isinstance(ev_item.get("evidence"), str) or not ev_item["evidence"].strip():
+                    errors.append(f"{name_zh}: power_level_evidence[{k}].evidence 为空")
 
     # participated_events 必须是 list；若包含条目，每个条目的 event 和 chapter 必须非空
     participated = data.get("participated_events")

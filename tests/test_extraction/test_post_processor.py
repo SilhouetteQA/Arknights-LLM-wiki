@@ -177,7 +177,7 @@ class TestValidateCharacterOutput:
         data = {
             "summary": "阿米娅是罗德岛的公开领袖...",
             "personality": {"traits": ["坚定", "温柔"], "description": "外表柔弱但内心坚韧"},
-            "abilities": {"description": "源石技艺卓越", "power_level": "传奇英雄·标准"},
+            "abilities": {"description": "源石技艺卓越", "power_level": "传奇英雄", "power_level_evidence": [{"chapter": "黑暗时代·下", "evidence": "在切尔诺伯格核心城与塔露拉对峙，展现情绪吸收能力"}]},
             "participated_events": [{
                 "chapter": "黑暗时代·上", "nodes": "营救",
                 "event": "营救博士", "role": "核心指挥"
@@ -196,7 +196,7 @@ class TestValidateCharacterOutput:
         data = {
             "summary": "test",
             "personality": {"traits": ["x"], "description": "x"},
-            "abilities": {"description": "x", "power_level": "信息不足"},
+            "abilities": {"description": "x", "power_level": "信息不足", "power_level_evidence": []},
             "participated_events": [],
             "first_appearance": "",
             "appearance_count": 0,
@@ -208,7 +208,7 @@ class TestValidateCharacterOutput:
         data = {
             "summary": "test",
             "personality": {"traits": ["x"], "description": "x"},
-            "abilities": {"description": "x", "power_level": "超级无敌"},
+            "abilities": {"description": "x", "power_level": "超级无敌", "power_level_evidence": []},
             "participated_events": [],
             "first_appearance": "",
             "appearance_count": 0,
@@ -221,7 +221,7 @@ class TestValidateCharacterOutput:
             data = {
                 "summary": "test",
                 "personality": {"traits": ["x"], "description": "x"},
-                "abilities": {"description": "x", "power_level": level},
+                "abilities": {"description": "x", "power_level": level, "power_level_evidence": [{"chapter": "测试章", "evidence": "测试证据"}]},
                 "participated_events": [],
                 "first_appearance": "",
                 "appearance_count": 0,
@@ -233,7 +233,7 @@ class TestValidateCharacterOutput:
         data = {
             "summary": "test",
             "personality": {"traits": ["x"], "description": "x"},
-            "abilities": {"description": "x", "power_level": "信息不足"},
+            "abilities": {"description": "x", "power_level": "信息不足", "power_level_evidence": []},
             "participated_events": [
                 {"chapter": "", "event": ""},
                 {},
@@ -243,3 +243,39 @@ class TestValidateCharacterOutput:
         }
         errors = validate_character_output(data, "test")
         assert any("0" in e or "event" in e for e in errors)
+
+    def test_power_level_evidence_missing(self):
+        data = {
+            "summary": "test",
+            "personality": {"traits": ["x"], "description": "x"},
+            "abilities": {"description": "x", "power_level": "战场中坚"},
+            "participated_events": [],
+            "first_appearance": "",
+            "appearance_count": 0,
+        }
+        errors = validate_character_output(data, "test")
+        assert any("power_level_evidence" in e for e in errors)
+
+    def test_power_level_evidence_empty_chapter(self):
+        data = {
+            "summary": "test",
+            "personality": {"traits": ["x"], "description": "x"},
+            "abilities": {"description": "x", "power_level": "战场中坚", "power_level_evidence": [{"chapter": "", "evidence": "xxx"}]},
+            "participated_events": [],
+            "first_appearance": "",
+            "appearance_count": 0,
+        }
+        errors = validate_character_output(data, "test")
+        assert any("chapter" in e for e in errors)
+
+    def test_power_level_evidence_empty_evidence(self):
+        data = {
+            "summary": "test",
+            "personality": {"traits": ["x"], "description": "x"},
+            "abilities": {"description": "x", "power_level": "战场中坚", "power_level_evidence": [{"chapter": "x", "evidence": ""}]},
+            "participated_events": [],
+            "first_appearance": "",
+            "appearance_count": 0,
+        }
+        errors = validate_character_output(data, "test")
+        assert any("evidence" in e for e in errors)
