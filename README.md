@@ -108,19 +108,27 @@ Arknights LLM Wiki/
 | 试跑 | 6 章全成功, $0.08, ~5 min |
 | 分支 | feature/pass1-event-extraction |
 
-## Pass 2 角色Wiki页面生成完成 (2026-06-20)
+## Pass 2 全量提取完成 (2026-06-21)
 
 | 维度 | 值 |
 |------|-----|
 | 实施 | 4 模块 TDD (character_aggregator/prompt_builder/post_processor/orchestrator) |
 | 测试 | 210 passed |
-| 试跑 | 17/17 角色成功, $0.50, 100% JSON 解析 |
-| 目标角色 | ~650 (干员381 + 多章NPC + 单章>=8事件NPC + KEEP) |
-| identity_map | ~155 条 |
+| 全量提取 | 641/641 角色成功, $4.63, 100% JSON 解析, 0 校验错误 |
+| tokens | 14,969,572 in / 534,594 out |
+| 耗时 | 1h48m |
+| 输出 | `data/extractions/v2_characters/` |
+| identity_map | ~157 条 |
 | 分支 | feature/pass2-entity-extraction |
+
+### 已知问题
+
+- **战力评级分布严重不均**：战场中坚 61.8%，大国将军 0.2%，王庭之主 10%，中间档位大量空白
+- **IS-IF 事件未被充分纳入角色总结**
+- 90 干员（381→291）未在 Pass 1 事件中出场
 
 ## 下一步
 
-1. 用户审阅试跑结果 (output/pass2_trial/)
-2. 根据反馈修复质量问题
-3. 全量 ~650 角色提取 (~$2.0 USD)
+1. **战力评级体系重新设计**：九级锚点示例 + prompt 优化
+2. IS-IF 事件整合
+3. 未出场干员补充

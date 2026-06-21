@@ -339,3 +339,62 @@ arknights_wiki/extraction/
 2. 读本文件末尾 — 最新决策
 3. 读 output/sessions/2026-06-20-2.md — 完整会话记录
 4. 下一步：用户审阅试跑 → 全量 650 角色提取
+
+---
+
+## Pass 2 试跑审阅 + 全量提取完成 (2026-06-21)
+
+### 试跑审阅修复
+
+- **博士 power_level**：直接修改 JSON，"战场中坚·顶尖" → "信息不足"
+- **能天使 alias "堕天使"**：模糊匹配误伤（SequenceMatcher "堕天使"→"能天使" ratio≥0.6）。identity_map 加 `"堕天使": "character:堕天使"` 阻断匹配
+- **菲亚梅塔 alias**：identity_map 加 `"苦难陈述者": "菲亚梅塔"`
+- **阿米娅 alias "Guard"**：上次会话已修复 identity_map，试跑使用的是旧数据
+
+### filter_targets 空名修复
+
+- Pass 1 参与者中出现空字符串（无名旁观者），通过 filter_targets（多章多事件）产生 `.json` 文件
+- `filter_targets` 循环开头加空名过滤
+
+### 全量提取
+
+| 指标 | 值 |
+|------|-----|
+| 目标 | 641（空名过滤后） |
+| 成功 | 641/641 (100%) |
+| JSON 解析失败 | 0 |
+| 校验错误 | 0 |
+| tokens | 14,969,572 in / 534,594 out |
+| 费用 | $4.63 USD (~¥33 RMB) |
+| 耗时 | 1h48m |
+| 输出 | `data/extractions/v2_characters/` |
+
+### 战力评级审计发现
+
+九级战力体系分布严重不均：
+- **战场中坚过度集中**（271人，61.8%）—— LLM 将大部分战斗干员塞入最低战斗档
+- **大国将军断档**（仅 1 人）—— 阵营领袖未正确评级
+- **王庭之主偏多**（44人，10%）—— 远超该档位合理范围
+- **中间档位大量空白**（军事精锐·下位/顶尖等均为 0）
+- **信息不足 204 人**（31.8%）—— 164 NPC + 31 低出场干员
+
+根因：prompt 缺乏九级体系锚点示例，LLM 无法区分相邻档位边界。下个会话单独处理。
+
+### 代码基线
+
+```
+arknights_wiki/extraction/
+  character_aggregator.py  # +4 行（空名过滤）
+config/
+  identity_map.json        # +2 条（堕天使、苦难陈述者）
+data/extractions/
+  v2_characters/           # 新建 — 641 角色 Wiki JSON
+run_pass2_full.py          # 新建 — 全量提取脚本
+```
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-21-1.md — 完整会话记录
+4. 下一步：战力评级体系重新设计（九级锚点示例 + prompt 优化）
