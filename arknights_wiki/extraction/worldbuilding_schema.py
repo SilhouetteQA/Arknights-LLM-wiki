@@ -23,9 +23,9 @@ VALID_CONFIDENCE = {"confirmed", "inferred", "conflicting"}
 
 # === 通用必填字段 ===
 
-_CONCEPT_REQUIRED = {"name", "category", "definition", "summary"}
-_FACTION_REQUIRED = {"name", "category", "definition", "summary"}
-_LOCATION_REQUIRED = {"name", "category", "definition", "summary"}
+_CONCEPT_REQUIRED = {"category", "definition", "summary"}
+_FACTION_REQUIRED = {"category", "definition", "summary"}
+_LOCATION_REQUIRED = {"category", "definition", "summary"}
 
 # 各子类独有字段（仅用于文档，不做强制校验）
 _CONCEPT_SUBCLASS_FIELDS = {
@@ -53,7 +53,7 @@ def _validate_common(data: dict, required: set, valid_categories: set) -> List[s
     """通用字段校验"""
     errors = []
     for field in required:
-        if field not in data or (isinstance(data[field], str) and not data[field].strip()):
+        if field not in data or data[field] is None or (isinstance(data[field], str) and not data[field].strip()):
             errors.append(f"缺少必填字段: {field}")
     category = data.get("category", "")
     if category not in valid_categories:
