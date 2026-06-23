@@ -8,6 +8,7 @@ from .video_merger import merge_videos
 from .worldbuilding_prompts import (
     build_book_system_prompt, build_book_user_prompt,
     build_video_system_prompt, build_video_user_prompt,
+    build_timeline_system_prompt, build_timeline_user_prompt,
     build_seed_context,
 )
 from .worldbuilding_processor import (
@@ -25,13 +26,23 @@ def run_phase1_book(
     book_path: str = "data/lorebook/terra_a_journey_full.md",
     seed_db_path: str = "data/extractions/v3_seed_db_v1.json",
 ) -> dict:
-    """Phase 1: 提取大地巡旅设定集
+    """Phase 1: 提取大地巡旅设定集 (6章正文 + 泰拉纪年)
 
     Returns:
-        种子库 v1 dict
+        种子库 v1 dict (含 concepts/factions/locations + timeline_events)
     """
     segments = split_book(book_path)
-    print(f"大地巡旅切分为 {len(segments)} 个章节")
+
+    # 分离泰拉纪年段和正文章节
+    timeline_seg = None
+    chapter_segments = []
+    for seg in segments:
+        if "泰拉纪年" in seg.title:
+            timeline_seg = seg
+        else:
+            chapter_segments.append(seg)
+
+    print(f"大地巡旅切分为 {len(chapter_segments)} 个正文章节 + {'泰拉纪年' if timeline_seg else '无纪年'}")
 
     client = create_client()
     system_prompt = build_book_system_prompt()
@@ -40,8 +51,8 @@ def run_phase1_book(
     total_tokens_out = 0
     t_start = time.time()
 
-    for i, seg in enumerate(segments, 1):
-        print(f"\n[Phase 1] 章节 {i}/{len(segments)}: {seg.title}")
+    for i, seg in enumerate(chapter_segments, 1):
+        print(f"\n[Phase 1] 章节 {i}/{len(chapter_segments)}: {seg.title}")
         print(f"  页数: {seg.start_page}-{seg.end_page}, 字符数: {len(seg.text):,}")
 
         user_prompt = build_book_user_prompt(seg.title, seg.text)
@@ -70,12 +81,37 @@ def run_phase1_book(
 
     # 跨章聚合
     seed_db = aggregate_chapters(chapter_results)
+
+    # 提取泰拉纪年
+    if timeline_seg:
+        print(f"\n[Phase 1] 泰拉纪年: {len(timeline_seg.text):,} 字符")
+        timeline_prompt = build_timeline_user_prompt(timeline_seg.text)
+        timeline_sys = build_timeline_system_prompt()
+
+        t0 = time.time()
+        timeline_result = call_llm(client, timeline_sys, timeline_prompt)
+        timeline_elapsed = time.time() - t0
+
+        if timeline_result.get("_parse_error"):
+            print(f"  ERROR: 泰拉纪年 JSON 解析失败")
+        else:
+            t_stats = timeline_result.pop("_stats", {})
+            ti_t = t_stats.get("tokens_in", 0)
+            to_t = t_stats.get("tokens_out", 0)
+            total_tokens_in += ti_t
+            total_tokens_out += to_t
+            events = timeline_result.get("timeline_events", [])
+            seed_db["timeline_events"] = events
+            print(f"  历史事件: {len(events)}")
+            print(f"  tokens: in={ti_t:,} out={to_t:,} {timeline_elapsed:.1f}s")
+
     seed_db["_meta"] = {
         "phase": 1,
         "model": _get_model_config()["model"],
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": "大地巡旅",
         "chapters_processed": len(chapter_results),
+        "has_timeline": timeline_seg is not None,
         "stats": {
             "tokens_in": total_tokens_in,
             "tokens_out": total_tokens_out,
@@ -89,6 +125,7 @@ def run_phase1_book(
     print(f"  概念: {len(seed_db['concepts'])}")
     print(f"  阵营: {len(seed_db['factions'])}")
     print(f"  地点: {len(seed_db['locations'])}")
+    print(f"  时间线事件: {len(seed_db.get('timeline_events', []))}")
     print(f"  tokens: in={total_tokens_in:,} out={total_tokens_out:,}")
     print(f"  成本: ${seed_db['_meta']['stats']['cost_usd']:.3f}")
     print(f"  种子库: {seed_db_path}")

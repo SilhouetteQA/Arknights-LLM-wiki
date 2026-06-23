@@ -226,6 +226,63 @@ def build_video_user_prompt(video_text: str, seed_context: str = "") -> str:
     )
 
 
+_TIMELINE_SYSTEM_PROMPT = """你是一位《明日方舟》历史编年学者。你的任务是从《大地巡旅》附录的"泰拉纪年"年表中提取结构化的历史事件。
+
+## 年表格式
+
+年表以「**年份** + 事件描述」的格式排列，覆盖泰拉世界从远古到当代的历史进程。
+
+## 提取规则
+
+1. **每个事件条目提取为一条记录**: 包含 year（年份）、event（事件简述）、involved_nations（涉及的国家/阵营）、involved_locations（涉及的地点）、significance（历史意义，一句话）
+2. **合并同一年的多条事件**: 如果同一年有多条事件，分别提取
+3. **识别跨年事件**: 如「1086-1094 卡兹戴尔内战」，时间范围用 year_range 表示
+4. **关联已有实体**: 事件中提到的国家/阵营/地点名称，用【】显式标注，便于后续与种子库匹配
+5. **不做推测**: 只提取年表中明确记载的事件，不补充不在年表中的历史
+
+## 输出格式
+
+严格输出 JSON，不要包含 markdown 代码块标记。
+JSON 字符串值内禁止使用英文双引号 "，用「」代替。"""
+
+_TIMELINE_USER_PROMPT_TEMPLATE = """## 泰拉纪年年表
+
+以下是《大地巡旅》附录中的泰拉纪年全文:
+
+{timeline_text}
+
+## 输出要求
+
+请提取年表中所有历史事件，输出 JSON:
+
+```json
+{{
+  "timeline_events": [
+    {{
+      "year": "年份或年份范围，如 797 或 1086-1094",
+      "event": "事件简述",
+      "involved_nations": ["涉及的国家/阵营"],
+      "involved_locations": ["涉及的地点"],
+      "significance": "历史意义（一句话）"
+    }}
+  ]
+}}
+```
+
+## 规则
+- 必须基于提供的年表内容，不编造
+- 每条事件独立提取，同一年多条事件分开记录
+- 国家/阵营/地点名称使用游戏内常用中文名"""
+
+
+def build_timeline_system_prompt() -> str:
+    return _TIMELINE_SYSTEM_PROMPT
+
+
+def build_timeline_user_prompt(timeline_text: str) -> str:
+    return _TIMELINE_USER_PROMPT_TEMPLATE.format(timeline_text=timeline_text)
+
+
 def build_seed_context(seed_db: dict) -> str:
     """将种子库转为视频 prompt 中的已知实体列表"""
     concepts = seed_db.get("concepts", [])

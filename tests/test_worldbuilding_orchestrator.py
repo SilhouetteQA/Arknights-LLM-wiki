@@ -21,6 +21,7 @@ class TestPhase1Book:
             ],
             "factions": [],
             "locations": [],
+            "timeline_events": [],
             "_stats": {"tokens_in": 1000, "tokens_out": 200},
         }
 
@@ -38,11 +39,12 @@ class TestPhase1Book:
     @patch("arknights_wiki.extraction.worldbuilding_orchestrator.call_llm")
     @patch("arknights_wiki.extraction.worldbuilding_orchestrator.create_client")
     def test_phase1_calls_llm_per_chapter(self, mock_create, mock_call):
-        """Phase 1 对每章调用一次 LLM (6 章)"""
+        """Phase 1 对每章调用一次 LLM (6 章 + 1 泰拉纪年 = 7)"""
         mock_client = MagicMock()
         mock_create.return_value = mock_client
         mock_call.return_value = {
             "concepts": [], "factions": [], "locations": [],
+            "timeline_events": [],
             "_stats": {"tokens_in": 100, "tokens_out": 50},
         }
 
@@ -52,7 +54,7 @@ class TestPhase1Book:
                 book_path="data/lorebook/terra_a_journey_full.md",
                 seed_db_path=seed_db_path,
             )
-            assert mock_call.call_count == 6
+            assert mock_call.call_count == 7
 
 
 class TestPhase2Video:

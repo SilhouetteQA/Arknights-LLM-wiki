@@ -22,6 +22,7 @@ _CHAPTER_BOUNDARIES = [
     (107, "第五章：国家与地区"),
     (347, "第六章：组织"),
     (389, "附录：组织名录"),
+    (403, "附录：泰拉纪年"),
 ]
 
 
@@ -41,9 +42,10 @@ def _find_page_offset(lines: list[str], page_num: int) -> int:
 
 
 def split_book(filepath: str) -> list[ChapterSegment]:
-    """将大地巡旅全文按 6 个章节 + 附录切分
+    """将大地巡旅全文按 6 个章节 + 附录 + 泰拉纪年切分
 
-    返回 ChapterSegment 列表。目录段跳过，附录合并入第六章。
+    返回 ChapterSegment 列表。目录段跳过，组织名录附录合并入第六章，
+    泰拉纪年作为独立段保留。
     """
     with open(filepath, "r", encoding="utf-8") as f:
         content = f.read()
@@ -74,12 +76,12 @@ def split_book(filepath: str) -> list[ChapterSegment]:
         )
         segments.append(seg)
 
-    # 跳过目录，合并附录到 Ch6
+    # 跳过目录，组织名录合并到 Ch6，泰拉纪年独立保留
     result = []
     for seg in segments:
         if "目录" in seg.title:
             continue
-        if "附录" in seg.title:
+        if "组织名录" in seg.title:
             if result:
                 result[-1].text += "\n\n" + seg.text
                 result[-1].end_page = seg.end_page
