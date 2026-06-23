@@ -4,9 +4,9 @@ from arknights_wiki.extraction.book_splitter import split_book, ChapterSegment
 
 class TestBookSplitter:
     def test_split_returns_chapter_segments(self):
-        """切分返回 ChapterSegment 列表，至少 7 段 (6章+泰拉纪年)"""
+        """切分返回 ChapterSegment 列表，至少 9 段 (3+4+1+1)"""
         segments = split_book("data/lorebook/terra_a_journey_full.md")
-        assert len(segments) >= 7
+        assert len(segments) >= 9
         for seg in segments:
             assert isinstance(seg, ChapterSegment)
             assert seg.title
