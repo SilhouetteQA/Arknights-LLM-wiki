@@ -203,38 +203,42 @@ def scene_line_to_global(cd: ChapterDialogue, scene_num: int, local_line: int) -
 
 def split_chapter(
     cd: ChapterDialogue,
+    max_chars_per_batch: int = 42000,
 ) -> list[ChapterDialogue]:
-    """按 node 自然边界切分章节。
+    """按 node 自然边界切分章节，以字符数为主要指标避免 token 超限。
 
-    - 总行 <= 1500: 不分段
-    - 1500 < 总行 <= 3000: 2 段，在最近中点的 node 边界切断
-    - 总行 > 3000: 3 段，在 1/3 和 2/3 处的 node 边界切断
+    - 总字符 <= max_chars_per_batch: 不分段
+    - 否则自动计算所需批数（至少 2 批），在最佳 node 边界切断
+    - 每批字符数不超过 max_chars_per_batch
     """
-    total = len(cd.lines)
-    if total <= 1500:
+    total_chars = len(cd.text)
+    if total_chars <= max_chars_per_batch:
         return [cd]
 
-    if total <= 3000:
-        num_batches = 2
-    else:
-        num_batches = 3
+    # 计算所需批数：至少 2 批，基于字符数
+    num_batches = max(2, (total_chars + max_chars_per_batch - 1) // max_chars_per_batch)
+    # 但不超过 node 数量
+    num_batches = min(num_batches, len(cd.nodes))
+    if num_batches < 2:
+        return [cd]
 
-    target_per_batch = total / num_batches
-
-    node_line_counts = []
+    # 累计每个 node 的字符数以找到最佳切分点
+    node_char_counts = []
     for n in cd.nodes:
-        node_line_counts.append(sum(1 for l in cd.lines if l.get("_node_file") == n))
+        chars = sum(len(l.get("text", "")) + 1 for l in cd.lines if l.get("_node_file") == n)
+        node_char_counts.append(chars)
 
+    total = sum(node_char_counts)
     split_points = []
     for target_i in range(1, num_batches):
-        target = target_per_batch * target_i
+        target = total / num_batches * target_i
         best_idx = 0
         best_dist = float('inf')
         cum = 0
-        for i, nlc in enumerate(node_line_counts):
-            cum += nlc
+        for i, ncc in enumerate(node_char_counts):
+            cum += ncc
             dist = abs(cum - target)
-            if dist < best_dist and i < len(node_line_counts) - 1:
+            if dist < best_dist and i < len(node_char_counts) - 1:
                 best_dist = dist
                 best_idx = i + 1
         if best_idx > 0 and best_idx not in split_points:
@@ -255,7 +259,7 @@ def split_chapter(
         return [cd]
 
     for i, b in enumerate(batches):
-        print(f"  段{i+1}: {b.nodes[0] if b.nodes else '?'} ... {b.nodes[-1] if b.nodes else '?'} ({len(b.lines)} 行, {len(b.nodes)} 场景)")
+        print(f"  段{i+1}: {len(b.lines)} 行, {len(b.text):,} chars, {len(b.nodes)} scenes")
 
     return batches
 

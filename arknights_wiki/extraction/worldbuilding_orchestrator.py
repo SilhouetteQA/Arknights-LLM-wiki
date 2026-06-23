@@ -1,16 +1,19 @@
-"""Pass 3 世界观实体提取编排器: Phase 1 图书 + Phase 2 视频"""
+"""Pass 3 世界观实体提取编排器: Phase 1 图书 + Phase 2 视频 + Phase 3 剧情实体链接"""
 import os, time, json
 from datetime import datetime, timezone
+from typing import Optional
 
 from .llm_client import create_client, call_llm, _get_model_config
 from .book_splitter import split_book
 from .video_merger import merge_videos
+from .dialogue_loader import load_chapter, split_chapter
 from .worldbuilding_prompts import (
     build_book_system_prompt, build_book_user_prompt,
     build_video_system_prompt, build_video_user_prompt,
     build_timeline_system_prompt, build_timeline_user_prompt,
     build_concept_only_system_prompt, build_concept_only_user_prompt,
     build_seed_context,
+    build_phase3_system_prompt, build_phase3_user_prompt,
 )
 from .worldbuilding_processor import (
     parse_worldbuilding_output, aggregate_chapters,
@@ -320,5 +323,361 @@ def run_pass3(
         video_dir=video_dir,
         output_dir=output_dir,
     )
+
+    return seed_db
+
+
+# ============================================================
+# Phase 3: 剧情实体链接 — 用故事文本丰富已有实体库
+# ============================================================
+
+def _merge_phase3_result(seed_db: dict, result: dict, chapter_name: str) -> dict:
+    """将单章 Phase 3 结果合并入种子库"""
+    import copy
+    merged = copy.deepcopy(seed_db)
+
+    entity_index = {}
+    for etype in ("concepts", "factions", "locations"):
+        entity_index[etype] = {}
+        for i, entity in enumerate(merged.get(etype, [])):
+            name = entity.get("name", "").strip()
+            if name:
+                entity_index[etype][name] = i
+            # 同步索引 aliases，解决 LLM 输出简名（如"炎武"）无法匹配
+            # 完整名（如"炎武（皇子）"）的问题
+            for alias in entity.get("aliases", []):
+                alias = alias.strip()
+                if alias and alias not in entity_index[etype]:
+                    entity_index[etype][alias] = i
+
+    def _resolve_entity(etype_plural: str, ename: str):
+        """解析实体名：精确匹配 → alias 匹配 → 去括号匹配"""
+        idx_map = entity_index.get(etype_plural, {})
+        if ename in idx_map:
+            return idx_map[ename]
+        # 尝试去掉 LLM 可能添加的括号后缀
+        if "（" in ename:
+            base = ename.split("（")[0].strip()
+            if base in idx_map:
+                return idx_map[base]
+        # 尝试在种子库中找包含该名称的实体（LLM 简名 vs seed 全名）
+        for key, idx in idx_map.items():
+            if "（" in key and key.startswith(ename):
+                return idx
+        return None
+
+    def _is_placeholder(ev: dict) -> bool:
+        """检测空占位事件"""
+        desc = ev.get("description", "")
+        name = ev.get("name", "")
+        return any(kw in name or kw in desc for kw in ("未直接出现", "未直接提及", "未直接涉及"))
+
+    for mention in result.get("entity_mentions", []):
+        ename = mention.get("entity_name", "").strip()
+        etype = mention.get("entity_type", "")
+        if not ename or etype not in ("concept", "faction", "location"):
+            continue
+        etype_plural = etype + "s"
+        idx = _resolve_entity(etype_plural, ename)
+        if idx is None:
+            continue
+        target = merged[etype_plural][idx]
+
+        # 过滤已有占位事件
+        existing_events = [ev for ev in target.get("story_events", []) if not _is_placeholder(ev)]
+        new_events = [ev for ev in mention.get("story_events", []) if not _is_placeholder(ev)]
+        for ev in new_events:
+            ev["source_chapter"] = chapter_name
+        target["story_events"] = existing_events + new_events
+
+        # 添加 source_record（story_text 来源）
+        existing_sources = target.get("source_records", [])
+        source_key = f"story_text:{chapter_name}"
+        if not any(s.get("source") == "story_text" and s.get("source_detail") == chapter_name
+                   for s in existing_sources):
+            existing_sources.append({
+                "source": "story_text",
+                "source_detail": chapter_name,
+                "location": "",
+                "publish_date": "",
+                "confidence": "confirmed",
+            })
+        target["source_records"] = existing_sources
+
+        # 合并 members（仅 faction，按 name 去重）
+        if etype == "faction":
+            existing_members = target.get("member_composition", [])
+            existing_members = [
+                m if isinstance(m, dict) else {"name": str(m), "role": "", "chapter_role": ""}
+                for m in existing_members
+            ]
+            existing_names = {m.get("name", "") for m in existing_members if isinstance(m, dict)}
+            for m in mention.get("members", []):
+                if not isinstance(m, dict):
+                    continue
+                mname = m.get("name", "").strip()
+                if not mname:
+                    continue
+                if mname in existing_names:
+                    # 更新已存在成员的信息（保留更丰富的 role/chapter_role）
+                    for em in existing_members:
+                        if isinstance(em, dict) and em.get("name") == mname:
+                            if len(m.get("role", "")) > len(em.get("role", "")):
+                                em["role"] = m["role"]
+                            if m.get("chapter_role"):
+                                cr = em.get("chapter_role", "")
+                                em["chapter_role"] = cr + "; " + m["chapter_role"] if cr else m["chapter_role"]
+                            break
+                else:
+                    existing_members.append(m)
+                    existing_names.add(mname)
+            target["member_composition"] = existing_members
+
+    new_entities = result.get("new_entities", {})
+    for etype in ("concepts", "factions", "locations"):
+        for entity in new_entities.get(etype, []):
+            name = entity.get("name", "").strip()
+            if not name:
+                continue
+            se_list = [ev for ev in entity.get("story_events", []) if not _is_placeholder(ev)]
+            if not se_list:
+                se_list = [{
+                    "name": f"{name}首次出现",
+                    "description": f"在{chapter_name}剧情中首次出现",
+                    "significance": "major",
+                }]
+            for ev in se_list:
+                ev["source_chapter"] = chapter_name
+            entity["story_events"] = se_list
+
+            # 新实体也添加 source_record
+            entity["source_records"] = entity.get("source_records", [])
+            if not any(s.get("source") == "story_text" and s.get("source_detail") == chapter_name
+                       for s in entity["source_records"]):
+                entity["source_records"].append({
+                    "source": "story_text",
+                    "source_detail": chapter_name,
+                    "location": "",
+                    "publish_date": "",
+                    "confidence": "confirmed",
+                })
+
+            idx = _resolve_entity(etype, name)
+            if idx is not None:
+                target = merged[etype][idx]
+                existing_events = [ev for ev in target.get("story_events", []) if not _is_placeholder(ev)]
+                target["story_events"] = existing_events + se_list
+            else:
+                merged[etype].append(entity)
+                entity_index.setdefault(etype, {})[name] = len(merged[etype]) - 1
+
+    # 跨层去重 + 层内同名去重
+    faction_names = {f["name"] for f in merged.get("factions", [])}
+    removed = [c["name"] for c in merged.get("concepts", []) if c["name"] in faction_names]
+    if removed:
+        merged["concepts"] = [c for c in merged["concepts"] if c["name"] not in faction_names]
+        print(f"  跨层去重: {removed}")
+
+    for etype in ("concepts", "factions", "locations"):
+        seen = {}
+        deduped = []
+        for entity in merged[etype]:
+            name = entity.get("name", "").strip()
+            if not name:
+                continue
+            if name in seen:
+                # 合并 story_events 和 member_composition
+                existing = seen[name]
+                for ev in entity.get("story_events", []):
+                    if not _is_placeholder(ev):
+                        existing["story_events"].append(ev)
+                if etype == "factions":
+                    existing_mc = existing.get("member_composition", [])
+                    existing_names = {m.get("name", "") if isinstance(m, dict) else str(m) for m in existing_mc}
+                    for m in entity.get("member_composition", []):
+                        mname = m.get("name", "") if isinstance(m, dict) else str(m)
+                        if mname and mname not in existing_names:
+                            existing_mc.append(m)
+                            existing_names.add(mname)
+                    existing["member_composition"] = existing_mc
+            else:
+                seen[name] = entity
+                deduped.append(entity)
+        merged[etype] = deduped
+
+    return merged
+
+
+def run_phase3_chapter(
+    category: str,
+    chapter: str,
+    seed_db: dict,
+    data_dir: str = "data/stories",
+):
+    """Phase 3: 对单章剧情进行实体链接
+
+    Returns:
+        {"entity_mentions": [...], "new_entities": {...}} 或 None
+    """
+    chapter_dir = os.path.join(data_dir, category, chapter)
+    cd = load_chapter(chapter_dir)
+    batches = split_chapter(cd)
+
+    client = create_client()
+    system_prompt = build_phase3_system_prompt()
+    all_mentions = []
+    all_new = {"concepts": [], "factions": [], "locations": []}
+    total_tokens_in = 0
+    total_tokens_out = 0
+    t_start = time.time()
+
+    for i, batch in enumerate(batches, 1):
+        batch_text = batch.text
+        user_prompt = build_phase3_user_prompt(
+            chapter_name=f"{chapter} (段{i}/{len(batches)})",
+            chapter_text=batch_text,
+            seed_db=seed_db,
+        )
+
+        print(f"  [段{i}/{len(batches)}] {len(batch_text):,} chars ...", end=" ", flush=True)
+        t0 = time.time()
+        result = call_llm(client, system_prompt, user_prompt)
+        elapsed = time.time() - t0
+
+        if result.get("_parse_error"):
+            print(f"JSON 解析失败")
+            continue
+
+        stats = result.pop("_stats", {})
+        ti = stats.get("tokens_in", 0)
+        to = stats.get("tokens_out", 0)
+        total_tokens_in += ti
+        total_tokens_out += to
+
+        n_m = len(result.get("entity_mentions", []))
+        ne = result.get("new_entities", {})
+        nc = len(ne.get("concepts", []))
+        nf = len(ne.get("factions", []))
+        nl = len(ne.get("locations", []))
+        print(f"mentions={n_m} new(c={nc} f={nf} l={nl}) {elapsed:.1f}s")
+
+        all_mentions.extend(result.get("entity_mentions", []))
+        for etype in ("concepts", "factions", "locations"):
+            all_new[etype].extend(ne.get(etype, []))
+
+    elapsed_total = time.time() - t_start
+    cost = _estimate_cost(total_tokens_in, total_tokens_out)
+    print(f"  完成: {len(all_mentions)} mentions, "
+          f"new(c={len(all_new['concepts'])} "
+          f"f={len(all_new['factions'])} "
+          f"l={len(all_new['locations'])}), "
+          f"${cost:.4f} / {elapsed_total:.1f}s")
+
+    return {
+        "entity_mentions": all_mentions,
+        "new_entities": all_new,
+        "_stats": {
+            "tokens_in": total_tokens_in,
+            "tokens_out": total_tokens_out,
+            "elapsed_s": elapsed_total,
+            "cost_usd": cost,
+        },
+    }
+
+
+def run_phase3_trial(
+    seed_db_path: str = "data/extractions/v3_seed_db_v2.json",
+    data_dir: str = "data/stories",
+    output_dir: str = "data/extractions/v3_wiki",
+) -> dict:
+    """Phase 3 试跑: 对 7 个测试章节进行实体链接"""
+    test_chapters = [
+        ("side", "孤星"),
+        ("side", "相见欢"),
+        ("main", "慈悲灯塔"),
+        ("main", "怒号光明"),
+        ("side", "长夜临光"),
+        ("side", "愚人号"),
+        ("side", "火山旅梦"),
+    ]
+
+    print("=" * 60)
+    print("Pass 3 Phase 3: 剧情实体链接 (试跑)")
+    print(f"模型: {_get_model_config()['model']}")
+    print(f"测试章节: {len(test_chapters)}")
+    print("=" * 60)
+
+    seed_db = load_seed_db(seed_db_path)
+    print(f"种子库: {len(seed_db.get('concepts',[]))}c / "
+          f"{len(seed_db.get('factions',[]))}f / "
+          f"{len(seed_db.get('locations',[]))}l")
+
+    total_cost = 0.0
+    total_tokens_in = 0
+    total_tokens_out = 0
+    t_start = time.time()
+
+    for category, chapter in test_chapters:
+        chapter_dir = os.path.join(data_dir, category, chapter)
+        if not os.path.isdir(chapter_dir):
+            print(f"\n跳过 [{category}] {chapter}: 目录不存在")
+            continue
+
+        print(f"\n--- [{category}] {chapter} ---")
+        result = run_phase3_chapter(category, chapter, seed_db, data_dir)
+
+        if result is None:
+            continue
+
+        stats = result.pop("_stats", {})
+        total_cost += stats.get("cost_usd", 0)
+        total_tokens_in += stats.get("tokens_in", 0)
+        total_tokens_out += stats.get("tokens_out", 0)
+
+        seed_db = _merge_phase3_result(seed_db, result, chapter)
+
+    elapsed_total = time.time() - t_start
+
+    # 统计 story_events 数量
+    entities_with_events = 0
+    total_events = 0
+    for etype in ("concepts", "factions", "locations"):
+        for e in seed_db.get(etype, []):
+            n = len(e.get("story_events", []))
+            if n > 0:
+                entities_with_events += 1
+                total_events += n
+
+    # 保存种子库 v3
+    seed_db_v3_path = "data/extractions/v3_seed_db_v3.json"
+    seed_db["_meta"] = {
+        "phase": 3,
+        "model": _get_model_config()["model"],
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source": "大地巡旅 + 视频 + 剧情(试跑7章)",
+        "chapters_processed": 7,
+        "stats": {
+            "tokens_in": total_tokens_in,
+            "tokens_out": total_tokens_out,
+            "elapsed_s": elapsed_total,
+            "cost_usd": total_cost,
+        },
+    }
+    save_seed_db(seed_db, seed_db_v3_path)
+
+    # 重新生成 Wiki 页面
+    wiki_paths = generate_wiki_pages(seed_db, output_dir)
+
+    print(f"\n{'='*60}")
+    print(f"Phase 3 试跑完成:")
+    print(f"  概念: {len(seed_db['concepts'])}")
+    print(f"  阵营: {len(seed_db['factions'])}")
+    print(f"  地点: {len(seed_db['locations'])}")
+    print(f"  有 story_events 的实体: {entities_with_events}")
+    print(f"  总 story_events: {total_events}")
+    print(f"  Wiki 页面: {len(wiki_paths)} 个 (已更新)")
+    print(f"  tokens: in={total_tokens_in:,} out={total_tokens_out:,}")
+    print(f"  成本: ${total_cost:.4f}")
+    print(f"  种子库 v3: {seed_db_v3_path}")
 
     return seed_db

@@ -307,6 +307,56 @@ def _entity_to_markdown(entity: dict, entity_type: str) -> str:
     if entity.get("aliases"):
         md += f"**别名:** {', '.join(entity['aliases'])}\n\n"
 
+    # 剧情事件
+    story_events = entity.get("story_events", [])
+    if story_events:
+        md += "## 剧情事件\n\n"
+        from collections import defaultdict
+        by_chapter = defaultdict(list)
+        for ev in story_events:
+            ch = ev.get("source_chapter", "未知章节")
+            by_chapter[ch].append(ev)
+        for ch, events in sorted(by_chapter.items()):
+            md += f"### {ch}\n\n"
+            for ev in events:
+                sig = ev.get("significance", "")
+                if sig == "revelation":
+                    md += f"> **「核心揭示」{ev.get('name', '?')}**\n>\n"
+                    desc = ev.get("description", "")
+                    if desc:
+                        md += f"> {desc}\n>\n"
+                    quote = ev.get("quote", "")
+                    if quote:
+                        md += f"> 原文: {quote}\n>\n"
+                    implication = ev.get("implication", "")
+                    if implication:
+                        md += f"> **意味着:** {implication}\n"
+                    md += "\n"
+                else:
+                    md += f"- **{ev.get('name', '?')}**"
+                    if sig:
+                        md += f" [{sig}]"
+                    desc = ev.get("description", "")
+                    if desc:
+                        md += f": {desc}"
+                    md += "\n"
+            md += "\n"
+
+    # 成员（仅 faction）
+    members = entity.get("member_composition", [])
+    if members:
+        md += "## 已知成员\n\n"
+        for m in members:
+            md += f"- **{m.get('name', '?')}**"
+            role = m.get("role", "")
+            if role:
+                md += f" — {role}"
+            cr = m.get("chapter_role", "")
+            if cr:
+                md += f": {cr}"
+            md += "\n"
+        md += "\n"
+
     # 来源
     sources = entity.get("source_records", [])
     if sources:
