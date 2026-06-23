@@ -7,6 +7,9 @@ __pycache__/
 # 缓存
 .cache/
 
+# 扫描原始图片 (体积大, 不进版本控制)
+data/Terra A Journey/
+
 # 数据产物 (体积大, 可重新生成)
 data/stories/
 data/index/
