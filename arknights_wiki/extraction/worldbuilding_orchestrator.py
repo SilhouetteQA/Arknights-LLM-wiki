@@ -9,6 +9,7 @@ from .worldbuilding_prompts import (
     build_book_system_prompt, build_book_user_prompt,
     build_video_system_prompt, build_video_user_prompt,
     build_timeline_system_prompt, build_timeline_user_prompt,
+    build_concept_only_system_prompt, build_concept_only_user_prompt,
     build_seed_context,
 )
 from .worldbuilding_processor import (
@@ -212,25 +213,112 @@ def run_phase2_video(
     return enriched
 
 
+def run_phase1b_concepts_only(
+    book_path: str = "data/lorebook/terra_a_journey_full.md",
+) -> list[dict]:
+    """Phase 1b: 概念专用提取（不做 factions/locations）
+
+    对每章使用概念专用 prompt，聚焦概念完整性。
+    返回 concept-only 提取结果列表，供 merge_concepts 合并到种子库。
+    """
+    from .book_splitter import split_book
+
+    segments = split_book(book_path)
+    # 只取正文章节（跳过泰拉纪年）
+    chapter_segments = [s for s in segments if "泰拉纪年" not in s.title]
+
+    print(f"\n[Phase 1b] 概念专用提取: {len(chapter_segments)} 个章节段")
+
+    client = create_client()
+    system_prompt = build_concept_only_system_prompt()
+    concept_results = []
+    total_tokens_in = 0
+    total_tokens_out = 0
+    t_start = time.time()
+
+    for i, seg in enumerate(chapter_segments, 1):
+        print(f"\n[Phase 1b] {i}/{len(chapter_segments)}: {seg.title} ({len(seg.text):,} 字符)")
+
+        user_prompt = build_concept_only_user_prompt(seg.title, seg.text)
+
+        t0 = time.time()
+        result = call_llm(client, system_prompt, user_prompt)
+        elapsed = time.time() - t0
+
+        if result.get("_parse_error"):
+            print(f"  ERROR: JSON 解析失败")
+            continue
+
+        stats = result.pop("_stats", {})
+        ti = stats.get("tokens_in", 0)
+        to = stats.get("tokens_out", 0)
+        total_tokens_in += ti
+        total_tokens_out += to
+
+        n_c = len(result.get("concepts", []))
+        print(f"  concepts={n_c}  tokens: in={ti:,} out={to:,} {elapsed:.1f}s")
+        concept_results.append(result)
+
+    print(f"\nPhase 1b 完成:")
+    print(f"  tokens: in={total_tokens_in:,} out={total_tokens_out:,}")
+    print(f"  成本: ${_estimate_cost(total_tokens_in, total_tokens_out):.3f}")
+
+    return concept_results
+
+
+def merge_concepts_into_seed_db(seed_db: dict, concept_results: list[dict]) -> dict:
+    """将概念专用提取结果合并入种子库（只合并 concepts 层）"""
+    import copy
+    merged = copy.deepcopy(seed_db)
+
+    # 构建现有概念索引
+    concept_index = {}
+    for c in merged.get("concepts", []):
+        name = c.get("name", "").strip()
+        if name:
+            concept_index[name] = c
+
+    # 合并新概念
+    from .worldbuilding_processor import _merge_entity, _strip_empty
+    for result in concept_results:
+        for concept in result.get("concepts", []):
+            concept = _strip_empty(concept)
+            name = concept.get("name", "").strip()
+            if not name:
+                continue
+            if name in concept_index:
+                concept_index[name] = _merge_entity(concept_index[name], concept)
+            else:
+                concept_index[name] = concept
+
+    merged["concepts"] = list(concept_index.values())
+    return merged
+
+
 def run_pass3(
     book_path: str = "data/lorebook/terra_a_journey_full.md",
     video_dir: str = "data/videos",
     output_dir: str = "data/extractions/v3_wiki",
 ) -> dict:
-    """运行完整 Pass 3: Phase 1 + Phase 2"""
+    """运行完整 Pass 3: Phase 1a (factions+locations) + 1b (concepts) + 2 (video)"""
     print("=" * 60)
     print("Pass 3: 世界观实体提取")
     print(f"模型: {_get_model_config()['model']}")
     print("=" * 60)
 
-    # Phase 1
-    seed_db_v1 = run_phase1_book(book_path)
+    # Phase 1a: factions + locations + timeline
+    seed_db = run_phase1_book(book_path)
 
-    # Phase 2
-    seed_db_v2 = run_phase2_video(
-        seed_db=seed_db_v1,
+    # Phase 1b: concepts only
+    concept_results = run_phase1b_concepts_only(book_path)
+    seed_db = merge_concepts_into_seed_db(seed_db, concept_results)
+    print(f"\n合并后 概念: {len(seed_db['concepts'])}")
+
+    # Phase 2: video enrichment
+    seed_db = run_phase2_video(
+        seed_db=seed_db,
         video_dir=video_dir,
         output_dir=output_dir,
     )
 
-    return seed_db_v2
+    return seed_db

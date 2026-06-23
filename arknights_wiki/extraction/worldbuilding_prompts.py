@@ -3,9 +3,21 @@
 
 _BOOK_SYSTEM_PROMPT = """你是一位《明日方舟》世界观设定档案编纂者。你的任务是从设定集《大地巡旅》的章节中提取结构化世界观实体。
 
-## 提取三类实体
+## 提取三类实体（按输出顺序: 先阵营和地点，再概念）
 
-### 1. 概念 (concepts)
+### 1. 阵营 (factions) — 优先提取
+有组织的行动者，分为两类:
+- nation (国家/政权): 维多利亚、乌萨斯、炎、拉特兰、卡兹戴尔...
+- organization (势力/组织): 莱茵生命、整合运动、罗德岛、黑钢国际...
+**重要: 每个国家/政权必须提取为一个独立的 faction 条目**
+
+### 2. 地点 (locations) — 优先提取
+具体物理场所，分为两类:
+- city (城市/移动城市): 龙门、汐斯塔、切尔诺伯格...
+- facility (设施/建筑): 罗德岛本舰、莱茵生命总部、移动城市核心城...
+注意: 特殊地貌/异域归入概念层的"特殊地域/异域"子类，不在地点层
+
+### 3. 概念 (concepts)
 世界观层面的客观实体，分为六子类:
 - 自然现象/物质: 源石、天灾、活性源石、矿石病
 - 种族/血脈: 萨卡兹、阿戈尔、库兰塔、提卡兹
@@ -17,18 +29,7 @@ _BOOK_SYSTEM_PROMPT = """你是一位《明日方舟》世界观设定档案编�
 纳入标准: 属于六子类之一的客观世界实体
 排除标准: 情感/品德/角色观点/模糊隐喻
 不设频率门槛: 即使只在文中出现一次，只要是关键设定信息就提取
-
-### 2. 阵营 (factions)
-有组织的行动者，分为两类:
-- nation (国家/政权): 维多利亚、乌萨斯、炎、拉特兰、卡兹戴尔...
-- organization (势力/组织): 莱茵生命、整合运动、罗德岛、黑钢国际...
-
-### 3. 地点 (locations)
-具体物理场所，分为两类:
-- city (城市/移动城市): 龙门、汐斯塔、切尔诺伯格...
-- facility (设施/建筑): 罗德岛本舰、莱茵生命总部、移动城市核心城...
-
-注意: 特殊地貌/异域归入概念层的"特殊地域/异域"子类，不在地点层。
+**概念数量较多时，summary 尽量精简（100-300字），优先保证 factions 和 locations 不被截断**
 
 ## 提取规则
 
@@ -62,8 +63,9 @@ _BOOK_USER_PROMPT_TEMPLATE = """## 设定集章节: {chapter_title}
 - 必须基于提供的文本内容，不编造
 - 同一实体在多处出现时合并为一个条目
 - definition 一句话定义不超过 80 字
-- 概念 summary 不超过 500 字，阵营不超过 400 字，地点不超过 300 字
-- 各类独有字段有信息就填，没有可省略"""
+- 阵营 summary 不超过 400 字，地点不超过 300 字，概念 summary 精炼至 100-300 字（概念数量多时优先精简以留出 factions/locations 空间）
+- 各类独有字段有信息就填，没有可省略
+- 输出顺序: 先写 factions 和 locations，最后写 concepts，确保核心实体不被截断"""
 
 
 _VIDEO_SYSTEM_PROMPT = """你是一位《明日方舟》世界观设定档案编纂者。你的任务是从官方世界观视频中提取结构化实体，并丰富已有的设定集实体库。
@@ -117,44 +119,6 @@ _VIDEO_USER_PROMPT_TEMPLATE = """## 视频字幕合集
 
 
 _OUTPUT_SCHEMA = """{
-  "concepts": [
-    {
-      "name": "实体名称",
-      "category": "六子类之一",
-      "definition": "一句话定义(≤80字)",
-      "summary": "综合描述(≤500字)",
-      "aliases": ["别名1"],
-      "manifestation": "表现形态(自然现象/物质)",
-      "origin_hypothesis": "起源假说(自然现象/物质)",
-      "related_arts": "关联源石技艺(自然现象/物质)",
-      "origin_region": "起源地(种族)",
-      "physical_traits": "体貌特征(种族)",
-      "related_races": ["亲缘种族(种族)"],
-      "oripathy_susceptibility": "矿石病易感性(种族)",
-      "lifespan": "寿命特征(种族)",
-      "nature": "本质(超自然存在)",
-      "scale": "位阶/规模(超自然存在)",
-      "known_instances": ["已知个体(超自然存在)"],
-      "relation_to_humanity": "与人类关系(超自然存在)",
-      "underlying_principle": "底层原理(技术)",
-      "practitioners": "使用群体(技术)",
-      "spread": "传播范围(技术)",
-      "key_applications": ["关键应用(技术)"],
-      "origin_nation": "起源国家(社会制度)",
-      "characteristics": "制度特点(社会制度)",
-      "key_institutions": ["核心机构(社会制度)"],
-      "social_impact": "社会影响(社会制度)",
-      "location_type": "地域类型(特殊地域)",
-      "accessibility": "进入方式(特殊地域)",
-      "hazards": ["危险要素(特殊地域)"],
-      "phenomena": ["独特现象(特殊地域)"],
-      "source_records": [{"source": "terra_book或video", "source_detail": "...", "location": "...", "publish_date": "...(仅video)", "confidence": "confirmed或inferred或conflicting"}],
-      "story_events": [],
-      "related_concepts": [{"name": "...", "relation": "...", "desc": "..."}],
-      "related_factions": [{"name": "...", "relation": "...", "desc": "..."}],
-      "related_locations": [{"name": "...", "relation": "...", "desc": "..."}]
-    }
-  ],
   "factions": [
     {
       "name": "实体名称",
@@ -202,6 +166,44 @@ _OUTPUT_SCHEMA = """{
       "story_events": [],
       "related_factions": [{"name": "...", "relation": "...", "desc": "..."}],
       "related_concepts": [{"name": "...", "relation": "...", "desc": "..."}]
+    }
+  ],
+  "concepts": [
+    {
+      "name": "实体名称",
+      "category": "六子类之一",
+      "definition": "一句话定义(≤80字)",
+      "summary": "简练描述(100-300字，不要超过500字)",
+      "aliases": ["别名1"],
+      "manifestation": "表现形态(自然现象/物质)",
+      "origin_hypothesis": "起源假说(自然现象/物质)",
+      "related_arts": "关联源石技艺(自然现象/物质)",
+      "origin_region": "起源地(种族)",
+      "physical_traits": "体貌特征(种族)",
+      "related_races": ["亲缘种族(种族)"],
+      "oripathy_susceptibility": "矿石病易感性(种族)",
+      "lifespan": "寿命特征(种族)",
+      "nature": "本质(超自然存在)",
+      "scale": "位阶/规模(超自然存在)",
+      "known_instances": ["已知个体(超自然存在)"],
+      "relation_to_humanity": "与人类关系(超自然存在)",
+      "underlying_principle": "底层原理(技术)",
+      "practitioners": "使用群体(技术)",
+      "spread": "传播范围(技术)",
+      "key_applications": ["关键应用(技术)"],
+      "origin_nation": "起源国家(社会制度)",
+      "characteristics": "制度特点(社会制度)",
+      "key_institutions": ["核心机构(社会制度)"],
+      "social_impact": "社会影响(社会制度)",
+      "location_type": "地域类型(特殊地域)",
+      "accessibility": "进入方式(特殊地域)",
+      "hazards": ["危险要素(特殊地域)"],
+      "phenomena": ["独特现象(特殊地域)"],
+      "source_records": [{"source": "terra_book或video", "source_detail": "...", "location": "...", "publish_date": "...(仅video)", "confidence": "confirmed或inferred或conflicting"}],
+      "story_events": [],
+      "related_concepts": [{"name": "...", "relation": "...", "desc": "..."}],
+      "related_factions": [{"name": "...", "relation": "...", "desc": "..."}],
+      "related_locations": [{"name": "...", "relation": "...", "desc": "..."}]
     }
   ],
   "timeline_events": [
@@ -325,3 +327,103 @@ def build_seed_context(seed_db: dict) -> str:
         parts.append("")
 
     return "\n".join(parts)
+
+
+# ====================================================================
+# Pass 3b: 概念专用提取 (不做 factions/locations, 专注概念完整性)
+# ====================================================================
+
+_CONCEPT_ONLY_SYSTEM_PROMPT = """你是一位《明日方舟》世界观设定档案编纂者。你的任务是从文本中提取世界观概念实体。
+
+## 本次只提取概念 (concepts)
+
+你已经不需要提取阵营和地点——它们已在之前的步骤中完成。本次只聚焦概念层。
+
+### 概念六子类
+
+- 自然现象/物质: 源石、天灾、活性源石、矿石病
+- 种族/血脈: 萨卡兹、阿戈尔、库兰塔、提卡兹、黎博利、斐迪亚、瓦伊凡、鲁珀、菲林、佩洛...（注意捕捞出文中出现的所有具名种族，不要遗漏）
+- 超自然存在: 巨兽、兽主、海嗣、邪魔、岁兽
+- 技术/技艺体系: 源石技艺七学派、移动城市技术、炼金术
+- 社会制度/文化: 拉特兰律法、骑士竞技、天灾信使制度
+- 特殊地域/异域: 焚风热土、黑流树海、荒域、星荚
+
+纳入标准: 属于六子类之一的客观世界实体。因为本次只有概念层，输出空间充足，请尽量全面的提取，不要因为篇幅限制而省略。
+排除标准: 情感/品德/角色观点/模糊隐喻
+不设频率门槛: 即使只在文中出现一次也要提取
+
+## 输出格式
+
+严格输出 JSON，不要包含 markdown 代码块标记。
+JSON 字符串值内禁止使用英文双引号 "，用「」代替。"""
+
+_CONCEPT_ONLY_OUTPUT_SCHEMA = """{
+  "concepts": [
+    {
+      "name": "实体名称",
+      "category": "六子类之一",
+      "definition": "一句话定义(≤80字)",
+      "summary": "精简概述(100-300字)",
+      "aliases": ["别名"],
+      "manifestation": "表现形态(仅自然现象/物质)",
+      "origin_hypothesis": "起源假说(仅自然现象/物质)",
+      "related_arts": "关联源石技艺(仅自然现象/物质)",
+      "origin_region": "起源地(仅种族)",
+      "physical_traits": "体貌特征(仅种族)",
+      "related_races": ["亲缘种族(仅种族)"],
+      "oripathy_susceptibility": "矿石病易感性(仅种族)",
+      "lifespan": "寿命特征(仅种族)",
+      "nature": "本质(仅超自然存在)",
+      "scale": "位阶/规模(仅超自然存在)",
+      "known_instances": ["已知个体(仅超自然存在)"],
+      "relation_to_humanity": "与人类关系(仅超自然存在)",
+      "underlying_principle": "底层原理(仅技术)",
+      "practitioners": "使用群体(仅技术)",
+      "spread": "传播范围(仅技术)",
+      "key_applications": ["关键应用(仅技术)"],
+      "origin_nation": "起源国家(仅社会制度)",
+      "characteristics": "制度特点(仅社会制度)",
+      "key_institutions": ["核心机构(仅社会制度)"],
+      "social_impact": "社会影响(仅社会制度)",
+      "location_type": "地域类型(仅特殊地域)",
+      "accessibility": "进入方式(仅特殊地域)",
+      "hazards": ["危险要素(仅特殊地域)"],
+      "phenomena": ["独特现象(仅特殊地域)"],
+      "source_records": [{"source": "terra_book或video", "source_detail": "...", "location": "...", "confidence": "confirmed或inferred"}],
+      "story_events": [],
+      "related_concepts": [{"name": "...", "relation": "...", "desc": "..."}]
+    }
+  ]
+}"""
+
+_CONCEPT_ONLY_USER_PROMPT_TEMPLATE = """## 设定集章节: {chapter_title}
+
+以下是《大地巡旅》中"{chapter_title}"的完整文本:
+
+{chapter_text}
+
+## 输出要求
+
+本次只提取概念 (concepts)，不提取 factions 和 locations。请完整提取本章中所有符合六子类标准的概念实体。
+
+{output_schema}
+
+## 规则
+- 只输出 concepts 数组，不输出 factions 和 locations
+- definition 一句话定义不超过 80 字
+- summary 精简至 100-300 字
+- 各类独有字段有信息就填，不要输出空字符串或空列表——没有就省略字段
+- **不要输出空字符串 "" 或空列表 []，无信息直接省略该字段**
+- 特别是对于仅适用特定子类的字段（如 manifestation 仅适用于自然现象/物质），不属于该子类的实体不要输出这些字段"""
+
+
+def build_concept_only_system_prompt() -> str:
+    return _CONCEPT_ONLY_SYSTEM_PROMPT
+
+
+def build_concept_only_user_prompt(chapter_title: str, chapter_text: str) -> str:
+    return _CONCEPT_ONLY_USER_PROMPT_TEMPLATE.format(
+        chapter_title=chapter_title,
+        chapter_text=chapter_text,
+        output_schema=_CONCEPT_ONLY_OUTPUT_SCHEMA,
+    )

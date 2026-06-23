@@ -12,22 +12,67 @@ def parse_worldbuilding_output(raw: str) -> Optional[dict]:
     return parse_llm_response(raw)
 
 
+def _paragraph_similarity(a: str, b: str) -> float:
+    """段落级字符集 Jaccard 相似度，超过 0.7 视为重复"""
+    if not a or not b:
+        return 0.0
+    sa, sb = set(a), set(b)
+    if not sa or not sb:
+        return 0.0
+    return len(sa & sb) / len(sa | sb)
+
+
+def _dedup_summary(existing: str, new: str) -> str:
+    """合并两个 summary，段落级去重——新增段落若与已有任一段落相似度 >0.7 则跳过"""
+    if not new:
+        return existing
+    if not existing:
+        return new
+
+    existing_paras = [p.strip() for p in existing.split("\n\n") if p.strip()]
+    new_paras = [p.strip() for p in new.split("\n\n") if p.strip()]
+
+    merged = list(existing_paras)
+    for np_text in new_paras:
+        is_dup = any(
+            _paragraph_similarity(np_text, ep) > 0.7
+            for ep in existing_paras
+        )
+        if not is_dup:
+            merged.append(np_text)
+
+    return "\n\n".join(merged)
+
+
+def _strip_empty(entity: dict) -> dict:
+    """清理实体: 移除空字符串值、空列表值、None 值"""
+    cleaned = {}
+    for k, v in entity.items():
+        if v is None:
+            continue
+        if isinstance(v, str) and not v.strip():
+            continue
+        if isinstance(v, list) and len(v) == 0:
+            continue
+        if isinstance(v, dict) and len(v) == 0:
+            continue
+        cleaned[k] = v
+    return cleaned
+
+
 def _merge_entity(existing: dict, new: dict) -> dict:
-    """合并两个同名实体，保留更详细的信息"""
+    """合并两个同名实体，保留更详细的信息，summary 段落级去重"""
     merged = dict(existing)
 
     # definition: 保留更长的
     if len(new.get("definition", "")) > len(existing.get("definition", "")):
         merged["definition"] = new["definition"]
 
-    # summary: 拼接（去重合并）
-    existing_summary = existing.get("summary", "")
-    new_summary = new.get("summary", "")
-    if new_summary and new_summary not in existing_summary:
-        if existing_summary:
-            merged["summary"] = existing_summary + "\n\n" + new_summary
-        else:
-            merged["summary"] = new_summary
+    # summary: 段落级去重合并
+    merged["summary"] = _dedup_summary(
+        existing.get("summary", ""),
+        new.get("summary", ""),
+    )
 
     # aliases: 合并去重
     existing_aliases = set(existing.get("aliases", []))
@@ -42,14 +87,15 @@ def _merge_entity(existing: dict, new: dict) -> dict:
         if key in ("name", "category", "definition", "summary", "aliases",
                     "source_records", "story_events"):
             continue
-        if key not in merged or not merged[key]:
-            new_val = new.get(key)
-            if new_val:
-                merged[key] = new_val
+        new_val = new.get(key)
+        if not new_val:
+            continue
+        if key not in merged or not merged.get(key):
+            merged[key] = new_val
 
     # related_*: 合并去重
     for rel_key in ("related_concepts", "related_factions", "related_locations"):
-        existing_rels = {r.get("name", ""): r for r in existing.get(rel_key, [])}
+        existing_rels = {r.get("name", ""): r for r in existing.get(rel_key, []) if r.get("name")}
         for r in new.get(rel_key, []):
             rname = r.get("name", "")
             if rname and rname not in existing_rels:
@@ -99,12 +145,16 @@ def aggregate_chapters(chapter_results: list[dict]) -> dict:
                 name = entity.get("name", "").strip()
                 if not name:
                     continue
+                entity = _strip_empty(entity)
+                if not entity.get("name"):
+                    continue
+                name = entity["name"]
                 if name in aggregated[entity_type]:
                     aggregated[entity_type][name] = _merge_entity(
                         aggregated[entity_type][name], entity
                     )
                 else:
-                    aggregated[entity_type][name] = dict(entity)
+                    aggregated[entity_type][name] = entity
 
         # 收集 timeline_events
         chapter_timeline = chapter.get("timeline_events", [])
