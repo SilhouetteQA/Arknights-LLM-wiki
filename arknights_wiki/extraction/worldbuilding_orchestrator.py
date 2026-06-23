@@ -13,6 +13,7 @@ from .worldbuilding_prompts import (
 )
 from .worldbuilding_processor import (
     parse_worldbuilding_output, aggregate_chapters,
+    merge_timelines,
     save_seed_db, load_seed_db, generate_wiki_pages,
 )
 
@@ -79,10 +80,10 @@ def run_phase1_book(
 
         chapter_results.append(result)
 
-    # 跨章聚合
+    # 跨章聚合 (timeline_events 来自各章正文中的年份事件)
     seed_db = aggregate_chapters(chapter_results)
 
-    # 提取泰拉纪年
+    # 提取泰拉纪年，与正文中的 timeline_events 合并
     if timeline_seg:
         print(f"\n[Phase 1] 泰拉纪年: {len(timeline_seg.text):,} 字符")
         timeline_prompt = build_timeline_user_prompt(timeline_seg.text)
@@ -100,9 +101,8 @@ def run_phase1_book(
             to_t = t_stats.get("tokens_out", 0)
             total_tokens_in += ti_t
             total_tokens_out += to_t
-            events = timeline_result.get("timeline_events", [])
-            seed_db["timeline_events"] = events
-            print(f"  历史事件: {len(events)}")
+            seed_db["timeline_events"] = merge_timelines(seed_db, timeline_result)
+            print(f"  历史事件 (合并后): {len(seed_db['timeline_events'])}")
             print(f"  tokens: in={ti_t:,} out={to_t:,} {timeline_elapsed:.1f}s")
 
     seed_db["_meta"] = {

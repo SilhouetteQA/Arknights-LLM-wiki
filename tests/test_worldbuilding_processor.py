@@ -6,6 +6,7 @@ import tempfile
 from arknights_wiki.extraction.worldbuilding_processor import (
     parse_worldbuilding_output,
     aggregate_chapters,
+    merge_timelines,
     load_seed_db,
     save_seed_db,
     generate_wiki_pages,
@@ -82,6 +83,69 @@ class TestAggregateChapters:
         assert result["concepts"] == []
         assert result["factions"] == []
         assert result["locations"] == []
+        assert result["timeline_events"] == []
+
+    def test_aggregate_collects_timeline_events(self):
+        """跨章聚合收集并去重 timeline_events"""
+        chapters = [
+            {"concepts": [], "factions": [], "locations": [],
+             "timeline_events": [
+                 {"year": "1096", "event": "博士苏醒", "involved_nations": ["罗德岛"],
+                  "involved_locations": [], "significance": "...", "source": "terra_book"},
+             ]},
+            {"concepts": [], "factions": [], "locations": [],
+             "timeline_events": [
+                 {"year": "1096", "event": "博士苏醒", "involved_nations": ["罗德岛", "巴别塔"],
+                  "involved_locations": ["切尔诺伯格"], "significance": "关键转折", "source": "terra_book"},
+             ]},
+        ]
+        result = aggregate_chapters(chapters)
+        assert len(result["timeline_events"]) == 1
+        ev = result["timeline_events"][0]
+        assert "罗德岛" in ev["involved_nations"]
+        assert "巴别塔" in ev["involved_nations"]
+
+
+class TestMergeTimelines:
+    def test_merge_dedup_same_event(self):
+        """同年同名事件合并"""
+        seed_db = {
+            "timeline_events": [
+                {"year": "1096", "event": "博士苏醒", "involved_nations": ["罗德岛"],
+                 "involved_locations": ["切尔诺伯格"], "significance": "...", "source": "terra_book"},
+            ]
+        }
+        timeline_result = {
+            "timeline_events": [
+                {"year": "1096", "event": "博士苏醒", "involved_nations": ["罗德岛"],
+                 "involved_locations": ["切尔诺伯格"], "significance": "重要转折", "source": "timeline_appendix"},
+            ]
+        }
+        result = merge_timelines(seed_db, timeline_result)
+        assert len(result) == 1
+        assert "重要转折" in result[0]["significance"]
+
+    def test_merge_adds_new_events(self):
+        """新事件被添加"""
+        seed_db = {"timeline_events": []}
+        timeline_result = {
+            "timeline_events": [
+                {"year": "797", "event": "第一座移动城市建成",
+                 "involved_nations": ["七城联邦"], "involved_locations": [],
+                 "significance": "...", "source": "timeline_appendix"},
+            ]
+        }
+        result = merge_timelines(seed_db, timeline_result)
+        assert len(result) == 1
+        assert result[0]["source"] == "timeline_appendix"
+
+    def test_merge_empty_both(self):
+        """两个空列表不报错"""
+        result = merge_timelines(
+            {"timeline_events": []},
+            {"timeline_events": []},
+        )
+        assert result == []
 
 
 class TestSeedDbIO:
@@ -107,7 +171,7 @@ class TestSeedDbIO:
 
 class TestGenerateWikiPages:
     def test_generate_writes_files(self):
-        """生成 Wiki 页面写入文件"""
+        """生成 Wiki 页面写入文件 (含时间线)"""
         seed_db = {
             "concepts": [
                 {"name": "源石", "category": "自然现象/物质",
@@ -121,12 +185,29 @@ class TestGenerateWikiPages:
                 {"name": "龙门", "category": "city",
                  "definition": "移动城市", "summary": "大炎的经济中心。"},
             ],
+            "timeline_events": [
+                {"year": "1096", "event": "博士苏醒", "involved_nations": ["罗德岛"],
+                 "involved_locations": ["切尔诺伯格"], "significance": "转折点",
+                 "source": "timeline_appendix"},
+            ],
         }
         with tempfile.TemporaryDirectory() as tmp:
             paths = generate_wiki_pages(seed_db, tmp)
-            assert len(paths) == 3
+            assert len(paths) == 4  # 3 entities + 1 timeline
             for p in paths:
                 assert os.path.exists(p)
-                with open(p, "r", encoding="utf-8") as f:
-                    content = f.read()
-                    assert "源石" in content or "维多利亚" in content or "龙门" in content
+            # 验证时间线文件存在
+            timeline_paths = [p for p in paths if p.endswith("timeline.md")]
+            assert len(timeline_paths) == 1
+            with open(timeline_paths[0], "r", encoding="utf-8") as f:
+                assert "1096" in f.read()
+
+    def test_generate_no_timeline_when_empty(self):
+        """无 timeline_events 时不生成时间线页面"""
+        seed_db = {
+            "concepts": [], "factions": [], "locations": [],
+            "timeline_events": [],
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = generate_wiki_pages(seed_db, tmp)
+            assert len(paths) == 0

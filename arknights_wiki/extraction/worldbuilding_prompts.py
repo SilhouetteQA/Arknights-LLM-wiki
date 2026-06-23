@@ -38,6 +38,7 @@ _BOOK_SYSTEM_PROMPT = """你是一位《明日方舟》世界观设定档案编�
 4. **source_records**: 标注 source="terra_book"，source_detail="大地巡旅 <章节名>"
 5. **关系字段**: 如果文中提到实体间的关联，填写 related_concepts / related_factions / related_locations
 6. **注意实体辨析**: 同一个词在不同语境下可能对应不同实体，例如"萨卡兹"作为种族(概念层)和"萨卡兹王庭"作为政治组织(阵营层)
+7. **捕捉时间线事件**: 留意文本中出现的具体年份（如797、1086-1094）及对应的历史事件描述，提取到 timeline_events。即使文中仅提及年份无详细描述也要记录，标注 year_note 补充相对时序（如"乌萨斯-卡西米尔战争期间"）。年份可能稀疏，但出现时往往描述重大事件
 
 ## 输出格式
 
@@ -82,6 +83,10 @@ _VIDEO_SYSTEM_PROMPT = """你是一位《明日方舟》世界观设定档案编
 ## 提取三类实体
 
 与设定集提取相同: concepts(六子类) / factions(两类) / locations(两类)
+
+## 时间线事件
+
+同样留意视频中出现的具体年份和对应的历史事件描述，提取到 timeline_events。视频发布时间可作为时间参考锚点。
 
 ## 输出格式
 
@@ -198,6 +203,17 @@ _OUTPUT_SCHEMA = """{
       "related_factions": [{"name": "...", "relation": "...", "desc": "..."}],
       "related_concepts": [{"name": "...", "relation": "...", "desc": "..."}]
     }
+  ],
+  "timeline_events": [
+    {
+      "year": "具体年份或年份范围，如 797 或 1086-1094，或 null（无具体年份）",
+      "year_note": "相对时序描述，如「乌萨斯-卡西米尔战争期间」(无具体年份时必填)",
+      "event": "事件简述",
+      "involved_nations": ["涉及的国家/阵营"],
+      "involved_locations": ["涉及的地点"],
+      "significance": "历史意义（一句话）",
+      "source": "来源标记: timeline_appendix / terra_book / video"
+    }
   ]
 }"""
 
@@ -234,11 +250,17 @@ _TIMELINE_SYSTEM_PROMPT = """你是一位《明日方舟》历史编年学者。
 
 ## 提取规则
 
-1. **每个事件条目提取为一条记录**: 包含 year（年份）、event（事件简述）、involved_nations（涉及的国家/阵营）、involved_locations（涉及的地点）、significance（历史意义，一句话）
-2. **合并同一年的多条事件**: 如果同一年有多条事件，分别提取
-3. **识别跨年事件**: 如「1086-1094 卡兹戴尔内战」，时间范围用 year_range 表示
-4. **关联已有实体**: 事件中提到的国家/阵营/地点名称，用【】显式标注，便于后续与种子库匹配
-5. **不做推测**: 只提取年表中明确记载的事件，不补充不在年表中的历史
+1. **每个事件条目提取为一条记录**: 每条 timeline_event 包含:
+   - year: 具体年份或年份范围（如 797、1086-1094）
+   - year_note: 如年份非精确（如"约900年代"），在 year 标注大致年份，year_note 补充说明
+   - event: 事件简述
+   - involved_nations: 涉及的国家/阵营名称列表
+   - involved_locations: 涉及的地点名称列表
+   - significance: 历史意义（一句话）
+   - source: 固定为 "timeline_appendix"
+2. **同一年多条事件**: 分别提取为独立条目
+3. **关联已有实体**: 事件中提到的国家/阵营/地点名称，使用游戏内常用中文名
+4. **不做推测**: 只提取年表中明确记载的事件，不补充不在年表中的历史
 
 ## 输出格式
 
@@ -255,24 +277,13 @@ _TIMELINE_USER_PROMPT_TEMPLATE = """## 泰拉纪年年表
 
 请提取年表中所有历史事件，输出 JSON:
 
-```json
-{{
-  "timeline_events": [
-    {{
-      "year": "年份或年份范围，如 797 或 1086-1094",
-      "event": "事件简述",
-      "involved_nations": ["涉及的国家/阵营"],
-      "involved_locations": ["涉及的地点"],
-      "significance": "历史意义（一句话）"
-    }}
-  ]
-}}
-```
+{output_schema}
 
 ## 规则
 - 必须基于提供的年表内容，不编造
 - 每条事件独立提取，同一年多条事件分开记录
-- 国家/阵营/地点名称使用游戏内常用中文名"""
+- 国家/阵营/地点名称使用游戏内常用中文名
+- source 统一标记为 "timeline_appendix\""""
 
 
 def build_timeline_system_prompt() -> str:
@@ -280,7 +291,10 @@ def build_timeline_system_prompt() -> str:
 
 
 def build_timeline_user_prompt(timeline_text: str) -> str:
-    return _TIMELINE_USER_PROMPT_TEMPLATE.format(timeline_text=timeline_text)
+    return _TIMELINE_USER_PROMPT_TEMPLATE.format(
+        timeline_text=timeline_text,
+        output_schema=_OUTPUT_SCHEMA,
+    )
 
 
 def build_seed_context(seed_db: dict) -> str:
