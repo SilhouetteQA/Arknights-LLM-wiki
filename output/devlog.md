@@ -501,3 +501,50 @@ Pass 1 概念提取只能做章节级"这段在讨论什么"标注，无法做�
 2. 读本文件末尾 — 最新决策
 3. 读 output/sessions/2026-06-22-2.md — 完整会话记录
 4. 下一步：Pass 3 概念页面 Schema 最终确定 → 加入设定集作为第三数据源
+
+---
+
+## Pass 3 Phase 3 试跑调优 (2026-06-23)
+
+### 架构决策
+
+- **实体清单按章过滤**：`build_entity_checklist(filter_text=chapter_text)` — 子串匹配实体名+aliases，只传文本中出现的实体给 LLM。种子库 452 实体 → 过滤后 ~40 实体，prompt 缩减 90%。保底 10/5/2 防止空清单
+- **分批策略字符数驱动**：`split_chapter(max_chars_per_batch=42000)` — 行数无法反映 token 消耗（"嗯。"和 200 字独白都算 1 行），改为字符数。批数动态计算 `ceil(total_chars/42000)` 替代硬编码 3 批。切分边界仍用 node 自然边界
+- **别名匹配增强**：`_resolve_entity` 处理 LLM 输出简名（"炎武"）匹配种子库全名（"炎武（皇子）"）的情况，通过 alias 索引 + 去括号匹配 + 前缀匹配三层回退
+- **Prompt v4 演进**：三级事件体系 (revelation/major/minor) + 角色型实体 ABC 分类 + 关键对话场景识别 + 成员强制关联
+- **合并逻辑 6 项增强**：source_chapter 回填、member name-only 去重、占位事件过滤、跨层去重(concepts vs factions)、层内同名去重、source_records story_text 补全
+
+### 试跑结果
+
+| 阶段 | 章节 | 成功率 | 实体 | 事件 | Revelations | 成本 |
+|------|------|--------|------|------|-------------|------|
+| 第1轮 (7章通用) | 孤星等 7 章 | 100% | 262c/100f/57l | 696 | 112 | ~$0.18 |
+| 第2轮 (炎国7章) | 画中人等 7 章 | 修复后 100% | 338c/100f/58l | 1,461 | 259 | ~$0.23 |
+
+### 关键验证
+
+- 天镜阁炎武-真龙重逢: 4 层 revelation + 原文引用 ✅
+- 炎武=魏彦吾 alias 链接 ✅
+- 炎景→陈晖洁之母 alias 补充 ✅
+
+### 已知问题
+
+- 天机阁/天师府 member_composition 仍偏弱 — prompt 驱动效果有限，需 entity_checklist 预填 known members
+- 事件跨 batch 轻微重复（同名不同描述，互补性）
+
+### 代码基线
+
+```
+arknights_wiki/extraction/
+  dialogue_loader.py        — split_chapter 字符数驱动
+  worldbuilding_prompts.py  — entity checklist filter + prompt v4
+  worldbuilding_orchestrator.py — merge 6 项增强 + alias match
+  worldbuilding_processor.py — Wiki revelation blockquote 渲染
+```
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-23-3.md — 完整会话记录
+4. 下一步：全量 106 章 Phase 3 执行（过滤+字符分批已就位）
