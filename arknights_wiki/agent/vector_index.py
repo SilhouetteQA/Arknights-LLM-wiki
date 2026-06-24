@@ -57,11 +57,6 @@ def _load_embedding_model():
     _embed_tokenizer = AutoTokenizer.from_pretrained(model_path)
     _embed_model = AutoModel.from_pretrained(model_path)
     _embed_model.eval()
-    # FP16 半精度（内存减半，CPU 上提速 ~1.5x）
-    try:
-        _embed_model.half()
-    except Exception:
-        pass
     return _embed_model
 
 
