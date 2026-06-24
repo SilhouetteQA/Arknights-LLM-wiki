@@ -7,6 +7,14 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 
+@pytest.fixture(autouse=True, scope="session")
+def skip_embed_model():
+    """全局跳过嵌入模型加载，避免 Windows 下 sentence-transformers 段错误"""
+    os.environ["ARKNIGHTS_SKIP_EMBED_MODEL"] = "1"
+    yield
+    # 不清理，保持设置对整个 session 生效
+
+
 @pytest.fixture
 def sample_concept_page():
     """Pass 3 概念页示例"""
