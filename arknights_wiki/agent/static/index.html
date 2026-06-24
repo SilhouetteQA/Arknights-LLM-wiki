@@ -3,11 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>明日方舟剧情 Wiki</title>
+<title>PRTS · 明日方舟剧情 Wiki</title>
 <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-<div id="app">PRTS 终端加载中...</div>
+
+<header id="header-bar">
+  <div class="header-left">
+    <span class="logo">PRTS</span>
+    <span class="version">v3.7.1</span>
+    <span class="separator">|</span>
+    <span id="sys-status" class="status-ready">数据库就绪</span>
+  </div>
+  <div class="header-right" id="header-stats">
+    <span class="stat"><span class="stat-value">6,666</span> 向量</span>
+    <span class="stat"><span class="stat-value">1,251</span> 概念</span>
+    <span class="stat"><span class="stat-value">642</span> 角色</span>
+    <span class="stat">106 章</span>
+  </div>
+</header>
+
+<main id="main-content">
+  <section id="chat-panel">
+    <div id="chat-messages">
+      <div id="empty-state" class="empty-state">
+        <div class="empty-prompt">&gt; 输入查询以检索泰拉数据库_</div>
+        <div class="empty-hint">试试: "巨兽是什么" · "阿米娅的源石技艺" · "岁兽的碎片"</div>
+      </div>
+    </div>
+    <div id="input-bar">
+      <span class="prompt">&gt;</span>
+      <input type="text" id="question-input" placeholder="输入查询..." autofocus>
+      <button id="send-btn">执行</button>
+    </div>
+  </section>
+
+  <aside id="search-panel">
+    <div class="panel-header">&gt; 检索追踪_</div>
+    <div id="search-steps">
+      <div id="panel-empty" class="panel-empty">等待查询...</div>
+    </div>
+    <div id="panel-footer" class="panel-footer">就绪</div>
+  </aside>
+</main>
+
+<footer id="status-bar">
+  <span id="status-text">READY</span>
+  <span id="status-latency"></span>
+  <span id="status-tokens"></span>
+</footer>
+
 <script src="/static/app.js"></script>
 </body>
 </html>
