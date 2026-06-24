@@ -72,7 +72,7 @@ def test_split_chapter_single_batch():
 
 
 def test_split_chapter_two_batches():
-    """中等章节（1500-3000 行）切成 2 批，在中点 node 边界切断"""
+    """12 节点中等章节，字符数驱动切分"""
     lines = []
     nodes = []
     for ni in range(12):
@@ -88,17 +88,17 @@ def test_split_chapter_two_batches():
             })
 
     cd = ChapterDialogue(chapter="中等章", category="main", nodes=nodes, lines=lines)
-    # 12 nodes * 200 = 2400 lines, 1500 < 2400 <= 3000 → 2 batches
-
     batches = split_chapter(cd)
-    assert len(batches) == 2
+    # max_chars_per_batch=35000: 每节点 ~18.5K, 2节点=37K>35K, 所以以单节点为主切分
+    assert len(batches) == 7
     assert "批次 1" in batches[0].chapter
     assert "批次 2" in batches[1].chapter
-    assert len(batches[0].lines) + len(batches[1].lines) == len(lines)
+    total_lines = sum(len(b.lines) for b in batches)
+    assert total_lines == len(lines)
 
 
 def test_split_chapter_many_batches():
-    """大章（>3000 行）切成 3 批，在 1/3 和 2/3 node 边界切断"""
+    """100 节点大章，字符数驱动切分"""
     lines = []
     nodes = []
     for ni in range(100):
@@ -115,8 +115,7 @@ def test_split_chapter_many_batches():
 
     cd = ChapterDialogue(chapter="超大章", category="main", nodes=nodes, lines=lines)
     batches = split_chapter(cd)
-    # 100 nodes * 200 = 20000 lines > 7000 → 3 batches
-    assert len(batches) == 3
+    assert len(batches) == 54
 
     total_lines = sum(len(b.lines) for b in batches)
     assert total_lines == len(lines)

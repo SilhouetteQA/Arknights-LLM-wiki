@@ -373,6 +373,8 @@ def _merge_phase3_result(seed_db: dict, result: dict, chapter_name: str) -> dict
         return any(kw in name or kw in desc for kw in ("未直接出现", "未直接提及", "未直接涉及"))
 
     for mention in result.get("entity_mentions", []):
+        if not isinstance(mention, dict):
+            continue
         ename = mention.get("entity_name", "").strip()
         etype = mention.get("entity_type", "")
         if not ename or etype not in ("concept", "faction", "location"):
@@ -393,7 +395,8 @@ def _merge_phase3_result(seed_db: dict, result: dict, chapter_name: str) -> dict
         # 添加 source_record（story_text 来源）
         existing_sources = target.get("source_records", [])
         source_key = f"story_text:{chapter_name}"
-        if not any(s.get("source") == "story_text" and s.get("source_detail") == chapter_name
+        if not any(isinstance(s, dict) and s.get("source") == "story_text"
+                   and s.get("source_detail") == chapter_name
                    for s in existing_sources):
             existing_sources.append({
                 "source": "story_text",
@@ -436,6 +439,8 @@ def _merge_phase3_result(seed_db: dict, result: dict, chapter_name: str) -> dict
     new_entities = result.get("new_entities", {})
     for etype in ("concepts", "factions", "locations"):
         for entity in new_entities.get(etype, []):
+            if not isinstance(entity, dict):
+                continue
             name = entity.get("name", "").strip()
             if not name:
                 continue
@@ -679,5 +684,226 @@ def run_phase3_trial(
     print(f"  tokens: in={total_tokens_in:,} out={total_tokens_out:,}")
     print(f"  成本: ${total_cost:.4f}")
     print(f"  种子库 v3: {seed_db_v3_path}")
+
+    return seed_db
+
+
+# ============================================================
+# Phase 3 全量批量提取
+# ============================================================
+
+def _strip_phase3_data(seed_db: dict) -> dict:
+    """从种子库中剥离 Phase 3 数据，得到干净的 Phase 1+2 基线
+
+    移除: story_events, story_text 类型的 source_records,
+          仅含 Phase 3 数据的 member_composition
+    """
+    import copy
+    clean = copy.deepcopy(seed_db)
+
+    for etype in ("concepts", "factions", "locations"):
+        for entity in clean.get(etype, []):
+            # 移除 story_events
+            entity.pop("story_events", None)
+            entity.pop("revelations", None)
+            # 移除 story_text 类型的 source_records
+            if "source_records" in entity:
+                entity["source_records"] = [
+                    sr for sr in entity["source_records"]
+                    if sr.get("source") != "story_text"
+                ]
+
+    # 移除 _meta 中 Phase 3 相关字段
+    if "_meta" in clean:
+        clean["_meta"].pop("chapters_processed", None)
+        clean["_meta"]["phase"] = 2
+
+    return clean
+
+
+def _get_story_chapters(stories_dir: str = "data/stories") -> list[tuple[str, str]]:
+    """枚举所有故事章节 (category, chapter_name)"""
+    chapters = []
+    for cat in ["main", "side", "special"]:
+        cat_path = os.path.join(stories_dir, cat)
+        if not os.path.isdir(cat_path):
+            continue
+        for ch in sorted(os.listdir(cat_path)):
+            ch_path = os.path.join(cat_path, ch)
+            if os.path.isdir(ch_path) and any(f.endswith(".json") for f in os.listdir(ch_path)):
+                chapters.append((cat, ch))
+    return chapters
+
+
+def run_phase3_full(
+    seed_db_path: str = "data/extractions/v3_seed_db_v3.json",
+    baseline_output_path: str = "data/extractions/v3_seed_db_v2_clean.json",
+    data_dir: str = "data/stories",
+    output_dir: str = "data/extractions/v3_wiki",
+    checkpoint_path: str = "data/extractions/v3_seed_db_v3_checkpoint.json",
+    skip_chapters: list[str] | None = None,
+) -> dict:
+    """Phase 3 全量: 对所有故事章节进行实体链接
+
+    每次处理完一章自动保存检查点，支持断点续跑。
+    """
+    if skip_chapters is None:
+        # 7 个炎国章节已用修正后 prompt 跑过，跳过
+        skip_chapters = ["画中人", "将进酒", "登临意", "怀黍离", "相见欢", "辞岁行", "洪炉示岁"]
+
+    print("=" * 60)
+    print("Pass 3 Phase 3: 全量剧情实体链接")
+    print(f"模型: {_get_model_config()['model']}")
+    print(f"跳过已正确处理的章节: {skip_chapters}")
+    print("=" * 60)
+
+    # 尝试从检查点恢复
+    if os.path.exists(checkpoint_path):
+        print(f"\n从检查点恢复: {checkpoint_path}")
+        seed_db = load_seed_db(checkpoint_path)
+        # 从 source_records 提取已处理的章节名
+        for etype in ("concepts", "factions", "locations"):
+            for e in seed_db.get(etype, []):
+                for sr in e.get("source_records", []):
+                    if sr.get("source") == "story_text" and sr.get("source_detail"):
+                        ch_name = sr["source_detail"]
+                        if ch_name not in skip_chapters:
+                            skip_chapters.append(ch_name)
+        print(f"已处理章节(含恢复): {len(skip_chapters)}")
+    else:
+        # 从 v3 剥离 Phase 3 数据获取干净基线
+        print(f"\n加载种子库: {seed_db_path}")
+        original = load_seed_db(seed_db_path)
+        seed_db = _strip_phase3_data(original)
+        save_seed_db(seed_db, baseline_output_path)
+        print(f"干净基线已保存: {baseline_output_path}")
+        print(f"  概念: {len(seed_db['concepts'])} 阵营: {len(seed_db['factions'])} 地点: {len(seed_db['locations'])}")
+
+    # 枚举所有章节
+    all_chapters = _get_story_chapters(data_dir)
+    chapters_to_run = [(c, ch) for c, ch in all_chapters if ch not in skip_chapters]
+
+    print(f"\n总章节: {len(all_chapters)}, 跳过: {len(skip_chapters)}, 待处理: {len(chapters_to_run)}")
+
+    # 恢复累计统计
+    prev_meta = seed_db.get("_meta", {})
+    prev_stats = prev_meta.get("stats", {})
+    grand_cost = prev_stats.get("cost_usd", 0.0)
+    grand_tokens_in = prev_stats.get("tokens_in", 0)
+    grand_tokens_out = prev_stats.get("tokens_out", 0)
+    t_grand_start = time.time()
+    success_count = 0
+    fail_list = []
+
+    for idx, (cat, ch) in enumerate(chapters_to_run, 1):
+        chapter_dir = os.path.join(data_dir, cat, ch)
+        if not os.path.isdir(chapter_dir):
+            print(f"\n[{idx}/{len(chapters_to_run)}] 跳过 [{cat}] {ch}: 目录不存在")
+            continue
+
+        print(f"\n{'─'*50}")
+        print(f"[{idx}/{len(chapters_to_run)}] [{cat}] {ch}")
+        print(f"{'─'*50}")
+
+        try:
+            result = run_phase3_chapter(cat, ch, seed_db, data_dir)
+        except Exception as e:
+            print(f"  EXCEPTION: {e}")
+            fail_list.append((cat, ch, str(e)))
+            continue
+
+        if result is None:
+            fail_list.append((cat, ch, "返回 None"))
+            continue
+
+        stats = result.pop("_stats", {})
+        grand_cost += stats.get("cost_usd", 0)
+        grand_tokens_in += stats.get("tokens_in", 0)
+        grand_tokens_out += stats.get("tokens_out", 0)
+
+        seed_db = _merge_phase3_result(seed_db, result, ch)
+        success_count += 1
+
+        # 每章处理完保存检查点
+        elapsed = time.time() - t_grand_start
+        seed_db["_meta"] = {
+            "phase": 3,
+            "model": _get_model_config()["model"],
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "source": "大地巡旅 + 视频 + 剧情(全量进行中)",
+            "chapters_processed": success_count,
+            "progress": f"{idx}/{len(chapters_to_run)}",
+            "last_chapter": f"[{cat}] {ch}",
+            "stats": {
+                "tokens_in": grand_tokens_in,
+                "tokens_out": grand_tokens_out,
+                "elapsed_s": elapsed,
+                "cost_usd": grand_cost,
+            },
+        }
+        save_seed_db(seed_db, checkpoint_path)
+
+        # 累计统计
+        entities_with_events = 0
+        total_events = 0
+        for etype in ("concepts", "factions", "locations"):
+            for e in seed_db.get(etype, []):
+                n = len(e.get("story_events", []))
+                if n > 0:
+                    entities_with_events += 1
+                    total_events += n
+
+        print(f"  [累计] {success_count}章成功, {len(fail_list)}失败, "
+              f"${grand_cost:.4f}, {entities_with_events}实体有事件, {total_events}事件")
+
+    # 最终保存
+    elapsed_total = time.time() - t_grand_start
+
+    entities_with_events = 0
+    total_events = 0
+    for etype in ("concepts", "factions", "locations"):
+        for e in seed_db.get(etype, []):
+            n = len(e.get("story_events", []))
+            if n > 0:
+                entities_with_events += 1
+                total_events += n
+
+    final_path = "data/extractions/v3_seed_db_v3_final.json"
+    seed_db["_meta"] = {
+        "phase": 3,
+        "model": _get_model_config()["model"],
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source": "大地巡旅 + 视频 + 剧情(全量)",
+        "chapters_processed": success_count,
+        "chapters_failed": len(fail_list),
+        "stats": {
+            "tokens_in": grand_tokens_in,
+            "tokens_out": grand_tokens_out,
+            "elapsed_s": elapsed_total,
+            "cost_usd": grand_cost,
+        },
+    }
+    save_seed_db(seed_db, final_path)
+
+    # 生成 Wiki 页面
+    wiki_paths = generate_wiki_pages(seed_db, output_dir)
+
+    print(f"\n{'='*60}")
+    print(f"Phase 3 全量完成:")
+    print(f"  成功: {success_count} 章, 失败: {len(fail_list)} 章")
+    print(f"  概念: {len(seed_db['concepts'])}")
+    print(f"  阵营: {len(seed_db['factions'])}")
+    print(f"  地点: {len(seed_db['locations'])}")
+    print(f"  有 story_events 的实体: {entities_with_events}")
+    print(f"  总 story_events: {total_events}")
+    print(f"  Wiki 页面: {len(wiki_paths)} 个")
+    print(f"  tokens: in={grand_tokens_in:,} out={grand_tokens_out:,}")
+    print(f"  成本: ${grand_cost:.4f} / {elapsed_total/60:.1f}min")
+    print(f"  最终种子库: {final_path}")
+
+    if fail_list:
+        print(f"\n失败章节列表:")
+        for cat, ch, err in fail_list:
+            print(f"  [{cat}] {ch}: {err}")
 
     return seed_db

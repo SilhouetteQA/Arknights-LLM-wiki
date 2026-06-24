@@ -203,7 +203,7 @@ def scene_line_to_global(cd: ChapterDialogue, scene_num: int, local_line: int) -
 
 def split_chapter(
     cd: ChapterDialogue,
-    max_chars_per_batch: int = 42000,
+    max_chars_per_batch: int = 35000,
 ) -> list[ChapterDialogue]:
     """按 node 自然边界切分章节，以字符数为主要指标避免 token 超限。
 

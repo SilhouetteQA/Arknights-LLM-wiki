@@ -83,7 +83,7 @@ def create_client() -> OpenAI:
     return OpenAI(
         api_key=config["api_key"],
         base_url=config["base_url"],
-        timeout=600.0,
+        timeout=300.0,
     )
 
 
@@ -93,23 +93,34 @@ def call_llm(
     user_prompt: str,
     max_retries: int = 3,
 ) -> dict:
-    """调用 LLM，自动检测模型配置，重试 JSON 解析失败"""
+    """调用 LLM，自动检测模型配置，超时和 JSON 解析失败自动重试"""
+    import time as time_mod
     config = _get_model_config()
     model = config["model"]
     max_tokens = config["max_tokens"]
 
     last_raw = None
     stats = {}
+    last_error = None
     for attempt in range(max_retries):
-        response = client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt},
-            ],
-            temperature=0.1,
-            max_tokens=max_tokens,
-        )
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                temperature=0.1,
+                max_tokens=max_tokens,
+                timeout=300.0,
+            )
+        except Exception as e:
+            last_error = str(e)
+            wait = 2 ** attempt
+            print(f"    [API异常 尝试{attempt+1}/{max_retries}] {last_error[:120]}... {wait}s后重试")
+            time_mod.sleep(wait)
+            continue
+
         raw = response.choices[0].message.content or ""
         usage = response.usage
         stats = {
@@ -124,4 +135,6 @@ def call_llm(
 
         last_raw = raw
 
+    if last_error and not last_raw:
+        return {"_parse_error": True, "_error": last_error, "_stats": stats}
     return {"_parse_error": True, "_raw": last_raw, "_stats": stats}

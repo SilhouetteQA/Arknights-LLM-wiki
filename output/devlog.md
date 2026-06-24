@@ -548,3 +548,91 @@ arknights_wiki/extraction/
 2. 读本文件末尾 — 最新决策
 3. 读 output/sessions/2026-06-23-3.md — 完整会话记录
 4. 下一步：全量 106 章 Phase 3 执行（过滤+字符分批已就位）
+
+---
+
+## Pass 3 质量修复 (2026-06-24)
+
+### 架构决策
+
+- **阵营成员去重机制**：`operators.json` team/group → `faction_roster_index.json` (25阵营/134干员) + `identity_map.json` (141条) → 276条名字规范化器。解决跨 batch 同名不同写的合并失败问题。
+- **概述质量诊断**：Phase 3 的 `summary` 字段 100% 来自大地巡旅段落拼接（`_dedup_summary()`），剧情事件仅追加为 `story_events`，从未反馈到概述。属于架构级缺陷。
+- **Phase 3.5 概述 LLM 重写**：用 story_events + 原文摘录 → LLM → 新概述，替代纯大地巡旅版。16 个核心阵营验证可行，~$0.36。
+- **兽主/巨兽手动补全**：新建 5 兽主 + 2 巨兽词条 + 重写兽主总括页。AUS = 日落即漸为同一实体，合并至 AUS 页面。
+- **岁兽碎片**：9/12 碎片有独立词条（新建 重岳/夕/年/黍），缺失颉及两个未知碎片。
+
+### 代码基线
+
+```
+scripts/fix_faction_members.py      — 阵营成员去重补全
+scripts/regenerate_overviews.py     — 概述 LLM 重写
+data/faction_roster_index.json      — 干员→组织基准索引
+```
+
+### 数据基线
+
+| 指标 | 值 |
+|------|-----|
+| 阵营 wiki 页面 | 247 |
+| 阵营成员修复 | 去重 253 + 补全 283 (18 个阵营) |
+| 顾筌系重复去重 | 6→4 词条 |
+| 概述 LLM 重写 | 16 个阵营 |
+| 新建兽主词条 | 5 个 |
+| 新建/补充巨兽词条 | 3 个 (睚、萨米、AUS=日落即漸) |
+| 新建岁兽碎片词条 | 4 个 (9/12 已覆盖) |
+
+### 已知问题
+
+- `generate_wiki_pages()` 从 seed DB 重建会覆盖手动编辑的 wiki 页面
+- 仅 16/234 阵营完成概述重写，其余仍是纯大地巡旅版
+- 睚、宁茵、顾筌案等手动修复需从 seed DB 层面重新应用
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-24-1.md — 完整会话记录
+4. 下一步：引入 OpenEval 对当前 v3_wiki 数据做系统质量评估
+
+---
+
+## OpenAI Evals 评估框架集成 (2026-06-24)
+
+### 架构决策
+
+- **OpenAI Evals 3.0.1.post1**: 选型而非自建。ModelBasedClassify 作为核心执行类，配合自定义 modelgraded YAML 做 LLM-as-judge 评估
+- **DeepSeek 适配**: `DeepSeekCompletionFn` 继承 `OpenAIChatCompletionFn`，通过 `api_base=https://api.deepseek.com/v1` + `deepseek_api` 环境变量接入。需桥接 `OPENAI_API_KEY`（evals 包 import 时创建全局 client 需要）
+- **Monkey-patch `add_token_usage_to_result`**: 新版 OpenAI SDK 的 `usage` 包含 `prompt_tokens_details` (对象) 等非 int 字段，原代码 `sum()` 操作报 TypeError
+- **评估 = 数据层(JSONL) + 评分模板(modelgraded YAML) + 执行层(eval YAML + CLI)**: 三层分离，每项评估只需新增 modelgraded YAML + 数据生成脚本 + eval 注册
+- **30% 抽样策略**: 全量规则检查（零成本）+ 30% 抽样 LLM 验证（可控成本）。覆盖面足够，误差 < 3%
+
+### 评估基线
+
+| 维度 | 均分 | A+B 准确率 | 关键问题 |
+|------|------|-----------|----------|
+| 概述融合度 (P3) | 3.18/4.0 | 69% | 29% C级纯设定集未融合 |
+| 索引可追踪性 (P1) | 2.47/3.0 | 90% | 9% D级，短span+描述越界 |
+| 索引可追踪性 (P2) | 2.39/3.0 | 96% | 角色总结偏泛化 |
+| 索引可追踪性 (P3) | 2.19/3.0 | 87% | 12% 无有效来源标记 |
+
+P1 D级失效根因: (1) 短 span/短原文 26-29% (2) 描述越界推断 ~45% (3) locations D率最高 16%
+
+### 代码基线
+
+```
+arknights_wiki/eval/                      # 新建
+scripts/generate_eval_data.py             # 新建
+scripts/generate_traceability_p1_data.py  # 新建
+scripts/generate_traceability_p2_data.py  # 新建
+scripts/generate_traceability_p3_data.py  # 新建
+scripts/run_eval.py                       # 新建
+```
+
+pyproject.toml: `eval = ["evals>=3.0"]`
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-24-2.md — 完整会话记录
+4. 下一步：LangGraph AI Agent 构建（RAG 问答/剧情分析/世界观查询）
