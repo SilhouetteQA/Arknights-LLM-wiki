@@ -654,3 +654,48 @@ pyproject.toml: `eval = ["evals>=3.0"]`
 2. 读本文件末尾 — 最新决策
 3. 读 output/sessions/2026-06-24-2.md — 完整会话记录
 4. 下一步：LangGraph AI Agent 构建（RAG 问答/剧情分析/世界观查询）
+
+---
+
+## LangGraph AI Agent 核心实施 (2026-06-24)
+
+### 架构决策
+
+- **方案 C（混合路由 + LangGraph Agent）**：Query Router 本地规则分类 simple/complex → simple 走 4 层检索 + LLM 直接回答，complex 走 LangGraph ReAct Agent 多步检索
+- **不引入 LangChain，仅用 LangGraph**：LangChain 的 `create_react_agent` 底层就是 LangGraph，直接用更灵活。Retrieval 层不是标准 Document/VectorStore 模式
+- **FAISS 语义检索 + chunk_id 溯源**：参照 mrfz 模式，`concept:源石` → 精确实体。BGE-small-zh-v1.5 (ModelScope 下载，HuggingFace 被墙)，IndexFlatIP 内积搜索
+- **SentenceTransformer segfault 修复**：Windows PyTorch 2.11.0 上 SentenceTransformer 加载模型 C 层段错误。改用 `AutoModel` + 手动 mean pooling（生成相同 BGE 嵌入）
+- **FP16 在 CPU 反而慢 9x**：FP32 23s/128条 vs FP16 214s/128条。CPU 上 FP16 需额外转换开销
+- **7 个 LangGraph tools**：search_wiki / get_entity_page / search_events / search_dialogue / search_timeline / get_chapter_summary / semantic_search
+- **Subagent-Driven TDD**：10 Tasks 并行派发，45 tests
+
+### 数据基线
+
+| 指标 | 值 |
+|------|-----|
+| FAISS 向量 | 6,666 (512-dim BGE) |
+| 模块文件 | 7 agent + 1 build script |
+| 测试 | 45 passed |
+| 编码耗时 | 43min (FP32 CPU) |
+
+### 代码基线
+
+```
+arknights_wiki/agent/ (新建, 10 模块)
+tests/agent/          (新建, 45 tests)
+scripts/build_agent_index.py (新建)
+```
+
+### 已知问题
+
+- 前端 UI 简陋（无步骤可视化、来源展开）
+- 评估器未运行
+- complex 路径未端到端测试
+- 索引无增量更新机制
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-24-3.md — 完整会话记录
+4. 下一步：前端重构 → 评估器测试

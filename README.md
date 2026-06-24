@@ -131,7 +131,22 @@ Arknights LLM Wiki/
 
 1. ~~战力评级体系重新设计~~ — 已完成 (2026-06-21)
 2. ~~IS-IF 事件整合~~ — 暂缓
-3. **Pass 3：世界观实体提取** — 进行中
-   - Brainstorming 第一轮完成：B+ 方案（视频种子 + 原文双通道）、概念六子类、阵营/地点精简分类
-   - 数据源就位：Pass 1 原文 + data/videos/ 37视频 + 《大地巡旅》设定集（已扫描OCR，401/403页）
-   - 下一步：恢复概念页面 Schema 设计 → 营地/地点 Schema → Spec
+3. ~~Pass 3：世界观实体提取~~ — 已完成 (2026-06-24)
+4. ~~OpenAI Evals 评估框架集成~~ — 已完成 (2026-06-24)
+5. **LangGraph AI Agent** — 已完成核心实施 (2026-06-24)
+   - Query Router (本地规则) → SimpleSearch / LangGraph ReAct Agent
+   - FAISS 语义搜索 (BGE-small-zh-v1.5, 6,666 实体)
+   - FastAPI + SSE 流式 API, 45 tests
+   - 分支: feature/langgraph-agent
+6. **下一步：前端重构 → 评估器测试**
+
+## Phase 4: LangGraph AI Agent (2026-06-24)
+
+| 维度 | 值 |
+|------|-----|
+| 模块 | 7 个源文件 + 1 构建脚本 |
+| 工具 | 7 个 LangGraph tools (search_wiki/get_entity_page/search_events/search_dialogue/search_timeline/get_chapter_summary/semantic_search) |
+| FAISS 索引 | 6,666 实体 (512-dim BGE, IndexFlatIP) |
+| 测试 | 45 passed |
+| 服务 | FastAPI + SSE, http://localhost:8000 |
+| 分支 | feature/langgraph-agent |
