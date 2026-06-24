@@ -13,6 +13,7 @@ var statusTokens = $('#status-tokens');
 
 var currentAnswerSpan = null;
 var stepCount = 0;
+var tokenCount = 0;
 var isLoading = false;
 
 function scrollChat() { chatMessages.scrollTop = chatMessages.scrollHeight; }
@@ -115,6 +116,8 @@ function handleSSE(event, data) {
         null);
       break;
     case 'token':
+      tokenCount++;
+      statusTokens.textContent = 'Tokens: ' + tokenCount;
       appendToken(data.text || '');
       break;
     case 'step':
@@ -145,6 +148,7 @@ async function ask() {
 
   currentAnswerSpan = null;
   stepCount = 0;
+  tokenCount = 0;
   clearSteps();
 
   var startTime = performance.now();
@@ -192,6 +196,12 @@ async function ask() {
   } catch (err) {
     statusText.textContent = 'ERROR';
     statusText.style.color = '#ff4444';
+    var errDiv = document.createElement('div');
+    errDiv.className = 'msg-route';
+    errDiv.style.color = '#ff4444';
+    errDiv.textContent = '[错误] 请求失败，请重试';
+    chatMessages.appendChild(errDiv);
+    scrollChat();
   } finally {
     isLoading = false;
     sendBtn.disabled = false;
