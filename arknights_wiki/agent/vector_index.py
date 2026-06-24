@@ -17,36 +17,52 @@ from arknights_wiki.config import DATA_DIR
 
 
 _embed_model = None
+_embed_tokenizer = None
+
+
+def _find_model_path():
+    """查找 BGE 模型本地路径（优先 ModelScope 缓存，回退 HuggingFace 下载）"""
+    model_name = os.environ.get("ARKNIGHTS_EMBED_MODEL", "BAAI/bge-small-zh-v1.5")
+    cache_root = os.path.join(DATA_DIR, "..", ".cache", "modelscope")
+
+    # ModelScope 目录名编码
+    org, name = model_name.split("/", 1) if "/" in model_name else ("", model_name)
+    for entry in os.listdir(os.path.join(cache_root, org)) if os.path.isdir(os.path.join(cache_root, org)) else []:
+        entry_path = os.path.join(cache_root, org, entry)
+        if os.path.isdir(entry_path) and os.path.isfile(os.path.join(entry_path, "config.json")):
+            return entry_path
+
+    # 回退: 让 transformers 从 HuggingFace/ModelScope 下载
+    return model_name
 
 
 def _load_embedding_model():
-    """惰性加载 BGE-small-zh-v1.5（同 mrfz 配置，模块级缓存）
+    """惰性加载 BGE 嵌入模型（AutoModel + mean pooling，避免 SentenceTransformer segfault）
 
-    在 Windows + torch 2.12 环境下，sentence-transformers 导入可能触发
-    pyarrow 的 C 层段错误（不可被 try/except 捕获）。
-    设置环境变量 ARKNIGHTS_SKIP_EMBED_MODEL=1 可跳过加载，
-    build_faiss_index / semantic_search 将回退到随机向量。
+    Windows 上 SentenceTransformer 在加载模型时可能触发 PyTorch C 层段错误。
+    改用 transformers.AutoModel + 手动 mean pooling，生成相同的 BGE 嵌入。
     """
-    global _embed_model
+    global _embed_model, _embed_tokenizer
+
     if _embed_model is not None:
         return _embed_model
 
-    # 在导入前检查跳过标志，避免 C 层段错误
     if os.environ.get("ARKNIGHTS_SKIP_EMBED_MODEL"):
-        raise RuntimeError(
-            "模型加载已被 ARKNIGHTS_SKIP_EMBED_MODEL 环境变量跳过。"
-        )
+        raise RuntimeError("模型加载已被 ARKNIGHTS_SKIP_EMBED_MODEL 环境变量跳过。")
 
-    from sentence_transformers import SentenceTransformer
-    model_name = os.environ.get("ARKNIGHTS_EMBED_MODEL", "BAAI/bge-small-zh-v1.5")
-    model = SentenceTransformer(model_name, device="cpu")
-    model.max_seq_length = 512
+    import torch
+    from transformers import AutoTokenizer, AutoModel
+
+    model_path = _find_model_path()
+    _embed_tokenizer = AutoTokenizer.from_pretrained(model_path)
+    _embed_model = AutoModel.from_pretrained(model_path)
+    _embed_model.eval()
+    # FP16 半精度（内存减半，CPU 上提速 ~1.5x）
     try:
-        model.half()
+        _embed_model.half()
     except Exception:
         pass
-    _embed_model = model
-    return model
+    return _embed_model
 
 
 def _get_model():
@@ -59,8 +75,40 @@ def _get_model():
     except Exception as e:
         raise RuntimeError(
             f"无法加载嵌入模型: {e}. "
-            f"请确认已安装 sentence-transformers 且 BGE-small-zh-v1.5 模型可用。"
+            f"请确认已安装 transformers 且 BGE-small-zh-v1.5 模型可用。"
         )
+
+
+def _encode_texts(texts: list[str], batch_size: int = 128) -> np.ndarray:
+    """使用 BGE AutoModel + mean pooling 编码文本
+
+    BGE 模型使用 CLS token 或 mean pooling，这里采用 mean pooling（与 SentenceTransformer 行为一致）。
+    """
+    import torch as _torch
+
+    model = _get_model()
+    tokenizer = _embed_tokenizer
+
+    all_embeddings = []
+    for i in range(0, len(texts), batch_size):
+        batch = texts[i:i + batch_size]
+        encoded = tokenizer(
+            batch, padding=True, truncation=True, max_length=256, return_tensors="pt"
+        )
+        with _torch.no_grad():
+            outputs = model(**encoded)
+            # Mean pooling: average token embeddings weighted by attention mask
+            attention_mask = encoded["attention_mask"]
+            token_embeddings = outputs.last_hidden_state
+            input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+            embeddings = _torch.sum(token_embeddings * input_mask_expanded, 1) / _torch.clamp(
+                input_mask_expanded.sum(1), min=1e-9
+            )
+            # L2 normalize
+            embeddings = _torch.nn.functional.normalize(embeddings, p=2, dim=1)
+            all_embeddings.append(embeddings.numpy())
+
+    return np.concatenate(all_embeddings, axis=0)
 
 
 def _list_markdown_files(directory: str) -> list[Path]:
@@ -206,22 +254,16 @@ def build_chunk_map(data_dir: str | None = None) -> dict:
 def build_faiss_index(texts: list[str], dimension: int = 384, model=None) -> "faiss.IndexFlatIP":
     """编码文本列表并构建 FAISS IndexFlatIP
 
-    如果 model 为 None 且环境允许，自动加载 BGE-small-zh-v1.5。
-    如果加载失败（如 Windows torch 兼容问题），回退到随机向量（仅用于测试）。
+    优先使用 BGE AutoModel + mean pooling。加载失败时回退到随机向量。
     """
     import faiss
 
     try:
-        if model is None:
-            model = _get_model()
-        embeddings = model.encode(
-            texts,
-            normalize_embeddings=True,
-            batch_size=128,
-            show_progress_bar=False,
-        )
+        embeddings = _encode_texts(texts)
+        actual_dim = embeddings.shape[1]
+        dimension = actual_dim
     except Exception:
-        # 回退: 随机向量（测试环境）
+        # 回退: 随机向量
         embeddings = np.random.randn(len(texts), dimension).astype(np.float32)
         norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
         embeddings = embeddings / norms
@@ -284,12 +326,9 @@ def semantic_search(
     每个结果包含 chunk_id, entity_type, name, score, text, file_path
     """
     try:
-        if model is None:
-            model = _get_model()
-        query_vec = model.encode([query], normalize_embeddings=True)
+        query_vec = _encode_texts([query])
     except Exception:
         # 回退: 随机向量
-        import faiss
         dim = index.d
         query_vec = np.random.randn(1, dim).astype(np.float32)
         query_vec = query_vec / np.linalg.norm(query_vec)

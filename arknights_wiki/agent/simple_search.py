@@ -61,28 +61,25 @@ def search_and_collect(
         for evt in event_store.search(entity=entity, limit=5):
             add(evt)
 
-    # Layer 2: FAISS 语义搜索（模型不可用时跳过）
-    if os.environ.get("ARKNIGHTS_SKIP_EMBED_MODEL"):
-        pass  # 跳过语义搜索
-    else:
-        index_dir = os.path.join(data_dir, "index")
-        index_path = os.path.join(index_dir, "faiss.index")
-        map_path = os.path.join(index_dir, "chunk_map.json")
-        if os.path.exists(index_path) and os.path.exists(map_path):
-            from arknights_wiki.agent.vector_index import load_index, semantic_search
-            try:
-                index, chunk_map = load_index(index_path, map_path)
-                faiss_results = semantic_search(question, index, chunk_map, top_k=10)
-                for r in faiss_results:
-                    if r["score"] > 0.3:
-                        add({
-                            "entity_type": r["entity_type"],
-                            "name": r["name"],
-                            "text": r["text"],
-                            "file_path": r.get("file_path", ""),
-                        })
-            except Exception:
-                pass
+    # Layer 2: FAISS 语义搜索
+    index_dir = os.path.join(data_dir, "index")
+    index_path = os.path.join(index_dir, "faiss.index")
+    map_path = os.path.join(index_dir, "chunk_map.json")
+    if os.path.exists(index_path) and os.path.exists(map_path):
+        from arknights_wiki.agent.vector_index import load_index, semantic_search
+        try:
+            index, chunk_map = load_index(index_path, map_path)
+            faiss_results = semantic_search(question, index, chunk_map, top_k=10)
+            for r in faiss_results:
+                if r["score"] > 0.3:
+                    add({
+                        "entity_type": r["entity_type"],
+                        "name": r["name"],
+                        "text": r["text"],
+                        "file_path": r.get("file_path", ""),
+                    })
+        except Exception:
+            pass
 
     # Layer 3: Dialogue 兜底（仅在结果少时触发）
     if len(collected) < 5:
