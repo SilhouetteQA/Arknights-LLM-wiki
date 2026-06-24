@@ -1,0 +1,45 @@
+{
+  "summary": "路人B是《明日方舟》中一个具有现实洞察力的普通市民角色。在火山旅梦中，他冷静地提醒同伴优先撤离，展现务实态度；在未尽篇章中，他与路人A观看电视节目《真实故事》，以老观众身份调侃杰斯顿的遭遇，暗示节目可能是虚构，体现对媒体真实性的反思。",
+  "personality": {
+    "traits": [
+      "务实",
+      "幽默",
+      "洞察力"
+    ],
+    "description": "路人B在危机中保持冷静，优先考虑安全；在闲聊中善于调侃，对媒体内容有批判性思考。"
+  },
+  "abilities": {
+    "description": "无特殊战斗能力，仅具备普通人的生存常识和社交能力。",
+    "power_level": "信息不足",
+    "power_level_evidence": []
+  },
+  "participated_events": [
+    {
+      "chapter": "火山旅梦",
+      "nodes": "晚会上火山爆发广播",
+      "event": "火山即将爆发，广播通知撤离，路人B与路人A讨论应对。",
+      "role": "提醒同伴不要拿物品，优先撤离。"
+    },
+    {
+      "chapter": "未尽篇章",
+      "nodes": "电视节目《真实故事》",
+      "event": "路人B与路人A观看节目，讨论杰斯顿的遭遇可能是虚构。",
+      "role": "作为老观众，指出节目是伪纪录片，暗示其虚构性。"
+    }
+  ],
+  "first_appearance": "火山旅梦",
+  "appearance_count": 2,
+  "_stats": {
+    "tokens_in": 2252,
+    "tokens_out": 338,
+    "elapsed_s": 3.5429234504699707
+  },
+  "name_zh": "路人B",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "未尽篇章",
+    "火山旅梦"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:21:55.815216+00:00"
+}

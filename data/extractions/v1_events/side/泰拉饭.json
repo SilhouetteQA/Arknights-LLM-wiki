@@ -1,0 +1,1141 @@
+{
+  "chapter": "泰拉饭",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "莱欧斯小队在迷宫深处遭遇意外，被传送到了一个名为泰拉的陌生世界。他们首先遇到源石虫养殖者大鲍勃，在其农场品尝了辣炒源石虫等料理，并得知了罗德岛的存在。随后小队进入雨林，遭遇阿达克利斯部落，因玛露西尔误食毒果中毒，森西用大祭司（一只肥鸟）炖汤解毒，大祭司指引他们继续寻找罗德岛。在雷姆必拓，小队帮助一家即将倒闭的工厂制作了黄金萝卜料理，作为交换，厂主开车送他们一程。在萨米黑森林，小队遇到萨满学徒橡杯，橡杯解读密文板后指引他们前往北方寻找独眼巨人。途中齐尔查克与队伍失散，被独眼巨人艾尔启所救，得知邪魔污染的存在。莱欧斯等人则遇到罗德岛干员刻俄柏，并猎杀了一只被邪魔污染的角兽。食用角兽肉后，莱欧斯、玛露西尔和森西被邪魔污染，执意走向北方，齐尔查克和刻俄柏追赶他们。最后，小队似乎在一个名为婆山镇的地方定居下来，莱欧斯对当地名为墨魉的奇特生物产生了浓厚兴趣。\n\n在婆山镇，玛露西尔向黎讲述了与法琳的友谊，并意识到莱欧斯失踪多日。她发现墨魉不再攻击镇子，而莱欧斯正与墨魉们玩耍并研究它们。莱欧斯通过喂食水果驯服了墨魉，并发现它们能产出果酒、果酱和果汁。他提出对墨魉生态的质疑，认为这个镇子可能是虚假的。黎认同他的观点，指出墨魉只是画中杂念。随后，一位神秘女子（夕）出现，将莱欧斯小队驱逐出画中世界。\n\n小队被传送到伊比利亚的盐风城，发现居民因食物匮乏而麻木。他们遇到一位教士，指引他们前往洞窟寻找食物。在洞窟中，他们击败了魔物并收集了大量海鲜食材。齐尔查克用宝箱怪陷阱困住了教士。小队在海边烹饪海鲜，吸引了居民注意，但教士醒来后斥责他们的行为为亵渎。\n\n小队在拓荒地遭遇失控的无人机攻击，与拓荒者发生误会。罗德岛干员瑞恩介入调解。在对抗无人机时，玛露西尔用使魔吸引火力，却意外炸毁了玉米地，但炸出了爆米花。刻俄柏出现，与小队重逢。瑞恩认出刻俄柏并带她返回罗德岛。小队从拓荒者口中得知罗德岛就在附近。\n\n小队抵达罗德岛，遇到泥岩，得知大鲍勃的近况。他们与泥岩走散，遇到独眼巨人艾尔启，后者预言了前方的危险。大祭司将他们炸飞到厨房，他们遇到阿米娅和角峰。刻俄柏因体内特殊血脉暴走，小队与阿米娅联手压制她。阿米娅安抚刻俄柏后，邀请小队在罗德岛逗留。\n\n小队在罗德岛上分散活动。莱欧斯对干员们的种族特征产生好奇并提出奇怪问题，引起骚动。玛露西尔与蜜蜡交流护发心得。森西用天火的火烤栗子，引发小冲突。齐尔查克在酒吧遇到山、赫拉格、银灰和星熊。最后，森西用一路上收集的食材和回忆做了一顿大餐，小队与罗德岛干员们共享美食，并表达了救回法琳的决心。",
+  "events": [
+    {
+      "event": "莱欧斯小队从迷宫穿越到泰拉世界，遭遇源石虫群并逃入大鲍勃的木屋",
+      "type": "arrival",
+      "line_range": [
+        1,
+        104
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克",
+        "大鲍勃"
+      ],
+      "location": "大鲍勃的源石虫农场",
+      "significance": "故事开端，引入异世界设定和主要角色",
+      "is_imaginary": false
+    },
+    {
+      "event": "大鲍勃为莱欧斯小队烹饪辣炒源石虫，并介绍源石虫的养殖和食用方法",
+      "type": "cooking",
+      "line_range": [
+        160,
+        248
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克",
+        "大鲍勃"
+      ],
+      "location": "大鲍勃的木屋",
+      "significance": "展示泰拉世界的饮食文化，建立小队与本地人的联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "大鲍勃指引莱欧斯小队前往罗德岛寻求帮助",
+      "type": "revelation",
+      "line_range": [
+        264,
+        272
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克",
+        "大鲍勃"
+      ],
+      "location": "大鲍勃的木屋",
+      "significance": "确立小队的主要目标：找到罗德岛",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱欧斯小队在雨林遇到阿达克利斯部落，玛露西尔误食毒果中毒",
+      "type": "accident",
+      "line_range": [
+        283,
+        391
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克",
+        "大祭司",
+        "聪明的鳄鱼头兽人"
+      ],
+      "location": "阿卡胡拉雨林",
+      "significance": "引入阿达克利斯部落和大祭司角色，推动剧情发展",
+      "is_imaginary": false
+    },
+    {
+      "event": "森西用大祭司炖汤为玛露西尔解毒，大祭司揭示小队方向正确",
+      "type": "revelation",
+      "line_range": [
+        460,
+        538
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克",
+        "大祭司"
+      ],
+      "location": "阿达克利斯部落",
+      "significance": "玛露西尔解毒，大祭司确认罗德岛方向，推进主线",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱欧斯小队帮助雷姆必拓工厂制作黄金萝卜料理，换取搭车机会",
+      "type": "negotiation",
+      "line_range": [
+        607,
+        718
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克",
+        "厂主",
+        "工人A",
+        "工人B"
+      ],
+      "location": "雷姆必拓工厂",
+      "significance": "展示小队通过烹饪解决问题，获得交通工具",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛露西尔尝试使用D32钢手电筒，魔法失控导致小队掉入矿洞",
+      "type": "accident",
+      "line_range": [
+        657,
+        685
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克"
+      ],
+      "location": "雷姆必拓矿洞",
+      "significance": "引入D32钢和魔法系统，制造冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "小队在矿洞中利用酸液源石虫的黏液和D32钢手电筒制作出黄金萝卜替代品",
+      "type": "cooking",
+      "line_range": [
+        741,
+        810
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克"
+      ],
+      "location": "雷姆必拓矿洞",
+      "significance": "解决黄金萝卜问题，展示团队合作和创造力",
+      "is_imaginary": false
+    },
+    {
+      "event": "厂主被黄金萝卜感动，同意免费送小队一程",
+      "type": "departure",
+      "line_range": [
+        811,
+        856
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克",
+        "厂主",
+        "工人A",
+        "工人B"
+      ],
+      "location": "雷姆必拓工厂",
+      "significance": "小队获得交通工具，继续旅程",
+      "is_imaginary": false
+    },
+    {
+      "event": "在萨米黑森林，橡杯为小队解读密文板，指引他们前往北方寻找独眼巨人",
+      "type": "revelation",
+      "line_range": [
+        899,
+        977
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克",
+        "橡杯"
+      ],
+      "location": "萨米黑森林",
+      "significance": "引入萨米文化和预言系统，确立新目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "齐尔查克与队伍失散，被独眼巨人艾尔启所救，得知邪魔污染的存在",
+      "type": "revelation",
+      "line_range": [
+        1020,
+        1100
+      ],
+      "participants": [
+        "齐尔查克",
+        "艾尔启"
+      ],
+      "location": "萨米黑森林",
+      "significance": "揭示邪魔威胁，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱欧斯等人遇到刻俄柏，猎杀被邪魔污染的角兽并食用其肉",
+      "type": "hunting",
+      "line_range": [
+        1041,
+        1149
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "刻俄柏"
+      ],
+      "location": "萨米黑森林",
+      "significance": "引入刻俄柏角色，小队成员被邪魔污染",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱欧斯、玛露西尔和森西被邪魔污染，执意走向北方，齐尔查克和刻俄柏追赶",
+      "type": "disaster",
+      "line_range": [
+        1168,
+        1190
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克",
+        "刻俄柏"
+      ],
+      "location": "萨米黑森林",
+      "significance": "剧情转折，小队分裂，邪魔污染成为核心危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱欧斯小队在婆山镇定居，莱欧斯对墨魉产生浓厚兴趣",
+      "type": "investigation",
+      "line_range": [
+        1191,
+        1294
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "森西",
+        "齐尔查克",
+        "黎",
+        "墨魉"
+      ],
+      "location": "婆山镇",
+      "significance": "引入新地点和新生物，莱欧斯探索墨魉的习性",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛露西尔向黎讲述与法琳的友谊，并发现莱欧斯失踪和墨魉停止攻击",
+      "type": "revelation",
+      "line_range": [
+        1295,
+        1332
+      ],
+      "participants": [
+        "玛露西尔",
+        "黎"
+      ],
+      "location": "婆山镇",
+      "significance": "揭示玛露西尔与法琳的深厚感情，并引出莱欧斯失踪的悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱欧斯与墨魉玩耍并驯服它们，发现它们能产出果酒、果酱和果汁",
+      "type": "investigation",
+      "line_range": [
+        1317,
+        1452
+      ],
+      "participants": [
+        "莱欧斯",
+        "阿咬",
+        "小躁",
+        "偷闲",
+        "森西",
+        "齐尔查克",
+        "玛露西尔"
+      ],
+      "location": "婆山镇外",
+      "significance": "展示莱欧斯对魔物的独特理解和驯服能力，并发现墨魉的实用价值",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱欧斯质疑婆山镇的虚假性，黎认同并指出墨魉是画中杂念",
+      "type": "revelation",
+      "line_range": [
+        1460,
+        1505
+      ],
+      "participants": [
+        "莱欧斯",
+        "黎"
+      ],
+      "location": "婆山镇",
+      "significance": "揭示婆山镇是画中世界，墨魉是创造者的杂念，推动剧情转折",
+      "is_imaginary": false
+    },
+    {
+      "event": "神秘女子夕出现，将莱欧斯小队驱逐出画中世界",
+      "type": "departure",
+      "line_range": [
+        1508,
+        1535
+      ],
+      "participants": [
+        "夕",
+        "莱欧斯",
+        "玛露西尔",
+        "齐尔查克",
+        "森西",
+        "黎"
+      ],
+      "location": "婆山镇",
+      "significance": "结束画中世界剧情，将小队传送到新地点",
+      "is_imaginary": false
+    },
+    {
+      "event": "小队抵达盐风城，发现居民因食物匮乏而麻木",
+      "type": "investigation",
+      "line_range": [
+        1556,
+        1591
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "齐尔查克",
+        "森西"
+      ],
+      "location": "盐风城",
+      "significance": "引入新地点和当地居民的困境",
+      "is_imaginary": false
+    },
+    {
+      "event": "教士指引小队前往洞窟寻找食物",
+      "type": "revelation",
+      "line_range": [
+        1594,
+        1623
+      ],
+      "participants": [
+        "教士",
+        "莱欧斯",
+        "玛露西尔",
+        "齐尔查克",
+        "森西"
+      ],
+      "location": "盐风城",
+      "significance": "提供获取食物的线索，但暗示危险",
+      "is_imaginary": false
+    },
+    {
+      "event": "小队在洞窟中击败魔物并收集海鲜食材",
+      "type": "battle",
+      "line_range": [
+        1631,
+        1687
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "齐尔查克",
+        "森西"
+      ],
+      "location": "海边洞窟",
+      "significance": "获取食材，为后续烹饪做准备",
+      "is_imaginary": false
+    },
+    {
+      "event": "齐尔查克用宝箱怪陷阱困住教士",
+      "type": "ambush",
+      "line_range": [
+        1688,
+        1727
+      ],
+      "participants": [
+        "齐尔查克",
+        "教士"
+      ],
+      "location": "盐风城海滩",
+      "significance": "揭露教士的恶意，展示齐尔查克的机智",
+      "is_imaginary": false
+    },
+    {
+      "event": "小队在海边烹饪海鲜，教士醒来后斥责其为亵渎",
+      "type": "cooking",
+      "line_range": [
+        1728,
+        1855
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "齐尔查克",
+        "森西",
+        "教士"
+      ],
+      "location": "盐风城海滩",
+      "significance": "展示烹饪过程，引发与教士的冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "小队在拓荒地遭遇失控无人机攻击，与拓荒者发生误会",
+      "type": "battle",
+      "line_range": [
+        1870,
+        1941
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "齐尔查克",
+        "森西",
+        "拓荒者A",
+        "拓荒者B",
+        "瑞恩"
+      ],
+      "location": "拓荒地",
+      "significance": "引入新冲突和罗德岛干员瑞恩",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛露西尔用使魔吸引无人机火力，意外炸出爆米花",
+      "type": "planning",
+      "line_range": [
+        2027,
+        2091
+      ],
+      "participants": [
+        "玛露西尔",
+        "莱欧斯",
+        "齐尔查克",
+        "森西",
+        "瑞恩"
+      ],
+      "location": "拓荒地",
+      "significance": "展示玛露西尔的魔法创造力，解决危机但造成意外损失",
+      "is_imaginary": false
+    },
+    {
+      "event": "刻俄柏出现，与小队重逢，瑞恩带她返回罗德岛",
+      "type": "reunion",
+      "line_range": [
+        2092,
+        2154
+      ],
+      "participants": [
+        "刻俄柏",
+        "玛露西尔",
+        "莱欧斯",
+        "齐尔查克",
+        "森西",
+        "瑞恩"
+      ],
+      "location": "拓荒地",
+      "significance": "刻俄柏回归，为小队提供罗德岛线索",
+      "is_imaginary": false
+    },
+    {
+      "event": "小队从拓荒者口中得知罗德岛就在附近，决定追赶",
+      "type": "revelation",
+      "line_range": [
+        2155,
+        2169
+      ],
+      "participants": [
+        "玛露西尔",
+        "莱欧斯",
+        "拓荒者A"
+      ],
+      "location": "拓荒地",
+      "significance": "明确罗德岛位置，推动剧情向最终目标前进",
+      "is_imaginary": false
+    },
+    {
+      "event": "小队抵达罗德岛，遇到泥岩，得知大鲍勃的近况",
+      "type": "revelation",
+      "line_range": [
+        2170,
+        2219
+      ],
+      "participants": [
+        "莱欧斯",
+        "玛露西尔",
+        "齐尔查克",
+        "森西",
+        "泥岩"
+      ],
+      "location": "罗德岛",
+      "significance": "正式进入罗德岛，补充大鲍勃的后续故事",
+      "is_imaginary": false
+    },
+    {
+      "event": "小队与泥岩走散，遇到独眼巨人艾尔启，后者预言前方危险",
+      "type": "revelation",
+      "line_range": [
+        2226,
+        2239
+      ],
+      "participants": [
+        "齐尔查克",
+        "玛露西尔",
+        "莱欧斯",
+        "森西",
+        "艾尔启"
+      ],
+      "location": "罗德岛",
+      "significance": "引入艾尔启的预言，为后续冲突铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "大祭司将小队炸飞到厨房，他们遇到阿米娅和角峰",
+      "type": "departure",
+      "line_range": [
+        2244,
+        2303
+      ],
+      "participants": [
+        "大祭司",
+        "莱欧斯",
+        "玛露西尔",
+        "齐尔查克",
+        "森西",
+        "阿米娅",
+        "角峰"
+      ],
+      "location": "罗德岛",
+      "significance": "大祭司的报复行为，将小队送到关键剧情点",
+      "is_imaginary": false
+    },
+    {
+      "event": "刻俄柏因特殊血脉暴走，小队与阿米娅联手压制她",
+      "type": "battle",
+      "line_range": [
+        2304,
+        2322
+      ],
+      "participants": [
+        "刻俄柏",
+        "阿米娅",
+        "角峰",
+        "莱欧斯",
+        "玛露西尔",
+        "齐尔查克",
+        "森西"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示刻俄柏的特殊血脉，建立小队与罗德岛的信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅安抚刻俄柏，邀请小队在罗德岛逗留",
+      "type": "alliance",
+      "line_range": [
+        2323,
+        2387
+      ],
+      "participants": [
+        "阿米娅",
+        "刻俄柏",
+        "角峰",
+        "莱欧斯",
+        "玛露西尔",
+        "齐尔查克",
+        "森西"
+      ],
+      "location": "罗德岛",
+      "significance": "正式建立合作关系，为后续剧情铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "小队在罗德岛上分散活动，莱欧斯对干员种族提出奇怪问题",
+      "type": "character_development",
+      "line_range": [
+        2388,
+        2430
+      ],
+      "participants": [
+        "莱欧斯",
+        "好奇的干员们",
+        "凯尔希",
+        "阿米娅"
+      ],
+      "location": "罗德岛",
+      "significance": "展示莱欧斯对泰拉种族的痴迷，制造喜剧效果",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛露西尔与蜜蜡交流护发心得",
+      "type": "character_development",
+      "line_range": [
+        2431,
+        2436
+      ],
+      "participants": [
+        "玛露西尔",
+        "蜜蜡"
+      ],
+      "location": "罗德岛",
+      "significance": "展示玛露西尔在罗德岛上的社交活动",
+      "is_imaginary": false
+    },
+    {
+      "event": "森西用天火的火烤栗子引发小冲突",
+      "type": "character_development",
+      "line_range": [
+        2437,
+        2451
+      ],
+      "participants": [
+        "森西",
+        "天火",
+        "薄绿"
+      ],
+      "location": "罗德岛",
+      "significance": "展示森西的烹饪热情和与干员的互动",
+      "is_imaginary": false
+    },
+    {
+      "event": "齐尔查克在酒吧遇到山、赫拉格、银灰和星熊",
+      "type": "character_development",
+      "line_range": [
+        2452,
+        2470
+      ],
+      "participants": [
+        "齐尔查克",
+        "山",
+        "赫拉格",
+        "银灰",
+        "星熊"
+      ],
+      "location": "罗德岛酒吧",
+      "significance": "展示齐尔查克在罗德岛上的社交活动",
+      "is_imaginary": false
+    },
+    {
+      "event": "森西用一路上收集的食材和回忆做了一顿大餐，小队与罗德岛干员共享",
+      "type": "ceremony",
+      "line_range": [
+        2471,
+        2531
+      ],
+      "participants": [
+        "森西",
+        "刻俄柏",
+        "玛露西尔",
+        "莱欧斯",
+        "齐尔查克",
+        "阿米娅",
+        "凯尔希",
+        "博士"
+      ],
+      "location": "罗德岛食堂",
+      "significance": "通过食物连接回忆，强化小队羁绊，表达救回法琳的决心",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "莱欧斯",
+      "type": "npc",
+      "role_in_chapter": "小队队长，对魔物和食物充满好奇心，带领小队寻找回家的路",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "玛露西尔",
+      "type": "npc",
+      "role_in_chapter": "小队魔法师，性格急躁，关心法琳，努力适应泰拉世界的魔法系统",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "森西",
+      "type": "npc",
+      "role_in_chapter": "小队厨师，擅长烹饪，注重食材和料理过程，为小队提供食物支持",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "齐尔查克",
+      "type": "npc",
+      "role_in_chapter": "小队锁匠，谨慎务实，对预言持怀疑态度，在邪魔事件中保持清醒",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "大鲍勃",
+      "type": "npc",
+      "role_in_chapter": "源石虫养殖者，为小队提供食物和罗德岛的线索",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "大祭司",
+      "type": "npc",
+      "role_in_chapter": "阿达克利斯部落的智者，一只肥鸟，为玛露西尔解毒并指引方向",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "聪明的鳄鱼头兽人",
+      "type": "npc",
+      "role_in_chapter": "阿达克利斯部落成员，为小队提供信息",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "厂主",
+      "type": "npc",
+      "role_in_chapter": "雷姆必拓工厂老板，因工厂倒闭而沮丧，被小队的黄金萝卜感动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "工人A",
+      "type": "npc",
+      "role_in_chapter": "雷姆必拓工厂工人，怀念黄金萝卜传统",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "工人B",
+      "type": "npc",
+      "role_in_chapter": "雷姆必拓工厂工人，怀念黄金萝卜传统",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "橡杯",
+      "type": "npc",
+      "role_in_chapter": "萨满学徒，为小队解读密文板，指引他们前往北方",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾尔启",
+      "type": "npc",
+      "role_in_chapter": "独眼巨人，能预见厄运，救下齐尔查克并告知邪魔污染",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "刻俄柏",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在萨米森林打猎，与小队相遇并一起猎杀角兽",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "黎",
+      "type": "npc",
+      "role_in_chapter": "婆山镇居民，与玛露西尔关系友好",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿",
+      "type": "operator",
+      "role_in_chapter": "莱欧斯驯服的墨魉之一，能产出果酒",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "小躁",
+      "type": "npc",
+      "role_in_chapter": "莱欧斯驯服的墨魉之一",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "偷闲",
+      "type": "npc",
+      "role_in_chapter": "莱欧斯驯服的墨魉之一，能产出果汁",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "夕",
+      "type": "npc",
+      "role_in_chapter": "画中世界的创造者，将莱欧斯小队驱逐出画",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "教士",
+      "type": "npc",
+      "role_in_chapter": "指引小队前往洞窟，被齐尔查克用宝箱怪陷阱困住，斥责小队烹饪海鲜为亵渎",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "瑞恩",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，调解小队与拓荒者的冲突，认出并带回刻俄柏",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "拓荒者A",
+      "type": "npc",
+      "role_in_chapter": "与小队发生误会，后一起对抗钳兽和无人机，分享玉米",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "拓荒者B",
+      "type": "npc",
+      "role_in_chapter": "拓荒者A的同伴",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "泥岩",
+      "type": "operator",
+      "role_in_chapter": "接待小队，告知大鲍勃的近况",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，与小队联手压制刻俄柏，邀请小队逗留",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "角峰",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，协助压制刻俄柏",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛医生，被莱欧斯询问奇怪问题",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "蜜蜡",
+      "type": "operator",
+      "role_in_chapter": "与玛露西尔交流护发心得",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "天火",
+      "type": "operator",
+      "role_in_chapter": "因森西用她的火烤栗子而生气",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "薄绿",
+      "type": "operator",
+      "role_in_chapter": "试图安抚天火",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "山",
+      "type": "operator",
+      "role_in_chapter": "在酒吧遇到齐尔查克",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "赫拉格",
+      "type": "operator",
+      "role_in_chapter": "在酒吧喝酒",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "银灰",
+      "type": "operator",
+      "role_in_chapter": "在酒吧喝酒",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "星熊",
+      "type": "operator",
+      "role_in_chapter": "在酒吧遇到齐尔查克",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官，被森西劝告按时吃饭",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "源石虫",
+      "line_range": [
+        147,
+        204
+      ],
+      "discussion_summary": "大鲍勃介绍源石虫的养殖、处理、烹饪方法，强调其危害性和食用前的严格清洗步骤",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨米的意志/占卜",
+      "line_range": [
+        913,
+        919
+      ],
+      "discussion_summary": "橡杯解释萨米占卜只为生存，不用于他人未来，萨米意志会主动投来视线",
+      "is_substantive": true
+    },
+    {
+      "concept": "邪魔",
+      "line_range": [
+        1089,
+        1096
+      ],
+      "discussion_summary": "艾尔启解释邪魔是游荡的存在，会侵蚀和覆盖物质，被污染的生物会失去自我",
+      "is_substantive": true
+    },
+    {
+      "concept": "墨魉",
+      "line_range": [
+        1224,
+        1294
+      ],
+      "discussion_summary": "莱欧斯观察墨魉的形态、行为、习性，发现它们会复活，对镇子有敌意但也会偷吃果子",
+      "is_substantive": true
+    },
+    {
+      "concept": "墨魉的生态",
+      "line_range": [
+        1460,
+        1489
+      ],
+      "discussion_summary": "莱欧斯质疑墨魉没有完整的生态系统，如窝、繁衍方式、交流方式等，认为它们的存在是虚假的",
+      "is_substantive": true
+    },
+    {
+      "concept": "画中世界",
+      "line_range": [
+        1490,
+        1505
+      ],
+      "discussion_summary": "黎认同莱欧斯的观点，指出墨魉只是画中杂念，婆山镇是画中境，莱欧斯参破了此间之妙",
+      "is_substantive": true
+    },
+    {
+      "concept": "食物与记忆的连接",
+      "line_range": [
+        2484,
+        2504
+      ],
+      "discussion_summary": "森西解释吃到同样的料理会让人想起上一次吃下同样食物时的心情和回忆，食物与记忆连接在一起",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        267,
+        272
+      ],
+      "description": "大鲍勃介绍罗德岛是一个组织，办事处遍布各地，可以解决小队的问题"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1052,
+        1055
+      ],
+      "description": "刻俄柏自称生活在罗德岛，罗德岛是一艘巨大的舰船"
+    },
+    {
+      "faction": "阿达克利斯部落",
+      "line_range": [
+        345,
+        364
+      ],
+      "description": "鳄鱼头兽人介绍部落情况，大祭司是部落中最聪明的人"
+    },
+    {
+      "faction": "萨米部族",
+      "line_range": [
+        913,
+        919
+      ],
+      "description": "橡杯解释萨米部族的占卜传统，只为生存而占卜"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2155,
+        2169
+      ],
+      "description": "拓荒者A告知小队罗德岛就在几公里外，瑞恩是罗德岛干员"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2170,
+        2219
+      ],
+      "description": "小队抵达罗德岛，泥岩接待他们并告知大鲍勃的近况"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2377,
+        2387
+      ],
+      "description": "阿米娅代表罗德岛欢迎小队逗留"
+    },
+    {
+      "faction": "教会",
+      "line_range": [
+        1602,
+        1623
+      ],
+      "description": "教士自称是教会的成员，为人们带去大海的教诲，指引小队前往洞窟"
+    },
+    {
+      "faction": "教会",
+      "line_range": [
+        1688,
+        1693
+      ],
+      "description": "教士计划让小队成为教会的一员，为伊比利亚人带去启示"
+    }
+  ],
+  "locations": [
+    {
+      "location": "大鲍勃的源石虫农场",
+      "line_range": [
+        37,
+        49
+      ],
+      "description": "森西描述农场环境：有木屋、栅栏、黑色石头，栅栏用于防止生物挖洞逃走"
+    },
+    {
+      "location": "阿卡胡拉雨林",
+      "line_range": [
+        283,
+        292
+      ],
+      "description": "莱欧斯发现巨大的蘑菇，玛露西尔提醒丛林蘑菇有毒"
+    },
+    {
+      "location": "雷姆必拓",
+      "line_range": [
+        637,
+        640
+      ],
+      "description": "工人介绍雷姆必拓的特色是矿石和萝卜，黄金萝卜是传统美食"
+    },
+    {
+      "location": "萨米黑森林",
+      "line_range": [
+        865,
+        869
+      ],
+      "description": "玛露西尔抱怨黑森林潮湿、无光、树木多、魔物多"
+    },
+    {
+      "location": "无尽冰原",
+      "line_range": [
+        956,
+        963
+      ],
+      "description": "齐尔查克介绍无尽冰原是有去无回的地方，橡杯认为未知的路藏在无人生还之所"
+    },
+    {
+      "location": "婆山镇",
+      "line_range": [
+        1245,
+        1246
+      ],
+      "description": "黎询问玛露西尔他们来到婆山镇多久了，暗示时间流逝"
+    },
+    {
+      "location": "婆山镇",
+      "line_range": [
+        1295,
+        1535
+      ],
+      "description": "画中世界，小队在此定居，莱欧斯研究墨魉，后被夕驱逐"
+    },
+    {
+      "location": "盐风城",
+      "line_range": [
+        1556,
+        1591
+      ],
+      "description": "伊比利亚的城市，居民因食物匮乏而麻木，小队在此筹集补给"
+    },
+    {
+      "location": "海边洞窟",
+      "line_range": [
+        1631,
+        1687
+      ],
+      "description": "教士指引小队前往的洞窟，内有大量魔物和海鲜食材"
+    },
+    {
+      "location": "拓荒地",
+      "line_range": [
+        1870,
+        1941
+      ],
+      "description": "小队遭遇失控无人机和拓荒者的地点，后与刻俄柏重逢"
+    },
+    {
+      "location": "罗德岛",
+      "line_range": [
+        2170,
+        2322
+      ],
+      "description": "小队最终抵达的移动舰船，遇到泥岩、艾尔启、大祭司、阿米娅等人"
+    },
+    {
+      "location": "罗德岛食堂",
+      "line_range": [
+        2471,
+        2531
+      ],
+      "description": "森西用回忆做了一顿大餐，小队与罗德岛干员共享"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:46:33.980573+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 53337,
+    "tokens_out": 9657,
+    "elapsed_s": 75.06626319885254
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "大鲍勃",
+    "大祭司",
+    "聪明的鳄鱼头兽人",
+    "厂主",
+    "工人A",
+    "工人B",
+    "橡杯",
+    "艾尔启",
+    "黎",
+    "小躁",
+    "偷闲",
+    "教士",
+    "瑞恩",
+    "拓荒者A",
+    "拓荒者B",
+    "博士"
+  ]
+}

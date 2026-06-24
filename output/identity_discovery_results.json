@@ -1,0 +1,98 @@
+[
+  {
+    "unmapped_name": "博士",
+    "operator": "博士",
+    "relation": "alias",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "费德里科",
+    "operator": "圣约送葬人",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "Logos",
+    "operator": "Logos",
+    "relation": "alias",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "费斯特",
+    "operator": "白铁",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "恩雅",
+    "operator": "初雪",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "拉芙希妮",
+    "operator": "苇草",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "乔迪",
+    "operator": "流明",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "伊西多",
+    "operator": "棘刺",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "拉维妮娅",
+    "operator": "斥罪",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "莱昂图索",
+    "operator": "伺夜",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "阿黛尔",
+    "operator": "纯烬艾雅法拉",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "爱布拉娜",
+    "operator": "焰影苇草",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "克洛维希娅",
+    "operator": "塑心",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "卢西恩",
+    "operator": "傀影",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "艾泽尔",
+    "operator": "见行者",
+    "relation": "real_name",
+    "confidence": "high"
+  },
+  {
+    "unmapped_name": "诺希斯",
+    "operator": "灵知",
+    "relation": "real_name",
+    "confidence": "high"
+  }
+]

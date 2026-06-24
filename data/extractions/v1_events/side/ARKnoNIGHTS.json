@@ -1,0 +1,202 @@
+{
+  "summary": "本章以博士的苏醒开场，一个神秘声音（可能是凯尔希或阿米娅）警告博士他正处于危险中，并提醒他记住4月1日这个关键日期。随后场景切换到整合运动成员凯文和雪怪小队，他们在一处装置中发现了博士，并成功将其救出。凯文向博士解释了整合运动的立场：他们认为罗德岛是感染者的最大敌人，并计划利用博士来对抗罗德岛。然而，罗德岛的PRTS系统立即启动方案B，派出Thermal-EX、Castle-3和Lancet-2等机器人部队进行夺还行动，并计划利用天灾消灭整合运动。在撤退过程中，凯文与博士建立了初步信任，博士开始思考战术，最终决定帮助整合运动击败罗德岛。",
+  "events": [
+    {
+      "event": "神秘声音警告博士关于4月1日的危险，并提醒他记住自己的身份",
+      "type": "revelation",
+      "line_range": [
+        1,
+        13
+      ],
+      "participants": [
+        "博士",
+        "神秘声音"
+      ],
+      "location": "未知",
+      "significance": "揭示博士失忆状态和关键日期4月1日的重要性",
+      "is_imaginary": false
+    },
+    {
+      "event": "整合运动成员凯文和雪怪小队在装置中发现并救出博士",
+      "type": "rescue",
+      "line_range": [
+        14,
+        44
+      ],
+      "participants": [
+        "凯文",
+        "雪怪小队成员",
+        "博士"
+      ],
+      "location": "切尔诺伯格某装置内",
+      "significance": "博士被整合运动从罗德岛的装置中救出，建立初步接触",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯文向博士解释整合运动的立场和罗德岛的威胁",
+      "type": "revelation",
+      "line_range": [
+        45,
+        65
+      ],
+      "participants": [
+        "凯文",
+        "博士"
+      ],
+      "location": "切尔诺伯格",
+      "significance": "揭示整合运动对罗德岛的敌视态度和博士被争夺的原因",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛PRTS系统启动方案B，派出机器人部队夺还博士并计划利用天灾消灭整合运动",
+      "type": "ambush",
+      "line_range": [
+        66,
+        73
+      ],
+      "participants": [
+        "PRTS",
+        "Thermal-EX",
+        "Castle-3",
+        "Lancet-2"
+      ],
+      "location": "切尔诺伯格",
+      "significance": "罗德岛采取激进手段夺回博士，显示其控制力",
+      "is_imaginary": false
+    },
+    {
+      "event": "整合运动在罗德岛攻击下撤退，凯文与博士建立信任并请求博士帮助击败罗德岛",
+      "type": "retreat",
+      "line_range": [
+        74,
+        100
+      ],
+      "participants": [
+        "凯文",
+        "雪怪小队成员",
+        "整合运动战士",
+        "博士"
+      ],
+      "location": "切尔诺伯格",
+      "significance": "博士决定帮助整合运动，剧情转向合作对抗罗德岛",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "被整合运动从罗德岛装置中救出的失忆人物，被称为恶灵，最终决定帮助整合运动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯文",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，救出博士并解释整合运动立场，与博士建立信任",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "神秘声音",
+      "type": "npc",
+      "role_in_chapter": "警告博士关于4月1日的危险，提醒他记住身份",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "雪怪小队成员",
+      "type": "npc",
+      "role_in_chapter": "整合运动雪怪小队成员，参与救援和撤退行动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "整合运动战士",
+      "type": "npc",
+      "role_in_chapter": "整合运动普通战士，参与撤退行动",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "恶灵",
+      "line_range": [
+        46,
+        52
+      ],
+      "discussion_summary": "凯文称博士为恶灵，解释罗德岛计划复活一个超级可怕的恶灵来增强实力，整合运动提前赶到试图抢夺博士",
+      "is_substantive": true
+    },
+    {
+      "concept": "PRTS系统",
+      "line_range": [
+        56,
+        68
+      ],
+      "discussion_summary": "凯文提到罗德岛船上的P什么系统控制所有人导致罗德岛改变，随后PRTS系统接入并启动方案B",
+      "is_substantive": true
+    },
+    {
+      "concept": "天灾",
+      "line_range": [
+        72,
+        72
+      ],
+      "discussion_summary": "Lancet-2提到让天灾消灭整合运动，显示罗德岛利用天灾作为武器",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "整合运动",
+      "line_range": [
+        44,
+        65
+      ],
+      "description": "凯文自我介绍为整合运动成员，解释整合运动认为罗德岛是感染者最大敌人，领袖塔露拉和阿丽娜计划抢夺博士"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        50,
+        73
+      ],
+      "description": "凯文描述罗德岛为感染者最大敌人，计划复活恶灵，PRTS系统控制所有人；随后PRTS启动方案B派出机器人部队夺还博士"
+    },
+    {
+      "faction": "雪怪小队",
+      "line_range": [
+        74,
+        77
+      ],
+      "description": "雪怪小队成员通知凯文撤退，提到大姐头和领袖正在抵挡罗德岛攻击"
+    }
+  ],
+  "locations": [
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        71,
+        72
+      ],
+      "description": "Castle-3命令将整合运动留在切尔诺伯格，Lancet-2计划让天灾消灭他们，显示切尔诺伯格是当前战场"
+    }
+  ],
+  "chapter": "ARKnoNIGHTS",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:58:59.712936+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 2738,
+    "tokens_out": 1562,
+    "elapsed_s": 14.765971660614014
+  },
+  "taxonomy_type": "light",
+  "_unmatched_names": [
+    "博士",
+    "凯文",
+    "神秘声音",
+    "雪怪小队成员",
+    "整合运动战士"
+  ]
+}

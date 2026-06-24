@@ -1,0 +1,1551 @@
+{
+  "chapter": "淬火尘霾",
+  "category": "main",
+  "batch_count": 2,
+  "summary": "本章以维多利亚首都伦蒂尼姆为舞台，通过多线叙事展现了萨卡兹占领下的城市图景。一条线索聚焦于二十多年前的往事：坎伯兰公爵与国王在政变前夕的对话，以及年幼的阿勒黛·坎伯兰在宴会上的遭遇，她无意中听到了一场针对王室的阴谋，并目睹了亚历山德莉娜公主（未来的推进之王）携国剑「诸王之息」归来的「奇迹」。另一条线索描绘了萨卡兹占领后的伦蒂尼姆：学校教师戈尔丁与作家海蒂的友谊，以及她与城防军指挥官莱托中校在理念上的冲突；军工厂女工头凯瑟琳与孙子费斯特因反抗萨卡兹而产生的代际矛盾，以及费斯特加入「伦蒂尼姆市民自救军」后的回归。\n\n罗德岛与自救军结盟，共同应对萨卡兹的威胁。阿米娅向自救军指挥官克洛维希娅揭示了碎片大厦的真相——它能诱发人为天灾，是萨卡兹的终极武器。同时，阿勒黛·坎伯兰作为自救军的关键人物，在公爵府与罗德岛和推进之王会面，她计划利用雅特利亚斯家族的钥匙寻找传说中的「诸王之息」，并试图通过走私商人获取武器。推进之王（维娜）向克洛维希娅坦白了她的阿斯兰王室身份，并帮助阿勒黛保住了坎伯兰家的蒸汽甲胄。\n\n萨卡兹的压迫日益加剧。莱托中校在变形者集群的监视下，被迫对贵族进行审查，血魔大君亲自出手，以血腥手段镇压。自救军和罗德岛在行动中遭遇萨卡兹精锐部队的伏击，推进之王与阿勒黛在战斗中并肩作战，加深了彼此的信任。凯瑟琳在萨卡兹的威胁下，向费斯特透露了二十六年前工人抗议的真相，并最终提供了关于萨卡兹隐藏补给线的线索。本章以血魔大君在坎伯兰公爵府外焚烧贵族的场景结束，预示着全面战争的临近。\n\n本段剧情围绕三条主线展开。第一条线是罗德岛与自救军对城防军指挥塔的突袭行动，阿米娅、Logos、阿斯卡纶与血魔大君和曼弗雷德激烈交战，可露希尔试图破解系统获取萨卡兹补给线情报。行动中，凯尔希突然出现拦截特雷西斯，但被重创，食腐者大军提前回城，战局急转直下。第二条线是推进之王与阿勒黛等人深入王宫地下的诸王长眠之所寻找诸王之息。他们发现了蒸汽骑士被维多利亚背叛、全军覆没的真相，并遭遇了最后一位幸存但神志不清的蒸汽骑士。阿勒黛在关键时刻背叛，试图夺取诸王之息，但在与蒸汽骑士的战斗中，她最终选择牺牲自己，掩护推进之王等人带着剑离开。第三条线是军工厂的救援行动，费斯特带领工人成功救出凯瑟琳和其他工人代表，凯瑟琳与明椒的对话揭示了萨卡兹雇佣兵内部的迷茫与人性。此外，闪灵与赦罪师家族的决裂、戈尔丁对教育意义的反思、以及苇草和威灵顿公爵等势力的动向，为后续剧情埋下伏笔。",
+  "events": [
+    {
+      "event": "国王与坎伯兰公爵讨论维多利亚的危机，并透露亚历山德莉娜公主和国剑的失踪是其安排。",
+      "type": "political_intrigue",
+      "line_range": [
+        1,
+        39
+      ],
+      "participants": [
+        "激昂的声音",
+        "低沉的声音",
+        "维多利亚军官"
+      ],
+      "location": "王宫",
+      "significance": "揭示国王对政变预感的应对策略，为公主的成长和国剑的象征意义埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "年幼的阿勒黛在宴会中偷听到军官与商人密谋政变，并目睹亚历山德莉娜公主携国剑归来。",
+      "type": "revelation",
+      "line_range": [
+        116,
+        161
+      ],
+      "participants": [
+        "阿勒黛",
+        "面目模糊的军官",
+        "看不清脸的商人"
+      ],
+      "location": "坎伯兰公爵府",
+      "significance": "阿勒黛首次接触政治阴谋，公主的归来被视为「奇迹」，巩固了王室权威。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿勒黛在花园中看到金色幻影，并誓言要成为蒸汽骑士，守护伦蒂尼姆。",
+      "type": "character_development",
+      "line_range": [
+        162,
+        238
+      ],
+      "participants": [
+        "阿勒黛",
+        "侍女艾尔希"
+      ],
+      "location": "坎伯兰公爵府花园",
+      "significance": "展现阿勒黛的童年理想和决心，与成年后的处境形成对比。",
+      "is_imaginary": false
+    },
+    {
+      "event": "二十多年后，伦蒂尼姆的孩子们在街头模仿处决国王的游戏，反映出社会动荡。",
+      "type": "reflection",
+      "line_range": [
+        239,
+        272
+      ],
+      "participants": [
+        "顽皮的孩子",
+        "天真的孩子",
+        "茉莉",
+        "戈尔丁"
+      ],
+      "location": "学校门廊",
+      "significance": "通过儿童游戏侧面展现政变后社会对王权的态度变化。",
+      "is_imaginary": false
+    },
+    {
+      "event": "戈尔丁救助受伤的海蒂，海蒂透露斯塔福德公爵军队已进入伦蒂尼姆，战争即将爆发。",
+      "type": "revelation",
+      "line_range": [
+        327,
+        404
+      ],
+      "participants": [
+        "海蒂",
+        "戈尔丁"
+      ],
+      "location": "学校办公室",
+      "significance": "揭示公爵内战即将爆发的危机，海蒂作为情报人员的身份曝光。",
+      "is_imaginary": false
+    },
+    {
+      "event": "萨卡兹雇佣兵控制军工厂，凯瑟琳与孙子费斯特因反抗方式产生激烈冲突。",
+      "type": "confrontation",
+      "line_range": [
+        478,
+        583
+      ],
+      "participants": [
+        "凯瑟琳",
+        "费斯特",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "海布里区军工厂",
+      "significance": "展现占领区工人阶层的生存困境和代际理念冲突。",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱托中校主持军工厂交接仪式，凯瑟琳被迫签字，萨卡兹旗帜升起。",
+      "type": "ceremony",
+      "line_range": [
+        584,
+        654
+      ],
+      "participants": [
+        "莱托中校",
+        "凯瑟琳",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "海布里区军工厂",
+      "significance": "象征萨卡兹对伦蒂尼姆工业体系的正式接管。",
+      "is_imaginary": false
+    },
+    {
+      "event": "特雷西斯与特蕾西娅在伦蒂尼姆宫殿中讨论萨卡兹的未来与理想。",
+      "type": "ideological_clash",
+      "line_range": [
+        655,
+        749
+      ],
+      "participants": [
+        "特雷西斯",
+        "特蕾西娅"
+      ],
+      "location": "伦蒂尼姆宫殿",
+      "significance": "揭示萨卡兹内部关于统治与共存路线的根本分歧。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅向克洛维希娅揭示碎片大厦能诱发人为天灾的真相。",
+      "type": "revelation",
+      "line_range": [
+        750,
+        769
+      ],
+      "participants": [
+        "阿米娅",
+        "克洛维希娅"
+      ],
+      "location": "坎伯兰公爵府",
+      "significance": "明确罗德岛和自救军的核心威胁和目标。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿勒黛决定卖掉先祖的蒸汽甲胄以换取武器，但被推进之王阻止。",
+      "type": "sacrifice",
+      "line_range": [
+        901,
+        978
+      ],
+      "participants": [
+        "阿勒黛",
+        "克洛维希娅",
+        "管家艾尔希",
+        "推进之王"
+      ],
+      "location": "坎伯兰公爵府",
+      "significance": "展现阿勒黛为事业牺牲家族荣耀的决心，以及推进之王对她的支持。",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特返回军工厂与凯瑟琳重逢，并请求她帮助寻找萨卡兹的隐藏补给线。",
+      "type": "reunion",
+      "line_range": [
+        996,
+        1013
+      ],
+      "participants": [
+        "费斯特",
+        "凯瑟琳"
+      ],
+      "location": "海布里区军工厂",
+      "significance": "祖孙和解，费斯特的成长得到凯瑟琳的初步认可。",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛与自救军在接近城防军指挥塔时遭遇萨卡兹血魔部队伏击。",
+      "type": "ambush",
+      "line_range": [
+        1024,
+        1050
+      ],
+      "participants": [
+        "阿米娅",
+        "罗德岛干员",
+        "自救军战士",
+        "萨卡兹战士"
+      ],
+      "location": "伦蒂尼姆街道",
+      "significance": "展示萨卡兹的军事力量和罗德岛面临的直接危险。",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王与格拉斯哥帮成员威胁商人珀蒂，迫使他放弃购买蒸汽甲胄并继续合作。",
+      "type": "negotiation",
+      "line_range": [
+        1094,
+        1147
+      ],
+      "participants": [
+        "推进之王",
+        "伦蒂尼姆商人",
+        "因陀罗",
+        "摩根",
+        "达格达"
+      ],
+      "location": "伦蒂尼姆街道",
+      "significance": "展现推进之王作为领袖的决断力和对同伴的保护。",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱托中校访问学校，与戈尔丁就文明与战争展开辩论，变形者集群伪装成茉莉监视。",
+      "type": "confrontation",
+      "line_range": [
+        1166,
+        1214
+      ],
+      "participants": [
+        "戈尔丁",
+        "莱托中校",
+        "茉莉"
+      ],
+      "location": "学校教室",
+      "significance": "深化莱托中校的复杂角色，展现萨卡兹对城市的渗透。",
+      "is_imaginary": false
+    },
+    {
+      "event": "变形者集群与神秘观众在舞台上进行关于命运与选择的即兴对话。",
+      "type": "ideological_clash",
+      "line_range": [
+        1265,
+        1293
+      ],
+      "participants": [
+        "茉莉",
+        "神秘观众"
+      ],
+      "location": "学校舞台",
+      "significance": "以戏剧形式探讨萨卡兹与维多利亚的未来，充满象征意义。",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉斯哥帮与自救军战士因行动方式产生内部矛盾。",
+      "type": "confrontation",
+      "line_range": [
+        1294,
+        1338
+      ],
+      "participants": [
+        "因陀罗",
+        "摩根",
+        "达格达",
+        "自救军战士"
+      ],
+      "location": "自救军基地",
+      "significance": "展现同盟内部因出身和理念不同而产生的摩擦。",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱托中校宣布停止贵族宴会，萨卡兹开始对贵族进行审查，阿勒黛意识到战争已至。",
+      "type": "political_intrigue",
+      "line_range": [
+        1339,
+        1392
+      ],
+      "participants": [
+        "阿勒黛",
+        "莱托中校",
+        "市侩的贵族",
+        "精明的贵族"
+      ],
+      "location": "贵族宴会厅",
+      "significance": "标志萨卡兹统治策略的转变，从安抚转向高压。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯瑟琳被萨卡兹雇佣兵带走，费斯特和博士被迫躲藏。",
+      "type": "arrest",
+      "line_range": [
+        1393,
+        1484
+      ],
+      "participants": [
+        "凯瑟琳",
+        "费斯特",
+        "萨卡兹雇佣兵队长",
+        "明椒"
+      ],
+      "location": "海布里区军工厂",
+      "significance": "萨卡兹开始清除潜在威胁，凯瑟琳面临危险。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯瑟琳向费斯特揭示废弃车间的秘密，讲述二十六年前工人抗议的真相。",
+      "type": "flashback",
+      "line_range": [
+        1485,
+        1553
+      ],
+      "participants": [
+        "凯瑟琳",
+        "费斯特"
+      ],
+      "location": "废弃的蒸汽甲胄车间",
+      "significance": "揭示费斯特父亲的死亡真相，深化凯瑟琳的动机和创伤。",
+      "is_imaginary": false
+    },
+    {
+      "event": "自救军和罗德岛在仓库区遭遇萨卡兹精锐部队袭击，推进之王与阿勒黛并肩作战。",
+      "type": "battle",
+      "line_range": [
+        1554,
+        1606
+      ],
+      "participants": [
+        "推进之王",
+        "阿勒黛",
+        "克洛维希娅",
+        "因陀罗",
+        "摩根",
+        "达格达",
+        "自救军战士",
+        "萨卡兹战士"
+      ],
+      "location": "伦蒂尼姆仓库区",
+      "significance": "展示萨卡兹精锐部队的战斗力，推进之王和阿勒黛的默契配合。",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王与阿勒黛在公爵府疗伤，两人进行了一次关于过去与未来的深入对话。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1704,
+        1748
+      ],
+      "participants": [
+        "推进之王",
+        "阿勒黛"
+      ],
+      "location": "坎伯兰公爵府",
+      "significance": "加深两位女性领袖之间的信任和情感纽带。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿勒黛与管家艾尔希在花园中回忆过去，阿勒黛表达了对成长的无奈和对未来的迷茫。",
+      "type": "reflection",
+      "line_range": [
+        1749,
+        1838
+      ],
+      "participants": [
+        "阿勒黛",
+        "管家艾尔希"
+      ],
+      "location": "坎伯兰公爵府花园",
+      "significance": "深入阿勒黛的内心世界，展现她背负的沉重过去和矛盾。",
+      "is_imaginary": false
+    },
+    {
+      "event": "血魔大君在坎伯兰公爵府外焚烧贵族，莱托中校被迫协助。",
+      "type": "massacre",
+      "line_range": [
+        1839,
+        1852
+      ],
+      "participants": [
+        "血魔大君",
+        "莱托中校"
+      ],
+      "location": "坎伯兰公爵府外",
+      "significance": "萨卡兹王庭的恐怖统治正式开始，莱托中校的立场更加复杂。",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特带领工人成功救出凯瑟琳，凯瑟琳与萨卡兹雇佣兵明椒进行了一场关于战争与选择的对话",
+      "type": "rescue",
+      "line_range": [
+        1896,
+        2017
+      ],
+      "participants": [
+        "费斯特",
+        "凯瑟琳",
+        "明椒",
+        "萨卡兹雇佣兵队长",
+        "伦蒂尼姆工人",
+        "阿斯卡纶"
+      ],
+      "location": "海布里区军工厂",
+      "significance": "展现了普通人在战争中的抉择与人性，明椒的迷茫为后续转变埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "闪灵回到赦罪师据点，与赦罪师和萨卢斯进行家庭聚餐，最终决裂",
+      "type": "confrontation",
+      "line_range": [
+        2164,
+        2280
+      ],
+      "participants": [
+        "闪灵",
+        "赦罪师",
+        "萨卢斯"
+      ],
+      "location": "赦罪师据点",
+      "significance": "揭示了闪灵的过去、赦罪师的研究目标（魔王真相），以及闪灵与赦罪师家族的彻底决裂",
+      "is_imaginary": false
+    },
+    {
+      "event": "血魔大君在宴会上羞辱并威胁莱托中校，将其比作笼中羽兽",
+      "type": "confrontation",
+      "line_range": [
+        2281,
+        2312
+      ],
+      "participants": [
+        "血魔大君",
+        "莱托中校",
+        "维多利亚士兵"
+      ],
+      "location": "伦蒂尼姆贵族宴会",
+      "significance": "展现了萨卡兹对城防军的绝对压制和莱托中校的屈辱处境",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德向赫德雷透露已发现罗德岛的行动，并警告他不要轻举妄动",
+      "type": "planning",
+      "line_range": [
+        2313,
+        2335
+      ],
+      "participants": [
+        "曼弗雷德",
+        "赫德雷"
+      ],
+      "location": "萨卡兹军事委员会",
+      "significance": "显示萨卡兹已掌握罗德岛动向，赫德雷的双重间谍身份面临考验",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛与自救军集结，准备对城防军指挥塔发动突袭",
+      "type": "planning",
+      "line_range": [
+        2336,
+        2360
+      ],
+      "participants": [
+        "可露希尔",
+        "阿斯卡纶",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛临时据点",
+      "significance": "明确了突袭指挥塔、获取补给线情报的行动目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿勒黛因艾尔希之死陷入消沉，与推进之王进行了一场关于使命与未来的对话",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2361,
+        2390
+      ],
+      "participants": [
+        "阿勒黛",
+        "推进之王"
+      ],
+      "location": "罗德岛临时据点",
+      "significance": "阿勒黛的脆弱与迷茫，推进之王给予承诺，为后续背叛铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "克洛维希娅向推进之王提出关于「维多利亚」定义的哲学质问",
+      "type": "ideological_clash",
+      "line_range": [
+        2391,
+        2403
+      ],
+      "participants": [
+        "克洛维希娅",
+        "推进之王"
+      ],
+      "location": "罗德岛临时据点",
+      "significance": "探讨了王权、国家与人民的关系，深化推进之王的角色思考",
+      "is_imaginary": false
+    },
+    {
+      "event": "戈尔丁在街头目睹战争创伤，茉莉安慰并鼓励她继续教育",
+      "type": "reflection",
+      "line_range": [
+        2404,
+        2417
+      ],
+      "participants": [
+        "戈尔丁",
+        "茉莉"
+      ],
+      "location": "伦蒂尼姆街头",
+      "significance": "展现战争对普通市民的影响，以及教育者的坚持",
+      "is_imaginary": false
+    },
+    {
+      "event": "费斯特与凯瑟琳告别，费斯特表达了对未来的坚定信念和对奶奶的敬意",
+      "type": "farewell",
+      "line_range": [
+        2418,
+        2458
+      ],
+      "participants": [
+        "费斯特",
+        "凯瑟琳"
+      ],
+      "location": "海布里区",
+      "significance": "费斯特的成长与觉悟，两代人的和解与传承",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅在行动前向博士表达了对再次面对特蕾西娅的复杂心情和决心",
+      "type": "reflection",
+      "line_range": [
+        2459,
+        2477
+      ],
+      "participants": [
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛临时据点",
+      "significance": "阿米娅的心理准备，为后续与特蕾西娅的冲突铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱托中校与士兵交谈，士兵表达了对萨卡兹的恐惧和对莱托的信任",
+      "type": "reflection",
+      "line_range": [
+        2478,
+        2493
+      ],
+      "participants": [
+        "莱托中校",
+        "维多利亚士兵"
+      ],
+      "location": "城防军指挥塔",
+      "significance": "展现城防军内部的士气和对莱托的依赖",
+      "is_imaginary": false
+    },
+    {
+      "event": "自救军突袭城防军指挥塔，克洛维希娅试图说服维多利亚士兵倒戈",
+      "type": "confrontation",
+      "line_range": [
+        2494,
+        2530
+      ],
+      "participants": [
+        "洛洛",
+        "克洛维希娅",
+        "维多利亚士兵"
+      ],
+      "location": "城防军指挥塔",
+      "significance": "自救军与城防军的正面冲突，克洛维希娅的攻心战术",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德与阿斯卡纶在指挥塔对峙，曼弗雷德指责阿斯卡纶背叛卡兹戴尔",
+      "type": "confrontation",
+      "line_range": [
+        2531,
+        2541
+      ],
+      "participants": [
+        "曼弗雷德",
+        "阿斯卡纶"
+      ],
+      "location": "城防军指挥塔",
+      "significance": "揭示阿斯卡纶的过去和她的立场，萨卡兹内部的分裂",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王与阿勒黛等人通过密道进入王宫地下，寻找诸王之息",
+      "type": "infiltration",
+      "line_range": [
+        2542,
+        2641
+      ],
+      "participants": [
+        "推进之王",
+        "阿勒黛",
+        "铅踝",
+        "达格达",
+        "摩根",
+        "因陀罗"
+      ],
+      "location": "王宫地下密道",
+      "significance": "推进之王回忆起童年片段，阿勒黛讲述诸王之息的传说",
+      "is_imaginary": false
+    },
+    {
+      "event": "莱托中校向特雷西斯坦白自己高卢遗民的身份，寻求合作以重建高卢",
+      "type": "revelation",
+      "line_range": [
+        2642,
+        2676
+      ],
+      "participants": [
+        "特雷西斯",
+        "莱托中校"
+      ],
+      "location": "伦蒂尼姆宫殿",
+      "significance": "揭示莱托中校的真实动机和背景，萨卡兹与高卢遗民的联盟",
+      "is_imaginary": false
+    },
+    {
+      "event": "指挥塔战场激战，可露希尔骇入系统，费斯特带领工程小组控制自行炮",
+      "type": "battle",
+      "line_range": [
+        2677,
+        2712
+      ],
+      "participants": [
+        "可露希尔",
+        "费斯特",
+        "洛洛",
+        "克洛维希娅",
+        "自救军战士",
+        "维多利亚士兵",
+        "萨卡兹战士"
+      ],
+      "location": "城防军指挥塔",
+      "significance": "战场上的技术对抗，费斯特的成长与贡献",
+      "is_imaginary": false
+    },
+    {
+      "event": "血魔大君与阿米娅和Logos在指挥塔上层交战，Logos以女妖之主的身份回应血魔的挑衅",
+      "type": "confrontation",
+      "line_range": [
+        2713,
+        2750
+      ],
+      "participants": [
+        "血魔大君",
+        "阿米娅",
+        "Logos",
+        "莱托中校"
+      ],
+      "location": "城防军指挥塔上层",
+      "significance": "Logos表明立场，追随特蕾西娅的理想而非魔王，王庭间的理念冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王一行在诸王长眠之所发现大量萨卡兹尸体和蒸汽骑士的残骸，揭示蒸汽骑士被维多利亚背叛的真相",
+      "type": "revelation",
+      "line_range": [
+        2751,
+        2811
+      ],
+      "participants": [
+        "推进之王",
+        "阿勒黛",
+        "达格达",
+        "铅踝",
+        "因陀罗",
+        "摩根"
+      ],
+      "location": "诸王长眠之所",
+      "significance": "揭示蒸汽骑士覆灭的真相，维多利亚的自我背叛，推进之王向牺牲的骑士致敬",
+      "is_imaginary": false
+    },
+    {
+      "event": "达格达与铅踝在墓穴中交谈，达格达倾诉塔楼骑士的悲剧和幸存者的愧疚",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        3074,
+        3115
+      ],
+      "participants": [
+        "达格达",
+        "铅踝"
+      ],
+      "location": "诸王长眠之所",
+      "significance": "达格达的角色深化，幸存者的痛苦与铅踝的安慰",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿勒黛与推进之王讨论蒸汽骑士和维多利亚的背叛，阿勒黛对蒸汽骑士的崇敬与困惑",
+      "type": "reflection",
+      "line_range": [
+        3116,
+        3137
+      ],
+      "participants": [
+        "阿勒黛",
+        "推进之王"
+      ],
+      "location": "诸王长眠之所",
+      "significance": "阿勒黛对蒸汽骑士理想的幻灭，推进之王对维多利亚的批判",
+      "is_imaginary": false
+    },
+    {
+      "event": "食腐者大军提前回城，闪灵出手阻挡，阿米娅受到特蕾西娅力量影响而失控",
+      "type": "battle",
+      "line_range": [
+        3138,
+        3246
+      ],
+      "participants": [
+        "闪灵",
+        "费斯特",
+        "可露希尔",
+        "阿米娅",
+        "Logos",
+        "阿斯卡纶",
+        "血魔大君",
+        "特雷西斯",
+        "凯尔希"
+      ],
+      "location": "城防军指挥塔战场",
+      "significance": "战局恶化，阿米娅被特蕾西娅影响，凯尔希被特雷西斯重创，萨卡兹众魂力量显现",
+      "is_imaginary": false
+    },
+    {
+      "event": "特雷西斯重伤凯尔希，宣称会再次杀死她，并宣布计划即将开始",
+      "type": "confrontation",
+      "line_range": [
+        3227,
+        3246
+      ],
+      "participants": [
+        "特雷西斯",
+        "凯尔希"
+      ],
+      "location": "城防军指挥塔",
+      "significance": "凯尔希与特雷西斯的宿怨，特雷西斯对萨卡兹未来的决断",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛和自救军被迫撤退，可露希尔和费斯特掩护博士和阿米娅撤离",
+      "type": "retreat",
+      "line_range": [
+        3247,
+        3267
+      ],
+      "participants": [
+        "可露希尔",
+        "费斯特",
+        "博士",
+        "阿米娅",
+        "特雷西斯",
+        "曼弗雷德"
+      ],
+      "location": "城防军指挥塔",
+      "significance": "行动失败，罗德岛损失惨重，萨卡兹占据上风",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿勒黛在诸王长眠之所背叛推进之王，试图夺取诸王之息，揭示她背后另有主使",
+      "type": "betrayal",
+      "line_range": [
+        3268,
+        3365
+      ],
+      "participants": [
+        "阿勒黛",
+        "推进之王",
+        "达格达",
+        "铅踝"
+      ],
+      "location": "诸王长眠之所",
+      "significance": "阿勒黛的背叛，揭示她受大公爵指使，推进之王与阿勒黛的友谊破裂",
+      "is_imaginary": false
+    },
+    {
+      "event": "最后的蒸汽骑士出现，攻击推进之王一行人，阿勒黛在绝望中决定面对自己的命运",
+      "type": "confrontation",
+      "line_range": [
+        3366,
+        3488
+      ],
+      "participants": [
+        "最后的蒸汽骑士",
+        "推进之王",
+        "阿勒黛",
+        "达格达",
+        "铅踝",
+        "摩根",
+        "因陀罗"
+      ],
+      "location": "诸王长眠之所",
+      "significance": "蒸汽骑士的悲剧，阿勒黛的自我救赎，推进之王鼓励阿勒黛摆脱使命的束缚",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿勒黛牺牲自己，与最后的蒸汽骑士同归于尽，掩护推进之王等人带着诸王之息离开",
+      "type": "sacrifice",
+      "line_range": [
+        3489,
+        3537
+      ],
+      "participants": [
+        "最后的蒸汽骑士",
+        "推进之王",
+        "阿勒黛",
+        "达格达"
+      ],
+      "location": "诸王长眠之所",
+      "significance": "阿勒黛的最终选择，以生命完成自我救赎，推进之王获得诸王之息",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王一行与阿勒黛背后的公爵密使对峙，推进之王愤怒宣战",
+      "type": "confrontation",
+      "line_range": [
+        3538,
+        3554
+      ],
+      "participants": [
+        "推进之王",
+        "因陀罗",
+        "摩根",
+        "铅踝",
+        "公爵密使"
+      ],
+      "location": "诸王长眠之所",
+      "significance": "推进之王决心向背叛者复仇，为后续与公爵势力的冲突铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "戈尔丁的舞台剧结束后，孩子们模仿萨卡兹的暴力行为，戈尔丁对教育的意义产生深刻怀疑",
+      "type": "reflection",
+      "line_range": [
+        3555,
+        3607
+      ],
+      "participants": [
+        "戈尔丁",
+        "茉莉",
+        "顽皮的孩子",
+        "天真的孩子"
+      ],
+      "location": "学校舞台",
+      "significance": "战争对下一代心灵的扭曲，戈尔丁对教育理想的幻灭",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王苏醒，克洛维希娅告知阿勒黛牺牲，并展示了幸存的坎伯兰蒸汽甲胄",
+      "type": "revelation",
+      "line_range": [
+        3608,
+        3658
+      ],
+      "participants": [
+        "推进之王",
+        "克洛维希娅",
+        "因陀罗",
+        "摩根",
+        "达格达"
+      ],
+      "location": "自救军据点",
+      "significance": "阿勒黛的牺牲被铭记，蒸汽甲胄的幸存象征希望，推进之王对蒸汽骑士的敬意",
+      "is_imaginary": false
+    },
+    {
+      "event": "曼弗雷德发现被俘的明椒，决定将她留在身边，让她看清战争的意义",
+      "type": "character_development",
+      "line_range": [
+        3659,
+        3682
+      ],
+      "participants": [
+        "曼弗雷德",
+        "明椒",
+        "萨卡兹战士"
+      ],
+      "location": "萨卡兹军事委员会",
+      "significance": "明椒的转变契机，曼弗雷德对年轻萨卡兹的引导",
+      "is_imaginary": false
+    },
+    {
+      "event": "自救军和罗德岛重整旗鼓，铅踝的雇佣兵小队和号角的风暴突击队加入，准备下一场战斗",
+      "type": "planning",
+      "line_range": [
+        3683,
+        3713
+      ],
+      "participants": [
+        "洛洛",
+        "费斯特",
+        "克洛维希娅",
+        "铅踝",
+        "Misery",
+        "号角"
+      ],
+      "location": "自救军据点",
+      "significance": "联军力量增强，获得补给线情报，为后续行动做准备",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王独自面对诸王之息，与幻影高文对话，质疑自己的使命",
+      "type": "reflection",
+      "line_range": [
+        3714,
+        3725
+      ],
+      "participants": [
+        "推进之王"
+      ],
+      "location": "自救军据点",
+      "significance": "推进之王对王权和使命的反思，为后续选择铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿斯卡纶向博士汇报阿米娅的伤势，并回忆四年前特蕾西娅的最后命令",
+      "type": "flashback",
+      "line_range": [
+        3726,
+        3744
+      ],
+      "participants": [
+        "阿斯卡纶",
+        "博士"
+      ],
+      "location": "罗德岛据点",
+      "significance": "揭示阿斯卡纶的忠诚和特蕾西娅之死的更多细节",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅苏醒，向博士描述她感受到的萨卡兹众魂的愤怒和对凯尔希的仇恨",
+      "type": "revelation",
+      "line_range": [
+        3745,
+        3760
+      ],
+      "participants": [
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛据点",
+      "significance": "揭示凯尔希与萨卡兹的历史恩怨，阿米娅对特蕾西娅立场的理解",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈在伦蒂尼姆街头看到一个似曾相识的绿发菲林，苇草留下信件后离开罗德岛办事处",
+      "type": "revelation",
+      "line_range": [
+        3761,
+        3794
+      ],
+      "participants": [
+        "陈",
+        "风笛",
+        "阿赫茉妮",
+        "苇草",
+        "罗德岛干员"
+      ],
+      "location": "伦蒂尼姆街头/罗德岛办事处",
+      "significance": "陈的伏笔，苇草决定独自面对自己的过去，为后续剧情铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "威灵顿公爵与爱布拉娜会面，爱布拉娜宣称塔拉的新时代即将到来",
+      "type": "political_intrigue",
+      "line_range": [
+        3795,
+        3802
+      ],
+      "participants": [
+        "威灵顿公爵",
+        "爱布拉娜"
+      ],
+      "location": "威灵顿公爵领地",
+      "significance": "揭示塔拉独立势力的动向，爱布拉娜的野心，为后续大公爵混战铺垫",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "阿勒黛·坎伯兰",
+      "type": "npc",
+      "role_in_chapter": "坎伯兰公爵之女，自救军的关键人物。童年目睹政变阴谋，成年后为拯救伦蒂尼姆不惜牺牲家族荣耀，与推进之王建立深厚信任。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "推进之王（维娜/亚历山德莉娜）",
+      "type": "operator",
+      "role_in_chapter": "阿斯兰王室后裔，格拉斯哥帮领袖。向自救军坦白身份，积极行动，保护同伴，与阿勒黛建立深厚友谊。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凯瑟琳",
+      "type": "npc",
+      "role_in_chapter": "海布里区军工厂的女工头，费斯特的祖母。在萨卡兹占领下艰难维持工厂运转，内心充满对过去牺牲的悔恨，最终为孙子提供帮助。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "费斯特",
+      "type": "npc",
+      "role_in_chapter": "凯瑟琳的孙子，前军工厂工人，现为自救军成员。从冲动反抗到理解祖母的艰难，成长为更成熟的战士。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "戈尔丁",
+      "type": "npc",
+      "role_in_chapter": "学校教师，高卢遗民。坚持通过教育和戏剧传递希望，与莱托中校在理念上激烈冲突，是海蒂的朋友。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莱托中校",
+      "type": "npc",
+      "role_in_chapter": "城防军指挥官，高卢遗民。在萨卡兹与维多利亚之间挣扎，试图维持秩序和体面，但被迫执行残酷命令。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克洛维希娅",
+      "type": "npc",
+      "role_in_chapter": "自救军指挥官，商人之女。与罗德岛合作，领导自救军行动，对局势有清醒的认识。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "海蒂",
+      "type": "npc",
+      "role_in_chapter": "作家，戈尔丁的朋友，情报人员。为传递情报而受伤，与戈尔丁有深厚的友谊。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "特雷西斯",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹军事委员会领袖。与特蕾西娅讨论萨卡兹的未来，坚持通过斗争和统治实现目标。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "魔王",
+      "type": "operator",
+      "role_in_chapter": "萨卡兹的魔王。与特雷西斯进行理念辩论，承认自己的失败。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖。向自救军揭示碎片大厦的真相，领导罗德岛行动，关心阿勒黛的处境。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官。与费斯特一同行动，寻找萨卡兹补给线，在关键时刻保持沉默但可靠。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "管家艾尔希",
+      "type": "npc",
+      "role_in_chapter": "阿勒黛的忠实管家，从小陪伴她。维护坎伯兰家的荣耀，是阿勒黛最信任的人。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "茉莉",
+      "type": "npc",
+      "role_in_chapter": "学校的年轻教师，关心孩子。被变形者集群伪装，后被带走。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "因陀罗",
+      "type": "operator",
+      "role_in_chapter": "格拉斯哥帮成员，推进之王的同伴。性格直率，在行动中逐渐学会适应新环境。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "摩根",
+      "type": "operator",
+      "role_in_chapter": "格拉斯哥帮成员，推进之王的同伴。对贵族和自救军战士的偏见感到不满。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "达格达",
+      "type": "operator",
+      "role_in_chapter": "格拉斯哥帮成员，推进之王的同伴。原名伊莎贝尔，努力适应新身份，忠诚可靠。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "血魔大君",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹王庭成员。以血腥手段镇压贵族，享受毁灭与杀戮。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "变形者集群",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹王庭成员。伪装成茉莉监视戈尔丁和学校，对维多利亚人感到好奇。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "明椒",
+      "type": "npc",
+      "role_in_chapter": "年轻的萨卡兹雇佣兵，跟随队长执行任务。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "推进之王",
+      "type": "operator",
+      "role_in_chapter": "带领小队深入王宫地下寻找诸王之息，发现蒸汽骑士被背叛的真相，面对阿勒黛的背叛，最终获得诸王之息，并开始质疑自己的使命",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "闪灵",
+      "type": "operator",
+      "role_in_chapter": "回到赦罪师据点与赦罪师和萨卢斯决裂，在指挥塔战场上出手阻挡食腐者军队，保护了罗德岛和自救军",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "赦罪师",
+      "type": "npc",
+      "role_in_chapter": "与闪灵和萨卢斯进行家庭聚餐，讨论萨卡兹的未来和魔王真相，允许闪灵离开但警告她不要干扰摄政王的计划",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "萨卢斯",
+      "type": "npc",
+      "role_in_chapter": "赦罪师家族的成员，与闪灵交谈，试图挽留她，透露了关于丽兹（夜莺）的实验和赦罪师的研究",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "曼弗雷德",
+      "type": "npc",
+      "role_in_chapter": "与阿斯卡纶对峙，发现明椒并决定教导她，向特雷西斯汇报战况",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿斯卡纶",
+      "type": "operator",
+      "role_in_chapter": "与曼弗雷德对峙，在指挥塔战场上战斗，向博士汇报阿米娅伤势并回忆特蕾西娅的最后命令",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Logos",
+      "type": "operator",
+      "role_in_chapter": "以女妖之主的身份与血魔大君交战，表明追随特蕾西娅理想的立场",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "可露希尔",
+      "type": "operator",
+      "role_in_chapter": "负责骇入城防军指挥塔系统，在战场上提供技术支持，掩护博士和阿米娅撤退",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "铅踝",
+      "type": "npc",
+      "role_in_chapter": "受雇于阿勒黛的雇佣兵，在诸王长眠之所背叛推进之王，但最终选择留下加入自救军",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "突然出现在指挥塔战场拦截特雷西斯，但被重创，生命走向尾声",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "最后的蒸汽骑士",
+      "type": "npc",
+      "role_in_chapter": "在诸王长眠之所幸存，攻击闯入者，最终与阿勒黛同归于尽",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "在伦蒂尼姆街头看到一个似曾相识的绿发菲林",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "苇草",
+      "type": "operator",
+      "role_in_chapter": "留下信件后离开罗德岛办事处，决定独自面对自己的过去",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "爱布拉娜",
+      "type": "npc",
+      "role_in_chapter": "与威灵顿公爵会面，宣称塔拉的新时代即将到来",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "威灵顿公爵",
+      "type": "npc",
+      "role_in_chapter": "与爱布拉娜会面，询问她对局势的看法",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "赫德雷",
+      "type": "npc",
+      "role_in_chapter": "被曼弗雷德警告，不要轻举妄动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "号角",
+      "type": "operator",
+      "role_in_chapter": "带领风暴突击队成功解救城防军小队后，加入罗德岛和自救军",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Misery",
+      "type": "operator",
+      "role_in_chapter": "协助号角突袭监狱，后与罗德岛会合",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "洛洛",
+      "type": "npc",
+      "role_in_chapter": "自救军战士，参与指挥塔战斗",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿赫茉妮",
+      "type": "npc",
+      "role_in_chapter": "与陈和风笛同行，认出绿发菲林",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "风笛",
+      "type": "operator",
+      "role_in_chapter": "与陈同行",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "碎片大厦与人为天灾",
+      "line_range": [
+        750,
+        769
+      ],
+      "discussion_summary": "阿米娅向克洛维希娅解释碎片大厦能诱发人为天灾，是萨卡兹的终极武器，旨在摧毁维多利亚。",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹的未来与理想",
+      "line_range": [
+        687,
+        749
+      ],
+      "discussion_summary": "特雷西斯和特蕾西娅深入辩论萨卡兹的未来：是通过斗争和统治重建家园，还是寻求与泰拉各族共存。",
+      "is_substantive": true
+    },
+    {
+      "concept": "文明与教育",
+      "line_range": [
+        1198,
+        1210
+      ],
+      "discussion_summary": "戈尔丁与莱托中校辩论：莱托认为战争会摧毁文明成果，戈尔丁则认为文化和希望不会因建筑倒塌而消亡。",
+      "is_substantive": true
+    },
+    {
+      "concept": "成长与牺牲",
+      "line_range": [
+        1806,
+        1821
+      ],
+      "discussion_summary": "阿勒黛向艾尔希感慨成长是不断碾碎童年可能性的过程，表达了对现实的无奈。",
+      "is_substantive": true
+    },
+    {
+      "concept": "魔王",
+      "line_range": [
+        2208,
+        2209
+      ],
+      "discussion_summary": "赦罪师指出只有「魔王」是特殊的，其知识和技艺像瀑布，但无法找到源头",
+      "is_substantive": true
+    },
+    {
+      "concept": "血脉记忆",
+      "line_range": [
+        2226,
+        2227
+      ],
+      "discussion_summary": "赦罪师阐述力量来自血脉，血脉传承记忆，记忆累积罪业，罪业形成枷锁，不被历史约束的人才能解放力量",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹的本质",
+      "line_range": [
+        3207,
+        3217
+      ],
+      "discussion_summary": "血魔大君向阿米娅阐述萨卡兹的本质，认为萨卡兹与神民和先民不是同类，卡兹戴尔本应与泰拉同义",
+      "is_substantive": true
+    },
+    {
+      "concept": "维多利亚",
+      "line_range": [
+        2398,
+        2403
+      ],
+      "discussion_summary": "克洛维希娅向推进之王提出质问：谁来定义维多利亚？是城市、人民还是君主的姓氏？",
+      "is_substantive": true
+    },
+    {
+      "concept": "诸王之息",
+      "line_range": [
+        2579,
+        2593
+      ],
+      "discussion_summary": "阿勒黛讲述诸王之息的传说：阿斯兰先祖的佩剑，能劈开天灾，是维多利亚最牢固的盾",
+      "is_substantive": true
+    },
+    {
+      "concept": "蒸汽骑士",
+      "line_range": [
+        3036,
+        3042
+      ],
+      "discussion_summary": "阿勒黛感叹蒸汽骑士以维多利亚的荣光为氅，总在捍卫，不论代价为何",
+      "is_substantive": true
+    },
+    {
+      "concept": "背叛",
+      "line_range": [
+        3047,
+        3062
+      ],
+      "discussion_summary": "推进之王揭示蒸汽骑士被维多利亚背叛的真相：整个维多利亚将蒸汽骑士引入萨卡兹的陷阱",
+      "is_substantive": true
+    },
+    {
+      "concept": "使命",
+      "line_range": [
+        3481,
+        3485
+      ],
+      "discussion_summary": "推进之王告诉阿勒黛不要将「使命」挂在嘴边，没有什么是必须的使命，想做就去做",
+      "is_substantive": true
+    },
+    {
+      "concept": "战争与教育",
+      "line_range": [
+        3584,
+        3607
+      ],
+      "discussion_summary": "戈尔丁看到孩子们模仿萨卡兹的暴力行为，意识到没有人能摆脱时代的形塑，教育在战争面前显得无力",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨卡兹众魂",
+      "line_range": [
+        3747,
+        3760
+      ],
+      "discussion_summary": "阿米娅描述感受到萨卡兹众魂的愤怒，他们向伤害萨卡兹的所有人复仇，包括凯尔希",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "维多利亚王室",
+      "line_range": [
+        1,
+        39
+      ],
+      "description": "国王与坎伯兰公爵讨论王权衰落、税收政策和政变威胁，国王安排公主取剑以巩固权威。"
+    },
+    {
+      "faction": "坎伯兰家族",
+      "line_range": [
+        40,
+        68
+      ],
+      "description": "年幼的阿勒黛与侍女艾尔希的对话，展现家族对荣耀的重视和即将被送走的处境。"
+    },
+    {
+      "faction": "维多利亚议会与贵族",
+      "line_range": [
+        70,
+        108
+      ],
+      "description": "贵族们在宴会上讨论蒸汽骑士和时局，言语间对旧贵族和王室缺乏尊重。"
+    },
+    {
+      "faction": "萨卡兹军事委员会",
+      "line_range": [
+        490,
+        517
+      ],
+      "description": "萨卡兹雇佣兵与凯瑟琳的对话，展现他们对工厂的控制和对工人的不信任。"
+    },
+    {
+      "faction": "萨卡兹军事委员会",
+      "line_range": [
+        655,
+        749
+      ],
+      "description": "特雷西斯与特蕾西娅讨论萨卡兹的未来和军事委员会面临的局势。"
+    },
+    {
+      "faction": "伦蒂尼姆市民自救军",
+      "line_range": [
+        750,
+        799
+      ],
+      "description": "克洛维希娅向阿米娅介绍自救军的构成和目标，决定继续行动而非等待公爵军队。"
+    },
+    {
+      "faction": "伦蒂尼姆市民自救军",
+      "line_range": [
+        1294,
+        1338
+      ],
+      "description": "自救军战士与格拉斯哥帮成员因行动方式产生矛盾，反映内部理念差异。"
+    },
+    {
+      "faction": "格拉斯哥帮",
+      "line_range": [
+        1094,
+        1147
+      ],
+      "description": "推进之王带领因陀罗、摩根、达格达威胁商人，展现其作为街头帮派的行动方式。"
+    },
+    {
+      "faction": "城防军",
+      "line_range": [
+        1166,
+        1214
+      ],
+      "description": "莱托中校以城防军指挥官身份访问学校，与戈尔丁辩论，展现其复杂立场。"
+    },
+    {
+      "faction": "萨卡兹王庭",
+      "line_range": [
+        1839,
+        1852
+      ],
+      "description": "血魔大君亲自出手焚烧贵族，莱托中校被迫协助，展现王庭的恐怖统治。"
+    },
+    {
+      "faction": "赦罪师",
+      "line_range": [
+        2164,
+        2280
+      ],
+      "description": "闪灵回到赦罪师据点与赦罪师和萨卢斯会面，讨论了赦罪师的研究目标（魔王真相、血脉记忆）和与摄政王特雷西斯的关系"
+    },
+    {
+      "faction": "伦蒂尼姆市民自救军",
+      "line_range": [
+        2494,
+        2530
+      ],
+      "description": "自救军突袭城防军指挥塔，克洛维希娅试图说服维多利亚士兵倒戈"
+    },
+    {
+      "faction": "城防军",
+      "line_range": [
+        2478,
+        2530
+      ],
+      "description": "莱托中校的士兵表达了对萨卡兹的恐惧和对莱托的信任，在指挥塔与自救军交战"
+    },
+    {
+      "faction": "高卢遗民",
+      "line_range": [
+        2642,
+        2676
+      ],
+      "description": "莱托中校向特雷西斯坦白自己是高卢遗民，寻求与萨卡兹合作"
+    }
+  ],
+  "locations": [
+    {
+      "location": "伦蒂尼姆",
+      "line_range": [
+        1,
+        14
+      ],
+      "description": "国王与公爵讨论维多利亚的危急时刻，伦蒂尼姆作为首都面临王权衰落和战争威胁。"
+    },
+    {
+      "location": "伦蒂尼姆",
+      "line_range": [
+        377,
+        384
+      ],
+      "description": "海蒂警告戈尔丁，公爵们的战争即将在伦蒂尼姆爆发，战火可能蔓延至其他城市。"
+    },
+    {
+      "location": "坎伯兰公爵府",
+      "line_range": [
+        830,
+        833
+      ],
+      "description": "阿勒黛介绍公爵府是伦蒂尼姆的标志性建筑，尽管荒废，但仍是她的家。"
+    },
+    {
+      "location": "海布里区军工厂",
+      "line_range": [
+        478,
+        489
+      ],
+      "description": "凯瑟琳管理的军工厂，是萨卡兹控制下的重要生产设施，也是费斯特成长的地方。"
+    },
+    {
+      "location": "海布里区军工厂",
+      "line_range": [
+        1485,
+        1553
+      ],
+      "description": "凯瑟琳向费斯特展示废弃的蒸汽甲胄车间，回忆二十六年前的工人抗议。"
+    },
+    {
+      "location": "学校",
+      "line_range": [
+        1166,
+        1214
+      ],
+      "description": "戈尔丁和茉莉所在的学校，是莱托中校访问和辩论的地点，也是孩子们演出的舞台。"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:46:04.849186+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 81797,
+    "tokens_out": 14755,
+    "elapsed_s": 112.9749493598938
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "阿勒黛·坎伯兰",
+    "推进之王（维娜/亚历山德莉娜）",
+    "费斯特",
+    "戈尔丁",
+    "莱托中校",
+    "克洛维希娅",
+    "特雷西斯",
+    "博士",
+    "管家艾尔希",
+    "茉莉",
+    "血魔大君",
+    "变形者集群",
+    "赦罪师",
+    "萨卢斯",
+    "曼弗雷德",
+    "Logos",
+    "最后的蒸汽骑士",
+    "爱布拉娜",
+    "威灵顿公爵",
+    "Misery",
+    "阿赫茉妮"
+  ]
+}

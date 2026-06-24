@@ -1,0 +1,588 @@
+{
+  "summary": "本章为集成战略IF线剧情，非正史事件。\n\n## 序章/框架对话\nScene 1: 越过群山 — 麦哲伦在萨米冰原上自省探索的意义，与提丰和寒檀讨论萨米对外来者的态度，以及祖灵之父对探索者的提问。\nScene 6: 直至冬夜降临 — 寒檀在阵线陷落后请求同伴撤离，并承担为被邪魔转化的战士举行送别仪式的责任。\nScene 11: 自深处的一瞥 — 艾尔启（凛视）预见未来后离开，提丰寻找她留下的祝福未果。\n\n## Ending 01：越过群山（一结局，可能性最大的发展）\nScene 2: 越过群山_ending PART 1 — 莱茵生命总辖克丽斯腾与科考科负责人马里亚姆会面，马里亚姆提交因非冰原科考项目，克丽斯腾暗示自己已见到一位近乎全知的神。\nScene 3: 越过群山_ending PART 2 — 科考队与自称能预见未来的独眼巨人合作，返回南方途中与萨米人建立友谊，举行盛大宴会，麦哲伦在篝火旁放松入睡。\nScene 4: 越过群山_ending PART 3 — 麦哲伦独自深入地下，发现萨米的心脏——一棵被薄膜包裹的参天大树，她触摸薄膜后理解了萨米的痛楚，继续向萨米的头脑前进。\nScene 5: 越过群山_ending PART 4 — 麦哲伦在极端环境中孤独前行，队友全部倒下，她自身也被坍缩现象扭曲成影子，书稿遗落，但她仍向北前进，冰原的银白光芒在黑暗中闪烁。\n\n## Ending 02：直至冬夜降临（后续结局，基于更极端假设）\nScene 7: 直至冬夜降临_ending PART 1 — 雪祀埃克提尔尼尔带领幸存部族南迁，他因职责沉重而无暇追念一位失踪的女性战士，萨米婴儿的哭声在冻土上回荡。\nScene 8: 直至冬夜降临_ending PART 2 — 埃克提尔尼尔追踪黑色利刃至林地深处，发现被邪魔转化的寒檀，在战斗中孤注一掷封印邪魔核心，自身也被冰封。\nScene 9: 直至冬夜降临_ending PART 3 — 寒檀的视角揭示埃克提尔尼尔的软弱与坚忍，他最终倒下后，寒檀继承了他的意志，重启仪式成为新雪祀。\nScene 10: 直至冬夜降临_ending PART 4 — 一名战士向冰簇祈祷，但冰簇实为寒檀牺牲后形成的法术残留，源石眼睛记录下一切：认知已被改写，大地覆盖着影子，冰簇孤独地垂下一滴泪。\n\n## Ending 03：自深处的一瞥（后续结局，基于更极端假设）\nScene 12: 自深处的一瞥_ending PART 1 — 独眼巨人凛视在洞窟中冥思，预见自己与科考队合作、送年轻萨满赴阵线、以及收养一个孩子后最终被其处刑的命运，但她仍选择拥抱哭泣的孩子。\nScene 13: 自深处的一瞥_ending PART 2 — 安玛离开后，提丰试图告知所有人但无人相信，直到一位雪祀告诉她安玛的爱从未离开，提丰最终在祭坛旁找到凛视。\nScene 14: 自深处的一瞥_ending PART 3 — 凛视在远见中看到冰原尽头的巨环（门），决定亲自前往观测，她幸存归来后向雪祀和独眼巨人复述经历，众人认为这是最好的时机。\nScene 15: 自深处的一瞥_ending PART 4 — 数年后，凛视在巨构启动实验中牺牲，巨构被拆除，坍缩现象减少，但提丰发现自己的弓变得沉重——武器认出了猎物，他们被困住了。\n\n## Ending 04：终始（后续结局，基于更极端假设）\nScene 16: 终始_ending PART 1 — 特工监听哥伦比亚酒会，各方势力讨论冰原科考成果，罗德岛干员与精英干员Raidian处理刺客，准备递出邀请函。\nScene 17: 终始_ending PART 2 — 巨构启动前夜，麦哲伦与提丰、寒檀、凛视等人各怀期待，麦哲伦与博士对话，博士回答自己期待的是自己。\nScene 18: 终始_ending PART 3 — 麦哲伦在萨米林地遇到一名精灵，精灵通过语言变迁和植物造型表达自我，最后让木傀儡带走一个飞行器模型般的植物作品。\nScene 19: 终始_ending PART 4 — 萨米部族树痕进行祭祀，萨尔贡君王准备与可汗一战，凯尔希走向漫长时间，研究团队借助巨构探索焚风热土，凛视注视着未来。",
+  "events": [
+    {
+      "event": "麦哲伦在萨米冰原上自省探索的意义，与提丰和寒檀讨论萨米对外来者的态度",
+      "type": "reflection",
+      "line_range": [
+        1,
+        31
+      ],
+      "participants": [
+        "麦哲伦",
+        "提丰",
+        "寒檀"
+      ],
+      "location": "冬牙群山",
+      "significance": "奠定序章主题：探索者的动机与萨米的意志",
+      "is_imaginary": true
+    },
+    {
+      "event": "寒檀在阵线陷落后请求同伴撤离，并承担为被邪魔转化的战士举行送别仪式的责任",
+      "type": "sacrifice",
+      "line_range": [
+        194,
+        201
+      ],
+      "participants": [
+        "寒檀"
+      ],
+      "location": "北地阵线",
+      "significance": "展示寒檀的牺牲精神与萨米战士的处境",
+      "is_imaginary": true
+    },
+    {
+      "event": "艾尔启（凛视）预见未来后离开，提丰寻找她留下的祝福未果",
+      "type": "departure",
+      "line_range": [
+        284,
+        292
+      ],
+      "participants": [
+        "艾尔启",
+        "提丰"
+      ],
+      "location": "萨米某处",
+      "significance": "引出独眼巨人的远见与提丰的失落",
+      "is_imaginary": true
+    },
+    {
+      "event": "马里亚姆向克丽斯腾提交因非冰原科考项目，克丽斯腾暗示自己已见到一位近乎全知的神",
+      "type": "planning",
+      "line_range": [
+        40,
+        50
+      ],
+      "participants": [
+        "马里亚姆",
+        "克丽斯腾"
+      ],
+      "location": "莱茵生命总部，特里蒙",
+      "significance": "揭示莱茵生命高层对冰原探索的野心与神秘发现",
+      "is_imaginary": true
+    },
+    {
+      "event": "科考队与独眼巨人合作，返回途中与萨米人建立友谊，举行盛大宴会",
+      "type": "alliance",
+      "line_range": [
+        53,
+        92
+      ],
+      "participants": [
+        "马里亚姆",
+        "麦哲伦",
+        "独眼巨人"
+      ],
+      "location": "萨米部族营地",
+      "significance": "展示跨文化交流与友谊的建立",
+      "is_imaginary": true
+    },
+    {
+      "event": "麦哲伦独自深入地下，发现萨米的心脏并理解其痛楚，继续向萨米的头脑前进",
+      "type": "revelation",
+      "line_range": [
+        108,
+        164
+      ],
+      "participants": [
+        "麦哲伦"
+      ],
+      "location": "萨米地下深处",
+      "significance": "揭示萨米的本质与麦哲伦的探索决心",
+      "is_imaginary": true
+    },
+    {
+      "event": "麦哲伦在极端环境中孤独前行，队友全部倒下，自身被坍缩扭曲，但仍向北前进",
+      "type": "sacrifice",
+      "line_range": [
+        167,
+        193
+      ],
+      "participants": [
+        "麦哲伦"
+      ],
+      "location": "冬牙群山至冰原",
+      "significance": "展示探索者的极致牺牲与不屈意志",
+      "is_imaginary": true
+    },
+    {
+      "event": "埃克提尔尼尔带领幸存部族南迁，因职责沉重而无暇追念失踪的女性战士",
+      "type": "retreat",
+      "line_range": [
+        210,
+        228
+      ],
+      "participants": [
+        "埃克提尔尼尔"
+      ],
+      "location": "萨米冻土",
+      "significance": "展示雪祀的职责与个人情感的冲突",
+      "is_imaginary": true
+    },
+    {
+      "event": "埃克提尔尼尔追踪黑色利刃至林地深处，发现被邪魔转化的寒檀，在战斗中孤注一掷封印邪魔核心，自身也被冰封",
+      "type": "battle",
+      "line_range": [
+        231,
+        249
+      ],
+      "participants": [
+        "埃克提尔尼尔",
+        "寒檀"
+      ],
+      "location": "萨米腹地林地",
+      "significance": "展示雪祀的终极牺牲与邪魔的恐怖",
+      "is_imaginary": true
+    },
+    {
+      "event": "寒檀继承埃克提尔尼尔的意志，重启仪式成为新雪祀",
+      "type": "character_development",
+      "line_range": [
+        252,
+        262
+      ],
+      "participants": [
+        "寒檀"
+      ],
+      "location": "萨米",
+      "significance": "寒檀从幸存者成长为继承者",
+      "is_imaginary": true
+    },
+    {
+      "event": "一名战士向冰簇祈祷，但冰簇实为寒檀牺牲后形成的法术残留，源石眼睛记录下认知被改写的大地",
+      "type": "disaster",
+      "line_range": [
+        265,
+        283
+      ],
+      "participants": [
+        "战士",
+        "寒檀"
+      ],
+      "location": "萨米某处",
+      "significance": "揭示邪魔对认知的侵蚀与存续的绝望",
+      "is_imaginary": true
+    },
+    {
+      "event": "凛视在洞窟中冥思，预见自己与科考队合作、送年轻萨满赴阵线、以及收养一个孩子后最终被其处刑的命运，但仍选择拥抱哭泣的孩子",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        301,
+        317
+      ],
+      "participants": [
+        "凛视"
+      ],
+      "location": "独眼巨人洞窟",
+      "significance": "展示独眼巨人的远见与人性抉择",
+      "is_imaginary": true
+    },
+    {
+      "event": "安玛离开后，提丰试图告知所有人但无人相信，直到一位雪祀告诉她安玛的爱从未离开，提丰最终在祭坛旁找到凛视",
+      "type": "revelation",
+      "line_range": [
+        320,
+        351
+      ],
+      "participants": [
+        "提丰",
+        "凛视"
+      ],
+      "location": "萨米黑森林",
+      "significance": "揭示安玛的本质与提丰的成长",
+      "is_imaginary": true
+    },
+    {
+      "event": "凛视在远见中看到冰原尽头的巨环（门），决定亲自前往观测，她幸存归来后向雪祀和独眼巨人复述经历",
+      "type": "revelation",
+      "line_range": [
+        354,
+        372
+      ],
+      "participants": [
+        "凛视"
+      ],
+      "location": "冰原尽头巨环",
+      "significance": "揭示巨环的本质与人类的时机",
+      "is_imaginary": true
+    },
+    {
+      "event": "数年后，凛视在巨构启动实验中牺牲，巨构被拆除，坍缩现象减少，但提丰发现自己的弓变得沉重——武器认出了猎物，他们被困住了",
+      "type": "confrontation",
+      "line_range": [
+        375,
+        396
+      ],
+      "participants": [
+        "提丰",
+        "凛视"
+      ],
+      "location": "萨米之外移动城市",
+      "significance": "揭示一劳永逸的解决方案的虚假与命运的延续",
+      "is_imaginary": true
+    },
+    {
+      "event": "特工监听哥伦比亚酒会，各方势力讨论冰原科考成果，罗德岛干员与精英干员Raidian处理刺客，准备递出邀请函",
+      "type": "political_intrigue",
+      "line_range": [
+        405,
+        427
+      ],
+      "participants": [
+        "马里亚姆",
+        "Raidian"
+      ],
+      "location": "哥伦比亚城市",
+      "significance": "展示冰原探索背后的政治博弈",
+      "is_imaginary": true
+    },
+    {
+      "event": "巨构启动前夜，麦哲伦与提丰、寒檀、凛视等人各怀期待，麦哲伦与博士对话，博士回答自己期待的是自己",
+      "type": "planning",
+      "line_range": [
+        399,
+        419
+      ],
+      "participants": [
+        "麦哲伦",
+        "提丰",
+        "寒檀",
+        "凛视",
+        "博士"
+      ],
+      "location": "冰原巨构基地",
+      "significance": "揭示探索者的期待与博士的哲学思考",
+      "is_imaginary": true
+    },
+    {
+      "event": "麦哲伦在萨米林地遇到一名精灵，精灵通过语言变迁和植物造型表达自我，最后让木傀儡带走一个飞行器模型般的植物作品",
+      "type": "revelation",
+      "line_range": [
+        430,
+        459
+      ],
+      "participants": [
+        "麦哲伦",
+        "精灵"
+      ],
+      "location": "萨米林地",
+      "significance": "揭示精灵的古老历史与对未知的向往",
+      "is_imaginary": true
+    },
+    {
+      "event": "萨米部族树痕进行祭祀，萨尔贡君王准备与可汗一战，凯尔希走向漫长时间，研究团队借助巨构探索焚风热土，凛视注视着未来",
+      "type": "reflection",
+      "line_range": [
+        453,
+        471
+      ],
+      "participants": [
+        "凯尔希",
+        "凛视"
+      ],
+      "location": "萨米部族、萨尔贡王城、焚风热土",
+      "significance": "总结人类命运的无穷可能性",
+      "is_imaginary": true
+    }
+  ],
+  "characters": [
+    {
+      "name": "麦哲伦",
+      "type": "operator",
+      "role_in_chapter": "核心探索者，在序章自省探索意义，在结局一中深入萨米地下发现其心脏并继续前进，在结局四中参与巨构启动并与精灵相遇",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "提丰",
+      "type": "operator",
+      "role_in_chapter": "萨米猎人，在序章与麦哲伦同行，在结局三中寻找安玛的踪迹并最终找到凛视，在结局四中作为核心战斗人员参与巨构探索",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "寒檀",
+      "type": "operator",
+      "role_in_chapter": "萨满，在序章与麦哲伦讨论萨米意志，在结局二中牺牲后被邪魔转化，最终被埃克提尔尼尔封印，其牺牲形成的冰簇成为源石眼睛的观察对象",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾尔启（凛视）",
+      "type": "operator",
+      "role_in_chapter": "独眼巨人先知，在序章预见未来后离开，在结局三中收养孩子、前往巨环观测并幸存归来，在结局四中参与巨构研究并注视着未来",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "马里亚姆",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命科考科负责人，在结局一中向克丽斯腾提交科考项目，在结局四中出现在哥伦比亚酒会",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克丽斯腾",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命总辖，在结局一中与马里亚姆会面，暗示自己已见到一位近乎全知的神",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "埃克提尔尼尔",
+      "type": "npc",
+      "role_in_chapter": "萨米雪祀，在结局二中带领幸存部族南迁，追踪黑色利刃时发现被转化的寒檀，最终牺牲自己封印邪魔核心",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官，在结局四中出现在冰原基地，回答麦哲伦自己期待的是自己",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Raidian",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，在结局四中与年轻干员处理刺客，准备递出邀请函",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领导人，在结局四中走向漫长时间，探索没有尽头的大地",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "萨米的意志",
+      "line_range": [
+        16,
+        19
+      ],
+      "discussion_summary": "麦哲伦询问祖灵之父是否是萨米本身，提到萨米入睡很少发出声音，以及祖灵之父向探索者发问的传统",
+      "is_substantive": true
+    },
+    {
+      "concept": "探索的意义",
+      "line_range": [
+        3,
+        13
+      ],
+      "discussion_summary": "麦哲伦自省探索需要好奇心、勇气、知识、技术、前人的经验和愿望，老师教导科考最重要的是活下去让知识传承",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨米的心脏",
+      "line_range": [
+        128,
+        148
+      ],
+      "discussion_summary": "麦哲伦在地下发现被薄膜包裹的参天大树，触摸后理解那是萨米的心脏，萨米将伤痕与无助展现给探索者",
+      "is_substantive": true
+    },
+    {
+      "concept": "坍缩体",
+      "line_range": [
+        185,
+        187
+      ],
+      "discussion_summary": "麦哲伦在书稿中介绍回避坍缩体接触的方法，指出坍缩会展示更加多样的现象，永远不可能被完整记录",
+      "is_substantive": true
+    },
+    {
+      "concept": "邪魔的侵蚀",
+      "line_range": [
+        239,
+        242
+      ],
+      "discussion_summary": "描述寒檀被邪魔转化后终结了利刃却未能消灭死亡本身，黑色河流在新生寒灾的影子中蠕行，战士们必须在丧失战斗能力前自尽避免成为邪魔食粮",
+      "is_substantive": true
+    },
+    {
+      "concept": "独眼巨人的远见",
+      "line_range": [
+        303,
+        305
+      ],
+      "discussion_summary": "描述独眼巨人远见只望向未来，千年前继任魔王留下的预言：阴影将自冰原尽头向泰拉蔓延，大地被覆盖在虚空之中",
+      "is_substantive": true
+    },
+    {
+      "concept": "安玛的爱",
+      "line_range": [
+        339,
+        342
+      ],
+      "discussion_summary": "雪祀告诉提丰安玛与同类从来不属于哪一片土地，祂只是眷恋萨米的土地与生灵所以留下，爱意从未离开",
+      "is_substantive": true
+    },
+    {
+      "concept": "巨环（门）",
+      "line_range": [
+        354,
+        364
+      ],
+      "discussion_summary": "凛视在远见中看到冰原上的巨环，邪魔自圆环中出现，圆环是一道可以通行的门，如果找到打开门的方法人类也可以在其中通行",
+      "is_substantive": true
+    },
+    {
+      "concept": "巨构的本质",
+      "line_range": [
+        383,
+        386
+      ],
+      "discussion_summary": "研究者推测巨构是最初邪魔向现实空间发起战争的大门，附带的空间稳定装置是前人与邪魔对抗的智慧结晶，找到了安全拆除的方式",
+      "is_substantive": true
+    },
+    {
+      "concept": "精灵的历史",
+      "line_range": [
+        447,
+        448
+      ],
+      "discussion_summary": "麦哲伦从缪尔赛思处得知萨米的精灵千万年来生活在巨树怀抱中，以独特方式结成社群研究自身历史直到答案变成谜题",
+      "is_substantive": true
+    },
+    {
+      "concept": "时间的真相",
+      "line_range": [
+        462,
+        463
+      ],
+      "discussion_summary": "萨尔贡君王声称发现了时间的真相，认为未来不过如此，按照历法的刻度前行即可",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        40,
+        45
+      ],
+      "description": "马里亚姆回到莱茵生命总部向克丽斯腾提交科考项目，克丽斯腾频繁离开总部访问科考勘测地点"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        423,
+        427
+      ],
+      "description": "罗德岛干员与精英干员Raidian处理刺客，讨论冰原科考成果背后的阴谋，准备递出邀请函"
+    },
+    {
+      "faction": "萨米部族",
+      "line_range": [
+        76,
+        81
+      ],
+      "description": "萨米人为探险者举行盛大宴会，族树下燃起篝火，雪祀用权杖唤来雷电点亮舞池彩灯球"
+    },
+    {
+      "faction": "独眼巨人",
+      "line_range": [
+        303,
+        305
+      ],
+      "description": "独眼巨人族群继承千年前的远见，栖居群山观测北方冰原，等待最遥远的未来"
+    },
+    {
+      "faction": "萨尔贡帝国",
+      "line_range": [
+        459,
+        463
+      ],
+      "description": "一位君王自黄金王城眺望远方，准备与远道而来的可汗一战，声称发现了时间的真相"
+    }
+  ],
+  "locations": [
+    {
+      "location": "冬牙群山",
+      "line_range": [
+        21,
+        22
+      ],
+      "description": "提丰指出一旦翻过冬牙群山天气会变得非常糟糕，是进入无尽冰原的门户"
+    },
+    {
+      "location": "莱茵生命总部，特里蒙",
+      "line_range": [
+        40,
+        41
+      ],
+      "description": "马里亚姆回到莱茵生命总部，走过长廊前往总辖办公室，克丽斯腾站在操作台前"
+    },
+    {
+      "location": "因非冰原",
+      "line_range": [
+        42,
+        49
+      ],
+      "description": "马里亚姆申请组织十五人队伍前往因非冰原进行极地科考，克丽斯腾提到自己见到了一位近乎全知的神"
+    },
+    {
+      "location": "萨米地下深处",
+      "line_range": [
+        108,
+        115
+      ],
+      "description": "麦哲伦在地下发现旺盛生长的植物、溪水与河流，顺着水流走到洞窟，洞窟出口有规律闪烁的光亮"
+    },
+    {
+      "location": "萨米腹地林地",
+      "line_range": [
+        231,
+        236
+      ],
+      "description": "埃克提尔尼尔追踪黑色利刃至林地深处，落叶颤抖枯枝低吟，黑色血液汇成河流映照星光"
+    },
+    {
+      "location": "冰原尽头巨环",
+      "line_range": [
+        354,
+        356
+      ],
+      "description": "凛视在远见中看到冰原上的巨环，覆盖银色冰霜但绝非自然雕刻，邪魔自圆环中出现"
+    },
+    {
+      "location": "哥伦比亚城市",
+      "line_range": [
+        405,
+        407
+      ],
+      "description": "特工监听几公里外高楼顶层空中花园内的酒会，参与者谈论遥远北方的冰原"
+    },
+    {
+      "location": "冰原巨构基地",
+      "line_range": [
+        399,
+        400
+      ],
+      "description": "参与巨构修复工程的人们在基地内注视冰原尽头夜色，最后一轮供能稳定性测试结束"
+    },
+    {
+      "location": "焚风热土",
+      "line_range": [
+        467,
+        468
+      ],
+      "description": "研究团队借助巨构探索焚风热土，理解其中新的坍缩现象尤其是时间的异常表现形式"
+    }
+  ],
+  "chapter": "探索者的银凇止境",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:36:07.611309+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 16137,
+    "tokens_out": 6026,
+    "elapsed_s": 42.526161670684814
+  },
+  "taxonomy_type": "is",
+  "_unmatched_names": [
+    "艾尔启（凛视）",
+    "马里亚姆",
+    "克丽斯腾",
+    "埃克提尔尼尔",
+    "博士",
+    "Raidian"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "summary": "森内的父亲，一位在御机市经营店铺的普通男性。曾因家庭债务而困扰，后因神明眷顾而摆脱困境，使家庭生活一度好转。然而，当家庭再次遭遇变故时，他无法承受打击，最终酗酒而死。他的命运与森内对神明的信仰和质疑紧密相连，是森内人生轨迹转变的关键人物。",
+  "personality": {
+    "traits": [
+      "勤劳",
+      "脆弱",
+      "爱家"
+    ],
+    "description": "一位为家庭生计奔波的普通父亲，在困境中努力支撑，但内心脆弱，无法承受命运的重压。"
+  },
+  "abilities": {
+    "description": "无特殊战斗能力，仅作为普通市民生活。",
+    "power_level": "信息不足",
+    "power_level_evidence": []
+  },
+  "participated_events": [
+    {
+      "chapter": "墟",
+      "nodes": "回忆片段",
+      "event": "在神社祈福后，家庭因神明眷顾而摆脱债务，店铺开张，生活好转。",
+      "role": "家庭支柱，在神明帮助下使家庭脱离困境。"
+    },
+    {
+      "chapter": "墟",
+      "nodes": "回忆片段",
+      "event": "家庭再次遭遇变故，父亲无法承受打击，最终酗酒而死。",
+      "role": "悲剧的承受者，其死亡成为森内质疑神明存在的导火索。"
+    }
+  ],
+  "first_appearance": "墟",
+  "appearance_count": 2,
+  "_stats": {
+    "tokens_in": 3048,
+    "tokens_out": 342,
+    "elapsed_s": 5.268042325973511
+  },
+  "name_zh": "父亲",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "墟",
+    "照我以火"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:02:32.257117+00:00"
+}

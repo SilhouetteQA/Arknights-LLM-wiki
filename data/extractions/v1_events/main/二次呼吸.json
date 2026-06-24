@@ -1,0 +1,374 @@
+{
+  "summary": "本章剧情围绕罗德岛与龙门近卫局联合追缉整合运动展开。行动前，陈透露米莎的父亲是切尔诺伯格要人，整合运动劫走米莎意在获取情报。行动中，罗德岛与企鹅物流协同作战，逐步推进至整合运动据点废弃矿场。碎骨与米莎重逢，碎骨向米莎灌输复仇理念，米莎内心挣扎。W 出现并策划刺杀博士，但被阿米娅阻止。碎骨重伤后奇迹般复活，整合运动士气大振。最终决战中，碎骨战死，米莎选择留在整合运动一方。战后，陈与阿米娅就感染者的命运与罗德岛的使命进行了深刻对话。",
+  "events": [
+    {
+      "event": "陈向阿米娅透露米莎父亲是切尔诺伯格要人，整合运动劫走米莎意在获取情报",
+      "type": "revelation",
+      "line_range": [
+        26,
+        37
+      ],
+      "participants": [
+        "陈",
+        "阿米娅"
+      ],
+      "location": "龙门",
+      "significance": "揭示米莎被劫的关键原因，推动后续追缉行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛与企鹅物流汇合，开始追踪整合运动",
+      "type": "planning",
+      "line_range": [
+        113,
+        125
+      ],
+      "participants": [
+        "阿米娅",
+        "芙兰卡"
+      ],
+      "location": "龙门",
+      "significance": "确立联合作战计划，引入企鹅物流作为支援",
+      "is_imaginary": false
+    },
+    {
+      "event": "碎骨与米莎重逢，碎骨向米莎灌输复仇理念，米莎内心挣扎",
+      "type": "ideological_clash",
+      "line_range": [
+        163,
+        269
+      ],
+      "participants": [
+        "碎骨",
+        "米莎"
+      ],
+      "location": "废弃矿场",
+      "significance": "展现碎骨的仇恨根源与米莎的动摇，深化感染者内部矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "企鹅物流能天使与德克萨斯突袭整合运动岗哨，为罗德岛开路",
+      "type": "ambush",
+      "line_range": [
+        283,
+        323
+      ],
+      "participants": [
+        "能天使",
+        "德克萨斯"
+      ],
+      "location": "荒野",
+      "significance": "展示企鹅物流的战斗力，为罗德岛主力推进创造条件",
+      "is_imaginary": false
+    },
+    {
+      "event": "W 向碎骨提议刺杀博士以扭转战局",
+      "type": "assassination",
+      "line_range": [
+        394,
+        425
+      ],
+      "participants": [
+        "W",
+        "碎骨"
+      ],
+      "location": "废弃矿场",
+      "significance": "W 的阴谋浮出水面，博士成为整合运动重点目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛与近卫局在矿场外围遭遇整合运动埋伏，碎骨突袭博士",
+      "type": "battle",
+      "line_range": [
+        505,
+        559
+      ],
+      "participants": [
+        "阿米娅",
+        "星熊",
+        "碎骨",
+        "博士"
+      ],
+      "location": "废弃矿场外围",
+      "significance": "碎骨刺杀博士失败，被阿米娅重伤，剧情转折点",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅因杀死碎骨而陷入自责与动摇",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        560,
+        600
+      ],
+      "participants": [
+        "阿米娅",
+        "博士"
+      ],
+      "location": "战场",
+      "significance": "展现阿米娅内心的矛盾与对力量的恐惧，深化角色成长",
+      "is_imaginary": false
+    },
+    {
+      "event": "W 与米莎通话，米莎决定留在整合运动",
+      "type": "revelation",
+      "line_range": [
+        682,
+        756
+      ],
+      "participants": [
+        "阿米娅",
+        "米莎"
+      ],
+      "location": "战场",
+      "significance": "米莎因愧疚与身份认同选择整合运动，阿米娅劝说失败",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛与近卫局制定总攻计划，分路进攻矿场",
+      "type": "planning",
+      "line_range": [
+        757,
+        812
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "星熊"
+      ],
+      "location": "矿场外围",
+      "significance": "确立最终作战方案，为决战做准备",
+      "is_imaginary": false
+    },
+    {
+      "event": "碎骨奇迹般复活，整合运动士气大振",
+      "type": "revelation",
+      "line_range": [
+        970,
+        1015
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "碎骨"
+      ],
+      "location": "废弃矿场",
+      "significance": "剧情反转，碎骨复活使战局复杂化",
+      "is_imaginary": false
+    },
+    {
+      "event": "最终决战，碎骨战死，整合运动被击溃",
+      "type": "battle",
+      "line_range": [
+        1016,
+        1084
+      ],
+      "participants": [
+        "陈",
+        "星熊",
+        "阿米娅",
+        "碎骨"
+      ],
+      "location": "废弃矿场",
+      "significance": "碎骨之死标志着本章冲突的终结",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与阿米娅就感染者的命运与罗德岛的使命进行深刻对话",
+      "type": "reflection",
+      "line_range": [
+        1085,
+        1150
+      ],
+      "participants": [
+        "陈",
+        "阿米娅"
+      ],
+      "location": "战场",
+      "significance": "总结本章主题，深化阿米娅对感染者问题的思考",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "陈",
+      "type": "npc",
+      "role_in_chapter": "龙门近卫局指挥官，主导联合行动，透露米莎情报，最终与阿米娅进行深刻对话",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领导人，指挥行动，与碎骨战斗后陷入自责，最终与陈对话后坚定信念",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "米莎",
+      "type": "npc",
+      "role_in_chapter": "关键目标，切尔诺伯格要人之女，被整合运动劫持，最终选择留在整合运动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "碎骨",
+      "type": "npc",
+      "role_in_chapter": "整合运动领袖，米莎的弟弟，向米莎灌输复仇理念，刺杀博士失败后重伤，后奇迹复活，最终战死",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "星熊",
+      "type": "npc",
+      "role_in_chapter": "龙门近卫局特别督察组精英，与罗德岛协同作战",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "芙兰卡",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，黑钢国际成员，参与侦察与战斗",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "雷蛇",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，黑钢国际成员，参与战斗",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "能天使",
+      "type": "operator",
+      "role_in_chapter": "企鹅物流成员，负责侦察与火力支援",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "德克萨斯",
+      "type": "operator",
+      "role_in_chapter": "企鹅物流成员，负责侦察与战斗",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "W",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，擅长爆炸物，策划刺杀博士，负责带走米莎",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官，被W和碎骨列为刺杀目标，受阿米娅保护",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "感染者的复仇",
+      "line_range": [
+        202,
+        247
+      ],
+      "discussion_summary": "碎骨向米莎阐述整合运动的复仇理念，认为切尔诺伯格对感染者的迫害理应得到报复，以眼还眼是理所应当的",
+      "is_substantive": true
+    },
+    {
+      "concept": "罗德岛的立场与使命",
+      "line_range": [
+        1110,
+        1140
+      ],
+      "discussion_summary": "阿米娅质疑罗德岛的行动是否正确，陈指出罗德岛与近卫局不同，罗德岛愿意用柔软手法拯救感染者，但需要付出代价",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者的命运与选择",
+      "line_range": [
+        1114,
+        1130
+      ],
+      "discussion_summary": "陈指出从感染矿石病开始，人的命运就不再由自己掌握；阿米娅认为感染者不是被敌意溺死就是走向毁灭，需要熄灭仇恨的锁链",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        15,
+        18
+      ],
+      "description": "阿米娅阐述罗德岛的立场：用感染者对抗感染者，需要情报，有对抗感染者的能力"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        41,
+        44
+      ],
+      "description": "陈命令罗德岛清除整合运动威胁，近卫局负责追缉米莎"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        173,
+        179
+      ],
+      "description": "整合运动成员讲述加入原因：家人死于切尔诺伯格人之手，乌萨斯感染者遭遇比牲畜还不如"
+    },
+    {
+      "faction": "企鹅物流",
+      "line_range": [
+        123,
+        125
+      ],
+      "description": "阿米娅联络企鹅物流，请求能天使和德克萨斯协助侦察"
+    },
+    {
+      "faction": "黑钢国际",
+      "line_range": [
+        474,
+        475
+      ],
+      "description": "整合运动成员认出芙兰卡和雷蛇是黑钢的人"
+    }
+  ],
+  "locations": [
+    {
+      "location": "龙门",
+      "line_range": [
+        33,
+        36
+      ],
+      "description": "陈推测整合运动的下一个目标是龙门，阻止整合运动对切尔诺伯格的利用是理所应当的"
+    },
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        233,
+        247
+      ],
+      "description": "碎骨指责切尔诺伯格实行隔离制度，冷眼看着感染者死去，是一座理当被毁灭的城市"
+    },
+    {
+      "location": "废弃矿场",
+      "line_range": [
+        185,
+        186
+      ],
+      "description": "碎骨称废弃矿场是临时据点，大家在此整顿，等待时机撤回切尔诺伯格"
+    }
+  ],
+  "chapter": "二次呼吸",
+  "batch_count": 1,
+  "category": "main",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:29:59.489437+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 19122,
+    "tokens_out": 2836,
+    "elapsed_s": 23.153761386871338
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "米莎",
+    "碎骨",
+    "博士"
+  ]
+}

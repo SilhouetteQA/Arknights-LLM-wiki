@@ -1,0 +1,985 @@
+{
+  "summary": "本章以卡拉顿城的感染者社区为舞台，讲述了多个角色交织的命运。Scene 1 中，酒吧店员苏茜（小火花）在社区中备受喜爱，她梦想着买下夏栎经营的店铺「绿意火花」开一家理发店。然而，社区外针对感染者的歧视和暴力日益加剧，苏茜在送货途中遭到袭击。尽管有雷德等人的帮助，但社区氛围紧张，关于新法案的讨论也充满分歧。Scene 1 结尾，苏茜的店铺在庆祝她成为新店长后，被人纵火烧毁，她的梦想瞬间破灭。\n\nScene 2 引入流浪感染者术师夜烟，她因偷窃被保安追捕，无意中闯入两个叙拉古暴徒的据点，听到了他们计划绑架议员和使用爆炸物的阴谋。夜烟被暴徒追杀，身负重伤，最终逃到苏茜的店里，却导致暴徒纵火烧店。夜烟在濒死之际将自己的「女巫」身份和戒指传给了一个感染者少女小敏。绝望的苏茜在楼顶想要自杀，被夜烟劝阻。夜烟随后因矿石病急性发作而倒下，苏茜背着她求救，遇到了雷德。\n\nScene 3 聚焦天火。她作为昂斯特议员的代表参与议会，对贵族们只顾利益博弈、无视感染者困境的虚伪感到愤怒和沮丧。她代替生病的昂斯特议员去听取感染者意见时，遭遇一群伪装成感染者的暴徒绑架。天火凭借强大的源石技艺制服了暴徒，并发现他们计划炸毁工厂。苦根推测出暴徒的动机与掩盖工厂设备被转移的真相有关。Scene 3 结尾，苏茜背着昏迷的夜烟向苦根和天火求救。\n\nScene 4 以骑警格拉尼的视角展开。她察觉到卡拉顿城地下废弃物流通道的异常活动，并调查「绿意火花」的纵火案。通过追查军用燃烧弹的来源，她锁定了叙拉古暴徒「丹顿兄弟」。格拉尼与腐败的警备队长发生冲突，并独自追捕丹顿兄弟。在追捕过程中，她得到了被夜烟传授源石技艺的少女小敏的帮助。丹顿兄弟逃入一个废弃的安全屋，格拉尼准备破门时，屋内发生了爆炸。\n\nScene 5 揭示了夏栎的罗德岛干员身份，以及苦根是罗德岛小队队长的真相。罗德岛办事处救治了夜烟，并整合了各方线索，发现纵火案、绑架案和工厂设备失踪案都指向贝希曼议员。苏茜去警备队提供线索时，被腐败的警备队长绑架到地下物流通道。夏栎和天火分头营救，夏栎在地下通道与贝希曼的暴徒对峙。苏茜在逃跑中与贝希曼正面对质，愤怒之下险些杀死他，被赶来的夏栎阻止。最终，贝希曼的阴谋败露，被拘留。\n\nScene 6 是本章的尾声，场景切换到整合运动的秘密基地。Guard 和雷德等人正在组装一台从哥伦比亚获得的悬浮载具。他们与神秘的荒地行商坎诺特（锈锤成员）进行交易，获取了关键的发动机和电控设备。坎诺特阐述了他帮助整合运动的原因：他认为泰拉世界正面临来自极北、深海和地下的巨大危机，需要像整合运动这样的组织来推动变革。雷德汇报了卡拉顿的任务完成情况，并提到感染者社区的未来依然充满挑战。",
+  "events": [
+    {
+      "event": "苏茜在酒吧工作，与常客们讨论新法案和社区新闻",
+      "type": "daily_life",
+      "line_range": [
+        1,
+        93
+      ],
+      "participants": [
+        "苏茜",
+        "工人吉姆斯",
+        "感染者阿石",
+        "感染者毕恩",
+        "苦根"
+      ],
+      "location": "绿意火花酒吧",
+      "significance": "展现感染者社区的日常生活和面临的困境，铺垫社区矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "苏茜在送货途中被反感染者示威者袭击，雷德解围",
+      "type": "confrontation",
+      "line_range": [
+        94,
+        150
+      ],
+      "participants": [
+        "苏茜",
+        "雷德",
+        "大嗓门男人"
+      ],
+      "location": "卡拉顿感染者社区街道",
+      "significance": "展现社区内外的紧张关系和雷德的机智",
+      "is_imaginary": false
+    },
+    {
+      "event": "苏茜回忆自己因感染矿石病而决定离家去卡拉顿工作",
+      "type": "flashback",
+      "line_range": [
+        195,
+        202
+      ],
+      "participants": [
+        "苏茜",
+        "疲惫的女人"
+      ],
+      "location": "苏茜的回忆（家中）",
+      "significance": "揭示苏茜的背景和成为感染者的原因",
+      "is_imaginary": false
+    },
+    {
+      "event": "夏栎回到酒吧，告知苏茜已存够钱可以买下店铺，并介绍房东苦根",
+      "type": "revelation",
+      "line_range": [
+        203,
+        360
+      ],
+      "participants": [
+        "苏茜",
+        "夏栎",
+        "苦根"
+      ],
+      "location": "绿意火花酒吧",
+      "significance": "苏茜的梦想即将实现，揭示苦根的罗德岛身份",
+      "is_imaginary": false
+    },
+    {
+      "event": "朋友们为苏茜成为新店长举办庆祝会",
+      "type": "ceremony",
+      "line_range": [
+        361,
+        388
+      ],
+      "participants": [
+        "苏茜",
+        "夏栎",
+        "格拉尼",
+        "感染者阿石",
+        "雷德",
+        "工人吉姆斯",
+        "感染者毕恩"
+      ],
+      "location": "绿意火花酒吧",
+      "significance": "展现社区温情，与后续悲剧形成对比",
+      "is_imaginary": false
+    },
+    {
+      "event": "绿意火花酒吧被纵火烧毁，苏茜的梦想破灭",
+      "type": "disaster",
+      "line_range": [
+        389,
+        401
+      ],
+      "participants": [
+        "苏茜"
+      ],
+      "location": "绿意火花酒吧",
+      "significance": "剧情转折点，导致苏茜陷入绝望",
+      "is_imaginary": false
+    },
+    {
+      "event": "夜烟被保安追捕，躲入废弃仓库，无意中听到叙拉古暴徒的阴谋",
+      "type": "infiltration",
+      "line_range": [
+        402,
+        471
+      ],
+      "participants": [
+        "夜烟",
+        "魁梧的黑衣人",
+        "鬼祟的黑衣人"
+      ],
+      "location": "卡拉顿边缘废弃城区仓库",
+      "significance": "引入绑架议员的阴谋线，夜烟成为关键证人",
+      "is_imaginary": false
+    },
+    {
+      "event": "夜烟被暴徒发现并追杀，逃入昂斯特议员家中，导致议员受惊住院",
+      "type": "ambush",
+      "line_range": [
+        472,
+        524
+      ],
+      "participants": [
+        "夜烟",
+        "魁梧的黑衣人",
+        "鬼祟的黑衣人",
+        "年迈的贵族"
+      ],
+      "location": "废弃仓库及昂斯特议员宅邸",
+      "significance": "夜烟受伤，暴徒决定纵火灭口",
+      "is_imaginary": false
+    },
+    {
+      "event": "暴徒为追杀夜烟，纵火烧毁绿意火花酒吧",
+      "type": "arson",
+      "line_range": [
+        525,
+        557
+      ],
+      "participants": [
+        "魁梧的黑衣人",
+        "鬼祟的黑衣人"
+      ],
+      "location": "绿意火花酒吧",
+      "significance": "揭示纵火案真相，连接夜烟和苏茜的剧情线",
+      "is_imaginary": false
+    },
+    {
+      "event": "夜烟在濒死前将女巫身份和戒指传给感染者少女小敏",
+      "type": "succession",
+      "line_range": [
+        558,
+        584
+      ],
+      "participants": [
+        "夜烟",
+        "感染者少女"
+      ],
+      "location": "夜烟的藏身处",
+      "significance": "夜烟的传承，为后续小敏帮助格拉尼埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "苏茜在楼顶欲自杀，被夜烟劝阻",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        585,
+        658
+      ],
+      "participants": [
+        "苏茜",
+        "夜烟"
+      ],
+      "location": "卡拉顿某处楼顶",
+      "significance": "夜烟点醒苏茜，阻止其自杀，两人建立联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "夜烟矿石病急性发作，苏茜背着她求救，遇到雷德",
+      "type": "rescue",
+      "line_range": [
+        659,
+        679
+      ],
+      "participants": [
+        "苏茜",
+        "夜烟",
+        "雷德"
+      ],
+      "location": "卡拉顿街道",
+      "significance": "夜烟获救，苏茜与雷德重逢",
+      "is_imaginary": false
+    },
+    {
+      "event": "天火在议会旁听后，对贵族们的虚伪和短视感到愤怒",
+      "type": "political_intrigue",
+      "line_range": [
+        680,
+        751
+      ],
+      "participants": [
+        "天火",
+        "记录员凯特"
+      ],
+      "location": "卡拉顿议会及酒吧",
+      "significance": "展现维多利亚议会的政治博弈和天火的理想主义",
+      "is_imaginary": false
+    },
+    {
+      "event": "天火代替昂斯特议员出席活动，听取感染者意见时被暴徒绑架",
+      "type": "kidnapping",
+      "line_range": [
+        775,
+        848
+      ],
+      "participants": [
+        "天火",
+        "感染者工人",
+        "感染者市民",
+        "粗鄙的暴徒",
+        "丑陋的暴徒"
+      ],
+      "location": "卡拉顿工厂",
+      "significance": "天火被卷入阴谋，发现暴徒伪装成感染者",
+      "is_imaginary": false
+    },
+    {
+      "event": "天火制服暴徒，发现工厂内没有设备，只有炸弹",
+      "type": "battle",
+      "line_range": [
+        849,
+        937
+      ],
+      "participants": [
+        "天火",
+        "粗鄙的暴徒",
+        "丑陋的暴徒"
+      ],
+      "location": "卡拉顿工厂",
+      "significance": "天火展现强大实力，揭示工厂设备被转移的真相",
+      "is_imaginary": false
+    },
+    {
+      "event": "苦根推测暴徒的目的是炸毁工厂以掩盖设备被转移的真相",
+      "type": "investigation",
+      "line_range": [
+        938,
+        962
+      ],
+      "participants": [
+        "天火",
+        "苦根"
+      ],
+      "location": "罗德岛办事处",
+      "significance": "连接绑架案与工厂阴谋",
+      "is_imaginary": false
+    },
+    {
+      "event": "苏茜背着夜烟来到罗德岛办事处求救",
+      "type": "rescue",
+      "line_range": [
+        963,
+        967
+      ],
+      "participants": [
+        "苏茜",
+        "雷德",
+        "天火",
+        "苦根"
+      ],
+      "location": "罗德岛办事处",
+      "significance": "所有主要角色汇聚，剧情线开始合并",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉尼调查废弃物流通道和纵火案，与腐败的警备队长发生冲突",
+      "type": "investigation",
+      "line_range": [
+        968,
+        1125
+      ],
+      "participants": [
+        "格拉尼",
+        "警备队长",
+        "感染者毕恩",
+        "大嗓门男人"
+      ],
+      "location": "卡拉顿感染者社区及警备队",
+      "significance": "展现格拉尼的正义感和警备队的腐败",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉尼在沸区酒吧找到丹顿兄弟，并与之发生冲突",
+      "type": "confrontation",
+      "line_range": [
+        1126,
+        1150
+      ],
+      "participants": [
+        "格拉尼",
+        "魁梧的黑衣人",
+        "鬼祟的黑衣人"
+      ],
+      "location": "沸区酒吧",
+      "significance": "格拉尼锁定纵火案嫌疑人",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉尼追捕丹顿兄弟，得到少女小敏的帮助",
+      "type": "chase",
+      "line_range": [
+        1151,
+        1177
+      ],
+      "participants": [
+        "格拉尼",
+        "魁梧的黑衣人",
+        "鬼祟的黑衣人",
+        "女巫小敏"
+      ],
+      "location": "感染者社区及废弃城区",
+      "significance": "小敏使用夜烟传授的源石技艺，连接夜烟线",
+      "is_imaginary": false
+    },
+    {
+      "event": "丹顿兄弟逃入安全屋，屋内发生爆炸",
+      "type": "explosion",
+      "line_range": [
+        1178,
+        1206
+      ],
+      "participants": [
+        "格拉尼",
+        "魁梧的黑衣人",
+        "鬼祟的黑衣人"
+      ],
+      "location": "废弃城区安全屋",
+      "significance": "悬念，丹顿兄弟的结局不明",
+      "is_imaginary": false
+    },
+    {
+      "event": "夏栎在荒地与感染者朋友告别，收到天灾信使的情报",
+      "type": "departure",
+      "line_range": [
+        1207,
+        1252
+      ],
+      "participants": [
+        "夏栎",
+        "冷静的荒地人",
+        "消沉的荒地人"
+      ],
+      "location": "卡拉顿城外荒地",
+      "significance": "揭示夏栎的罗德岛身份和维多利亚的紧张局势",
+      "is_imaginary": false
+    },
+    {
+      "event": "夏栎与记录员凯特交接罗德岛的文件和情报",
+      "type": "planning",
+      "line_range": [
+        1253,
+        1271
+      ],
+      "participants": [
+        "夏栎",
+        "记录员凯特"
+      ],
+      "location": "卡拉顿",
+      "significance": "揭示罗德岛在维多利亚的秘密行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛办事处救治夜烟，整合各方线索，锁定贝希曼议员",
+      "type": "revelation",
+      "line_range": [
+        1272,
+        1410
+      ],
+      "participants": [
+        "夏栎",
+        "苦根",
+        "苏茜",
+        "夜烟",
+        "天火"
+      ],
+      "location": "罗德岛办事处",
+      "significance": "所有线索汇聚，揭示幕后黑手",
+      "is_imaginary": false
+    },
+    {
+      "event": "苏茜去警备队提供线索，被腐败的警备队长绑架到地下物流通道",
+      "type": "kidnapping",
+      "line_range": [
+        1411,
+        1451
+      ],
+      "participants": [
+        "苏茜",
+        "警备队长",
+        "贝希曼"
+      ],
+      "location": "警备队及地下物流通道",
+      "significance": "苏茜陷入危险，剧情进入高潮",
+      "is_imaginary": false
+    },
+    {
+      "event": "贝希曼与警备队长讨论如何掩盖工厂设备被转移和资金亏空",
+      "type": "political_intrigue",
+      "line_range": [
+        1452,
+        1485
+      ],
+      "participants": [
+        "贝希曼",
+        "警备队长"
+      ],
+      "location": "地下物流通道",
+      "significance": "揭示贝希曼的阴谋全貌",
+      "is_imaginary": false
+    },
+    {
+      "event": "夏栎找到地下通道入口，与暴徒对峙",
+      "type": "confrontation",
+      "line_range": [
+        1486,
+        1498
+      ],
+      "participants": [
+        "夏栎",
+        "沸区打手"
+      ],
+      "location": "地下物流通道入口",
+      "significance": "夏栎开始营救苏茜",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷德救下苏茜，并掩护她逃跑",
+      "type": "rescue",
+      "line_range": [
+        1499,
+        1552
+      ],
+      "participants": [
+        "苏茜",
+        "雷德",
+        "警备队长"
+      ],
+      "location": "地下物流通道",
+      "significance": "雷德展现其战斗能力，苏茜逃脱",
+      "is_imaginary": false
+    },
+    {
+      "event": "苏茜与贝希曼正面对质，愤怒之下险些杀死他，被夏栎阻止",
+      "type": "confrontation",
+      "line_range": [
+        1553,
+        1595
+      ],
+      "participants": [
+        "苏茜",
+        "贝希曼",
+        "夏栎"
+      ],
+      "location": "地下物流通道",
+      "significance": "苏茜的情绪爆发，夏栎安抚并带她离开",
+      "is_imaginary": false
+    },
+    {
+      "event": "天火探望住院的昂斯特议员，讨论议案的通过和未来的挑战",
+      "type": "revelation",
+      "line_range": [
+        1598,
+        1635
+      ],
+      "participants": [
+        "天火",
+        "昂斯特议员"
+      ],
+      "location": "医院",
+      "significance": "昂斯特议员阐述其推动议案的长远考量，点明时代背景",
+      "is_imaginary": false
+    },
+    {
+      "event": "贝希曼被拘留，苏茜被授予荣誉市民称号，但未来迷茫",
+      "type": "resolution",
+      "line_range": [
+        1636,
+        1667
+      ],
+      "participants": [
+        "苏茜",
+        "格拉尼",
+        "夜烟",
+        "夏栎"
+      ],
+      "location": "罗德岛办事处",
+      "significance": "事件告一段落，苏茜受邀加入罗德岛",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷德在卡拉顿城外与暴徒战斗，展现其「红刀」身份",
+      "type": "battle",
+      "line_range": [
+        1668,
+        1679
+      ],
+      "participants": [
+        "雷德"
+      ],
+      "location": "卡拉顿城外",
+      "significance": "揭示雷德的真实身份和实力",
+      "is_imaginary": false
+    },
+    {
+      "event": "整合运动基地内，成员讨论信任问题和新制服的意义",
+      "type": "ideological_clash",
+      "line_range": [
+        1680,
+        1729
+      ],
+      "participants": [
+        "Guard",
+        "整合运动战士",
+        "幻影弩手"
+      ],
+      "location": "整合运动秘密基地",
+      "significance": "展现整合运动内部的思想转变和组织理念",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷德和毕恩归队，汇报卡拉顿任务完成情况",
+      "type": "report",
+      "line_range": [
+        1730,
+        1779
+      ],
+      "participants": [
+        "Guard",
+        "雷德",
+        "幻影弩手"
+      ],
+      "location": "整合运动秘密基地",
+      "significance": "揭示雷德和毕恩是整合运动成员，连接卡拉顿线",
+      "is_imaginary": false
+    },
+    {
+      "event": "整合运动组装从哥伦比亚获得的悬浮载具",
+      "type": "planning",
+      "line_range": [
+        1780,
+        1812
+      ],
+      "participants": [
+        "Guard",
+        "雷德",
+        "工程术师安德烈",
+        "九"
+      ],
+      "location": "整合运动秘密基地",
+      "significance": "展现整合运动的装备升级和未来计划",
+      "is_imaginary": false
+    },
+    {
+      "event": "Guard和雷德与锈锤商人坎诺特交易，获取关键设备",
+      "type": "negotiation",
+      "line_range": [
+        1813,
+        1877
+      ],
+      "participants": [
+        "Guard",
+        "雷德",
+        "坎诺特",
+        "加勒斯",
+        "艾尔瓦"
+      ],
+      "location": "荒地峡谷",
+      "significance": "整合运动与锈锤建立合作关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "坎诺特阐述他帮助整合运动的理由：应对泰拉世界的巨大危机",
+      "type": "revelation",
+      "line_range": [
+        1878,
+        1985
+      ],
+      "participants": [
+        "坎诺特",
+        "九",
+        "艾尔瓦"
+      ],
+      "location": "整合运动秘密基地",
+      "significance": "揭示坎诺特的动机和泰拉世界的宏观危机，点明主题",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "苏茜",
+      "type": "npc",
+      "role_in_chapter": "本章主角，感染者酒吧店员，梦想开店。店铺被烧后陷入绝望，被夜烟劝阻。后卷入贝希曼的阴谋，最终获救并受邀加入罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "夏栎",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，绿意火花酒吧前店长。帮助苏茜实现梦想，后参与营救苏茜，揭露贝希曼的阴谋。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "雷德",
+      "type": "npc",
+      "role_in_chapter": "感染者工人，实为整合运动成员。多次帮助苏茜，在卡拉顿执行任务，最后救下苏茜并展现强大战斗力。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "天火",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，昂斯特议员的学生。参与议会，被暴徒绑架后反击，后参与营救苏茜。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "格拉尼",
+      "type": "operator",
+      "role_in_chapter": "骑警，罗德岛合作干员。调查纵火案和地下通道，与腐败警备队长冲突，追捕丹顿兄弟。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "夜烟",
+      "type": "npc",
+      "role_in_chapter": "流浪感染者术师，巫女林幸存者。无意中听到暴徒阴谋，被追杀导致酒吧被烧。后劝阻苏茜自杀，被罗德岛救治。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "苦根",
+      "type": "npc",
+      "role_in_chapter": "罗德岛小队队长，酒吧房东。整合情报，指挥营救苏茜的行动。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "感染者阿石",
+      "type": "npc",
+      "role_in_chapter": "酒吧常客，感染者工人。与朋友讨论生活，期待家人来访。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "感染者毕恩",
+      "type": "npc",
+      "role_in_chapter": "酒吧常客，感染者工人，实为整合运动成员（幻影弩手）。提供情报和帮助。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "工人吉姆斯",
+      "type": "npc",
+      "role_in_chapter": "酒吧常客，非感染者工人。因生计在感染者社区工作。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "记录员凯特",
+      "type": "npc",
+      "role_in_chapter": "市政档案馆记录员，罗德岛合作干员。为天火提供情报，与夏栎交接文件。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "贝希曼",
+      "type": "npc",
+      "role_in_chapter": "卡拉顿议员，幕后黑手。为掩盖资金亏空，策划绑架和炸毁工厂。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "警备队长",
+      "type": "npc",
+      "role_in_chapter": "贝希曼的侄子，腐败的警备队长。协助贝希曼，绑架苏茜。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "昂斯特议员",
+      "type": "npc",
+      "role_in_chapter": "天火的老师，支持感染者权益的老议员。因夜烟闯入而住院，向天火阐述其政治理念。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "整合运动领袖之一。在基地指挥行动，与坎诺特交易。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "九",
+      "type": "npc",
+      "role_in_chapter": "整合运动领袖之一。与坎诺特谈判，质疑其动机。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "坎诺特",
+      "type": "npc",
+      "role_in_chapter": "神秘的荒地行商，锈锤成员。为整合运动提供关键设备，并阐述其世界观。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾尔瓦",
+      "type": "npc",
+      "role_in_chapter": "天灾信使，与整合运动合作。为夏栎提供情报，与旧识加勒斯重逢。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "感染者少女",
+      "type": "npc",
+      "role_in_chapter": "被夜烟照顾的感染者孤儿，后成为新的「女巫」小敏。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "大嗓门男人",
+      "type": "npc",
+      "role_in_chapter": "反感染者示威者，被雷德吓退。后向格拉尼供出燃烧弹来源。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "魁梧的黑衣人",
+      "type": "npc",
+      "role_in_chapter": "叙拉古暴徒丹顿兄弟之一。追杀夜烟，纵火烧店。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "鬼祟的黑衣人",
+      "type": "npc",
+      "role_in_chapter": "叙拉古暴徒丹顿兄弟之一。追杀夜烟，纵火烧店。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "加勒斯",
+      "type": "npc",
+      "role_in_chapter": "锈锤战士，艾尔瓦的旧识。参与护送设备给整合运动。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "哥伦比亚模式",
+      "line_range": [
+        79,
+        81
+      ],
+      "discussion_summary": "感染者毕恩和苦根讨论卡拉顿的感染者政策是否被称为「哥伦比亚模式」，苦根表示有区别但未深入解释。",
+      "is_substantive": true
+    },
+    {
+      "concept": "矿石病传播途径",
+      "line_range": [
+        147,
+        150
+      ],
+      "discussion_summary": "雷德向苏茜解释矿石病可通过血液传播，但仅擦破皮感染概率极低，他是在吓唬示威者。",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者社区的意义",
+      "line_range": [
+        261,
+        264
+      ],
+      "discussion_summary": "天火和夏栎讨论感染者社区不仅解决感染者问题，也吸引了非感染者工作，牵扯多方利益。",
+      "is_substantive": true
+    },
+    {
+      "concept": "巫女林与女巫传承",
+      "line_range": [
+        570,
+        584
+      ],
+      "discussion_summary": "夜烟在濒死前向小敏传授女巫身份，提及「巫女林的第一百一十三位女巫」和「灰山地的先贤」，并教导她使用源石技艺的规则。",
+      "is_substantive": true
+    },
+    {
+      "concept": "维多利亚议会政治",
+      "line_range": [
+        686,
+        719
+      ],
+      "discussion_summary": "天火和记录员凯特讨论议会中贵族们如何利用感染者议题进行利益博弈，提出极端方案再互相妥协，而非真正解决问题。",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动的本质与教训",
+      "line_range": [
+        724,
+        732
+      ],
+      "discussion_summary": "天火醉酒后表达对贵族压迫的担忧，认为若不改变，感染者会像整合运动一样爆发，强调不能让整合运动的事情重演。",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动的新理念",
+      "line_range": [
+        1716,
+        1728
+      ],
+      "discussion_summary": "Guard向整合运动成员解释，他们不再需要整合运动的标记，因为凝聚他们的是精神而非符号，他们应成为支持其他感染者的力量。",
+      "is_substantive": true
+    },
+    {
+      "concept": "信任与合作",
+      "line_range": [
+        1700,
+        1704
+      ],
+      "discussion_summary": "Guard反驳整合运动战士对非感染者的不信任，认为合作建立在信任基础上，需要应急预案而非提防所有人。",
+      "is_substantive": true
+    },
+    {
+      "concept": "泰拉世界的危机",
+      "line_range": [
+        1952,
+        1965
+      ],
+      "discussion_summary": "坎诺特向九阐述他看到的泰拉世界：哥伦比亚的剥削、维多利亚的腐朽、萨米雪祀对终末之日的警告、极北冰原的阴影和深海的黑暗，认为世界正在分崩离析。",
+      "is_substantive": true
+    },
+    {
+      "concept": "罗德岛与整合运动的区别",
+      "line_range": [
+        1978,
+        1983
+      ],
+      "discussion_summary": "九认为坎诺特要找的是罗德岛那样的理想主义者，坎诺特则认为仅靠罗德岛不够，整合运动会成为改变世界的契机。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        345,
+        346
+      ],
+      "description": "苦根透露绿意火花酒吧是罗德岛的资产，揭示罗德岛在卡拉顿有秘密据点。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1253,
+        1266
+      ],
+      "description": "记录员凯特与夏栎交接罗德岛在维多利亚的业务证明和信件，揭示罗德岛以「废旧工业资源回收与处理」为名在维多利亚活动。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1292,
+        1297
+      ],
+      "description": "夏栎向苏茜解释罗德岛研发了控制矿石病的药物，但无法治愈。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1680,
+        1729
+      ],
+      "description": "整合运动基地内，成员讨论新制服、信任问题，以及不再使用整合运动标记的新理念。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1754,
+        1779
+      ],
+      "description": "雷德和毕恩向Guard汇报卡拉顿任务，揭示他们是整合运动成员，在感染者社区活动。"
+    },
+    {
+      "faction": "锈锤",
+      "line_range": [
+        1848,
+        1877
+      ],
+      "description": "坎诺特被Guard和雷德认出是锈锤成员，引发紧张对峙，后因加勒斯与艾尔瓦的旧识关系而缓和。"
+    },
+    {
+      "faction": "锈锤",
+      "line_range": [
+        1896,
+        1920
+      ],
+      "description": "加勒斯向艾尔瓦介绍锈锤的生活，并分享自己即将成为父亲的喜悦。"
+    },
+    {
+      "faction": "卡拉顿警备队",
+      "line_range": [
+        1103,
+        1125
+      ],
+      "description": "格拉尼与腐败的警备队长激烈冲突，指责其失职并与贝希曼伯爵有亲戚关系。"
+    },
+    {
+      "faction": "卡拉顿议会",
+      "line_range": [
+        686,
+        719
+      ],
+      "description": "天火和记录员凯特讨论议会中贵族们围绕感染者议题的政治博弈。"
+    },
+    {
+      "faction": "巫女林",
+      "line_range": [
+        1370,
+        1376
+      ],
+      "description": "苦根认出夜烟是「巫女林的大帽子女巫」，夏栎提及巫女林五年前因拒绝与大公爵妥协而被维多利亚军队消灭。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "卡拉顿",
+      "line_range": [
+        70,
+        78
+      ],
+      "description": "感染者阿石自称土生土长的卡拉顿人，苦根提到卡拉顿城愿意接收其他城市的感染者并提供工作，这在维多利亚是独一无二的。"
+    },
+    {
+      "location": "卡拉顿",
+      "line_range": [
+        1622,
+        1633
+      ],
+      "description": "昂斯特议员向天火阐述他推动议案的原因，提及维多利亚的现状和历史上高卢、伊比利亚的衰落，认为时代要变了。"
+    },
+    {
+      "location": "卡拉顿感染者社区",
+      "line_range": [
+        261,
+        264
+      ],
+      "description": "天火和夏栎讨论感染者社区不仅解决感染者问题，也吸引了非感染者工作，牵扯多方利益。"
+    },
+    {
+      "location": "卡拉顿地下物流通道",
+      "line_range": [
+        1040,
+        1044
+      ],
+      "description": "格拉尼向苏茜和夏栎解释卡拉顿地下有很多废弃的物流通道，怀疑有人晚上在里面进行非法活动。"
+    },
+    {
+      "location": "沸区"
+    }
+  ],
+  "chapter": "阴云火花",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:46:36.298467+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 40310,
+    "tokens_out": 8192,
+    "elapsed_s": 62.464274406433105
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "苏茜",
+    "雷德",
+    "苦根",
+    "感染者阿石",
+    "感染者毕恩",
+    "工人吉姆斯",
+    "记录员凯特",
+    "贝希曼",
+    "警备队长",
+    "昂斯特议员",
+    "九",
+    "坎诺特",
+    "艾尔瓦",
+    "感染者少女",
+    "大嗓门男人",
+    "魁梧的黑衣人",
+    "鬼祟的黑衣人",
+    "加勒斯"
+  ]
+}

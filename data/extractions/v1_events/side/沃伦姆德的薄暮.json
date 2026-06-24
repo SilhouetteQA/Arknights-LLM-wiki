@@ -1,0 +1,851 @@
+{
+  "chapter": "沃伦姆德的薄暮",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章故事发生在莱塔尼亚北部城镇沃伦姆德。该镇因天灾「大裂谷」而偏离航线，陷入孤立与资源匮乏的困境。开场展现了士官长塞弗林因儿子托尔在火灾中丧生而悲痛，并被迫同意将感染者遗体埋葬在镇外的无奈。同时，一支自称「泥岩小队」的感染者武装在镇外徘徊，其队长泥岩态度暧昧，似乎在等待时机。罗德岛干员亚叶与铃兰为寻找失踪的同伴安托医生抵达沃伦姆德，立刻卷入了当地感染者与镇民的冲突中。\n\n亚叶与铃兰在调查中得知，安托医生在帮助当地感染者时，其所在的营地发生了一场可疑的火灾，导致包括安托、托尔在内的八人死亡。镇民代表与塞弗林试图隐瞒火灾的真相，但亚叶从愤怒的感染者口中得知火灾并非意外，而是谋杀。塞弗林最终承认了火灾的异常，并展示了疑似凶器的城防法术装置「留声机」的核心，亚叶决心找出凶手为安托复仇。\n\n与此同时，另一支罗德岛小队——灰喉、断崖和卡达也在镇外调查。灰喉与泥岩进行了短暂而克制的对峙，泥岩否认自己是整合运动，并暗示火灾背后另有隐情，提到了「冬灵人」这一线索。镇内局势持续恶化，感染者与镇民的冲突升级，动力炉被毁，城镇陷入瘫痪。塞弗林下令搜捕「冬灵人」，认为他们是煽动叛乱的罪魁祸首。\n\n在冲突全面爆发之际，亚叶和铃兰试图寻找线索，但被卷入暴乱。塔佳娜在救援中受伤被困。关键时刻，灰喉与断崖赶到，与塞弗林会合，决定武装介入以营救被困人员并阻止局势进一步失控。故事在罗德岛干员们冲入火线中结束，留下了关于火灾真相、冬灵人的秘密以及沃伦姆德命运的诸多悬念。\n\n罗德岛干员们与塞弗林会合后，试图在全面暴乱中控制局势。亚叶在复仇冲动与医疗职责间挣扎，最终被灰喉和铃兰劝服留在后方。灰喉从俘虏口中得知火灾死亡人数存在出入（八具遗体 vs 四名感染者），暗示真相可能被掩盖。铃兰在治疗伤员时遇到一位自称「最后的冬灵人」的老者，他透露天灾信使毕德曼并未死于火灾，而是指挥了暴徒破坏动力炉。这一线索将调查方向转向毕德曼。\n\n塞弗林被迫承认毕德曼可能还活着，并解释其报复动机源于天灾后遭受的指责。然而，当罗德岛小队找到毕德曼时，发现他已死于暴乱，后脑有创口，皮肤有冰晶残留。断崖在毕德曼住所发现「危机合约」的行动协议，暗示这场暴乱可能是一场有预谋的极端行动，旨在通过牺牲来引起外界对沃伦姆德的关注。与此同时，泥岩小队在镇民围攻下被迫参战，泥岩本人虽不情愿，但为安抚手下感染者而决定介入。\n\n在全面冲突中，塞弗林的感染者身份被亚叶发现，他试图以自杀式牺牲来平息暴乱，但被罗德岛阻止。泥岩在关键时刻选择撤退，并压制了不愿停手的暴徒，带领愿意跟随的人离开。战后，塞弗林与罗德岛讨论真相，发现毕德曼虽嫌疑最大，但缺乏其亲自纵火的证据，真凶仍不明。\n\n闪回场景揭示了毕德曼与一个神秘人（暗示为托尔瓦尔德）的对话，该神秘人策划了这场暴乱，并说服毕德曼参与，声称这是为了「拯救更多人」。最终，泥岩在离开前向死者献花，与亚叶和灰喉进行了短暂的、带有反思意味的对话。亚叶决定带安托的遗愿回罗德岛，承认有些事情「做不到」。",
+  "events": [
+    {
+      "event": "塞弗林被迫同意将感染者遗体埋葬在镇外，并拒绝举办葬礼。",
+      "type": "political_intrigue",
+      "line_range": [
+        1,
+        55
+      ],
+      "participants": [
+        "塞弗林",
+        "塔佳娜"
+      ],
+      "location": "沃伦姆德老栎树下",
+      "significance": "揭示沃伦姆德因天灾和恐惧而加剧的感染者歧视，以及塞弗林作为父亲和长官的内心挣扎。",
+      "is_imaginary": false
+    },
+    {
+      "event": "泥岩小队成员讨论补给、信任问题以及等待时机。",
+      "type": "planning",
+      "line_range": [
+        57,
+        98
+      ],
+      "participants": [
+        "泥岩",
+        "武装的感染者"
+      ],
+      "location": "沃伦姆德郊外",
+      "significance": "引入泥岩小队作为第三方势力，展现其内部动态和对沃伦姆德的潜在威胁。",
+      "is_imaginary": false
+    },
+    {
+      "event": "亚叶因安托失联而焦虑，决定前往莱塔尼亚调查。",
+      "type": "departure",
+      "line_range": [
+        99,
+        132
+      ],
+      "participants": [
+        "亚叶",
+        "铃兰"
+      ],
+      "location": "罗德岛通讯室",
+      "significance": "确立亚叶和铃兰的行动动机，引出安托失踪的主线。",
+      "is_imaginary": false
+    },
+    {
+      "event": "亚叶和铃兰抵达沃伦姆德，与塞弗林和塔佳娜初次接触，并卷入感染者冲突。",
+      "type": "confrontation",
+      "line_range": [
+        133,
+        259
+      ],
+      "participants": [
+        "亚叶",
+        "铃兰",
+        "塞弗林",
+        "塔佳娜",
+        "镇民代表"
+      ],
+      "location": "沃伦姆德街头",
+      "significance": "罗德岛干员正式介入沃伦姆德事件，展现当地紧张局势和塞弗林的矛盾态度。",
+      "is_imaginary": false
+    },
+    {
+      "event": "亚叶和铃兰在隔离区调查，发现安托失踪的真相是火灾，并遭遇泥岩小队成员。",
+      "type": "investigation",
+      "line_range": [
+        421,
+        502
+      ],
+      "participants": [
+        "亚叶",
+        "铃兰",
+        "塔佳娜"
+      ],
+      "location": "沃伦姆德十二音街道",
+      "significance": "深入调查安托的下落，发现火灾疑点，并首次与泥岩小队正面接触。",
+      "is_imaginary": false
+    },
+    {
+      "event": "亚叶从叛乱感染者口中得知火灾是谋杀，安托等人无一幸存。",
+      "type": "revelation",
+      "line_range": [
+        537,
+        585
+      ],
+      "participants": [
+        "亚叶",
+        "铃兰",
+        "塔佳娜",
+        "叛乱的镇民"
+      ],
+      "location": "沃伦姆德十二音街道",
+      "significance": "关键转折点，确认安托死亡且火灾是人为，亚叶情绪崩溃并决心复仇。",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔佳娜带亚叶和铃兰查看火灾现场，确认八具遗体。",
+      "type": "investigation",
+      "line_range": [
+        634,
+        707
+      ],
+      "participants": [
+        "亚叶",
+        "铃兰",
+        "塔佳娜"
+      ],
+      "location": "沃伦姆德火灾营地",
+      "significance": "确认安托死亡，发现罗德岛物资箱和安托的工作牌，加深亚叶的悲伤与愤怒。",
+      "is_imaginary": false
+    },
+    {
+      "event": "泥岩小队成员在议事厅前与塞弗林对峙，泥岩阻止了手下对城镇的破坏。",
+      "type": "confrontation",
+      "line_range": [
+        708,
+        806
+      ],
+      "participants": [
+        "塞弗林",
+        "泥岩",
+        "武装的感染者"
+      ],
+      "location": "沃伦姆德议事厅及工业区",
+      "significance": "展现塞弗林的强硬手段和泥岩的克制，泥岩小队瘫痪动力炉，局势恶化。",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰喉小队在镇外调查，与泥岩进行对峙和情报交换。",
+      "type": "negotiation",
+      "line_range": [
+        954,
+        1047
+      ],
+      "participants": [
+        "灰喉",
+        "泥岩",
+        "卡达",
+        "断崖"
+      ],
+      "location": "沃伦姆德郊外",
+      "significance": "引入灰喉小队，揭示泥岩并非整合运动，并引出「冬灵人」这一关键线索。",
+      "is_imaginary": false
+    },
+    {
+      "event": "亚叶和铃兰调查「冬灵人」线索，但遭到镇民回避。",
+      "type": "investigation",
+      "line_range": [
+        1062,
+        1091
+      ],
+      "participants": [
+        "亚叶",
+        "铃兰",
+        "镇民"
+      ],
+      "location": "沃伦姆德街头",
+      "significance": "揭示「冬灵人」是当地禁忌话题，暗示其与当前冲突的深层联系。",
+      "is_imaginary": false
+    },
+    {
+      "event": "冬灵歌谣响起，塞弗林下令搜捕冬灵人，同时感染者发动大规模叛乱。",
+      "type": "rebellion",
+      "line_range": [
+        1092,
+        1181
+      ],
+      "participants": [
+        "亚叶",
+        "铃兰",
+        "塞弗林",
+        "塔佳娜",
+        "镇民"
+      ],
+      "location": "沃伦姆德",
+      "significance": "冲突全面爆发，沃伦姆德陷入内战边缘，亚叶与铃兰在复仇与救援之间产生分歧。",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔佳娜在救援平民时受伤被困，灰喉与断崖赶到并与塞弗林会合，决定武装营救。",
+      "type": "rescue",
+      "line_range": [
+        1182,
+        1264
+      ],
+      "participants": [
+        "铃兰",
+        "塞弗林",
+        "灰喉",
+        "断崖",
+        "塔佳娜",
+        "亚叶"
+      ],
+      "location": "沃伦姆德十二音街道",
+      "significance": "高潮部分，罗德岛干员们集结，准备强行介入以拯救同伴并阻止局势彻底失控。",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰喉救醒塔佳娜，并告知亚叶和铃兰已安全，但安托确认牺牲",
+      "type": "rescue",
+      "line_range": [
+        1265,
+        1293
+      ],
+      "participants": [
+        "塔佳娜",
+        "灰喉"
+      ],
+      "location": "沃伦姆德街区",
+      "significance": "确认安托死亡，为亚叶的复仇动机定调",
+      "is_imaginary": false
+    },
+    {
+      "event": "亚叶审问叛乱镇民，得知宪兵被调往贵族婚礼，暴徒自称整合运动",
+      "type": "investigation",
+      "line_range": [
+        1294,
+        1323
+      ],
+      "participants": [
+        "亚叶",
+        "断崖",
+        "叛乱的镇民"
+      ],
+      "location": "沃伦姆德街区",
+      "significance": "揭示沃伦姆德缺乏宪兵的原因，并引出整合运动旗号",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛与塞弗林会合，亚叶质询塞弗林对感染者的态度，塞弗林保证无针对",
+      "type": "confrontation",
+      "line_range": [
+        1324,
+        1357
+      ],
+      "participants": [
+        "亚叶",
+        "塞弗林",
+        "铃兰",
+        "灰喉",
+        "断崖",
+        "塔佳娜"
+      ],
+      "location": "沃伦姆德议事厅附近",
+      "significance": "建立罗德岛与塞弗林之间的初步信任，但亚叶的复仇心被压制",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰喉指出火灾死亡人数存在出入（八具遗体 vs 四名感染者），暗示真相被掩盖",
+      "type": "revelation",
+      "line_range": [
+        1411,
+        1419
+      ],
+      "participants": [
+        "灰喉",
+        "塞弗林",
+        "亚叶"
+      ],
+      "location": "沃伦姆德议事厅",
+      "significance": "首次质疑火灾官方说法，为后续调查埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞弗林批评亚叶过于主观，亚叶被迫冷静并同意留下治疗伤员",
+      "type": "character_development",
+      "line_range": [
+        1420,
+        1427
+      ],
+      "participants": [
+        "塞弗林",
+        "亚叶"
+      ],
+      "location": "沃伦姆德议事厅",
+      "significance": "亚叶的复仇冲动被理性压制，角色成长",
+      "is_imaginary": false
+    },
+    {
+      "event": "铃兰在治疗伤员时遇到自称「最后的冬灵人」的老者，得知毕德曼未死并指挥了暴乱",
+      "type": "revelation",
+      "line_range": [
+        1462,
+        1522
+      ],
+      "participants": [
+        "铃兰",
+        "老爷爷",
+        "亚叶"
+      ],
+      "location": "沃伦姆德议事厅伤员区",
+      "significance": "关键线索：毕德曼是暴乱指挥者，冬灵人并非主因",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞弗林解释毕德曼的动机（天灾后遭指责），并确认其可能还活着",
+      "type": "investigation",
+      "line_range": [
+        1523,
+        1559
+      ],
+      "participants": [
+        "亚叶",
+        "塞弗林",
+        "铃兰"
+      ],
+      "location": "沃伦姆德议事厅",
+      "significance": "完善毕德曼的嫌疑人画像",
+      "is_imaginary": false
+    },
+    {
+      "event": "镇民擅自包围十二音街道，泥岩小队被逼入绝境，泥岩决定参战",
+      "type": "confrontation",
+      "line_range": [
+        1560,
+        1640
+      ],
+      "participants": [
+        "塞弗林",
+        "塔佳娜",
+        "泥岩",
+        "萨卡兹战士",
+        "镇民"
+      ],
+      "location": "沃伦姆德十二音街道",
+      "significance": "局势失控，泥岩被迫从观望转为介入",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰喉、断崖和卡达发现毕德曼的尸体，确认其已死于暴乱",
+      "type": "revelation",
+      "line_range": [
+        1641,
+        1741
+      ],
+      "participants": [
+        "灰喉",
+        "断崖",
+        "卡达"
+      ],
+      "location": "沃伦姆德B2坐标留声机处",
+      "significance": "关键转折：嫌疑人已死，暴乱却未停止，暗示另有隐情",
+      "is_imaginary": false
+    },
+    {
+      "event": "亚叶发现塞弗林是感染者，塞弗林试图以自杀式牺牲平息暴乱，被罗德岛阻止",
+      "type": "revelation",
+      "line_range": [
+        1680,
+        1718
+      ],
+      "participants": [
+        "亚叶",
+        "塞弗林",
+        "铃兰",
+        "塔佳娜"
+      ],
+      "location": "沃伦姆德议事厅",
+      "significance": "揭示塞弗林的秘密，展现其牺牲意愿",
+      "is_imaginary": false
+    },
+    {
+      "event": "断崖在毕德曼住所发现危机合约行动协议，推测暴乱可能是有预谋的极端行动",
+      "type": "investigation",
+      "line_range": [
+        1742,
+        1766
+      ],
+      "participants": [
+        "断崖",
+        "卡达"
+      ],
+      "location": "毕德曼住所",
+      "significance": "引入危机合约作为幕后黑手可能性",
+      "is_imaginary": false
+    },
+    {
+      "event": "泥岩与罗德岛正面冲突，塞弗林试图以死换取泥岩撤退，被铃兰阻止",
+      "type": "confrontation",
+      "line_range": [
+        1898,
+        1973
+      ],
+      "participants": [
+        "塞弗林",
+        "泥岩",
+        "亚叶",
+        "铃兰",
+        "萨卡兹战士"
+      ],
+      "location": "沃伦姆德广场",
+      "significance": "高潮对决，塞弗林的牺牲计划失败",
+      "is_imaginary": false
+    },
+    {
+      "event": "泥岩在罗德岛压制下选择撤退，并压制不愿停手的暴徒，带领愿意跟随的人离开",
+      "type": "retreat",
+      "line_range": [
+        1974,
+        2122
+      ],
+      "participants": [
+        "泥岩",
+        "萨卡兹战士",
+        "亚叶",
+        "灰喉",
+        "断崖",
+        "卡达",
+        "武装的感染者"
+      ],
+      "location": "沃伦姆德广场",
+      "significance": "泥岩小队退出冲突，暴乱基本平息",
+      "is_imaginary": false
+    },
+    {
+      "event": "战后讨论，塞弗林指出毕德曼缺乏纵火能力，真凶仍不明",
+      "type": "investigation",
+      "line_range": [
+        2123,
+        2177
+      ],
+      "participants": [
+        "灰喉",
+        "断崖",
+        "塞弗林"
+      ],
+      "location": "沃伦姆德议事厅",
+      "significance": "真相悬而未决，留下悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞弗林讲述自己感染矿石病的经历（与冬灵族族长战斗时被刺伤）",
+      "type": "flashback",
+      "line_range": [
+        2178,
+        2200
+      ],
+      "participants": [
+        "塞弗林",
+        "灰喉",
+        "断崖"
+      ],
+      "location": "沃伦姆德议事厅",
+      "significance": "揭示塞弗林感染来源，深化角色背景",
+      "is_imaginary": false
+    },
+    {
+      "event": "闪回：神秘人（托尔瓦尔德）说服毕德曼参与暴乱计划，声称是为了拯救更多人",
+      "type": "flashback",
+      "line_range": [
+        2249,
+        2385
+      ],
+      "participants": [
+        "毕德曼",
+        "神秘人（托尔瓦尔德）"
+      ],
+      "location": "毕德曼房间",
+      "significance": "揭示暴乱策划过程，神秘人身份成谜",
+      "is_imaginary": false
+    },
+    {
+      "event": "泥岩决定带领队伍前往卡兹戴尔，并称其为无家可归者的归宿",
+      "type": "departure",
+      "line_range": [
+        2386,
+        2428
+      ],
+      "participants": [
+        "泥岩",
+        "萨卡兹战士",
+        "武装的感染者"
+      ],
+      "location": "沃伦姆德郊外",
+      "significance": "泥岩小队去向确定，为后续剧情铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "泥岩向死者献花，与亚叶和灰喉进行反思性对话，承认有些事情「做不到」",
+      "type": "farewell",
+      "line_range": [
+        2429,
+        2541
+      ],
+      "participants": [
+        "泥岩",
+        "亚叶",
+        "灰喉"
+      ],
+      "location": "沃伦姆德郊外墓地",
+      "significance": "角色间的和解与反思，亚叶接受无力感",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "塞弗林",
+      "type": "npc",
+      "role_in_chapter": "沃伦姆德的士官长，托尔的父亲。在丧子之痛中维持城镇秩序，对罗德岛既警惕又依赖，隐瞒火灾真相，最终下令镇压叛乱。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "塔佳娜",
+      "type": "npc",
+      "role_in_chapter": "沃伦姆德的年轻居民，塞弗林的侄女，托尔的未婚妻。负责接待罗德岛，在真相与忠诚间挣扎，最终选择帮助亚叶。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "亚叶",
+      "type": "operator",
+      "role_in_chapter": "罗德岛医疗干员，安托的同学和好友。为寻找安托来到沃伦姆德，在确认安托死亡后，情绪从悲伤转向愤怒，决心复仇。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "铃兰",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，凯尔希的学生。跟随亚叶行动，性格温和善良，试图安抚亚叶的情绪并阻止冲突扩大。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "泥岩",
+      "type": "npc",
+      "role_in_chapter": "泥岩小队队长，萨卡兹。态度暧昧，否认与整合运动的关系，声称只为同伴复仇，但行动克制，试图控制手下。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "灰喉",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，弩手。在镇外调查，与泥岩对峙后获得「冬灵人」线索，最终决定武装介入营救同伴。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "断崖",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，天灾信使莱恩哈特的护卫。与灰喉一同行动，负责现场判断和战斗。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "卡达",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，负责拍摄素材。性格活泼，跟随灰喉小队行动，负责侦查。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "镇民代表",
+      "type": "npc",
+      "role_in_chapter": "沃伦姆德的镇民代表，与塞弗林共同管理城镇事务，倾向于隐瞒真相和压制感染者。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "萨卡兹战士",
+      "type": "npc",
+      "role_in_chapter": "泥岩的副手，多次劝战，最终服从泥岩撤退决定",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老爷爷",
+      "type": "npc",
+      "role_in_chapter": "最后的冬灵人，向铃兰透露毕德曼未死并指挥暴乱的关键信息",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "毕德曼",
+      "type": "npc",
+      "role_in_chapter": "天灾信使，被怀疑为暴乱元凶，但已死于暴乱，闪回中显示被神秘人说服参与计划",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "神秘人（托尔瓦尔德）",
+      "type": "npc",
+      "role_in_chapter": "闪回中说服毕德曼参与暴乱的神秘人物，暗示为托尔瓦尔德，策划了整场事件",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "沃伦姆德的感染者待遇",
+      "line_range": [
+        189,
+        193
+      ],
+      "discussion_summary": "亚叶向铃兰解释莱塔尼亚对感染者的宽容态度，即可以通过付出代价赢回生活权利，但沃伦姆德的情况更为复杂。",
+      "is_substantive": true
+    },
+    {
+      "concept": "火灾的真相（谋杀）",
+      "line_range": [
+        575,
+        585
+      ],
+      "discussion_summary": "叛乱感染者向亚叶揭露火灾并非意外，而是纵火和谋杀，且无人生还，彻底改变了亚叶对事件的认知。",
+      "is_substantive": true
+    },
+    {
+      "concept": "危机合约",
+      "line_range": [
+        1748,
+        1757
+      ],
+      "discussion_summary": "断崖发现毕德曼是危机合约的天灾信使，推测其可能利用平台策划暴乱以引起外界关注",
+      "is_substantive": true
+    },
+    {
+      "concept": "卡兹戴尔",
+      "line_range": [
+        2400,
+        2409
+      ],
+      "discussion_summary": "泥岩解释卡兹戴尔不是城市或国家，而是一片不被允许建立家园的流亡者土地，是所有无家可归之人的归宿",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        99,
+        132
+      ],
+      "description": "亚叶和铃兰讨论安托失联，决定以罗德岛干员身份前往莱塔尼亚调查。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        177,
+        194
+      ],
+      "description": "亚叶和铃兰抵达沃伦姆德，以罗德岛医生身份与当地居民接触。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        367,
+        386
+      ],
+      "description": "亚叶以罗德岛干员身份向塞弗林询问安托下落，并提及罗德岛是感染者问题对策专家。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        550,
+        550
+      ],
+      "description": "亚叶向叛乱感染者表明自己是罗德岛干员和感染者医生。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        624,
+        629
+      ],
+      "description": "亚叶和铃兰向塔佳娜说明罗德岛的宗旨是帮助感染者和解决感染者问题。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        954,
+        1047
+      ],
+      "description": "灰喉、断崖和卡达以罗德岛干员身份与泥岩对峙，进行情报交换。"
+    },
+    {
+      "faction": "泥岩小队",
+      "line_range": [
+        57,
+        98
+      ],
+      "description": "泥岩小队成员讨论补给、信任问题，队长泥岩态度暧昧，等待时机。"
+    },
+    {
+      "faction": "泥岩小队",
+      "line_range": [
+        702,
+        707
+      ],
+      "description": "塔佳娜向亚叶介绍徘徊在城镇周围的感染者武装分子自称「泥岩小队」。"
+    },
+    {
+      "faction": "泥岩小队",
+      "line_range": [
+        790,
+        806
+      ],
+      "description": "泥岩阻止手下毁掉城镇，强调要毁掉的只是一个凶手，而非整个城镇。"
+    },
+    {
+      "faction": "泥岩小队",
+      "line_range": [
+        1002,
+        1010
+      ],
+      "description": "泥岩向灰喉承认自己曾是整合运动，但现在已经不是，只是泥岩小队的队长。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1004,
+        1010
+      ],
+      "description": "灰喉指出泥岩的标志属于整合运动，但泥岩否认，称自己已不再是整合运动成员。"
+    },
+    {
+      "faction": "冬灵人",
+      "line_range": [
+        940,
+        940
+      ],
+      "description": "塞弗林认为冬灵人是煽动感染者叛乱的罪魁祸首。"
+    },
+    {
+      "faction": "冬灵人",
+      "line_range": [
+        1109,
+        1116
+      ],
+      "description": "塞弗林解释冬灵人是本地的卡普里尼原住民，与沃伦姆德有历史冲突。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1324,
+        1357
+      ],
+      "description": "罗德岛干员与塞弗林会合，讨论下一步行动，亚叶代表罗德岛质询塞弗林对感染者的态度"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1321,
+        1323
+      ],
+      "description": "叛乱镇民自称整合运动，声称要解放感染者，但泥岩对此持保留态度"
+    },
+    {
+      "faction": "危机合约",
+      "line_range": [
+        1748,
+        1757
+      ],
+      "description": "断崖发现毕德曼是危机合约的天灾信使，推测其可能利用平台策划暴乱"
+    },
+    {
+      "faction": "冬灵人",
+      "line_range": [
+        1468,
+        1507
+      ],
+      "description": "老爷爷解释冬灵人并非暴乱主因，冬灵血脉已与沃伦姆德居民融合"
+    },
+    {
+      "faction": "萨卡兹",
+      "line_range": [
+        2086,
+        2092
+      ],
+      "description": "萨卡兹战士表示他们追求的是自己的生，而非他人的死，并威胁对付不听命令的暴徒"
+    }
+  ],
+  "locations": [
+    {
+      "location": "沃伦姆德",
+      "line_range": [
+        43,
+        44
+      ],
+      "description": "塔佳娜描述沃伦姆德因大裂谷脱离航线，情况日益糟糕。"
+    },
+    {
+      "location": "沃伦姆德",
+      "line_range": [
+        177,
+        184
+      ],
+      "description": "铃兰介绍沃伦姆德意为第八个月亮，是莱塔尼亚北部的商业聚落，但亚叶指出眼前景象与描述不符。"
+    },
+    {
+      "location": "沃伦姆德",
+      "line_range": [
+        348,
+        364
+      ],
+      "description": "塞弗林描述沃伦姆德因天灾蒙受损失，断绝外界联系，偏离航线，缺乏补给。"
+    },
+    {
+      "location": "十二音街道",
+      "line_range": [
+        430,
+        440
+      ],
+      "description": "亚叶观察十二音街道，指出其表面与普通街区无异，但实际感染者被约束自由，社区未正常运作。"
+    },
+    {
+      "location": "冬灵山脉",
+      "line_range": [
+        948,
+        948
+      ],
+      "description": "铃兰提到这附近的山脉叫做冬灵山脉，是常年被冰雪覆盖的荒芜山脉。"
+    },
+    {
+      "location": "沃伦姆德",
+      "line_range": [
+        1294,
+        1308
+      ],
+      "description": "叛乱镇民描述沃伦姆德缺乏宪兵，因为被调往贵族婚礼，导致城镇陷入混乱"
+    },
+    {
+      "location": "十二音街道",
+      "line_range": [
+        1564,
+        1569
+      ],
+      "description": "镇民擅自包围十二音街道，塞弗林担心整合运动蛰伏其中"
+    },
+    {
+      "location": "卡兹戴尔",
+      "line_range": [
+        2400,
+        2409
+      ],
+      "description": "泥岩解释卡兹戴尔是一片不被允许建立家园的流亡者土地，是所有无家可归之人的归宿"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:43:29.531956+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 55378,
+    "tokens_out": 8577,
+    "elapsed_s": 75.12781119346619
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "塞弗林",
+    "塔佳娜",
+    "镇民代表",
+    "萨卡兹战士",
+    "老爷爷",
+    "毕德曼",
+    "神秘人（托尔瓦尔德）"
+  ]
+}

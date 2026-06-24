@@ -1,0 +1,784 @@
+{
+  "chapter": "泡影苍霆",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "罗德岛A6小队在萨尔贡执行任务时遭遇沙尘暴，被传送到一个名为泡影国的奇异世界。在这里，他们的队友泡普卡、斑点、月见夜变成了完全不同的身份：国主宝巫迦、铁匠斑弥罗、将军月见夜。梓兰和空爆被认定为来自御轮的异兽猎人，必须协助国主完成十年一次的试炼，狩猎异兽。梓兰起初怀疑这是一场骗局，但逐渐发现这个世界没有源石，常识在这里行不通。\n\nScene 1中，梓兰和空爆成功狩猎熔火蜗后，宝巫迦试图启动御轮送她们回家，但御轮被雷之主干扰，涌出大量咒鬼，同时都城遭到兽潮袭击。宝巫迦决定先回城防守。Scene 2中，月见夜提出利用熔火蜗尸体将兽潮引入雷之主巢穴地下空洞并引爆的计划，梓兰和空爆参与诱饵部队，宝巫迦留守都城。Scene 3中，诱饵计划成功，但塌陷范围过大导致月见夜被卷入，空爆发现雷之主正在吸收咒鬼的诅咒，且其使用的力量与宝巫迦的巫女之力相同。Scene 4中，宝巫迦因月见夜重伤和雷之主拥有母亲力量而暴怒，独自冲向雷之主，梓兰稳住局势并决定与宝巫迦一同狩猎雷之主。Scene 5中，梓兰写信激励月见夜，月见夜在斑弥罗和梓兰的信件开导下醒悟，意识到自己一直以来的恐惧和错误，决定前往陛下身边。Scene 6中，众人深入地下竹林，宝巫迦听到母亲遗言后失控独自跳下祭坛与雷之主战斗，并试图与其同归于尽，梓兰用龙之箭阻断兽潮。Scene 7中，月见夜赶到，告知雷之主曾救他并净化咒鬼，众人推测雷之主是诅咒的受害者而非元凶，梓兰被推举为总指挥，制定帮助雷之主摆脱诅咒的计划。Scene 8中，月见夜向武士们承认自己的恐惧，众人发起总攻，雷之主在战斗中克服诅咒，将诅咒化为己用，宝巫迦准备使用御龙术。Scene 9中，众人合力击败雷之主，宝巫迦成功使用御龙术，并从前代国主的遗言中得知御轮才是灾难源头，雷之主是受害者。御轮力量耗尽，梓兰和空爆被送回原世界，政宗和义经随行。Scene 10中，梓兰和空爆回到原世界与A6小队重逢，泡影国众人为英雄们立雕像，最后两位来自远方的猎人（疑似梓兰和空爆）抵达泡影国。",
+  "events": [
+    {
+      "event": "A6小队在萨尔贡执行任务时遭遇沙尘暴，被传送到泡影国",
+      "type": "disaster",
+      "line_range": [
+        78,
+        92
+      ],
+      "participants": [
+        "梓兰",
+        "空爆"
+      ],
+      "location": "萨尔贡沙漠",
+      "significance": "触发主线事件，将主角团带入异世界",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰和空爆发现泡普卡、斑点、月见夜变成了泡影国的国主、铁匠和将军",
+      "type": "revelation",
+      "line_range": [
+        117,
+        241
+      ],
+      "participants": [
+        "梓兰",
+        "空爆",
+        "宝巫迦",
+        "斑弥罗"
+      ],
+      "location": "泡影国竹林",
+      "significance": "揭示核心设定：同伴身份和性格完全改变",
+      "is_imaginary": false
+    },
+    {
+      "event": "宝巫迦向梓兰和空爆解释异兽猎人的使命和试炼制度",
+      "type": "revelation",
+      "line_range": [
+        242,
+        263
+      ],
+      "participants": [
+        "宝巫迦",
+        "梓兰",
+        "空爆"
+      ],
+      "location": "泡影国都城",
+      "significance": "揭示世界观核心设定：御轮、异兽、试炼",
+      "is_imaginary": false
+    },
+    {
+      "event": "宝巫迦在城中对国民宣布新异兽猎人到来，并承诺将来要狩猎雷之主",
+      "type": "ceremony",
+      "line_range": [
+        294,
+        319
+      ],
+      "participants": [
+        "宝巫迦",
+        "梓兰",
+        "空爆"
+      ],
+      "location": "泡影城",
+      "significance": "宝巫迦利用舆论迫使梓兰和空爆接受使命，并公开挑战雷之主的决心",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰和空爆遭遇雷之主，短暂交手后被迫撤退",
+      "type": "confrontation",
+      "line_range": [
+        428,
+        448
+      ],
+      "participants": [
+        "梓兰",
+        "空爆",
+        "雷之主"
+      ],
+      "location": "泡影国竹林",
+      "significance": "首次展示雷之主的强大实力，为后续冲突埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰调查发现泡影国没有源石，斑弥罗身上也没有矿石病",
+      "type": "investigation",
+      "line_range": [
+        517,
+        575
+      ],
+      "participants": [
+        "梓兰",
+        "斑弥罗"
+      ],
+      "location": "泡影城",
+      "significance": "证实这个世界与泰拉完全不同，没有源石和矿石病",
+      "is_imaginary": false
+    },
+    {
+      "event": "空爆目睹宝巫迦净化仪式，误以为她在受折磨，试图阻止",
+      "type": "confrontation",
+      "line_range": [
+        576,
+        598
+      ],
+      "participants": [
+        "空爆",
+        "宝巫迦",
+        "政宗"
+      ],
+      "location": "泡影城祭祀重地",
+      "significance": "引发空爆与政宗的冲突，揭示净化仪式的真相",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰和空爆与月见夜对话，了解前代国主失踪的真相和月见夜的立场",
+      "type": "revelation",
+      "line_range": [
+        711,
+        751
+      ],
+      "participants": [
+        "梓兰",
+        "空爆",
+        "月见夜"
+      ],
+      "location": "泡影城",
+      "significance": "揭示月见夜阻止宝巫迦挑战雷之主的真正原因",
+      "is_imaginary": false
+    },
+    {
+      "event": "政宗向梓兰和空爆解释狂龙病毒与诅咒的相似性，以及他和义经的来历",
+      "type": "revelation",
+      "line_range": [
+        908,
+        931
+      ],
+      "participants": [
+        "政宗",
+        "梓兰",
+        "空爆"
+      ],
+      "location": "斑弥罗工坊",
+      "significance": "揭示诅咒可能来自炎火村，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰和空爆接受试炼，但拒绝参与狩猎雷之主",
+      "type": "planning",
+      "line_range": [
+        951,
+        960
+      ],
+      "participants": [
+        "梓兰",
+        "宝巫迦",
+        "月见夜"
+      ],
+      "location": "斑弥罗工坊",
+      "significance": "梓兰做出关键决策，暂时平衡了宝巫迦和月见夜的需求",
+      "is_imaginary": false
+    },
+    {
+      "event": "雪山出现异变，温度升高，疑似异兽作祟",
+      "type": "disaster",
+      "line_range": [
+        985,
+        989
+      ],
+      "participants": [
+        "月见夜",
+        "武士"
+      ],
+      "location": "雪山",
+      "significance": "触发下一阶段的狩猎行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰和空爆获得新装备，准备出发狩猎异兽",
+      "type": "preparation",
+      "line_range": [
+        990,
+        1060
+      ],
+      "participants": [
+        "梓兰",
+        "空爆",
+        "斑弥罗",
+        "政宗",
+        "宝巫迦",
+        "月见夜"
+      ],
+      "location": "泡影城",
+      "significance": "完成装备升级和战术准备",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰和空爆在雪山与熔火蜗战斗，空爆冒险使用超高输出属性解放斩获胜",
+      "type": "battle",
+      "line_range": [
+        1074,
+        1138
+      ],
+      "participants": [
+        "梓兰",
+        "空爆",
+        "政宗",
+        "义经"
+      ],
+      "location": "雪山",
+      "significance": "展示空爆的战斗风格和成长，暴露梓兰回避近战的弱点",
+      "is_imaginary": false
+    },
+    {
+      "event": "宝巫迦独自面对异兽熔火蜗，发现其试图引发火山爆发",
+      "type": "confrontation",
+      "line_range": [
+        1140,
+        1159
+      ],
+      "participants": [
+        "宝巫迦",
+        "异兽熔火蜗"
+      ],
+      "location": "雪山",
+      "significance": "揭示异兽的真正意图，制造新的危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "宝巫迦启动御轮时被雷之主干扰，御轮涌出咒鬼，都城遭兽潮袭击",
+      "type": "disaster",
+      "line_range": [
+        1222,
+        1290
+      ],
+      "participants": [
+        "宝巫迦",
+        "梓兰",
+        "空爆",
+        "月见夜",
+        "政宗"
+      ],
+      "location": "雪山",
+      "significance": "揭示雷之主是兽潮和咒鬼的幕后黑手，迫使众人放弃立即回家，转而应对危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "月见夜提出利用熔火蜗尸体将兽潮引入地下空洞的诱饵计划",
+      "type": "planning",
+      "line_range": [
+        1311,
+        1327
+      ],
+      "participants": [
+        "月见夜",
+        "梓兰",
+        "空爆",
+        "宝巫迦",
+        "政宗"
+      ],
+      "location": "都城",
+      "significance": "制定应对兽潮的关键战术，并首次揭示雷之主巢穴的位置",
+      "is_imaginary": false
+    },
+    {
+      "event": "月见夜与宝巫迦就狩猎雷之主一事发生争执，月见夜透露自己见过宝巫迦没见过的东西",
+      "type": "confrontation",
+      "line_range": [
+        1335,
+        1353
+      ],
+      "participants": [
+        "宝巫迦",
+        "月见夜"
+      ],
+      "location": "都城",
+      "significance": "展现月见夜对宝巫迦的保护欲和隐瞒的秘密，加深两人矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "斑弥罗向梓兰和宝巫迦讲述十年前前代国主远征和月见夜的往事",
+      "type": "flashback",
+      "line_range": [
+        1378,
+        1385
+      ],
+      "participants": [
+        "斑弥罗",
+        "梓兰",
+        "宝巫迦"
+      ],
+      "location": "斑弥罗家中",
+      "significance": "揭示月见夜与斑弥罗的渊源，以及斑弥罗对雷之主的仇恨",
+      "is_imaginary": false
+    },
+    {
+      "event": "诱饵计划成功，但塌陷范围过大导致月见夜被卷入，空爆发现雷之主在吸收诅咒并使用巫女之力",
+      "type": "revelation",
+      "line_range": [
+        1425,
+        1496
+      ],
+      "participants": [
+        "空爆",
+        "月见夜",
+        "义经"
+      ],
+      "location": "地下空洞",
+      "significance": "揭示雷之主拥有前代国主的巫女之力，为后续剧情反转埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "宝巫迦因月见夜重伤和雷之主拥有母亲力量而暴怒，独自冲向雷之主",
+      "type": "confrontation",
+      "line_range": [
+        1497,
+        1537
+      ],
+      "participants": [
+        "宝巫迦",
+        "梓兰",
+        "空爆",
+        "政宗"
+      ],
+      "location": "地下空洞",
+      "significance": "宝巫迦情绪失控，梓兰被迫决定与她一同狩猎雷之主",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰写信激励月见夜，月见夜在斑弥罗和信件开导下醒悟",
+      "type": "character_development",
+      "line_range": [
+        1659,
+        1744
+      ],
+      "participants": [
+        "月见夜",
+        "斑弥罗",
+        "梓兰"
+      ],
+      "location": "都城",
+      "significance": "月见夜意识到自己的恐惧和错误，决定前往陛下身边",
+      "is_imaginary": false
+    },
+    {
+      "event": "宝巫迦听到母亲遗言后失控，独自跳下祭坛与雷之主战斗并试图同归于尽",
+      "type": "confrontation",
+      "line_range": [
+        1793,
+        1841
+      ],
+      "participants": [
+        "宝巫迦",
+        "梓兰",
+        "空爆",
+        "政宗"
+      ],
+      "location": "地下祭坛",
+      "significance": "宝巫迦陷入绝境，梓兰用龙之箭阻断兽潮救场",
+      "is_imaginary": false
+    },
+    {
+      "event": "月见夜赶到，告知雷之主曾救他并净化咒鬼，众人推测雷之主是受害者",
+      "type": "revelation",
+      "line_range": [
+        1920,
+        1938
+      ],
+      "participants": [
+        "月见夜",
+        "宝巫迦",
+        "梓兰",
+        "空爆"
+      ],
+      "location": "地下祭坛",
+      "significance": "剧情反转，雷之主从敌人变为潜在盟友，改变作战目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰被推举为总指挥，制定帮助雷之主摆脱诅咒的计划",
+      "type": "planning",
+      "line_range": [
+        1961,
+        1992
+      ],
+      "participants": [
+        "梓兰",
+        "宝巫迦",
+        "月见夜",
+        "空爆",
+        "斑弥罗"
+      ],
+      "location": "地下祭坛",
+      "significance": "梓兰成为行动核心，团队协作对抗共同威胁",
+      "is_imaginary": false
+    },
+    {
+      "event": "月见夜向武士们承认自己的恐惧，众人发起总攻",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1993,
+        2020
+      ],
+      "participants": [
+        "月见夜",
+        "斑弥罗",
+        "随从武士"
+      ],
+      "location": "地下祭坛",
+      "significance": "月见夜克服心魔，团队士气高涨",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷之主在战斗中克服诅咒，将诅咒化为己用",
+      "type": "character_development",
+      "line_range": [
+        2070,
+        2081
+      ],
+      "participants": [
+        "梓兰",
+        "空爆"
+      ],
+      "location": "地下祭坛",
+      "significance": "雷之主展现强大生命力，无需拯救，改变众人认知",
+      "is_imaginary": false
+    },
+    {
+      "event": "众人合力击败雷之主，宝巫迦成功使用御龙术",
+      "type": "battle",
+      "line_range": [
+        2106,
+        2161
+      ],
+      "participants": [
+        "空爆",
+        "梓兰",
+        "宝巫迦",
+        "政宗",
+        "义经",
+        "雷之主"
+      ],
+      "location": "地下祭坛",
+      "significance": "战斗胜利，宝巫迦获得雷之主的力量",
+      "is_imaginary": false
+    },
+    {
+      "event": "宝巫迦从前代国主的遗言中得知御轮才是灾难源头，雷之主是受害者",
+      "type": "revelation",
+      "line_range": [
+        2168,
+        2191
+      ],
+      "participants": [
+        "宝巫迦",
+        "前代国主"
+      ],
+      "location": "御轮内部",
+      "significance": "揭示泡影国试炼制度的真相，完成世界观补完",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰和空爆被送回原世界，政宗和义经随行",
+      "type": "departure",
+      "line_range": [
+        2192,
+        2250
+      ],
+      "participants": [
+        "梓兰",
+        "空爆",
+        "宝巫迦",
+        "政宗",
+        "义经"
+      ],
+      "location": "竹林",
+      "significance": "主线任务完成，角色返回原世界，开启新旅程",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰和空爆回到原世界与A6小队重逢",
+      "type": "reunion",
+      "line_range": [
+        2251,
+        2296
+      ],
+      "participants": [
+        "梓兰",
+        "空爆",
+        "月见夜",
+        "斑点",
+        "泡普卡",
+        "政宗",
+        "义经"
+      ],
+      "location": "萨尔贡沙漠",
+      "significance": "角色回归，A6小队团聚，为后续剧情铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "泡影国众人为英雄们立雕像，两位来自远方的猎人抵达泡影国",
+      "type": "ceremony",
+      "line_range": [
+        2302,
+        2323
+      ],
+      "participants": [
+        "宝巫迦",
+        "月见夜",
+        "斑弥罗"
+      ],
+      "location": "泡影国都城",
+      "significance": "泡影国重建，暗示梓兰和空爆可能再次来访",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "梓兰",
+      "type": "operator",
+      "role_in_chapter": "A6小队队长，被传送到泡影国后成为异兽猎人，负责调查和决策，最终接受试炼但拒绝参与狩猎雷之主",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "空爆",
+      "type": "operator",
+      "role_in_chapter": "A6小队成员，被传送到泡影国后成为异兽猎人，性格开朗冲动，学习使用盾斧和翔虫，在战斗中展现冒险精神",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "宝巫迦",
+      "type": "npc",
+      "role_in_chapter": "泡影国国主，泡普卡的异世界对应体，性格独立自主，渴望狩猎雷之主为母亲复仇，利用梓兰和空爆达成目的",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "斑弥罗",
+      "type": "npc",
+      "role_in_chapter": "泡影国铁匠，斑点的异世界对应体，性格开朗搞怪，擅长发明创造，为梓兰和空爆打造装备",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "月见夜",
+      "type": "npc",
+      "role_in_chapter": "泡影国将军，月见夜的异世界对应体，性格认真严肃，阻止宝巫迦挑战雷之主，希望梓兰和空爆完成试炼后离开",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "政宗",
+      "type": "npc",
+      "role_in_chapter": "前代异兽猎人，来自炎火村的云兽，负责训练梓兰和空爆，怀疑诅咒就是狂龙病毒",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "义经",
+      "type": "npc",
+      "role_in_chapter": "前代异兽猎人，来自炎火村的牙兽，沉默寡言，跟随政宗行动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "雷之主",
+      "type": "npc",
+      "role_in_chapter": "强大的异兽，十年前击败前代国主，至今仍在泡影国周边肆虐",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "异兽熔火蜗",
+      "type": "npc",
+      "role_in_chapter": "本章的异兽，试图将雪山改造成火山，最终被宝巫迦独自面对",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "前代国主",
+      "type": "npc",
+      "role_in_chapter": "宝巫迦的母亲，通过遗言揭示御轮真相，将力量托付给雷之主",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "斑点",
+      "type": "operator",
+      "role_in_chapter": "A6小队成员，在原世界与沙盗战斗，与梓兰重逢",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "泡普卡",
+      "type": "operator",
+      "role_in_chapter": "A6小队成员，在原世界被保护，与梓兰重逢",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "试炼",
+      "line_range": [
+        247,
+        259
+      ],
+      "discussion_summary": "宝巫迦解释试炼是每十年一次的仪式，异兽和异兽猎人从御轮中降临，国主与猎人共同狩猎异兽，完成后国主吸收诅咒重新开启御轮",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石",
+      "line_range": [
+        536,
+        571
+      ],
+      "discussion_summary": "梓兰发现熔火蜗的壳不是源石结晶，斑弥罗身上没有矿石病，证实泡影国没有源石",
+      "is_substantive": true
+    },
+    {
+      "concept": "狂龙病毒",
+      "line_range": [
+        921,
+        931
+      ],
+      "discussion_summary": "政宗解释狂龙病毒是炎火村的恐怖病毒，被感染的野兽会散发黑气变得狂暴，与诅咒性质相似，怀疑诅咒就是狂龙病毒",
+      "is_substantive": true
+    },
+    {
+      "concept": "翔虫",
+      "line_range": [
+        830,
+        831
+      ],
+      "discussion_summary": "政宗介绍翔虫是炎火村猎人的必修课，分泌的铁虫丝坚韧无比，可用于高速移动和战斗",
+      "is_substantive": true
+    },
+    {
+      "concept": "巫女之力",
+      "line_range": [
+        2184,
+        2189
+      ],
+      "discussion_summary": "前代国主解释巫女之力只能在生与死的刹那传递，她主动将力量交给雷之主",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "泡影国",
+      "line_range": [
+        266,
+        279
+      ],
+      "description": "宝巫迦介绍泡影国都城和御轮，解释国家的起源和试炼制度"
+    },
+    {
+      "faction": "炎火村",
+      "line_range": [
+        908,
+        931
+      ],
+      "description": "政宗解释自己和义经是炎火村隐秘队成员，追踪雷狼龙来到泡影国，介绍狂龙病毒和炎火村的狩猎传统"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1,
+        4
+      ],
+      "description": "梓兰提到A6小队已经建立很久，执行罗德岛的任务"
+    },
+    {
+      "faction": "泡影国狩猎团",
+      "line_range": [
+        1292,
+        1297
+      ],
+      "description": "武士向月见夜报告防线情况，月见夜下令坚持"
+    },
+    {
+      "faction": "泡影国狩猎团",
+      "line_range": [
+        1732,
+        1735
+      ],
+      "description": "斑弥罗讲述狩猎团十年来的信念：为陛下狩猎雷之主而存在"
+    },
+    {
+      "faction": "泡影国狩猎团",
+      "line_range": [
+        1993,
+        2020
+      ],
+      "description": "月见夜向武士们承认恐惧，武士们表示理解并愿意追随"
+    },
+    {
+      "faction": "炎火村隐秘队",
+      "line_range": [
+        2240,
+        2241
+      ],
+      "description": "政宗表示探索未知是隐秘队的任务，决定随梓兰前往罗德岛"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2299,
+        2301
+      ],
+      "description": "空爆邀请政宗和义经前往罗德岛"
+    }
+  ],
+  "locations": [
+    {
+      "location": "萨尔贡",
+      "line_range": [
+        70,
+        73
+      ],
+      "description": "空爆提到任务地点在萨尔贡，接近焚风热土，哥伦比亚对焚风热土的探索有进展"
+    },
+    {
+      "location": "泡影国",
+      "line_range": [
+        266,
+        279
+      ],
+      "description": "宝巫迦介绍泡影国都城泡影城，周围竹林环绕，御轮是国家的核心"
+    },
+    {
+      "location": "雪山",
+      "line_range": [
+        985,
+        989
+      ],
+      "description": "斥候报告雪山出现异变，温度升高，疑似异兽作祟"
+    },
+    {
+      "location": "炎火村",
+      "line_range": [
+        908,
+        931
+      ],
+      "description": "政宗介绍炎火村是他们的故乡，有狂龙病毒和独特的狩猎文化"
+    },
+    {
+      "location": "地下空洞（雷之主巢穴）",
+      "line_range": [
+        1324,
+        1331
+      ],
+      "description": "月见夜描述城东竹林下有一片古代地下河干涸形成的巨大空洞，实为雷之主的巢穴"
+    },
+    {
+      "location": "地下竹林",
+      "line_range": [
+        1745,
+        1751
+      ],
+      "description": "宝巫迦指出地下竹林是雷之主的杰作，飘起的雾气是诅咒的气息"
+    },
+    {
+      "location": "地下祭坛",
+      "line_range": [
+        2032,
+        2036
+      ],
+      "description": "宝巫迦发现祭坛是过去泡影国人们进行仪式的地方，越靠近越能感觉到诅咒的气息"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:45:03.688784+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 48982,
+    "tokens_out": 7314,
+    "elapsed_s": 64.70991015434265
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "宝巫迦",
+    "斑弥罗",
+    "政宗",
+    "义经",
+    "雷之主",
+    "异兽熔火蜗",
+    "前代国主"
+  ]
+}

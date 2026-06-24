@@ -40,7 +40,7 @@ Arknights LLM Wiki/
 ├── README.md
 ├── pyproject.toml                 # 依赖与项目元数据（待创建）
 ├── docs/
-│   └── project-rules.md          # 四章项目规则
+├── CLAUDE.md                     # 项目规则（开发流程/Git/多会话管理）
 ├── arknights_wiki/               # 主代码包（待迁移）
 │   ├── cli.py
 │   ├── config.py
@@ -97,6 +97,41 @@ Arknights LLM Wiki/
 - NPC 实体 + 故事对话索引 → M1 按需创建
 - 概念实体 + 关键词索引 → M3 LLM 提取
 
+## Pass 1 剧情骨架提取完成 (2026-06-16)
+
+| 维度 | 值 |
+|------|-----|
+| 架构 | v3 三遍独立提取 |
+| 模型 | DeepSeek v4-flash (MiniMax M3 因 think 块问题淘汰) |
+| 提取模块 | 5 文件 (dialogue_loader/prompt_builder/llm_client/post_processor/orchestrator) |
+| 测试 | 163 all pass (28 extraction + 135 existing) |
+| 试跑 | 6 章全成功, $0.08, ~5 min |
+| 分支 | feature/pass1-event-extraction |
+
+## Pass 2 全量提取完成 (2026-06-21)
+
+| 维度 | 值 |
+|------|-----|
+| 实施 | 4 模块 TDD (character_aggregator/prompt_builder/post_processor/orchestrator) |
+| 测试 | 210 passed |
+| 全量提取 | 641/641 角色成功, $4.63, 100% JSON 解析, 0 校验错误 |
+| tokens | 14,969,572 in / 534,594 out |
+| 耗时 | 1h48m |
+| 输出 | `data/extractions/v2_characters/` |
+| identity_map | ~157 条 |
+| 分支 | feature/pass2-entity-extraction |
+
+### 已知问题
+
+- **战力评级分布严重不均**：战场中坚 61.8%，大国将军 0.2%，王庭之主 10%，中间档位大量空白
+- **IS-IF 事件未被充分纳入角色总结**
+- 90 干员（381→291）未在 Pass 1 事件中出场
+
 ## 下一步
 
-1. 开发统计系统：内容数量、成本、时间统计
+1. ~~战力评级体系重新设计~~ — 已完成 (2026-06-21)
+2. ~~IS-IF 事件整合~~ — 暂缓
+3. **Pass 3：世界观实体提取** — 进行中
+   - Brainstorming 第一轮完成：B+ 方案（视频种子 + 原文双通道）、概念六子类、阵营/地点精简分类
+   - 数据源就位：Pass 1 原文 + data/videos/ 37视频 + 《大地巡旅》设定集（已扫描OCR，401/403页）
+   - 下一步：恢复概念页面 Schema 设计 → 营地/地点 Schema → Spec

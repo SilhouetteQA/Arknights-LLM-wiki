@@ -1,0 +1,55 @@
+{
+  "summary": "Ave Mujica的鼓手，率直开朗，擅长察言观色和化妆。在梦境中被虚假的成功所迷惑，但最终被祥子唤醒，找回了对打鼓的热爱。她习惯独自高强度练习，默默逼迫自己前进，不愿停滞不前。",
+  "personality": {
+    "traits": [
+      "率直",
+      "开朗",
+      "善良",
+      "勤奋",
+      "善于察言观色"
+    ],
+    "description": "祐天寺若麦是个随和开朗、热情亲切的人，总能很快与大家打成一片。她擅长察言观色，能敏锐察觉他人情绪并缓和气氛，同时也是一个默默努力、不愿停滞不前的勤奋者。"
+  },
+  "abilities": {
+    "description": "作为Ave Mujica的鼓手，拥有出色的体能和演奏技巧，但无战斗经验。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "无忧梦呓",
+        "evidence": "没有直接战斗描写，在梦境中仅以鼓手身份参与演出，未展现任何战斗能力。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "无忧梦呓",
+      "nodes": "IS-IF线",
+      "event": "在梦境中被莫菲丝困住，成为当红演员但失去打鼓初心，后被祥子唤醒。",
+      "role": "被拯救的同伴，在梦境中迷失自我，最终被祥子唤醒并回归乐队。"
+    },
+    {
+      "chapter": "无忧梦呓",
+      "nodes": "IS-IF线",
+      "event": "在梦城堡与Ave Mujica其他成员一起举办告别演出。",
+      "role": "作为鼓手参与演出，为梦境之旅画上句号。"
+    }
+  ],
+  "first_appearance": "无忧梦呓",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 5194,
+    "tokens_out": 428,
+    "elapsed_s": 4.385875225067139
+  },
+  "name_zh": "祐天寺若麦",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "无忧梦呓"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:38:22.459897+00:00",
+  "race": "未知",
+  "affiliations": [
+    "Ave Mujica"
+  ]
+}

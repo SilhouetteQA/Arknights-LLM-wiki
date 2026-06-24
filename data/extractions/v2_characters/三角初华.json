@@ -1,0 +1,54 @@
+{
+  "summary": "三角初华是Ave Mujica的主唱兼吉他手，也是偶像组合sumimi的成员。她性格亲和但内心孤独，对祥子有着深切的憧憬和依赖。在无忧梦呓事件中，她被困于梦境小岛，最终被祥子唤醒，并参与告别演出。",
+  "personality": {
+    "traits": [
+      "亲和",
+      "孤独",
+      "憧憬",
+      "内疚"
+    ],
+    "description": "三角初华表面亲和友善，但内心隐藏着孤独感和对祥子的深切依赖，常因内疚而不敢表达真实想法。"
+  },
+  "abilities": {
+    "description": "三角初华没有战斗经验，主要能力体现在音乐才华上，包括歌唱、吉他演奏和作词作曲。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "无忧梦呓",
+        "evidence": "三角初华在梦境中未展现任何战斗能力，仅作为被唤醒的成员之一，参与音乐演出。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "无忧梦呓",
+      "nodes": "IS-IF线",
+      "event": "三角初华被困于梦境小岛，独自等待祥子，后被祥子唤醒。",
+      "role": "被拯救者，在梦境中展现对祥子的思念和孤独感。"
+    },
+    {
+      "chapter": "无忧梦呓",
+      "nodes": "IS-IF线",
+      "event": "Ave Mujica在梦城堡举办告别演出，三角初华参与表演。",
+      "role": "演出参与者，与乐队成员共同完成告别演出。"
+    }
+  ],
+  "first_appearance": "无忧梦呓",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 5594,
+    "tokens_out": 404,
+    "elapsed_s": 4.009136915206909
+  },
+  "name_zh": "三角初华",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "无忧梦呓"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:38:32.398086+00:00",
+  "race": "未知",
+  "affiliations": [
+    "Ave Mujica"
+  ]
+}

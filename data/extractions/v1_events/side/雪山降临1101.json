@@ -1,0 +1,1453 @@
+{
+  "chapter": "雪山降临1101",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章以谢拉格遭遇千年未遇的天灾为开端，多条剧情线并行展开。恩希欧迪斯在维多利亚与哥伦比亚的外交压力下周旋，同时应对天灾引发的社会动荡与三族内部矛盾。圣女恩雅决定进行圣巡以安抚民心，却在途中遭遇刺杀，被猎人茱安娜所救。莱茵生命研究员卡罗琳失踪，其同事埃琳娜发现天灾可能与从天而降的未知物体有关。维多利亚势力（开斯特公爵）暗中渗透，试图利用天灾引发的混乱控制谢拉格，并发现了喀兰贸易在联合矿区隐藏的军工厂秘密。三族关系因刺杀事件濒临破裂，菈塔托丝以自身为饵揭露维多利亚阴谋后牺牲。恩雅在圣巡中与埃琳娜相遇，两人发现天灾成因可能与喀兰圣山中的源石矿脉及天外来物有关。\n\n恩希欧迪斯与休露丝会面，休露丝追问菈塔托丝之死的真相，但被蔓珠院使者打断。蔓珠院以喀兰贸易私通维多利亚为由传唤恩希欧迪斯。恩希欧迪斯带兵包围蔓珠院，与阿德颂对峙，揭露蔓珠院内部有维多利亚间谍。阿德颂承认自己策划了恩希欧迪斯父母的死亡，并阐述了自己对信仰和谢拉格未来的看法。诺希斯在矿区设伏，抓获了试图潜逃的卡罗琳和接应的蔓珠院修士。恩雅、茱安娜和埃琳娜在矿洞中发现异铁矿而非源石矿脉，恩雅通过银铃的回声发现与天灾前音频相似，推测圣山内部存在巨大空洞。阿德颂带领恩雅等人前往圣山深处的喀兰之心，恩雅在洞窟中见到了耶拉冈德的真身——雅儿，得知了耶拉冈德的真相。开斯特公爵的舰队包围谢拉格，恩希欧迪斯登上荣光号与开斯特公爵谈判，以隐藏的山体炮火防线为筹码逆转局势。菈塔托丝假死被揭穿，与记者阿尔贝塔和锏在蔓珠院被灰礼帽围攻，罗德岛的Sharp前来支援。恩雅在蔓珠院前阻止维多利亚军队，天灾警报突然停止。开斯特公爵看到天空异象后下令撤退。战后，恩雅处理蔓珠院事务，埃琳娜研究天外来物，诺希斯和锏讨论未来，恩希欧迪斯与哥伦比亚副总统杰克逊会面。",
+  "events": [
+    {
+      "event": "恩希欧迪斯在开斯特公爵宴会上阐述维多利亚困境，提出与谢拉格合作",
+      "type": "political_intrigue",
+      "line_range": [
+        1,
+        37
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "开斯特公爵"
+      ],
+      "location": "维多利亚开斯特公爵府邸",
+      "significance": "揭示恩希欧迪斯的政治野心与谢拉格对外战略的起点",
+      "is_imaginary": false
+    },
+    {
+      "event": "大长老临终前向恩雅忏悔，透露自己已听不到耶拉冈德的声音，并预言灾厄",
+      "type": "revelation",
+      "line_range": [
+        52,
+        170
+      ],
+      "participants": [
+        "恩雅",
+        "大长老"
+      ],
+      "location": "蔓珠院大长老病榻前",
+      "significance": "动摇谢拉格信仰根基，为后续圣巡与信仰危机埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "天灾引发的雪崩摧毁火车站，莫希追捕卡罗琳时得知车站有炸弹预警",
+      "type": "disaster",
+      "line_range": [
+        129,
+        183
+      ],
+      "participants": [
+        "莫希",
+        "卡罗琳"
+      ],
+      "location": "谢拉格火车站",
+      "significance": "天灾降临，卡罗琳身份成谜，炸弹预警暗示事件非自然",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯确认天灾发生，下令封锁现场并通知三族领袖会面",
+      "type": "planning",
+      "line_range": [
+        232,
+        254
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "锏"
+      ],
+      "location": "喀兰贸易办公室",
+      "significance": "恩希欧迪斯迅速反应，开始主导危机应对",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅在蔓珠院会议上平息修士争论，宣布进入藏经阁解经并任命阿德颂为代理大长老",
+      "type": "ceremony",
+      "line_range": [
+        257,
+        311
+      ],
+      "participants": [
+        "恩雅",
+        "阿德颂",
+        "年长的修士",
+        "激动的修士"
+      ],
+      "location": "蔓珠院",
+      "significance": "恩雅稳定宗教内部，但内心对信仰产生动摇",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺希斯以间谍为由包围莱茵生命观测站，要求交出失踪研究员卡罗琳",
+      "type": "confrontation",
+      "line_range": [
+        384,
+        425
+      ],
+      "participants": [
+        "诺希斯",
+        "缪尔赛思",
+        "埃琳娜"
+      ],
+      "location": "莱茵生命观测站",
+      "significance": "喀兰贸易与莱茵生命关系紧张，卡罗琳失踪成为关键线索",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃琳娜发现观测数据被修改，怀疑卡罗琳与天灾有关",
+      "type": "investigation",
+      "line_range": [
+        436,
+        451
+      ],
+      "participants": [
+        "埃琳娜",
+        "缪尔赛思"
+      ],
+      "location": "莱茵生命观测站",
+      "significance": "揭示天灾可能有人为因素，卡罗琳行为异常",
+      "is_imaginary": false
+    },
+    {
+      "event": "谢拉格村民抗议莱茵生命，诺希斯带侍卫清退示威者",
+      "type": "confrontation",
+      "line_range": [
+        454,
+        487
+      ],
+      "participants": [
+        "诺希斯",
+        "谢拉格村民"
+      ],
+      "location": "莱茵生命观测站外",
+      "significance": "天灾引发排外情绪，社会矛盾激化",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希亚接受维多利亚记者采访，表达对信仰的理性看法",
+      "type": "character_development",
+      "line_range": [
+        502,
+        523
+      ],
+      "participants": [
+        "恩希亚",
+        "维多利亚记者"
+      ],
+      "location": "谢拉格村庄",
+      "significance": "展现新一代谢拉格人对信仰的思考",
+      "is_imaginary": false
+    },
+    {
+      "event": "维多利亚大使哈洛德以救援为名率车队进入谢拉格，哥伦比亚大使施压要求保护研究员",
+      "type": "political_intrigue",
+      "line_range": [
+        559,
+        619
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "哥伦比亚大使",
+        "维多利亚大使"
+      ],
+      "location": "喀兰贸易办公室",
+      "significance": "外国势力借天灾介入谢拉格，恩希欧迪斯被迫接受援助",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯与诺希斯分析局势，发现天灾前有人预警炸弹，怀疑卡罗琳",
+      "type": "planning",
+      "line_range": [
+        622,
+        671
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "诺希斯"
+      ],
+      "location": "喀兰贸易办公室",
+      "significance": "恩希欧迪斯意识到天灾可能被利用，开始布局",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅在藏经阁与阿德颂讨论经文，阿德颂解读拉德索恩为人心中的怪物，暗示圣巡",
+      "type": "revelation",
+      "line_range": [
+        672,
+        779
+      ],
+      "participants": [
+        "恩雅",
+        "阿德颂"
+      ],
+      "location": "蔓珠院藏经阁",
+      "significance": "阿德颂引导恩雅走向圣巡，但对其信仰观提出挑战",
+      "is_imaginary": false
+    },
+    {
+      "event": "三族会议上，阿克托斯反对维多利亚援助，菈塔托丝附议，恩希欧迪斯坚持开放政策",
+      "type": "political_intrigue",
+      "line_range": [
+        781,
+        834
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "阿克托斯",
+        "菈塔托丝"
+      ],
+      "location": "三族议会",
+      "significance": "三族裂痕加深，恩希欧迪斯面临内外压力",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅与恩希欧迪斯私下会面，宣布将进行圣巡，兄妹理念冲突",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        838,
+        929
+      ],
+      "participants": [
+        "恩雅",
+        "恩希欧迪斯"
+      ],
+      "location": "蔓珠院讲经堂",
+      "significance": "恩雅决心以圣女身份承担责任，兄妹关系紧张但互相理解",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅在圣巡途中安抚村民，承诺耶拉冈德不会抛弃谢拉格",
+      "type": "ceremony",
+      "line_range": [
+        930,
+        972
+      ],
+      "participants": [
+        "恩雅",
+        "偏远地区的修士",
+        "谢拉格村民"
+      ],
+      "location": "偏远村庄",
+      "significance": "圣巡开始，恩雅试图稳定民心",
+      "is_imaginary": false
+    },
+    {
+      "event": "维多利亚大使拉拢菈塔托丝，暗示布朗陶可取代希瓦艾什成为合作对象",
+      "type": "political_intrigue",
+      "line_range": [
+        984,
+        1025
+      ],
+      "participants": [
+        "菈塔托丝",
+        "维多利亚大使"
+      ],
+      "location": "布朗陶家",
+      "significance": "维多利亚试图分裂三族，菈塔托丝面临抉择",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希亚替兄送文件途中遭遇车祸，阿克托斯也遇落石袭击，三族互相猜疑",
+      "type": "assassination",
+      "line_range": [
+        1026,
+        1069
+      ],
+      "participants": [
+        "恩希亚",
+        "阿克托斯",
+        "古罗",
+        "锏"
+      ],
+      "location": "谢拉格山路",
+      "significance": "刺杀事件激化三族矛盾，幕后黑手意图制造混乱",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅在圣巡途中遭袭击，被猎人茱安娜所救",
+      "type": "ambush",
+      "line_range": [
+        1070,
+        1081
+      ],
+      "participants": [
+        "恩雅",
+        "茱安娜"
+      ],
+      "location": "雪山营地",
+      "significance": "恩雅遇险，茱安娜成为其保护者",
+      "is_imaginary": false
+    },
+    {
+      "event": "茱安娜向恩雅倾诉对希瓦艾什家的不满，认为工业发展破坏了自然与信仰",
+      "type": "ideological_clash",
+      "line_range": [
+        1082,
+        1139
+      ],
+      "participants": [
+        "恩雅",
+        "茱安娜"
+      ],
+      "location": "茱安娜家中",
+      "significance": "展现传统猎人对变革的抵触，恩雅开始理解不同视角",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅向茱安娜表明圣女身份，茱安娜震惊并道歉",
+      "type": "revelation",
+      "line_range": [
+        1154,
+        1162
+      ],
+      "participants": [
+        "恩雅",
+        "茱安娜"
+      ],
+      "location": "茱安娜家中",
+      "significance": "身份揭示，两人关系转变",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿克托斯怀疑菈塔托丝策划刺杀，带人包围布朗陶家，恩希欧迪斯赶到调解",
+      "type": "confrontation",
+      "line_range": [
+        1163,
+        1234
+      ],
+      "participants": [
+        "阿克托斯",
+        "菈塔托丝",
+        "恩希欧迪斯",
+        "古罗",
+        "角峰"
+      ],
+      "location": "布朗陶家",
+      "significance": "三族关系濒临破裂，恩希欧迪斯暂时稳住局面",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯推断刺杀目标是恩雅，派锏前往保护",
+      "type": "planning",
+      "line_range": [
+        1235,
+        1253
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "锏"
+      ],
+      "location": "喀兰贸易",
+      "significance": "恩希欧迪斯意识到真正危机在雪山",
+      "is_imaginary": false
+    },
+    {
+      "event": "休露丝担忧姐姐，菈塔托丝发誓保护布朗陶家",
+      "type": "family_moment",
+      "line_range": [
+        1254,
+        1292
+      ],
+      "participants": [
+        "菈塔托丝",
+        "休露丝"
+      ],
+      "location": "布朗陶家",
+      "significance": "展现姐妹情深，菈塔托丝决心已定",
+      "is_imaginary": false
+    },
+    {
+      "event": "菈塔托丝与维多利亚大使密谋，决定以自己为饵引出间谍并约见阿克托斯",
+      "type": "political_intrigue",
+      "line_range": [
+        1293,
+        1335
+      ],
+      "participants": [
+        "菈塔托丝",
+        "维多利亚大使"
+      ],
+      "location": "布朗陶家",
+      "significance": "菈塔托丝设局，准备牺牲自己揭露维多利亚阴谋",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅与茱安娜讨论信仰与经文，恩雅称赞茱安娜是虔诚的信徒",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1336,
+        1392
+      ],
+      "participants": [
+        "恩雅",
+        "茱安娜"
+      ],
+      "location": "茱安娜家中",
+      "significance": "两人建立信任，恩雅对信仰有更深理解",
+      "is_imaginary": false
+    },
+    {
+      "event": "伪装成老人的袭击者试图接近，恩雅警觉",
+      "type": "ambush",
+      "line_range": [
+        1393,
+        1404
+      ],
+      "participants": [
+        "恩雅",
+        "茱安娜"
+      ],
+      "location": "茱安娜家门外",
+      "significance": "袭击再次逼近",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿克托斯不顾古罗劝阻，前往与菈塔托丝谈判",
+      "type": "confrontation",
+      "line_range": [
+        1405,
+        1426
+      ],
+      "participants": [
+        "阿克托斯",
+        "古罗"
+      ],
+      "location": "佩尔罗契家",
+      "significance": "阿克托斯冲动行事",
+      "is_imaginary": false
+    },
+    {
+      "event": "休露丝察觉异常，派尤卡坦寻找菈塔托丝，但被管家阻止",
+      "type": "investigation",
+      "line_range": [
+        1427,
+        1441
+      ],
+      "participants": [
+        "休露丝",
+        "尤卡坦",
+        "布朗陶管家"
+      ],
+      "location": "布朗陶家",
+      "significance": "菈塔托丝的计划开始执行",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅与茱安娜利用木雕诱敌，成功逃脱袭击者包围",
+      "type": "escape",
+      "line_range": [
+        1442,
+        1461
+      ],
+      "participants": [
+        "恩雅",
+        "茱安娜"
+      ],
+      "location": "茱安娜家",
+      "significance": "恩雅展现智慧，两人暂时脱险",
+      "is_imaginary": false
+    },
+    {
+      "event": "维多利亚间谍准备刺杀阿克托斯，但被布朗陶家护卫拦截，计划暴露",
+      "type": "assassination",
+      "line_range": [
+        1462,
+        1503
+      ],
+      "participants": [
+        "阿克托斯",
+        "维多利亚间谍",
+        "布朗陶家护卫"
+      ],
+      "location": "布朗陶领地",
+      "significance": "菈塔托丝的计划成功，维多利亚阴谋败露",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏赶到救下恩雅和茱安娜，指出袭击者伪装成佩尔罗契战士",
+      "type": "rescue",
+      "line_range": [
+        1504,
+        1544
+      ],
+      "participants": [
+        "锏",
+        "恩雅",
+        "茱安娜"
+      ],
+      "location": "雪山",
+      "significance": "恩雅获救，锏揭示袭击者身份疑点",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏指出茱安娜家箭术源自乌萨斯，恩雅解读经文证实三族均为外来者",
+      "type": "revelation",
+      "line_range": [
+        1545,
+        1571
+      ],
+      "participants": [
+        "锏",
+        "恩雅",
+        "茱安娜"
+      ],
+      "location": "雪山",
+      "significance": "揭示谢拉格三族历史真相，恩雅对经文有新理解",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿克托斯发现维多利亚间谍，布朗陶护卫告知是菈塔托丝安排保护他",
+      "type": "revelation",
+      "line_range": [
+        1572,
+        1589
+      ],
+      "participants": [
+        "阿克托斯",
+        "布朗陶家护卫"
+      ],
+      "location": "布朗陶领地",
+      "significance": "阿克托斯意识到误会菈塔托丝",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅决定返回蔓珠院寻找典籍，茱安娜坚持跟随",
+      "type": "planning",
+      "line_range": [
+        1590,
+        1610
+      ],
+      "participants": [
+        "恩雅",
+        "茱安娜"
+      ],
+      "location": "雪山",
+      "significance": "恩雅决心探寻天灾真相",
+      "is_imaginary": false
+    },
+    {
+      "event": "菈塔托丝葬礼举行，休露丝主持，三族表面和解但矛盾仍在",
+      "type": "ceremony",
+      "line_range": [
+        1611,
+        1688
+      ],
+      "participants": [
+        "休露丝",
+        "阿克托斯",
+        "角峰",
+        "蔓珠院使者"
+      ],
+      "location": "布朗陶家",
+      "significance": "菈塔托丝牺牲，三族关系暂时缓和，但蔓珠院开始夺权",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯分析局势，认为菈塔托丝牺牲争取了时间，收到战书",
+      "type": "planning",
+      "line_range": [
+        1689,
+        1709
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "锏"
+      ],
+      "location": "喀兰贸易",
+      "significance": "恩希欧迪斯准备应对更大危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆中卡罗琳与埃琳娜在观测站对话，卡罗琳暗示谢拉格可能有巨兽",
+      "type": "flashback",
+      "line_range": [
+        1710,
+        1763
+      ],
+      "participants": [
+        "卡罗琳",
+        "埃琳娜"
+      ],
+      "location": "莱茵生命观测站",
+      "significance": "埋下巨兽伏笔，卡罗琳对谢拉格有特殊兴趣",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺希斯与赫默调查卡罗琳，发现她主动申请外勤探索任务",
+      "type": "investigation",
+      "line_range": [
+        1764,
+        1793
+      ],
+      "participants": [
+        "诺希斯",
+        "赫默"
+      ],
+      "location": "喀兰贸易",
+      "significance": "卡罗琳行为可疑，线索指向地理信息收集",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃琳娜通过监控录音复现被隐藏的数据，发现天灾前有巨大撞击声",
+      "type": "investigation",
+      "line_range": [
+        1794,
+        1840
+      ],
+      "participants": [
+        "埃琳娜",
+        "缪尔赛思"
+      ],
+      "location": "莱茵生命观测站",
+      "significance": "发现天外来物可能是天灾诱因",
+      "is_imaginary": false
+    },
+    {
+      "event": "缪尔赛思默许埃琳娜独自调查卡罗琳下落",
+      "type": "character_development",
+      "line_range": [
+        1841,
+        1859
+      ],
+      "participants": [
+        "埃琳娜",
+        "缪尔赛思"
+      ],
+      "location": "莱茵生命观测站",
+      "significance": "埃琳娜决心行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡罗琳向被囚禁的莫希讲述自己被迫成为间谍的经历，表达对科学的好奇",
+      "type": "revelation",
+      "line_range": [
+        1860,
+        1892
+      ],
+      "participants": [
+        "卡罗琳",
+        "莫希"
+      ],
+      "location": "卡罗琳藏身处",
+      "significance": "揭示卡罗琳背景，她并非完全忠于维多利亚",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃琳娜潜入蔓珠院藏经阁寻找地图，与恩雅和茱安娜相遇",
+      "type": "reunion",
+      "line_range": [
+        1893,
+        1915
+      ],
+      "participants": [
+        "埃琳娜",
+        "恩雅",
+        "茱安娜"
+      ],
+      "location": "蔓珠院藏经阁",
+      "significance": "三条剧情线交汇",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃琳娜提出源石矿脉假说解释谢拉格无天灾，天外来物撞击导致天灾",
+      "type": "revelation",
+      "line_range": [
+        1916,
+        1939
+      ],
+      "participants": [
+        "埃琳娜",
+        "恩雅",
+        "茱安娜"
+      ],
+      "location": "蔓珠院藏经阁",
+      "significance": "科学解释与信仰解释碰撞，恩雅开始思考喀兰之心的真正含义",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅结合经文，认为喀兰之心可能指代源石矿脉，三人决定前往联合矿区",
+      "type": "planning",
+      "line_range": [
+        1940,
+        1960
+      ],
+      "participants": [
+        "恩雅",
+        "埃琳娜",
+        "茱安娜"
+      ],
+      "location": "蔓珠院藏经阁",
+      "significance": "恩雅将信仰与科学结合，三人组队探索真相",
+      "is_imaginary": false
+    },
+    {
+      "event": "休露丝发现菈塔托丝生前与莫希的通讯记录，涉及喀兰贸易",
+      "type": "investigation",
+      "line_range": [
+        1961,
+        1975
+      ],
+      "participants": [
+        "休露丝"
+      ],
+      "location": "布朗陶家",
+      "significance": "菈塔托丝之死另有隐情，喀兰贸易可能参与",
+      "is_imaginary": false
+    },
+    {
+      "event": "开斯特公爵与灰礼帽密谋，确认喀兰贸易在联合矿区隐藏军工厂",
+      "type": "political_intrigue",
+      "line_range": [
+        1976,
+        2047
+      ],
+      "participants": [
+        "开斯特公爵",
+        "灰礼帽"
+      ],
+      "location": "维多利亚开斯特公爵府",
+      "significance": "揭示恩希欧迪斯的底牌，维多利亚准备行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿德颂接受维多利亚记者采访，批判恩希欧迪斯的激进变革导致信仰危机",
+      "type": "ideological_clash",
+      "line_range": [
+        2051,
+        2119
+      ],
+      "participants": [
+        "阿德颂",
+        "维多利亚记者"
+      ],
+      "location": "蔓珠院",
+      "significance": "阿德颂公开反对恩希欧迪斯，蔓珠院立场明确",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡罗琳与年迈修士（维多利亚间谍）接头，准备通过矿区撤离",
+      "type": "infiltration",
+      "line_range": [
+        2120,
+        2144
+      ],
+      "participants": [
+        "卡罗琳",
+        "年迈的修士"
+      ],
+      "location": "谢拉格城镇",
+      "significance": "卡罗琳即将离开，情报即将外流",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅、茱安娜、埃琳娜三人前往矿区途中遭遇暴风雪，在荒村寺院避雪",
+      "type": "journey",
+      "line_range": [
+        2145,
+        2175
+      ],
+      "participants": [
+        "恩雅",
+        "茱安娜",
+        "埃琳娜"
+      ],
+      "location": "雪山荒村",
+      "significance": "三人组继续前进",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅与埃琳娜在寺院中讨论信仰与科学，试图互相理解",
+      "type": "ideological_clash",
+      "line_range": [
+        2176,
+        2218
+      ],
+      "participants": [
+        "恩雅",
+        "埃琳娜"
+      ],
+      "location": "荒村寺院",
+      "significance": "信仰与科学的对话，两人逐渐建立共识",
+      "is_imaginary": false
+    },
+    {
+      "event": "茱安娜发现维多利亚车队前往矿区，埃琳娜的仪器显示新的天灾正在形成",
+      "type": "disaster",
+      "line_range": [
+        2219,
+        2229
+      ],
+      "participants": [
+        "茱安娜",
+        "恩雅",
+        "埃琳娜"
+      ],
+      "location": "荒村寺院",
+      "significance": "危机升级，新的天灾即将降临",
+      "is_imaginary": false
+    },
+    {
+      "event": "休露丝向恩希欧迪斯追问菈塔托丝之死的真相，但被蔓珠院使者打断，蔓珠院以私通维多利亚为由传唤恩希欧迪斯",
+      "type": "investigation",
+      "line_range": [
+        2230,
+        2286
+      ],
+      "participants": [
+        "休露丝",
+        "恩希欧迪斯",
+        "蔓珠院使者"
+      ],
+      "location": "希瓦艾什家",
+      "significance": "休露丝继承菈塔托丝的意志，开始介入谢拉格的核心政治；蔓珠院正式向恩希欧迪斯发难",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺希斯在矿区与维多利亚大使和蔓珠院使者对峙，被迫打开仓库，维多利亚大使发现粉碎的军火残骸",
+      "type": "confrontation",
+      "line_range": [
+        2287,
+        2357
+      ],
+      "participants": [
+        "诺希斯",
+        "维多利亚大使",
+        "角峰",
+        "蔓珠院使者"
+      ],
+      "location": "喀兰贸易联合矿区",
+      "significance": "维多利亚确认了谢拉格隐藏军工厂的存在，但诺希斯成功掩盖了军火已被转移的事实",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯带兵包围蔓珠院，与阿德颂对峙，阿德颂承认自己策划了恩希欧迪斯父母的死亡",
+      "type": "confrontation",
+      "line_range": [
+        2358,
+        2583
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "阿德颂",
+        "锏"
+      ],
+      "location": "蔓珠院",
+      "significance": "阿德颂暴露为杀害恩希欧迪斯父母的真凶，两人就信仰与变革展开激烈辩论",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺希斯在矿区设伏，抓获了试图潜逃的卡罗琳和接应的蔓珠院修士",
+      "type": "ambush",
+      "line_range": [
+        2584,
+        2636
+      ],
+      "participants": [
+        "诺希斯",
+        "角峰",
+        "卡罗琳",
+        "年迈的修士"
+      ],
+      "location": "喀兰贸易联合矿区",
+      "significance": "诺希斯成功抓获维多利亚间谍，为恩希欧迪斯提供证据",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯以抓获的间谍为证据，下令逮捕阿德颂和所有蔓珠院长老",
+      "type": "arrest",
+      "line_range": [
+        2637,
+        2665
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "阿德颂",
+        "锏",
+        "蔓珠院使者"
+      ],
+      "location": "蔓珠院",
+      "significance": "恩希欧迪斯控制蔓珠院，阿德颂被囚禁",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅、茱安娜和埃琳娜在矿洞中发现异铁矿而非源石矿脉，恩雅通过银铃的回声发现与天灾前音频相似",
+      "type": "revelation",
+      "line_range": [
+        2666,
+        2736
+      ],
+      "participants": [
+        "恩雅",
+        "茱安娜",
+        "埃琳娜"
+      ],
+      "location": "喀兰圣山废弃矿道",
+      "significance": "发现天灾与圣山内部巨大空洞有关，银铃的声音与天外来物音频一致",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿德颂在囚禁中通过经文感化守卫，策划越狱",
+      "type": "escape",
+      "line_range": [
+        2900,
+        2953
+      ],
+      "participants": [
+        "阿德颂",
+        "谢拉格守卫"
+      ],
+      "location": "蔓珠院囚室",
+      "significance": "阿德颂利用信仰煽动守卫，成功逃脱",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡罗琳被维多利亚特工灭口，但被梅兰德基金会特工救走",
+      "type": "rescue",
+      "line_range": [
+        2954,
+        2987
+      ],
+      "participants": [
+        "卡罗琳",
+        "维多利亚特工",
+        "梅兰德基金会特工"
+      ],
+      "location": "谢拉格边境",
+      "significance": "卡罗琳被哥伦比亚势力救走，其研究资料被维多利亚夺走",
+      "is_imaginary": false
+    },
+    {
+      "event": "菈塔托丝假死被揭穿，与记者阿尔贝塔和锏在蔓珠院被灰礼帽围攻，罗德岛的Sharp前来支援",
+      "type": "battle",
+      "line_range": [
+        2988,
+        3029
+      ],
+      "participants": [
+        "菈塔托丝",
+        "阿尔贝塔",
+        "锏",
+        "Sharp",
+        "灰礼帽"
+      ],
+      "location": "蔓珠院",
+      "significance": "菈塔托丝假死计划暴露，罗德岛介入谢拉格局势",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿德颂在圣山上与恩雅相遇，承认耶拉冈德不存在，并带恩雅前往喀兰之心",
+      "type": "revelation",
+      "line_range": [
+        3083,
+        3172
+      ],
+      "participants": [
+        "阿德颂",
+        "恩雅",
+        "茱安娜",
+        "埃琳娜"
+      ],
+      "location": "喀兰圣山",
+      "significance": "阿德颂揭示耶拉冈德信仰是人为构建的谎言，但恩雅坚持信仰，双方达成协议共同探索真相",
+      "is_imaginary": false
+    },
+    {
+      "event": "开斯特公爵的舰队包围谢拉格，恩希欧迪斯登上荣光号与开斯特公爵谈判",
+      "type": "negotiation",
+      "line_range": [
+        3198,
+        3248
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "开斯特公爵",
+        "诺希斯"
+      ],
+      "location": "荣光号战舰",
+      "significance": "恩希欧迪斯以隐藏的山体炮火防线为筹码，逆转谈判局势",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅在喀兰之心洞窟中见到耶拉冈德的真身——雅儿，得知耶拉冈德是巨兽而非神明",
+      "type": "revelation",
+      "line_range": [
+        3484,
+        3687
+      ],
+      "participants": [
+        "恩雅",
+        "耶拉冈德"
+      ],
+      "location": "喀兰之心",
+      "significance": "揭示耶拉冈德的真相，恩雅与耶拉冈德告别",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯以山体炮火防线为筹码，迫使开斯特公爵接受谢拉格的条件并撤退",
+      "type": "negotiation",
+      "line_range": [
+        3831,
+        4037
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "开斯特公爵",
+        "休露丝",
+        "魏斯"
+      ],
+      "location": "荣光号战舰",
+      "significance": "谢拉格成功击退维多利亚的入侵，恩希欧迪斯赢得谈判",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅在蔓珠院前阻止维多利亚军队，天灾警报突然停止，开斯特公爵看到天空异象后下令撤退",
+      "type": "confrontation",
+      "line_range": [
+        3961,
+        4037
+      ],
+      "participants": [
+        "恩雅",
+        "阿尔贝塔",
+        "开斯特公爵"
+      ],
+      "location": "蔓珠院",
+      "significance": "恩雅以圣女身份阻止入侵，耶拉冈德的神迹显现，天灾被阻止",
+      "is_imaginary": false
+    },
+    {
+      "event": "战后，恩雅处理蔓珠院事务，埃琳娜研究天外来物，诺希斯和锏讨论未来，恩希欧迪斯与哥伦比亚副总统杰克逊会面",
+      "type": "reflection",
+      "line_range": [
+        4038,
+        4277
+      ],
+      "participants": [
+        "恩雅",
+        "埃琳娜",
+        "诺希斯",
+        "锏",
+        "恩希欧迪斯",
+        "杰克逊"
+      ],
+      "location": "谢拉格各地",
+      "significance": "战后各方势力重新布局，谢拉格迎来新的发展机遇",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "银灰",
+      "type": "operator",
+      "role_in_chapter": "谢拉格变革推动者，喀兰贸易董事长，周旋于外国势力与三族之间，应对天灾危机",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "开斯特公爵",
+      "type": "npc",
+      "role_in_chapter": "维多利亚大公爵，意图控制谢拉格，与恩希欧迪斯有旧识，策划渗透行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "恩雅",
+      "type": "npc",
+      "role_in_chapter": "谢拉格圣女，进行圣巡安抚民心，途中遇刺被救，后与埃琳娜合作探寻天灾真相",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "大长老",
+      "type": "npc",
+      "role_in_chapter": "蔓珠院前任大长老，临终前向恩雅忏悔并预言灾厄，已去世",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "菈塔托丝",
+      "type": "npc",
+      "role_in_chapter": "布朗陶家主，为揭露维多利亚阴谋以自身为饵牺牲",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "休露丝",
+      "type": "npc",
+      "role_in_chapter": "菈塔托丝之妹，布朗陶家二夫人，产后虚弱，后主持姐姐葬礼并发现可疑通讯",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿克托斯",
+      "type": "npc",
+      "role_in_chapter": "佩尔罗契家主，性格冲动，反对维多利亚介入，遭刺杀后怀疑菈塔托丝",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "诺希斯",
+      "type": "npc",
+      "role_in_chapter": "喀兰贸易代表，负责与莱茵生命对接及调查卡罗琳失踪案",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "锏",
+      "type": "npc",
+      "role_in_chapter": "恩希欧迪斯的得力干将，负责保护恩雅并执行秘密任务",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "角峰",
+      "type": "npc",
+      "role_in_chapter": "希瓦艾什家侍卫，负责救援行动和传达恩希欧迪斯指令",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "莫希",
+      "type": "npc",
+      "role_in_chapter": "布朗陶家战士，追捕卡罗琳时被反制囚禁",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "卡罗琳",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命研究员，实为维多利亚间谍，发现天外来物后失踪，后被囚禁莫希",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "埃琳娜",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命能量科研究员，通过数据分析发现天灾与天外来物有关，后与恩雅同行",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "缪尔赛思",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命主任，支持埃琳娜的调查，默许其独自行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "赫默",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命委员，与诺希斯对接调查卡罗琳",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "茱安娜",
+      "type": "npc",
+      "role_in_chapter": "谢拉格年轻猎人，救下恩雅并成为其保护者与同伴，对信仰虔诚",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿德颂",
+      "type": "npc",
+      "role_in_chapter": "蔓珠院新任大长老，博学多识，引导恩雅思考拉德索恩，后公开反对恩希欧迪斯",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "恩希亚",
+      "type": "npc",
+      "role_in_chapter": "恩希欧迪斯和恩雅的妹妹，遭遇车祸但无大碍，对信仰有理性看法",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "古罗",
+      "type": "npc",
+      "role_in_chapter": "佩尔罗契家将军，在落石袭击中受伤，劝阻阿克托斯无果",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "尤卡坦",
+      "type": "npc",
+      "role_in_chapter": "休露丝的丈夫，关心妻子和菈塔托丝",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "灰礼帽",
+      "type": "npc",
+      "role_in_chapter": "开斯特公爵的特工，负责调查喀兰贸易军工厂",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "维娜·维多利亚",
+      "type": "operator",
+      "role_in_chapter": "代表开斯特公爵与谢拉格各方接触，实施渗透和拉拢",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "哥伦比亚大使",
+      "type": "npc",
+      "role_in_chapter": "哥伦比亚外交官，以保护研究员为由向谢拉格施压",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "哈洛德",
+      "type": "npc",
+      "role_in_chapter": "维多利亚救援队负责人，曾参与银心湖庆典事件",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿尔贝塔",
+      "type": "npc",
+      "role_in_chapter": "维多利亚记者，被菈塔托丝抓获，后与菈塔托丝和锏一起被灰礼帽围攻，最终站出来揭露维多利亚的罪行",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Sharp",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，受博士派遣支援谢拉格，救下锏",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "耶拉",
+      "type": "operator",
+      "role_in_chapter": "以雅儿的身份出现，向恩雅揭示自己的真相，与恩雅告别",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "杰克",
+      "type": "operator",
+      "role_in_chapter": "哥伦比亚副总统，与恩希欧迪斯会面，讨论合作",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "天灾",
+      "line_range": [
+        242,
+        246
+      ],
+      "discussion_summary": "锏向恩希欧迪斯报告雪崩是天灾，确认谢拉格发生千年未遇的天灾",
+      "is_substantive": true
+    },
+    {
+      "concept": "耶拉冈德的惩罚",
+      "line_range": [
+        259,
+        267
+      ],
+      "discussion_summary": "修士们争论天灾是否是耶拉冈德的怒火或考验，恩雅制止妄言",
+      "is_substantive": true
+    },
+    {
+      "concept": "信仰与科学",
+      "line_range": [
+        414,
+        419
+      ],
+      "discussion_summary": "埃琳娜指出谢拉格将平静视为理所当然是一种异常，科学常理下天灾并非异常",
+      "is_substantive": true
+    },
+    {
+      "concept": "拉德索恩",
+      "line_range": [
+        720,
+        753
+      ],
+      "discussion_summary": "阿德颂解读拉德索恩一词，认为其意为人心中的怪物，天灾是谢拉格能看到的拉德索恩",
+      "is_substantive": true
+    },
+    {
+      "concept": "圣巡",
+      "line_range": [
+        892,
+        905
+      ],
+      "discussion_summary": "恩雅宣布进行圣巡，解释其传统和危险性，以此替谢拉格赎罪祈求宽恕",
+      "is_substantive": true
+    },
+    {
+      "concept": "耶拉冈德的存在",
+      "line_range": [
+        767,
+        779
+      ],
+      "discussion_summary": "恩雅质疑耶拉冈德是否不存在，阿德颂回应耶拉冈德存在于谢拉格的一草一木中，有求必应的神不是信仰",
+      "is_substantive": true
+    },
+    {
+      "concept": "信仰的本质",
+      "line_range": [
+        2056,
+        2083
+      ],
+      "discussion_summary": "阿德颂与记者辩论，指出人人都有信仰，耶拉冈德的信徒通过向自身发问追寻存在痕迹",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石矿脉假说",
+      "line_range": [
+        1916,
+        1932
+      ],
+      "discussion_summary": "埃琳娜提出谢拉格无天灾是因山脉中隐藏的源石矿脉形成能量场，天外来物撞击导致能量场偏移诱发天灾",
+      "is_substantive": true
+    },
+    {
+      "concept": "喀兰之心",
+      "line_range": [
+        1943,
+        1951
+      ],
+      "discussion_summary": "恩雅结合经文认为喀兰之心可能不是银心湖，而是另有所指，可能与源石矿脉中心有关",
+      "is_substantive": true
+    },
+    {
+      "concept": "三族起源",
+      "line_range": [
+        1555,
+        1571
+      ],
+      "discussion_summary": ""
+    },
+    {
+      "concept": "信仰与变革",
+      "line_range": [
+        2516,
+        2555
+      ],
+      "discussion_summary": "恩希欧迪斯与阿德颂就谢拉格的未来展开辩论，阿德颂认为恩希欧迪斯的变革会摧毁信仰，恩希欧迪斯认为信仰不应成为阻碍进步的枷锁",
+      "is_substantive": true
+    },
+    {
+      "concept": "巨兽",
+      "line_range": [
+        3721,
+        3745
+      ],
+      "discussion_summary": "耶拉冈德向恩雅解释自己是巨兽，是泰拉大地上曾经存在的古老生命，并非人们所信仰的神明",
+      "is_substantive": true
+    },
+    {
+      "concept": "天外来物",
+      "line_range": [
+        4223,
+        4277
+      ],
+      "discussion_summary": "埃琳娜和研究员们分析天外来物的样本，发现其中含有精灵的体细胞，并释放出有规律的次声波",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "蔓珠院",
+      "line_range": [
+        2267,
+        2279
+      ],
+      "description": "蔓珠院使者以私通维多利亚为由传唤恩希欧迪斯"
+    },
+    {
+      "faction": "蔓珠院",
+      "line_range": [
+        2358,
+        2583
+      ],
+      "description": "恩希欧迪斯与阿德颂在蔓珠院对峙，阿德颂承认杀害恩希欧迪斯父母"
+    },
+    {
+      "faction": "维多利亚",
+      "line_range": [
+        2299,
+        2357
+      ],
+      "description": "维多利亚大使在矿区与诺希斯对峙，发现军火残骸"
+    },
+    {
+      "faction": "维多利亚",
+      "line_range": [
+        3198,
+        3248
+      ],
+      "description": "开斯特公爵的舰队包围谢拉格，向恩希欧迪斯发出谈判邀请"
+    },
+    {
+      "faction": "维多利亚",
+      "line_range": [
+        3831,
+        4037
+      ],
+      "description": "恩希欧迪斯与开斯特公爵谈判，最终迫使维多利亚撤退"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        3404,
+        3417
+      ],
+      "description": "Sharp受博士派遣支援谢拉格，救下锏"
+    },
+    {
+      "faction": "哥伦比亚",
+      "line_range": [
+        4165,
+        4202
+      ],
+      "description": "哥伦比亚副总统杰克逊与恩希欧迪斯会面，讨论合作"
+    },
+    {
+      "faction": "梅兰德基金会",
+      "line_range": [
+        2980,
+        2987
+      ],
+      "description": "梅兰德基金会特工救走卡罗琳"
+    }
+  ],
+  "locations": [
+    {
+      "location": "喀兰圣山",
+      "line_range": [
+        3083,
+        3172
+      ],
+      "description": "阿德颂带恩雅等人前往圣山深处的喀兰之心"
+    },
+    {
+      "location": "喀兰之心",
+      "line_range": [
+        3484,
+        3687
+      ],
+      "description": "恩雅在喀兰之心洞窟中见到耶拉冈德的真身"
+    },
+    {
+      "location": "荣光号战舰",
+      "line_range": [
+        3831,
+        4037
+      ],
+      "description": "恩希欧迪斯与开斯特公爵在荣光号上谈判"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:28:10.535696+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 102676,
+    "tokens_out": 12612,
+    "elapsed_s": 94.68364071846008
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "开斯特公爵",
+    "恩雅",
+    "大长老",
+    "菈塔托丝",
+    "休露丝",
+    "阿克托斯",
+    "诺希斯",
+    "莫希",
+    "卡罗琳",
+    "埃琳娜",
+    "茱安娜",
+    "阿德颂",
+    "恩希亚",
+    "古罗",
+    "尤卡坦",
+    "灰礼帽",
+    "哥伦比亚大使",
+    "阿尔贝塔",
+    "Sharp"
+  ]
+}

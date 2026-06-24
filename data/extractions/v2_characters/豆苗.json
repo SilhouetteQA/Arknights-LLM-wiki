@@ -1,0 +1,48 @@
+{
+  "summary": "豆苗是来自哥伦比亚的专业磐蟹饲养员，性格开朗活泼，对磐蟹充满热情。在「此地之外」中，她与末药、宴外出采药，利用磐蟹探路，并参与关于伊比利亚恐怖传言的闲聊，展现出好奇与胆小的两面。",
+  "personality": {
+    "traits": [
+      "开朗",
+      "热情",
+      "好奇",
+      "胆小"
+    ],
+    "description": "豆苗外向活泼，对磐蟹事业充满热情，但面对恐怖传言时也会表现出胆怯。"
+  },
+  "abilities": {
+    "description": "通过驯养的磐蟹进行侦查、探路和后勤支援，自身无战斗经验。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "此地之外",
+        "evidence": "豆苗没有战斗经验，仅依靠磐蟹进行探路和侦查，未参与任何战斗。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "此地之外",
+      "nodes": "野外采药",
+      "event": "豆苗、末药和宴在野外采药，豆苗用磐蟹探路发现绿地，三人闲聊伊比利亚的恐怖传说。",
+      "role": "利用磐蟹进行侦查探路，参与流言讨论，展现对伊比利亚的好奇与恐惧。"
+    }
+  ],
+  "first_appearance": "此地之外",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 5434,
+    "tokens_out": 328,
+    "elapsed_s": 4.361859083175659
+  },
+  "name_zh": "豆苗",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "此地之外"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:53:29.833133+00:00",
+  "race": "瑞柏巴",
+  "affiliations": [
+    "哥伦比亚"
+  ]
+}

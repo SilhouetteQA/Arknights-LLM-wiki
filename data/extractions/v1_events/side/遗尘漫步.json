@@ -1,0 +1,871 @@
+{
+  "chapter": "遗尘漫步",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章「遗尘漫步 (批次 1)」由七个场景组成，跨越萨尔贡、乌萨斯和维多利亚三地，展现了凯尔希在不同时期、不同身份下的行动。\n\n在萨尔贡的赤角小镇，凯尔希以哥伦比亚安保公司高级行动顾问的身份，从一场多方势力参与的混战中救出了年轻的科学家助手艾利奥特·格罗夫，并回收了可能引发大规模战争的法术原型图纸。她向幸存雇佣兵揭示了哥伦比亚军方、管理局与萨尔贡王酋之间的复杂阴谋，并为他们规划了逃生路线。\n\n在乌萨斯，凯尔希化名潜入松心山谷疗养院，协助旧日学生莉莉娅刺杀第四集团军前参谋万尼亚大公，为切尔诺伯格研究所惨案复仇。在与大公的最后对话中，凯尔希得知了乌萨斯内卫的存在，并最终执行了刺杀。同时，财政大臣维特的到访为行动提供了掩护。\n\n在维多利亚，凯尔希以拉特兰修士的身份参加文森特伯爵的新年宴会，结识了海蒂·汤姆森。海蒂借独处之机，将两封分别来自维多利亚和卡兹戴尔的情报信件交给了凯尔希，暗示了更广阔的政治图景。\n\n三条剧情线共同塑造了凯尔希作为医生、科学家、顾问、刺客与情报人员的多重身份，揭示了她为阻止战争、保护重要人物与信息而长期游走于各大势力之间的行动模式。\n\n本段剧情由七个场景组成，跨越萨尔贡和维多利亚两地，展现了凯尔希在不同时期、不同身份下的行动，以及她与关键人物的相遇与别离。\n\n在萨尔贡的沁礁之地，凯尔希与年轻的艾利奥特·格罗夫在逃亡途中，遇到了自称「沙卒」的神秘萨弗拉占卜师老伊辛。老伊辛通过古老的萨尔贡金币和关于「沁礁之城」的预言，与凯尔希建立了联系，并承诺在二十二年后收取报酬。凯尔希与艾利奥特在老伊辛的帮助下，前往沁礁黑市，准备离开萨尔贡。在此期间，艾利奥特为了与过去决裂，主动感染矿石病，并决定留在萨尔贡，向所有参与阴谋的人复仇。凯尔希尊重他的选择，独自踏上前往乌萨斯的旅程。\n\n在维多利亚，凯尔希以拉特兰修士的身份参加文森特伯爵的宴会，与情报员海蒂·汤姆森会面。海蒂转交了来自卡兹戴尔和维多利亚的情报信件。宴会期间，乌萨斯「皇帝的利刃」——内卫突然出现，意图追杀凯尔希。凯尔希与内卫展开了一场激烈的战斗与辩论，她揭示了内卫与邪魔的秘密，并成功说服内卫暂时退却。战后，凯尔希处理了痕迹，并指示海蒂联络信使前往萨米。\n\n多年后，在罗德岛，已成为「异客」的艾利奥特·格罗夫带着老伊辛的金币前来赴约。他与凯尔希重逢，并正式加入罗德岛。凯尔希则一如既往地处理着罗德岛的事务，准备迎接新的航程。\n\n本段剧情深化了凯尔希与萨尔贡、乌萨斯、维多利亚三大势力的复杂关系，揭示了「邪魔」、「内卫」等泰拉世界的深层秘密，并完成了艾利奥特·格罗夫从年轻科学家到复仇者「沙卒」，再到罗德岛干员「异客」的人物弧光。",
+  "events": [
+    {
+      "event": "凯尔希在赤角小镇的混战中救出艾利奥特并回收法术原型图纸",
+      "type": "rescue_and_recovery",
+      "line_range": [
+        84,
+        213
+      ],
+      "participants": [
+        "凯尔希",
+        "艾利奥特",
+        "Mon3tr"
+      ],
+      "location": "萨尔贡伊巴特地区赤角小镇",
+      "significance": "引入核心冲突物品和关键角色艾利奥特，展现凯尔希的行动力与知识",
+      "is_imaginary": false
+    },
+    {
+      "event": "河刃小队遭遇顽锤小队背叛，凯尔希揭露哥伦比亚各方势力的阴谋",
+      "type": "revelation",
+      "line_range": [
+        244,
+        331
+      ],
+      "participants": [
+        "凯尔希",
+        "河刃小队佣兵队长",
+        "艾利奥特"
+      ],
+      "location": "萨尔贡荒漠洞穴",
+      "significance": "揭示哥伦比亚军方、管理局与公司之间的利益博弈，以及萨尔贡王酋的卷入",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希说服河刃小队队长放弃刺杀，并为他们规划逃生路线",
+      "type": "negotiation",
+      "line_range": [
+        332,
+        374
+      ],
+      "participants": [
+        "凯尔希",
+        "河刃小队佣兵队长",
+        "艾利奥特"
+      ],
+      "location": "萨尔贡荒漠洞穴",
+      "significance": "展现凯尔希的谈判技巧和战略规划能力，为后续行动铺路",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与莉莉娅在乌萨斯村庄重逢，莉莉娅请求凯尔希协助刺杀万尼亚大公",
+      "type": "reunion_and_planning",
+      "line_range": [
+        454,
+        648
+      ],
+      "participants": [
+        "凯尔希",
+        "莉莉娅"
+      ],
+      "location": "乌萨斯靠近切尔诺伯格航道的村庄",
+      "significance": "揭示切尔诺伯格研究所惨案的后续影响，引入莉莉娅的复仇动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与莉莉娅潜入松心山谷疗养院，准备刺杀万尼亚大公",
+      "type": "infiltration",
+      "line_range": [
+        649,
+        799
+      ],
+      "participants": [
+        "凯尔希",
+        "莉莉娅",
+        "维特"
+      ],
+      "location": "乌萨斯松心山谷疗养院",
+      "significance": "展现刺杀计划的执行过程，引入财政大臣维特这一关键人物",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希以拉特兰修士身份参加文森特伯爵的新年宴会",
+      "type": "ceremony",
+      "line_range": [
+        800,
+        863
+      ],
+      "participants": [
+        "凯尔希",
+        "文森特伯爵",
+        "海蒂"
+      ],
+      "location": "维多利亚多伦郡文森特伯爵宅邸",
+      "significance": "引入维多利亚剧情线，展现凯尔希的社交身份",
+      "is_imaginary": false
+    },
+    {
+      "event": "海蒂在宴会中与凯尔希独处，转交来自维多利亚和卡兹戴尔的情报信件",
+      "type": "intelligence_transfer",
+      "line_range": [
+        1044,
+        1071
+      ],
+      "participants": [
+        "凯尔希",
+        "海蒂"
+      ],
+      "location": "维多利亚多伦郡文森特伯爵宅邸外",
+      "significance": "揭示凯尔希的情报网络，连接维多利亚与卡兹戴尔的政治线索",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希在疗养院中与万尼亚大公对话，并执行刺杀",
+      "type": "assassination",
+      "line_range": [
+        1190,
+        1342
+      ],
+      "participants": [
+        "凯尔希",
+        "万尼亚大公"
+      ],
+      "location": "乌萨斯松心山谷疗养院",
+      "significance": "完成莉莉娅的复仇，揭示万尼亚大公与切尔诺伯格事件的关联，展现凯尔希的决断",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与莉莉娅在刺杀后撤离疗养院",
+      "type": "retreat",
+      "line_range": [
+        1343,
+        1369
+      ],
+      "participants": [
+        "凯尔希",
+        "莉莉娅"
+      ],
+      "location": "乌萨斯松心山谷疗养院",
+      "significance": "结束乌萨斯剧情线，为后续发展留下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "「沙卒」向暴雨和慑砂透露自己刺杀伊巴特王酋的过去，并表明自己感染者的身份，寻求加入罗德岛以寻找凯尔希。",
+      "type": "revelation_and_negotiation",
+      "line_range": [
+        1370,
+        1486
+      ],
+      "participants": [
+        "暴雨",
+        "慑砂",
+        "「沙卒」"
+      ],
+      "location": "萨尔贡某城镇",
+      "significance": "揭示「沙卒」的真实身份和动机，为后续剧情埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与艾利奥特在萨尔贡的集市城镇遭遇赏金猎人袭击，凯尔希击退敌人后，遇到了神秘的占卜师老伊辛。",
+      "type": "ambush_and_encounter",
+      "line_range": [
+        1487,
+        1599
+      ],
+      "participants": [
+        "凯尔希",
+        "艾利奥特",
+        "老伊辛"
+      ],
+      "location": "萨尔贡沁礁之地集市",
+      "significance": "凯尔希通过萨尔贡古语和关于「沁礁之城」的知识，赢得了老伊辛的信任，为后续的逃亡计划奠定基础。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与老伊辛在「沉睡的萨尔贡」庭院中交谈，老伊辛透露自己因遗忘过去而痛苦，并请求凯尔希的帮助。",
+      "type": "revelation_and_emotional_breakthrough",
+      "line_range": [
+        1600,
+        1655
+      ],
+      "participants": [
+        "凯尔希",
+        "老伊辛",
+        "艾利奥特"
+      ],
+      "location": "「沉睡的萨尔贡」庭院",
+      "significance": "揭示老伊辛的过去和执念，深化其角色背景。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与前来追捕的萨卡兹雇佣兵小队交战，她试图用萨卡兹语和关于卡兹戴尔的说辞策反他们，但交涉失败，双方开战。",
+      "type": "battle_and_ideological_clash",
+      "line_range": [
+        1656,
+        1731
+      ],
+      "participants": [
+        "凯尔希",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "「沉睡的萨尔贡」庭院附近",
+      "significance": "展现凯尔希对萨卡兹的了解和同情，以及萨卡兹雇佣兵在萨尔贡的生存困境。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希击败萨卡兹雇佣兵小队，并与重伤的萨卡兹首领进行最后的对话，谈论卡兹戴尔和家园。",
+      "type": "confrontation_and_farewell",
+      "line_range": [
+        1732,
+        1788
+      ],
+      "participants": [
+        "凯尔希",
+        "萨卡兹雇佣兵",
+        "老伊辛",
+        "艾利奥特"
+      ],
+      "location": "「沉睡的萨尔贡」庭院附近",
+      "significance": "展现凯尔希对萨卡兹的复杂情感，以及萨卡兹对家园的渴望。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希、艾利奥特和老伊辛抵达沁礁黑市，老伊辛用赤金为他们筹备离开萨尔贡的物资。",
+      "type": "planning_and_preparation",
+      "line_range": [
+        1789,
+        1915
+      ],
+      "participants": [
+        "凯尔希",
+        "艾利奥特",
+        "老伊辛"
+      ],
+      "location": "沁礁黑市",
+      "significance": "推进剧情，为凯尔希和艾利奥特的分离做准备。",
+      "is_imaginary": false
+    },
+    {
+      "event": "老伊辛在回忆中揭示了沁礁帕夏是一位梦魇后裔，并回忆起自己作为弄臣的过去，以及帕夏的源石技艺对他的影响。",
+      "type": "revelation_and_flashback",
+      "line_range": [
+        1916,
+        1970
+      ],
+      "participants": [
+        "凯尔希",
+        "老伊辛"
+      ],
+      "location": "沁礁黑市",
+      "significance": "揭示老伊辛失忆的根源和沁礁之城的秘密，深化世界观。",
+      "is_imaginary": false
+    },
+    {
+      "event": "艾利奥特为了与过去决裂，主动破坏源石样本导致自己感染矿石病，并决定留在萨尔贡向所有仇人复仇。",
+      "type": "character_development_and_sacrifice",
+      "line_range": [
+        1971,
+        2098
+      ],
+      "participants": [
+        "凯尔希",
+        "艾利奥特",
+        "老伊辛"
+      ],
+      "location": "沁礁黑市",
+      "significance": "完成艾利奥特的人物转变，他与凯尔希分道扬镳，为后续「沙卒」的身份埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "在维多利亚文森特伯爵的宴会上，凯尔希与海蒂交谈，了解维多利亚的政治局势，并收到来自卡兹戴尔和维多利亚的情报信件。",
+      "type": "intelligence_transfer_and_political_intrigue",
+      "line_range": [
+        2099,
+        2194
+      ],
+      "participants": [
+        "凯尔希",
+        "海蒂",
+        "文森特伯爵"
+      ],
+      "location": "维多利亚多伦郡文森特伯爵庄园",
+      "significance": "展现维多利亚的政治局势，以及凯尔希与海蒂、汤姆森情报网络的关系。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希在花园中遭遇乌萨斯「皇帝的利刃」内卫的追杀，双方展开战斗和辩论。",
+      "type": "battle_and_ideological_clash",
+      "line_range": [
+        2195,
+        2267
+      ],
+      "participants": [
+        "凯尔希",
+        "「皇帝的利刃」"
+      ],
+      "location": "维多利亚多伦郡文森特伯爵庄园花园",
+      "significance": "揭示乌萨斯内卫的存在和秘密，以及凯尔希与乌萨斯帝国的复杂关系。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与内卫的战斗持续，凯尔希揭露了内卫与邪魔的秘密，并成功说服内卫暂时退却。",
+      "type": "confrontation_and_negotiation",
+      "line_range": [
+        2268,
+        2388
+      ],
+      "participants": [
+        "凯尔希",
+        "「皇帝的利刃」"
+      ],
+      "location": "维多利亚多伦郡文森特伯爵庄园花园",
+      "significance": "深化凯尔希与乌萨斯内卫的关系，揭示泰拉世界对抗邪魔的深层秘密。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与海蒂处理战斗痕迹，并指示海蒂联络信使前往萨米。凯尔希阅读了来自特蕾西娅的信件，并回忆起与莉莉娅的对话。",
+      "type": "retreat_and_reflection",
+      "line_range": [
+        2389,
+        2516
+      ],
+      "participants": [
+        "凯尔希",
+        "海蒂",
+        "文森特伯爵"
+      ],
+      "location": "维多利亚多伦郡文森特伯爵庄园",
+      "significance": "展现凯尔希的谨慎和周全，以及她对过去和未来的思考。",
+      "is_imaginary": false
+    },
+    {
+      "event": "多年后，已成为「沙卒」的艾利奥特在萨尔贡策划刺杀伊巴特王酋，并与老伊辛讨论关于凯尔希的梦境。",
+      "type": "planning_and_revelation",
+      "line_range": [
+        2517,
+        2576
+      ],
+      "participants": [
+        "艾利奥特",
+        "老伊辛"
+      ],
+      "location": "萨尔贡",
+      "significance": "展现艾利奥特在萨尔贡的复仇之路，以及老伊辛对凯尔希身份的猜测。",
+      "is_imaginary": false
+    },
+    {
+      "event": "「异客」（艾利奥特）带着老伊辛的金币来到罗德岛与凯尔希重逢，并正式加入罗德岛。",
+      "type": "reunion_and_departure",
+      "line_range": [
+        2577,
+        2640
+      ],
+      "participants": [
+        "凯尔希",
+        "异客",
+        "亚叶"
+      ],
+      "location": "罗德岛",
+      "significance": "完成艾利奥特的人物弧光，他正式加入罗德岛，并与凯尔希达成新的合作关系。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "本章核心人物，以多重身份（安保公司顾问、医生、修士、刺客）在不同地区行动，回收危险技术、执行刺杀、接收情报",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾利奥特·格罗夫",
+      "type": "npc",
+      "role_in_chapter": "布莱恩创生科技研究所的年轻科学家助手，在赤角小镇被凯尔希救出，携带法术原型图纸",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "慑砂",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与暴雨在沁礁黑市等待接头时遭遇沙卒",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "暴雨",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与慑砂一同执行任务",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "沙卒",
+      "type": "npc",
+      "role_in_chapter": "沁礁黑市的情报贩子，拦截了罗德岛的接头行动，对凯尔希的签名感兴趣",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莉莉娅",
+      "type": "npc",
+      "role_in_chapter": "凯尔希在切尔诺伯格研究所的学生，丈夫在惨案中遇害，策划刺杀万尼亚大公复仇",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "万尼亚大公",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯第四集团军前参谋，切尔诺伯格事件的幕后推动者之一，在疗养院被凯尔希刺杀",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伊斯拉姆·维特",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯新任财政大臣，深得皇帝信任，在疗养院拜访旧友，为凯尔希的行动提供了掩护",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "文森特伯爵",
+      "type": "npc",
+      "role_in_chapter": "维多利亚多伦郡的贵族，邀请凯尔希参加新年宴会",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "海蒂",
+      "type": "operator",
+      "role_in_chapter": "文森特伯爵友人之女，在宴会中与凯尔希独处，转交情报信件",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Mon3tr",
+      "type": "npc",
+      "role_in_chapter": "凯尔希的召唤物，在战斗和侦查中协助凯尔希",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "索恩教授",
+      "type": "npc",
+      "role_in_chapter": "布莱恩创生科技研究所首席研究员，艾利奥特的老师，在赤角小镇遇害，其研究被用于战争目的",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "「沙卒」",
+      "type": "npc",
+      "role_in_chapter": "神秘人物，自称是刺杀伊巴特王酋的凶手，感染者，寻求加入罗德岛以找到凯尔希。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾利奥特",
+      "type": "npc",
+      "role_in_chapter": "年轻的科学家，被凯尔希从赤角小镇救出，后主动感染矿石病，留在萨尔贡复仇，多年后以「异客」身份加入罗德岛。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老伊辛",
+      "type": "npc",
+      "role_in_chapter": "神秘的萨弗拉占卜师，曾是沁礁帕夏的弄臣，因遗忘过去而痛苦，帮助凯尔希和艾利奥特逃离萨尔贡。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "萨卡兹雇佣兵",
+      "type": "npc",
+      "role_in_chapter": "受雇于穆拉帕夏的萨卡兹雇佣兵小队首领，与凯尔希交战，最终战死。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "「皇帝的利刃」",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯内卫，奉命追杀凯尔希，在维多利亚与凯尔希交战，最终被说服暂时退却。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "异客",
+      "type": "operator",
+      "role_in_chapter": "艾利奥特·格罗夫成年后的身份，以「沙卒」之名在萨尔贡活动多年后，加入罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "亚叶",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，向凯尔希报告来自海蒂的包裹。",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "高新源石能源法术转换装置",
+      "line_range": [
+        276,
+        277
+      ],
+      "discussion_summary": "凯尔希指出艾利奥特携带的箱子中的技术原型，如果以另一种模式应用，可以造成大规模环境破坏，将萨尔贡雨林化作荒漠",
+      "is_substantive": true
+    },
+    {
+      "concept": "急性矿石病",
+      "line_range": [
+        495,
+        498
+      ],
+      "discussion_summary": "莉莉娅解释急性矿石病的症状：感染源在血液中迅速循环，不出现体表结晶，但会迅速加剧感染症状",
+      "is_substantive": true
+    },
+    {
+      "concept": "内卫",
+      "line_range": [
+        1228,
+        1230
+      ],
+      "discussion_summary": "万尼亚大公向凯尔希描述内卫的意志，称其为皇帝的利刃，其存在带来的恐惧连失明都无法遮掩",
+      "is_substantive": true
+    },
+    {
+      "concept": "沁礁之城",
+      "line_range": [
+        1571,
+        1583
+      ],
+      "discussion_summary": "凯尔希用萨尔贡古语向老伊辛提及一百五十年前消失的辉煌城市，老伊辛回忆起城市名为「沁礁」。",
+      "is_substantive": true
+    },
+    {
+      "concept": "预言",
+      "line_range": [
+        1455,
+        1458
+      ],
+      "discussion_summary": "「沙卒」提及老伊辛的预言，认为预言只是交涉和沟通，并非真正的源石技艺。",
+      "is_substantive": true
+    },
+    {
+      "concept": "邪魔",
+      "line_range": [
+        2196,
+        2206
+      ],
+      "discussion_summary": "凯尔希独白中详细描述了人类对抗邪魔的历史，包括萨尔贡、萨米和乌萨斯的不同方式。",
+      "is_substantive": true
+    },
+    {
+      "concept": "内卫/皇帝的利刃",
+      "line_range": [
+        2207,
+        2388
+      ],
+      "discussion_summary": "凯尔希与内卫的对话中，揭示了内卫的身份、职责、与邪魔的关系，以及他们作为乌萨斯意志的体现。\n\n凯尔希与内卫的后续对话中，进一步讨论了内卫的运作原理、与邪魔的关系、以及他们的职责与幻象。",
+      "is_substantive": true
+    },
+    {
+      "concept": "卡兹戴尔",
+      "line_range": [
+        1692,
+        1774
+      ],
+      "discussion_summary": "凯尔希与萨卡兹雇佣兵讨论卡兹戴尔，雇佣兵认为卡兹戴尔是骗孩子的传说，凯尔希则说萨卡兹们在建设家园。\n\n凯尔希与濒死的萨卡兹雇佣兵首领谈论卡兹戴尔，表示萨卡兹们正在建设家园，并称「提卡兹」们应当有个家。",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石能源/法术原型",
+      "line_range": [
+        1879,
+        2000
+      ],
+      "discussion_summary": "凯尔希警告艾利奥特，该源石能源技术能轻易让半边萨尔贡沉入黄沙，艾利奥特则声称自己能复现技术。\n\n凯尔希解释该源石样本的独特性，来自萨卡兹遗迹，艾利奥特决定摧毁它。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "哥伦比亚军方",
+      "line_range": [
+        296,
+        313
+      ],
+      "description": "凯尔希揭露军方高层挟持布莱恩创生科技股东，将技术输出到萨尔贡以挑起伊巴特内斗，从中牟利"
+    },
+    {
+      "faction": "烟酒施术单元以及源石制品管理局",
+      "line_range": [
+        300,
+        311
+      ],
+      "description": "凯尔希指出管理局认为战火蔓延到萨尔贡帝国中心会毁掉他们的利益，因此派河刃小队回收目标以制止军方越界"
+    },
+    {
+      "faction": "威斯丁安保公司",
+      "line_range": [
+        314,
+        329
+      ],
+      "description": "凯尔希说明公司业务总管不站在任何一边，任由军方和管理局互相掣肘以创造灰色收入，不在乎任务成败"
+    },
+    {
+      "faction": "乌萨斯第四集团军",
+      "line_range": [
+        595,
+        600
+      ],
+      "description": "莉莉娅指出第四集团军的爪牙在研究所射杀了她的丈夫，凯尔希确认万尼亚大公是第四集团军前参谋和石棺事件幕后推动者"
+    },
+    {
+      "faction": "乌萨斯帝国议会",
+      "line_range": [
+        1081,
+        1083
+      ],
+      "description": "维特表示帝国议会正在蜕变，要从顽固贵族手中夺回属于乌萨斯和陛下的东西，为乌萨斯打开新航道"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1398,
+        1399
+      ],
+      "description": "「沙卒」表示要将自己的财富和权力赠送给罗德岛，作为酬宾。",
+      "is_substantive": true
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2577,
+        2640
+      ],
+      "description": "异客正式加入罗德岛，与凯尔希讨论他在罗德岛的未来。",
+      "is_substantive": true
+    },
+    {
+      "faction": "哥伦比亚军方/管理局",
+      "line_range": [
+        1440,
+        1444
+      ],
+      "description": "慑砂提到他在调查一个哥伦比亚的军工实验负责人，怀疑兄长的死与哥伦比亚公司有关。",
+      "is_substantive": true
+    },
+    {
+      "faction": "萨尔贡王酋/帕夏",
+      "line_range": [
+        1381,
+        1392
+      ],
+      "description": "「沙卒」透露自己杀死了伊巴特地区的王酋，并讨论帕夏对伊巴特地区的态度。",
+      "is_substantive": true
+    },
+    {
+      "faction": "萨尔贡王酋/帕夏",
+      "line_range": [
+        1668,
+        1681
+      ],
+      "description": "凯尔希推断萨卡兹雇佣兵的真正雇主是现任帕夏穆拉，并讨论穆拉帕夏的手腕和意图。",
+      "is_substantive": true
+    },
+    {
+      "faction": "乌萨斯帝国",
+      "line_range": [
+        2207,
+        2267
+      ],
+      "description": "凯尔希与乌萨斯内卫的对话，涉及乌萨斯帝国、内卫的职责、以及乌萨斯对邪魔的利用。",
+      "is_substantive": true
+    },
+    {
+      "faction": "乌萨斯帝国",
+      "line_range": [
+        2268,
+        2388
+      ],
+      "description": "凯尔希与内卫的后续对话，讨论乌萨斯的现状、先皇的幻影、以及内卫的职责。",
+      "is_substantive": true
+    },
+    {
+      "faction": "维多利亚贵族/公爵",
+      "line_range": [
+        2099,
+        2146
+      ],
+      "description": "文森特伯爵和海蒂讨论维多利亚的政治局势，包括无主的伦蒂尼姆、大公爵的掣肘、以及边境的和平。",
+      "is_substantive": true
+    },
+    {
+      "faction": "萨卡兹",
+      "line_range": [
+        1692,
+        1717
+      ],
+      "description": "凯尔希与萨卡兹雇佣兵讨论卡兹戴尔和萨卡兹的生存困境。",
+      "is_substantive": true
+    },
+    {
+      "faction": "萨卡兹",
+      "line_range": [
+        1765,
+        1774
+      ],
+      "description": "凯尔希与濒死的萨卡兹雇佣兵首领谈论卡兹戴尔和家园。",
+      "is_substantive": true
+    }
+  ],
+  "locations": [
+    {
+      "location": "沁礁黑市",
+      "line_range": [
+        21,
+        22
+      ],
+      "description": "沙卒自称是沁礁黑市的生意人，慑砂确认其为伊巴特地区的黑市"
+    },
+    {
+      "location": "伊巴特",
+      "line_range": [
+        24,
+        24
+      ],
+      "description": "慑砂指出沙卒是伊巴特绝大部分武装冲突的幕后黑手"
+    },
+    {
+      "location": "松心山谷疗养院",
+      "line_range": [
+        598,
+        600
+      ],
+      "description": "凯尔希指出万尼亚大公所在的疗养院，位于移动城市之外，每年冬天在此休养"
+    },
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        581,
+        582
+      ],
+      "description": "莉莉娅提及切尔诺伯格的研究所事故，警方提供的事故报告中没有任何人离开研究所"
+    },
+    {
+      "location": "多伦郡",
+      "line_range": [
+        814,
+        815
+      ],
+      "description": "文森特伯爵称赞多伦郡是个好地方，并在此举办新年宴会"
+    },
+    {
+      "location": "伦蒂尼姆",
+      "line_range": [
+        964,
+        966
+      ],
+      "description": "凯尔希提及女皇之声在骑士簇拥下抵达伦蒂尼姆时各大公爵暂停争执以礼相待，文森特伯爵也受邀前往"
+    },
+    {
+      "location": "圣骏堡",
+      "line_range": [
+        976,
+        982
+      ],
+      "description": "凯尔希表示曾在圣骏堡待过一段时日，海蒂的父亲打算亲自去圣骏堡拜访一位乌萨斯作者"
+    },
+    {
+      "location": "伊巴特地区",
+      "line_range": [
+        1380,
+        1391
+      ],
+      "description": "「沙卒」和慑砂讨论伊巴特地区的王酋更迭和帕夏的态度。",
+      "is_substantive": true
+    },
+    {
+      "location": "沁礁之地",
+      "line_range": [
+        1517,
+        1518
+      ],
+      "description": "凯尔希解释「沁礁之地」的含义和由来，以及如何找到遗民。",
+      "is_substantive": true
+    },
+    {
+      "location": "沁礁之地",
+      "line_range": [
+        1571,
+        1583
+      ],
+      "description": "凯尔希与老伊辛用萨尔贡古语讨论一百五十年前消失的沁礁之城。",
+      "is_substantive": true
+    },
+    {
+      "location": "「沉睡的萨尔贡」",
+      "line_range": [
+        1600,
+        1608
+      ],
+      "description": "老伊辛介绍这座废弃庭院，称其为流浪者的庇护所，名为「沉睡的萨尔贡」。",
+      "is_substantive": true
+    },
+    {
+      "location": "沁礁黑市",
+      "line_range": [
+        1789,
+        1807
+      ],
+      "description": "老伊辛带领凯尔希和艾利奥特进入沁礁黑市，介绍其为伊巴特充满活力的心脏。",
+      "is_substantive": true
+    },
+    {
+      "location": "伦蒂尼姆",
+      "line_range": [
+        2099,
+        2106
+      ],
+      "description": "文森特伯爵谈论伦蒂尼姆是一座无主的城市，以及他与诺曼底公爵的会面。",
+      "is_substantive": true
+    },
+    {
+      "location": "多伦郡",
+      "line_range": [
+        2142,
+        2144
+      ],
+      "description": "凯尔希指出多伦郡地处边境，地广人稀，不在任何庞大势力的影响之下。",
+      "is_substantive": true
+    },
+    {
+      "location": "落日峡谷",
+      "line_range": [
+        2253,
+        2254
+      ],
+      "description": "凯尔希指出内卫曾是落日峡谷的幸存者。",
+      "is_substantive": true
+    },
+    {
+      "location": "落日峡谷",
+      "line_range": [
+        2316,
+        2319
+      ],
+      "description": "凯尔希警告内卫，落日峡谷已变成恐惧之地，那片土地不再属于乌萨斯。",
+      "is_substantive": true
+    },
+    {
+      "location": "萨尔贡黄金之城/王都",
+      "line_range": [
+        1926,
+        1932
+      ],
+      "description": "老伊辛询问凯尔希关于黄金之城，凯尔希解释那是萨尔贡的王都，只有帕夏和少数王酋才能觐见。",
+      "is_substantive": true
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:19:12.005517+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 62024,
+    "tokens_out": 8901,
+    "elapsed_s": 69.20664954185486
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "艾利奥特·格罗夫",
+    "沙卒",
+    "莉莉娅",
+    "万尼亚大公",
+    "伊斯拉姆·维特",
+    "文森特伯爵",
+    "索恩教授",
+    "「沙卒」",
+    "艾利奥特",
+    "老伊辛",
+    "萨卡兹雇佣兵",
+    "「皇帝的利刃」"
+  ]
+}

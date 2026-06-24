@@ -1,0 +1,143 @@
+{
+  "summary": "Scene 1 中，可露希尔和断罪者向博士介绍她们联合研发的新游戏《狂弹要塞！罗德大兵集结》。断罪者以首席策划兼艺术顾问的身份，详细阐述了游戏的设计理念、灵感来源（自称来自初代断罪大师的经历）、艺术追求（艺术永存、正义永存），以及游戏在操作、平衡性、美术（邀请夕小姐但未获答复）等方面的特点。可露希尔则从缓解干员外勤压力的实际需求出发，解释了开发游戏的初衷。最终，博士被邀请作为第五十二位测试者进行试玩。\n\nScene 2 中，博士试玩结束后，断罪者和可露希尔对博士的体验进行反馈和解释。断罪者坚持游戏蕴含艺术与正义的理念，并再次提及夕小姐的美术参考。可露希尔则承认游戏目前是测试版本，欢迎博士提出优化建议。最后，伊芙利特出现，也被可露希尔叫来测试，并即将接受断罪者同样的理念阐述。",
+  "events": [
+    {
+      "event": "可露希尔和断罪者向博士介绍并邀请其测试新游戏《狂弹要塞！罗德大兵集结》",
+      "type": "introduction",
+      "line_range": [
+        1,
+        73
+      ],
+      "participants": [
+        "断罪者",
+        "可露希尔",
+        "博士"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "引出本章核心事件，展示游戏开发背景和设计理念",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士试玩结束后，断罪者和可露希尔收集反馈并解释游戏设计",
+      "type": "feedback_collection",
+      "line_range": [
+        74,
+        94
+      ],
+      "participants": [
+        "断罪者",
+        "可露希尔",
+        "博士"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "展示游戏测试环节的后续互动，深化角色对游戏理念的坚持",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊芙利特被叫来测试游戏，即将接受断罪者的理念阐述",
+      "type": "arrival",
+      "line_range": [
+        95,
+        101
+      ],
+      "participants": [
+        "伊芙利特",
+        "可露希尔",
+        "断罪者"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "引入新测试者，暗示游戏测试的持续进行",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "断罪者",
+      "type": "operator",
+      "role_in_chapter": "作为游戏首席策划兼艺术顾问，向博士和伊芙利特阐述游戏的设计理念、艺术追求和正义信念",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "可露希尔",
+      "type": "operator",
+      "role_in_chapter": "作为游戏联合研发者，介绍游戏开发背景（缓解干员压力），并邀请博士和伊芙利特进行测试",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "作为第五十二位测试者试玩游戏，并接受断罪者和可露希尔的反馈询问",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伊芙利特",
+      "type": "operator",
+      "role_in_chapter": "作为第五十三位测试者被叫来试玩游戏",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "游戏作为艺术形式",
+      "line_range": [
+        58,
+        65
+      ],
+      "discussion_summary": "断罪者阐述游戏不仅仅是娱乐，更是一种艺术形式，需要灌注理念与思想，并宣称本游戏传递「艺术永存！正义永存！」的理念",
+      "is_substantive": true
+    },
+    {
+      "concept": "游戏缓解干员压力",
+      "line_range": [
+        22,
+        29
+      ],
+      "discussion_summary": "可露希尔解释开发游戏的初衷是为了缓解干员在外勤任务中因严苛环境造成的巨大身心压力，通过优化通讯终端和加装娱乐程序来提升工作状态",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        22,
+        24
+      ],
+      "description": "可露希尔提到罗德岛干员在外勤任务中面临身心压力，需要改善工作状态"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        79,
+        79
+      ],
+      "description": "断罪者称呼博士为罗德岛的作战指挥官"
+    }
+  ],
+  "locations": [
+    {
+      "location": "罗德岛本舰",
+      "line_range": [
+        22,
+        24
+      ],
+      "description": "可露希尔提到干员不在本舰时难以维持工作状态，暗示本舰是游戏开发和测试的主要场所"
+    }
+  ],
+  "chapter": "狂弹要塞！罗德大兵集结",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:53:58.954827+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 3477,
+    "tokens_out": 1211,
+    "elapsed_s": 11.919687032699585
+  },
+  "taxonomy_type": "light",
+  "_unmatched_names": [
+    "博士"
+  ]
+}

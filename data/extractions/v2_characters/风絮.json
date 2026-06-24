@@ -1,0 +1,53 @@
+{
+  "summary": "风絮是岁兽代理人「方」的萨尔贡学徒，性格开朗乐观，擅长驾驶驮兽车和基础医疗。在辞岁行事件中作为信使传递方的戥秤，并参与代理人聚餐，展现其自由不羁的生存态度。",
+  "personality": {
+    "traits": [
+      "开朗",
+      "乐观",
+      "自由"
+    ],
+    "description": "风絮性格开朗乐观，虽出身苦难却珍惜生命，追求自由，对生活充满热情。"
+  },
+  "abilities": {
+    "description": "风絮没有战斗经验，主要能力是驾驶驮兽车和基础医疗，源石技艺适应性标准。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "辞岁行",
+        "evidence": "风絮在辞岁行中仅作为信使传递物品，未参与任何战斗，且档案显示其没有战斗经验。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "辞岁行",
+      "nodes": "邙山镇对抗伥物",
+      "event": "风絮作为方的学徒，驾驶喷气滑板抵达邙山镇，向年传递方的戥秤，并介绍自己的身份。",
+      "role": "信使，传递方的物品和消息。"
+    },
+    {
+      "chapter": "辞岁行",
+      "nodes": "余味居聚餐",
+      "event": "风絮代表方参加代理人聚餐，转达方因行医无法前来的消息，并接受黍赠送的食物。",
+      "role": "代表方出席，传递信息。"
+    }
+  ],
+  "first_appearance": "辞岁行",
+  "appearance_count": 15,
+  "_stats": {
+    "tokens_in": 8295,
+    "tokens_out": 390,
+    "elapsed_s": 4.799184083938599
+  },
+  "name_zh": "风絮",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "辞岁行"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:48:51.713672+00:00",
+  "race": "库兰塔",
+  "affiliations": [
+    "炎"
+  ]
+}

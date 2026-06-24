@@ -1,0 +1,47 @@
+{
+  "summary": "慕斯是出身维多利亚伦蒂尼姆的菲林族感染者，曾在蛋糕店担任甜点师。她性格温和内向，喜爱猫猫，在罗德岛担任后勤与战场辅助工作。在踏寻往昔之风中，她参与节日故事分享，展现了善良与对同伴的关怀。",
+  "personality": {
+    "traits": [
+      "温和",
+      "内向",
+      "善良"
+    ],
+    "description": "慕斯性格温和，不善言辞，但内心善良，对猫猫和同伴充满关怀。"
+  },
+  "abilities": {
+    "description": "慕斯拥有优良的源石技艺适应性，但战斗经验较少，主要担任后勤与辅助工作。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "踏寻往昔之风",
+        "evidence": "慕斯在故事分享中未参与战斗，仅展现日常交流与后勤能力。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "踏寻往昔之风",
+      "nodes": "节日故事分享",
+      "event": "慕斯与巫恋、铃兰、泡普卡在节日宴会后分享各自文化的神话故事，探讨关于失去、贪婪和牺牲的共通主题。",
+      "role": "慕斯讲述了维多利亚的神话故事，展现了她的文化背景与温和性格。"
+    }
+  ],
+  "first_appearance": "踏寻往昔之风",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 10428,
+    "tokens_out": 337,
+    "elapsed_s": 4.502059459686279
+  },
+  "name_zh": "慕斯",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "踏寻往昔之风"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:54:49.852436+00:00",
+  "race": "菲林",
+  "affiliations": [
+    "维多利亚"
+  ]
+}

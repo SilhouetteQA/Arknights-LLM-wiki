@@ -1,0 +1,45 @@
+{
+  "summary": "伦蒂尼姆的普通市民，在萨卡兹占领下艰难求生。曾为萨卡兹开车，因目睹秘密而遭追杀。被罗德岛救出后，因恐惧暴露身份而逃跑，最终被深池抓获。其身份后被萨卡兹密使利用，成为曼弗雷德陷阱的一部分。",
+  "personality": {
+    "traits": [
+      "恐惧",
+      "自私",
+      "求生欲强"
+    ],
+    "description": "在萨卡兹占领下极度恐惧，为求生不惜背叛帮助者，最终沦为棋子。"
+  },
+  "abilities": {
+    "description": "无特殊战斗能力，仅具备普通市民的求生本能。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "破碎日冕",
+        "evidence": "被深池士兵轻易制服，毫无反抗能力。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "破碎日冕",
+      "nodes": "萨迪恩区出入口",
+      "event": "被罗德岛从深池手中救出，同意带路进入伦蒂尼姆，但因恐惧暴露身份逃跑，被蔓德拉抓获。",
+      "role": "被救援对象，后成为曼弗雷德陷阱的诱饵。"
+    }
+  ],
+  "first_appearance": "破碎日冕",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 12812,
+    "tokens_out": 315,
+    "elapsed_s": 3.5848028659820557
+  },
+  "name_zh": "伦蒂尼姆市民",
+  "aliases": [
+    "伦蒂尼姆市民？"
+  ],
+  "source_pass1_chapters": [
+    "破碎日冕"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:29:32.844051+00:00"
+}

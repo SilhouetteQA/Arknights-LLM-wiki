@@ -1,0 +1,1683 @@
+{
+  "chapter": "银心湖列车",
+  "category": "side",
+  "batch_count": 3,
+  "summary": "本章围绕银心湖列车展开多线叙事。维多利亚子爵哈洛德·克雷加文率队以观光为名抵达谢拉格，实则肩负公爵使命。罗德岛干员烈夏（罗莎琳）为完成母亲遗愿，携带神秘盒子前往谢拉格，计划登上弗根山。喀兰贸易的锏受老雷昂所托，登上列车寻找哈洛德，引发一场追逐误会。同时，维多利亚密探「灰礼帽」也在列车上暗中调查，与各方势力周旋。\n\nScene 1 中，魏斯向恩希欧迪斯汇报监视维多利亚军营的情况，并转交了哈洛德子爵的请帖。恩希欧迪斯解读了哈洛德通过魏斯传递的谦卑姿态与诚意，决定从希瓦艾什家酒窖取出珍藏的「雪境之春1072」作为回礼。晚宴上，恩希欧迪斯与恩雅就谢拉格的发展路线和各自职责展开了一场充满机锋的对话，最终在哈洛德的调和下，三人同意以这瓶酒作为合作与和解的信号，宴会正式开始。\n\nScene 2 中，宴会顺利进行，喀兰贸易总监诺希斯以酒量震慑了维多利亚士兵。恩希欧迪斯与恩雅在席间就谢拉格的开放政策与信仰传统再次交锋，哈洛德则点明开斯特公爵要求恩希欧迪斯展现「诚意」以回报当年的资助。恩雅品尝到熟悉的家庭菜肴后有所触动。宴会后，哈洛德试图拉拢锏但被拒绝，锏明确表示自己是谢拉格人。恩希欧迪斯、诺希斯与锏在喀兰贸易总部大堂闲聊，谈及过往与现状。\n\nScene 3 中，阿克托斯酒醒后，老修士告知他烈夏（罗莎琳）是其女儿，并透露其母塔季扬娜已去世的误会。阿克托斯震惊之余急于寻找女儿。菈塔托丝前来警告，称烈夏已被维多利亚密探「灰礼帽」盯上。与此同时，烈夏独自登山，遇到伪装成游客的「灰礼帽」，后者设计接近她。\n\nScene 4 中，烈夏识破「灰礼帽」的伪装并与其对峙。阿克托斯突然出现试图保护烈夏，导致三人从山崖坠落。锏现身拦截「灰礼帽」，揭露恩希欧迪斯利用烈夏作为诱饵的计划。\n\nScene 5 中，烈夏与阿克托斯在谷底相认，阿克托斯坦白了当年因政治压力被迫送走妻女的往事。恩希欧迪斯向菈塔托丝解释其计划是利用烈夏转移「灰礼帽」的注意力，以保护真正的秘密——耶拉冈德像。锏与「灰礼帽」在追逐中展开心理博弈，「灰礼帽」识破诱饵计划，推断出耶拉冈德像有问题，并设法摆脱锏前往银心湖。\n\nScene 6 中，阿克托斯向烈夏详细讲述了二十年前谢拉格的封闭环境、他与塔季扬娜的爱情、以及因希瓦艾什夫妇遇害事件而被迫送走妻女的痛苦抉择。烈夏愤怒地驳斥了阿克托斯的自我感动，揭露了母亲塔季扬娜其实健在的真相，并拒绝原谅他。之后，烈夏找到出路，跳下悬崖，并联系罗德岛通报情况。\n\nScene 7 中，锏在耶拉冈德像上与「灰礼帽」展开战斗，将其击落。雅儿（耶拉冈德）与恩雅旁观了战斗，并讨论了对雕像外观的看法。恩雅决定以圣女身份介入，通过外交手段看住「灰礼帽」。哈洛德和烈夏救起落水的「灰礼帽」，初雪（恩雅）出现，邀请所有人参加当晚的篝火晚会，将「灰礼帽」置于自己的监视之下。\n\nScene 1中，锏与雅儿在耶拉冈德像附近对峙，讨论锏为谢拉格战斗的动机。锏表示自己享受挑战，雅儿以耶拉冈德的名义劝其离开，但锏拒绝。灰礼帽返回雕像处，遭遇雅儿的神秘力量而退却。随后灰礼帽伪装成酒商，利用系统漏洞击倒山雪鬼，潜入湖心岛调查，发现异铁流向与运输路线异常，推断雕像下藏有秘密。篝火晚会上，哈洛德与老牧民温馨告别，恩雅主持晚会。灰礼帽向哈洛德汇报调查结果，指出恩希欧迪斯越界。烈夏偷听到对话后离开。哈洛德最终下令士兵换上实弹，准备次日清晨行动，目标为耶拉冈德像。",
+  "events": [
+    {
+      "event": "维多利亚士兵以拼酒为名进行「远征」",
+      "type": "planning",
+      "line_range": [
+        1,
+        23
+      ],
+      "participants": [
+        "领头的士兵",
+        "严肃的士兵"
+      ],
+      "location": "谢拉格车站附近",
+      "significance": "揭示维多利亚军队表面军事行动实为观光/渗透的荒诞性",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅与阿克托斯辩论耶拉冈德像的意义和谢拉格开放政策",
+      "type": "ideological_clash",
+      "line_range": [
+        62,
+        108
+      ],
+      "participants": [
+        "恩雅",
+        "阿克托斯"
+      ],
+      "location": "谢拉格某处",
+      "significance": "展现谢拉格内部对开放与传统的分歧，以及圣女的政治智慧",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯与维多利亚子爵就合作问题进行交锋",
+      "type": "negotiation",
+      "line_range": [
+        133,
+        171
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "维多利亚子爵"
+      ],
+      "location": "谢拉格某处",
+      "significance": "揭示维多利亚对谢拉格的施压和恩希欧迪斯的应对策略",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏在车站与哈洛德相遇并同行",
+      "type": "reunion",
+      "line_range": [
+        262,
+        313
+      ],
+      "participants": [
+        "烈夏",
+        "哈洛德"
+      ],
+      "location": "谢拉格车站",
+      "significance": "建立烈夏与维多利亚势力的联系，为后续冲突埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏处理山下事件后登上列车寻找目标",
+      "type": "investigation",
+      "line_range": [
+        439,
+        463
+      ],
+      "participants": [
+        "锏",
+        "山雪鬼"
+      ],
+      "location": "车站及列车",
+      "significance": "引入锏的追踪线，制造悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "「灰礼帽」在列车上排查并与哈洛德互相试探",
+      "type": "infiltration",
+      "line_range": [
+        583,
+        611
+      ],
+      "participants": [
+        "哈洛德",
+        "「灰礼帽」"
+      ],
+      "location": "列车包厢",
+      "significance": "揭示维多利亚内部不同派系的监视与制衡",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏与「灰礼帽」对峙，警告其收敛",
+      "type": "confrontation",
+      "line_range": [
+        613,
+        641
+      ],
+      "participants": [
+        "锏",
+        "「灰礼帽」"
+      ],
+      "location": "列车包厢",
+      "significance": "展现锏的威慑力和对维多利亚势力的态度",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏与罗德岛本舰通讯",
+      "type": "revelation",
+      "line_range": [
+        734,
+        739
+      ],
+      "participants": [
+        "烈夏"
+      ],
+      "location": "列车走道",
+      "significance": "确认烈夏的罗德岛干员身份",
+      "is_imaginary": false
+    },
+    {
+      "event": "哈洛德邀请烈夏一起逃跑躲避锏",
+      "type": "departure",
+      "line_range": [
+        741,
+        775
+      ],
+      "participants": [
+        "烈夏",
+        "哈洛德"
+      ],
+      "location": "列车",
+      "significance": "推动列车追逐戏码，加深烈夏与哈洛德的联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏在列车终点找到哈洛德，解释误会",
+      "type": "revelation",
+      "line_range": [
+        861,
+        917
+      ],
+      "participants": [
+        "锏",
+        "哈洛德",
+        "烈夏",
+        "「灰礼帽」"
+      ],
+      "location": "列车最后一节车厢",
+      "significance": "揭示锏追踪哈洛德的真实原因（莉莉早产），化解冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "「灰礼帽」向哈洛德提出对锏和烈夏的怀疑",
+      "type": "political_intrigue",
+      "line_range": [
+        991,
+        1011
+      ],
+      "participants": [
+        "哈洛德",
+        "「灰礼帽」"
+      ],
+      "location": "车站",
+      "significance": "暗示维多利亚对谢拉格更深层的监视和怀疑",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯与哥伦比亚富商洽谈合作",
+      "type": "negotiation",
+      "line_range": [
+        1012,
+        1037
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "哥伦比亚富商",
+        "角峰"
+      ],
+      "location": "谢拉格某处",
+      "significance": "展现恩希欧迪斯的经济外交策略和谢拉格的处境",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏在银心湖向耶拉冈德像祈祷",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1144,
+        1176
+      ],
+      "participants": [
+        "烈夏",
+        "老修士"
+      ],
+      "location": "银心湖耶拉冈德像前",
+      "significance": "烈夏完成母亲遗愿的第一步，展现其情感和性格",
+      "is_imaginary": false
+    },
+    {
+      "event": "老修士（佩尔罗契老家主）认出烈夏并带她回家",
+      "type": "revelation",
+      "line_range": [
+        1182,
+        1303
+      ],
+      "participants": [
+        "烈夏",
+        "老修士"
+      ],
+      "location": "银心湖耶拉冈德像前",
+      "significance": "暗示烈夏与佩尔罗契家的血缘关系，为父女相认铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "「灰礼帽」伪装成护卫潜入佩尔罗契家",
+      "type": "infiltration",
+      "line_range": [
+        1466,
+        1482
+      ],
+      "participants": [
+        "「灰礼帽」",
+        "古罗"
+      ],
+      "location": "佩尔罗契家",
+      "significance": "维多利亚密探深入谢拉格内部，监视佩尔罗契家动向",
+      "is_imaginary": false
+    },
+    {
+      "event": "老修士独白忏悔当年放逐烈夏母女",
+      "type": "flashback",
+      "line_range": [
+        1590,
+        1608
+      ],
+      "participants": [
+        "老修士"
+      ],
+      "location": "佩尔罗契家",
+      "significance": "揭示佩尔罗契家与烈夏的过往恩怨，为后续剧情提供背景",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏斯汇报监视情况并转交哈洛德的请帖",
+      "type": "reporting",
+      "line_range": [
+        1609,
+        1703
+      ],
+      "participants": [
+        "魏斯",
+        "恩希欧迪斯",
+        "哈洛德"
+      ],
+      "location": "恩希欧迪斯的办公室",
+      "significance": "展现了维多利亚军队的克制姿态，以及恩希欧迪斯与哈洛德之间通过礼仪进行的初步试探。",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯与恩雅在晚宴上就谢拉格发展路线交锋",
+      "type": "ideological_clash",
+      "line_range": [
+        1868,
+        1959
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "恩雅",
+        "哈洛德"
+      ],
+      "location": "晚宴会场",
+      "significance": "展现了兄妹二人在谢拉格发展道路上的根本分歧与微妙平衡，以及哈洛德作为调停者的角色。",
+      "is_imaginary": false
+    },
+    {
+      "event": "哈洛德代表开斯特公爵要求恩希欧迪斯展现诚意",
+      "type": "political_intrigue",
+      "line_range": [
+        2134,
+        2145
+      ],
+      "participants": [
+        "哈洛德",
+        "恩希欧迪斯",
+        "恩雅"
+      ],
+      "location": "晚宴会场",
+      "significance": "点明了维多利亚势力对谢拉格的真实诉求，为后续冲突埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏拒绝哈洛德的拉拢，表明自己是谢拉格人",
+      "type": "character_development",
+      "line_range": [
+        2196,
+        2253
+      ],
+      "participants": [
+        "锏",
+        "哈洛德"
+      ],
+      "location": "晚宴会场外",
+      "significance": "明确了锏对谢拉格的归属感和忠诚，拒绝了维多利亚的橄榄枝。",
+      "is_imaginary": false
+    },
+    {
+      "event": "老修士告知阿克托斯烈夏是其女儿",
+      "type": "revelation",
+      "line_range": [
+        2578,
+        2625
+      ],
+      "participants": [
+        "阿克托斯",
+        "老修士"
+      ],
+      "location": "佩尔罗契家",
+      "significance": "揭开了阿克托斯与烈夏的父女关系，是烈夏个人线的重要转折点。",
+      "is_imaginary": false
+    },
+    {
+      "event": "菈塔托丝警告阿克托斯其女儿被维多利亚密探盯上",
+      "type": "warning",
+      "line_range": [
+        2629,
+        2645
+      ],
+      "participants": [
+        "菈塔托丝",
+        "阿克托斯"
+      ],
+      "location": "佩尔罗契家",
+      "significance": "将烈夏的个人线卷入谢拉格的政治漩涡中。",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏识破并制服「灰礼帽」",
+      "type": "confrontation",
+      "line_range": [
+        2765,
+        2798
+      ],
+      "participants": [
+        "烈夏",
+        "「灰礼帽」"
+      ],
+      "location": "雪山山顶",
+      "significance": "展现了烈夏的警觉性和行动力，打破了「灰礼帽」的伪装。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿克托斯为保护烈夏导致三人坠崖",
+      "type": "accident",
+      "line_range": [
+        2799,
+        2810
+      ],
+      "participants": [
+        "阿克托斯",
+        "烈夏",
+        "「灰礼帽」"
+      ],
+      "location": "雪山山顶",
+      "significance": "意外事件导致烈夏与阿克托斯被困谷底，为父女相认创造了机会。",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏拦截「灰礼帽」，揭露诱饵计划",
+      "type": "revelation",
+      "line_range": [
+        2811,
+        2824
+      ],
+      "participants": [
+        "锏",
+        "「灰礼帽」"
+      ],
+      "location": "雪山",
+      "significance": "揭示了恩希欧迪斯利用烈夏作为诱饵转移「灰礼帽」注意力的计划。",
+      "is_imaginary": false
+    },
+    {
+      "event": "「灰礼帽」识破诱饵计划，推断出耶拉冈德像的秘密",
+      "type": "investigation",
+      "line_range": [
+        2890,
+        2927
+      ],
+      "participants": [
+        "「灰礼帽」",
+        "锏"
+      ],
+      "location": "雪山",
+      "significance": "「灰礼帽」通过推理识破了谢拉格方面的计谋，将调查目标锁定在耶拉冈德像，使局势升级。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿克托斯向烈夏坦白往事，父女相认",
+      "type": "family_moment",
+      "line_range": [
+        3092,
+        3297
+      ],
+      "participants": [
+        "阿克托斯",
+        "烈夏"
+      ],
+      "location": "雪山谷底",
+      "significance": "核心情感戏，揭示了阿克托斯当年的苦衷和烈夏的愤怒，烈夏拒绝原谅，但得知母亲健在。",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏联系罗德岛通报情况",
+      "type": "communication",
+      "line_range": [
+        3301,
+        3306
+      ],
+      "participants": [
+        "烈夏"
+      ],
+      "location": "雪山谷底",
+      "significance": "罗德岛势力正式接入谢拉格事件。",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏在耶拉冈德像上击败「灰礼帽」",
+      "type": "battle",
+      "line_range": [
+        3321,
+        3354
+      ],
+      "participants": [
+        "锏",
+        "「灰礼帽」"
+      ],
+      "location": "耶拉冈德像",
+      "significance": "展现了锏压倒性的武力，但「灰礼帽」并未被彻底解决。",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅决定以圣女身份介入，监视「灰礼帽」",
+      "type": "planning",
+      "line_range": [
+        3424,
+        3434
+      ],
+      "participants": [
+        "恩雅",
+        "雅儿"
+      ],
+      "location": "耶拉冈德像下",
+      "significance": "恩雅从幕后走到台前，主动承担起处理外交事务的责任。",
+      "is_imaginary": false
+    },
+    {
+      "event": "初雪邀请所有人参加篝火晚会",
+      "type": "ceremony",
+      "line_range": [
+        3487,
+        3502
+      ],
+      "participants": [
+        "初雪",
+        "哈洛德",
+        "烈夏",
+        "「灰礼帽」"
+      ],
+      "location": "银心湖边",
+      "significance": "将各方势力聚集到同一场合，为下一阶段的冲突或和解搭建舞台。",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏与雅儿在耶拉冈德像附近对峙，讨论战斗动机",
+      "type": "ideological_clash",
+      "line_range": [
+        3503,
+        3539
+      ],
+      "participants": [
+        "锏",
+        "雅儿"
+      ],
+      "location": "耶拉冈德像附近",
+      "significance": "揭示锏为谢拉格战斗的动机是享受挑战，雅儿以耶拉冈德名义劝其离开被拒。",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰礼帽返回雕像处，遭遇雅儿的神秘力量而退却",
+      "type": "confrontation",
+      "line_range": [
+        3540,
+        3567
+      ],
+      "participants": [
+        "灰礼帽",
+        "雅儿"
+      ],
+      "location": "耶拉冈德像附近",
+      "significance": "灰礼帽试图接近雕像，被雅儿的神秘力量阻止，意识到耶拉冈德可能真实存在。",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰礼帽伪装成酒商，击倒山雪鬼，潜入湖心岛调查",
+      "type": "infiltration",
+      "line_range": [
+        3568,
+        3606
+      ],
+      "participants": [
+        "灰礼帽",
+        "山雪鬼A",
+        "山雪鬼B"
+      ],
+      "location": "湖心岛",
+      "significance": "灰礼帽利用系统漏洞潜入，发现异铁流向异常，推断雕像下藏有秘密。",
+      "is_imaginary": false
+    },
+    {
+      "event": "哈洛德与老牧民在篝火晚会上温馨告别",
+      "type": "farewell",
+      "line_range": [
+        3607,
+        3665
+      ],
+      "participants": [
+        "哈洛德",
+        "烈夏",
+        "老牧民",
+        "莉莉"
+      ],
+      "location": "银心湖边篝火晚会",
+      "significance": "展现哈洛德在谢拉格建立的真挚友谊，为后续冲突增添情感张力。",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰礼帽向哈洛德汇报调查结果，指出恩希欧迪斯越界",
+      "type": "reporting",
+      "line_range": [
+        3696,
+        3733
+      ],
+      "participants": [
+        "灰礼帽",
+        "哈洛德",
+        "烈夏"
+      ],
+      "location": "篝火晚会附近",
+      "significance": "灰礼帽确认雕像下有秘密，烈夏偷听到对话。哈洛德意识到这是恩希欧迪斯欠公爵的。",
+      "is_imaginary": false
+    },
+    {
+      "event": "哈洛德下令士兵换上实弹，准备次日行动",
+      "type": "planning",
+      "line_range": [
+        3740,
+        3751
+      ],
+      "participants": [
+        "哈洛德",
+        "油滑的士兵",
+        "虚弱的士兵",
+        "老练的士兵"
+      ],
+      "location": "篝火晚会附近",
+      "significance": "哈洛德决定次日清晨行动，目标为耶拉冈德像，冲突即将爆发。",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯、诺希斯与锏讨论局势，安抚众人",
+      "type": "planning",
+      "line_range": [
+        3752,
+        3782
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "诺希斯",
+        "锏"
+      ],
+      "location": "银心湖冰面",
+      "significance": "恩希欧迪斯安抚众人，表示春天就要到了，展现其战略定力。",
+      "is_imaginary": false
+    },
+    {
+      "event": "休露丝为迎接客人，强行命令列车提速",
+      "type": "planning",
+      "line_range": [
+        3835,
+        3870
+      ],
+      "participants": [
+        "休露丝",
+        "莫希",
+        "车站乘务员"
+      ],
+      "location": "银心湖车站",
+      "significance": "休露丝展现果断与资源调配能力，为后续引入卡西米尔势力埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维多利亚士兵整队向湖心岛进军，引发平民恐慌",
+      "type": "military_movement",
+      "line_range": [
+        3872,
+        3922
+      ],
+      "participants": [
+        "领头的士兵",
+        "严肃的士兵",
+        "阴沉的士兵",
+        "油滑的士兵",
+        "哈洛德",
+        "老练的士兵",
+        "谢拉格平民"
+      ],
+      "location": "银心湖",
+      "significance": "维多利亚军队公开行动，哈洛德下令摧毁耶拉冈德像，冲突正式升级。",
+      "is_imaginary": false
+    },
+    {
+      "event": "休露丝通过信号中断推断客人位置，派莫希探查",
+      "type": "investigation",
+      "line_range": [
+        3947,
+        4040
+      ],
+      "participants": [
+        "休露丝",
+        "莫希"
+      ],
+      "location": "银心湖车站附近",
+      "significance": "休露丝展现对谢拉格发展的了解，派莫希探查恩希欧迪斯的动向。",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯回忆往事，锏主动请缨阻拦维多利亚军队",
+      "type": "planning",
+      "line_range": [
+        4041,
+        4132
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "锏",
+        "诺希斯"
+      ],
+      "location": "银心湖冰面",
+      "significance": "锏以个人身份阻拦军队，展现其对谢拉格的忠诚与牺牲精神。",
+      "is_imaginary": false
+    },
+    {
+      "event": "哈洛德与锏对峙，双方展开言语交锋",
+      "type": "confrontation",
+      "line_range": [
+        4133,
+        4209
+      ],
+      "participants": [
+        "哈洛德",
+        "锏",
+        "老练的士兵"
+      ],
+      "location": "银心湖冰面",
+      "significance": "哈洛德以调查违禁物品为借口，锏识破其拖延时间的意图，双方剑拔弩张。",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏以一己之力阻拦维多利亚军队，造成大量伤亡",
+      "type": "battle",
+      "line_range": [
+        4210,
+        4246
+      ],
+      "participants": [
+        "锏",
+        "维多利亚士兵",
+        "老练的士兵"
+      ],
+      "location": "银心湖冰面",
+      "significance": "锏展现惊人战斗力，士兵尝试包围但失败，凸显其个人武力。",
+      "is_imaginary": false
+    },
+    {
+      "event": "哈洛德与锏短暂停战交谈，锏讲述名字由来",
+      "type": "character_development",
+      "line_range": [
+        4247,
+        4304
+      ],
+      "participants": [
+        "哈洛德",
+        "锏"
+      ],
+      "location": "银心湖冰面",
+      "significance": "锏讲述自己名字的由来与对暴力的理解，哈洛德表达对其的欣赏。",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯与恩雅对话，恩雅质疑其信任锏的方式",
+      "type": "ideological_clash",
+      "line_range": [
+        4317,
+        4347
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "恩雅"
+      ],
+      "location": "银心湖冰面",
+      "significance": "恩雅质疑恩希欧迪斯让锏以命相搏，恩希欧迪斯解释这是锏自己的选择。",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏斯与角峰被救出，莫希协助",
+      "type": "rescue",
+      "line_range": [
+        4347,
+        4393
+      ],
+      "participants": [
+        "魏斯",
+        "角峰",
+        "莫希"
+      ],
+      "location": "维多利亚军营",
+      "significance": "莫希救出被绑的魏斯与角峰，三人赶往仪式现场。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿克托斯欲参战被菈塔托丝阻止",
+      "type": "confrontation",
+      "line_range": [
+        4394,
+        4407
+      ],
+      "participants": [
+        "阿克托斯",
+        "菈塔托丝"
+      ],
+      "location": "银心湖冰面",
+      "significance": "阿克托斯冲动欲战，菈塔托丝冷静分析局势，阻止其破坏计划。",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰礼帽在列车上发现卡西米尔征战骑士与发言人",
+      "type": "revelation",
+      "line_range": [
+        4499,
+        4570
+      ],
+      "participants": [
+        "灰礼帽",
+        "银铠甲的骑士",
+        "发言人莫布",
+        "Sharp",
+        "缪尔赛思",
+        "博士",
+        "烈夏"
+      ],
+      "location": "列车上",
+      "significance": "灰礼帽意识到恩希欧迪斯的后手包括卡西米尔势力、罗德岛与莱茵生命。",
+      "is_imaginary": false
+    },
+    {
+      "event": "休露丝带来征战骑士，恩希欧迪斯邀请发言人莫布",
+      "type": "alliance",
+      "line_range": [
+        4586,
+        4630
+      ],
+      "participants": [
+        "休露丝",
+        "菈塔托丝",
+        "恩希欧迪斯",
+        "征战骑士",
+        "发言人莫布",
+        "莫希",
+        "魏斯"
+      ],
+      "location": "银心湖冰面",
+      "significance": "休露丝与恩希欧迪斯各自引入卡西米尔势力，形成对维多利亚的制衡。",
+      "is_imaginary": false
+    },
+    {
+      "event": "莫布宣布喀兰贸易与卡西米尔商业联合会合作，哈洛德停战",
+      "type": "negotiation",
+      "line_range": [
+        4615,
+        4645
+      ],
+      "participants": [
+        "发言人莫布",
+        "恩希欧迪斯",
+        "哈洛德",
+        "锏"
+      ],
+      "location": "银心湖冰面",
+      "significance": "卡西米尔介入迫使维多利亚停战，哈洛德向锏索要签名后撤退。",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅邀请维多利亚士兵参加宴会，化解冲突",
+      "type": "ceremony",
+      "line_range": [
+        4670,
+        4698
+      ],
+      "participants": [
+        "恩雅",
+        "领头的士兵",
+        "阴沉的士兵"
+      ],
+      "location": "银心湖冰面",
+      "significance": "恩雅以宴会化解冲突，展现其外交智慧。",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅与雅儿讨论信仰与依赖的区别",
+      "type": "ideological_clash",
+      "line_range": [
+        4699,
+        4717
+      ],
+      "participants": [
+        "恩雅",
+        "雅儿"
+      ],
+      "location": "银心湖冰面",
+      "significance": "恩雅认为不应事事依赖神迹，雅儿以孩子学步比喻表示支持。",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯与莫布交谈，确认长期合作意向",
+      "type": "negotiation",
+      "line_range": [
+        4718,
+        4735
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "发言人莫布"
+      ],
+      "location": "银心湖冰面",
+      "significance": "恩希欧迪斯安排参观矿区和工厂，展现诚意，巩固合作。",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏向博士询问局势，理解恩希欧迪斯的后手布局",
+      "type": "revelation",
+      "line_range": [
+        4736,
+        4772
+      ],
+      "participants": [
+        "烈夏",
+        "博士",
+        "Sharp"
+      ],
+      "location": "银心湖冰面",
+      "significance": "烈夏理解卡西米尔介入迫使维多利亚停战的逻辑，展现其成长。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿克托斯向烈夏道歉，承认自己当年的软弱",
+      "type": "family_moment",
+      "line_range": [
+        4774,
+        4854
+      ],
+      "participants": [
+        "阿克托斯",
+        "烈夏"
+      ],
+      "location": "银心湖冰面",
+      "significance": "阿克托斯坦白当年因软弱放弃妻女，烈夏拒绝原谅但告知母亲并未怨恨，并给了抚养费账号。",
+      "is_imaginary": false
+    },
+    {
+      "event": "老修士将圣石赠予平民，为所有孩子祈祷",
+      "type": "ceremony",
+      "line_range": [
+        4855,
+        4879
+      ],
+      "participants": [
+        "老修士",
+        "佩尔罗契家平民"
+      ],
+      "location": "银心湖冰面",
+      "significance": "老修士放下过去，祝福谢拉格所有孩子无病无灾长大。",
+      "is_imaginary": false
+    },
+    {
+      "event": "哈洛德与灰礼帽交谈，灰礼帽建议不进行武装冲突",
+      "type": "reporting",
+      "line_range": [
+        4880,
+        4936
+      ],
+      "participants": [
+        "哈洛德",
+        "灰礼帽"
+      ],
+      "location": "银心湖冰面",
+      "significance": "灰礼帽透露公爵真正关心的是耶拉冈德是否存在，建议不进行武装冲突。",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯与锏交谈，锏表示留下是因为喜欢谢拉格",
+      "type": "character_development",
+      "line_range": [
+        4937,
+        5010
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "锏",
+        "征战骑士"
+      ],
+      "location": "银心湖冰面",
+      "significance": "锏明确表示留下是因为喜欢谢拉格，恩希欧迪斯展望未来，锏提醒引入新势力会带来麻烦。",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩雅与缪尔赛思讨论在圣山建发射井，雅儿支持",
+      "type": "negotiation",
+      "line_range": [
+        5011,
+        5035
+      ],
+      "participants": [
+        "恩雅",
+        "缪尔赛思",
+        "雅儿"
+      ],
+      "location": "银心湖冰面",
+      "significance": "雅儿以耶拉冈德的名义支持发射井项目，认为这很有趣帅气。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维多利亚士兵里斯本试图求婚失败",
+      "type": "family_moment",
+      "line_range": [
+        5036,
+        5067
+      ],
+      "participants": [
+        "老练的士兵",
+        "美丽的女性",
+        "油滑的士兵",
+        "领头的士兵",
+        "哈洛德",
+        "阴沉的士兵"
+      ],
+      "location": "银心湖冰面",
+      "significance": "展现维多利亚士兵的人性一面，哈洛德调侃并支招。",
+      "is_imaginary": false
+    },
+    {
+      "event": "锏与Sharp约定切磋",
+      "type": "planning",
+      "line_range": [
+        5068,
+        5077
+      ],
+      "participants": [
+        "锏",
+        "Sharp"
+      ],
+      "location": "银心湖冰面",
+      "significance": "锏与Sharp约定养好伤后切磋，展现两人之间的惺惺相惜。",
+      "is_imaginary": false
+    },
+    {
+      "event": "恩希欧迪斯向博士道谢，提及阿米娅",
+      "type": "revelation",
+      "line_range": [
+        5086,
+        5103
+      ],
+      "participants": [
+        "恩希欧迪斯",
+        "博士"
+      ],
+      "location": "银心湖冰面",
+      "significance": "恩希欧迪斯感谢博士的礼物，提及阿米娅仍在攀登，展现对盟友的信任。",
+      "is_imaginary": false
+    },
+    {
+      "event": "诺希斯与菈塔托丝私下交谈，透露高速战舰项目",
+      "type": "revelation",
+      "line_range": [
+        5104,
+        5144
+      ],
+      "participants": [
+        "诺希斯",
+        "菈塔托丝"
+      ],
+      "location": "银心湖冰面",
+      "significance": "揭示银心湖下建造的高速战舰项目，菈塔托丝提议命名为小坚果。",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏与母亲塔季扬娜通话，塔季扬娜期待未来探险",
+      "type": "family_moment",
+      "line_range": [
+        5145,
+        5160
+      ],
+      "participants": [
+        "烈夏",
+        "塔季扬娜"
+      ],
+      "location": "银心湖冰面",
+      "significance": "塔季扬娜展现乐观性格，期待与烈夏一起探险，为故事增添温馨结尾。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "烈夏（罗莎琳·塔季扬诺夫娜·拉里娜）",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，为完成母亲遗愿返回谢拉格，携带神秘盒子，计划登上弗根山。与哈洛德同行，被锏和「灰礼帽」注意，最终被佩尔罗契老家主认出并带回家。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "哈洛德",
+      "type": "operator",
+      "role_in_chapter": "维多利亚子爵，率队以观光为名驻扎谢拉格，实际肩负公爵使命。在列车上与烈夏相遇，被锏追踪，最终发现是误会。擅长医治驮兽。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "锏",
+      "type": "operator",
+      "role_in_chapter": "喀兰贸易成员，恩希欧迪斯的心腹，受老雷昂所托登上列车寻找哈洛德，因手套血迹引发「灰礼帽」猜疑。训练山雪鬼部队。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "「灰礼帽」",
+      "type": "npc",
+      "role_in_chapter": "维多利亚密探，在列车上排查异常，与哈洛德互相试探，对锏和烈夏产生怀疑，后伪装成护卫潜入佩尔罗契家。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "恩雅（初雪）",
+      "type": "operator",
+      "role_in_chapter": "谢拉格圣女，与阿克托斯辩论耶拉冈德像的意义和开放政策，展现政治智慧。与雅儿讨论雕像和祈祷方式。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "恩希欧迪斯（银灰）",
+      "type": "operator",
+      "role_in_chapter": "希瓦艾什家主，喀兰贸易负责人，与维多利亚子爵和哥伦比亚富商分别交涉，应对各方压力。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿克托斯",
+      "type": "npc",
+      "role_in_chapter": "佩尔罗契家家主，与恩雅辩论，为篝火晚会品尝酒水，被老家主安排与烈夏见面。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老修士（佩尔罗契老家主）",
+      "type": "npc",
+      "role_in_chapter": "佩尔罗契家前任家主，现为修士。在耶拉冈德像前遇到烈夏并认出她，带她回家，独白忏悔当年放逐烈夏母女。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "休露丝·布朗陶",
+      "type": "npc",
+      "role_in_chapter": "布朗陶家家主的妹妹，在银心湖遇到烈夏，邀请她参加落成仪式，受菈塔托丝吩咐接触烈夏。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "菈塔托丝",
+      "type": "npc",
+      "role_in_chapter": "布朗陶家主，与诺希斯、锏密谈，安排休露丝接触烈夏，讨论谢拉格的秘密工程和维多利亚的威胁。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "诺希斯",
+      "type": "operator",
+      "role_in_chapter": "喀兰贸易成员，与菈塔托丝、锏讨论「灰礼帽」的威胁和谢拉格的秘密计划。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "雅儿",
+      "type": "npc",
+      "role_in_chapter": "恩雅的侍女，抱怨耶拉冈德像的脸太宽，与恩雅讨论祈祷方式。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "古罗",
+      "type": "npc",
+      "role_in_chapter": "佩尔罗契家的护卫，协助阿克托斯筹备酒水，接待烈夏，被老家主警告不得多嘴。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "尤卡坦",
+      "type": "npc",
+      "role_in_chapter": "休露丝的伴侣，陪同休露丝，被菈塔托丝调侃。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "角峰",
+      "type": "operator",
+      "role_in_chapter": "恩希欧迪斯的部下，陪同哥伦比亚富商参观，对合作对象表示疑虑。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "魏斯",
+      "type": "npc",
+      "role_in_chapter": "恩希欧迪斯的近侍，负责监视维多利亚军营，并向恩希欧迪斯汇报情况，转交了哈洛德的请帖。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "银灰",
+      "type": "operator",
+      "role_in_chapter": "喀兰贸易总裁，谢拉格的实际掌权者之一。主导了利用烈夏作为诱饵的计划，与恩雅在晚宴上就治国理念交锋，并试图通过展现诚意来应对维多利亚的压力。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "哈洛德",
+      "type": "npc",
+      "role_in_chapter": "维多利亚子爵，开斯特公爵的代表。通过礼仪和宴请与谢拉格方面周旋，传达公爵的要求，同时表现出个人对谢拉格的好感和对锏的崇拜。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老修士",
+      "type": "npc",
+      "role_in_chapter": "佩尔罗契家前任家主，阿克托斯的父亲。认出烈夏是自己的孙女，并告知阿克托斯真相。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "烈夏",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，阿克托斯与塔季扬娜的女儿。返回谢拉格完成母亲遗愿，意外卷入政治漩涡，识破「灰礼帽」伪装，并与生父阿克托斯相认，但拒绝原谅。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "恩雅",
+      "type": "operator",
+      "role_in_chapter": "谢拉格圣女，恩希欧迪斯的妹妹。在晚宴上与恩希欧迪斯交锋，阐述自己作为圣女的立场。最终决定亲自出面，以外交手段监视「灰礼帽」。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "初雪",
+      "type": "operator",
+      "role_in_chapter": "即恩雅，谢拉格圣女。在Scene 7末尾以「初雪」之名出现，邀请哈洛德、烈夏和「灰礼帽」参加篝火晚会。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "灰礼帽",
+      "type": "npc",
+      "role_in_chapter": "伪装成酒商潜入湖心岛调查，发现雕像下藏有秘密。向哈洛德汇报调查结果。在列车上发现卡西米尔势力与罗德岛。战后建议哈洛德不进行武装冲突，透露公爵关心耶拉冈德是否存在。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "休露丝",
+      "type": "npc",
+      "role_in_chapter": "为迎接客人强行命令列车提速。通过信号中断推断客人位置，派莫希探查。带来征战骑士，展现果断与资源调配能力。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "莫希",
+      "type": "npc",
+      "role_in_chapter": "救出被绑的魏斯与角峰。协助休露丝探查局势。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "发言人莫布",
+      "type": "npc",
+      "role_in_chapter": "宣布喀兰贸易与卡西米尔商业联合会合作。与恩希欧迪斯确认长期合作意向。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Sharp",
+      "type": "operator",
+      "role_in_chapter": "出现在列车上，保护博士。与锏约定切磋。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "缪尔赛思",
+      "type": "operator",
+      "role_in_chapter": "出现在列车上。与恩雅讨论在圣山建发射井。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "出现在列车上，接受恩希欧迪斯的邀请。赠送给莫布扩音器。",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "耶拉冈德信仰",
+      "line_range": [
+        73,
+        83
+      ],
+      "discussion_summary": "恩雅与阿克托斯辩论耶拉冈德像的意义，指出雕像应庄严伟岸、慈悲宽仁，成为谢拉格人的精神寄托和面向外界的标志，强调信仰对信徒的独特意义。",
+      "is_substantive": true
+    },
+    {
+      "concept": "谢拉格的开放与发展",
+      "line_range": [
+        92,
+        108
+      ],
+      "discussion_summary": "恩雅与阿克托斯讨论恩希欧迪斯的开放政策带来的利弊，恩雅表示虽不赞同某些冒险决定，但承认给谢拉格带来了发展，并强调谢拉格需要学会面对风险和挑战。",
+      "is_substantive": true
+    },
+    {
+      "concept": "维多利亚的「合作」与威胁",
+      "line_range": [
+        160,
+        166
+      ],
+      "discussion_summary": "维多利亚子爵向恩希欧迪斯施压，暗示公爵的耐心有限，若合作不顺可能事态恶化，恩希欧迪斯承诺近日内给出答复。",
+      "is_substantive": true
+    },
+    {
+      "concept": "「跑跑驮兽」服务",
+      "line_range": [
+        217,
+        238
+      ],
+      "discussion_summary": "牧民向烈夏介绍谢拉格特色项目「跑跑驮兽」，解释其使用方法、付费方式，以及赖账者将遭受驮兽攻击的免责声明。",
+      "is_substantive": true
+    },
+    {
+      "concept": "「灰礼帽」的职责与工作方式",
+      "line_range": [
+        590,
+        606
+      ],
+      "discussion_summary": "哈洛德与「灰礼帽」互相试探，提及彼此为公爵阁下分忧，「灰礼帽」表示按惯例排查风声，哈洛德则强调自己是来观光。",
+      "is_substantive": true
+    },
+    {
+      "concept": "黑骑士的过往与卡西米尔经历",
+      "line_range": [
+        990,
+        996
+      ],
+      "discussion_summary": "「灰礼帽」提及黑骑士以被卡西米尔驱逐的方式离开，哈洛德提醒他发言谨慎，避免惹怒锏。",
+      "is_substantive": true
+    },
+    {
+      "concept": "谢拉格的祈祷方式",
+      "line_range": [
+        1152,
+        1176
+      ],
+      "discussion_summary": "老修士教导烈夏正确的祈祷姿势和仪式，烈夏则认为大声喊出来比默念更有效，老修士虽感意外但表示耶拉冈德不会在意细枝末节。",
+      "is_substantive": true
+    },
+    {
+      "concept": "佩尔罗契家的往事与放逐",
+      "line_range": [
+        1595,
+        1604
+      ],
+      "discussion_summary": "老修士（佩尔罗契老家主）独白，承认当年为家族声誉强行关押阿克托斯，放逐了塔季扬娜和罗莎琳，如今忏悔并立誓做寻常修士。",
+      "is_substantive": true
+    },
+    {
+      "concept": "谢拉格的过去与现在",
+      "line_range": [
+        3127,
+        3171
+      ],
+      "discussion_summary": "阿克托斯向烈夏描述二十年前谢拉格的封闭、排外状态，以及佩尔罗契家作为保守派的立场。他解释了在这种环境下，娶一个乌萨斯女人所面临的巨大压力，以及希瓦艾什夫妇遇害事件如何最终迫使他送走妻女。",
+      "is_substantive": true
+    },
+    {
+      "concept": "圣女的职责与立场",
+      "line_range": [
+        3031,
+        3057
+      ],
+      "discussion_summary": "恩雅向雅儿阐述自己作为圣女的立场：她必须代表整个谢拉格，不能有任何偏向。她承认需要喀兰贸易，但也在通过兴办学堂和改革蔓珠院来培养更多声音，希望建立一个属于所有耶拉冈德子民的谢拉格。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "维多利亚（公爵势力）",
+      "line_range": [
+        1,
+        23
+      ],
+      "description": "维多利亚士兵以远征和荣誉为名，实际目标是山下酒馆的拼酒活动，展现其表面军事行动实为观光/渗透的模糊状态。"
+    },
+    {
+      "faction": "维多利亚（公爵势力）",
+      "line_range": [
+        134,
+        166
+      ],
+      "description": "维多利亚子爵与恩希欧迪斯交涉，以公爵名义施压，要求合作，并暗示耐心有限。"
+    },
+    {
+      "faction": "喀兰贸易 / 希瓦艾什家",
+      "line_range": [
+        133,
+        166
+      ],
+      "description": "恩希欧迪斯作为希瓦艾什家主与维多利亚子爵周旋，应对其合作要求。"
+    },
+    {
+      "faction": "蔓珠院 / 谢拉格圣女",
+      "line_range": [
+        64,
+        108
+      ],
+      "description": "恩雅以圣女身份与阿克托斯辩论，阐述耶拉冈德像的意义和谢拉格开放的必要性。"
+    },
+    {
+      "faction": "布朗陶家",
+      "line_range": [
+        30,
+        61
+      ],
+      "description": "休露丝与尤卡坦讨论起名事宜，菈塔托丝交代领地事务，提及耶拉冈德像完工和维多利亚人动向。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        734,
+        739
+      ],
+      "description": "烈夏使用通讯器联系罗德岛本舰，汇报情况并请对方代问好。"
+    },
+    {
+      "faction": "喀兰贸易 / 希瓦艾什家",
+      "line_range": [
+        1012,
+        1037
+      ],
+      "description": "恩希欧迪斯与哥伦比亚富商泰勒洽谈合作，角峰质疑泰勒的诚意，恩希欧迪斯表示要让谢拉格成为对方的唯一选项。"
+    },
+    {
+      "faction": "佩尔罗契家",
+      "line_range": [
+        1451,
+        1481
+      ],
+      "description": "阿克托斯为篝火晚会品尝酒水，古罗指挥搬运，一名伪装成护卫的「灰礼帽」暗中观察，怀疑大量酒水的用途。"
+    },
+    {
+      "faction": "佩尔罗契家",
+      "line_range": [
+        1483,
+        1608
+      ],
+      "description": "老修士（佩尔罗契老家主）带烈夏回家，安排她与阿克托斯见面，并在独白中忏悔当年放逐烈夏母女的往事。"
+    },
+    {
+      "faction": "维多利亚（开斯特公爵）",
+      "line_range": [
+        2134,
+        2145
+      ],
+      "description": "哈洛德代表开斯特公爵，要求恩希欧迪斯展现对维多利亚的「诚意」，以回报公爵对喀兰贸易的资助。这揭示了维多利亚势力对谢拉格的渗透和要求。"
+    },
+    {
+      "faction": "佩尔罗契家",
+      "line_range": [
+        3127,
+        3171
+      ],
+      "description": "阿克托斯详细描述了佩尔罗契家作为保守派在二十年前谢拉格的政治立场，以及这种立场如何影响了他个人的婚姻和家庭选择。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        3301,
+        3306
+      ],
+      "description": "烈夏在找到出路后，联系罗德岛的博士，通报了谢拉格当前的情况，表明罗德岛作为烈夏所属组织正在介入此事。"
+    },
+    {
+      "faction": "维多利亚军队",
+      "line_range": [
+        3740,
+        3751
+      ],
+      "description": "哈洛德下令士兵换上实弹，准备次日清晨行动，目标为耶拉冈德像。"
+    },
+    {
+      "faction": "维多利亚军队",
+      "line_range": [
+        3872,
+        3887
+      ],
+      "description": "维多利亚士兵整队向湖心岛进军，携带武器，引发平民恐慌。"
+    },
+    {
+      "faction": "维多利亚军队",
+      "line_range": [
+        3897,
+        3922
+      ],
+      "description": "哈洛德下令进军，宣称谢拉格假借建造神像运输军工用品，目标为摧毁耶拉冈德像。"
+    },
+    {
+      "faction": "维多利亚军队",
+      "line_range": [
+        4133,
+        4167
+      ],
+      "description": "哈洛德与老练士兵讨论军队本质，决定由自己打头阵会会黑骑士。"
+    },
+    {
+      "faction": "维多利亚军队",
+      "line_range": [
+        4210,
+        4246
+      ],
+      "description": "锏以一己之力阻拦维多利亚军队，造成大量伤亡，士兵尝试包围但失败。"
+    },
+    {
+      "faction": "维多利亚军队",
+      "line_range": [
+        4497,
+        4498
+      ],
+      "description": "哈洛德下令全员重整队形，尽快击杀黑骑士。"
+    },
+    {
+      "faction": "维多利亚军队",
+      "line_range": [
+        4631,
+        4645
+      ],
+      "description": "哈洛德因卡西米尔介入而停战，表示公爵不会怪罪，并开始救治伤员。"
+    },
+    {
+      "faction": "喀兰贸易",
+      "line_range": [
+        3752,
+        3782
+      ],
+      "description": "恩希欧迪斯、诺希斯与锏讨论局势，恩希欧迪斯安抚众人，表示春天就要到了。"
+    },
+    {
+      "faction": "喀兰贸易",
+      "line_range": [
+        4041,
+        4067
+      ],
+      "description": "恩希欧迪斯回忆与锏在银心湖赶驮兽的往事，锏讲述自己在莱塔尼亚的经历。"
+    },
+    {
+      "faction": "喀兰贸易",
+      "line_range": [
+        4097,
+        4132
+      ],
+      "description": "恩希欧迪斯分析局势，认为维多利亚的行动属于施压而非动武，决定让锏以个人身份阻拦。"
+    },
+    {
+      "faction": "喀兰贸易",
+      "line_range": [
+        4305,
+        4438
+      ],
+      "description": "诺希斯与恩希欧迪斯讨论局势，恩希欧迪斯决定相信锏，拒绝引爆湖面的方案。"
+    },
+    {
+      "faction": "喀兰贸易",
+      "line_range": [
+        4718,
+        4735
+      ],
+      "description": "恩希欧迪斯与莫布交谈，确认长期合作意向，安排参观矿区和工厂。"
+    },
+    {
+      "faction": "喀兰贸易",
+      "line_range": [
+        4937,
+        4987
+      ],
+      "description": "恩希欧迪斯与锏交谈，锏表示留下是因为喜欢谢拉格，恩希欧迪斯展望未来。"
+    },
+    {
+      "faction": "卡西米尔商业联合会",
+      "line_range": [
+        4615,
+        4630
+      ],
+      "description": "发言人莫布宣布喀兰贸易与卡西米尔商业联合会即将达成合作，谢拉格将成为卡西米尔可靠的合作伙伴。"
+    },
+    {
+      "faction": "卡西米尔监正会",
+      "line_range": [
+        4606,
+        4612
+      ],
+      "description": "休露丝介绍征战骑士是来自卡西米尔监正会的客人，是她邀请来观礼的。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        4547,
+        4570
+      ],
+      "description": "Sharp、博士与缪尔赛思出现在列车上，灰礼帽认出罗德岛与莱茵生命，意识到这是恩希欧迪斯的后手。"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        5017,
+        5035
+      ],
+      "description": "缪尔赛思与恩雅讨论在圣山建立发射井，雅儿表示支持，认为这很有趣帅气。"
+    },
+    {
+      "faction": "布朗陶家",
+      "line_range": [
+        3835,
+        3870
+      ],
+      "description": "休露丝为迎接客人，强行命令列车提速并安排驮兽转运乘客，所有花销记在自己私人账上。"
+    },
+    {
+      "faction": "布朗陶家",
+      "line_range": [
+        3947,
+        3983
+      ],
+      "description": "休露丝向莫希解释如何通过信号中断推断客人位置，展现对谢拉格发展的了解。"
+    },
+    {
+      "faction": "布朗陶家",
+      "line_range": [
+        5104,
+        5144
+      ],
+      "description": "诺希斯与菈塔托丝私下交谈，透露银心湖下建造的高速战舰项目，菈塔托丝提议命名为小坚果。"
+    },
+    {
+      "faction": "佩尔罗契家",
+      "line_range": [
+        4855,
+        4879
+      ],
+      "description": "老修士将圣石赠予平民，为所有谢拉格的孩子祈祷。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "谢拉格",
+      "line_range": [
+        196,
+        202
+      ],
+      "description": "烈夏初到谢拉格，评价景色与乌萨斯相似，都是雪和山，但更干更冷。"
+    },
+    {
+      "location": "银心湖",
+      "line_range": [
+        279,
+        313
+      ],
+      "description": "烈夏的目的地，哈洛德表示所有人最终都会乘列车前往银心湖上的耶拉冈德像。"
+    },
+    {
+      "location": "弗根山",
+      "line_range": [
+        1077,
+        1084
+      ],
+      "description": "特产商人向烈夏介绍弗根山是定情圣地，情侣喜欢去挂金锁，阿克托斯老爷也爱上山打猎。"
+    },
+    {
+      "location": "银心湖",
+      "line_range": [
+        1088,
+        1093
+      ],
+      "description": "烈夏抵达银心湖，评价冰湖景色，远眺耶拉冈德像，感叹工程巨大。"
+    },
+    {
+      "location": "佩尔罗契家宅",
+      "line_range": [
+        1483,
+        1491
+      ],
+      "description": "老修士带烈夏到家，介绍房子依山而建，屋后有上山的近道。"
+    },
+    {
+      "location": "银心湖",
+      "line_range": [
+        2920,
+        2921
+      ],
+      "description": "「灰礼帽」推断出谢拉格所有运输铁路汇聚于银心湖，并进一步猜测耶拉冈德像脚下的湖心岛藏有秘密。"
+    },
+    {
+      "location": "耶拉冈德像",
+      "line_range": [
+        2920,
+        2921
+      ],
+      "description": "「灰礼帽」推断出耶拉冈德像上可能藏有秘密，并以此为目的地前往银心湖。"
+    },
+    {
+      "location": "银心湖",
+      "line_range": [
+        3654,
+        3655
+      ],
+      "description": "哈洛德感叹冬天的银心湖是谢拉格的绝景之一，没想到会在这样的状况下观赏。"
+    },
+    {
+      "location": "银心湖",
+      "line_range": [
+        3752,
+        3755
+      ],
+      "description": "恩希欧迪斯描述冬季银心湖的美景，冰面如宝石，冰下水流仍在流动。"
+    },
+    {
+      "location": "湖心岛",
+      "line_range": [
+        3700,
+        3712
+      ],
+      "description": "灰礼帽向哈洛德汇报，湖心岛的耶拉冈德像下隐藏着恩希欧迪斯乃至谢拉格最不可告人的秘密。"
+    },
+    {
+      "location": "圣山",
+      "line_range": [
+        5023,
+        5035
+      ],
+      "description": "缪尔赛思与恩雅讨论在圣山建立发射井，雅儿表示支持，认为这很有趣帅气。"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-18T05:48:45.524417+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 106404,
+    "tokens_out": 17637,
+    "elapsed_s": 133.0172724723816
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "烈夏（罗莎琳·塔季扬诺夫娜·拉里娜）",
+    "「灰礼帽」",
+    "恩雅（初雪）",
+    "恩希欧迪斯（银灰）",
+    "阿克托斯",
+    "老修士（佩尔罗契老家主）",
+    "休露丝·布朗陶",
+    "菈塔托丝",
+    "诺希斯",
+    "雅儿",
+    "古罗",
+    "尤卡坦",
+    "魏斯",
+    "老修士",
+    "恩雅",
+    "灰礼帽",
+    "休露丝",
+    "莫希",
+    "发言人莫布",
+    "Sharp",
+    "博士"
+  ]
+}

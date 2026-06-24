@@ -1,0 +1,731 @@
+{
+  "chapter": "孤岛风云",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章以赫默和梅尔与生态科主任缪尔赛思在酒吧的密会为主线框架，通过一问一答的形式，逐步揭示了安东尼·西蒙越狱事件的来龙去脉。赫默讲述了卡夫卡如何以囚犯身份潜入曼斯菲尔德监狱，并利用监狱内感染者和非感染者之间的矛盾与混乱，成功与安东尼取得联系的过程。同时，赫默也透露了罗宾作为被雇佣的杀手进入监狱，却在首次刺杀行动中失败并被安东尼策反的经过。\n\n在对话中，缪尔赛思不断追问细节，并补充了关于海德兄弟、能量科以及曼斯菲尔德监狱背后权力与金钱交易的背景信息。她指出，这座监狱实际上是典狱长伦道尔的一台赚钱机器，而海德兄弟之所以无法直接通过贿赂除掉安东尼，正是因为安东尼在监狱中拥有巨大的影响力。缪尔赛思还暗示，安东尼的入狱可能与其父亲的安排有关。\n\n在密会的间隙，缪尔赛思与梅尔进行了单独交谈，探讨了塞雷娅离开莱茵生命的真正原因——与总辖在研究理念上的根本分歧。梅尔也向赫默坦白了自己对能量科主任的恐惧，以及她选择外派至罗德岛的原因。最终，赫默在回忆与凯尔希的对话中，表达了对自身行动意义的怀疑与不安，但卡夫卡与米娜的对话则从侧面肯定了赫默的善良与坚定。\n\n赫默在酒吧向缪尔赛思和梅尔继续讲述越狱故事的后半段。她首先表达了对自身行动意义的怀疑，认为自己过去对莱茵生命和哥伦比亚的了解太少，但梅尔鼓励她不要否定过去的努力。随后，赫默讲述了罗宾被杰斯顿说服成为卧底的过程：杰斯顿揭露了罗宾父亲的公司黑云贸易是被西蒙家族覆灭时反咬一口而倒闭的，并以此要挟罗宾协助自己。罗宾在得知真相后，为了父亲的医药费，选择加入杰斯顿一方。\n\n越狱计划制定后，在行动当天，罗宾背叛了安东尼，在主控室伏击他们。安东尼在战斗中制服了罗宾，并得知了她的苦衷。安东尼没有责怪她，反而鼓励她必须自己做出选择并为选择负责。罗宾深受触动，最终在杰斯顿以杜玛为人质逼迫她刺杀安东尼时，选择站在了安东尼一边。\n\n杰斯顿展现出强大的战斗力，其身体经过莱茵生命的改造，能操控铁元素。就在安东尼等人陷入苦战时，塞雷娅突然出现，轻松击败了杰斯顿。塞雷娅向安东尼询问了斐尔迪南的名字，证实了能量科主任与西蒙家族覆灭的关联。\n\n故事讲完后，赫默推理出塞雷娅是缪尔赛思的合作者，但塞雷娅违背了协议，将安东尼交给了赫默。缪尔赛思承认了这一点，并提出与赫默交易，希望赫默作为桥梁，让罗德岛将安东尼交给自己。赫默拒绝了，她认为安东尼是一个人而不是一条线索。最终，赫默召来安东尼作为后手，缪尔赛思的分身认输离开，并留下忠告：做正确的事也需要付出代价。安东尼决定跟随赫默前往罗德岛。",
+  "events": [
+    {
+      "event": "缪尔赛思在酒吧约见赫默和梅尔，提出以问答形式交换情报。",
+      "type": "negotiation",
+      "line_range": [
+        1,
+        88
+      ],
+      "participants": [
+        "缪尔赛思",
+        "赫默",
+        "梅尔"
+      ],
+      "location": "哥伦比亚边境某酒吧",
+      "significance": "确立了本章的叙事框架，即通过问答逐步揭示越狱事件的细节。",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默讲述卡夫卡进入曼斯菲尔德监狱，并目睹了感染者和非感染者囚犯之间的群架。",
+      "type": "flashback",
+      "line_range": [
+        161,
+        230
+      ],
+      "participants": [
+        "赫默",
+        "卡夫卡",
+        "B区囚犯A"
+      ],
+      "location": "曼斯菲尔德监狱B区工厂",
+      "significance": "展示了监狱内恶劣的环境和囚犯间的对立，为卡夫卡的行动提供背景。",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡夫卡在群架中观察环境，并首次见到安东尼，得知他在监狱中的特殊地位。",
+      "type": "observation",
+      "line_range": [
+        231,
+        327
+      ],
+      "participants": [
+        "卡夫卡",
+        "B区囚犯A",
+        "巴顿",
+        "安东尼"
+      ],
+      "location": "曼斯菲尔德监狱",
+      "significance": "卡夫卡确认了安东尼的身份和影响力，为后续接触奠定基础。",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默向缪尔赛思透露海德兄弟背后是能量科，并承认自己事先并不知道刺杀计划。",
+      "type": "revelation",
+      "line_range": [
+        354,
+        407
+      ],
+      "participants": [
+        "赫默",
+        "缪尔赛思"
+      ],
+      "location": "酒吧",
+      "significance": "揭示了事件背后的势力，并澄清了赫默并非全知全能的策划者。",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默讲述罗宾的来历，以及她为了给父亲治病而接受刺杀安东尼的委托。",
+      "type": "flashback",
+      "line_range": [
+        519,
+        536
+      ],
+      "participants": [
+        "罗宾",
+        "慷慨的J"
+      ],
+      "location": "未指明",
+      "significance": "揭示了罗宾的动机和背景，解释了她是如何被卷入这场阴谋的。",
+      "is_imaginary": false
+    },
+    {
+      "event": "缪尔赛思解释曼斯菲尔德监狱的本质是典狱长的赚钱机器，并分析海德兄弟无法直接贿赂典狱长除掉安东尼的原因。",
+      "type": "political_intrigue",
+      "line_range": [
+        580,
+        632
+      ],
+      "participants": [
+        "缪尔赛思",
+        "赫默"
+      ],
+      "location": "酒吧",
+      "significance": "揭示了哥伦比亚权力与金钱交织的黑暗面，解释了刺杀行动为何如此复杂。",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗宾在首次进入C区打扫时遭遇另一伙杀手袭击，安东尼出手相救。",
+      "type": "ambush",
+      "line_range": [
+        662,
+        715
+      ],
+      "participants": [
+        "罗宾",
+        "安东尼",
+        "B区囚犯A",
+        "B区囚犯B",
+        "卡夫卡",
+        "狱警B"
+      ],
+      "location": "曼斯菲尔德监狱C区",
+      "significance": "罗宾的刺杀计划被打断，安东尼展现出强大的实力和领袖气质。",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡夫卡在混乱中装晕，并趁机与安东尼在医务室秘密接触，提出越狱计划。",
+      "type": "infiltration",
+      "line_range": [
+        755,
+        878
+      ],
+      "participants": [
+        "卡夫卡",
+        "安东尼",
+        "杜玛"
+      ],
+      "location": "曼斯菲尔德监狱医务室",
+      "significance": "卡夫卡成功与安东尼建立联系，并说服他同意越狱。",
+      "is_imaginary": false
+    },
+    {
+      "event": "缪尔赛思与梅尔讨论塞雷娅离开莱茵生命的真正原因，以及总辖的研究理念。",
+      "type": "revelation",
+      "line_range": [
+        879,
+        949
+      ],
+      "participants": [
+        "缪尔赛思",
+        "梅尔"
+      ],
+      "location": "酒吧",
+      "significance": "补充了莱茵生命内部高层间的矛盾，解释了塞雷娅离职的深层原因。",
+      "is_imaginary": false
+    },
+    {
+      "event": "安东尼在医务室向罗宾摊牌，邀请她放弃刺杀并协助自己越狱。",
+      "type": "negotiation",
+      "line_range": [
+        951,
+        988
+      ],
+      "participants": [
+        "安东尼",
+        "罗宾",
+        "杜玛"
+      ],
+      "location": "曼斯菲尔德监狱医务室",
+      "significance": "安东尼成功策反罗宾，为越狱团队增加了一名得力干将。",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默向梅尔坦白海德兄弟背后是能量科，并表达了对自身行动意义的怀疑。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1016,
+        1093
+      ],
+      "participants": [
+        "赫默",
+        "梅尔"
+      ],
+      "location": "酒吧厨房",
+      "significance": "展现了赫默内心的挣扎与不安，深化了角色形象。",
+      "is_imaginary": false
+    },
+    {
+      "event": "通过卡夫卡与米娜的对话，回忆了赫默与卡夫卡相识的经过，以及卡夫卡对赫默的评价。",
+      "type": "flashback",
+      "line_range": [
+        1094,
+        1159
+      ],
+      "participants": [
+        "卡夫卡",
+        "米娜"
+      ],
+      "location": "曼斯菲尔德监狱",
+      "significance": "从第三方视角肯定了赫默的善良，并解释了卡夫卡愿意帮助她的原因。",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默向梅尔倾诉对自身行动意义的怀疑，梅尔鼓励她不要否定过去。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1160,
+        1227
+      ],
+      "participants": [
+        "赫默",
+        "梅尔"
+      ],
+      "location": "酒吧",
+      "significance": "展现赫默的内心挣扎和成长，为后续她坚持自己的选择做铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默讲述她如何从老师给的数据中梳理出西蒙家族的线索。",
+      "type": "revelation",
+      "line_range": [
+        1244,
+        1254
+      ],
+      "participants": [
+        "赫默",
+        "缪尔赛思"
+      ],
+      "location": "酒吧",
+      "significance": "揭示赫默介入此事的起因，以及她对莱茵生命的不信任。",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默坦诚自己决定对缪尔赛思坦诚相待，并引用老师的话。",
+      "type": "negotiation",
+      "line_range": [
+        1263,
+        1272
+      ],
+      "participants": [
+        "赫默",
+        "缪尔赛思"
+      ],
+      "location": "酒吧",
+      "significance": "赫默表明自己的立场，与缪尔赛思的试探形成对比。",
+      "is_imaginary": false
+    },
+    {
+      "event": "杰斯顿以狱警身份接触罗宾，揭露罗宾父亲公司倒闭与西蒙家族的关联，并以此要挟罗宾。",
+      "type": "revelation",
+      "line_range": [
+        1289,
+        1391
+      ],
+      "participants": [
+        "罗宾",
+        "杰斯顿"
+      ],
+      "location": "曼斯菲尔德监狱医务室",
+      "significance": "揭示罗宾背叛的动机，杰斯顿的阴谋浮出水面。",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗宾在杰斯顿的威逼利诱下，选择加入杰斯顿一方，成为卧底。",
+      "type": "betrayal",
+      "line_range": [
+        1392,
+        1394
+      ],
+      "participants": [
+        "罗宾",
+        "杜玛"
+      ],
+      "location": "曼斯菲尔德监狱医务室",
+      "significance": "罗宾做出关键选择，为后续的背叛埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "缪尔赛思评价杰斯顿是沙滩伞公司的王牌打手，认为他手段高明。",
+      "type": "character_development",
+      "line_range": [
+        1401,
+        1410
+      ],
+      "participants": [
+        "缪尔赛思",
+        "赫默"
+      ],
+      "location": "酒吧",
+      "significance": "补充杰斯顿的背景信息，凸显其危险性。",
+      "is_imaginary": false
+    },
+    {
+      "event": "杜玛向罗宾坦白自己从未离开过监狱，害怕外界，但愿意为安东尼牺牲。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1437,
+        1477
+      ],
+      "participants": [
+        "杜玛",
+        "罗宾"
+      ],
+      "location": "曼斯菲尔德监狱",
+      "significance": "展现杜玛的内心世界和与安东尼的深厚情谊，罗宾劝说她一起离开。",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默详细讲述越狱计划的制定过程，包括监狱结构、主控室、地道挖掘等细节。",
+      "type": "planning",
+      "line_range": [
+        1479,
+        1560
+      ],
+      "participants": [
+        "赫默",
+        "缪尔赛思",
+        "梅尔"
+      ],
+      "location": "酒吧",
+      "significance": "完整呈现越狱计划的来龙去脉，是故事的核心技术环节。",
+      "is_imaginary": false
+    },
+    {
+      "event": "越狱行动当天，罗宾缺席，并在主控室伏击安东尼和卡夫卡。",
+      "type": "ambush",
+      "line_range": [
+        1561,
+        1629
+      ],
+      "participants": [
+        "卡夫卡",
+        "安东尼",
+        "罗宾"
+      ],
+      "location": "曼斯菲尔德监狱主控室",
+      "significance": "罗宾的背叛正式爆发，越狱行动陷入危机。",
+      "is_imaginary": false
+    },
+    {
+      "event": "安东尼制服罗宾，并得知她背叛的苦衷，鼓励她为自己做选择。",
+      "type": "confrontation",
+      "line_range": [
+        1630,
+        1745
+      ],
+      "participants": [
+        "安东尼",
+        "罗宾",
+        "卡夫卡"
+      ],
+      "location": "曼斯菲尔德监狱主控室",
+      "significance": "安东尼展现领袖风范和同理心，罗宾的内心开始动摇。",
+      "is_imaginary": false
+    },
+    {
+      "event": "杰斯顿以杜玛为人质，逼迫罗宾刺杀安东尼，罗宾最终选择站在安东尼一边。",
+      "type": "confrontation",
+      "line_range": [
+        1751,
+        1927
+      ],
+      "participants": [
+        "杰斯顿",
+        "安东尼",
+        "罗宾",
+        "卡夫卡",
+        "杜玛"
+      ],
+      "location": "曼斯菲尔德监狱医务室",
+      "significance": "剧情高潮，罗宾完成人物弧光，做出最终选择。",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞雷娅突然出现，轻松击败杰斯顿，并询问安东尼关于斐尔迪南的事。",
+      "type": "rescue",
+      "line_range": [
+        1928,
+        2032
+      ],
+      "participants": [
+        "塞雷娅",
+        "杰斯顿",
+        "安东尼",
+        "卡夫卡",
+        "罗宾"
+      ],
+      "location": "曼斯菲尔德监狱医务室",
+      "significance": "塞雷娅作为关键人物登场，解决危机，并引出能量科主任斐尔迪南的线索。",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默推理出塞雷娅是缪尔赛思的合作者但背叛了她，缪尔赛思承认并试图与赫默交易。",
+      "type": "revelation",
+      "line_range": [
+        2033,
+        2134
+      ],
+      "participants": [
+        "赫默",
+        "缪尔赛思",
+        "梅尔"
+      ],
+      "location": "酒吧",
+      "significance": "揭示事件背后的权力博弈，缪尔赛思的真实目的暴露。",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默拒绝缪尔赛思的交易，认为安东尼是一个人而不是线索，并召来安东尼作为后手。",
+      "type": "negotiation",
+      "line_range": [
+        2135,
+        2169
+      ],
+      "participants": [
+        "赫默",
+        "缪尔赛思",
+        "安东尼"
+      ],
+      "location": "酒吧",
+      "significance": "赫默坚持自己的原则，与缪尔赛思的实用主义形成鲜明对比。",
+      "is_imaginary": false
+    },
+    {
+      "event": "缪尔赛思的分身认输离开，留下忠告，安东尼决定跟随赫默前往罗德岛。",
+      "type": "farewell",
+      "line_range": [
+        2170,
+        2230
+      ],
+      "participants": [
+        "缪尔赛思",
+        "赫默",
+        "安东尼",
+        "梅尔"
+      ],
+      "location": "酒吧",
+      "significance": "本章故事结束，安东尼踏上新的旅程，赫默也坚定了自己的道路。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "赫默",
+      "type": "operator",
+      "role_in_chapter": "核心叙述者，向缪尔赛思讲述越狱事件的经过，同时表现出对自身行动意义的怀疑。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "梅尔",
+      "type": "operator",
+      "role_in_chapter": "赫默的同伴，陪同参与密会，并在赫默情绪低落时给予安慰。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "缪尔赛思",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命生态科主任，主导了与赫默的问答，揭示了事件背后的诸多内幕。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "卡夫卡",
+      "type": "npc",
+      "role_in_chapter": "赫默的朋友，潜入监狱协助安东尼越狱的关键人物，通过回忆展现其行动。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "安东尼",
+      "type": "npc",
+      "role_in_chapter": "越狱事件的核心人物，西蒙公司继承人，在监狱中拥有极高威信，被赫默和卡夫卡协助越狱。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "罗宾",
+      "type": "npc",
+      "role_in_chapter": "被雇佣刺杀安东尼的杀手，因父亲患病而接受委托，后反水协助安东尼。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "杜玛",
+      "type": "npc",
+      "role_in_chapter": "曼斯菲尔德监狱的医生兼入殓师，安东尼的朋友，为越狱计划提供帮助。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "巴顿",
+      "type": "npc",
+      "role_in_chapter": "曼斯菲尔德监狱的狱警队长，表面维持秩序，实则依赖安东尼管理囚犯。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "米娜",
+      "type": "npc",
+      "role_in_chapter": "卡夫卡的朋友，木工，曾受安东尼帮助，因此愿意协助越狱。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "在赫默的回忆中出现，曾与赫默讨论是否要帮助安东尼，并给出了个人建议。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "杰斯顿",
+      "type": "npc",
+      "role_in_chapter": "海德兄弟雇佣的杀手，以狱警身份潜伏，策划了罗宾的背叛，最终被塞雷娅击败。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "塞雷娅",
+      "type": "operator",
+      "role_in_chapter": "作为缪尔赛思的合作者出现，但违背协议，击败杰斯顿后救下安东尼，并询问斐尔迪南。",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "曼斯菲尔德监狱的本质",
+      "line_range": [
+        593,
+        612
+      ],
+      "discussion_summary": "缪尔赛思指出曼斯菲尔德监狱是典狱长伦道夫的一台赚钱机器，可以通过金钱来操控囚犯的待遇，甚至决定其生死。",
+      "is_substantive": true
+    },
+    {
+      "concept": "塞雷娅离开莱茵生命的原因",
+      "line_range": [
+        909,
+        937
+      ],
+      "discussion_summary": "缪尔赛思向梅尔解释，塞雷娅的离开并非仅因炎魔事件，而是与总辖在研究理念上存在根本分歧，塞雷娅认为研究应有底线，而总辖则不在乎。",
+      "is_substantive": true
+    },
+    {
+      "concept": "赫默的善良与幼稚",
+      "line_range": [
+        1123,
+        1133
+      ],
+      "discussion_summary": "卡夫卡评价赫默是一个好人，但把大地想得太美好，虽然幼稚但聪明且不固执，这是她愿意帮助赫默的原因。",
+      "is_substantive": true
+    },
+    {
+      "concept": "正确的事与代价",
+      "line_range": [
+        2195,
+        2208
+      ],
+      "discussion_summary": "缪尔赛思在离开前告诫赫默，做正确的事需要知道什么是正确的，并且要付出代价。她指出西蒙公司并非纯粹的受害者，以此说明事情的复杂性。",
+      "is_substantive": true
+    },
+    {
+      "concept": "选择与责任",
+      "line_range": [
+        1730,
+        1737
+      ],
+      "discussion_summary": "安东尼鼓励罗宾必须自己去思考每一件事，做出每一个选择，并为每一个选择负责，否则无法主宰自己的命运。",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石技艺与身体改造",
+      "line_range": [
+        1934,
+        1938
+      ],
+      "discussion_summary": "杰斯顿介绍自己的源石技艺是操控铁元素，并且皮肤下层有莱茵生命科技的金属板，能减少攻击威力。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "海德兄弟",
+      "line_range": [
+        93,
+        102
+      ],
+      "description": "赫默介绍海德兄弟是堡垒山城建材业巨头，与西蒙公司是竞争关系，并垄断了市场。"
+    },
+    {
+      "faction": "海德兄弟",
+      "line_range": [
+        354,
+        363
+      ],
+      "description": "赫默透露海德兄弟背后是莱茵生命的能量科，他们借用了能量科的资源策划了对安东尼的刺杀。"
+    },
+    {
+      "faction": "莱茵生命能量科",
+      "line_range": [
+        354,
+        363
+      ],
+      "description": "赫默透露海德兄弟背后是能量科，能量科为海德兄弟的刺杀行动提供了资源。"
+    },
+    {
+      "faction": "莱茵生命能量科",
+      "line_range": [
+        1042,
+        1054
+      ],
+      "description": "梅尔表示自己不太喜欢能量科，因为能量科主任更在乎研究成果能换来什么，且能量科在塞雷娅离职后与工程科联系更密切，安排了一些奇怪的工作。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1059,
+        1082
+      ],
+      "description": "赫默回忆与凯尔希的对话，凯尔希表示罗德岛不能在台面上提供援助，但可以以个人立场提供意见。"
+    },
+    {
+      "faction": "沙滩伞公司",
+      "line_range": [
+        1403,
+        1403
+      ],
+      "description": "缪尔赛思提到杰斯顿是沙滩伞公司的王牌打手，是海德兄弟的底牌。"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        1937,
+        1938
+      ],
+      "description": "杰斯顿提到自己皮肤下的金属板是莱茵生命科技的结晶。"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        2033,
+        2036
+      ],
+      "description": "缪尔赛思和赫默讨论斐尔迪南是能量科主任，以及塞雷娅曾是防卫科主任。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2105,
+        2109
+      ],
+      "description": "缪尔赛思分析安东尼加入罗德岛后的处境，认为罗德岛是一家戒备森严的商店，接收安东尼是安全的选择。"
+    },
+    {
+      "faction": "海德兄弟",
+      "line_range": [
+        1330,
+        1338
+      ],
+      "description": "杰斯顿讲述海德兄弟与西蒙家族的竞争，以及西蒙家族覆灭的经过。"
+    },
+    {
+      "faction": "西蒙家族",
+      "line_range": [
+        1330,
+        1338
+      ],
+      "description": "杰斯顿讲述西蒙家族与海德兄弟的竞争，以及家族覆灭的经过。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "曼斯菲尔德监狱",
+      "line_range": [
+        191,
+        193
+      ],
+      "description": "B区囚犯A向卡夫卡介绍，这是一座移动监狱，平时在荒野上跑，狱警就是唯一的法律。"
+    },
+    {
+      "location": "曼斯菲尔德监狱",
+      "line_range": [
+        550,
+        553
+      ],
+      "description": "赫默介绍，这座监狱最初是一个接近荒废的工业平台，由典狱长伦道尔提议改建而成。"
+    },
+    {
+      "location": "曼斯菲尔德监狱",
+      "line_range": [
+        593,
+        597
+      ],
+      "description": "缪尔赛思指出，这座监狱实际上是典狱长伦道尔的一台赚钱机器，是依附权力的生意。"
+    },
+    {
+      "location": "曼斯菲尔德监狱",
+      "line_range": [
+        1497,
+        1509
+      ],
+      "description": "赫默详细描述监狱的三层结构，包括A区、B区、C区塔、地下工厂、医务室、停尸间和图书馆。"
+    },
+    {
+      "location": "堡垒山城",
+      "line_range": [
+        1336,
+        1338
+      ],
+      "description": "杰斯顿提到西蒙家族原本在堡垒山城，安东尼因被捕而没有被移送回那里。"
+    },
+    {
+      "location": "铸铁城",
+      "line_range": [
+        1334,
+        1336
+      ],
+      "description": "杰斯顿提到安东尼逃到铸铁城后被捕，并在此受审和关押。"
+    },
+    {
+      "location": "纽莱堡市",
+      "line_range": [
+        1572,
+        1572
+      ],
+      "description": "赫默提到监狱停靠在纽莱堡市期间，他们决定进行越狱。"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:20:00.568967+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 48325,
+    "tokens_out": 6977,
+    "elapsed_s": 58.63161039352417
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "安东尼",
+    "杜玛",
+    "巴顿",
+    "米娜",
+    "杰斯顿"
+  ]
+}

@@ -1,0 +1,1528 @@
+{
+  "chapter": "绿野幻梦",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章剧情围绕莱茵生命内部的多重危机展开。在特里蒙城内，生态科主任缪尔赛思因违反保密协议被神秘雇佣兵霍尔海雅追杀，最终失踪。与此同时，罗德岛干员Mechanist与博士在调查缪尔赛思失踪现场时，遭到一种新型无人动力甲的袭击，被前莱茵防卫科主任塞雷娅所救。塞雷娅向罗德岛求助，揭示了莱茵生命内部正在进行的危险实验。在特里蒙城外的359号基地，莱茵生命源石技艺应用科主任多萝西·弗兰克斯正在进行一项秘密实验，实验产生了能够分解物质的银色流体。拓荒队领队桑尼因怀疑实验危害，绑架了罗德岛干员白面鸮和莱茵研究员埃琳娜，以此要挟莱茵生命高层停止实验。罗德岛干员赫默和格雷伊介入，试图通过对话解决危机。在基地内，银色流体失控，开始攻击所有人，迫使拓荒者和罗德岛干员们共同逃往多萝西的实验室寻求庇护。在特里蒙城内，塞雷娅与Mechanist和博士追踪霍尔海雅，从一名前洛肯水箱主刀医生处得知，银色试剂与莱茵生命从洛肯水箱废墟中获取的技术有关。霍尔海雅现身与塞雷娅短暂交手后撤离，并设下埋伏。最终，在基地内，赫默、埃琳娜、桑尼等人抵达多萝西的实验室门前，桑尼下令动手，冲突一触即发。\n\n在359号基地内，桑尼带领拓荒者与多萝西对峙，揭露了实验的真相：多萝西试图通过连接所有人的意识来消除个体差异，创造平等。赫默与多萝西展开激烈辩论，指出其理想背后的危险。白面鸮通过九号装置接收到受试者的信息，促使赫默说服桑尼暂时停火。然而，斐尔迪南派遣的防卫科人员以预防程序为名，给拓荒者注射了改造过的医疗环，导致银色流体失控并融合成巨型造物。埃琳娜发现斐尔迪南的背叛，与桑尼、玛丽警长一同逃往监控站。在特里蒙城内，塞雷娅、缪尔赛思、Mechanist和博士潜入莱茵生命总部，寻找总辖克丽斯腾。塞雷娅与克丽斯腾对峙，揭露了她对斐尔迪南的放任。Mechanist与霍尔海雅短暂交手，后者透露自己是历史学者。在基地内，多萝西为拯救受试者，将自己接入中枢，最终选择摧毁自己的造物，释放了所有受试者。斐尔迪南的阴谋败露，被克丽斯腾和政府军包围，在霍尔海雅的帮助下逃脱。最后，克丽斯腾与霍尔海雅进行了一场意味深长的对话，暗示了未来的合作。拓荒者们重新踏上旅程，桑尼与玛丽和解。",
+  "events": [
+    {
+      "event": "缪尔赛思因违反保密协议被霍尔海雅追杀并失踪",
+      "type": "ambush",
+      "line_range": [
+        1,
+        70
+      ],
+      "participants": [
+        "缪尔赛思",
+        "霍尔海雅"
+      ],
+      "location": "特里蒙商业区",
+      "significance": "引发后续调查，揭示莱茵生命内部冲突与外部势力介入",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞雷娅与罗德岛取得联系，请求协助调查缪尔赛思失踪案",
+      "type": "alliance",
+      "line_range": [
+        71,
+        95
+      ],
+      "participants": [
+        "塞雷娅",
+        "艾瑞克森"
+      ],
+      "location": "特里蒙市民家中",
+      "significance": "罗德岛正式介入莱茵生命事件",
+      "is_imaginary": false
+    },
+    {
+      "event": "拓荒队领队桑尼策划并实施绑架，将埃琳娜和白面鸮骗至小屋控制",
+      "type": "ambush",
+      "line_range": [
+        149,
+        210
+      ],
+      "participants": [
+        "桑尼",
+        "埃琳娜",
+        "白面鸮"
+      ],
+      "location": "359号基地拓荒者小屋",
+      "significance": "基地内冲突爆发，拓荒者与莱茵生命的矛盾激化",
+      "is_imaginary": false
+    },
+    {
+      "event": "Mechanist与博士调查缪尔赛思失踪现场，遭遇新型无人动力甲袭击",
+      "type": "ambush",
+      "line_range": [
+        383,
+        412
+      ],
+      "participants": [
+        "Mechanist",
+        "博士"
+      ],
+      "location": "特里蒙商业区小巷",
+      "significance": "揭示莱茵生命或外部势力使用尖端技术阻止调查",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞雷娅击毁动力甲，与Mechanist和博士会合",
+      "type": "rescue",
+      "line_range": [
+        413,
+        442
+      ],
+      "participants": [
+        "塞雷娅",
+        "Mechanist",
+        "博士"
+      ],
+      "location": "特里蒙商业区小巷",
+      "significance": "塞雷娅正式与罗德岛团队会合，共同行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "斐尔迪南与军方上校通话，承诺解决基地麻烦并保证实验成果",
+      "type": "political_intrigue",
+      "line_range": [
+        457,
+        468
+      ],
+      "participants": [
+        "斐尔迪南",
+        "上校"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "揭示斐尔迪南与军方的合作关系及实验背后的军事目的",
+      "is_imaginary": false
+    },
+    {
+      "event": "桑尼挟持人质与警方对峙，白面鸮病发，赫默决定进入基地",
+      "type": "confrontation",
+      "line_range": [
+        469,
+        631
+      ],
+      "participants": [
+        "桑尼",
+        "玛丽",
+        "赫默",
+        "白面鸮",
+        "埃琳娜",
+        "格雷伊"
+      ],
+      "location": "359号基地外",
+      "significance": "赫默以罗德岛干员身份介入，试图通过医疗援助化解危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "格雷伊与桑尼交谈，修复供电，尝试建立信任",
+      "type": "negotiation",
+      "line_range": [
+        632,
+        747
+      ],
+      "participants": [
+        "格雷伊",
+        "桑尼"
+      ],
+      "location": "359号基地拓荒者小屋",
+      "significance": "格雷伊的真诚沟通为后续合作奠定基础",
+      "is_imaginary": false
+    },
+    {
+      "event": "银色流体首次出现并攻击基地内人员，赫默等人被迫逃亡",
+      "type": "disaster",
+      "line_range": [
+        779,
+        815
+      ],
+      "participants": [
+        "赫默",
+        "埃琳娜",
+        "桑尼",
+        "格雷伊"
+      ],
+      "location": "359号基地",
+      "significance": "实验失控，银色流体成为所有人的共同威胁",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞雷娅分析动力甲，发现银色液体是关键神经递质",
+      "type": "investigation",
+      "line_range": [
+        816,
+        875
+      ],
+      "participants": [
+        "塞雷娅",
+        "Mechanist",
+        "博士"
+      ],
+      "location": "特里蒙商业区小巷",
+      "significance": "揭示银色液体的特殊性质，指向莱茵生命的秘密实验",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默等人利用格雷伊的法术引开银色流体，多萝西通过广播指引众人前往实验区",
+      "type": "rescue",
+      "line_range": [
+        876,
+        999
+      ],
+      "participants": [
+        "赫默",
+        "埃琳娜",
+        "桑尼",
+        "格雷伊",
+        "多萝西"
+      ],
+      "location": "359号基地",
+      "significance": "多萝西介入，引导幸存者前往安全区域",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞雷娅与Mechanist和博士前往酒吧寻找情报，与霍尔海雅对峙",
+      "type": "investigation",
+      "line_range": [
+        1204,
+        1407
+      ],
+      "participants": [
+        "塞雷娅",
+        "Mechanist",
+        "博士",
+        "醉醺醺的男人",
+        "霍尔海雅"
+      ],
+      "location": "再来一杯酒吧",
+      "significance": "揭示银色试剂与洛肯水箱实验的关联，霍尔海雅身份暴露",
+      "is_imaginary": false
+    },
+    {
+      "event": "帕尔维斯与斐尔迪南对话，暗示掌握其把柄并提供实验改进公式",
+      "type": "political_intrigue",
+      "line_range": [
+        1251,
+        1387
+      ],
+      "participants": [
+        "斐尔迪南",
+        "帕尔维斯"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "帕尔维斯介入权力斗争，为斐尔迪南的实验提供关键支持",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默与埃琳娜私下交谈，赫默质疑埃琳娜对实验的隐瞒",
+      "type": "confrontation",
+      "line_range": [
+        1570,
+        1623
+      ],
+      "participants": [
+        "赫默",
+        "埃琳娜"
+      ],
+      "location": "359号基地走廊",
+      "significance": "揭示埃琳娜对斐尔迪南的忠诚及实验失控的真相",
+      "is_imaginary": false
+    },
+    {
+      "event": "拓荒者迈尔情绪崩溃，挟持白面鸮，后试图自杀被阻止",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1679,
+        1727
+      ],
+      "participants": [
+        "迈尔",
+        "桑尼",
+        "赫默",
+        "埃琳娜",
+        "白面鸮"
+      ],
+      "location": "359号基地走廊",
+      "significance": "展现拓荒者的绝望与信任危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "白面鸮苏醒后行为异常，多萝西通过广播邀请众人前往实验室",
+      "type": "revelation",
+      "line_range": [
+        1728,
+        1766
+      ],
+      "participants": [
+        "白面鸮",
+        "赫默",
+        "埃琳娜",
+        "多萝西"
+      ],
+      "location": "359号基地走廊",
+      "significance": "暗示白面鸮可能受到实验影响，多萝西准备揭示真相",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛丽警长进入基地，找到格雷伊并逼问桑尼下落",
+      "type": "confrontation",
+      "line_range": [
+        1767,
+        1796
+      ],
+      "participants": [
+        "玛丽",
+        "格雷伊"
+      ],
+      "location": "359号基地",
+      "significance": "警方介入，增加局势复杂性",
+      "is_imaginary": false
+    },
+    {
+      "event": "桑尼、赫默、埃琳娜等人抵达多萝西实验室门前，桑尼下令动手",
+      "type": "confrontation",
+      "line_range": [
+        1797,
+        1820
+      ],
+      "participants": [
+        "桑尼",
+        "赫默",
+        "埃琳娜",
+        "多萝西"
+      ],
+      "location": "359号基地多萝西实验室",
+      "significance": "剧情高潮，多方矛盾即将在实验室中爆发",
+      "is_imaginary": false
+    },
+    {
+      "event": "桑尼带领拓荒者与多萝西对峙，揭露她才是银色怪物的制造者",
+      "type": "confrontation",
+      "line_range": [
+        1891,
+        1930
+      ],
+      "participants": [
+        "桑尼",
+        "埃琳娜",
+        "赫默",
+        "多萝西"
+      ],
+      "location": "359号基地，多萝西的实验室",
+      "significance": "揭示多萝西是实验的始作俑者，冲突升级",
+      "is_imaginary": false
+    },
+    {
+      "event": "多萝西试图说服桑尼加入实验，银色流体出现并保护多萝西",
+      "type": "confrontation",
+      "line_range": [
+        1957,
+        1991
+      ],
+      "participants": [
+        "多萝西",
+        "桑尼",
+        "赫默",
+        "埃琳娜"
+      ],
+      "location": "359号基地，多萝西的实验室",
+      "significance": "银色流体展现保护多萝西的智能，桑尼下令攻击实验室",
+      "is_imaginary": false
+    },
+    {
+      "event": "闪回：斐尔迪南向多萝西提供洛肯水箱的数据，多萝西表达想找到并拥抱那个实验体",
+      "type": "flashback",
+      "line_range": [
+        1992,
+        2028
+      ],
+      "participants": [
+        "斐尔迪南",
+        "多萝西"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "揭示多萝西实验的起源和她对实验体的同情",
+      "is_imaginary": false
+    },
+    {
+      "event": "多萝西用源石技艺抵挡拓荒者的攻击，银色流体反击并重伤一名拓荒者",
+      "type": "battle",
+      "line_range": [
+        2029,
+        2088
+      ],
+      "participants": [
+        "多萝西",
+        "桑尼",
+        "赫默",
+        "埃琳娜",
+        "萨姆"
+      ],
+      "location": "359号基地，多萝西的实验室",
+      "significance": "多萝西展现强大实力，拓荒者出现伤亡，冲突白热化",
+      "is_imaginary": false
+    },
+    {
+      "event": "斐尔迪南与军方上校通话，上校催促实验成果，强调哥伦比亚需要导航技术",
+      "type": "political_intrigue",
+      "line_range": [
+        2100,
+        2111
+      ],
+      "participants": [
+        "斐尔迪南",
+        "上校的声音"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "揭示斐尔迪南与军方的交易，实验目的是制造武器导航系统",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默与埃琳娜分析银色流体，发现其本质是递质，并推测施术者是所有受试者",
+      "type": "revelation",
+      "line_range": [
+        2114,
+        2164
+      ],
+      "participants": [
+        "赫默",
+        "埃琳娜"
+      ],
+      "location": "359号基地，多萝西的实验室",
+      "significance": "揭示实验的核心技术和银色流体的来源",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默用无人机逼近多萝西，试图阻止她，但多萝西拒绝放弃实验",
+      "type": "confrontation",
+      "line_range": [
+        2181,
+        2210
+      ],
+      "participants": [
+        "赫默",
+        "多萝西"
+      ],
+      "location": "359号基地，多萝西的实验室",
+      "significance": "赫默与多萝西就实验的正当性展开辩论",
+      "is_imaginary": false
+    },
+    {
+      "event": "白面鸮在昏迷中指向银色造物聚集的方向，一扇门打开，露出失踪的受试者",
+      "type": "revelation",
+      "line_range": [
+        2211,
+        2232
+      ],
+      "participants": [
+        "白面鸮",
+        "埃琳娜",
+        "桑尼",
+        "多萝西"
+      ],
+      "location": "359号基地，多萝西的实验室",
+      "significance": "揭示受试者的下落，多萝西的实验真相即将暴露",
+      "is_imaginary": false
+    },
+    {
+      "event": "多萝西向众人解释她的实验理念：通过连接意识消除个体差距，实现真正的平等",
+      "type": "ideological_clash",
+      "line_range": [
+        2233,
+        2302
+      ],
+      "participants": [
+        "多萝西",
+        "桑尼",
+        "赫默",
+        "埃琳娜"
+      ],
+      "location": "359号基地，受试者所在的房间",
+      "significance": "多萝西阐述其理想主义的实验目的，与赫默和桑尼的现实考量形成冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默反驳多萝西，指出其技术会被利用，受试者将失去自由",
+      "type": "ideological_clash",
+      "line_range": [
+        2305,
+        2319
+      ],
+      "participants": [
+        "赫默",
+        "多萝西"
+      ],
+      "location": "359号基地，受试者所在的房间",
+      "significance": "赫默从现实角度批判多萝西的理想，揭示实验的潜在危害",
+      "is_imaginary": false
+    },
+    {
+      "event": "桑尼拒绝多萝西的诱惑，决定终结实验，白面鸮苏醒并请求不要伤害多萝西",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2328,
+        2348
+      ],
+      "participants": [
+        "桑尼",
+        "多萝西",
+        "白面鸮",
+        "赫默"
+      ],
+      "location": "359号基地，受试者所在的房间",
+      "significance": "桑尼做出关键决定，白面鸮的介入暂时缓和了冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "缪尔赛思恢复，告知塞雷娅和博士斐尔迪南的野心，决定前往莱茵总部寻找克丽斯腾",
+      "type": "planning",
+      "line_range": [
+        2349,
+        2376
+      ],
+      "participants": [
+        "缪尔赛思",
+        "塞雷娅",
+        "Mechanist",
+        "博士"
+      ],
+      "location": "特里蒙城内",
+      "significance": "主线转向莱茵总部，塞雷娅决定优先解决斐尔迪南",
+      "is_imaginary": false
+    },
+    {
+      "event": "白面鸮通过九号装置接收到受试者的信息，证实他们是自愿参与实验",
+      "type": "revelation",
+      "line_range": [
+        2377,
+        2406
+      ],
+      "participants": [
+        "白面鸮",
+        "桑尼",
+        "赫默",
+        "埃琳娜"
+      ],
+      "location": "359号基地，受试者所在的房间",
+      "significance": "揭示受试者的主观意愿，使事件更加复杂",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默向桑尼保证会阻止多萝西重启实验，桑尼暂时同意停火",
+      "type": "negotiation",
+      "line_range": [
+        2409,
+        2415
+      ],
+      "participants": [
+        "赫默",
+        "桑尼",
+        "多萝西"
+      ],
+      "location": "359号基地，受试者所在的房间",
+      "significance": "赫默的承诺暂时平息了直接冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "多萝西向赫默展示拓荒者照片，讲述自己作为拓荒者后代的过去和母亲的死亡",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2446,
+        2468
+      ],
+      "participants": [
+        "多萝西",
+        "赫默"
+      ],
+      "location": "359号基地，多萝西的实验室",
+      "significance": "揭示多萝西的动机源于个人创伤，使角色更加立体",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默回忆帕尔维斯，反思自己不应以个人标准评判一切",
+      "type": "character_development",
+      "line_range": [
+        2470,
+        2480
+      ],
+      "participants": [
+        "赫默",
+        "帕尔维斯"
+      ],
+      "location": "359号基地",
+      "significance": "赫默的内心成长，从绝对反对到理解复杂性",
+      "is_imaginary": false
+    },
+    {
+      "event": "斐尔迪南命令防卫科人员进入基地，准备清理现场",
+      "type": "planning",
+      "line_range": [
+        2481,
+        2498
+      ],
+      "participants": [
+        "斐尔迪南",
+        "上校的声音"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "斐尔迪南开始执行其最终计划",
+      "is_imaginary": false
+    },
+    {
+      "event": "斐尔迪南与埃琳娜通话，命令她撤离，埃琳娜察觉异常",
+      "type": "political_intrigue",
+      "line_range": [
+        2499,
+        2524
+      ],
+      "participants": [
+        "斐尔迪南",
+        "埃琳娜",
+        "白面鸮"
+      ],
+      "location": "359号基地",
+      "significance": "埃琳娜开始怀疑斐尔迪南的动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "防卫科人员给拓荒者注射改造过的医疗环，埃琳娜发现并阻止，揭露斐尔迪南是幕后黑手",
+      "type": "revelation",
+      "line_range": [
+        2530,
+        2567
+      ],
+      "participants": [
+        "埃琳娜",
+        "桑尼",
+        "防卫科成员"
+      ],
+      "location": "359号基地",
+      "significance": "揭示斐尔迪南的背叛，危机并未解除",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞雷娅、缪尔赛思、Mechanist和博士潜入莱茵生命总部，遭遇霍尔海雅拦截",
+      "type": "infiltration",
+      "line_range": [
+        2568,
+        2606
+      ],
+      "participants": [
+        "塞雷娅",
+        "缪尔赛思",
+        "Mechanist",
+        "博士",
+        "霍尔海雅"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "主线推进至莱茵总部，与霍尔海雅再次交锋",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃琳娜、桑尼和格雷伊在基地内与防卫科人员交战，玛丽警长出现并逮捕桑尼",
+      "type": "battle",
+      "line_range": [
+        2607,
+        2627
+      ],
+      "participants": [
+        "埃琳娜",
+        "桑尼",
+        "格雷伊",
+        "玛丽"
+      ],
+      "location": "359号基地",
+      "significance": "玛丽介入，揭示她与桑尼的过去",
+      "is_imaginary": false
+    },
+    {
+      "event": "防卫科人员试图给拓荒者注射，被赫默和多萝西阻止，但注射已造成拓荒者昏迷",
+      "type": "confrontation",
+      "line_range": [
+        2628,
+        2659
+      ],
+      "participants": [
+        "赫默",
+        "多萝西",
+        "防卫科成员"
+      ],
+      "location": "359号基地",
+      "significance": "斐尔迪南的计划开始生效，拓荒者被用作实验品",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛丽与桑尼对峙，揭露桑尼四年前曾抢劫她并伤害了她的奶奶",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2661,
+        2676
+      ],
+      "participants": [
+        "玛丽",
+        "桑尼"
+      ],
+      "location": "359号基地",
+      "significance": "揭示桑尼的黑暗过去，丰富角色背景",
+      "is_imaginary": false
+    },
+    {
+      "event": "多萝西的实验室发生剧烈震动，银色流体融合成巨型造物，实验成功",
+      "type": "disaster",
+      "line_range": [
+        2677,
+        2695
+      ],
+      "participants": [
+        "多萝西",
+        "赫默",
+        "埃琳娜",
+        "桑尼",
+        "玛丽",
+        "格雷伊"
+      ],
+      "location": "359号基地",
+      "significance": "实验最终完成，巨型造物诞生，危机全面爆发",
+      "is_imaginary": false
+    },
+    {
+      "event": "斐尔迪南在监控站目睹巨型造物，决定进行下一阶段实验，将基地内所有人视为牺牲品",
+      "type": "political_intrigue",
+      "line_range": [
+        2696,
+        2715
+      ],
+      "participants": [
+        "斐尔迪南",
+        "防卫科成员"
+      ],
+      "location": "359号基地监控站",
+      "significance": "斐尔迪南的冷酷无情暴露无遗",
+      "is_imaginary": false
+    },
+    {
+      "event": "巨型造物开始分解基地内的物体，埃琳娜分析其能力，众人决定将消息传给罗德岛",
+      "type": "planning",
+      "line_range": [
+        2716,
+        2770
+      ],
+      "participants": [
+        "埃琳娜",
+        "桑尼",
+        "玛丽",
+        "格雷伊"
+      ],
+      "location": "359号基地",
+      "significance": "众人制定新计划，试图将真相公之于众",
+      "is_imaginary": false
+    },
+    {
+      "event": "帕尔维斯与一名防卫科成员对话，回忆莱茵生命初创时的美好时光，感叹物是人非",
+      "type": "flashback",
+      "line_range": [
+        2771,
+        2814
+      ],
+      "participants": [
+        "帕尔维斯",
+        "防卫科成员"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "展现莱茵创始人们的过往，为角色关系提供背景",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞雷娅一行在莱茵总部遇到帕尔维斯，后者装作不认识他们",
+      "type": "confrontation",
+      "line_range": [
+        2815,
+        2845
+      ],
+      "participants": [
+        "塞雷娅",
+        "缪尔赛思",
+        "帕尔维斯",
+        "博士"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "帕尔维斯保持中立，观望局势发展",
+      "is_imaginary": false
+    },
+    {
+      "event": "Mechanist与霍尔海雅对峙，霍尔海雅自称历史学者，来见证预言成真",
+      "type": "confrontation",
+      "line_range": [
+        2846,
+        2869
+      ],
+      "participants": [
+        "Mechanist",
+        "霍尔海雅"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "揭示霍尔海雅的真实身份和动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛丽与防卫科成员交战，埃琳娜和桑尼前往监控站",
+      "type": "battle",
+      "line_range": [
+        2870,
+        2905
+      ],
+      "participants": [
+        "玛丽",
+        "埃琳娜",
+        "桑尼",
+        "防卫科成员"
+      ],
+      "location": "359号基地",
+      "significance": "玛丽断后，桑尼和埃琳娜继续执行计划",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞雷娅一行在莱茵总部被防卫科发现，塞雷娅与昔日部下对峙",
+      "type": "confrontation",
+      "line_range": [
+        2906,
+        2925
+      ],
+      "participants": [
+        "塞雷娅",
+        "缪尔赛思",
+        "博士",
+        "防卫科成员"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "塞雷娅面对昔日部下，展现其威严",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃琳娜在监控站与斐尔迪南对峙，拒绝他的收买，宣布与他决裂",
+      "type": "confrontation",
+      "line_range": [
+        2926,
+        2989
+      ],
+      "participants": [
+        "埃琳娜",
+        "斐尔迪南"
+      ],
+      "location": "359号基地监控站",
+      "significance": "埃琳娜与斐尔迪南彻底决裂，角色成长的关键时刻",
+      "is_imaginary": false
+    },
+    {
+      "event": "缪尔赛思使用源石技艺帮助塞雷娅突破封锁，霍尔海雅撤退",
+      "type": "battle",
+      "line_range": [
+        2990,
+        3013
+      ],
+      "participants": [
+        "缪尔赛思",
+        "塞雷娅",
+        "博士",
+        "霍尔海雅"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "缪尔赛思展现真实实力，塞雷娅得以见到克丽斯腾",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞雷娅与克丽斯腾重逢，质问她对斐尔迪南的放任",
+      "type": "confrontation",
+      "line_range": [
+        3014,
+        3015
+      ],
+      "participants": [
+        "塞雷娅",
+        "克丽斯腾"
+      ],
+      "location": "莱茵生命总部，总辖办公室",
+      "significance": "两位创始人的关键对话即将展开",
+      "is_imaginary": false
+    },
+    {
+      "event": "闪回：克丽斯腾与塞雷娅在莱茵生命初创时的对话，克丽斯腾专注于理想，塞雷娅负责处理现实问题",
+      "type": "flashback",
+      "line_range": [
+        3016,
+        3042
+      ],
+      "participants": [
+        "克丽斯腾",
+        "塞雷娅"
+      ],
+      "location": "莱茵生命初创办公室",
+      "significance": "揭示两人关系的本质和分歧的根源",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞雷娅与克丽斯腾对峙，克丽斯腾承认放任斐尔迪南，但不在乎基地里的人和事",
+      "type": "confrontation",
+      "line_range": [
+        3043,
+        3068
+      ],
+      "participants": [
+        "塞雷娅",
+        "克丽斯腾"
+      ],
+      "location": "莱茵生命总部，总辖办公室",
+      "significance": "揭示克丽斯腾的冷漠和专注，与塞雷娅的价值观冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "缪尔赛思向博士解释塞雷娅与克丽斯腾的关系，以及博士的计划",
+      "type": "revelation",
+      "line_range": [
+        3069,
+        3089
+      ],
+      "participants": [
+        "缪尔赛思",
+        "博士"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "揭示博士的深层计划，以及缪尔赛思的立场",
+      "is_imaginary": false
+    },
+    {
+      "event": "Mechanist向博士汇报战况，霍尔海雅可能前往基地",
+      "type": "planning",
+      "line_range": [
+        3090,
+        3101
+      ],
+      "participants": [
+        "Mechanist",
+        "博士"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "Mechanist的汇报，霍尔海雅的行踪成为新变数",
+      "is_imaginary": false
+    },
+    {
+      "event": "斐尔迪南向埃琳娜解释自己的动机，认为自己在为新时代而冒险",
+      "type": "ideological_clash",
+      "line_range": [
+        3102,
+        3116
+      ],
+      "participants": [
+        "斐尔迪南",
+        "埃琳娜"
+      ],
+      "location": "359号基地监控站",
+      "significance": "斐尔迪南阐述其野心和世界观",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默、格雷伊和多萝西在基地内被巨型造物围攻，多萝西决定将自己接入中枢",
+      "type": "sacrifice",
+      "line_range": [
+        3117,
+        3235
+      ],
+      "participants": [
+        "赫默",
+        "格雷伊",
+        "多萝西",
+        "白面鸮"
+      ],
+      "location": "359号基地",
+      "significance": "多萝西为拯救受试者，决定牺牲自己",
+      "is_imaginary": false
+    },
+    {
+      "event": "多萝西接入中枢后，在梦中与受试者告别，决定摧毁造物，释放他们",
+      "type": "sacrifice",
+      "line_range": [
+        3236,
+        3287
+      ],
+      "participants": [
+        "多萝西",
+        "赫默",
+        "格雷伊",
+        "白面鸮"
+      ],
+      "location": "359号基地",
+      "significance": "多萝西做出最终选择，摧毁自己的实验成果",
+      "is_imaginary": false
+    },
+    {
+      "event": "巨型造物崩溃，斐尔迪南的计划失败，政府军介入逮捕他",
+      "type": "confrontation",
+      "line_range": [
+        3288,
+        3342
+      ],
+      "participants": [
+        "斐尔迪南",
+        "埃琳娜",
+        "哥伦比亚士兵"
+      ],
+      "location": "359号基地监控站",
+      "significance": "斐尔迪南的阴谋彻底失败",
+      "is_imaginary": false
+    },
+    {
+      "event": "克丽斯腾通过通讯与斐尔迪南对话，宣布将他开除，斐尔迪南跳楼逃生",
+      "type": "confrontation",
+      "line_range": [
+        3343,
+        3377
+      ],
+      "participants": [
+        "克丽斯腾",
+        "斐尔迪南",
+        "埃琳娜"
+      ],
+      "location": "359号基地监控站",
+      "significance": "克丽斯腾亲自终结斐尔迪南的野心",
+      "is_imaginary": false
+    },
+    {
+      "event": "克丽斯腾与塞雷娅对话，塞雷娅注意到克丽斯腾破解了她的钙质化，两人告别",
+      "type": "farewell",
+      "line_range": [
+        3378,
+        3389
+      ],
+      "participants": [
+        "克丽斯腾",
+        "塞雷娅"
+      ],
+      "location": "莱茵生命总部，总辖办公室",
+      "significance": "塞雷娅与克丽斯腾的再次告别，暗示两人关系的复杂性",
+      "is_imaginary": false
+    },
+    {
+      "event": "霍尔海雅在逃生通道拦截斐尔迪南，为他提供动力甲并放他离开",
+      "type": "rescue",
+      "line_range": [
+        3390,
+        3426
+      ],
+      "participants": [
+        "霍尔海雅",
+        "斐尔迪南"
+      ],
+      "location": "莱茵生命总部逃生通道",
+      "significance": "霍尔海雅的真实目的成谜，斐尔迪南得以逃脱",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃琳娜与多萝西重逢，多萝西安慰埃琳娜，并鼓励她走出斐尔迪南的阴影",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        3427,
+        3446
+      ],
+      "participants": [
+        "埃琳娜",
+        "多萝西"
+      ],
+      "location": "359号基地",
+      "significance": "埃琳娜的情感释放，多萝西的导师角色",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫默为多萝西检查身体，多萝西表示不惧未来，赫默与塞雷娅同时说出特里蒙快下雨了",
+      "type": "character_development",
+      "line_range": [
+        3447,
+        3468
+      ],
+      "participants": [
+        "赫默",
+        "多萝西",
+        "塞雷娅"
+      ],
+      "location": "359号基地",
+      "significance": "赫默与塞雷娅的默契，多萝西的豁达",
+      "is_imaginary": false
+    },
+    {
+      "event": "桑尼与玛丽告别，桑尼承认四年前的罪行，玛丽选择不逮捕他，拓荒者重新启程",
+      "type": "farewell",
+      "line_range": [
+        3469,
+        3509
+      ],
+      "participants": [
+        "桑尼",
+        "玛丽",
+        "格雷伊"
+      ],
+      "location": "359号基地外",
+      "significance": "桑尼与玛丽和解，拓荒者获得新生",
+      "is_imaginary": false
+    },
+    {
+      "event": "缪尔赛思感叹拓荒者的命运，Mechanist发现莱茵在挖掘废墟",
+      "type": "reflection",
+      "line_range": [
+        3510,
+        3523
+      ],
+      "participants": [
+        "缪尔赛思",
+        "Mechanist",
+        "博士"
+      ],
+      "location": "359号基地外",
+      "significance": "缪尔赛思的感慨，暗示莱茵的后续行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "霍尔海雅向副总统汇报，声称斐尔迪南已无威胁，但她实际在莱茵总部外",
+      "type": "political_intrigue",
+      "line_range": [
+        3524,
+        3530
+      ],
+      "participants": [
+        "霍尔海雅",
+        "哥伦比亚雇佣兵"
+      ],
+      "location": "莱茵生命总部外",
+      "significance": "揭示霍尔海雅在欺骗副总统，她有自己的目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "斐尔迪南穿着动力甲被拓荒者拦截，拓荒者宣称荒野上全是他的敌人",
+      "type": "confrontation",
+      "line_range": [
+        3531,
+        3541
+      ],
+      "participants": [
+        "斐尔迪南",
+        "拓荒队成员"
+      ],
+      "location": "荒野",
+      "significance": "斐尔迪南的逃亡之路并不顺利",
+      "is_imaginary": false
+    },
+    {
+      "event": "克丽斯腾与霍尔海雅对话，霍尔海雅自称历史学者，预言将成为克丽斯腾的合作伙伴",
+      "type": "alliance",
+      "line_range": [
+        3542,
+        3567
+      ],
+      "participants": [
+        "克丽斯腾",
+        "霍尔海雅"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "霍尔海雅与克丽斯腾建立联系，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "星极在莱茵总部等待埃琳娜，发现天体仪亮了",
+      "type": "revelation",
+      "line_range": [
+        3568,
+        3575
+      ],
+      "participants": [
+        "星极",
+        "莱茵研究员"
+      ],
+      "location": "莱茵生命总部",
+      "significance": "星极的出现和天体仪的异常，暗示新的线索",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "缪尔赛思",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命生态科主任，因违反保密协议被追杀，失踪前留下遗言",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "霍尔海雅",
+      "type": "npc",
+      "role_in_chapter": "神秘雇佣兵，追杀缪尔赛思，与斐尔迪南合作，后与塞雷娅对峙",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "塞雷娅",
+      "type": "operator",
+      "role_in_chapter": "前莱茵防卫科主任，向罗德岛求助，调查缪尔赛思失踪案，与霍尔海雅战斗",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Mechanist",
+      "type": "operator",
+      "role_in_chapter": "罗德岛机械师，与博士一同调查，分析动力甲和技术",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官，与Mechanist和塞雷娅一同行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "埃琳娜",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命能量科研究员，斐尔迪南的助手，被拓荒者绑架，对实验有所隐瞒",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "白面鸮",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，莱茵生命研究员，被拓荒者绑架，脑部植入芯片，病发后行为异常",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "桑尼",
+      "type": "npc",
+      "role_in_chapter": "拓荒队领队，前法学院学生，因感染矿石病而失去一切，策划绑架以阻止实验",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "赫默",
+      "type": "operator",
+      "role_in_chapter": "罗德岛医疗干员，莱茵生命前研究员，进入基地救治白面鸮并尝试化解危机",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "格雷伊",
+      "type": "operator",
+      "role_in_chapter": "罗德岛电气工程师，与赫默一同进入基地，修复供电并与桑尼建立信任",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "玛丽",
+      "type": "npc",
+      "role_in_chapter": "特里蒙警长，桑尼的旧友，负责处理基地绑架案，与莱茵防卫科周旋",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "斐尔迪南",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命能量科主任，与军方合作，主导秘密实验，试图夺取总辖权力",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "帕尔维斯",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命源石技艺应用科前主任，与斐尔迪南对话，暗示掌握其把柄并提供实验公式",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "多萝西",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命源石技艺应用科主任，359号基地负责人，进行银色流体实验，引导众人前往实验室",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "醉醺醺的男人",
+      "type": "npc",
+      "role_in_chapter": "前洛肯水箱主刀医生，向塞雷娅提供关于银色试剂来源的情报",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "迈尔",
+      "type": "npc",
+      "role_in_chapter": "拓荒队成员，情绪崩溃后挟持白面鸮，后试图自杀被阻止",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克丽斯腾",
+      "type": "npc",
+      "role_in_chapter": "莱茵总辖，与塞雷娅对峙，承认放任斐尔迪南，最终出手终结其阴谋，并与霍尔海雅对话",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "星极",
+      "type": "npc",
+      "role_in_chapter": "埃琳娜的姐姐，在莱茵总部等待埃琳娜，发现天体仪异常",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "九号装置",
+      "line_range": [
+        213,
+        216
+      ],
+      "discussion_summary": "Mechanist解释白面鸮脑部植入的九号装置是莱茵生命的内部代号，直接连接脑部神经并记录数据。",
+      "is_substantive": true
+    },
+    {
+      "concept": "炎魔实验",
+      "line_range": [
+        1365,
+        1377
+      ],
+      "discussion_summary": "帕尔维斯与斐尔迪南讨论炎魔实验，提到赫默的神经麻醉剂效果，并指出抑制实验体神经反应才是正确做法。",
+      "is_substantive": true
+    },
+    {
+      "concept": "洛肯水箱",
+      "line_range": [
+        1296,
+        1405
+      ],
+      "discussion_summary": "塞雷娅指出洛肯水箱的倒台印证了杀死一头猛兽会喂养出更多猛兽的观点。\n\n帕尔维斯承认自己从洛肯水箱的废品中获取了资料，并借鉴了洛肯·威廉姆斯的天才思路。\n\n醉醺醺的男人指出莱茵生命从洛肯水箱废墟中扒出了最多遗产，并暗示多项实验的关联。",
+      "is_substantive": true
+    },
+    {
+      "concept": "递质",
+      "line_range": [
+        2122,
+        2126
+      ],
+      "discussion_summary": "埃琳娜向赫默解释递质是一种对微振动敏感的特殊物质，能充当接收并编码神经信号的媒介，让源石技艺适应性普通的人成为优秀术师",
+      "is_substantive": true
+    },
+    {
+      "concept": "中枢",
+      "line_range": [
+        2292,
+        2302
+      ],
+      "discussion_summary": "多萝西阐述其通过中枢连接所有人意识，消除个体差距，实现平等的理想",
+      "is_substantive": true
+    },
+    {
+      "concept": "导航",
+      "line_range": [
+        2107,
+        2108
+      ],
+      "discussion_summary": "上校指出哥伦比亚需要导航技术，能够跨越距离精准地将武器送到任意地点",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        1,
+        10
+      ],
+      "description": "缪尔赛思提到莱茵生命内部，斐尔迪南和其他主任的情况。"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        77,
+        84
+      ],
+      "description": "塞雷娅表示不信任仍留在莱茵生命的人，但信任并非合作唯一前提。"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        230,
+        239
+      ],
+      "description": "Mechanist解释莱茵生命等大型科技公司委托小型机构进行高风险实验的模式。"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        457,
+        468
+      ],
+      "description": "斐尔迪南与军方上校通话，承诺莱茵生命的产品不会让军方失望。"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        1251,
+        1277
+      ],
+      "description": "帕尔维斯与斐尔迪南讨论莱茵生命内部权力斗争，帕尔维斯暗示不反对斐尔迪南取代总辖。"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        1293,
+        1314
+      ],
+      "description": "醉醺醺的男人指责塞雷娅仍在为莱茵生命收拾残局，内心仍是莱茵防卫科主任。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        93,
+        95
+      ],
+      "description": "塞雷娅请求罗德岛干员告知凯尔希与博士，需要他们的帮助。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        625,
+        631
+      ],
+      "description": "赫默以罗德岛干员身份宣布进入基地提供无偿医疗服务，强调救治感染者是罗德岛准则。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        686,
+        687
+      ],
+      "description": "格雷伊向桑尼介绍罗德岛改变了他的人生。"
+    },
+    {
+      "faction": "哥伦比亚军方",
+      "line_range": [
+        457,
+        468
+      ],
+      "description": "上校与斐尔迪南通话，要求解决基地麻烦并看到成果，暗示有其他科技公司可选。"
+    },
+    {
+      "faction": "特里蒙警方",
+      "line_range": [
+        561,
+        569
+      ],
+      "description": "玛丽警长收到上级指示，准备切断基地通讯和供电作为警告。"
+    },
+    {
+      "faction": "特里蒙警方",
+      "line_range": [
+        1543,
+        1566
+      ],
+      "description": "玛丽警长与莱茵防卫科成员冲突，坚持自己的执法方式。"
+    },
+    {
+      "faction": "哥伦比亚军方",
+      "line_range": [
+        2100,
+        2111
+      ],
+      "description": "上校与斐尔迪南通话，催促实验成果，强调哥伦比亚需要导航技术以应对维多利亚剧变的余波"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2349,
+        2376
+      ],
+      "description": "Mechanist和博士讨论联系不上赫默和格雷伊，决定支援基地，同时塞雷娅决定优先解决斐尔迪南"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        2926,
+        2989
+      ],
+      "description": "埃琳娜与斐尔迪南对峙，揭露他利用莱茵生命进行非法实验，并宣布与他决裂"
+    },
+    {
+      "faction": "特里蒙警察局",
+      "line_range": [
+        2661,
+        2676
+      ],
+      "description": "玛丽警长与桑尼对峙，揭露桑尼四年前的罪行，展现警察局的立场"
+    }
+  ],
+  "locations": [
+    {
+      "location": "特里蒙",
+      "line_range": [
+        13,
+        16
+      ],
+      "description": "缪尔赛思提到只要在特里蒙城内就逃不掉，霍尔海雅回应换作其他城市也没有区别。"
+    },
+    {
+      "location": "特里蒙",
+      "line_range": [
+        233,
+        234
+      ],
+      "description": "Mechanist介绍特里蒙是哥伦比亚的科学与技术中心，数百家科技公司总部设在此地。"
+    },
+    {
+      "location": "359号基地",
+      "line_range": [
+        230,
+        239
+      ],
+      "description": "Mechanist解释359号基地是莱茵生命委托建设的实验场所，白面鸮所在的基地就是其中一处。"
+    },
+    {
+      "location": "359号基地",
+      "line_range": [
+        917,
+        918
+      ],
+      "description": "桑尼指出整个拓荒者居住区不再安全。"
+    },
+    {
+      "location": "359号基地",
+      "line_range": [
+        998,
+        999
+      ],
+      "description": "多萝西通过广播指引众人前往实验区，称实验区建筑更结实。"
+    },
+    {
+      "location": "再来一杯酒吧",
+      "line_range": [
+        1204,
+        1213
+      ],
+      "description": "Mechanist介绍再来一杯酒吧，提到常客和特调鸡尾酒。"
+    },
+    {
+      "location": "再来一杯酒吧",
+      "line_range": [
+        1214,
+        1215
+      ],
+      "description": "塞雷娅与醉醺醺的男人在酒吧会面，点两杯特里蒙阳光。"
+    },
+    {
+      "location": "359号基地",
+      "line_range": [
+        1891,
+        1991
+      ],
+      "description": "多萝西"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-18T05:01:29.796951+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 71773,
+    "tokens_out": 13845,
+    "elapsed_s": 102.05125164985657
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "Mechanist",
+    "博士",
+    "埃琳娜",
+    "桑尼",
+    "玛丽",
+    "斐尔迪南",
+    "帕尔维斯",
+    "醉醺醺的男人",
+    "迈尔",
+    "克丽斯腾"
+  ]
+}

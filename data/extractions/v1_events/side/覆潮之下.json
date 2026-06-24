@@ -1,0 +1,1054 @@
+{
+  "chapter": "覆潮之下",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章开场，斯卡蒂在罗德岛提交任务报告时，突然感知到海水的味道和歌声，并发现幽灵鲨的遗物。随后，她遭遇了自称歌蕾蒂娅的深海猎人二大队队长，对方声称要带走幽灵鲨，并提及「盐风城」后离去。斯卡蒂随即离开罗德岛，前往伊比利亚的盐风城追踪歌蕾蒂娅和幽灵鲨。\n\n斯卡蒂找到情报贩子老何塞，获取了前往盐风城的地图和伪装成流浪歌手的建议。在前往盐风城的途中，她遭遇了赏金猎人的袭击，但轻松解决。同时，伊比利亚审判庭的成员也在海边调查怪物增多的事件，并与一位神秘的主教及其「使者」相遇。\n\n斯卡蒂抵达盐风城后，发现城中居民行为古怪、言语迟钝，并遵循着名为「律法」的规则。她遇到了能正常交流的居民安妮塔，并得知城中有一位从外面来的「教士」在主导一切。安妮塔带她去找年迈的佩特拉奶奶询问消息，但老人精神恍惚，无法提供有效信息。\n\n斯卡蒂在海边探查时，发现居民们正在进行一种仪式：每当潮汐起落一百次，就会通过抽签选出一人前往海边，第二天海岸上便会铺满食物。她意识到这背后隐藏着巨大的危险。此时，伊比利亚审判官出现，指责居民们在进行集体谋杀，并与斯卡蒂发生冲突。\n\n审判官与斯卡蒂交手后不敌，其长官大审判官介入，斯卡蒂受伤后逃离。在躲避追捕时，斯卡蒂与安妮塔和审判官一同遭遇了大量海生怪物的袭击。斯卡蒂意识到这些怪物是冲她而来，决定独自引开它们，保护其他人。\n\n斯卡蒂在盐风城与审判官对峙后，因受伤被安妮塔和佩特拉奶奶收留。她试图离开以保护居民，但安妮塔的信任和陪伴让她逐渐软化，甚至为居民唱歌。与此同时，审判官艾丽妮在目睹居民与恐鱼的共生关系后陷入信仰危机，大审判官则计划炸毁城市。斯卡蒂最终进入教堂，与歌蕾蒂娅和主教对峙，遭遇自称「使者」的海嗣。海嗣揭示斯卡蒂体内流着海嗣的血，并试图唤醒她的记忆，提及她曾杀死一位「祂」。歌蕾蒂娅重伤后反击，幽灵鲨突然清醒加入战斗。三人合力击杀主教化身的巨型海嗣。凯尔希突然出现，与审判庭交涉后，以自己留下为代价换取猎人们离开。斯卡蒂与安妮塔告别，承诺会再回来唱歌。歌蕾蒂娅在独白中流露出对自身命运的绝望，决心寻找「大船」。",
+  "events": [
+    {
+      "event": "斯卡蒂在罗德岛提交报告时感知到异常，并遭遇歌蕾蒂娅，得知幽灵鲨被带走，决定前往盐风城。",
+      "type": "revelation",
+      "line_range": [
+        1,
+        91
+      ],
+      "participants": [
+        "斯卡蒂",
+        "罗德岛干员",
+        "歌蕾蒂娅"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "引出本章核心冲突：斯卡蒂追踪歌蕾蒂娅和幽灵鲨至盐风城。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂在罗德岛外遭遇赏金猎人袭击，轻松解决。",
+      "type": "battle",
+      "line_range": [
+        92,
+        120
+      ],
+      "participants": [
+        "斯卡蒂",
+        "赏金猎人A",
+        "赏金猎人B",
+        "赏金猎人C"
+      ],
+      "location": "罗德岛外某处",
+      "significance": "展现斯卡蒂的战斗力和在赏金猎人中的威名。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂找到老何塞，获取前往盐风城的地图和伪装。",
+      "type": "planning",
+      "line_range": [
+        121,
+        220
+      ],
+      "participants": [
+        "斯卡蒂",
+        "老何塞"
+      ],
+      "location": "老何塞的据点",
+      "significance": "为斯卡蒂潜入盐风城提供关键信息和伪装身份。",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊比利亚审判官在海边调查怪物，遭遇神秘主教及其使者。",
+      "type": "investigation",
+      "line_range": [
+        221,
+        271
+      ],
+      "participants": [
+        "审判官",
+        "大审判官",
+        "主教",
+        "赏金猎人"
+      ],
+      "location": "伊比利亚海边",
+      "significance": "引入伊比利亚审判庭和主教势力，揭示海边怪物增多与盐风城有关。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂抵达盐风城，与行为古怪的居民发生冲突，并遇到安妮塔。",
+      "type": "confrontation",
+      "line_range": [
+        272,
+        348
+      ],
+      "participants": [
+        "斯卡蒂",
+        "男性居民A",
+        "男性居民B",
+        "幼年居民"
+      ],
+      "location": "盐风城",
+      "significance": "展现盐风城的诡异氛围和居民的非正常状态。",
+      "is_imaginary": false
+    },
+    {
+      "event": "安妮塔向斯卡蒂介绍盐风城的情况，包括佩特拉奶奶和教士。",
+      "type": "investigation",
+      "line_range": [
+        349,
+        590
+      ],
+      "participants": [
+        "斯卡蒂",
+        "安妮塔",
+        "佩特拉奶奶"
+      ],
+      "location": "盐风城",
+      "significance": "揭示盐风城的历史、居民的生活方式以及教士的存在。",
+      "is_imaginary": false
+    },
+    {
+      "event": "主教与歌蕾蒂娅对话，透露斯卡蒂已入城，并计划利用她。",
+      "type": "political_intrigue",
+      "line_range": [
+        591,
+        625
+      ],
+      "participants": [
+        "主教",
+        "歌蕾蒂娅"
+      ],
+      "location": "盐风城教堂",
+      "significance": "揭示主教和歌蕾蒂娅的真实关系及对斯卡蒂的阴谋。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂在海边探查，目睹居民进行「潮汐仪式」，并遭遇海怪袭击。",
+      "type": "revelation",
+      "line_range": [
+        724,
+        816
+      ],
+      "participants": [
+        "斯卡蒂",
+        "男性居民A",
+        "男性居民B"
+      ],
+      "location": "盐风城海边",
+      "significance": "揭示居民获取食物的残酷仪式和海中的危险。",
+      "is_imaginary": false
+    },
+    {
+      "event": "审判官闯入盐风城，指责居民进行集体谋杀，并与斯卡蒂发生冲突。",
+      "type": "confrontation",
+      "line_range": [
+        874,
+        1138
+      ],
+      "participants": [
+        "审判官",
+        "斯卡蒂",
+        "安妮塔",
+        "男性居民A"
+      ],
+      "location": "盐风城",
+      "significance": "展现审判官与斯卡蒂的对立，以及审判官对盐风城异状的看法。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂与大审判官短暂交手后受伤逃离，被安妮塔找到。",
+      "type": "battle",
+      "line_range": [
+        1139,
+        1198
+      ],
+      "participants": [
+        "斯卡蒂",
+        "大审判官",
+        "审判官"
+      ],
+      "location": "盐风城",
+      "significance": "展现大审判官的强大实力，斯卡蒂首次受挫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "大量海生怪物袭击斯卡蒂、安妮塔和审判官所在的房屋，斯卡蒂决定独自引开怪物。",
+      "type": "battle",
+      "line_range": [
+        1199,
+        1304
+      ],
+      "participants": [
+        "斯卡蒂",
+        "审判官",
+        "安妮塔",
+        "大审判官",
+        "主教",
+        "歌蕾蒂娅"
+      ],
+      "location": "盐风城海边房屋",
+      "significance": "剧情高潮，怪物大规模出现，斯卡蒂为保护他人挺身而出。",
+      "is_imaginary": false
+    },
+    {
+      "event": "审判官艾丽妮与安妮塔在恐鱼袭击后对话，艾丽妮意识到居民已失去人性，但仍坚持要带走斯卡蒂",
+      "type": "confrontation",
+      "line_range": [
+        1305,
+        1402
+      ],
+      "participants": [
+        "审判官艾丽妮",
+        "安妮塔",
+        "斯卡蒂"
+      ],
+      "location": "盐风城街道",
+      "significance": "展现艾丽妮的职责与困惑，以及斯卡蒂对自身带来灾祸的认知",
+      "is_imaginary": false
+    },
+    {
+      "event": "佩特拉奶奶出面阻止审判官带走斯卡蒂，控诉审判庭对盐风城的漠视",
+      "type": "confrontation",
+      "line_range": [
+        1403,
+        1482
+      ],
+      "participants": [
+        "审判官艾丽妮",
+        "佩特拉奶奶",
+        "安妮塔",
+        "斯卡蒂"
+      ],
+      "location": "盐风城街道",
+      "significance": "揭示伊比利亚审判庭与底层居民的深刻矛盾，佩特拉奶奶的绝望控诉",
+      "is_imaginary": false
+    },
+    {
+      "event": "审判官艾丽妮暂时退让，斯卡蒂被安妮塔和佩特拉奶奶带回家中休养",
+      "type": "departure",
+      "line_range": [
+        1483,
+        1516
+      ],
+      "participants": [
+        "审判官艾丽妮",
+        "安妮塔",
+        "斯卡蒂",
+        "佩特拉奶奶"
+      ],
+      "location": "盐风城街道",
+      "significance": "斯卡蒂首次接受他人帮助，关系缓和",
+      "is_imaginary": false
+    },
+    {
+      "event": "男性居民A捡到斯卡蒂的琴并丢弃，认为其无意义",
+      "type": "character_development",
+      "line_range": [
+        1517,
+        1532
+      ],
+      "participants": [
+        "男性居民A"
+      ],
+      "location": "盐风城街道",
+      "significance": "展现居民已被教会洗脑，排斥艺术与人性",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂在安妮塔家醒来，因噩梦差点攻击安妮塔，随后试图独自离开",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1533,
+        1558
+      ],
+      "participants": [
+        "斯卡蒂",
+        "安妮塔"
+      ],
+      "location": "安妮塔家",
+      "significance": "斯卡蒂展现内心创伤和对自身危险性的恐惧",
+      "is_imaginary": false
+    },
+    {
+      "event": "大审判官教导艾丽妮看清盐风城居民与恐鱼共生关系的真相，艾丽妮决心回城",
+      "type": "revelation",
+      "line_range": [
+        1559,
+        1603
+      ],
+      "participants": [
+        "审判官艾丽妮",
+        "大审判官"
+      ],
+      "location": "盐风城海岸",
+      "significance": "揭示居民投海变恐鱼的真相，艾丽妮的信仰开始动摇",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂与安妮塔在城郊对话，斯卡蒂解释自己会带来灾祸，安妮塔表达对外界的向往",
+      "type": "character_development",
+      "line_range": [
+        1604,
+        1718
+      ],
+      "participants": [
+        "斯卡蒂",
+        "安妮塔"
+      ],
+      "location": "盐风城边缘高地",
+      "significance": "安妮塔的信任让斯卡蒂开始动摇，安妮塔展现对自由的渴望",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂救下被恐鱼拖拽的安妮塔，安妮塔提出想听斯卡蒂唱歌的约定",
+      "type": "rescue",
+      "line_range": [
+        1705,
+        1718
+      ],
+      "participants": [
+        "斯卡蒂",
+        "安妮塔"
+      ],
+      "location": "盐风城边缘高地",
+      "significance": "建立斯卡蒂与安妮塔之间的信任与约定",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂回到安妮塔家，教安妮塔制作海藻酒，并找回被男性居民B归还的琴",
+      "type": "family_moment",
+      "line_range": [
+        1719,
+        1819
+      ],
+      "participants": [
+        "斯卡蒂",
+        "安妮塔",
+        "男性居民B",
+        "佩特拉奶奶"
+      ],
+      "location": "安妮塔家",
+      "significance": "斯卡蒂首次主动分享阿戈尔文化，与居民建立情感联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂为安妮塔、佩特拉奶奶和居民们唱歌，歌声让佩特拉奶奶安睡，男性居民B流泪",
+      "type": "ceremony",
+      "line_range": [
+        1820,
+        1867
+      ],
+      "participants": [
+        "斯卡蒂",
+        "安妮塔",
+        "佩特拉奶奶",
+        "男性居民B"
+      ],
+      "location": "安妮塔家",
+      "significance": "斯卡蒂的歌声展现其阿戈尔身份，触动居民麻木的心灵",
+      "is_imaginary": false
+    },
+    {
+      "event": "主教在海岸向居民分发恐鱼尸体作为食物，歌蕾蒂娅冷眼旁观并与其辩论",
+      "type": "political_intrigue",
+      "line_range": [
+        1868,
+        1933
+      ],
+      "participants": [
+        "主教",
+        "歌蕾蒂娅"
+      ],
+      "location": "盐风城海岸",
+      "significance": "揭示主教的伪善与深海教会的意识形态，歌蕾蒂娅的立场模糊",
+      "is_imaginary": false
+    },
+    {
+      "event": "歌蕾蒂娅在海岸找到斯卡蒂，两人进行试探性对话，歌蕾蒂娅暗示斯卡蒂需要明确目标",
+      "type": "confrontation",
+      "line_range": [
+        1954,
+        2001
+      ],
+      "participants": [
+        "斯卡蒂",
+        "歌蕾蒂娅"
+      ],
+      "location": "盐风城海岸",
+      "significance": "歌蕾蒂娅点醒斯卡蒂不要盲目追逐，展现两人复杂关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "安妮塔尝试唱斯卡蒂的歌，斯卡蒂内心产生变化，承认自己仍是猎人",
+      "type": "character_development",
+      "line_range": [
+        2008,
+        2050
+      ],
+      "participants": [
+        "斯卡蒂",
+        "安妮塔"
+      ],
+      "location": "盐风城街道",
+      "significance": "斯卡蒂因安妮塔的信任而重新找回猎人的决心",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂将琴托付给幼年居民转交安妮塔，独自前往教堂",
+      "type": "departure",
+      "line_range": [
+        2051,
+        2068
+      ],
+      "participants": [
+        "斯卡蒂",
+        "幼年居民"
+      ],
+      "location": "盐风城街道",
+      "significance": "斯卡蒂决心独自面对主教，留下琴作为信物",
+      "is_imaginary": false
+    },
+    {
+      "event": "审判官艾丽妮向大审判官请求疏散居民，大审判官考验其决心后同意",
+      "type": "planning",
+      "line_range": [
+        2069,
+        2129
+      ],
+      "participants": [
+        "审判官艾丽妮",
+        "大审判官"
+      ],
+      "location": "盐风城山体",
+      "significance": "艾丽妮做出独立判决，展现成长，大审判官默许其行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂进入教堂与主教和歌蕾蒂娅对峙，被引入海底密室，见到被囚禁的幽灵鲨",
+      "type": "revelation",
+      "line_range": [
+        2134,
+        2201
+      ],
+      "participants": [
+        "斯卡蒂",
+        "主教",
+        "歌蕾蒂娅",
+        "幽灵鲨"
+      ],
+      "location": "盐风城教堂地下海底密室",
+      "significance": "揭示深海教会的实验和幽灵鲨的处境",
+      "is_imaginary": false
+    },
+    {
+      "event": "海嗣「使者」出现，揭示斯卡蒂体内流着海嗣的血，并试图唤醒她的记忆",
+      "type": "revelation",
+      "line_range": [
+        2241,
+        2337
+      ],
+      "participants": [
+        "斯卡蒂",
+        "海嗣",
+        "主教",
+        "歌蕾蒂娅"
+      ],
+      "location": "盐风城教堂地下海底密室",
+      "significance": "核心揭露：深海猎人源自海嗣，斯卡蒂曾杀死一位「祂」，动摇其身份认知",
+      "is_imaginary": false
+    },
+    {
+      "event": "歌蕾蒂娅重伤后反击，用阿戈尔语嘲讽海嗣，海嗣表示情绪是「赘余」",
+      "type": "confrontation",
+      "line_range": [
+        2338,
+        2355
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "海嗣",
+        "主教"
+      ],
+      "location": "盐风城教堂地下海底密室",
+      "significance": "展现歌蕾蒂娅的意志与海嗣的价值观冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "海嗣表示斯卡蒂和歌蕾蒂娅都是其姐妹，主教陷入疯狂，要求海嗣杀死斯卡蒂",
+      "type": "confrontation",
+      "line_range": [
+        2356,
+        2406
+      ],
+      "participants": [
+        "主教",
+        "歌蕾蒂娅",
+        "海嗣",
+        "斯卡蒂"
+      ],
+      "location": "盐风城教堂地下海底密室",
+      "significance": "海嗣的无差别「同胞」概念激化矛盾，战斗一触即发",
+      "is_imaginary": false
+    },
+    {
+      "event": "海嗣被歌蕾蒂娅杀死，主教准备亲自解决重伤的猎人们，幽灵鲨突然清醒加入战斗",
+      "type": "rescue",
+      "line_range": [
+        2407,
+        2424
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "斯卡蒂",
+        "主教",
+        "幽灵鲨"
+      ],
+      "location": "盐风城教堂地下海底密室",
+      "significance": "幽灵鲨清醒，三人深海猎人小队集结",
+      "is_imaginary": false
+    },
+    {
+      "event": "幽灵鲨清醒后与斯卡蒂、歌蕾蒂娅联手对抗主教化身的巨型海嗣",
+      "type": "battle",
+      "line_range": [
+        2425,
+        2532
+      ],
+      "participants": [
+        "斯卡蒂",
+        "歌蕾蒂娅",
+        "幽灵鲨",
+        "主教"
+      ],
+      "location": "盐风城教堂",
+      "significance": "深海猎人三人组首次并肩作战，击杀主教",
+      "is_imaginary": false
+    },
+    {
+      "event": "主教临死前诅咒阿戈尔，歌蕾蒂娅回应「我活着，阿戈尔就活着」",
+      "type": "confrontation",
+      "line_range": [
+        2533,
+        2549
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "主教"
+      ],
+      "location": "盐风城教堂",
+      "significance": "歌蕾蒂娅展现对阿戈尔的坚定信念",
+      "is_imaginary": false
+    },
+    {
+      "event": "幽灵鲨清醒后与斯卡蒂、歌蕾蒂娅对话，确认体内流着海嗣血，斯卡蒂接受现实",
+      "type": "revelation",
+      "line_range": [
+        2550,
+        2580
+      ],
+      "participants": [
+        "斯卡蒂",
+        "歌蕾蒂娅",
+        "幽灵鲨"
+      ],
+      "location": "盐风城教堂",
+      "significance": "斯卡蒂接受自身身份，决定继续前行",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希突然出现，用Mon3tr摧毁主教尸体，阻止恐鱼继续涌来",
+      "type": "rescue",
+      "line_range": [
+        2581,
+        2594
+      ],
+      "participants": [
+        "凯尔希",
+        "斯卡蒂",
+        "歌蕾蒂娅",
+        "幽灵鲨"
+      ],
+      "location": "盐风城教堂",
+      "significance": "凯尔希介入，为猎人们解围",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与大审判官交涉，以自己留下为代价换取深海猎人们离开伊比利亚",
+      "type": "negotiation",
+      "line_range": [
+        2595,
+        2674
+      ],
+      "participants": [
+        "凯尔希",
+        "大审判官",
+        "斯卡蒂",
+        "歌蕾蒂娅",
+        "幽灵鲨"
+      ],
+      "location": "盐风城",
+      "significance": "凯尔希牺牲自己保全深海猎人，展现其战略眼光",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与幽灵鲨告别，鼓励她接受自己，幽灵鲨表示会等凯尔希回来",
+      "type": "farewell",
+      "line_range": [
+        2675,
+        2697
+      ],
+      "participants": [
+        "凯尔希",
+        "幽灵鲨"
+      ],
+      "location": "盐风城",
+      "significance": "凯尔希对幽灵鲨的关怀，幽灵鲨展现乐观一面",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂与凯尔希告别，凯尔希鼓励她与黑暗命运并驾齐驱",
+      "type": "farewell",
+      "line_range": [
+        2698,
+        2714
+      ],
+      "participants": [
+        "斯卡蒂",
+        "凯尔希"
+      ],
+      "location": "盐风城",
+      "significance": "凯尔希给予斯卡蒂精神支持，斯卡蒂接受自身命运",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂回到盐风城与安妮塔和审判官艾丽妮告别，艾丽妮道歉并表达成长",
+      "type": "farewell",
+      "line_range": [
+        2715,
+        2775
+      ],
+      "participants": [
+        "斯卡蒂",
+        "安妮塔",
+        "审判官艾丽妮"
+      ],
+      "location": "盐风城街道",
+      "significance": "艾丽妮承认错误，斯卡蒂与安妮塔约定再会",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂将琴送给安妮塔，承诺下次在外面相遇时会为她唱歌",
+      "type": "farewell",
+      "line_range": [
+        2776,
+        2806
+      ],
+      "participants": [
+        "斯卡蒂",
+        "安妮塔"
+      ],
+      "location": "盐风城街道",
+      "significance": "斯卡蒂与安妮塔的约定象征斯卡蒂对未来的希望",
+      "is_imaginary": false
+    },
+    {
+      "event": "歌蕾蒂娅在独白中表达对自身命运的绝望，决心寻找「大船」",
+      "type": "reflection",
+      "line_range": [
+        2807,
+        2814
+      ],
+      "participants": [
+        "歌蕾蒂娅"
+      ],
+      "location": "罗德岛舰船卫生间",
+      "significance": "揭示歌蕾蒂娅内心的脆弱和下一步目标",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "斯卡蒂",
+      "type": "operator",
+      "role_in_chapter": "主角，深海猎人，为追踪歌蕾蒂娅和幽灵鲨而前往盐风城，伪装成流浪歌手进行调查。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "歌蕾蒂娅",
+      "type": "npc",
+      "role_in_chapter": "深海猎人二大队队长，从罗德岛带走幽灵鲨，与主教合作，将斯卡蒂引入盐风城。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老何塞",
+      "type": "npc",
+      "role_in_chapter": "情报贩子，斯卡蒂的旧识，为斯卡蒂提供前往盐风城的地图和伪装。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "安妮塔",
+      "type": "npc",
+      "role_in_chapter": "盐风城居民，能正常交流，为斯卡蒂提供信息和帮助，是斯卡蒂在城中的向导。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "佩特拉奶奶",
+      "type": "npc",
+      "role_in_chapter": "盐风城最年长的居民，精神恍惚，回忆过去，无法提供有效信息。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "审判官",
+      "type": "npc",
+      "role_in_chapter": "伊比利亚审判庭成员，追踪怪物和斯卡蒂，与斯卡蒂发生冲突，后共同面对怪物。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "大审判官",
+      "type": "npc",
+      "role_in_chapter": "审判官的长官，实力强大，击伤斯卡蒂，负责调查盐风城的异状。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "主教",
+      "type": "npc",
+      "role_in_chapter": "盐风城的神秘教士，主导居民的信仰和仪式，与歌蕾蒂娅合作，计划利用斯卡蒂。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "男性居民A (铁皮)",
+      "type": "npc",
+      "role_in_chapter": "盐风城居民，行为古怪，对斯卡蒂有敌意，严格遵守律法。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "男性居民B (墙灰)",
+      "type": "npc",
+      "role_in_chapter": "盐风城居民，铁皮的同伴，胆小、饥饿，对铁皮言听计从。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "罗德岛干员",
+      "type": "npc",
+      "role_in_chapter": "罗德岛后勤人员，负责与斯卡蒂对接任务报告。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾丽妮",
+      "type": "operator",
+      "role_in_chapter": "伊比利亚审判官，从追捕斯卡蒂到理解并道歉，经历信仰危机后做出独立判决，疏散居民",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "海嗣",
+      "type": "npc",
+      "role_in_chapter": "自称「使者」的海嗣，揭示斯卡蒂体内流着海嗣的血，试图唤醒她的记忆，后被歌蕾蒂娅杀死",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "幽灵鲨",
+      "type": "operator",
+      "role_in_chapter": "深海猎人，被主教囚禁实验，在关键时刻清醒，与斯卡蒂和歌蕾蒂娅联手战斗",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛高层，突然出现救援深海猎人，以自己留下为代价换取猎人们离开",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "男性居民A",
+      "type": "npc",
+      "role_in_chapter": "盐风城居民，捡到斯卡蒂的琴后丢弃，展现被洗脑状态",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "男性居民B",
+      "type": "npc",
+      "role_in_chapter": "盐风城居民，归还斯卡蒂的琴，听歌后流泪，展现残存人性",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "幼年居民",
+      "type": "npc",
+      "role_in_chapter": "盐风城幼年居民，安妮塔照顾的对象，帮斯卡蒂传递琴",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "深海猎人",
+      "line_range": [
+        57,
+        91
+      ],
+      "discussion_summary": "斯卡蒂与歌蕾蒂娅相认，确认了彼此深海猎人的身份，并提及了二大队和幽灵鲨的队长关系。",
+      "is_substantive": true
+    },
+    {
+      "concept": "律法",
+      "line_range": [
+        510,
+        521
+      ],
+      "discussion_summary": "安妮塔向斯卡蒂解释盐风城的律法，包括将所有人视为兄弟姐妹、不能抢劫争斗、要令族群更强健等规则，并指出这是教士教给他们的。",
+      "is_substantive": true
+    },
+    {
+      "concept": "潮汐仪式",
+      "line_range": [
+        834,
+        850
+      ],
+      "discussion_summary": "安妮塔向斯卡蒂解释潮汐仪式的规则：潮汐起落一百次后，居民抽签选出拿到红色贝壳的人，该人天黑后去海边，第二天海岸上就会铺满食物。",
+      "is_substantive": true
+    },
+    {
+      "concept": "阿戈尔人",
+      "line_range": [
+        1076,
+        1115
+      ],
+      "discussion_summary": "审判官指责斯卡蒂是阿戈尔人，认为她带来了灾祸，并指责阿戈尔人潜入伊比利亚、腐化城市、动摇人心。斯卡蒂对此表示困惑和不关心。",
+      "is_substantive": true
+    },
+    {
+      "concept": "深海猎人血统",
+      "line_range": [
+        2261,
+        2273
+      ],
+      "discussion_summary": "海嗣揭示斯卡蒂体内流着海嗣的血，深海猎人源自海嗣，是同胞而非敌人",
+      "is_substantive": true
+    },
+    {
+      "concept": "罪与生存",
+      "line_range": [
+        2318,
+        2331
+      ],
+      "discussion_summary": "海嗣认为阿戈尔语言中才有「罪」，为生存所做的一切都是对的，斯卡蒂没有罪",
+      "is_substantive": true
+    },
+    {
+      "concept": "情绪与赘余",
+      "line_range": [
+        2347,
+        2351
+      ],
+      "discussion_summary": "歌蕾蒂娅认为海嗣视情绪为无用赘余，而人类宁可身有赘余也要那样活下去",
+      "is_substantive": true
+    },
+    {
+      "concept": "伊比利亚的独特性",
+      "line_range": [
+        2604,
+        2618
+      ],
+      "discussion_summary": "凯尔希阐述伊比利亚人生活在海边，既了解陆地又知晓海洋，比其他陆地国家更完整",
+      "is_substantive": true
+    },
+    {
+      "concept": "大静谧",
+      "line_range": [
+        2623,
+        2626
+      ],
+      "discussion_summary": "大审判官提及大静谧后伊比利亚已然不再，盐风城这类城市遍布伊比利亚海岸",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1,
+        28
+      ],
+      "description": "斯卡蒂向罗德岛干员提交任务报告，提及凯尔希和阿米娅，斯卡蒂是罗德岛干员。"
+    },
+    {
+      "faction": "深海猎人",
+      "line_range": [
+        57,
+        91
+      ],
+      "description": "斯卡蒂与歌蕾蒂娅相认，确认了彼此深海猎人的身份，并提及了二大队和幽灵鲨。"
+    },
+    {
+      "faction": "伊比利亚审判庭",
+      "line_range": [
+        221,
+        271
+      ],
+      "description": "审判官和大审判官在海边调查怪物，审判官审问赏金猎人，并提及伊比利亚禁止传谣。"
+    },
+    {
+      "faction": "伊比利亚审判庭",
+      "line_range": [
+        874,
+        912
+      ],
+      "description": "审判官闯入盐风城，指责居民进行集体谋杀，并声称要找出罪恶的源头。"
+    },
+    {
+      "faction": "伊比利亚审判庭",
+      "line_range": [
+        1139,
+        1198
+      ],
+      "description": "大审判官与斯卡蒂交手，击伤斯卡蒂，并教导审判官要看清问题所在，紧盯伊比利亚最大的威胁。"
+    },
+    {
+      "faction": "盐风城居民",
+      "line_range": [
+        272,
+        348
+      ],
+      "description": "居民行为古怪、言语迟钝，遵循律法，对斯卡蒂有敌意。"
+    },
+    {
+      "faction": "盐风城居民",
+      "line_range": [
+        724,
+        816
+      ],
+      "description": "铁皮和墙灰讨论海边、教士和规则，表现出对教士的绝对服从和对未知的恐惧。"
+    },
+    {
+      "faction": "盐风城居民",
+      "line_range": [
+        834,
+        873
+      ],
+      "description": "居民进行潮汐仪式，抽签选出前往海边的人，并认为这是大海的选择和更好的生活。"
+    },
+    {
+      "faction": "伊比利亚审判庭",
+      "line_range": [
+        1437,
+        1457
+      ],
+      "description": "审判官艾丽妮阐述审判庭的职责是维护律法和国家秩序，佩特拉奶奶控诉审判庭对底层居民的漠视"
+    },
+    {
+      "faction": "深海教会",
+      "line_range": [
+        1880,
+        1932
+      ],
+      "description": "主教宣扬大海的救济，认为自己在帮助居民走向新生，歌蕾蒂娅揭露其伪善"
+    },
+    {
+      "faction": "深海猎人",
+      "line_range": [
+        2564,
+        2580
+      ],
+      "description": "斯卡蒂、歌蕾蒂娅和幽灵鲨确认深海猎人身份，歌蕾蒂娅表示深海猎人都这样"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2663,
+        2666
+      ],
+      "description": "凯尔希命令猎人们回罗德岛，在伊比利亚东北边境由Misery接应"
+    }
+  ],
+  "locations": [
+    {
+      "location": "罗德岛本舰",
+      "line_range": [
+        1,
+        48
+      ],
+      "description": "斯卡蒂在此提交任务报告，并感知到异常，遭遇歌蕾蒂娅。"
+    },
+    {
+      "location": "盐风城",
+      "line_range": [
+        272,
+        348
+      ],
+      "description": "斯卡蒂抵达的伊比利亚荒废城市，居民行为古怪，气氛诡异。"
+    },
+    {
+      "location": "盐风城",
+      "line_range": [
+        349,
+        590
+      ],
+      "description": "安妮塔向斯卡蒂介绍盐风城的布局、居民生活、佩特拉奶奶和教堂的位置。"
+    },
+    {
+      "location": "盐风城教堂",
+      "line_range": [
+        591,
+        625
+      ],
+      "description": "主教与歌蕾蒂娅在此对话，讨论斯卡蒂的到来和他们的计划。"
+    },
+    {
+      "location": "盐风城海边",
+      "line_range": [
+        724,
+        816
+      ],
+      "description": "斯卡蒂在此探查，遭遇海怪袭击，铁皮和墙灰在此讨论规则和恐惧。"
+    },
+    {
+      "location": "盐风城海边房屋",
+      "line_range": [
+        1199,
+        1304
+      ],
+      "description": "斯卡蒂、安妮塔和审判官在此躲避，并遭遇大量海生怪物袭击。"
+    },
+    {
+      "location": "盐风城",
+      "line_range": [
+        1392,
+        1400
+      ],
+      "description": "审判官艾丽妮认为盐风城居民已非人类，城市最大的问题是他们竟然还活着"
+    },
+    {
+      "location": "盐风城教堂地下海底密室",
+      "line_range": [
+        2197,
+        2199
+      ],
+      "description": "主教将斯卡蒂引入海底密室，囚禁幽灵鲨并进行源石感染实验"
+    },
+    {
+      "location": "伊比利亚",
+      "line_range": [
+        2623,
+        2626
+      ],
+      "description": "大审判官称大静谧后伊比利亚已然不再，盐风城这类城市遍布伊比利亚海岸"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:13:49.711046+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 56685,
+    "tokens_out": 9189,
+    "elapsed_s": 70.94593715667725
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "老何塞",
+    "安妮塔",
+    "佩特拉奶奶",
+    "审判官",
+    "大审判官",
+    "主教",
+    "男性居民A (铁皮)",
+    "男性居民B (墙灰)",
+    "罗德岛干员",
+    "海嗣",
+    "男性居民A",
+    "男性居民B",
+    "幼年居民"
+  ]
+}

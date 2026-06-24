@@ -1,0 +1,915 @@
+{
+  "chapter": "乌萨斯的孩子们",
+  "category": "special",
+  "batch_count": 2,
+  "summary": "Scene 1 以古米的视角展开，描绘了她一天的生活：从早上起床发现真理和凛冬不在，到在食堂帮厨、与刻俄柏互动、接受坚雷教官的训练，最后与真理、凛冬、烈夏一起庆祝来到罗德岛一周年。古米在训练中暴露出无法连续快速挥动手臂的问题，坚雷试图帮助她矫正但发现原因复杂。夜晚，三人挤在一起睡觉，古米感受到温暖。\n\nScene 2 是真理的自我录像。她向录像机倾诉自己使用「真实情境暴露式创伤记录自我诊疗」设备的初衷，并回忆了在切尔诺伯格被整合运动封锁校园的经历。随后，梅和娜塔莉娅来访，三人一起喝下午茶、讨论侦探小说。真理对梅的鲁莽行为反应过度，暴露出她对过去创伤的敏感。娜塔莉娅暗示自己正在考虑成为干员，并收到赫默的传讯后离开。真理独自对着一个娃娃（薇卡）说话，承认自己还不够坚强去面对过去。\n\nScene 3 是凛冬的噩梦。梦境中，她以「索尼娅」的身份回顾了与真理（安娜）的初次相遇、组建「乌萨斯学生自治团」的过程，以及她因鲁莽打翻烛台引发第二场大火，导致校园秩序彻底崩溃的关键事件。梦中的另一个自己不断质问她，让她陷入深深的自责和痛苦。最终，凛冬从噩梦中惊醒，呕吐不止。\n\nScene 4 聚焦于娜塔莉娅（早露）。她在食堂与干员们交谈，展现出她作为贵族大小姐的社交能力和对难民工作的热心。随后，凛冬因噩梦困扰来找她，两人进行了一场深刻的对话。娜塔莉娅坦白了自己作为贵族学生领袖时，为了团结贵族而同意掠夺平民的罪行，以及她因此产生的强烈负罪感和自杀倾向。凛冬则用自己粗粝但真诚的方式安慰了她，并承认她活下来不是坏事。娜塔莉娅最终决定以「早露」为代号成为干员。\n\nScene 1 以烈夏和猎蜂的互动为主线。两人在训练室对练后，回到宿舍喝蜂蜜饮料，烈夏因醉蜜而开始讲述她在彼得海姆中学的往事。她的回忆以罗莎琳的视角展开，描述了她在校园封锁期间拒绝多个小团体的招揽、最终选择加入索尼娅（凛冬）的团队，以及她冒险与整合运动成员接触的经历。回忆结束后，烈夏和猎蜂醉倒，第二天醒来后烈夏发现自己抱着猎蜂的玩偶，并决定再找猎蜂喝酒。\n\nScene 2 以阿米娅与博士的对话开始，阿米娅对娜塔莉娅（早露）申请从前线调岗一事感到担忧，并请求博士去观察她。博士在罗德岛舰内遇到了凛冬、临光、古米、调香师、真理等人，从他们的对话中了解到乌萨斯学生自治团成员们的现状和心态。杜宾教官在训练场评价娜塔莉娅的训练态度，认为她虽然拼命但可能是在逃避思考。最后阿米娅向博士解释了她能感受到干员们情感的能力，并决定尊重娜塔莉娅的选择，同意她的申请。\n\nScene 3 以苦艾（卓娅）的回忆展开。她回忆起在切尔诺伯格被整合运动封锁校园时，偷听到整合运动士兵讨论梅菲斯特和爱国者的对话，并决定逃出学校。她成功逃离后，在混乱的城市中遇到了警察瓦列里，得知母亲已死于整合运动的袭击，而父亲则主动请缨前往彼得海姆中学调查。苦艾坚持要去接应父亲，瓦列里最终给了她通讯装置。当她到达彼得海姆中学时，发现校园内一片狼藉，到处都是学生的尸体，并最终发现了父亲的遗体。回忆结束后，苦艾在罗德岛后勤处办理手续，看到了穿着乌萨斯学生自治团制服的凛冬等人。",
+  "events": [
+    {
+      "event": "古米在食堂帮厨，与刻俄柏和坚雷互动，并接受坚雷的训练，暴露出无法连续挥臂的问题。",
+      "type": "character_development",
+      "line_range": [
+        1,
+        241
+      ],
+      "participants": [
+        "古米",
+        "坚雷",
+        "刻俄柏",
+        "远山",
+        "讯使",
+        "斑点"
+      ],
+      "location": "罗德岛食堂及训练场",
+      "significance": "揭示古米因创伤后遗症导致的战斗习惯问题，为后续角色成长埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "古米、真理、凛冬、烈夏一起庆祝来到罗德岛一周年，刻俄柏送来饼干。",
+      "type": "celebration",
+      "line_range": [
+        242,
+        338
+      ],
+      "participants": [
+        "古米",
+        "真理",
+        "凛冬",
+        "烈夏",
+        "刻俄柏"
+      ],
+      "location": "罗德岛宿舍",
+      "significance": "展现乌萨斯学生自治团成员之间温暖的关系，与后续的沉重回忆形成对比。",
+      "is_imaginary": false
+    },
+    {
+      "event": "真理进行自我录像，回忆切尔诺伯格被整合运动封锁校园的经历，并承认自己尚未准备好面对创伤。",
+      "type": "revelation",
+      "line_range": [
+        379,
+        443
+      ],
+      "participants": [
+        "真理"
+      ],
+      "location": "真理的宿舍",
+      "significance": "揭示真理使用自我诊疗设备的原因，并首次详细描述切尔诺伯格事件的背景。",
+      "is_imaginary": false
+    },
+    {
+      "event": "梅和娜塔莉娅来访，三人一起喝下午茶、讨论侦探小说，真理因梅的鲁莽行为触发创伤反应。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        444,
+        763
+      ],
+      "participants": [
+        "真理",
+        "梅",
+        "娜塔莉娅"
+      ],
+      "location": "真理的宿舍",
+      "significance": "通过日常互动展现真理的创伤后应激反应，并暗示娜塔莉娅即将成为干员。",
+      "is_imaginary": false
+    },
+    {
+      "event": "真理独自对着娃娃（薇卡）说话，承认自己还不够坚强去面对过去。",
+      "type": "reflection",
+      "line_range": [
+        764,
+        778
+      ],
+      "participants": [
+        "真理"
+      ],
+      "location": "真理的宿舍",
+      "significance": "揭示真理对已故好友薇卡的执念，以及她自我疗愈的艰难过程。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凛冬在噩梦中回顾了与真理的初次相遇、组建自治团以及她引发第二场大火的关键事件。",
+      "type": "flashback",
+      "line_range": [
+        779,
+        993
+      ],
+      "participants": [
+        "凛冬",
+        "真理",
+        "古米",
+        "早露",
+        "烈夏"
+      ],
+      "location": "凛冬的梦境（切尔诺伯格校园）",
+      "significance": "揭示凛冬的核心创伤：她因鲁莽引发大火，导致校园秩序崩溃，并对此深感自责。",
+      "is_imaginary": true
+    },
+    {
+      "event": "凛冬从噩梦中惊醒，呕吐不止。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        994,
+        999
+      ],
+      "participants": [
+        "凛冬"
+      ],
+      "location": "凛冬的宿舍",
+      "significance": "展现凛冬因创伤后遗症（噩梦）而承受的巨大痛苦。",
+      "is_imaginary": false
+    },
+    {
+      "event": "娜塔莉娅在食堂与干员们交谈，展现她对难民工作的贡献和社交能力。",
+      "type": "character_development",
+      "line_range": [
+        1000,
+        1071
+      ],
+      "participants": [
+        "娜塔莉娅",
+        "干员塞伦",
+        "圆规"
+      ],
+      "location": "罗德岛食堂",
+      "significance": "展现娜塔莉娅在罗德岛的正面形象和工作能力，与后续她的自我忏悔形成对比。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凛冬因噩梦困扰来找娜塔莉娅，两人进行了一场深刻的对话，娜塔莉娅坦白了自己的罪行和负罪感。",
+      "type": "confrontation",
+      "line_range": [
+        1072,
+        1389
+      ],
+      "participants": [
+        "凛冬",
+        "娜塔莉娅"
+      ],
+      "location": "娜塔莉娅的宿舍",
+      "significance": "核心剧情：娜塔莉娅坦白自己作为贵族领袖时同意掠夺平民的罪行，凛冬用粗粝的方式安慰她，两人达成某种和解。娜塔莉娅决定以「早露」为代号成为干员。",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏与猎蜂在训练室对练，烈夏学习格斗技巧",
+      "type": "training",
+      "line_range": [
+        1390,
+        1456
+      ],
+      "participants": [
+        "烈夏",
+        "猎蜂"
+      ],
+      "location": "罗德岛训练室",
+      "significance": "展现烈夏的战斗训练和与猎蜂的友谊",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏和猎蜂在宿舍喝蜂蜜饮料，烈夏因醉蜜开始讲述彼得海姆中学的往事",
+      "type": "revelation",
+      "line_range": [
+        1457,
+        1566
+      ],
+      "participants": [
+        "烈夏",
+        "猎蜂",
+        "凛冬"
+      ],
+      "location": "罗德岛宿舍",
+      "significance": "烈夏在醉意中开始回忆过去，揭示彼得海姆中学的生存状况",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏的回忆：罗莎琳拒绝多个学生团体的招揽，最终决定加入索尼娅的团队",
+      "type": "flashback",
+      "line_range": [
+        1595,
+        1692
+      ],
+      "participants": [
+        "罗莎琳",
+        "学生A",
+        "学生B",
+        "贵族学生",
+        "索尼娅"
+      ],
+      "location": "彼得海姆中学",
+      "significance": "展现彼得海姆中学内学生团体的混乱和罗莎琳的生存策略",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏的回忆：罗莎琳加入索尼娅的团队后，冒险与整合运动成员接触",
+      "type": "flashback",
+      "line_range": [
+        1735,
+        1804
+      ],
+      "participants": [
+        "罗莎琳",
+        "安德烈",
+        "安娜",
+        "拉达",
+        "整合运动成员"
+      ],
+      "location": "彼得海姆中学",
+      "significance": "揭示罗莎琳为寻找出路而冒险与整合运动接触，以及整合运动对学生的态度",
+      "is_imaginary": false
+    },
+    {
+      "event": "烈夏和猎蜂醉倒，第二天醒来后烈夏发现自己抱着猎蜂的玩偶",
+      "type": "character_development",
+      "line_range": [
+        1805,
+        1862
+      ],
+      "participants": [
+        "烈夏",
+        "猎蜂"
+      ],
+      "location": "罗德岛宿舍",
+      "significance": "展现烈夏和猎蜂的亲密友谊，以及烈夏对过去回忆的模糊态度",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅与博士讨论娜塔莉娅的调岗申请，并请求博士去观察她",
+      "type": "planning",
+      "line_range": [
+        1863,
+        1888
+      ],
+      "participants": [
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛",
+      "significance": "阿米娅对娜塔莉娅成为前线干员感到担忧，并寻求博士的帮助",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士在罗德岛舰内遇到凛冬、临光、古米、调香师、真理等人，了解他们的现状",
+      "type": "investigation",
+      "line_range": [
+        1889,
+        1975
+      ],
+      "participants": [
+        "凛冬",
+        "临光",
+        "古米",
+        "调香师",
+        "真理",
+        "博士"
+      ],
+      "location": "罗德岛舰内",
+      "significance": "展现乌萨斯学生自治团成员们在罗德岛的日常生活和心态",
+      "is_imaginary": false
+    },
+    {
+      "event": "杜宾教官评价娜塔莉娅的训练态度，认为她虽然拼命但可能是在逃避思考",
+      "type": "character_development",
+      "line_range": [
+        1976,
+        2038
+      ],
+      "participants": [
+        "娜塔莉娅",
+        "烈夏",
+        "杜宾",
+        "格瑞斯教官",
+        "博士"
+      ],
+      "location": "罗德岛训练场",
+      "significance": "揭示娜塔莉娅成为干员的决心和杜宾教官对她的看法",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅向博士解释她能感受到干员们情感的能力，并决定尊重娜塔莉娅的选择",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2039,
+        2093
+      ],
+      "participants": [
+        "阿米娅",
+        "博士"
+      ],
+      "location": "罗德岛",
+      "significance": "阿米娅分享她对乌萨斯学生自治团成员们情感的感受，并决定尊重她们的选择",
+      "is_imaginary": false
+    },
+    {
+      "event": "苦艾的回忆：她在切尔诺伯格被整合运动封锁校园时，偷听到整合运动士兵的对话",
+      "type": "flashback",
+      "line_range": [
+        2094,
+        2193
+      ],
+      "participants": [
+        "卓娅",
+        "整合运动士兵队长",
+        "整合运动士兵",
+        "整合运动术师"
+      ],
+      "location": "切尔诺伯格某学校",
+      "significance": "揭示整合运动内部的分歧和梅菲斯特的恶名",
+      "is_imaginary": false
+    },
+    {
+      "event": "苦艾的回忆：她成功逃离学校，在混乱的城市中遇到警察瓦列里，得知母亲已死",
+      "type": "flashback",
+      "line_range": [
+        2194,
+        2363
+      ],
+      "participants": [
+        "卓娅",
+        "瓦列里",
+        "乌萨斯平民",
+        "乌萨斯警察"
+      ],
+      "location": "切尔诺伯格城区",
+      "significance": "展现切尔诺伯格被整合运动袭击后的混乱景象，以及苦艾失去母亲的悲痛",
+      "is_imaginary": false
+    },
+    {
+      "event": "苦艾的回忆：她坚持要去彼得海姆中学接应父亲，瓦列里给了她通讯装置",
+      "type": "flashback",
+      "line_range": [
+        2364,
+        2404
+      ],
+      "participants": [
+        "卓娅",
+        "瓦列里"
+      ],
+      "location": "切尔诺伯格城区",
+      "significance": "展现苦艾的勇气和决心，以及瓦列里对她的关心",
+      "is_imaginary": false
+    },
+    {
+      "event": "苦艾的回忆：她到达彼得海姆中学，发现校园内一片狼藉，并发现了父亲的遗体",
+      "type": "flashback",
+      "line_range": [
+        2405,
+        2427
+      ],
+      "participants": [
+        "卓娅"
+      ],
+      "location": "彼得海姆中学",
+      "significance": "揭示彼得海姆中学的惨状和苦艾失去父亲的悲剧",
+      "is_imaginary": false
+    },
+    {
+      "event": "苦艾在罗德岛后勤处办理手续，看到穿着乌萨斯学生自治团制服的凛冬等人",
+      "type": "revelation",
+      "line_range": [
+        2428,
+        2444
+      ],
+      "participants": [
+        "苦艾",
+        "古米",
+        "早露",
+        "烈夏",
+        "真理",
+        "凛冬"
+      ],
+      "location": "罗德岛后勤处",
+      "significance": "苦艾与乌萨斯学生自治团成员的初次相遇，暗示她们之间可能存在的联系",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "古米",
+      "type": "operator",
+      "role_in_chapter": "主角之一，展现其日常工作和因创伤导致的战斗习惯问题，以及与其他成员的温暖关系。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "真理",
+      "type": "operator",
+      "role_in_chapter": "主角之一，进行自我录像，回忆创伤经历，与梅和娜塔莉娅互动，展现其内心的脆弱和挣扎。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凛冬",
+      "type": "operator",
+      "role_in_chapter": "主角之一，经历噩梦，与娜塔莉娅进行深刻对话，展现其自责和粗粝但真诚的一面。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "娜塔莉娅",
+      "type": "operator",
+      "role_in_chapter": "主角之一，展现其社交能力和对难民工作的贡献，并向凛冬坦白自己的罪行和负罪感，最终决定以「早露」为代号成为干员。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "坚雷",
+      "type": "operator",
+      "role_in_chapter": "古米的教官，发现并试图帮助古米矫正战斗习惯问题。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "刻俄柏",
+      "type": "operator",
+      "role_in_chapter": "与古米互动，并送来饼干。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "远山",
+      "type": "operator",
+      "role_in_chapter": "在食堂工作，与古米互动。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "讯使",
+      "type": "operator",
+      "role_in_chapter": "在食堂工作，与古米互动。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "斑点",
+      "type": "operator",
+      "role_in_chapter": "在食堂与远山对话。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "烈夏",
+      "type": "operator",
+      "role_in_chapter": "参加周年庆祝活动，与古米等人互动。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "梅",
+      "type": "operator",
+      "role_in_chapter": "来访真理，一起喝下午茶，讨论侦探小说，其鲁莽行为触发了真理的创伤反应。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "干员塞伦",
+      "type": "operator",
+      "role_in_chapter": "在食堂与娜塔莉娅交谈，称赞她的工作。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "圆规",
+      "type": "operator",
+      "role_in_chapter": "在食堂与娜塔莉娅交谈，表达对难民工作的热情。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "薇卡",
+      "type": "npc",
+      "role_in_chapter": "真理已故的好友，以娃娃的形式出现在真理的回忆和自言自语中。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "索尼娅（梦中的另一个自己）",
+      "type": "npc",
+      "role_in_chapter": "凛冬梦中的另一个自己，不断质问她，代表她的自责和负罪感。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "安娜（梦中的真理）",
+      "type": "npc",
+      "role_in_chapter": "凛冬梦中的真理，代表她与凛冬之间未解决的矛盾。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "嘉维尔",
+      "type": "operator",
+      "role_in_chapter": "娜塔莉娅回忆中的贵族学生，提议掠夺平民。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "尼古拉",
+      "type": "npc",
+      "role_in_chapter": "娜塔莉娅回忆中的贵族学生，与帕维尔发生冲突。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "塔吉扬娜",
+      "type": "npc",
+      "role_in_chapter": "娜塔莉娅回忆中的贵族学生，听从娜塔莉娅的命令。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "安东",
+      "type": "npc",
+      "role_in_chapter": "娜塔莉娅回忆中的贵族学生，质疑娜塔莉娅的权威。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "安德烈",
+      "type": "npc",
+      "role_in_chapter": "娜塔莉娅回忆中的贵族学生，认出娜塔莉娅的身份。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "维克多",
+      "type": "npc",
+      "role_in_chapter": "娜塔莉娅回忆中被帕维尔刺伤的贵族学生。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "猎蜂",
+      "type": "operator",
+      "role_in_chapter": "与烈夏训练和喝酒，听烈夏讲述往事",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "慕斯",
+      "type": "operator",
+      "role_in_chapter": "提醒烈夏和猎蜂不要吵到其他人",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "罗莎琳",
+      "type": "npc",
+      "role_in_chapter": "烈夏回忆中的自己，在彼得海姆中学的生存经历",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "学生A",
+      "type": "npc",
+      "role_in_chapter": "彼得海姆共荣会的成员，试图招揽罗莎琳",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "学生B",
+      "type": "npc",
+      "role_in_chapter": "彼得海姆共荣会的成员，试图招揽罗莎琳",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "贵族学生",
+      "type": "npc",
+      "role_in_chapter": "带领手下攻击罗莎琳",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "安洁莉娜",
+      "type": "operator",
+      "role_in_chapter": "罗莎琳的同伴，关心她的伤势",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "拉达",
+      "type": "npc",
+      "role_in_chapter": "罗莎琳的同伴，为她处理伤口",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "整合运动成员",
+      "type": "npc",
+      "role_in_chapter": "在彼得海姆中学巡逻，与罗莎琳对话",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "与博士讨论娜塔莉娅的调岗申请，并分享她对干员们情感的感受",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "接受阿米娅的请求，观察娜塔莉娅和乌萨斯学生自治团成员",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "临光",
+      "type": "operator",
+      "role_in_chapter": "作为凛冬的队长，评价凛冬的性格和状态",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "调香师",
+      "type": "operator",
+      "role_in_chapter": "与古米互动，暗示古米有需要时间治愈的创伤",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "角峰",
+      "type": "operator",
+      "role_in_chapter": "在食堂工作，请求古米帮忙",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "杜宾",
+      "type": "operator",
+      "role_in_chapter": "作为教官，评价娜塔莉娅的训练态度和乌萨斯学生自治团成员",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "格瑞斯教官",
+      "type": "operator",
+      "role_in_chapter": "作为教官，关心娜塔莉娅的训练状态",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "卓娅",
+      "type": "npc",
+      "role_in_chapter": "苦艾的回忆中的自己，在切尔诺伯格被整合运动封锁校园，后逃出并前往彼得海姆中学",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "整合运动士兵队长",
+      "type": "npc",
+      "role_in_chapter": "整合运动士兵，讨论梅菲斯特和爱国者的命令",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "整合运动士兵",
+      "type": "npc",
+      "role_in_chapter": "整合运动士兵，表达对梅菲斯特的不满和对未来的迷茫",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "整合运动术师",
+      "type": "npc",
+      "role_in_chapter": "整合运动术师，故意放走卓娅，表达对切尔诺伯格居民的仇恨",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "瓦列里",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯警察，告诉卓娅她母亲已死，并给她通讯装置",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "苦艾",
+      "type": "operator",
+      "role_in_chapter": "在罗德岛后勤处办理手续，看到乌萨斯学生自治团成员",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "创伤后遗症",
+      "line_range": [
+        163,
+        233
+      ],
+      "discussion_summary": "坚雷发现古米无法连续快速挥动手臂，并试图通过训练帮助她矫正，但发现这可能是由创伤导致的习惯性反应，而非简单的技术问题。",
+      "is_substantive": true
+    },
+    {
+      "concept": "真实情境暴露式创伤记录自我诊疗",
+      "line_range": [
+        387,
+        398
+      ],
+      "discussion_summary": "真理解释她使用这台设备的目的：通过自我倾诉来缓和与克制自己的创伤症状，并强调这些录像不会给别人看。",
+      "is_substantive": true
+    },
+    {
+      "concept": "侦探的职责与法律的界限",
+      "line_range": [
+        652,
+        684
+      ],
+      "discussion_summary": "真理和梅讨论侦探在找出真相后应如何行动：梅认为侦探只能找出真相，裁决应交给警察和法律；真理则质疑当法律无法制裁罪人时，侦探是否应自己采取行动。",
+      "is_substantive": true
+    },
+    {
+      "concept": "人的天性是邪恶的",
+      "line_range": [
+        889,
+        894
+      ],
+      "discussion_summary": "梦中的安娜（真理）向凛冬阐述她曾读过的观点：人的天性是邪恶的。她原本不信，但在经历校园混乱后，开始怀疑这一观点，并认为自己未能建立起秩序。",
+      "is_substantive": true
+    },
+    {
+      "concept": "贵族的本质与虚伪",
+      "line_range": [
+        1176,
+        1203
+      ],
+      "discussion_summary": "娜塔莉娅向凛冬承认，揭开光鲜的外表，贵族和平民没有区别，而有了这层外表，贵族反而变得丑陋。她同意凛冬对贵族的负面看法。",
+      "is_substantive": true
+    },
+    {
+      "concept": "赎罪与自我欺骗",
+      "line_range": [
+        1290,
+        1301
+      ],
+      "discussion_summary": "娜塔莉娅向凛冬坦白，她对自己说留在罗德岛为乌萨斯人做事是在赎罪，但她怀疑这只是在自我欺骗。她回忆起自己同意贵族掠夺平民时的懦弱和习惯，认为自己是最肮脏的人。",
+      "is_substantive": true
+    },
+    {
+      "concept": "醉蜜",
+      "line_range": [
+        1522,
+        1526
+      ],
+      "discussion_summary": "猎蜂发现烈夏也和她一样会醉蜜，两人对此感到有趣",
+      "is_substantive": true
+    },
+    {
+      "concept": "精神创伤与治疗",
+      "line_range": [
+        2043,
+        2086
+      ],
+      "discussion_summary": "阿米娅向博士解释她能感受到干员们的情感，并讨论如何治疗精神创伤，认为时间不能治愈一切，但尊重她们的选择是必要的",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "乌萨斯学生自治团",
+      "line_range": [
+        242,
+        338
+      ],
+      "description": "古米、真理、凛冬、烈夏一起庆祝来到罗德岛一周年，展现了该团体成员之间的亲密关系。"
+    },
+    {
+      "faction": "乌萨斯学生自治团",
+      "line_range": [
+        415,
+        422
+      ],
+      "description": "真理在录像中介绍该团体：由她提议、凛冬组建，目前成员只有五人，她们都作为罗德岛干员工作。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        428,
+        435
+      ],
+      "description": "真理回忆整合运动占领切尔诺伯格，并将学生押送到凛冬的学校，由一名白头发的少年头目主导。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        948,
+        950
+      ],
+      "description": "凛冬在梦中回忆整合运动忽然离开，但学生们已经陷入混乱，仿佛没有注意到他们的离开。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        966,
+        975
+      ],
+      "description": "凛冬在梦中回忆被罗德岛的小队救助，近卫干员确认他们是难民并告知他们安全了。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1000,
+        1071
+      ],
+      "description": "干员塞伦和圆规在食堂讨论罗德岛对难民的救援工作，并称赞娜塔莉娅在其中的贡献。"
+    },
+    {
+      "faction": "贵族学生团体",
+      "line_range": [
+        1214,
+        1273
+      ],
+      "description": "娜塔莉娅回忆她作为学生会长，为了团结贵族学生而同意他们掠夺平民的提议，并为此深感罪恶。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1790,
+        1803
+      ],
+      "description": "罗莎琳与整合运动成员接触，试图与他们的头头对话"
+    },
+    {
+      "faction": "彼得海姆共荣会",
+      "line_range": [
+        1605,
+        1632
+      ],
+      "description": "学生A和学生B代表彼得海姆共荣会招揽罗莎琳"
+    },
+    {
+      "faction": "乌萨斯学生自治团",
+      "line_range": [
+        1863,
+        1888
+      ],
+      "description": "阿米娅提到凛冬的乌萨斯学生自治团成员，并讨论娜塔莉娅的调岗申请"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        2135,
+        2258
+      ],
+      "description": "整合运动士兵讨论梅菲斯特、爱国者以及他们对切尔诺伯格的控制"
+    },
+    {
+      "faction": "乌萨斯军警",
+      "line_range": [
+        2285,
+        2368
+      ],
+      "description": "瓦列里和其他警察在切尔诺伯格维持秩序，与整合运动对抗"
+    }
+  ],
+  "locations": [
+    {
+      "location": "罗德岛",
+      "line_range": [
+        1,
+        378
+      ],
+      "description": "本章主要场景，包括食堂、训练场、宿舍等，是古米、真理、凛冬等人当前的生活和工作地点。"
+    },
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        428,
+        441
+      ],
+      "description": "真理回忆中被整合运动占领的城市，她和同学们被押送到凛冬的学校。"
+    },
+    {
+      "location": "切尔诺伯格校园（凛冬的学校）",
+      "line_range": [
+        779,
+        966
+      ],
+      "description": "凛冬噩梦中的主要场景，包括教室、仓库等，是学生自治团组建、火灾和混乱发生的地点。"
+    },
+    {
+      "location": "切尔诺伯格城区",
+      "line_range": [
+        965,
+        966
+      ],
+      "description": "凛冬回忆中，天灾降临后，她们在源石未蔓延的城区四处逃窜，躲避难民和整合运动。"
+    },
+    {
+      "location": "彼得海姆中学",
+      "line_range": [
+        1595,
+        1804
+      ],
+      "description": "烈夏回忆中彼得海姆中学的混乱状况，学生团体争斗，整合运动控制校园"
+    },
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        2259,
+        2368
+      ],
+      "description": "苦艾回忆中切尔诺伯格被整合运动袭击后的混乱景象，街道上充满恐慌和破坏"
+    },
+    {
+      "location": "彼得海姆中学",
+      "line_range": [
+        2405,
+        2427
+      ],
+      "description": "苦艾到达彼得海姆中学，发现校园内一片狼藉，到处都是学生的尸体"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:31:24.434898+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 48323,
+    "tokens_out": 8483,
+    "elapsed_s": 70.33800530433655
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "娜塔莉娅",
+    "干员塞伦",
+    "圆规",
+    "薇卡",
+    "索尼娅（梦中的另一个自己）",
+    "安娜（梦中的真理）",
+    "尼古拉",
+    "塔吉扬娜",
+    "安东",
+    "安德烈",
+    "维克多",
+    "罗莎琳",
+    "学生A",
+    "学生B",
+    "贵族学生",
+    "拉达",
+    "整合运动成员",
+    "博士",
+    "格瑞斯教官",
+    "卓娅",
+    "整合运动士兵队长",
+    "整合运动士兵",
+    "整合运动术师",
+    "瓦列里"
+  ]
+}

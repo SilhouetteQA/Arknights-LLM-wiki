@@ -1,0 +1,169 @@
+{
+  "summary": "Scene 1 中，说唱挑战赛结束，大帝获胜。他嘲讽了挑战者的水平，并指出其中混入了奇怪的东西。主持人宣布大帝获胜并准备颁发纪念雕像，但大帝将雕像转赠给现场表现不错的年轻歌迷，并强调自己在这个舞台上拥有绝对权威。\n\nScene 2 中，大帝发表了一段关于音乐需要热情、感性和意外，而非枯燥逻辑与常识的独白。随后，节目组安排的挑战者登场，包括一位有潜力的新人「沙炫风」和一位老牌音乐人。大帝对挑战者表示不屑，但接受了挑战。他突发奇想，邀请现场歌迷上台即兴伴奏，准备进行一场个人秀，以展示实力差距。\n\n本章主要展现了大帝作为说唱之王的狂妄、自信与舞台统治力，以及他对音乐本质的独特理解。同时，也引入了即将发生的即兴说唱对决，为后续剧情埋下伏笔。",
+  "events": [
+    {
+      "event": "大帝在说唱挑战赛中获胜，并嘲讽挑战者水平低下。",
+      "type": "ceremony",
+      "line_range": [
+        1,
+        7
+      ],
+      "participants": [
+        "大帝",
+        "主持人",
+        "老牌音乐人",
+        "「沙炫风」"
+      ],
+      "location": "说唱比赛舞台",
+      "significance": "确立大帝的胜利和权威，引出后续对挑战者的评价。",
+      "is_imaginary": false
+    },
+    {
+      "event": "大帝将获胜纪念雕像转赠给现场表现不错的年轻歌迷。",
+      "type": "ceremony",
+      "line_range": [
+        13,
+        24
+      ],
+      "participants": [
+        "大帝",
+        "主持人",
+        "老牌音乐人",
+        "「沙炫风」",
+        "激动的歌迷"
+      ],
+      "location": "说唱比赛舞台",
+      "significance": "展现大帝对后辈的认可和其独特的行事风格，强化其舞台权威。",
+      "is_imaginary": false
+    },
+    {
+      "event": "大帝发表关于音乐本质的独白，强调热情、感性和意外的重要性。",
+      "type": "revelation",
+      "line_range": [
+        25,
+        35
+      ],
+      "participants": [
+        "大帝"
+      ],
+      "location": "说唱比赛舞台",
+      "significance": "揭示大帝的音乐哲学，为后续的即兴挑战做铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "节目组安排的挑战者「沙炫风」和老牌音乐人登场，向大帝发起挑战。",
+      "type": "confrontation",
+      "line_range": [
+        43,
+        68
+      ],
+      "participants": [
+        "大帝",
+        "主持人",
+        "「沙炫风」",
+        "老牌音乐人"
+      ],
+      "location": "说唱比赛舞台",
+      "significance": "引入主要冲突，即大帝与挑战者之间的对决。",
+      "is_imaginary": false
+    },
+    {
+      "event": "大帝接受挑战，并突发奇想邀请现场歌迷上台即兴伴奏，准备进行个人秀。",
+      "type": "planning",
+      "line_range": [
+        73,
+        95
+      ],
+      "participants": [
+        "大帝",
+        "「沙炫风」",
+        "老牌音乐人",
+        "激动的歌迷",
+        "热情的歌迷",
+        "歌迷？"
+      ],
+      "location": "说唱比赛舞台",
+      "significance": "将挑战推向高潮，展现大帝的自信和即兴创作能力，为下一阶段剧情制造悬念。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "大帝",
+      "type": "npc",
+      "role_in_chapter": "说唱挑战赛的获胜者，舞台上的绝对权威。他嘲讽挑战者，发表音乐哲学，并接受挑战，准备进行即兴表演。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "主持人",
+      "type": "npc",
+      "role_in_chapter": "主持说唱挑战赛，介绍挑战者，并安排节目流程。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老牌音乐人",
+      "type": "npc",
+      "role_in_chapter": "被邀请的挑战者之一，一位经验丰富的乐坛常青树，对大帝的权威表示不满。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "「沙炫风」",
+      "type": "npc",
+      "role_in_chapter": "被邀请的挑战者之一，一位备受瞩目的新人歌手，艺名「沙炫风」，对大帝的过时风格提出批评。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "激动的歌迷",
+      "type": "npc",
+      "role_in_chapter": "大帝的狂热粉丝，被大帝选中上台参与即兴伴奏。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "热情的歌迷",
+      "type": "npc",
+      "role_in_chapter": "大帝的粉丝，对大帝的舞台表现充满热情。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "歌迷？",
+      "type": "npc",
+      "role_in_chapter": "一位对大帝的舞台风格感到好奇和惊讶的观众。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "音乐的本质",
+      "line_range": [
+        25,
+        33
+      ],
+      "discussion_summary": "大帝认为音乐需要热情、感性、直觉和意外，而非枯燥的逻辑、条理和常识。他批判按部就班的表演，强调火花、灵感和爆炸性的意外才是音乐的魅力所在。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [],
+  "locations": [],
+  "chapter": "泰拉_说唱之夜！",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:45:18.368598+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 3256,
+    "tokens_out": 1380,
+    "elapsed_s": 14.224552869796753
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "大帝",
+    "主持人",
+    "老牌音乐人",
+    "「沙炫风」",
+    "激动的歌迷",
+    "热情的歌迷",
+    "歌迷？"
+  ]
+}

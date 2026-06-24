@@ -1,0 +1,374 @@
+{
+  "summary": "本章以罗德岛干员在集成战略活动中的一系列荒诞行动为主线，展现了多个平行时空或幻想中的博士、阿米娅、能天使、德克萨斯、维什戴尔、银灰等角色的互动。Scene 1至Scene 6中，博士（？）策划并执行了破坏罗德岛收藏品（如原型之手、金酒之杯）的计划，试图削弱敌人，但效果适得其反，反而激发了对方的斗志。期间，能天使和德克萨斯在一旁闲聊，维什戴尔与阿米娅就保护博士的问题发生争执，银灰则因发型问题被初雪吐槽。最终，博士（？）因计划未能完全成功而沮丧，凯尔希出面制止，维什戴尔则与另一个自己密谋留下。Scene 7中，一个未知的敌人（？？？）发动袭击，声称要接管罗德岛，而博士（？）则召集银灰、维什戴尔等人，计划反击，夺回罗德岛的控制权。整个剧情充满了幽默、混乱和元叙事元素，角色们时而严肃时而戏谑，打破了常规的剧情逻辑。",
+  "events": [
+    {
+      "event": "博士（？）策划并开始破坏罗德岛的收藏品以削弱敌人",
+      "type": "planning",
+      "line_range": [
+        1,
+        6
+      ],
+      "participants": [
+        "博士？",
+        "阿米娅？"
+      ],
+      "location": "罗德岛",
+      "significance": "展示了博士（？）的荒诞计划，奠定了本章的幽默基调",
+      "is_imaginary": false
+    },
+    {
+      "event": "能天使和德克萨斯在一旁无聊地互动，讨论是否要帮忙",
+      "type": "character_development",
+      "line_range": [
+        7,
+        14
+      ],
+      "participants": [
+        "能天使？",
+        "德克萨斯？"
+      ],
+      "location": "罗德岛",
+      "significance": "展现了能天使和德克萨斯在平行时空中的关系，增加了剧情的轻松感",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士（？）因计划成功但敌人反而更积极而生气，阿米娅安慰他",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        15,
+        19
+      ],
+      "participants": [
+        "博士？",
+        "阿米娅？",
+        "维什戴尔？"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示了博士（？）的挫败感，以及阿米娅对他的关心",
+      "is_imaginary": false
+    },
+    {
+      "event": "能天使和德克萨斯再次讨论是否要参战，但最终放弃",
+      "type": "character_development",
+      "line_range": [
+        20,
+        24
+      ],
+      "participants": [
+        "能天使？",
+        "德克萨斯？"
+      ],
+      "location": "罗德岛",
+      "significance": "延续了能天使和德克萨斯的旁观者视角，强化了剧情的荒诞感",
+      "is_imaginary": false
+    },
+    {
+      "event": "维什戴尔与阿米娅就保护博士的问题发生争执",
+      "type": "confrontation",
+      "line_range": [
+        25,
+        30
+      ],
+      "participants": [
+        "维什戴尔",
+        "维什戴尔？",
+        "阿米娅？"
+      ],
+      "location": "罗德岛",
+      "significance": "展现了维什戴尔和阿米娅对博士的不同态度，增加了角色间的张力",
+      "is_imaginary": false
+    },
+    {
+      "event": "能天使和德克萨斯品尝碎蛋糕，并评论其味道",
+      "type": "character_development",
+      "line_range": [
+        31,
+        32
+      ],
+      "participants": [
+        "能天使？",
+        "德克萨斯？"
+      ],
+      "location": "罗德岛",
+      "significance": "进一步刻画了能天使和德克萨斯在混乱中的悠闲态度",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士（？）评论凯尔希对阿米娅的宠爱，能天使和德克萨斯附和",
+      "type": "character_development",
+      "line_range": [
+        33,
+        35
+      ],
+      "participants": [
+        "博士？",
+        "能天使？",
+        "德克萨斯？"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示了凯尔希、阿米娅和博士之间关系的普遍性",
+      "is_imaginary": false
+    },
+    {
+      "event": "银灰（？）询问自己的发型，被初雪吐槽，博士（？）催促他们认真干活",
+      "type": "character_development",
+      "line_range": [
+        36,
+        43
+      ],
+      "participants": [
+        "银灰？",
+        "银灰",
+        "初雪",
+        "博士？",
+        "德克萨斯？"
+      ],
+      "location": "罗德岛",
+      "significance": "展现了银灰和初雪之间的兄妹互动，以及博士（？）对效率的不满",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士（？）因计划只破坏了原型之手而沮丧，凯尔希出面制止",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        44,
+        50
+      ],
+      "participants": [
+        "博士？",
+        "阿米娅？",
+        "凯尔希？",
+        "银灰？"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示了博士（？）对活动复刻的不满，以及凯尔希的权威",
+      "is_imaginary": false
+    },
+    {
+      "event": "维什戴尔与另一个自己密谋留下，计划互换身份",
+      "type": "infiltration",
+      "line_range": [
+        53,
+        55
+      ],
+      "participants": [
+        "维什戴尔？",
+        "维什戴尔"
+      ],
+      "location": "罗德岛",
+      "significance": "为后续剧情埋下伏笔，展现了维什戴尔的狡猾",
+      "is_imaginary": false
+    },
+    {
+      "event": "能天使和德克萨斯讨论事件是否结束，以及动画化的可能性",
+      "type": "character_development",
+      "line_range": [
+        56,
+        59
+      ],
+      "participants": [
+        "能天使？",
+        "德克萨斯？"
+      ],
+      "location": "罗德岛",
+      "significance": "以元叙事的方式调侃了游戏动画化的可能性，增加了幽默感",
+      "is_imaginary": false
+    },
+    {
+      "event": "未知敌人发动袭击，声称要接管罗德岛",
+      "type": "ambush",
+      "line_range": [
+        60,
+        65
+      ],
+      "participants": [
+        "？？？",
+        "干员们",
+        "可露希尔"
+      ],
+      "location": "罗德岛",
+      "significance": "引入了新的冲突，为本章的高潮铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士（？）召集银灰和维什戴尔，计划反击夺回罗德岛",
+      "type": "planning",
+      "line_range": [
+        66,
+        73
+      ],
+      "participants": [
+        "博士？",
+        "阿米娅？",
+        "银灰？",
+        "维什戴尔？"
+      ],
+      "location": "罗德岛",
+      "significance": "展示了博士（？）的领导力和决心，为下一章的行动埋下伏笔",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "博士？",
+      "type": "operator",
+      "role_in_chapter": "策划并执行破坏罗德岛收藏品的计划，后因计划失败而沮丧，最后召集干员反击未知敌人",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "关心博士，安慰博士，并试图保护博士免受伤害",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "能天使",
+      "type": "operator",
+      "role_in_chapter": "与德克萨斯一起旁观事件，讨论是否参战，品尝蛋糕，并调侃动画化",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "德克萨斯",
+      "type": "operator",
+      "role_in_chapter": "与能天使一起旁观事件，对事件感到无趣，并吐槽能天使",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "维什戴尔",
+      "type": "operator",
+      "role_in_chapter": "与阿米娅争执，后与另一个自己密谋互换身份留下",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "维什戴尔",
+      "type": "operator",
+      "role_in_chapter": "与维什戴尔互动，参与争执，并同意互换身份",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "银灰",
+      "type": "operator",
+      "role_in_chapter": "与另一个自己互动，被初雪吐槽发型",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "银灰",
+      "type": "operator",
+      "role_in_chapter": "询问发型，与银灰互动，后参与博士（？）的反击计划",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "初雪",
+      "type": "operator",
+      "role_in_chapter": "吐槽银灰的发型",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "出面制止博士（？）的沮丧行为，维护阿米娅",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "可露希尔",
+      "type": "operator",
+      "role_in_chapter": "在袭击中抱怨自己未完成的合体小车设计",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "？？？",
+      "type": "npc",
+      "role_in_chapter": "发动袭击，声称要接管罗德岛",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "集成战略活动",
+      "line_range": [
+        45,
+        47
+      ],
+      "discussion_summary": "博士（？）抱怨活动产能不足，只破坏了原型之手，并担心下次集成战略敌人还有金酒之杯可用，同时吐槽复刻活动内容一模一样",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石技艺",
+      "line_range": [
+        51,
+        52
+      ],
+      "discussion_summary": "阿米娅猜测当前发生的奇怪现象可能是某种神奇的源石技艺所致，并希望不会受到影响",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1,
+        6
+      ],
+      "description": "博士（？）计划破坏罗德岛的收藏品以削弱敌人，阿米娅对此表示支持"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        60,
+        65
+      ],
+      "description": "未知敌人发动袭击，声称要接管罗德岛，可露希尔抱怨自己的设计被放弃"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        66,
+        73
+      ],
+      "description": "博士（？）计划夺回罗德岛，认为假冒罗德岛的人霸占了位置，必须马上干掉他们"
+    }
+  ],
+  "locations": [
+    {
+      "location": "罗德岛",
+      "line_range": [
+        1,
+        6
+      ],
+      "description": "博士（？）在罗德岛内部策划并执行破坏收藏品的计划"
+    },
+    {
+      "location": "罗德岛",
+      "line_range": [
+        60,
+        65
+      ],
+      "description": "未知敌人在罗德岛发动袭击，可露希尔抱怨自己的设计被放弃"
+    },
+    {
+      "location": "罗德岛",
+      "line_range": [
+        66,
+        73
+      ],
+      "description": "博士（？）在罗德岛召集干员，计划反击夺回控制权"
+    }
+  ],
+  "chapter": "Rhodes_Island_Epic_黑色博士坠落",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:59:26.367951+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 2642,
+    "tokens_out": 2928,
+    "elapsed_s": 26.213027715682983
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "博士？",
+    "？？？"
+  ]
+}

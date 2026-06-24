@@ -1,0 +1,1598 @@
+{
+  "chapter": "愚人号",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章以伊比利亚海滨小镇格兰法洛为舞台，多条剧情线并行展开。凯尔希与伊比利亚圣徒卡门在古井旁进行了一场关于信任、真相与伊比利亚命运的哲学对话，卡门对凯尔希的长寿与身份提出质疑，并最终同意与深海猎人合作，但保留处决权。与此同时，罗德岛干员极境在格兰法洛等待凯尔希与日落即逝乐队，结识了当地阿戈尔人乔迪。深海教徒与恐鱼开始在小镇出现，引发恐慌。日落即逝乐队成员抵达，与凯尔希会面，并交付了关键物品。深海猎人歌蕾蒂娅、斯卡蒂与状态不稳的幽灵鲨也抵达小镇，准备与凯尔希会合。乌尔比安以神秘猎人的身份出现，与阿玛雅接触，并试图带走乔迪。审判庭大审判官达里奥与年轻审判官艾丽妮介入，与深海猎人及凯尔希就合作与信任展开激烈交锋。最终，各方达成临时同盟，目标指向重启伊比利亚之眼灯塔，并寻找失踪的愚人号。乔迪作为灯塔工程师的后裔，被卷入这场冒险。在灯塔处，众人遭遇了自称骑士的海嗣，以及不断蔓延的溟痕。乔迪成功启动灯塔，定位到愚人号的位置。歌蕾蒂娅决定带领深海猎人前往愚人号，艾丽妮随行，而达里奥与乔迪则选择留守灯塔，面对即将到来的围攻。\n\n深海猎人、审判官艾丽妮与乔迪等人登上愚人号后，遭遇了自称船长的海嗣化人类阿方索及其大副加西亚。阿方索将船上幸存者视为猎物，拒绝合作。与此同时，深海主教阿玛雅与乌尔比安也潜上愚人号，阿玛雅试图引导海嗣进化，乌尔比安则向歌蕾蒂娅揭露了关于海神Ishar-mla与斯卡蒂的惊人真相。在格兰法洛，圣徒卡门与凯尔希处理深海教徒的叛乱，蒂亚戈在揭露真相后牺牲。愚人号上，众人与一只强大的海嗣（融合了阿玛雅意识）展开激战，最终阿方索与加西亚选择与船同沉，海嗣被幽灵鲨击杀。众人获救后返回格兰法洛，艾丽妮决定放弃审判官职位，乔迪则被圣徒卡门邀请加入审判庭。凯尔希与歌蕾蒂娅确认了斯卡蒂体内寄宿着海神的真相，乌尔比安则与最后的骑士一同离去。",
+  "events": [
+    {
+      "event": "凯尔希与圣徒卡门在古井旁进行哲学对话，讨论信任、真相与伊比利亚的命运",
+      "type": "revelation",
+      "line_range": [
+        1,
+        55
+      ],
+      "participants": [
+        "凯尔希",
+        "圣徒卡门"
+      ],
+      "location": "格兰法洛古井旁",
+      "significance": "奠定本章基调，揭示凯尔希与审判庭高层的关系，以及伊比利亚面临的困境",
+      "is_imaginary": false
+    },
+    {
+      "event": "日落即逝乐队成员抵达格兰法洛，讨论创作灵感与海洋",
+      "type": "arrival",
+      "line_range": [
+        56,
+        80
+      ],
+      "participants": [
+        "Dan",
+        "Frost",
+        "Aya",
+        "Alty"
+      ],
+      "location": "格兰法洛",
+      "significance": "引入日落即逝乐队，作为凯尔希的盟友和另一股海洋势力",
+      "is_imaginary": false
+    },
+    {
+      "event": "极境与乔迪在礼拜堂前初次交谈，极境透露自己在等人，乔迪表达对阿戈尔人处境的担忧",
+      "type": "character_development",
+      "line_range": [
+        81,
+        116
+      ],
+      "participants": [
+        "极境",
+        "乔迪"
+      ],
+      "location": "格兰法洛礼拜堂前",
+      "significance": "建立极境与乔迪的关系，展现乔迪作为本地阿戈尔人的自卑与善良",
+      "is_imaginary": false
+    },
+    {
+      "event": "镇长蒂亚戈与翻译家阿玛雅交谈，蒂亚戈表达对审判庭的恐惧与对阿戈尔人命运的担忧",
+      "type": "political_intrigue",
+      "line_range": [
+        117,
+        148
+      ],
+      "participants": [
+        "蒂亚戈",
+        "阿玛雅"
+      ],
+      "location": "格兰法洛",
+      "significance": "揭示小镇内部对审判庭的恐惧，以及蒂亚戈与阿玛雅之间复杂的关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "乔迪在广场上遇到日落即逝的Aya，Aya询问灯塔雕塑并警告乔迪小心",
+      "type": "revelation",
+      "line_range": [
+        187,
+        206
+      ],
+      "participants": [
+        "乔迪",
+        "Aya"
+      ],
+      "location": "格兰法洛中心广场",
+      "significance": "暗示乔迪与灯塔的关联，以及Aya对海洋危险的感知",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与圣徒卡门达成初步协议，卡门允许深海猎人在伊比利亚行动，但保留处决权",
+      "type": "negotiation",
+      "line_range": [
+        217,
+        239
+      ],
+      "participants": [
+        "凯尔希",
+        "圣徒卡门"
+      ],
+      "location": "格兰法洛",
+      "significance": "确立凯尔希与审判庭的合作框架，为后续行动铺路",
+      "is_imaginary": false
+    },
+    {
+      "event": "深海猎人歌蕾蒂娅、斯卡蒂与幽灵鲨讨论此行目的，歌蕾蒂娅希望帮助幽灵鲨恢复",
+      "type": "planning",
+      "line_range": [
+        240,
+        258
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "斯卡蒂",
+        "幽灵鲨"
+      ],
+      "location": "格兰法洛",
+      "significance": "揭示深海猎人内部关系，以及幽灵鲨的精神状态问题",
+      "is_imaginary": false
+    },
+    {
+      "event": "乔迪在回家路上看到恐鱼，感到不安",
+      "type": "revelation",
+      "line_range": [
+        290,
+        297
+      ],
+      "participants": [
+        "乔迪"
+      ],
+      "location": "格兰法洛",
+      "significance": "预示恐鱼威胁的临近",
+      "is_imaginary": false
+    },
+    {
+      "event": "极境与日落即逝的Alty在礼拜堂会面，Alty提到凯尔希",
+      "type": "reunion",
+      "line_range": [
+        298,
+        317
+      ],
+      "participants": [
+        "极境",
+        "Alty"
+      ],
+      "location": "格兰法洛礼拜堂",
+      "significance": "确认日落即逝与罗德岛的合作关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "深海教徒密谋夺取或摧毁伊比利亚之眼，并讨论恐鱼和外来者",
+      "type": "planning",
+      "line_range": [
+        318,
+        330
+      ],
+      "participants": [
+        "诡异的教徒",
+        "男性镇民"
+      ],
+      "location": "格兰法洛",
+      "significance": "揭示深海教会的目标和行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "一只濒死的恐鱼出现在广场上，引发镇民恐慌",
+      "type": "revelation",
+      "line_range": [
+        351,
+        374
+      ],
+      "participants": [
+        "极境",
+        "阿玛雅",
+        "围观的群众"
+      ],
+      "location": "格兰法洛中心广场",
+      "significance": "恐鱼正式出现在小镇，打破平静",
+      "is_imaginary": false
+    },
+    {
+      "event": "乔迪为受伤的深海教徒胡安包扎，胡安用阿戈尔语感谢他并暗示灯塔",
+      "type": "character_development",
+      "line_range": [
+        387,
+        422
+      ],
+      "participants": [
+        "乔迪",
+        "诡异的教徒"
+      ],
+      "location": "格兰法洛小巷",
+      "significance": "乔迪的善良与深海教徒的复杂动机形成对比，胡安的话暗示乔迪与灯塔的联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂亚戈与阿玛雅处理恐鱼尸体，蒂亚戈阻止镇民通知审判庭",
+      "type": "political_intrigue",
+      "line_range": [
+        423,
+        447
+      ],
+      "participants": [
+        "蒂亚戈",
+        "阿玛雅"
+      ],
+      "location": "格兰法洛",
+      "significance": "展现蒂亚戈对审判庭的极度不信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与Alty在礼拜堂内密谈，讨论海洋威胁与日落即逝的角色",
+      "type": "revelation",
+      "line_range": [
+        467,
+        497
+      ],
+      "participants": [
+        "凯尔希",
+        "Alty"
+      ],
+      "location": "格兰法洛礼拜堂",
+      "significance": "揭示凯尔希对海洋威胁的认知，以及日落即逝作为保险的角色",
+      "is_imaginary": false
+    },
+    {
+      "event": "深海教徒胡安将恐鱼尸体同化到自己体内，被圣徒卡门当场抓获",
+      "type": "confrontation",
+      "line_range": [
+        600,
+        631
+      ],
+      "participants": [
+        "诡异的教徒",
+        "寡言的教徒",
+        "圣徒卡门",
+        "凯尔希",
+        "Alty"
+      ],
+      "location": "格兰法洛礼拜堂外",
+      "significance": "展示深海教徒的极端行为与圣徒卡门的强大实力",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂亚戈劝说乔迪离开格兰法洛，乔迪犹豫后提出想去看海",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        632,
+        679
+      ],
+      "participants": [
+        "蒂亚戈",
+        "乔迪"
+      ],
+      "location": "格兰法洛",
+      "significance": "揭示蒂亚戈对乔迪的父爱，以及乔迪对故乡的眷恋",
+      "is_imaginary": false
+    },
+    {
+      "event": "圣徒卡门与凯尔希、Alty交谈，确认合作并提及伊比利亚之眼",
+      "type": "negotiation",
+      "line_range": [
+        680,
+        694
+      ],
+      "participants": [
+        "圣徒卡门",
+        "凯尔希",
+        "Alty"
+      ],
+      "location": "格兰法洛",
+      "significance": "确认审判庭将为凯尔希提供前往伊比利亚之眼的帮助",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂亚戈在海边向乔迪讲述格兰法洛的过去、伊比利亚之眼计划以及乔迪父母的牺牲",
+      "type": "flashback",
+      "line_range": [
+        695,
+        744
+      ],
+      "participants": [
+        "蒂亚戈",
+        "乔迪"
+      ],
+      "location": "格兰法洛海边",
+      "significance": "揭示乔迪的身世与格兰法洛的悲剧历史，解释蒂亚戈对审判庭的仇恨",
+      "is_imaginary": false
+    },
+    {
+      "event": "日落即逝的Dan和Aya在海边遇到深海猎人歌蕾蒂娅、斯卡蒂和幽灵鲨，双方互相认识",
+      "type": "reunion",
+      "line_range": [
+        745,
+        783
+      ],
+      "participants": [
+        "Dan",
+        "Aya",
+        "歌蕾蒂娅",
+        "斯卡蒂",
+        "幽灵鲨"
+      ],
+      "location": "格兰法洛海边",
+      "significance": "两条海洋势力正式会面",
+      "is_imaginary": false
+    },
+    {
+      "event": "圣徒卡门在礼拜堂外与深海教徒对峙，并质问他们的目的",
+      "type": "confrontation",
+      "line_range": [
+        784,
+        810
+      ],
+      "participants": [
+        "圣徒卡门",
+        "深海教徒A",
+        "深海教徒B"
+      ],
+      "location": "格兰法洛礼拜堂外",
+      "significance": "展现圣徒卡门的威严与深海教徒的顽固",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与Alty继续密谈，Alty表示日落即逝会留在海岸线作为后援",
+      "type": "planning",
+      "line_range": [
+        811,
+        829
+      ],
+      "participants": [
+        "凯尔希",
+        "Alty"
+      ],
+      "location": "格兰法洛礼拜堂",
+      "significance": "明确日落即逝在本章中的角色定位",
+      "is_imaginary": false
+    },
+    {
+      "event": "歌蕾蒂娅与斯卡蒂、幽灵鲨在格兰法洛街道上清理恐鱼，并讨论小镇的异常",
+      "type": "battle",
+      "line_range": [
+        830,
+        860
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "斯卡蒂",
+        "幽灵鲨"
+      ],
+      "location": "格兰法洛街道",
+      "significance": "展现深海猎人的战斗力，以及他们对小镇情况的观察",
+      "is_imaginary": false
+    },
+    {
+      "event": "极境追踪深海教徒，发现他们正在销毁资料，并遭遇乌尔比安",
+      "type": "investigation",
+      "line_range": [
+        861,
+        956
+      ],
+      "participants": [
+        "极境",
+        "乌尔比安"
+      ],
+      "location": "格兰法洛",
+      "significance": "引入乌尔比安，揭示他与深海猎人及深海教会的复杂关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌尔比安与阿玛雅交谈，乌尔比安表示需要那艘船，并要赶在歌蕾蒂娅之前",
+      "type": "revelation",
+      "line_range": [
+        877,
+        900
+      ],
+      "participants": [
+        "乌尔比安",
+        "阿玛雅"
+      ],
+      "location": "格兰法洛",
+      "significance": "揭示乌尔比安的目的与阿玛雅的身份",
+      "is_imaginary": false
+    },
+    {
+      "event": "歌蕾蒂娅与圣徒卡门在礼拜堂外会面，双方就合作与信任进行交锋",
+      "type": "negotiation",
+      "line_range": [
+        905,
+        932
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "圣徒卡门"
+      ],
+      "location": "格兰法洛礼拜堂外",
+      "significance": "展现阿戈尔与伊比利亚之间的隔阂与试探",
+      "is_imaginary": false
+    },
+    {
+      "event": "大审判官达里奥与审判官艾丽妮讨论前往格兰法洛的任务，艾丽妮被要求做出自己的判断",
+      "type": "character_development",
+      "line_range": [
+        957,
+        969
+      ],
+      "participants": [
+        "大审判官达里奥",
+        "审判官艾丽妮"
+      ],
+      "location": "格兰法洛",
+      "significance": "展现艾丽妮的成长与达里奥对她的期望",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与歌蕾蒂娅会面，讨论合作与阿戈尔的态度",
+      "type": "negotiation",
+      "line_range": [
+        970,
+        987
+      ],
+      "participants": [
+        "凯尔希",
+        "歌蕾蒂娅",
+        "Alty"
+      ],
+      "location": "格兰法洛礼拜堂",
+      "significance": "确认深海猎人与凯尔希的合作关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "极境向凯尔希汇报乌尔比安的情况，凯尔希与歌蕾蒂娅准备行动",
+      "type": "planning",
+      "line_range": [
+        991,
+        999
+      ],
+      "participants": [
+        "极境",
+        "凯尔希",
+        "歌蕾蒂娅",
+        "Alty"
+      ],
+      "location": "格兰法洛礼拜堂",
+      "significance": "推动剧情，凯尔希与歌蕾蒂娅决定介入",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂与幽灵鲨在战斗中交流，幽灵鲨状态不稳，提到海的声音",
+      "type": "character_development",
+      "line_range": [
+        1000,
+        1026
+      ],
+      "participants": [
+        "斯卡蒂",
+        "幽灵鲨"
+      ],
+      "location": "格兰法洛",
+      "significance": "展现幽灵鲨的精神状态与斯卡蒂对她的关心",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌尔比安追击极境，要求销毁文件，并自言自语提到阿戈尔的毁灭",
+      "type": "confrontation",
+      "line_range": [
+        1027,
+        1048
+      ],
+      "participants": [
+        "乌尔比安",
+        "极境"
+      ],
+      "location": "格兰法洛",
+      "significance": "揭示乌尔比安对阿戈尔命运的悲观看法",
+      "is_imaginary": false
+    },
+    {
+      "event": "圣徒卡门审讯深海教徒，得知他们觊觎伊比利亚之眼，并发现恐鱼身上的溟痕",
+      "type": "revelation",
+      "line_range": [
+        1049,
+        1088
+      ],
+      "participants": [
+        "圣徒卡门",
+        "受伤的教徒",
+        "凯尔希"
+      ],
+      "location": "格兰法洛",
+      "significance": "揭示深海教会的目标与溟痕的威胁",
+      "is_imaginary": false
+    },
+    {
+      "event": "幽灵鲨与日落即逝的Frost相遇，Frost鼓励幽灵鲨歌唱以找回自己",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1089,
+        1110
+      ],
+      "participants": [
+        "幽灵鲨",
+        "Frost"
+      ],
+      "location": "格兰法洛",
+      "significance": "Frost对幽灵鲨的引导，暗示音乐的力量",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿玛雅与幽灵鲨重逢，阿玛雅称认识劳伦缇娜，并暗示知道真相",
+      "type": "revelation",
+      "line_range": [
+        1111,
+        1113
+      ],
+      "participants": [
+        "阿玛雅",
+        "幽灵鲨"
+      ],
+      "location": "格兰法洛",
+      "significance": "揭示阿玛雅与幽灵鲨的过去，阿玛雅身份成谜",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希、歌蕾蒂娅与圣徒卡门讨论溟痕的本质，确认其为恐鱼的一种生物形式",
+      "type": "revelation",
+      "line_range": [
+        1114,
+        1141
+      ],
+      "participants": [
+        "凯尔希",
+        "歌蕾蒂娅",
+        "圣徒卡门"
+      ],
+      "location": "格兰法洛礼拜堂",
+      "significance": "揭示溟痕的真相，加深对海洋威胁的理解",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂亚戈带乔迪逃跑，但被镇民堵住，镇民们决定将乔迪交给审判庭以自保",
+      "type": "betrayal",
+      "line_range": [
+        1142,
+        1211
+      ],
+      "participants": [
+        "蒂亚戈",
+        "乔迪",
+        "松懈的镇民",
+        "警惕的镇民"
+      ],
+      "location": "格兰法洛",
+      "significance": "展现人性的自私与恐惧，蒂亚戈与乔迪陷入绝境",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿玛雅与幽灵鲨交谈，阿玛雅提到劳伦缇娜的过去，并约定如果幽灵鲨清醒就告诉她真相",
+      "type": "revelation",
+      "line_range": [
+        1212,
+        1230
+      ],
+      "participants": [
+        "阿玛雅",
+        "幽灵鲨"
+      ],
+      "location": "格兰法洛",
+      "significance": "进一步揭示阿玛雅与幽灵鲨的复杂关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂亚戈与镇民发生冲突，蒂亚戈斥责他们的懦弱，并掩护乔迪逃跑",
+      "type": "sacrifice",
+      "line_range": [
+        1247,
+        1283
+      ],
+      "participants": [
+        "蒂亚戈",
+        "乔迪",
+        "追来的镇民"
+      ],
+      "location": "格兰法洛",
+      "significance": "蒂亚戈的牺牲精神，乔迪被迫独自逃亡",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌尔比安拦住乔迪，称他是布雷奥甘的后裔，需要他",
+      "type": "revelation",
+      "line_range": [
+        1290,
+        1308
+      ],
+      "participants": [
+        "乌尔比安",
+        "乔迪"
+      ],
+      "location": "格兰法洛郊外",
+      "significance": "揭示乔迪的特殊身份，乌尔比安的目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "极境救走乔迪，并劝说他离开格兰法洛",
+      "type": "rescue",
+      "line_range": [
+        1309,
+        1341
+      ],
+      "participants": [
+        "极境",
+        "乔迪"
+      ],
+      "location": "格兰法洛郊外",
+      "significance": "极境与乔迪的友谊，乔迪对故乡的眷恋",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌尔比安与大审判官达里奥对峙，乌尔比安提到斯卡蒂的血是特殊的",
+      "type": "confrontation",
+      "line_range": [
+        1342,
+        1380
+      ],
+      "participants": [
+        "乌尔比安",
+        "大审判官达里奥",
+        "审判官艾丽妮"
+      ],
+      "location": "格兰法洛",
+      "significance": "揭示斯卡蒂的特殊性，以及乌尔比安对审判庭的不屑",
+      "is_imaginary": false
+    },
+    {
+      "event": "圣徒卡门与达里奥讨论战况，确认惩戒军已包围小镇，并准备前往伊比利亚之眼",
+      "type": "planning",
+      "line_range": [
+        1424,
+        1463
+      ],
+      "participants": [
+        "圣徒卡门",
+        "大审判官达里奥",
+        "审判官艾丽妮"
+      ],
+      "location": "格兰法洛",
+      "significance": "明确审判庭的军事部署与任务分配",
+      "is_imaginary": false
+    },
+    {
+      "event": "极境与乔迪在镇上遭遇溟痕和恐鱼，被凯尔希所救",
+      "type": "battle",
+      "line_range": [
+        1464,
+        1498
+      ],
+      "participants": [
+        "极境",
+        "乔迪",
+        "凯尔希"
+      ],
+      "location": "格兰法洛",
+      "significance": "展现溟痕的威胁与凯尔希的实力",
+      "is_imaginary": false
+    },
+    {
+      "event": "圣徒卡门、歌蕾蒂娅、凯尔希等人就合作与信任进行最终谈判，决定共同前往伊比利亚之眼",
+      "type": "negotiation",
+      "line_range": [
+        1499,
+        1562
+      ],
+      "participants": [
+        "圣徒卡门",
+        "歌蕾蒂娅",
+        "凯尔希",
+        "大审判官达里奥",
+        "审判官艾丽妮",
+        "斯卡蒂",
+        "幽灵鲨"
+      ],
+      "location": "格兰法洛广场",
+      "significance": "达成最终协议，确立共同目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "乔迪主动现身，表示想去看灯塔，圣徒卡门决定扣押他并让他同行",
+      "type": "character_development",
+      "line_range": [
+        1563,
+        1593
+      ],
+      "participants": [
+        "乔迪",
+        "圣徒卡门",
+        "凯尔希",
+        "大审判官达里奥",
+        "审判官艾丽妮"
+      ],
+      "location": "格兰法洛广场",
+      "significance": "乔迪主动选择面对命运，加入前往灯塔的队伍",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿玛雅与蒂亚戈道别，阿玛雅暗示自己与深海教会有关，并指出审判庭才是真正的威胁",
+      "type": "revelation",
+      "line_range": [
+        1594,
+        1626
+      ],
+      "participants": [
+        "阿玛雅",
+        "蒂亚戈"
+      ],
+      "location": "格兰法洛",
+      "significance": "阿玛雅身份进一步暴露，她对审判庭的批判",
+      "is_imaginary": false
+    },
+    {
+      "event": "乔迪、艾丽妮、深海猎人等人乘船前往伊比利亚之眼，途中遭遇恐鱼袭击",
+      "type": "battle",
+      "line_range": [
+        1627,
+        1681
+      ],
+      "participants": [
+        "乔迪",
+        "审判官艾丽妮",
+        "歌蕾蒂娅",
+        "斯卡蒂",
+        "幽灵鲨",
+        "大审判官达里奥"
+      ],
+      "location": "海上",
+      "significance": "前往灯塔的旅程充满危险",
+      "is_imaginary": false
+    },
+    {
+      "event": "众人抵达伊比利亚之眼，发现灯塔已被恐鱼占据，成为巢穴",
+      "type": "revelation",
+      "line_range": [
+        1682,
+        1713
+      ],
+      "participants": [
+        "乔迪",
+        "审判官艾丽妮",
+        "歌蕾蒂娅",
+        "斯卡蒂",
+        "幽灵鲨",
+        "大审判官达里奥"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "揭示灯塔的现状，任务难度升级",
+      "is_imaginary": false
+    },
+    {
+      "event": "大审判官达里奥与艾丽妮在灯塔前缅怀牺牲者，强调牺牲的意义",
+      "type": "reflection",
+      "line_range": [
+        1714,
+        1736
+      ],
+      "participants": [
+        "大审判官达里奥",
+        "审判官艾丽妮"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "展现审判官的责任感与对牺牲的敬畏",
+      "is_imaginary": false
+    },
+    {
+      "event": "深海猎人在灯塔外与恐鱼战斗，幽灵鲨状态有所恢复",
+      "type": "battle",
+      "line_range": [
+        1737,
+        1758
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "斯卡蒂",
+        "幽灵鲨"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "展现深海猎人的战斗力与幽灵鲨的变化",
+      "is_imaginary": false
+    },
+    {
+      "event": "乔迪在灯塔内寻找启动方法，艾丽妮与达里奥讨论深海猎人的可信度",
+      "type": "character_development",
+      "line_range": [
+        1759,
+        1782
+      ],
+      "participants": [
+        "乔迪",
+        "审判官艾丽妮",
+        "大审判官达里奥"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "艾丽妮的成长与乔迪的努力",
+      "is_imaginary": false
+    },
+    {
+      "event": "圣徒卡门与凯尔希在格兰法洛讨论布雷奥甘的遗产与乔迪的身份，卡门质疑凯尔希让乔迪送死",
+      "type": "revelation",
+      "line_range": [
+        1804,
+        1818
+      ],
+      "participants": [
+        "圣徒卡门",
+        "凯尔希"
+      ],
+      "location": "格兰法洛",
+      "significance": "揭示乔迪并非布雷奥甘后裔，凯尔希另有目的",
+      "is_imaginary": false
+    },
+    {
+      "event": "艾丽妮与乔迪在灯塔内向上攀登，乔迪成功找到启动方法",
+      "type": "investigation",
+      "line_range": [
+        1819,
+        1857
+      ],
+      "participants": [
+        "审判官艾丽妮",
+        "乔迪"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "乔迪展现其知识价值",
+      "is_imaginary": false
+    },
+    {
+      "event": "深海猎人在灯塔外遭遇自称骑士的海嗣，双方交战",
+      "type": "battle",
+      "line_range": [
+        1858,
+        1920
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "斯卡蒂",
+        "幽灵鲨",
+        "最后的骑士",
+        "大审判官达里奥"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "引入新的敌人，骑士海嗣",
+      "is_imaginary": false
+    },
+    {
+      "event": "乔迪与艾丽妮在灯塔控制室，乔迪尝试重启灯塔，艾丽妮决定独自前往上层启动主开关",
+      "type": "planning",
+      "line_range": [
+        1921,
+        1938
+      ],
+      "participants": [
+        "审判官艾丽妮",
+        "乔迪"
+      ],
+      "location": "伊比利亚之眼控制室",
+      "significance": "乔迪与艾丽妮分工合作",
+      "is_imaginary": false
+    },
+    {
+      "event": "日落即逝乐队成员讨论是否要介入，Frost决定独自前往海洋",
+      "type": "planning",
+      "line_range": [
+        1939,
+        1959
+      ],
+      "participants": [
+        "Aya",
+        "Frost",
+        "Alty",
+        "Dan"
+      ],
+      "location": "格兰法洛",
+      "significance": "日落即逝开始行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "深海教徒准备做最后抵抗，蒂亚戈决定加入他们对抗审判庭",
+      "type": "alliance",
+      "line_range": [
+        1960,
+        1990
+      ],
+      "participants": [
+        "喘息的教徒",
+        "蒂亚戈",
+        "惊疑不定的镇民"
+      ],
+      "location": "格兰法洛",
+      "significance": "蒂亚戈选择与深海教徒合作",
+      "is_imaginary": false
+    },
+    {
+      "event": "极境跟踪蒂亚戈，被发现",
+      "type": "investigation",
+      "line_range": [
+        1991,
+        1991
+      ],
+      "participants": [
+        "极境"
+      ],
+      "location": "格兰法洛",
+      "significance": "极境继续调查",
+      "is_imaginary": false
+    },
+    {
+      "event": "艾丽妮与乔迪在灯塔内交谈，乔迪表达对审判庭的不满，艾丽妮表示理解",
+      "type": "character_development",
+      "line_range": [
+        1992,
+        2022
+      ],
+      "participants": [
+        "审判官艾丽妮",
+        "乔迪"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "乔迪与艾丽妮的相互理解",
+      "is_imaginary": false
+    },
+    {
+      "event": "幽灵鲨与骑士海嗣战斗，骑士海嗣提到罗辛南特后撤退",
+      "type": "battle",
+      "line_range": [
+        2023,
+        2069
+      ],
+      "participants": [
+        "幽灵鲨",
+        "最后的骑士",
+        "大审判官达里奥"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "骑士海嗣的撤退与幽灵鲨的变化",
+      "is_imaginary": false
+    },
+    {
+      "event": "乔迪与艾丽妮在灯塔内被溟痕和恐鱼围攻，乔迪决定留守控制室，艾丽妮前往上层",
+      "type": "battle",
+      "line_range": [
+        2070,
+        2096
+      ],
+      "participants": [
+        "乔迪",
+        "审判官艾丽妮"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "乔迪的勇气与艾丽妮的决断",
+      "is_imaginary": false
+    },
+    {
+      "event": "圣徒卡门与凯尔希在格兰法洛讨论伊比利亚之眼的意义，并得知惩戒军被溟痕包围",
+      "type": "revelation",
+      "line_range": [
+        2097,
+        2127
+      ],
+      "participants": [
+        "圣徒卡门",
+        "凯尔希",
+        "冷静的镇民"
+      ],
+      "location": "格兰法洛",
+      "significance": "揭示溟痕的威胁范围，局势恶化",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿玛雅与乌尔比安在海上交谈，阿玛雅阐述自己的理念",
+      "type": "revelation",
+      "line_range": [
+        2128,
+        2147
+      ],
+      "participants": [
+        "阿玛雅",
+        "乌尔比安"
+      ],
+      "location": "海上",
+      "significance": "阿玛雅阐述其超越种族国家的理念",
+      "is_imaginary": false
+    },
+    {
+      "event": "乔迪成功从灯塔日志中发现愚人号持续发送的信号，并定位其位置",
+      "type": "revelation",
+      "line_range": [
+        2148,
+        2235
+      ],
+      "participants": [
+        "乔迪",
+        "审判官艾丽妮",
+        "歌蕾蒂娅"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "找到愚人号的关键线索",
+      "is_imaginary": false
+    },
+    {
+      "event": "歌蕾蒂娅决定立即前往愚人号，艾丽妮在达里奥的命令下随行，乔迪选择留守灯塔",
+      "type": "planning",
+      "line_range": [
+        2236,
+        2273
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "审判官艾丽妮",
+        "大审判官达里奥",
+        "乔迪"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "分兵决策，乔迪的成长",
+      "is_imaginary": false
+    },
+    {
+      "event": "深海猎人出发前往愚人号，达里奥与乔迪留守灯塔，准备面对围攻",
+      "type": "departure",
+      "line_range": [
+        2274,
+        2290
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "斯卡蒂",
+        "幽灵鲨",
+        "审判官艾丽妮",
+        "大审判官达里奥",
+        "乔迪"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "剧情分线，留守与远征",
+      "is_imaginary": false
+    },
+    {
+      "event": "达里奥与乔迪在灯塔内交谈，达里奥询问乔迪的觉悟，乔迪表达了自己的决心",
+      "type": "character_development",
+      "line_range": [
+        2291,
+        2328
+      ],
+      "participants": [
+        "大审判官达里奥",
+        "乔迪"
+      ],
+      "location": "伊比利亚之眼",
+      "significance": "乔迪的成长与达里奥的认可，为结局铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "深海猎人、艾丽妮与乔迪登上愚人号，遭遇自称船长的海嗣化人类阿方索及其大副加西亚",
+      "type": "arrival",
+      "line_range": [
+        2408,
+        2472
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "幽灵鲨",
+        "斯卡蒂",
+        "审判官艾丽妮",
+        "船长阿方索",
+        "大副"
+      ],
+      "location": "愚人号甲板",
+      "significance": "揭示愚人号上仍有幸存者，但已海嗣化，为后续冲突埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "幽灵鲨在愚人号上恢复部分记忆，与一只幼年海嗣对话",
+      "type": "character_development",
+      "line_range": [
+        2488,
+        2518
+      ],
+      "participants": [
+        "幽灵鲨",
+        "斯卡蒂",
+        "海嗣"
+      ],
+      "location": "愚人号船舱",
+      "significance": "幽灵鲨记忆恢复，与海嗣产生短暂交流，暗示其与海嗣的深层联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿方索船长与深海猎人、艾丽妮对峙，拒绝合作并透露自己与海嗣的狩猎关系",
+      "type": "confrontation",
+      "line_range": [
+        2607,
+        2662
+      ],
+      "participants": [
+        "船长阿方索",
+        "审判官艾丽妮",
+        "幽灵鲨",
+        "斯卡蒂"
+      ],
+      "location": "愚人号下层大厅",
+      "significance": "揭示阿方索的悲惨处境与顽固立场，加深了与深海猎人的矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿玛雅与乌尔比安在愚人号上交谈，讨论海嗣与神谕",
+      "type": "revelation",
+      "line_range": [
+        2667,
+        2685
+      ],
+      "participants": [
+        "阿玛雅",
+        "乌尔比安"
+      ],
+      "location": "愚人号",
+      "significance": "揭示乌尔比安接近海嗣化，阿玛雅试图引导他理解海嗣的真相",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂亚戈在格兰法洛与深海教徒周旋，最终与圣徒卡门和极境会合，揭露自己的卧底身份",
+      "type": "betrayal",
+      "line_range": [
+        2686,
+        2743
+      ],
+      "participants": [
+        "蒂亚戈",
+        "极境",
+        "古怪的教徒",
+        "冷静的镇民"
+      ],
+      "location": "格兰法洛",
+      "significance": "蒂亚戈的立场反转，为后续牺牲埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "歌蕾蒂娅在愚人号下层遭遇阿玛雅，阿玛雅透露海洋进化与使者的存在",
+      "type": "revelation",
+      "line_range": [
+        2775,
+        2820
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "阿玛雅"
+      ],
+      "location": "愚人号宴会厅",
+      "significance": "阿玛雅阐述其理念，暗示海洋进化不可阻挡，并提及另一位使者",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿方索与海嗣在愚人号上展开狩猎，大副加西亚表现出残存的人类意识",
+      "type": "character_development",
+      "line_range": [
+        2830,
+        2987
+      ],
+      "participants": [
+        "船长阿方索",
+        "大副",
+        "海嗣",
+        "审判官艾丽妮"
+      ],
+      "location": "愚人号黄金回廊",
+      "significance": "揭示大副加西亚仍保留部分人性，与阿方索的深厚感情，为后续悲剧铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌尔比安与歌蕾蒂娅在愚人号指挥大厅对峙，乌尔比安揭露关于海神Ishar-mla和斯卡蒂的真相",
+      "type": "revelation",
+      "line_range": [
+        3071,
+        3236
+      ],
+      "participants": [
+        "歌蕾蒂娅",
+        "乌尔比安"
+      ],
+      "location": "愚人号指挥大厅",
+      "significance": "核心剧情转折，揭示斯卡蒂与海神Ishar-mla的潜在联系，以及乌尔比安的真正目的",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂亚戈在格兰法洛被深海教徒重伤，临死前质问圣徒卡门关于格兰法洛阿戈尔人的真相",
+      "type": "sacrifice",
+      "line_range": [
+        3347,
+        3440
+      ],
+      "participants": [
+        "蒂亚戈",
+        "极境",
+        "圣徒卡门",
+        "烧伤的教徒"
+      ],
+      "location": "格兰法洛",
+      "significance": "蒂亚戈之死，揭示审判庭对格兰法洛阿戈尔人的处理真相，加深了伊比利亚内部的矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "大副加西亚在愚人号上救下艾丽妮，并透露自己仍保留人类意识",
+      "type": "rescue",
+      "line_range": [
+        3463,
+        3499
+      ],
+      "participants": [
+        "大副",
+        "审判官艾丽妮",
+        "海嗣"
+      ],
+      "location": "愚人号",
+      "significance": "大副加西亚的人性光辉，与阿方索的羁绊，为后续牺牲做铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿玛雅在愚人号上与幽灵鲨对峙，揭示幽灵鲨体内海嗣血液的真相",
+      "type": "revelation",
+      "line_range": [
+        3655,
+        3726
+      ],
+      "participants": [
+        "阿玛雅",
+        "幽灵鲨"
+      ],
+      "location": "愚人号主桅杆",
+      "significance": "揭示幽灵鲨清醒与力量来源于海嗣血液，引发身份认同危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌尔比安在愚人号上指导斯卡蒂战斗，并确认自己幸存的事实",
+      "type": "reunion",
+      "line_range": [
+        3784,
+        3801
+      ],
+      "participants": [
+        "乌尔比安",
+        "斯卡蒂",
+        "歌蕾蒂娅"
+      ],
+      "location": "愚人号",
+      "significance": "乌尔比安与斯卡蒂重逢，强化了深海猎人内部的复杂关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿玛雅被海嗣吞噬，其意识与海嗣融合，成为新的强大敌人",
+      "type": "transformation",
+      "line_range": [
+        3830,
+        3852
+      ],
+      "participants": [
+        "阿玛雅",
+        "海嗣"
+      ],
+      "location": "愚人号",
+      "significance": "阿玛雅以另一种形式达成其理念，成为最终Boss",
+      "is_imaginary": false
+    },
+    {
+      "event": "愚人号遭遇新的静谧，海嗣大举进攻，阿方索与大副加西亚选择与船同沉",
+      "type": "sacrifice",
+      "line_range": [
+        4015,
+        4191
+      ],
+      "participants": [
+        "船长阿方索",
+        "大副",
+        "海嗣",
+        "审判官艾丽妮",
+        "幽灵鲨",
+        "斯卡蒂",
+        "歌蕾蒂娅"
+      ],
+      "location": "愚人号",
+      "significance": "愚人号沉没，阿方索与加西亚以人类身份战死，象征旧伊比利亚的终结",
+      "is_imaginary": false
+    },
+    {
+      "event": "幽灵鲨击杀融合了阿玛雅意识的海嗣",
+      "type": "battle",
+      "line_range": [
+        4363,
+        4396
+      ],
+      "participants": [
+        "幽灵鲨",
+        "海嗣"
+      ],
+      "location": "愚人号",
+      "significance": "幽灵鲨亲手终结了阿玛雅，完成个人复仇与成长",
+      "is_imaginary": false
+    },
+    {
+      "event": "乔迪驾驶小船救起落水的深海猎人和艾丽妮",
+      "type": "rescue",
+      "line_range": [
+        4469,
+        4535
+      ],
+      "participants": [
+        "乔迪",
+        "审判官艾丽妮",
+        "幽灵鲨",
+        "斯卡蒂",
+        "歌蕾蒂娅"
+      ],
+      "location": "愚人号附近海域",
+      "significance": "乔迪的勇敢行为拯救了众人，证明了自己的价值",
+      "is_imaginary": false
+    },
+    {
+      "event": "艾丽妮决定放弃审判官职位，乔迪被圣徒卡门邀请加入审判庭",
+      "type": "character_development",
+      "line_range": [
+        4604,
+        4643
+      ],
+      "participants": [
+        "审判官艾丽妮",
+        "圣徒卡门",
+        "乔迪"
+      ],
+      "location": "格兰法洛",
+      "significance": "艾丽妮与乔迪的人生轨迹发生重大转变，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与歌蕾蒂娅讨论斯卡蒂体内寄宿着海神Ishar-mla的真相",
+      "type": "revelation",
+      "line_range": [
+        4656,
+        4680
+      ],
+      "participants": [
+        "凯尔希",
+        "歌蕾蒂娅"
+      ],
+      "location": "格兰法洛",
+      "significance": "确认了最糟糕的猜想，斯卡蒂成为潜在威胁，为后续剧情定调",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌尔比安与最后的骑士一同离去，准备迎接巨浪",
+      "type": "departure",
+      "line_range": [
+        4681,
+        4697
+      ],
+      "participants": [
+        "乌尔比安",
+        "最后的骑士",
+        "罗辛南特"
+      ],
+      "location": "格兰法洛海岸",
+      "significance": "乌尔比安与最后的骑士结盟，预示新的冒险与挑战",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，与伊比"
+    },
+    {
+      "name": "圣徒卡门",
+      "type": "npc",
+      "role_in_chapter": "与凯尔希一同行动，处理格兰法洛的叛乱，最终邀请乔迪加入审判庭",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "艾丽妮",
+      "type": "operator",
+      "role_in_chapter": "随深海猎人登上愚人号，经历战斗与牺牲，最终决定放弃审判官职位",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "歌蕾蒂娅",
+      "type": "npc",
+      "role_in_chapter": "在愚人号上与乌尔比安对峙，得知斯卡蒂的真相，最终决定不返回阿戈尔",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "幽灵鲨",
+      "type": "operator",
+      "role_in_chapter": "在愚人号上恢复记忆，与阿玛雅对峙，最终击杀融合后的海嗣",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "斯卡蒂",
+      "type": "operator",
+      "role_in_chapter": "在愚人号上与海嗣战斗，被揭示与海神Ishar-mla的潜在联系",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "乌尔比安",
+      "type": "npc",
+      "role_in_chapter": "在愚人号上与歌蕾蒂娅对峙，揭露海神真相，最终与最后的骑士离去",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿罗玛",
+      "type": "operator",
+      "role_in_chapter": "深海主教，在愚人号上与各方势力周旋，最终被海嗣吞噬，意识融合",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "船长阿方索",
+      "type": "npc",
+      "role_in_chapter": "愚人号船长，海嗣化的人类，与深海猎人对峙，最终与船同沉",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "大副",
+      "type": "npc",
+      "role_in_chapter": "阿方索的大副，海嗣化但仍保留人性，最终选择与阿方索一同战死",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "乔迪",
+      "type": "npc",
+      "role_in_chapter": "驾驶小船救起众人，被圣徒卡门邀请加入审判庭",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "极境",
+      "type": "operator",
+      "role_in_chapter": "在格兰法洛与蒂亚戈一同行动，目睹蒂亚戈之死",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "蒂亚戈",
+      "type": "npc",
+      "role_in_chapter": "格兰法洛镇长，卧底于深海教徒，最终牺牲",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "最后的骑士",
+      "type": "npc",
+      "role_in_chapter": "在愚人号附近出现，最终与乌尔比安一同离去",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Frost",
+      "type": "npc",
+      "role_in_chapter": "日落即逝乐队成员，用音乐安抚恐鱼，帮助乔迪",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "Ishar-mla",
+      "line_range": [
+        3122,
+        3123
+      ],
+      "discussion_summary": "乌尔比安向歌蕾蒂娅透露，海嗣在胚胎中低吟着Ishar-mla这个名字，即斯卡蒂",
+      "is_substantive": true
+    },
+    {
+      "concept": "海神/巨兽",
+      "line_range": [
+        3110,
+        3117
+      ],
+      "discussion_summary": "乌尔比安描述在海洋深处发现复数海神存在的迹象，颠覆了阿戈尔的认知",
+      "is_substantive": true
+    },
+    {
+      "concept": "斯卡蒂与Ishar-mla的关系",
+      "line_range": [
+        3190,
+        3212
+      ],
+      "discussion_summary": "乌尔比安推测斯卡蒂可能成为海神Ishar-mla的容器，提出必要时必须杀死她的观点",
+      "is_substantive": true
+    },
+    {
+      "concept": "溟痕的本质",
+      "line_range": [
+        3239,
+        3243
+      ],
+      "discussion_summary": "深海教徒解释溟痕是遥远海神的意志，正在蚕食陆地，将陆地化为海洋",
+      "is_substantive": true
+    },
+    {
+      "concept": "海嗣的进化与族群",
+      "line_range": [
+        3942,
+        3945
+      ],
+      "discussion_summary": "融合了阿玛雅意识的海嗣阐述族群进化的理念，认为生命应形成整体",
+      "is_substantive": true
+    },
+    {
+      "concept": "牺牲与奉献",
+      "line_range": [
+        3842,
+        3851
+      ],
+      "discussion_summary": "阿玛雅在死前向海嗣阐述她对牺牲与奉献的批判性看法，认为这是人类自我谄媚的道德",
+      "is_substantive": true
+    },
+    {
+      "concept": "阿戈尔文明的本质",
+      "line_range": [
+        3192,
+        3195
+      ],
+      "discussion_summary": "乌尔比安质疑阿戈尔文明可能只是附着于巨物之上的霉菌，颠覆了阿戈尔的自我认知",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "深海猎人",
+      "line_range": [
+        3071,
+        3236
+      ],
+      "description": "歌蕾蒂娅与乌尔比安就阿戈尔的未来和海嗣的真相发生激烈争论，深海猎人内部出现严重分歧"
+    },
+    {
+      "faction": "深海教会",
+      "line_range": [
+        2686,
+        2743
+      ],
+      "description": "深海教徒在格兰法洛活动，与蒂亚戈周旋，试图拖延惩戒军"
+    },
+    {
+      "faction": "伊比利亚审判庭",
+      "line_range": [
+        3428,
+        3440
+      ],
+      "description": "圣徒卡门向极境透露审判庭对格兰法洛阿戈尔人的处理真相，揭示了审判庭的强硬立场"
+    },
+    {
+      "faction": "阿戈尔",
+      "line_range": [
+        4656,
+        4680
+      ],
+      "description": "凯尔希与歌蕾蒂娅讨论阿戈尔面临的危机，确认斯卡蒂体内寄宿着海神，阿戈尔文明危在旦夕"
+    }
+  ],
+  "locations": [
+    {
+      "location": "愚人号",
+      "line_range": [
+        2408,
+        2472
+      ],
+      "description": "深海猎人、艾丽妮与乔迪登上愚人号，发现其内部富丽堂皇且一尘不染，但已被海嗣占据"
+    },
+    {
+      "location": "格兰法洛",
+      "line_range": [
+        3347,
+        3440
+      ],
+      "description": "蒂亚戈在格兰法洛与深海教徒周旋，最终牺牲，小镇陷入混乱"
+    },
+    {
+      "location": "伊比利亚之眼",
+      "line_range": [
+        3874,
+        3882
+      ],
+      "description": "凯尔希与圣徒卡门抵达伊比利亚之眼，发现灯塔已被重新点亮，但达里奥已战死"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:33:35.243975+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 102834,
+    "tokens_out": 12821,
+    "elapsed_s": 95.00360989570618
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "圣徒卡门",
+    "船长阿方索",
+    "大副",
+    "乔迪",
+    "蒂亚戈",
+    "最后的骑士",
+    "Frost"
+  ]
+}

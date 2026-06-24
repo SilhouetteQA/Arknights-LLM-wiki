@@ -1,0 +1,833 @@
+{
+  "chapter": "画中人",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "炎熔与克洛丝受年之托，前往大炎寻找其妹夕。途中救下自称信使的乌有，三人结伴前往灰齐山。在灰齐山上的茅屋前，炎熔推门后失去意识，醒来时发现自己与同伴身处一个名为婆山镇的奇异之地。此地日月同悬、昼夜不分，居民对时间与空间的认知与外界截然不同。三人结识了说书人煮伞居士、东国云游僧嵯峨以及当铺掌柜黎。嵯峨透露自己也是从灰齐山茅屋误入此地，并指出他们可能身处一幅名为《拙山尽起图》的画卷之中。\n\n婆山镇每逢除夕便会遭受名为墨魉的怪物袭击，居民需躲至有阳光之处避难。炎熔等人协助抵御墨魉，却发现这些怪物被击败后会化作墨渍消失。嵯峨称自己已在此画中游历百余幅画卷，而黎则对炎熔说出水中月之喻，暗示她不必为画中之人过分费心。在一次大规模墨魉袭击中，天色突然恢复正常，太阳开始移动，墨魉不再畏惧阳光，导致镇民伤亡惨重。\n\n炎熔与克洛丝全力保护镇民，乌有在危急时刻被迫展露真实身手，被克洛丝识破其隐藏实力。克洛丝警告乌有若继续隐瞒将失去信任，乌有承诺脱困后会给出交代。与此同时，黎向煮伞居士讲述了一个关于婆山镇遭遇天灾、居民流离失所的故事，暗示煮伞居士并非普通说书人。煮伞居士则对嵯峨说出你何苦也费力去捞水中月，暗示自己知晓画中真相。众人开始意识到，他们被困在画中的时间可能远超想象。\n\nScene 1中，炎熔等人发现婆山镇在经历墨魉袭击后完全恢复原状，只有他们这些画外人记得昨天的事。嵯峨解释这是画卷的规律——画外人闭眼后天地会恢复本来面貌。黎掌柜揭示真相：婆山镇是夕的画卷，居民是画中人，墨魉是夕的杂念。她劝众人不要干预，但炎熔、克洛丝和嵯峨决定继续保护镇民。Scene 2中，众人发现墨魉变少，炎熔意识到已找对地方。乌有坦白自己的身世：他原是勾吴城廉家武馆弟子，因比武失手打死人，师父为维护他而自残身亡，他逃出勾吴城后隐姓埋名。煮伞先生（夕的化身）出现，邀请众人住下。Scene 3中，克洛丝警告大家连续七天守卫画中城镇已开始影响心态。黎提议用爆竹驱赶墨魉，众人成功实施。煮伞先生听到年字后出现。Scene 4中，嵯峨与夕（煮伞先生本尊）进行哲学对话。嵯峨在画中游历十年，向夕请教《拙山尽起图》的真意。夕揭示画中留白只是无心之举，并展示嵯峨师父当年在画中看到的景象——一个饿殍遍地的荒地。夕与嵯峨讨论真与假、画中人与画外人的本质。嵯峨拿出年给的信物，年突然出现。Scene 5中，乌有经历黄粱一梦，梦见自己在龙门寻求庇护、开武馆、被仇家刺杀。克洛丝梦见与米格鲁的往事和玻利瓦尔的悲剧。年出现解释这是夕的梦境陷阱。年向炎熔讲述大炎古代真龙狩猎神明的历史。众人被夕驱逐出画，年用二踢脚炸开画卷，与夕对峙。Scene 6中，年与夕进行深层对话，揭示她们是某个古老存在的碎片，该存在即将苏醒并吞噬她们。年说服夕加入罗德岛共同应对危机。嵯峨凭借看山还是山的悟性自行离开画卷。乌有请求加入罗德岛。众人准备离开。Scene 7中，夕与黎（当年她救过的画中人）在黎弥留之际重逢。黎请求夕画出她记忆中的婆山镇。夕回到罗德岛后，年向她介绍罗德岛，夕开始对博士和凯尔希产生兴趣。",
+  "events": [
+    {
+      "event": "炎熔、克洛丝在荒野中救下被钳兽追赶的乌有",
+      "type": "rescue",
+      "line_range": [
+        1,
+        22
+      ],
+      "participants": [
+        "炎熔",
+        "克洛丝",
+        "乌有"
+      ],
+      "location": "大炎荒野，前往灰齐山的路上",
+      "significance": "引入关键角色乌有，建立三人小队",
+      "is_imaginary": false
+    },
+    {
+      "event": "炎熔与克洛丝接受年的委托，前往大炎寻找其妹夕",
+      "type": "planning",
+      "line_range": [
+        84,
+        120
+      ],
+      "participants": [
+        "炎熔",
+        "年",
+        "克洛丝"
+      ],
+      "location": "罗德岛（回忆）",
+      "significance": "交代本章主线任务：寻找夕",
+      "is_imaginary": false
+    },
+    {
+      "event": "三人抵达灰齐山茅屋，炎熔推门后失去意识",
+      "type": "revelation",
+      "line_range": [
+        157,
+        176
+      ],
+      "participants": [
+        "炎熔",
+        "克洛丝",
+        "乌有"
+      ],
+      "location": "灰齐山茅屋",
+      "significance": "触发进入画中世界的转折点",
+      "is_imaginary": false
+    },
+    {
+      "event": "三人发现自己身处婆山镇，此地日月同悬、昼夜不分",
+      "type": "revelation",
+      "line_range": [
+        239,
+        260
+      ],
+      "participants": [
+        "炎熔",
+        "克洛丝",
+        "乌有"
+      ],
+      "location": "婆山镇",
+      "significance": "揭示画中世界的异常物理规则",
+      "is_imaginary": false
+    },
+    {
+      "event": "婆山镇遭遇墨魉袭击，炎熔与克洛丝主动迎战",
+      "type": "battle",
+      "line_range": [
+        282,
+        297
+      ],
+      "participants": [
+        "炎熔",
+        "克洛丝",
+        "乌有"
+      ],
+      "location": "婆山镇",
+      "significance": "首次接触画中怪物墨魉",
+      "is_imaginary": false
+    },
+    {
+      "event": "嵯峨向乌有介绍墨魉的命名与习性",
+      "type": "investigation",
+      "line_range": [
+        527,
+        542
+      ],
+      "participants": [
+        "嵯峨",
+        "乌有"
+      ],
+      "location": "婆山镇西边",
+      "significance": "揭示墨魉来自鸿洞山，且通常成群出现",
+      "is_imaginary": false
+    },
+    {
+      "event": "嵯峨向炎熔揭示他们身处画卷之中",
+      "type": "revelation",
+      "line_range": [
+        674,
+        701
+      ],
+      "participants": [
+        "嵯峨",
+        "炎熔"
+      ],
+      "location": "婆山镇当铺",
+      "significance": "核心设定揭示：众人被困在画中世界",
+      "is_imaginary": false
+    },
+    {
+      "event": "黎向炎熔说出水中月之喻，暗示她不必为画中人过分费心",
+      "type": "ideological_clash",
+      "line_range": [
+        828,
+        835
+      ],
+      "participants": [
+        "黎",
+        "炎熔"
+      ],
+      "location": "婆山镇当铺",
+      "significance": "暗示画中人与画外人的本质区别",
+      "is_imaginary": false
+    },
+    {
+      "event": "天色突然恢复正常，墨魉不再畏惧阳光，大规模袭击镇民",
+      "type": "disaster",
+      "line_range": [
+        867,
+        887
+      ],
+      "participants": [
+        "炎熔",
+        "克洛丝",
+        "乌有",
+        "嵯峨",
+        "村民"
+      ],
+      "location": "婆山镇",
+      "significance": "画中世界规则被打破，危机升级",
+      "is_imaginary": false
+    },
+    {
+      "event": "黎向煮伞居士讲述婆山镇遭遇天灾的真实历史",
+      "type": "revelation",
+      "line_range": [
+        1021,
+        1045
+      ],
+      "participants": [
+        "黎",
+        "说书人"
+      ],
+      "location": "婆山镇",
+      "significance": "暗示画中世界基于真实历史，煮伞居士身份可疑",
+      "is_imaginary": false
+    },
+    {
+      "event": "煮伞居士对嵯峨说出你何苦也费力去捞水中月，暗示自己知晓真相",
+      "type": "confrontation",
+      "line_range": [
+        1051,
+        1058
+      ],
+      "participants": [
+        "说书人",
+        "嵯峨"
+      ],
+      "location": "婆山镇",
+      "significance": "揭示煮伞居士并非普通说书人，可能与画主有关",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌有在危急中被迫展露真实身手，被克洛丝识破",
+      "type": "confrontation",
+      "line_range": [
+        1061,
+        1081
+      ],
+      "participants": [
+        "克洛丝",
+        "乌有"
+      ],
+      "location": "婆山镇园子",
+      "significance": "揭示乌有隐藏实力，埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "众人发现婆山镇完全恢复原状，只有画外人记得墨魉袭击",
+      "type": "revelation",
+      "line_range": [
+        1086,
+        1140
+      ],
+      "participants": [
+        "炎熔",
+        "克洛丝",
+        "乌有",
+        "嵯峨",
+        "黎"
+      ],
+      "location": "婆山镇",
+      "significance": "揭示画卷的循环重置特性，确认众人身处画中",
+      "is_imaginary": false
+    },
+    {
+      "event": "嵯峨解释画卷规律：画外人闭眼后天地恢复本来面貌",
+      "type": "revelation",
+      "line_range": [
+        1141,
+        1166
+      ],
+      "participants": [
+        "嵯峨",
+        "炎熔",
+        "克洛丝",
+        "乌有",
+        "黎"
+      ],
+      "location": "婆山镇",
+      "significance": "揭示画卷运作机制，解释为何只有画外人记得变化",
+      "is_imaginary": false
+    },
+    {
+      "event": "黎揭示婆山镇是夕的画卷，墨魉是夕的杂念",
+      "type": "revelation",
+      "line_range": [
+        1167,
+        1225
+      ],
+      "participants": [
+        "黎",
+        "炎熔",
+        "克洛丝",
+        "乌有",
+        "嵯峨"
+      ],
+      "location": "婆山镇",
+      "significance": "揭示画卷创造者身份和墨魉本质，点明画中人是虚假的",
+      "is_imaginary": false
+    },
+    {
+      "event": "炎熔等人决定继续保护镇民，即使知道他们是画中人",
+      "type": "ideological_clash",
+      "line_range": [
+        1209,
+        1225
+      ],
+      "participants": [
+        "炎熔",
+        "克洛丝",
+        "嵯峨",
+        "乌有",
+        "黎"
+      ],
+      "location": "婆山镇",
+      "significance": "展现角色对虚假生命的道德立场，与黎的实用主义形成对比",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌有坦白身世：廉家武馆弟子，因比武失手打死人，师父为维护他自残身亡",
+      "type": "revelation",
+      "line_range": [
+        1272,
+        1346
+      ],
+      "participants": [
+        "乌有",
+        "炎熔",
+        "克洛丝",
+        "嵯峨"
+      ],
+      "location": "婆山镇",
+      "significance": "揭示乌有隐藏实力的原因和悲惨过往，完成角色背景交代",
+      "is_imaginary": false
+    },
+    {
+      "event": "克洛丝警告连续守卫已开始影响心态，提醒保持警惕",
+      "type": "character_development",
+      "line_range": [
+        1375,
+        1398
+      ],
+      "participants": [
+        "克洛丝",
+        "炎熔",
+        "乌有"
+      ],
+      "location": "婆山镇",
+      "significance": "展现克洛丝的成熟和警觉，提醒重复战斗对心理的侵蚀",
+      "is_imaginary": false
+    },
+    {
+      "event": "黎提议用爆竹驱赶墨魉，众人成功实施",
+      "type": "planning",
+      "line_range": [
+        1405,
+        1463
+      ],
+      "participants": [
+        "黎",
+        "炎熔",
+        "克洛丝",
+        "乌有"
+      ],
+      "location": "婆山镇",
+      "significance": "找到应对墨魉的方法，但引发夕的注意",
+      "is_imaginary": false
+    },
+    {
+      "event": "嵯峨与夕进行哲学对话，讨论画中真意和真与假",
+      "type": "ideological_clash",
+      "line_range": [
+        1465,
+        1603
+      ],
+      "participants": [
+        "嵯峨",
+        "夕"
+      ],
+      "location": "画卷空间",
+      "significance": "深入探讨画中世界的本质、真与假的哲学问题，展现夕的世界观",
+      "is_imaginary": false
+    },
+    {
+      "event": "夕展示嵯峨师父当年在画中看到的景象——饿殍满地的荒地",
+      "type": "flashback",
+      "line_range": [
+        1550,
+        1574
+      ],
+      "participants": [
+        "夕",
+        "嵯峨"
+      ],
+      "location": "画卷空间",
+      "significance": "揭示嵯峨师父的过去和起字的由来，展现夕与东国寺庙的渊源",
+      "is_imaginary": false
+    },
+    {
+      "event": "嵯峨拿出年给的信物，年突然出现",
+      "type": "revelation",
+      "line_range": [
+        1612,
+        1614
+      ],
+      "participants": [
+        "嵯峨",
+        "夕",
+        "年"
+      ],
+      "location": "画卷空间",
+      "significance": "年正式登场，剧情转折点",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌有经历黄粱一梦，梦见自己在龙门的经历和被刺杀",
+      "type": "dream_vision",
+      "line_range": [
+        1615,
+        1727
+      ],
+      "participants": [
+        "乌有",
+        "年"
+      ],
+      "location": "梦境空间",
+      "significance": "展现乌有的内心恐惧和未了心愿，揭示夕的梦境陷阱",
+      "is_imaginary": true
+    },
+    {
+      "event": "克洛丝梦见与米格鲁的往事和玻利瓦尔的悲剧",
+      "type": "dream_vision",
+      "line_range": [
+        1729,
+        1806
+      ],
+      "participants": [
+        "克洛丝",
+        "年"
+      ],
+      "location": "梦境空间",
+      "significance": "展现克洛丝的过去和内心创伤，揭示夕的梦境陷阱",
+      "is_imaginary": true
+    },
+    {
+      "event": "年向炎熔讲述大炎古代真龙狩猎神明的历史",
+      "type": "revelation",
+      "line_range": [
+        1832,
+        1861
+      ],
+      "participants": [
+        "年",
+        "炎熔"
+      ],
+      "location": "梦境空间",
+      "significance": "揭示大炎与神明的历史，暗示年和夕的起源",
+      "is_imaginary": false
+    },
+    {
+      "event": "年用二踢脚炸开画卷，与夕对峙",
+      "type": "confrontation",
+      "line_range": [
+        1862,
+        1917
+      ],
+      "participants": [
+        "年",
+        "夕",
+        "炎熔",
+        "克洛丝",
+        "乌有"
+      ],
+      "location": "灰齐山",
+      "significance": "姐妹正面冲突，年揭示从登山起就已踏入画卷",
+      "is_imaginary": false
+    },
+    {
+      "event": "年与夕进行深层对话，揭示她们是某个古老存在的碎片",
+      "type": "revelation",
+      "line_range": [
+        1918,
+        1969
+      ],
+      "participants": [
+        "年",
+        "夕"
+      ],
+      "location": "灰齐山",
+      "significance": "揭示年和夕的真实身份和面临的危机——本体即将苏醒吞噬她们",
+      "is_imaginary": false
+    },
+    {
+      "event": "嵯峨凭借看山还是山的悟性自行离开画卷",
+      "type": "revelation",
+      "line_range": [
+        1993,
+        2028
+      ],
+      "participants": [
+        "嵯峨",
+        "年",
+        "夕"
+      ],
+      "location": "灰齐山",
+      "significance": "嵯峨的悟性让夕愿赌服输，同意加入罗德岛",
+      "is_imaginary": false
+    },
+    {
+      "event": "夕同意加入罗德岛，乌有请求同行",
+      "type": "alliance",
+      "line_range": [
+        2029,
+        2094
+      ],
+      "participants": [
+        "夕",
+        "年",
+        "炎熔",
+        "克洛丝",
+        "乌有",
+        "嵯峨"
+      ],
+      "location": "灰齐山",
+      "significance": "任务完成，夕加入罗德岛，乌有也请求加入",
+      "is_imaginary": false
+    },
+    {
+      "event": "夕与黎在黎弥留之际重逢，黎请求夕画出婆山镇",
+      "type": "farewell",
+      "line_range": [
+        2095,
+        2158
+      ],
+      "participants": [
+        "夕",
+        "黎"
+      ],
+      "location": "黎的住处",
+      "significance": "展现夕与画中人的羁绊，揭示婆山镇画卷的创作动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "夕在罗德岛开始对博士和凯尔希产生兴趣",
+      "type": "character_development",
+      "line_range": [
+        2159,
+        2184
+      ],
+      "participants": [
+        "夕",
+        "年"
+      ],
+      "location": "罗德岛",
+      "significance": "夕开始融入罗德岛，为后续剧情铺垫",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "炎熔",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，受年委托寻找其妹夕，是本章行动队长。在画中世界保持警惕，主动保护镇民，并逐步意识到身处异常空间。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克洛丝",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与炎熔同行。观察力敏锐，识破乌有隐藏身手，在战斗中提供远程支援。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "乌有",
+      "type": "npc",
+      "role_in_chapter": "自称信使，被炎熔和克洛丝所救。实际身手不凡但刻意隐藏，被克洛丝识破后承诺脱困后给出交代。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "年",
+      "type": "operator",
+      "role_in_chapter": "在回忆中出现，委托炎熔和克洛丝寻找其妹夕，并给予护身符。暗示自己与常人不同。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "说书人（煮伞居士）",
+      "type": "npc",
+      "role_in_chapter": "婆山镇的说书人，自称煮伞居士。知晓画中真相，对嵯峨说出你何苦也费力去捞水中月，暗示自己并非普通人类。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "嵯峨",
+      "type": "operator",
+      "role_in_chapter": "东国云游僧，同样从灰齐山茅屋误入画中世界。已在此游历百余幅画卷，向炎熔揭示身处画中的真相。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "黎",
+      "type": "npc",
+      "role_in_chapter": "婆山镇当铺掌柜，单名一个黎字。对画中世界有深刻认知，向炎熔说出水中月之喻，并向煮伞居士讲述婆山镇的真实历史。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "说书人/煮伞居士",
+      "type": "npc",
+      "role_in_chapter": "婆山镇说书人，实为夕的化身，引导嵯峨",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "夕",
+      "type": "operator",
+      "role_in_chapter": "年的妹妹，画卷创造者，画地为牢多年，最终被说服加入罗德岛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "米格鲁",
+      "type": "operator",
+      "role_in_chapter": "克洛丝梦境中出现的罗德岛干员，展现克洛丝的过去",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "林",
+      "type": "npc",
+      "role_in_chapter": "龙门人物，乌有梦境中出现，与乌有师父有旧交",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "画中世界",
+      "line_range": [
+        674,
+        701
+      ],
+      "discussion_summary": "嵯峨向炎熔揭示他们身处画卷之中，天地人皆不合情理，婆山镇只是百余幅画卷之一，画中生灵遵循自己的规矩。",
+      "is_substantive": true
+    },
+    {
+      "concept": "水中月",
+      "line_range": [
+        828,
+        835
+      ],
+      "discussion_summary": "黎用水中月比喻画中世界，暗示炎熔不必为画中之人过分费心，因为水中月终归是水中月。",
+      "is_substantive": true
+    },
+    {
+      "concept": "婆山镇的真实历史",
+      "line_range": [
+        1021,
+        1045
+      ],
+      "discussion_summary": "黎讲述婆山镇曾遭遇天灾，活性源石污染水源，居民被迫逃亡，途中饿死无数，一个女孩被至亲抛弃后遇到一个奇妙的人。",
+      "is_substantive": true
+    },
+    {
+      "concept": "画中世界/画卷",
+      "line_range": [
+        1141,
+        1165
+      ],
+      "discussion_summary": "嵯峨解释画卷规律：画外人闭眼后天地恢复本来面貌，时间越久越会忘记原本理所当然的事情，最终成为画中人",
+      "is_substantive": true
+    },
+    {
+      "concept": "墨魉的本质",
+      "line_range": [
+        1207,
+        1208
+      ],
+      "discussion_summary": "黎揭示墨魉是夕心情不好时的信笔涂抹，是她的杂念",
+      "is_substantive": true
+    },
+    {
+      "concept": "水中月/竹篮打水",
+      "line_range": [
+        1178,
+        1200
+      ],
+      "discussion_summary": "黎用水中月比喻画卷中的虚假世界，劝众人不要为虚假的事物费心",
+      "is_substantive": true
+    },
+    {
+      "concept": "真与假/画中人的本质",
+      "line_range": [
+        1580,
+        1602
+      ],
+      "discussion_summary": "夕与嵯峨辩论真与假：画中人自以为是真人看假人，但若我们也是画中人呢？人生皆梦幻如露似电",
+      "is_substantive": true
+    },
+    {
+      "concept": "拙山尽起的真意",
+      "line_range": [
+        1520,
+        1548
+      ],
+      "discussion_summary": "嵯峨向夕请教画中留白的含义，夕解释只是兴起而起败兴而停，无心插柳，各人有各人的理解",
+      "is_substantive": true
+    },
+    {
+      "concept": "大炎狩猎神明/敕封神明",
+      "line_range": [
+        1838,
+        1861
+      ],
+      "discussion_summary": "年讲述大炎古代真龙倾全国之力狩猎神明，迫使神明臣服，从此大炎国祚只在真龙之手",
+      "is_substantive": true
+    },
+    {
+      "concept": "年和夕的本体/古老存在的碎片",
+      "line_range": [
+        1918,
+        1953
+      ],
+      "discussion_summary": "年揭示她们是某个古老存在的碎片，该存在即将苏醒并吞噬她们，她们必须反抗",
+      "is_substantive": true
+    },
+    {
+      "concept": "看山还是山/悟性",
+      "line_range": [
+        2003,
+        2016
+      ],
+      "discussion_summary": "嵯峨凭借住持爷爷看山还是山的感悟自行离开画卷，夕对此深感意外",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        84,
+        101
+      ],
+      "description": "炎熔回忆年与可露希尔达成协议，罗德岛派遣炎熔和克洛丝前往大炎寻找夕。年以提供价值千万的实验材料作为交换。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        978,
+        979
+      ],
+      "description": "炎熔表示之后的任务报告由她提交，因为罗德岛该帮助的不止是感染者，体现罗德岛的行动准则。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1959,
+        1960
+      ],
+      "description": "年向夕介绍罗德岛是个好地方，邀请夕加入",
+      "is_substantive": true
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2159,
+        2184
+      ],
+      "description": "夕在罗德岛开始了解博士和凯尔希，年向她解释罗德岛的意义",
+      "is_substantive": true
+    },
+    {
+      "faction": "大炎朝廷/真龙",
+      "line_range": [
+        1838,
+        1861
+      ],
+      "description": "年讲述大炎古代真龙狩猎神明的历史，展现大炎与神明的对抗关系",
+      "is_substantive": true
+    },
+    {
+      "faction": "勾吴城廉家武馆",
+      "line_range": [
+        1309,
+        1331
+      ],
+      "description": "乌有讲述自己在廉家武馆的经历，师父廉子虚为维护他自残身亡",
+      "is_substantive": true
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        1662,
+        1663
+      ],
+      "description": "乌有梦境中林建议他去近卫局，乌有说当官的管不了",
+      "is_substantive": true
+    },
+    {
+      "faction": "大炎监察司",
+      "line_range": [
+        2174,
+        2179
+      ],
+      "description": "夕询问监察司与罗德岛的关系，提及惊蛰和她的师父曾找过自己麻烦",
+      "is_substantive": true
+    }
+  ],
+  "locations": [
+    {
+      "location": "灰齐山",
+      "line_range": [
+        144,
+        148
+      ],
+      "description": "炎熔等人抵达灰齐山，年给的地址只说在勾吴城外、灰齐山附近。山上有一间破茅屋，是进入画中世界的入口。"
+    },
+    {
+      "location": "婆山镇",
+      "line_range": [
+        239,
+        260
+      ],
+      "description": "炎熔等人发现自己身处婆山镇，此地日月同悬、昼夜不分，居民对时间与空间的认知与外界截然不同。"
+    },
+    {
+      "location": "婆山镇",
+      "line_range": [
+        380,
+        422
+      ],
+      "description": "说书人讲述婆山镇的来历：七十年前富商因火灾迁居至此，因一幅画中风水而建镇。此地与世隔绝，极少有游客和官差。"
+    },
+    {
+      "location": "鸿洞山",
+      "line_range": [
+        525,
+        526
+      ],
+      "description": "嵯峨指出鸿洞山位于婆山镇西边，常年有奇异鬼物（墨魉）出没，不建议擅自靠近。"
+    },
+    {
+      "location": "婆山镇",
+      "line_range": [
+        1086,
+        1140
+      ],
+      "description": "画卷中的小镇，经历墨魉袭击后完全恢复原状，居民不记得昨天的事",
+      "is_substantive": true
+    },
+    {
+      "location": "勾吴城",
+      "line_range": [
+        1309,
+        1331
+      ],
+      "description": "乌有的家乡，有廉家武馆，乌有在此经历师父之死后逃亡",
+      "is_substantive": true
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        1615,
+        1693
+      ],
+      "description": "乌有梦境中的地点，他在此寻求庇护、开武馆、被刺杀",
+      "is_substantive": true
+    },
+    {
+      "location": "罗德岛",
+      "line_range": [
+        2159,
+        2184
+      ],
+      "description": "夕被带到罗德岛后开始了解这个地方，对博士和凯尔希产生兴趣",
+      "is_substantive": true
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:02:16.561345+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 48583,
+    "tokens_out": 7736,
+    "elapsed_s": 74.70605635643005
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "说书人（煮伞居士）",
+    "黎",
+    "说书人/煮伞居士"
+  ]
+}

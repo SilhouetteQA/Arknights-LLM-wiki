@@ -1,0 +1,172 @@
+{
+  "summary": "本章为集成战略IF线剧情，非正史事件。\n\n## 序章/框架对话\nScene 1: 舞会终场 — 暮落找到傀影，确认他回到罗德岛，两人在剧场废墟中简短对话，暮落确认傀影真的回来了。\nScene 2: 盛大揭幕 — 「剧团喉舌」宣布戏剧开幕，暮落发现剧团喉舌出现，意识到两人都回到了剧团的掌控中。\nScene 3: 沉默之章 — 剧作家向「剧团长阁下」汇报剧本创作，讲述傀影与暮落逃离剧团又回归的故事，并暗示剧本中埋藏了黑暗种子，等待悲剧结局的到来。\n\n## Ending 01：无（本章仅包含序章框架对话，未包含具体结局文本）\n本章仅包含三个序章/框架对话场景，未包含任何结局（_ending）的完整叙事文本。",
+  "events": [
+    {
+      "event": "暮落在剧场废墟中找到傀影，确认他回到罗德岛",
+      "type": "reunion",
+      "line_range": [
+        1,
+        17
+      ],
+      "participants": [
+        "暮落",
+        "傀影"
+      ],
+      "location": "剧场废墟",
+      "significance": "确认傀影回归罗德岛，暮落表达关切",
+      "is_imaginary": true
+    },
+    {
+      "event": "剧团喉舌宣布戏剧开幕，暮落和傀影被卷入剧团掌控",
+      "type": "ceremony",
+      "line_range": [
+        18,
+        25
+      ],
+      "participants": [
+        "剧团喉舌",
+        "暮落"
+      ],
+      "location": "剧场",
+      "significance": "揭示两人仍处于剧团的掌控之中，戏剧即将展开",
+      "is_imaginary": true
+    },
+    {
+      "event": "剧作家向剧团长汇报剧本创作，讲述傀影与暮落的故事并暗示悲剧结局",
+      "type": "revelation",
+      "line_range": [
+        18,
+        53
+      ],
+      "participants": [
+        "剧作家",
+        "剧团长"
+      ],
+      "location": "未指明",
+      "significance": "揭示剧作家操控剧本，埋下黑暗种子，等待悲剧结局",
+      "is_imaginary": true
+    }
+  ],
+  "characters": [
+    {
+      "name": "傀影",
+      "type": "operator",
+      "role_in_chapter": "回归罗德岛的前剧团成员，被暮落找到，对剧团心怀愧疚",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "暮落",
+      "type": "operator",
+      "role_in_chapter": "找到傀影并确认其回归，随后被剧团喉舌发现，再次卷入剧团事件",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "剧团喉舌",
+      "type": "npc",
+      "role_in_chapter": "宣布戏剧开幕，将暮落和傀影视为回到剧团怀抱的游子",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "剧作家",
+      "type": "npc",
+      "role_in_chapter": "向剧团长汇报剧本创作，讲述傀影与暮落的故事，暗示剧本中埋藏黑暗种子",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "剧团长",
+      "type": "npc",
+      "role_in_chapter": "作为剧作家的对话对象，被剧作家称为阁下，是剧本的最终受众",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "剧本创作与角色命运",
+      "line_range": [
+        18,
+        53
+      ],
+      "discussion_summary": "剧作家详细讨论剧本创作过程，包括角色性格转变、伏笔回收、意外差错，以及将黑暗种子埋入美好结局中以等待悲剧的创作理念。这是IS-IF设定。",
+      "is_substantive": true
+    },
+    {
+      "concept": "剧团的呼唤与回归",
+      "line_range": [
+        20,
+        27
+      ],
+      "discussion_summary": "剧作家描述主角（傀影）逃离剧团后又在剧团呼唤下回归，懦夫（暮落）逃离后却毅然回首面对剧团，最终两人都回到罗德岛。这是IS-IF设定。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        3,
+        5
+      ],
+      "description": "暮落提到傀影给罗德岛添了麻烦，傀影表示会用行动补偿罗德岛"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        21,
+        27
+      ],
+      "description": "剧作家描述罗德岛作为正义的同伴从不缺席，主角与懦夫最终回到罗德岛家园"
+    },
+    {
+      "faction": "猩红剧团",
+      "line_range": [
+        18,
+        25
+      ],
+      "description": "剧团喉舌宣布戏剧开幕，将暮落和傀影视为回到剧团怀抱的游子"
+    },
+    {
+      "faction": "猩红剧团",
+      "line_range": [
+        18,
+        53
+      ],
+      "description": "剧作家向剧团长汇报剧本创作，讨论剧团对主角的呼唤、剧本的操控以及等待悲剧结局"
+    }
+  ],
+  "locations": [
+    {
+      "location": "剧场",
+      "line_range": [
+        8,
+        9
+      ],
+      "description": "暮落描述剧场为舞台和演员梦寐以求的场所，暗示这是猩红剧团的剧场"
+    },
+    {
+      "location": "剧场",
+      "line_range": [
+        18,
+        25
+      ],
+      "description": "剧团喉舌在剧场中宣布戏剧开幕，将暮落和傀影视为回到剧团怀抱的游子"
+    }
+  ],
+  "chapter": "傀影与猩红孤钻",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:06:20.621137+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 3176,
+    "tokens_out": 1504,
+    "elapsed_s": 14.634961605072021
+  },
+  "taxonomy_type": "is",
+  "_unmatched_names": [
+    "剧团喉舌",
+    "剧作家",
+    "剧团长"
+  ]
+}

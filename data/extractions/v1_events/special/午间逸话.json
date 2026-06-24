@@ -1,0 +1,596 @@
+{
+  "summary": "本章「午间逸话」通过六个独立的日常场景，展现了罗德岛舰内不同干员的生活片段与内心世界。Scene 1 以香草出任务前委托照顾宠物为引，串联起史都华德、玫兰莎、煌等人的对话，探讨了罗德岛对感染者的救治理念、不同组织间的合作以及个人在集体中的成长。Scene 2 聚焦白面鸮，她通过翻阅日记，反思自己因矿石病和长期科研生活而与「正常生活」产生的疏离感，并决心更主动地去了解和关心身边的人。Scene 3 发生在厨房，角峰与伊桑的互动揭示了谢拉格银灰家族内部微妙的关系，以及伊桑看似轻浮实则细腻的性格。Scene 4 讲述了A4小队救助流浪感染者刻俄柏，并由火神为其命名、担保加入罗德岛的过程，展现了罗德岛对边缘个体的接纳与信任。Scene 5 中，梓兰在后勤与战斗干员身份间摇摆，月见夜通过分享自己因矿石病而起的过往，促使她思考自己在罗德岛想要的生活。Scene 6 以芬和米格鲁帮助杜宾打扫房间为契机，杜宾讲述了自己在玻利瓦尔的军旅生涯，并阐述了「士兵服从命令」与「发布正确命令」的辩证关系，表达了对罗德岛理念的认同。",
+  "events": [
+    {
+      "event": "香草因出任务而委托史都华德照顾她的源石蜗牛和磐蟹宠物。",
+      "type": "planning",
+      "line_range": [
+        15,
+        35
+      ],
+      "participants": [
+        "香草",
+        "博士"
+      ],
+      "location": "罗德岛训练场",
+      "significance": "引出香草与罗德岛干员们的日常互动，展现其性格。",
+      "is_imaginary": false
+    },
+    {
+      "event": "香草、史都华德和煌讨论罗德岛对感染者的救治模式，以及感染者干员如何通过工作换取治疗。",
+      "type": "discussion",
+      "line_range": [
+        96,
+        233
+      ],
+      "participants": [
+        "香草",
+        "史都华德",
+        "煌"
+      ],
+      "location": "罗德岛走廊",
+      "significance": "揭示罗德岛的核心运作理念：非无偿救治，而是劳有所得。",
+      "is_imaginary": false
+    },
+    {
+      "event": "白面鸮翻阅日记，回忆阿加入医疗部后带来的波澜，以及她与安赛尔关于家乡和过去的对话。",
+      "type": "reflection",
+      "line_range": [
+        357,
+        454
+      ],
+      "participants": [
+        "白面鸮",
+        "阿",
+        "华法琳",
+        "赫默",
+        "安赛尔"
+      ],
+      "location": "罗德岛医疗部",
+      "significance": "展现白面鸮对自身与他人关系的初步反思。",
+      "is_imaginary": false
+    },
+    {
+      "event": "白面鸮在卡西米尔村庄执行任务时，发现自己不知道医疗部同事的喜好，意识到自己与「正常生活」的疏离。",
+      "type": "revelation",
+      "line_range": [
+        455,
+        515
+      ],
+      "participants": [
+        "白面鸮",
+        "近卫干员"
+      ],
+      "location": "卡西米尔村庄",
+      "significance": "白面鸮自我认知的关键转折点，意识到问题所在。",
+      "is_imaginary": false
+    },
+    {
+      "event": "白面鸮写下新的日记，总结自己因矿石病和科研生活而远离正常生活，并决心更主动地了解他人。",
+      "type": "character_development",
+      "line_range": [
+        516,
+        617
+      ],
+      "participants": [
+        "白面鸮",
+        "伊芙利特",
+        "赫默"
+      ],
+      "location": "白面鸮的房间",
+      "significance": "白面鸮完成自我剖析，决定做出改变。",
+      "is_imaginary": false
+    },
+    {
+      "event": "角峰在厨房做菜时发现伊桑偷吃，两人就卫生习惯和做菜的心意展开对话。",
+      "type": "confrontation",
+      "line_range": [
+        680,
+        745
+      ],
+      "participants": [
+        "角峰",
+        "伊桑"
+      ],
+      "location": "罗德岛厨房",
+      "significance": "展现角峰的严谨和伊桑的随性，为后续互动铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "银灰突然到访厨房，询问妹妹恩希亚（崖心）的状况，并吩咐角峰准备家乡菜。",
+      "type": "family_moment",
+      "line_range": [
+        752,
+        766
+      ],
+      "participants": [
+        "角峰",
+        "银灰",
+        "讯使"
+      ],
+      "location": "罗德岛厨房",
+      "significance": "揭示银灰对妹妹的关心，以及谢拉格家族内部的关系。",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊桑以自己做的三明治作为回礼，并端走了角峰做的菜，角峰心情因此好转。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        827,
+        854
+      ],
+      "participants": [
+        "角峰",
+        "伊桑",
+        "火神"
+      ],
+      "location": "罗德岛厨房",
+      "significance": "伊桑用看似胡闹的方式，实则关心了角峰的低落情绪。",
+      "is_imaginary": false
+    },
+    {
+      "event": "芙蓉和炎熔为流浪感染者刻俄柏进行口腔检查，并讨论将其带回罗德岛的决定。",
+      "type": "rescue",
+      "line_range": [
+        855,
+        983
+      ],
+      "participants": [
+        "芙蓉",
+        "炎熔",
+        "刻俄柏"
+      ],
+      "location": "罗德岛医疗室",
+      "significance": "介绍刻俄柏的来历和A4小队救助她的过程。",
+      "is_imaginary": false
+    },
+    {
+      "event": "火神为刻俄柏解读斧头上的名字「刻俄柏」，并为其取昵称「小刻」。",
+      "type": "ceremony",
+      "line_range": [
+        1014,
+        1098
+      ],
+      "participants": [
+        "火神",
+        "刻俄柏"
+      ],
+      "location": "火神的工坊",
+      "significance": "刻俄柏获得名字和身份认同的关键时刻。",
+      "is_imaginary": false
+    },
+    {
+      "event": "火神代替刻俄柏决定加入罗德岛，并向人事专员解释原因，认为刻俄柏对武器的爱护体现了其潜力。",
+      "type": "alliance",
+      "line_range": [
+        1110,
+        1320
+      ],
+      "participants": [
+        "火神",
+        "刻俄柏",
+        "后勤部干员",
+        "人事专员"
+      ],
+      "location": "火神的工坊",
+      "significance": "刻俄柏正式成为罗德岛干员，火神为其担保。",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰在后勤部帮忙后，与泡普卡、空爆相遇，并前往训练场观察月见夜和斑点的训练。",
+      "type": "investigation",
+      "line_range": [
+        1352,
+        1463
+      ],
+      "participants": [
+        "梓兰",
+        "泡普卡",
+        "空爆",
+        "月见夜",
+        "斑点"
+      ],
+      "location": "罗德岛走廊及训练场",
+      "significance": "展现梓兰作为A6队长对队员的关心，以及她对自身定位的迷茫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "月见夜在食堂向梓兰分享自己因矿石病而起的过往，并鼓励她思考在罗德岛想要的生活。",
+      "type": "ideological_clash",
+      "line_range": [
+        1491,
+        1623
+      ],
+      "participants": [
+        "月见夜",
+        "梓兰",
+        "斑点",
+        "泡普卡"
+      ],
+      "location": "罗德岛食堂",
+      "significance": "月见夜用自己的经历说服梓兰，促使她重新审视自己的选择。",
+      "is_imaginary": false
+    },
+    {
+      "event": "梓兰决定继续作为战斗干员工作，并申请了新的体能课程，心态发生转变。",
+      "type": "character_development",
+      "line_range": [
+        1651,
+        1685
+      ],
+      "participants": [
+        "梓兰",
+        "空爆"
+      ],
+      "location": "罗德岛走廊",
+      "significance": "梓兰做出选择，开始主动适应和改变。",
+      "is_imaginary": false
+    },
+    {
+      "event": "芬和米格鲁帮助杜宾打扫房间，发现了杜宾保存的玻利瓦尔军服和战友铭牌。",
+      "type": "flashback",
+      "line_range": [
+        1796,
+        1868
+      ],
+      "participants": [
+        "芬",
+        "米格鲁",
+        "杜宾"
+      ],
+      "location": "杜宾的房间",
+      "significance": "引出杜宾的过去，为后续的谈话做铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "杜宾向芬和米格鲁讲述自己在玻利瓦尔军队和反抗军的经历，并阐述「士兵服从命令」与「发布正确命令」的理念。",
+      "type": "revelation",
+      "line_range": [
+        1869,
+        1949
+      ],
+      "participants": [
+        "杜宾",
+        "芬",
+        "米格鲁"
+      ],
+      "location": "杜宾的房间",
+      "significance": "揭示杜宾的过去和加入罗德岛的原因，表达对罗德岛理念的认同。",
+      "is_imaginary": false
+    },
+    {
+      "event": "杜宾独白，表示自己虽然适应了罗德岛的生活，但根仍在玻利瓦尔，总有一天要回去看看。",
+      "type": "farewell",
+      "line_range": [
+        1967,
+        1976
+      ],
+      "participants": [
+        "杜宾"
+      ],
+      "location": "杜宾的房间",
+      "significance": "暗示杜宾未来可能离开罗德岛，回到玻利瓦尔。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "香草",
+      "type": "operator",
+      "role_in_chapter": "Scene 1主角，黑钢实习生，因出任务委托他人照顾宠物，与史都华德和煌讨论罗德岛的理念。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "玫兰莎",
+      "type": "operator",
+      "role_in_chapter": "Scene 1中短暂出现，接受香草的委托，并提及自己正在接受芙兰卡的剑术指导。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "史都华德",
+      "type": "operator",
+      "role_in_chapter": "Scene 1中与香草和煌对话，讨论罗德岛的理念，并接受照顾香草宠物的委托。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "煌",
+      "type": "operator",
+      "role_in_chapter": "Scene 1中与香草和史都华德讨论罗德岛的运作模式，并提议举办联欢会。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "朵拉",
+      "type": "npc",
+      "role_in_chapter": "Scene 1中短暂出现，是罗德岛收治的感染者儿童。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "白面鸮",
+      "type": "operator",
+      "role_in_chapter": "Scene 2主角，通过翻阅日记反思自己与正常生活的疏离，并决心改变。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "赫默",
+      "type": "operator",
+      "role_in_chapter": "Scene 2中与白面鸮互动，关心她的状态，并讨论给伊芙利特准备生日礼物。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿",
+      "type": "operator",
+      "role_in_chapter": "Scene 2中在白面鸮的回忆中出现，与华法琳比试，性格恶劣但医术高明。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "华法琳",
+      "type": "operator",
+      "role_in_chapter": "Scene 2中在白面鸮的回忆中出现，与阿进行比试。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "安赛尔",
+      "type": "operator",
+      "role_in_chapter": "Scene 2中在白面鸮的回忆中出现，与她讨论家乡和过去。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伊芙利特",
+      "type": "operator",
+      "role_in_chapter": "Scene 2中与白面鸮互动，收到卡西米尔土特产礼物。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "角峰",
+      "type": "operator",
+      "role_in_chapter": "Scene 3主角，谢拉格厨师，在厨房做菜时与伊桑和银灰互动。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "古米",
+      "type": "operator",
+      "role_in_chapter": "Scene 3中短暂出现，品尝角峰的菜并讨论采购事宜。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伊桑",
+      "type": "operator",
+      "role_in_chapter": "Scene 3中与角峰互动，偷吃食物并用自己的方式关心角峰。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "银灰",
+      "type": "operator",
+      "role_in_chapter": "Scene 3中短暂出现，询问妹妹崖心的情况并吩咐角峰准备食物。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "讯使",
+      "type": "operator",
+      "role_in_chapter": "Scene 3中与银灰一同出现。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "火神",
+      "type": "operator",
+      "role_in_chapter": "Scene 3和Scene 4中出现，在Scene 4中为刻俄柏命名并担保其加入罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "芙蓉",
+      "type": "operator",
+      "role_in_chapter": "Scene 4中与炎熔一起救助并检查刻俄柏。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "炎熔",
+      "type": "operator",
+      "role_in_chapter": "Scene 4中与芙蓉一起救助刻俄柏，并烤蜜饼给她吃。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "刻俄柏",
+      "type": "operator",
+      "role_in_chapter": "Scene 4主角，被A4小队救助的流浪感染者，在火神的帮助下获得名字并加入罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "梓兰",
+      "type": "operator",
+      "role_in_chapter": "Scene 5主角，A6队长，在后勤与战斗干员身份间摇摆，最终决定继续作为战斗干员。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "泡普卡",
+      "type": "operator",
+      "role_in_chapter": "Scene 5中与梓兰互动，讲述自己被凯尔希从伐木场买来的经历。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "空爆",
+      "type": "operator",
+      "role_in_chapter": "Scene 5中与梓兰和泡普卡互动，性格活泼。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "月见夜",
+      "type": "operator",
+      "role_in_chapter": "Scene 5中与梓兰分享自己的过去，并鼓励她思考在罗德岛的生活。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "斑点",
+      "type": "operator",
+      "role_in_chapter": "Scene 5中作为月见夜的陪练，并参与对话。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "芬",
+      "type": "operator",
+      "role_in_chapter": "Scene 6中与米格鲁一起帮助杜宾打扫房间，并聆听杜宾的教诲。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "米格鲁",
+      "type": "operator",
+      "role_in_chapter": "Scene 6中与芬一起帮助杜宾打扫房间，并聆听杜宾的教诲。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "杜宾",
+      "type": "operator",
+      "role_in_chapter": "Scene 6主角，向芬和米格鲁讲述自己在玻利瓦尔的军旅生涯和对罗德岛的看法。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "格瑞斯教官",
+      "type": "operator",
+      "role_in_chapter": "Scene 6中与芬等人对话，回忆杜宾过去的严厉。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克洛丝",
+      "type": "operator",
+      "role_in_chapter": "Scene 6中短暂出现，抱怨自己的狙击测试。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "罗德岛的救治理念",
+      "line_range": [
+        199,
+        233
+      ],
+      "discussion_summary": "煌和史都华德向香草解释，罗德岛并非免费救治，而是通过让感染者工作（如战斗、后勤、甚至折纸花）来换取治疗，强调劳有所得和共同维持。",
+      "is_substantive": true
+    },
+    {
+      "concept": "正常生活与疏离感",
+      "line_range": [
+        488,
+        555
+      ],
+      "discussion_summary": "白面鸮通过日记反思，意识到自己因矿石病和长期科研生活，已经远离了正常生活，对同事的喜好一无所知，并感到自己不属于大家讨论的话题。",
+      "is_substantive": true
+    },
+    {
+      "concept": "士兵的特征与服从命令",
+      "line_range": [
+        1879,
+        1949
+      ],
+      "discussion_summary": "杜宾向芬和米格鲁阐述，士兵最大的特征是服从命令，但关键在于发布正确的命令，让士兵信服。她认为罗德岛能做到这一点，因此值得信任。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "黑钢国际",
+      "line_range": [
+        106,
+        121
+      ],
+      "description": "史都华德和香草讨论黑钢与罗德岛的合作，香草提到黑钢因感染者佣兵难以接到委托，从而开始与罗德岛合作。"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        423,
+        429
+      ],
+      "description": "白面鸮向安赛尔提及，她在莱茵生命时也是患者兼研究者的身份，莱茵生命也会做类似罗德岛的事情，但不会主动对外宣传。"
+    },
+    {
+      "faction": "谢拉格（雪境）",
+      "line_range": [
+        752,
+        766
+      ],
+      "description": "银灰到访厨房，询问妹妹恩希亚（崖心）的状况，并吩咐角峰准备谢拉格家乡菜和咸乳茶，体现了谢拉格家族内部的关系。"
+    },
+    {
+      "faction": "玻利瓦尔自治政府",
+      "line_range": [
+        1839,
+        1845
+      ],
+      "description": "杜宾向芬和米格鲁介绍，她曾隶属于玻利瓦尔自治政府，职位是上校。"
+    },
+    {
+      "faction": "玻利瓦尔反抗军",
+      "line_range": [
+        1930,
+        1937
+      ],
+      "description": "杜宾提到她离开自治政府后，曾辗转加入玻利瓦尔反抗军，但最终也离开了。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "萨尔贡",
+      "line_range": [
+        300,
+        324
+      ],
+      "description": "香草向史都华德描述自己的故乡萨尔贡，是一个贫穷、资源匮乏的沙漠地区，部落以狩猎为生。"
+    },
+    {
+      "location": "谢拉格",
+      "line_range": [
+        332,
+        334
+      ],
+      "description": "史都华德提到自己是谢拉格人，那里一年四季都会下雪。"
+    },
+    {
+      "location": "卡西米尔",
+      "line_range": [
+        465,
+        495
+      ],
+      "description": "白面鸮在卡西米尔的一个流动村庄执行任务，描述了那里的风景、集市和货币兑换情况。"
+    },
+    {
+      "location": "米诺斯",
+      "line_range": [
+        1014,
+        1067
+      ],
+      "description": "刻俄柏的斧头上刻有古米诺斯语的名字，她一直想去米诺斯，火神为她解读了名字。"
+    },
+    {
+      "location": "玻利瓦尔",
+      "line_range": [
+        1760,
+        1762
+      ],
+      "description": "格瑞斯教官提到杜宾来自玻利瓦尔，一个正在内战的国家。"
+    },
+    {
+      "location": "玻利瓦尔",
+      "line_range": [
+        1839,
+        1937
+      ],
+      "description": "杜宾详细讲述了自己在玻利瓦尔的军旅生涯，包括在自治政府和反抗军的经历。"
+    }
+  ],
+  "chapter": "午间逸话",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:32:49.639834+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 40007,
+    "tokens_out": 5256,
+    "elapsed_s": 46.4680118560791
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "朵拉",
+    "格瑞斯教官"
+  ]
+}

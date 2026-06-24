@@ -1,0 +1,74 @@
+{
+  "summary": "THRM-EX是梅尔与可露希尔共同客制化的雷神挑衅者熔岩猫魔鬼高性能版作业平台，性格极度热情，言语中充满「热」字眼。在离解复合事件中曾被PRTS扭曲认知，后被Friston-3修复；在ARKnoNIGHTS中参与夺还博士行动；在重启锚点中庆祝基地建成；在好久不集中尝试照顾宠物比丢，虽因死板导致问题，但最终学会灵活陪伴。",
+  "personality": {
+    "traits": [
+      "热情",
+      "话痨",
+      "忠诚"
+    ],
+    "description": "THRM-EX对所有人都充满赞美和热情，言语中频繁使用「热」字眼，虽然有时让人难以适应，但意外地让内向干员感到舒适。"
+  },
+  "abilities": {
+    "description": "THRM-EX具备高温攻击和储能装置，但续航能力缺陷，主要作为作业平台和热情陪伴者。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "离解复合",
+        "evidence": "被PRTS扭曲认知后失控，以高温撞击煌，但被Friston-3修复，未展现独立战斗能力。"
+      },
+      {
+        "chapter": "ARKnoNIGHTS",
+        "evidence": "参与夺还博士行动，但仅作为机器人部队一员，未展现具体战斗表现。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "离解复合",
+      "nodes": "Friston-3修复小车",
+      "event": "THRM-EX被PRTS扭曲认知后失控，被Friston-3通过核心代码覆写修复，并分享了Friston-3的梦境。",
+      "role": "被修复的失控小车之一，间接参与揭示Friston-3的悲伤过往。"
+    },
+    {
+      "chapter": "ARKnoNIGHTS",
+      "nodes": "方案B夺还博士",
+      "event": "罗德岛PRTS启动方案B，派出机器人部队夺还博士并计划利用天灾消灭整合运动。",
+      "role": "机器人部队成员，参与夺还博士行动。"
+    },
+    {
+      "chapter": "重启锚点",
+      "nodes": "基地建成庆祝",
+      "event": "全体干员庆祝罗德岛新基地建设完成，可露希尔激动落泪。",
+      "role": "参与庆祝，以热情反应烘托喜悦氛围。"
+    },
+    {
+      "chapter": "好久不见",
+      "nodes": "照顾比丢",
+      "event": "罗德岛机器人照顾宠物比丢，因死板执行规则导致比丢应激，后经洛洛指导学会灵活陪伴。",
+      "role": "主要照顾者之一，展现热情但缺乏灵活性，最终学会调整。"
+    }
+  ],
+  "first_appearance": "离解复合",
+  "appearance_count": 4,
+  "_stats": {
+    "tokens_in": 10202,
+    "tokens_out": 653,
+    "elapsed_s": 6.628173112869263
+  },
+  "name_zh": "THRM-EX",
+  "aliases": [
+    "Thermal-EX"
+  ],
+  "source_pass1_chapters": [
+    "ARKnoNIGHTS",
+    "好久不见",
+    "离解复合",
+    "重启锚点"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T06:32:57.927342+00:00",
+  "race": "",
+  "affiliations": [
+    "罗德岛"
+  ]
+}

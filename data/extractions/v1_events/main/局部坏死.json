@@ -1,0 +1,1333 @@
+{
+  "chapter": "局部坏死",
+  "category": "main",
+  "batch_count": 2,
+  "summary": "本章「局部坏死」讲述了龙门保卫战的关键阶段。罗德岛与龙门近卫局联手，试图将入侵的整合运动一网打尽。然而，战局因梅菲斯特的疯狂行为而急转直下，他将自己的感染者同胞催化为失去理智的「牧群」，不分敌我地攻击。与此同时，龙门隐藏的武装力量「黑蓑」也介入战场，以极端手段清除贫民区的感染者，引发了陈、诗怀雅与林雨霞之间的激烈冲突。在混乱中，整合运动指挥官浮士德为掩护梅菲斯特和同伴撤退而牺牲，其悲剧性的过去与梅菲斯特的扭曲心理在回忆中得以揭示。最终，罗德岛与雪怪小队在霜星的带领下，因共同的生存危机而暂时停火，共同对抗黑蓑的威胁。\n\nScene 1中，灰喉在贫民区废墟中发现一名感染者儿童，并遭遇利用孩子做诱饵的整合运动成员。煌及时赶到解围，两人就信任、偏见与感染者的处境进行了深入交流。阿米娅在一旁观察，向博士阐述了信任对于指挥罗德岛的重要性。Scene 2中，凯尔希与红在战场上遭遇并制服了弑君者。凯尔希揭露了弑君者父亲伊利亚死亡的真相，指出真正的背叛者是乌萨斯帝国，并质疑整合运动与弑君者自身的复仇目标。凯尔希最终选择放走弑君者，希望她能反思并离开整合运动。Scene 3中，雪怪小队在霜星昏迷后，决定牺牲自己殿后，将霜星托付给幻影弩手带回爱国者身边。陈与阿米娅在战场边缘会面，陈告知阿米娅必须与雪怪小队战斗以应对黑蓑的压力，阿米娅决定见证这场战斗。Scene 4中，博士与霜星被困于废墟之下。霜星在昏迷中透露了童年记忆，醒来后向博士讲述了自己作为感染者的悲惨身世、被爱国者收养的经历、对塔露拉从信任到怀疑的转变，以及她对整合运动现状的失望。她与博士打赌，看谁的人先挖到他们。Scene 5中，整合运动残部撤退，九为雪怪小队献上敬意。龙门监察司与神秘人物出现，与煌和陈发生冲突。凯尔希出现，告知罗德岛接下来的行动方向。霜星醒来后，拒绝了幻影弩手让她撤退的请求，决定留下等待罗德岛。Scene 6中，雪怪小队与罗德岛临时合作，共同对抗前来干扰救援的整合运动术师，以争取时间挖掘废墟。Scene 7中，阿米娅与雪怪小队同时挖掘，最终雪怪小队先救出霜星和博士。霜星因罗德岛未与雪怪小队交战而暂时放下敌意，释放了博士。她与阿米娅进行了一场关于立场与未来的对话，并赠予霜叶冻伤药。Scene 8中，霜星因雪怪小队全灭而不再压抑力量，与罗德岛小队展开决战。战斗中，霜星揭露了塔露拉的背叛，并质问阿米娅罗德岛的信念。阿米娅在情感共鸣中坚定了战斗意志，霜星提出若罗德岛战胜她，她便加入罗德岛。Scene 9中，霜星战败，生命垂危。她拒绝了罗德岛的救助，认为自己罪孽深重。在临终前，她表达了对雪怪小队和爱国者的愧疚，并最终同意加入罗德岛，希望博士和阿米娅能阻止塔露拉的疯狂。Scene 10中，陈在排水系统发现了魏彦吾的黑暗秘密，并与诗怀雅发生冲突。她闯入魏彦吾的会客室，当面质问其过去对塔露拉及其父亲的行为。阿米娅前来解除与龙门的合约，并表达了对魏彦吾将人视为棋子行为的不满。凯尔希带来紧急消息：切尔诺伯格核心城正在接近龙门，并宣称其为乌萨斯领土。",
+  "events": [
+    {
+      "event": "罗德岛精英干员煌在龙门街头独自迎战并制服一队整合运动成员，展现强大实力。",
+      "type": "confrontation",
+      "line_range": [
+        31,
+        70
+      ],
+      "participants": [
+        "煌",
+        "整合运动成员"
+      ],
+      "location": "龙门街道",
+      "significance": "首次展示煌的战斗风格和对感染者的复杂态度，为后续剧情铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "煌与阿米娅会合，阿米娅向博士介绍作战计划，并请求博士关照煌的心理状态。",
+      "type": "planning",
+      "line_range": [
+        91,
+        163
+      ],
+      "participants": [
+        "煌",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "龙门战场",
+      "significance": "明确罗德岛在龙门战役中的角色和内部矛盾，深化阿米娅与煌的人物关系。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与诗怀雅在战场上短暂合作，陈对诗怀雅隐瞒营救罗德岛一事表达不满。",
+      "type": "confrontation",
+      "line_range": [
+        164,
+        190
+      ],
+      "participants": [
+        "陈",
+        "诗怀雅"
+      ],
+      "location": "龙门战场前线",
+      "significance": "展现陈与诗怀雅之间亦敌亦友的复杂关系，以及近卫局内部的紧张。",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏彦吾与神秘人物通话，提及往事，并透露塔露拉是其妹妹的女儿。",
+      "type": "revelation",
+      "line_range": [
+        191,
+        208
+      ],
+      "participants": [
+        "魏彦吾",
+        "？？？"
+      ],
+      "location": "龙门",
+      "significance": "揭示魏彦吾与塔露拉之间的家族关系，为后续剧情埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "通过回忆片段，展现Ace、Scout等精英干员在切尔诺伯格事件前的互动，提及博士。",
+      "type": "flashback",
+      "line_range": [
+        209,
+        253
+      ],
+      "participants": [
+        "Rosmontis",
+        "Scout",
+        "Ace",
+        "煌"
+      ],
+      "location": "罗德岛舰船",
+      "significance": "补充罗德岛精英干员之间的关系，为Ace和Scout的牺牲做铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "煌与博士在巡逻途中发现梅菲斯特的牧群正在攻击整合运动自己人。",
+      "type": "revelation",
+      "line_range": [
+        305,
+        307
+      ],
+      "participants": [
+        "煌",
+        "博士"
+      ],
+      "location": "龙门十六区",
+      "significance": "揭示梅菲斯特的疯狂行为，战局开始失控。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈发现线人Only-1（九）失联，怀疑其可能叛逃。",
+      "type": "revelation",
+      "line_range": [
+        308,
+        326
+      ],
+      "participants": [
+        "陈",
+        "诗怀雅"
+      ],
+      "location": "龙门战场",
+      "significance": "埋下九叛离龙门的伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "梅菲斯特向浮士德展示其催化感染的法术，并命令牧群攻击所有非其直属的整合运动。",
+      "type": "betrayal",
+      "line_range": [
+        327,
+        373
+      ],
+      "participants": [
+        "梅菲斯特",
+        "浮士德"
+      ],
+      "location": "龙门战场",
+      "significance": "梅菲斯特彻底失控，其行为导致整合运动内部崩溃。",
+      "is_imaginary": false
+    },
+    {
+      "event": "浮士德对梅菲斯特的行为感到震惊和失望，开始带领其他整合运动成员逃离。",
+      "type": "departure",
+      "line_range": [
+        374,
+        397
+      ],
+      "participants": [
+        "浮士德",
+        "整合运动成员"
+      ],
+      "location": "龙门战场",
+      "significance": "浮士德与梅菲斯特的决裂，浮士德开始独立行动。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅和灰喉遭遇狂暴的牧群，阿米娅对无法感知牧群情感感到困惑。",
+      "type": "confrontation",
+      "line_range": [
+        398,
+        418
+      ],
+      "participants": [
+        "阿米娅",
+        "灰喉",
+        "煌"
+      ],
+      "location": "龙门战场",
+      "significance": "展现牧群的恐怖和异常，阿米娅的特殊能力受到挑战。",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰喉与浮士德在战场上对峙，两人同为弩手，进行了一场关于信念与选择的对话。",
+      "type": "confrontation",
+      "line_range": [
+        428,
+        486
+      ],
+      "participants": [
+        "灰喉",
+        "浮士德"
+      ],
+      "location": "龙门战场",
+      "significance": "灰喉与浮士德的思想碰撞，浮士德点出灰喉的迷茫，也展现了自己的绝望。",
+      "is_imaginary": false
+    },
+    {
+      "event": "龙门监察司长官出手消灭牧群，并提及「黑蓑」的存在。",
+      "type": "revelation",
+      "line_range": [
+        542,
+        565
+      ],
+      "participants": [
+        "监察司",
+        "近卫局成员"
+      ],
+      "location": "龙门贫民区",
+      "significance": "揭示龙门隐藏的武装力量「黑蓑」的存在。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与诗怀雅在战场上因牧群的干扰而沟通困难，陈发现近卫局小队中有「客人」。",
+      "type": "confrontation",
+      "line_range": [
+        566,
+        603
+      ],
+      "participants": [
+        "陈",
+        "诗怀雅",
+        "近卫局成员"
+      ],
+      "location": "龙门战场",
+      "significance": "暗示黑蓑已经渗透进近卫局，陈开始警觉。",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰喉目睹黑蓑部队以极其高效和冷酷的手段屠杀整合运动感染者。",
+      "type": "witness",
+      "line_range": [
+        614,
+        633
+      ],
+      "participants": [
+        "灰喉",
+        "黑蓑"
+      ],
+      "location": "龙门贫民区",
+      "significance": "灰喉首次直面龙门的黑暗面，对其心理造成巨大冲击。",
+      "is_imaginary": false
+    },
+    {
+      "event": "一名整合运动成员与一名龙门本地感染者对话，讨论感染者的悲惨处境和无处为家的困境。",
+      "type": "reflection",
+      "line_range": [
+        634,
+        694
+      ],
+      "participants": [
+        "整合运动成员",
+        "龙门感染者"
+      ],
+      "location": "龙门贫民区",
+      "significance": "从底层感染者视角揭示整合运动与龙门冲突的根源，深化主题。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈在贫民区调查时遭遇黑蓑，双方对峙，黑蓑警告陈不要越界。",
+      "type": "confrontation",
+      "line_range": [
+        743,
+        787
+      ],
+      "participants": [
+        "陈",
+        "黑蓑"
+      ],
+      "location": "龙门贫民区",
+      "significance": "陈与龙门秘密力量的直接冲突，揭示贫民区居民失踪的真相。",
+      "is_imaginary": false
+    },
+    {
+      "event": "诗怀雅打电话质问林雨霞，林雨霞承认黑蓑是受她指挥，并解释其行动的正当性。",
+      "type": "confrontation",
+      "line_range": [
+        829,
+        884
+      ],
+      "participants": [
+        "诗怀雅",
+        "林雨霞"
+      ],
+      "location": "龙门",
+      "significance": "揭示林雨霞作为贫民区实际掌控者的立场和无奈，深化龙门内部矛盾。",
+      "is_imaginary": false
+    },
+    {
+      "event": "浮士德返回，命令幻影弩手控制住梅菲斯特，阻止他继续使用法术。",
+      "type": "confrontation",
+      "line_range": [
+        885,
+        913
+      ],
+      "participants": [
+        "浮士德",
+        "梅菲斯特",
+        "幻影弩手"
+      ],
+      "location": "龙门战场",
+      "significance": "浮士德与梅菲斯特彻底决裂，浮士德采取强制措施。",
+      "is_imaginary": false
+    },
+    {
+      "event": "通过回忆，揭示梅菲斯特（伊诺）和浮士德（萨沙）的悲惨童年，以及他们如何成为感染者并加入整合运动。",
+      "type": "flashback",
+      "line_range": [
+        914,
+        1030
+      ],
+      "participants": [
+        "伊诺",
+        "萨沙"
+      ],
+      "location": "乌萨斯矿场/下水道",
+      "significance": "揭示梅菲斯特扭曲性格的根源，以及他与浮士德之间深厚的羁绊。",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉为梅菲斯特赐名，并灌输其「自我拯救」的理念，但后来态度转变，利用梅菲斯特的信任。",
+      "type": "flashback",
+      "line_range": [
+        1031,
+        1087
+      ],
+      "participants": [
+        "塔露拉",
+        "梅菲斯特",
+        "浮士德"
+      ],
+      "location": "整合运动营地",
+      "significance": "揭示塔露拉对梅菲斯特的操控，以及浮士德对塔露拉变化的察觉。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅在决战前进行战前动员，强调罗德岛的准则和使命。",
+      "type": "planning",
+      "line_range": [
+        1088,
+        1099
+      ],
+      "participants": [
+        "阿米娅"
+      ],
+      "location": "龙门战场",
+      "significance": "明确罗德岛在最终决战中的立场和目标。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与阿米娅在战前通讯，就感染者和龙门的未来进行了一次坦诚而深刻的对话。",
+      "type": "ideological_clash",
+      "line_range": [
+        1154,
+        1176
+      ],
+      "participants": [
+        "陈",
+        "阿米娅",
+        "诗怀雅"
+      ],
+      "location": "龙门战场",
+      "significance": "陈与阿米娅在理念上的碰撞与相互理解，为后续合作奠定基础。",
+      "is_imaginary": false
+    },
+    {
+      "event": "浮士德为掩护梅菲斯特和整合运动成员撤退，独自留下殿后，最终牺牲。",
+      "type": "sacrifice",
+      "line_range": [
+        1177,
+        1237
+      ],
+      "participants": [
+        "浮士德",
+        "梅菲斯特",
+        "幻影弩手",
+        "灰喉"
+      ],
+      "location": "龙门战场",
+      "significance": "浮士德的牺牲是本章最关键的转折点，标志着整合运动在龙门战场的彻底失败。",
+      "is_imaginary": false
+    },
+    {
+      "event": "浮士德牺牲后，幻影弩手和整合运动成员讨论他的为人，并决定带梅菲斯特离开。",
+      "type": "reflection",
+      "line_range": [
+        1238,
+        1259
+      ],
+      "participants": [
+        "幻影弩手",
+        "整合运动成员"
+      ],
+      "location": "龙门战场",
+      "significance": "从他人视角评价浮士德，深化其人物形象。",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰喉回收浮士德的弩，并与阿米娅和煌讨论罗德岛为何而战。",
+      "type": "reflection",
+      "line_range": [
+        1260,
+        1314
+      ],
+      "participants": [
+        "灰喉",
+        "阿米娅",
+        "煌"
+      ],
+      "location": "龙门战场",
+      "significance": "灰喉对自身信念产生动摇，阿米娅阐述罗德岛的终极目标。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅接到嘉维尔的通讯，得知雪怪小队已与贫民区内的整合运动汇合。",
+      "type": "revelation",
+      "line_range": [
+        1327,
+        1333
+      ],
+      "participants": [
+        "阿米娅",
+        "煌"
+      ],
+      "location": "龙门战场",
+      "significance": "新的威胁出现，战局再次复杂化。",
+      "is_imaginary": false
+    },
+    {
+      "event": "煌从飞机上跳下，支援阿米娅小队，并与雪怪小队指挥官霜星展开激战。",
+      "type": "battle",
+      "line_range": [
+        1334,
+        1425
+      ],
+      "participants": [
+        "煌",
+        "霜星",
+        "阿米娅",
+        "雪怪小队"
+      ],
+      "location": "龙门贫民区",
+      "significance": "煌与霜星的首次交锋，展现两人冰与火的对决。",
+      "is_imaginary": false
+    },
+    {
+      "event": "霜星使用法术导致地面塌陷，博士和霜星双双坠入下层。",
+      "type": "disaster",
+      "line_range": [
+        1426,
+        1498
+      ],
+      "participants": [
+        "霜星",
+        "煌",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "龙门贫民区",
+      "significance": "战局因意外而中断，博士和霜星落入险境。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雪怪小队成员主动向罗德岛提出停战，理由是他们更关心霜星的安危。",
+      "type": "alliance",
+      "line_range": [
+        1499,
+        1540
+      ],
+      "participants": [
+        "雪怪小队成员",
+        "阿米娅",
+        "煌"
+      ],
+      "location": "龙门贫民区",
+      "significance": "罗德岛与雪怪小队因共同敌人（黑蓑）和共同目标（救人）而暂时结盟。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈的线人「九」在通讯中宣布脱离龙门，并带走一批感染者。",
+      "type": "betrayal",
+      "line_range": [
+        1557,
+        1578
+      ],
+      "participants": [
+        "陈",
+        "九"
+      ],
+      "location": "龙门贫民区",
+      "significance": "陈失去重要线人，龙门内部矛盾进一步激化。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与诗怀雅商议，计划将黑蓑引向雪怪小队，迫使黑蓑暴露在公众视野下。",
+      "type": "planning",
+      "line_range": [
+        1579,
+        1623
+      ],
+      "participants": [
+        "陈",
+        "诗怀雅"
+      ],
+      "location": "龙门贫民区",
+      "significance": "陈和诗怀雅决定利用整合运动作为棋子，对抗龙门的秘密力量。",
+      "is_imaginary": false
+    },
+    {
+      "event": "诗怀雅成功说服林雨霞，将黑蓑的注意力引向雪怪小队所在的位置。",
+      "type": "negotiation",
+      "line_range": [
+        1624,
+        1655
+      ],
+      "participants": [
+        "诗怀雅",
+        "林雨霞"
+      ],
+      "location": "龙门",
+      "significance": "诗怀雅利用旧情和理想打动林雨霞，为陈的计划铺路。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雪怪小队与黑蓑部队在贫民区展开激战，雪怪小队逐渐不支。",
+      "type": "battle",
+      "line_range": [
+        1658,
+        1670
+      ],
+      "participants": [
+        "雪怪小队",
+        "黑蓑"
+      ],
+      "location": "龙门贫民区",
+      "significance": "展现黑蓑的强大战斗力，雪怪小队陷入苦战。",
+      "is_imaginary": false
+    },
+    {
+      "event": "霜星与幻影弩手会合，得知浮士德牺牲的消息，并接手指挥权。",
+      "type": "reunion",
+      "line_range": [
+        1671,
+        1690
+      ],
+      "participants": [
+        "霜星",
+        "幻影弩手"
+      ],
+      "location": "龙门贫民区",
+      "significance": "霜星成为整合运动残部的最高指挥官，肩负起带领大家逃生的重任。",
+      "is_imaginary": false
+    },
+    {
+      "event": "霜星在战斗中不顾自身安危，坚持救助包括非感染者在内的所有平民。",
+      "type": "character_development",
+      "line_range": [
+        1691,
+        1732
+      ],
+      "participants": [
+        "霜星",
+        "雪怪小队",
+        "龙门市民"
+      ],
+      "location": "龙门贫民区",
+      "significance": "展现霜星善良和富有同情心的一面，与梅菲斯特形成鲜明对比。",
+      "is_imaginary": false
+    },
+    {
+      "event": "霜星因过度使用法术而生命垂危，雪怪小队成员发现她已时日无多。",
+      "type": "revelation",
+      "line_range": [
+        1733,
+        1777
+      ],
+      "participants": [
+        "霜星",
+        "雪怪小队成员"
+      ],
+      "location": "龙门贫民区",
+      "significance": "揭示霜星身体的真实状况，为后续剧情埋下悲剧伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "灰喉在废墟中发现感染者儿童，与利用孩子做诱饵的整合运动成员对峙，煌介入解围。",
+      "type": "confrontation",
+      "line_range": [
+        1778,
+        1824
+      ],
+      "participants": [
+        "灰喉",
+        "煌",
+        "整合运动成员",
+        "孩童"
+      ],
+      "location": "龙门贫民区废墟",
+      "significance": "展现灰喉对感染者的态度转变，以及煌对信任的理解。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅向博士阐述信任对于指挥罗德岛的重要性，以及煌与灰喉之间信任的建立。",
+      "type": "character_development",
+      "line_range": [
+        1846,
+        1876
+      ],
+      "participants": [
+        "阿米娅",
+        "博士"
+      ],
+      "location": "龙门贫民区",
+      "significance": "深化博士与干员间信任关系的主题。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与红制服弑君者，凯尔希揭露其父伊利亚死亡的真相，并质疑其复仇目标。",
+      "type": "revelation",
+      "line_range": [
+        1877,
+        2051
+      ],
+      "participants": [
+        "凯尔希",
+        "红",
+        "弑君者"
+      ],
+      "location": "龙门战场",
+      "significance": "揭示弑君者背景，展现凯尔希的过去与理念，动摇弑君者的信念。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希选择放走弑君者，希望她能反思并离开整合运动。",
+      "type": "reflection",
+      "line_range": [
+        2052,
+        2081
+      ],
+      "participants": [
+        "凯尔希",
+        "红"
+      ],
+      "location": "龙门战场",
+      "significance": "体现凯尔希的价值观和战略考量。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雪怪小队决定牺牲自己殿后，将昏迷的霜星托付给幻影弩手带回爱国者身边。",
+      "type": "sacrifice",
+      "line_range": [
+        2082,
+        2141
+      ],
+      "participants": [
+        "雪怪小队成员",
+        "幻影弩手",
+        "霜星"
+      ],
+      "location": "龙门战场",
+      "significance": "展现雪怪小队对霜星的忠诚与牺牲精神。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与阿米娅在战场边缘会面，陈告知必须与雪怪小队战斗以应对黑蓑，阿米娅决定见证。",
+      "type": "planning",
+      "line_range": [
+        2168,
+        2207
+      ],
+      "participants": [
+        "陈",
+        "阿米娅",
+        "博士"
+      ],
+      "location": "龙门战场边缘",
+      "significance": "揭示龙门内部的政治压力，以及阿米娅的抉择。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雪怪小队在最后时刻饮酒告别，准备迎接死亡。",
+      "type": "farewell",
+      "line_range": [
+        2208,
+        2261
+      ],
+      "participants": [
+        "雪怪小队成员",
+        "九",
+        "煌"
+      ],
+      "location": "龙门战场",
+      "significance": "渲染雪怪小队悲壮的结局。",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士与霜星被困废墟下，霜星讲述自己作为感染者的悲惨身世和被爱国者收养的经历。",
+      "type": "flashback",
+      "line_range": [
+        2262,
+        2403
+      ],
+      "participants": [
+        "霜星",
+        "博士"
+      ],
+      "location": "切尔诺伯格分城废墟",
+      "significance": "完整揭示霜星的过去，深化其人物形象。",
+      "is_imaginary": false
+    },
+    {
+      "event": "霜星讲述对塔露拉从信任到怀疑的转变，以及她对整合运动现状的失望。",
+      "type": "revelation",
+      "line_range": [
+        2470,
+        2502
+      ],
+      "participants": [
+        "霜星",
+        "博士"
+      ],
+      "location": "切尔诺伯格分城废墟",
+      "significance": "揭示塔露拉的背叛和整合运动的内部分化。",
+      "is_imaginary": false
+    },
+    {
+      "event": "霜星与博士打赌，看谁的人先挖到他们。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2513,
+        2518
+      ],
+      "participants": [
+        "霜星",
+        "博士"
+      ],
+      "location": "切尔诺伯格分城废墟",
+      "significance": "展现霜星在绝境中的一丝幽默与赌徒心态。",
+      "is_imaginary": false
+    },
+    {
+      "event": "龙门监察司与神秘人物出现，与煌和陈发生冲突，提及煌的父亲。",
+      "type": "confrontation",
+      "line_range": [
+        2534,
+        2572
+      ],
+      "participants": [
+        "监察司",
+        "太合",
+        "？？？",
+        "煌",
+        "陈"
+      ],
+      "location": "龙门战场",
+      "significance": "引入新的势力，暗示煌的身世背景。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希出现，告知罗德岛接下来的行动方向，并强调博士需要获得干员们的信任。",
+      "type": "planning",
+      "line_range": [
+        2602,
+        2624
+      ],
+      "participants": [
+        "凯尔希",
+        "博士",
+        "阿米娅",
+        "煌"
+      ],
+      "location": "龙门战场",
+      "significance": "为罗德岛后续行动定下基调。",
+      "is_imaginary": false
+    },
+    {
+      "event": "霜星醒来，拒绝撤退，决定留下等待罗德岛。",
+      "type": "confrontation",
+      "line_range": [
+        2625,
+        2681
+      ],
+      "participants": [
+        "霜星",
+        "幻影弩手",
+        "梅菲斯特"
+      ],
+      "location": "整合运动临时据点",
+      "significance": "展现霜星的决断力和对雪怪小队牺牲的尊重。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雪怪小队与罗德岛临时合作，共同对抗前来干扰救援的整合运动术师。",
+      "type": "alliance",
+      "line_range": [
+        2682,
+        2722
+      ],
+      "participants": [
+        "雪怪小队成员",
+        "煌",
+        "阿米娅",
+        "整合运动术师"
+      ],
+      "location": "切尔诺伯格分城废墟",
+      "significance": "展现双方在共同目标下的短暂合作。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雪怪小队先救出霜星和博士，霜星因罗德岛未交战而释放博士，并与阿米娅对话。",
+      "type": "negotiation",
+      "line_range": [
+        2810,
+        2899
+      ],
+      "participants": [
+        "霜星",
+        "阿米娅",
+        "博士",
+        "煌",
+        "雪怪小队"
+      ],
+      "location": "切尔诺伯格分城废墟",
+      "significance": "霜星与阿米娅的首次正面交流，为后续决战铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "霜星因雪怪小队全灭而不再压抑力量，与罗德岛小队展开决战。",
+      "type": "battle",
+      "line_range": [
+        2900,
+        3226
+      ],
+      "participants": [
+        "霜星",
+        "阿米娅",
+        "煌",
+        "灰喉",
+        "博士"
+      ],
+      "location": "切尔诺伯格分城废墟",
+      "significance": "本章核心战斗，霜星展现全部实力，并揭露塔露拉的背叛。",
+      "is_imaginary": false
+    },
+    {
+      "event": "霜星在战斗中质问阿米娅罗德岛的信念，阿米娅在情感共鸣中坚定了战斗意志。",
+      "type": "ideological_clash",
+      "line_range": [
+        3129,
+        3226
+      ],
+      "participants": [
+        "霜星",
+        "阿米娅"
+      ],
+      "location": "切尔诺伯格分城废墟",
+      "significance": "两种理念的碰撞，阿米娅的成长。",
+      "is_imaginary": false
+    },
+    {
+      "event": "霜星战败，生命垂危，临终前同意加入罗德岛，希望博士和阿米娅能阻止塔露拉。",
+      "type": "sacrifice",
+      "line_range": [
+        3227,
+        3312
+      ],
+      "participants": [
+        "霜星",
+        "博士",
+        "阿米娅",
+        "煌"
+      ],
+      "location": "切尔诺伯格分城废墟",
+      "significance": "霜星的死亡与最终选择，为罗德岛对抗塔露拉埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈在排水系统发现魏彦吾的秘密，闯入会客室当面质问其过去的行为。",
+      "type": "confrontation",
+      "line_range": [
+        3313,
+        3568
+      ],
+      "participants": [
+        "陈",
+        "诗怀雅",
+        "魏彦吾",
+        "阿米娅"
+      ],
+      "location": "龙门行政中心",
+      "significance": "陈与魏彦吾的正面冲突，揭露龙门高层的黑暗历史。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅前来解除与龙门的合约，表达了对魏彦吾将人视为棋子行为的不满。",
+      "type": "political_intrigue",
+      "line_range": [
+        3458,
+        3514
+      ],
+      "participants": [
+        "阿米娅",
+        "魏彦吾"
+      ],
+      "location": "龙门行政中心",
+      "significance": "罗德岛与龙门合作关系的破裂，阿米娅的政治立场表达。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希带来紧急消息：切尔诺伯格核心城正在接近龙门，并宣称其为乌萨斯领土。",
+      "type": "disaster",
+      "line_range": [
+        3570,
+        3597
+      ],
+      "participants": [
+        "凯尔希",
+        "阿米娅",
+        "魏彦吾",
+        "文月"
+      ],
+      "location": "龙门行政中心",
+      "significance": "引入新的巨大危机，将剧情推向高潮。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "霜星",
+      "type": "npc",
+      "role_in_chapter": "整合运动雪怪小队指挥官，与罗德岛交战，后因共同敌人而停战，身体濒临极限。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "梅菲斯特",
+      "type": "npc",
+      "role_in_chapter": "整合运动指挥官，使用法术将感染者转化为牧群，导致内部崩溃，后被浮士德控制。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "浮士德",
+      "type": "npc",
+      "role_in_chapter": "整合运动指挥官，梅菲斯特的挚友，因无法认同其行为而决裂，最终为掩护同伴牺牲。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "煌",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，负责前线作战，与霜星交战，后与雪怪小队停火。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛公开领袖，指挥作战，与陈和霜星进行理念对话。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官，随煌行动，后坠入下层。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "灰喉",
+      "type": "operator",
+      "role_in_chapter": "罗德岛狙击干员，与浮士德对峙，目睹黑蓑暴行，对自身信念产生怀疑。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陈",
+      "type": "npc",
+      "role_in_chapter": "龙门近卫局高级警司，负责前线指挥，与黑蓑和林雨霞周旋。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "诗怀雅",
+      "type": "npc",
+      "role_in_chapter": "龙门近卫局高级警司，与陈合作，负责联络林雨霞。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "林",
+      "type": "operator",
+      "role_in_chapter": "贫民区实际掌控者林舸瑞之女，指挥黑蓑部队清除感染者，后被诗怀雅说服。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "魏彦吾",
+      "type": "npc",
+      "role_in_chapter": "龙门实际统治者，与神秘人物通话，提及与塔露拉的家族关系。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "塔露拉",
+      "type": "npc",
+      "role_in_chapter": "整合运动领袖，在回忆中出现，为梅菲斯特赐名并操控其思想。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "九",
+      "type": "npc",
+      "role_in_chapter": "陈的线人，前近卫局成员，在通讯中宣布脱离龙门，带走一批感染者。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "伊诺",
+      "type": "npc",
+      "role_in_chapter": "梅菲斯特的童年名字，在回忆中展现其悲惨遭遇。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "萨沙",
+      "type": "npc",
+      "role_in_chapter": "浮士德的童年名字，在回忆中展现其与伊诺的羁绊。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Scout",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，在回忆中出现。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Ace",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，在回忆中出现。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Rosmontis",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，在回忆中出现。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "制服并放走弑君者，揭露其父死亡真相，为罗德岛后续行动定调，带来切尔诺伯格核心城接近的紧急消息。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "红",
+      "type": "operator",
+      "role_in_chapter": "协助凯尔希制服弑君者，并感知其气味。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "弑君者",
+      "type": "npc",
+      "role_in_chapter": "被凯尔希制服，得知父亲死亡真相，信念动摇后被放走。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "雪怪1号",
+      "type": "npc",
+      "role_in_chapter": "代表雪怪小队与罗德岛沟通合作，参与挖掘和战斗。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "幻影弩手",
+      "type": "npc",
+      "role_in_chapter": "接受雪怪小队托付，带走霜星，后被霜星拒绝。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "监察司",
+      "type": "npc",
+      "role_in_chapter": "与神秘人物出现，与煌和陈发生冲突。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "太合",
+      "type": "npc",
+      "role_in_chapter": "与监察司一同出现，观察龙门局势。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "文月",
+      "type": "npc",
+      "role_in_chapter": "允许凯尔希进入会客室，并批评魏彦吾。",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "感染者的身份政治",
+      "line_range": [
+        647,
+        652
+      ],
+      "discussion_summary": "一名整合运动成员询问龙门感染者是否因塔露拉的演讲而加入，龙门感染者表示口号对他没有吸引力，并反问对方是否也对身份政治不感兴趣。",
+      "is_substantive": true
+    },
+    {
+      "concept": "罗德岛的使命",
+      "line_range": [
+        1277,
+        1290
+      ],
+      "discussion_summary": "灰喉质疑罗德岛为何而战，阿米娅阐述罗德岛的目标是战胜催生仇恨的土壤，既用药物也用行动。",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者的生存困境",
+      "line_range": [
+        653,
+        672
+      ],
+      "discussion_summary": "整合运动成员讲述其故乡对感染者态度的转变，从相对宽容到最终清洗，总结出感染者无处可活的结论。",
+      "is_substantive": true
+    },
+    {
+      "concept": "自我拯救与选择",
+      "line_range": [
+        1031,
+        1043
+      ],
+      "discussion_summary": "塔露拉对梅菲斯特说，不相信他，能相信他的只有他自己，他需要自己找到理想，自己拯救自己。",
+      "is_substantive": true
+    },
+    {
+      "concept": "信任",
+      "line_range": [
+        1838,
+        1855
+      ],
+      "discussion_summary": "煌向灰喉阐述自己对「信任」的理解：信任不是没有防范，而是知道对方会做什么、不会做什么。阿米娅随后向博士解释，信任是建立在理解之上的，需要时间和经历。",
+      "is_substantive": true
+    },
+    {
+      "concept": "偏见",
+      "line_range": [
+        1868,
+        1870
+      ],
+      "discussion_summary": "阿米娅指出，不仅普通人对感染者有偏见，感染者对普通人也有偏见，内在的敌人和外在的敌人都是敌人。",
+      "is_substantive": true
+    },
+    {
+      "concept": "复仇",
+      "line_range": [
+        2034,
+        2054
+      ],
+      "discussion_summary": "凯尔希质问弑君者，她所做的一切是为了什么，并指出整合运动的仇恨被人玩弄，引导她思考真正的复仇对象是谁。",
+      "is_substantive": true
+    },
+    {
+      "concept": "正义",
+      "line_range": [
+        2062,
+        2063
+      ],
+      "discussion_summary": "凯尔希向红阐述：我们不代表法律，也无权审判别人。有能力杀害别人，却没有权力宣称杀戮是正确的。",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者的处境",
+      "line_range": [
+        2302,
+        2323
+      ],
+      "discussion_summary": "霜星详细描述了自己在乌萨斯矿场的经历，包括父母被无故判刑、矿工全部感染矿石病、监工以杀人取乐等，揭示了感染者被系统性压迫和灭绝的悲惨处境。",
+      "is_substantive": true
+    },
+    {
+      "concept": "仇恨与愤怒",
+      "line_range": [
+        3146,
+        3161
+      ],
+      "discussion_summary": "霜星质问阿米娅心中是否有对这片大地的愤怒，并指出仅凭理念和技术无法战胜塔露拉。阿米娅回应，她感受到的是霜星的愤怒，而非仇恨。",
+      "is_substantive": true
+    },
+    {
+      "concept": "罗德岛的信念",
+      "line_range": [
+        3476,
+        3509
+      ],
+      "discussion_summary": "阿米娅向魏彦吾阐述罗德岛的立场：罗德岛不是单纯为感染者战斗，而是为了这片大地上的所有人。她强调活人不应该成为棋子，人就是人。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        143,
+        145
+      ],
+      "description": "阿米娅向博士说明罗德岛在龙门战役中的作战计划，包括沿巡逻点前进、帮助近卫局消灭残余整合运动，最终在贫民区击溃主力。"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        164,
+        190
+      ],
+      "description": "陈与诗怀雅在战场上指挥近卫局小队，陈下令不许放走任何一个整合运动。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        327,
+        373
+      ],
+      "description": "梅菲斯特向浮士德解释其法术，认为只有这样才能让同胞活下去，并命令牧群攻击其他整合运动。"
+    },
+    {
+      "faction": "黑蓑（龙门特殊部队）",
+      "line_range": [
+        616,
+        633
+      ],
+      "description": "黑蓑部队在贫民区高效屠杀整合运动感染者，被灰喉目睹。"
+    },
+    {
+      "faction": "雪怪小队",
+      "line_range": [
+        1499,
+        1540
+      ],
+      "description": "雪怪小队成员主动向罗德岛提出停战，理由是他们更关心霜星的安危，并表达了对梅菲斯特行为的不满。"
+    },
+    {
+      "faction": "龙门监察司",
+      "line_range": [
+        542,
+        565
+      ],
+      "description": "监察司长官出手消灭牧群，并提及黑蓑的存在，命令近卫局成员保密。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        2042,
+        2054
+      ],
+      "description": "凯尔希指出整合运动的仇恨被人玩弄，其领袖并非心性正常之人，并质疑整合运动夺取龙门后的行为。"
+    },
+    {
+      "faction": "乌萨斯帝国",
+      "line_range": [
+        2035,
+        2036
+      ],
+      "description": "凯尔希指出真正的背叛者是贪得无厌的乌萨斯帝国本身，它清洗了整个研究所，屠杀了科学家的悲悯。"
+    },
+    {
+      "faction": "雪怪小队",
+      "line_range": [
+        2082,
+        2141
+      ],
+      "description": "雪怪小队决定牺牲自己殿后，将霜星托付给幻影弩手，展现了他们对霜星的忠诚和牺牲精神。"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        2245,
+        2250
+      ],
+      "description": "近卫局成员准备发动最后一波进攻，意图展示龙门的实力，让感染者再也不敢冒犯龙门。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        3476,
+        3509
+      ],
+      "description": "阿米娅向魏彦吾阐述罗德岛的立场：不是单纯为感染者战斗，而是为了这片大地上的所有人，并强调人不应成为棋子。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "龙门贫民区",
+      "line_range": [
+        724,
+        734
+      ],
+      "description": "陈调查贫民区，发现居民全部失踪，建筑被毁，有被清洗的痕迹，怀疑是黑蓑所为。"
+    },
+    {
+      "location": "龙门贫民区",
+      "line_range": [
+        1753,
+        1757
+      ],
+      "description": "雪怪小队成员报告黑蓑部队在荡平贫民窟，他们不在乎地形和居民，要彻底摧毁这里。"
+    },
+    {
+      "location": "乌萨斯西北冻原矿场",
+      "line_range": [
+        2302,
+        2323
+      ],
+      "description": "霜星描述了自己出生的矿场，位置偏远，如同刑场，矿工全部感染矿石病，监工以杀人取乐，是乌萨斯压迫感染者的缩影。"
+    },
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        2483,
+        2487
+      ],
+      "description": "霜星提到切尔诺伯格毁于天灾，多数普通人死亡或成为感染者，塔露拉正筹备夺取龙门。"
+    },
+    {
+      "location": "龙门贫民区",
+      "line_range": [
+        3560,
+        3564
+      ],
+      "description": "陈指责魏彦吾想要清扫整个贫民区，因为感染者不算龙门市民，或因为他们无法融入高楼大厦。"
+    },
+    {
+      "location": "切尔诺伯格核心城",
+      "line_range": [
+        3585,
+        3597
+      ],
+      "description": "凯尔希报告切尔诺伯格核心城正在接近龙门，并不断发送城邦认证码，宣称其为乌萨斯领土。"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:34:09.826290+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 71695,
+    "tokens_out": 11903,
+    "elapsed_s": 93.66223692893982
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "霜星",
+    "梅菲斯特",
+    "浮士德",
+    "博士",
+    "魏彦吾",
+    "塔露拉",
+    "九",
+    "伊诺",
+    "萨沙",
+    "Scout",
+    "Ace",
+    "Rosmontis",
+    "雪怪1号",
+    "幻影弩手",
+    "监察司",
+    "太合",
+    "文月"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "summary": "滴水村村长，上任仅半年。性格坚韧，为保护村民甘愿被赏金猎人吊打一天多。虽恐惧但决心守护家园，是推动寻宝主线任务的核心人物。",
+  "personality": {
+    "traits": [
+      "坚韧",
+      "责任感强",
+      "善良"
+    ],
+    "description": "外表柔弱但内心坚强，为了保护村子可以忍受巨大痛苦，对村民和土地有深厚的责任感。"
+  },
+  "abilities": {
+    "description": "无战斗能力，主要依靠智慧和勇气在危机中周旋。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "骑兵与猎人",
+        "evidence": "被赏金猎人吊打一天多，无力反抗，需要格拉尼解救。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "骑兵与猎人",
+      "nodes": "滴水村、村外树林、塔拉特山坑道、莫蒂卡山洞窟",
+      "event": "因骑士宝藏传说被赏金猎人侵扰，被格拉尼救出后，带领格拉尼等人寻找宝藏以换取村子安宁。",
+      "role": "任务发起者和关键线索提供者，负责指引宝藏位置和使用钥匙。"
+    }
+  ],
+  "first_appearance": "骑兵与猎人",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 16223,
+    "tokens_out": 309,
+    "elapsed_s": 4.587339639663696
+  },
+  "name_zh": "可萝尔",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "骑兵与猎人"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:50:59.242984+00:00"
+}

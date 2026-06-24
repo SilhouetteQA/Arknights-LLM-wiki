@@ -1,0 +1,506 @@
+{
+  "summary": "丰川祥子在罗德岛醒来，发现自己做了一个关于Ave Mujica的奇怪梦境。她与红豆、爱丽丝、贝娜一同前往维多利亚小镇，救助一位名叫安的少女。在成功帮助安后，祥子再次陷入梦境，发现自己被梦城堡的现任主人莫菲丝困住。莫菲丝与祥子打赌，让祥子进入Ave Mujica其他四名成员的梦境，试图唤醒她们。\n\n祥子依次进入祐天寺若麦、八幡海铃、三角初华和若叶睦的梦境。在若麦的梦中，她是一位当红演员，却失去了打鼓的初心；在海铃的梦中，她是一个被家族利用的雇佣兵，渴望归属却不断被背叛；在初华的梦中，她独自守在一座小岛上，等待一个永远不会回来的人；在睦的梦中，她与一个温柔的母亲和众多「睦」的化身生活在一起，构建了一个看似完美的家庭。\n\n祥子在每个梦境中都试图唤醒同伴，但都遭到了拒绝。莫菲丝嘲笑祥子的失败，并揭露了祥子内心的脆弱——她害怕被抛弃，害怕孤身一人。莫菲丝为祥子创造了一个完美的梦境，让她与已故的母亲重逢。在母亲的鼓励下，祥子终于认清了自己的内心，决心回到现实。\n\n祥子最终成功唤醒了所有成员，并与爱丽丝联手制服了莫菲丝。爱丽丝揭示了莫菲丝的悲惨过去，祥子也理解了莫菲丝沉溺梦境的原因。最终，Ave Mujica在梦城堡举办了一场演出，但爱丽丝提醒祥子，随着她们逐渐离开梦境，关于泰拉的一切记忆都会消散。",
+  "events": [
+    {
+      "event": "祥子在罗德岛醒来，回忆起关于Ave Mujica的奇怪梦境",
+      "type": "revelation",
+      "line_range": [
+        71,
+        84
+      ],
+      "participants": [
+        "丰川祥子",
+        "红豆"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示祥子身处泰拉世界，且对另一个世界的记忆感到困惑",
+      "is_imaginary": false
+    },
+    {
+      "event": "祥子与红豆、爱丽丝、贝娜前往维多利亚小镇救助少女安",
+      "type": "rescue",
+      "line_range": [
+        132,
+        195
+      ],
+      "participants": [
+        "丰川祥子",
+        "红豆",
+        "爱丽丝",
+        "贝娜"
+      ],
+      "location": "维多利亚小镇",
+      "significance": "展现祥子的善良与行动力，并引出爱丽丝作为梦城堡仙女的身份",
+      "is_imaginary": false
+    },
+    {
+      "event": "祥子找到安，用安眠曲安抚她，爱丽丝为安创造美梦",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        245,
+        293
+      ],
+      "participants": [
+        "丰川祥子",
+        "安"
+      ],
+      "location": "花园街33号",
+      "significance": "祥子成功阻止了安的轻生念头，展现了她的共情能力",
+      "is_imaginary": false
+    },
+    {
+      "event": "祥子再次陷入梦境，被莫菲丝困在梦城堡",
+      "type": "ambush",
+      "line_range": [
+        347,
+        371
+      ],
+      "participants": [
+        "丰川祥子",
+        "莫菲丝"
+      ],
+      "location": "梦城堡",
+      "significance": "剧情转折点，祥子被卷入莫菲丝的赌局",
+      "is_imaginary": true
+    },
+    {
+      "event": "莫菲丝与祥子打赌，让祥子进入其他成员的梦境唤醒她们",
+      "type": "confrontation",
+      "line_range": [
+        417,
+        435
+      ],
+      "participants": [
+        "丰川祥子",
+        "莫菲丝"
+      ],
+      "location": "梦城堡",
+      "significance": "确立本章核心冲突和剧情框架",
+      "is_imaginary": true
+    },
+    {
+      "event": "祥子进入祐天寺若麦的梦境，发现她已成为当红演员，却失去了打鼓的初心",
+      "type": "investigation",
+      "line_range": [
+        443,
+        468
+      ],
+      "participants": [
+        "丰川祥子",
+        "祐天寺若麦"
+      ],
+      "location": "龙门",
+      "significance": "揭示若麦在梦中的虚假幸福和内心迷茫",
+      "is_imaginary": true
+    },
+    {
+      "event": "祥子进入八幡海铃的梦境，发现她是一个被家族利用的雇佣兵",
+      "type": "investigation",
+      "line_range": [
+        696,
+        729
+      ],
+      "participants": [
+        "丰川祥子",
+        "八幡海铃",
+        "弗朗西斯"
+      ],
+      "location": "叙拉古",
+      "significance": "揭示海铃渴望归属却不断被背叛的困境",
+      "is_imaginary": true
+    },
+    {
+      "event": "祥子进入三角初华的梦境，发现她独自守在一座小岛上等待",
+      "type": "investigation",
+      "line_range": [
+        850,
+        896
+      ],
+      "participants": [
+        "丰川祥子",
+        "三角初华",
+        "艾雅法拉"
+      ],
+      "location": "火山岛",
+      "significance": "揭示初华对祥子的深切思念和孤独感",
+      "is_imaginary": true
+    },
+    {
+      "event": "祥子进入若叶睦的梦境，发现她与众多「睦」的化身生活在一起",
+      "type": "investigation",
+      "line_range": [
+        1045,
+        1129
+      ],
+      "participants": [
+        "丰川祥子",
+        "若叶睦",
+        "睦的母亲"
+      ],
+      "location": "雷姆必拓",
+      "significance": "揭示睦内心对家庭温暖的渴望和多重人格的隐喻",
+      "is_imaginary": true
+    },
+    {
+      "event": "莫菲丝为祥子创造与母亲重逢的完美梦境",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1283,
+        1334
+      ],
+      "participants": [
+        "丰川祥子",
+        "母亲"
+      ],
+      "location": "祥子家",
+      "significance": "祥子面对内心最深的渴望，最终在母亲的鼓励下选择离开",
+      "is_imaginary": true
+    },
+    {
+      "event": "祥子成功唤醒所有成员，并与爱丽丝联手制服莫菲丝",
+      "type": "rescue",
+      "line_range": [
+        1627,
+        1713
+      ],
+      "participants": [
+        "丰川祥子",
+        "三角初华",
+        "八幡海铃",
+        "祐天寺若麦",
+        "若叶睦",
+        "爱丽丝",
+        "莫菲丝"
+      ],
+      "location": "梦城堡",
+      "significance": "剧情高潮，祥子完成赌约，拯救了同伴",
+      "is_imaginary": true
+    },
+    {
+      "event": "爱丽丝揭示莫菲丝的悲惨过去，祥子理解并原谅了她",
+      "type": "revelation",
+      "line_range": [
+        1789,
+        1811
+      ],
+      "participants": [
+        "丰川祥子",
+        "爱丽丝",
+        "莫菲丝"
+      ],
+      "location": "梦城堡",
+      "significance": "深化主题，揭示梦境背后的创伤",
+      "is_imaginary": true
+    },
+    {
+      "event": "Ave Mujica在梦城堡举办告别演出",
+      "type": "ceremony",
+      "line_range": [
+        1841,
+        1877
+      ],
+      "participants": [
+        "丰川祥子",
+        "三角初华",
+        "八幡海铃",
+        "祐天寺若麦",
+        "若叶睦",
+        "爱丽丝",
+        "贝娜",
+        "莫菲丝",
+        "沃尔夫"
+      ],
+      "location": "梦城堡",
+      "significance": "温馨的结局，为本章画上句号",
+      "is_imaginary": true
+    }
+  ],
+  "characters": [
+    {
+      "name": "丰川祥子",
+      "type": "operator",
+      "role_in_chapter": "主角，Ave Mujica的发起者，在罗德岛实习，被莫菲丝困入梦境后努力唤醒同伴",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "红豆",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，祥子的前辈和朋友，陪同祥子执行任务",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "爱丽丝",
+      "type": "operator",
+      "role_in_chapter": "梦城堡的现任主人，仙女，帮助祥子并最终制服莫菲丝",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "贝娜",
+      "type": "operator",
+      "role_in_chapter": "爱丽丝的同伴，协助爱丽丝工作",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "安",
+      "type": "npc",
+      "role_in_chapter": "维多利亚小镇的少女，爱丽丝的笔友，有轻生念头，被祥子和爱丽丝救助",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莫菲丝",
+      "type": "npc",
+      "role_in_chapter": "梦城堡的现任主人（自称），造梦师，将祥子等人困入梦境，最终被感化",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "沃尔夫",
+      "type": "npc",
+      "role_in_chapter": "莫菲丝的造物，能说话，最终帮助祥子",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "卡尔顿们",
+      "type": "npc",
+      "role_in_chapter": "莫菲丝的造物，一群小怪物",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "三角初华",
+      "type": "npc",
+      "role_in_chapter": "Ave Mujica成员，祥子的同伴，在梦境中独自守岛等待",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "祐天寺若麦",
+      "type": "npc",
+      "role_in_chapter": "Ave Mujica成员，祥子的同伴，在梦境中成为当红演员",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "八幡海铃",
+      "type": "npc",
+      "role_in_chapter": "Ave Mujica成员，祥子的同伴，在梦境中成为雇佣兵",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "若叶睦",
+      "type": "npc",
+      "role_in_chapter": "Ave Mujica成员，祥子的同伴，在梦境中与众多化身生活",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "艾雅法拉",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在初华的梦境中出现，鼓励初华",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "弗朗西斯",
+      "type": "npc",
+      "role_in_chapter": "海铃梦境中的角色，家族成员，最终帮助海铃觉醒",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "母亲",
+      "type": "npc",
+      "role_in_chapter": "祥子的母亲，已故，在莫菲丝为祥子创造的梦境中出现，鼓励祥子离开",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "父亲",
+      "type": "npc",
+      "role_in_chapter": "祥子的父亲，在祥子的梦境中出现",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "梦境与造梦",
+      "line_range": [
+        167,
+        170
+      ],
+      "discussion_summary": "爱丽丝解释梦是自身想法的映射和形成过程，仙女不能擅自进入孩子的梦境",
+      "is_substantive": true
+    },
+    {
+      "concept": "梦境与造梦",
+      "line_range": [
+        313,
+        321
+      ],
+      "discussion_summary": "爱丽丝解释梦不是用来沉溺的，再美好的梦也要醒来，梦城堡的力量有限，只能在孩子心中种下一颗种子",
+      "is_substantive": true
+    },
+    {
+      "concept": "梦境与造梦",
+      "line_range": [
+        1423,
+        1431
+      ],
+      "discussion_summary": "爱丽丝解释沉溺梦境的最严重后果：将梦当作现实后醒来，一切化为泡影，灵魂苍老而身体年幼",
+      "is_substantive": true
+    },
+    {
+      "concept": "梦境与造梦",
+      "line_range": [
+        1757,
+        1759
+      ],
+      "discussion_summary": "爱丽丝解释造梦源石技艺的局限性：施术者创造的梦境受限于对被施术者的认知",
+      "is_substantive": true
+    },
+    {
+      "concept": "Ave Mujica的契约与命运共同体",
+      "line_range": [
+        426,
+        427
+      ],
+      "discussion_summary": "祥子强调Ave Mujica缺少任何一个人她都不会离开，每个人都是她挑选的最好成员",
+      "is_substantive": true
+    },
+    {
+      "concept": "Ave Mujica的契约与命运共同体",
+      "line_range": [
+        1641,
+        1643
+      ],
+      "discussion_summary": "祥子承认自己向成员许诺对她们的人生负责，她们的命运不可分割，她必须带领她们走出迷雾",
+      "is_substantive": true
+    },
+    {
+      "concept": "Ave Mujica的契约与命运共同体",
+      "line_range": [
+        1708,
+        1712
+      ],
+      "discussion_summary": "祥子道歉并重申Ave Mujica是命运共同体，她会赌上人生来守护她们",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        115,
+        127
+      ],
+      "description": "祥子解释自己加入罗德岛是为了帮助人们对抗矿石病，并提及母亲因矿石病去世",
+      "is_substantive": true
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1820,
+        1823
+      ],
+      "description": "爱丽丝提议求助罗德岛的博士，寻找将祥子等人送回原来世界的方法",
+      "is_substantive": true
+    },
+    {
+      "faction": "梦城堡",
+      "line_range": [
+        163,
+        170
+      ],
+      "description": "贝娜和爱丽丝介绍梦城堡是维多利亚森林里带给孩子们美梦的仙女居所，并解释仙女的工作原则",
+      "is_substantive": true
+    },
+    {
+      "faction": "梦城堡",
+      "line_range": [
+        372,
+        386
+      ],
+      "description": "莫菲丝自称是梦城堡的现任主人，抱怨最近没有孩子来，因此困住祥子",
+      "is_substantive": true
+    },
+    {
+      "faction": "企鹅物流",
+      "line_range": [
+        622,
+        632
+      ],
+      "description": "企鹅物流员工讨论若麦和空的工作状态，表达对若麦的关心",
+      "is_substantive": true
+    }
+  ],
+  "locations": [
+    {
+      "location": "维多利亚",
+      "line_range": [
+        151,
+        164
+      ],
+      "description": "贝娜介绍维多利亚森林里矗立着梦城堡，里面住着仙女",
+      "is_substantive": true
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        443,
+        444
+      ],
+      "description": "祥子从梦境中醒来，发现自己身处一个现代建筑林立、有动物耳朵行人的地方，推测是龙门",
+      "is_substantive": true
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        478,
+        482
+      ],
+      "description": "迷途的少女在寻找龙门，描述龙门是家的方向",
+      "is_substantive": true
+    },
+    {
+      "location": "叙拉古",
+      "line_range": [
+        819,
+        820
+      ],
+      "description": "苍老的声音描述叙拉古的危险，家族和秩序之下全是阴谋和算计",
+      "is_substantive": true
+    },
+    {
+      "location": "火山岛",
+      "line_range": [
+        850,
+        862
+      ],
+      "description": "船夫描述小岛离陆地很远，班次稀少，错过要等一个月",
+      "is_substantive": true
+    },
+    {
+      "location": "雷姆必拓",
+      "line_range": [
+        1047,
+        1047
+      ],
+      "description": "睦提醒祥子雷姆必拓到处都是沙尘，水袋和护目镜是必需的",
+      "is_substantive": true
+    }
+  ],
+  "chapter": "无忧梦呓",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:38:28.674161+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 37697,
+    "tokens_out": 4093,
+    "elapsed_s": 31.318558931350708
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "安",
+    "莫菲丝",
+    "沃尔夫",
+    "卡尔顿们",
+    "弗朗西斯",
+    "母亲",
+    "父亲"
+  ]
+}

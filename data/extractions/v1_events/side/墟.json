@@ -1,0 +1,1052 @@
+{
+  "chapter": "墟",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "星熊收到一封自称来自铁斋的信，邀请她回御机参加锻冶町的葬礼。在文月的劝说下，她回到阔别二十年的故乡。刚进入御机，她就被警察逮捕，但很快被金石会的三船（金兵卫）保释出来。星熊发现铁斋已被架空，金石会实际由三船控制，而三船正计划开发并摧毁锻冶町。同时，人气偶像萌萌香因在演唱会上被星熊吓到，以及后续探访鬼屋的节目，意外卷入了金石会的内部斗争。她无意中捡到了一把断刀，并偷听到了三船和澪要处理她的对话，被迫逃亡。星熊在追查半夜闯入她家的怪谈「轮入道」时，遇到了情报贩子森内，并得知御机的怪谈可能都是人为制造的。星熊、萌萌香和森内逐渐拼凑出真相：三船为了控制锻冶町和掩盖过去的罪行，利用萌萌香的节目制造怪谈，并可能杀害了多人。三船派出忍者追杀他们，森内被抓。星熊回到锻冶町，与铁斋进行了一场深刻的对话，揭露了二十年前议员候选人被杀事件的真相——星熊可能并非真凶，而是为了顾全大局顶罪。铁斋重铸了般若，星熊决定与铁斋联手，亲手斩断这段宿业。\n\n三船光平在继位仪式前与澪进行了一番关于「漂亮」和「奎隆传说」的对话，揭示了其将星熊逼入绝境的深层动机。他利用森内作为诱饵，并派澪拖住星熊，自己则前往锻冶町胁迫铁斋。与此同时，哲也在调查北院间谍时意外发现了自家藏匿的军火，被三船的忍者控制并带往拍卖会场。\n\n在拍卖会上，三船利用哲也作为人质，逼迫铁斋以两亿天价拍下一台旧电视机，从而抵押锻冶町地契。铁斋为保全儿子而屈服，但三船却让哲也全程目睹了父亲的屈辱与牺牲。铁斋重伤濒死，星熊赶到时已回天乏术，并被警察以杀人嫌疑逮捕。星熊在铁斋墓前独饮，与刑警惟任对峙，最终决定不再逃避，要兑现对萌萌香的承诺。\n\n萌萌香和吉星被关押，但得到了技术高超的忍客更纱的帮助。更纱黑入电视台系统，让萌萌香与星熊取得联系。森内与久违的神明重逢，神明劝他投靠三船以获取财富，但森内拒绝了，选择去帮助星熊。更纱策划了一场大行动：她利用应急广播系统制造北院入侵的假警报，引发全城混乱，为星熊和萌萌香的行动创造机会。\n\n星熊闯入电视台，与澪展开对决。她最终克服了对般若的恐惧，击败了澪。澪承认自己是为了保护金石会这个「渣滓的容身之处」而战，并暗示自己将背叛三船。萌萌香通过被劫持的电视信号向全城直播，揭露了三船利用怪谈掩盖罪行、企图让她感染矿石病等真相，并宣布与金石会演艺事务所决裂。\n\n三船大势已去，与星熊在锻冶町的河滩边进行最终对决。三船倾诉了自己对铁斋「虚伪任侠」的怨恨，以及多年来为金石会力挽狂澜却遭冷遇的愤懑。星熊最终没有杀死三船，而是选择斩断与御机的因缘。事后，星熊回到龙门，与文月探讨了龙门与御机的不同。萌萌香留在御机创办自己的事务所，森内继续经营关东煮摊，更纱则被家族带回。澪辞去了金石会的职务，而那位幕后议员则得到了他梦寐以求的旧钢珠机，并坚信这是神明的眷顾。",
+  "events": [
+    {
+      "event": "星熊回到御机，被警察逮捕，三船前来保释她",
+      "type": "revelation",
+      "line_range": [
+        1,
+        180
+      ],
+      "participants": [
+        "星熊",
+        "惟任刑警",
+        "三船"
+      ],
+      "location": "御机警察局",
+      "significance": "揭示星熊的过去身份和金石会的现状",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊与铁斋重逢，得知金石会已被三船架空，锻冶町面临开发危机",
+      "type": "revelation",
+      "line_range": [
+        387,
+        497
+      ],
+      "participants": [
+        "星熊",
+        "铁斋",
+        "三船"
+      ],
+      "location": "锻冶町铁斋的宅邸",
+      "significance": "揭示金石会内部权力斗争和锻冶町的危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "萌萌香在鬼屋探访节目中遇到星熊，被吓到",
+      "type": "confrontation",
+      "line_range": [
+        498,
+        533
+      ],
+      "participants": [
+        "萌萌香",
+        "星熊"
+      ],
+      "location": "锻冶町星熊家的老宅",
+      "significance": "萌萌香与星熊的初次直接接触，埋下后续剧情伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "萌萌香偷听到三船和澪的对话，得知自己因捡到断刀而面临被处理的危险",
+      "type": "revelation",
+      "line_range": [
+        754,
+        798
+      ],
+      "participants": [
+        "萌萌香",
+        "三船",
+        "澪"
+      ],
+      "location": "萌萌香的公寓",
+      "significance": "揭示三船的真实面目和萌萌香的危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊与森内相遇，森内委托星熊寻找「轮入道」神明",
+      "type": "negotiation",
+      "line_range": [
+        799,
+        817
+      ],
+      "participants": [
+        "星熊",
+        "森内"
+      ],
+      "location": "仁田街关东煮摊",
+      "significance": "引入怪谈线索和森内这个关键角色",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊和萌萌香在神社找到了「轮入道」神明，并得知御机怪谈多为人为",
+      "type": "revelation",
+      "line_range": [
+        1080,
+        1153
+      ],
+      "participants": [
+        "星熊",
+        "萌萌香",
+        "好事的神明",
+        "沉稳的神职"
+      ],
+      "location": "结缘的神社",
+      "significance": "揭示怪谈的真相，为后续剧情提供关键信息",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊、萌萌香和森内分析怪谈真相，发现三船利用怪谈掩盖罪行",
+      "type": "investigation",
+      "line_range": [
+        1375,
+        1479
+      ],
+      "participants": [
+        "星熊",
+        "萌萌香",
+        "森内",
+        "好事的神明"
+      ],
+      "location": "仁田街关东煮摊",
+      "significance": "揭露三船制造怪谈的阴谋，推动剧情高潮",
+      "is_imaginary": false
+    },
+    {
+      "event": "三船派出的忍者袭击森内，森内被抓走",
+      "type": "ambush",
+      "line_range": [
+        1483,
+        1517
+      ],
+      "participants": [
+        "星熊",
+        "萌萌香",
+        "森内",
+        "好事的神明",
+        "沉默的忍者"
+      ],
+      "location": "仁田街关东煮摊",
+      "significance": "三船开始采取强硬手段，森内陷入危险",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊与铁斋进行深刻对话，揭露二十年前议员候选人被杀事件的真相",
+      "type": "revelation",
+      "line_range": [
+        1678,
+        1779
+      ],
+      "participants": [
+        "星熊",
+        "铁斋"
+      ],
+      "location": "锻冶町铁斋的宅邸",
+      "significance": "揭示星熊的过去和内心挣扎，明确最终目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "三船向澪阐述其「漂亮」的处事哲学，并讲述奎隆传说，暗示星熊会因无力感而失控",
+      "type": "revelation",
+      "line_range": [
+        1780,
+        1815
+      ],
+      "participants": [
+        "三船",
+        "澪"
+      ],
+      "location": "金石会总部",
+      "significance": "揭示三船将事情做绝的动机，并铺垫星熊可能面临的失控危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "三船胁迫森内打电话引诱星熊，星熊却直接闯入救走森内",
+      "type": "confrontation",
+      "line_range": [
+        1816,
+        1858
+      ],
+      "participants": [
+        "三船",
+        "森内",
+        "星熊"
+      ],
+      "location": "金石会总部",
+      "significance": "星熊主动出击，三船顺势而为，双方正面冲突开始",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊与澪对峙，星熊因害怕失控而拒绝拔刀",
+      "type": "confrontation",
+      "line_range": [
+        1859,
+        1881
+      ],
+      "participants": [
+        "星熊",
+        "澪"
+      ],
+      "location": "金石会总部",
+      "significance": "展现星熊对自身鬼族血脉的恐惧，澪点出奎隆之死的隐喻",
+      "is_imaginary": false
+    },
+    {
+      "event": "好事的神明找到森内，告知他「吾辈」在天台等他，森内回忆起与这位神明的过往",
+      "type": "flashback",
+      "line_range": [
+        1882,
+        1931
+      ],
+      "participants": [
+        "好事的神明",
+        "森内",
+        "年幼的森内",
+        "父亲",
+        "母亲",
+        "年少的森内",
+        "年轻的森内",
+        "不再年轻的森内"
+      ],
+      "location": "御机街头",
+      "significance": "揭示森内与神明之间的深厚羁绊，为后续森内的抉择做铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "哲也在地下发现北院军火，被三船的忍者控制并带去见三船",
+      "type": "revelation",
+      "line_range": [
+        1932,
+        1955
+      ],
+      "participants": [
+        "哲也",
+        "隐匿的忍者"
+      ],
+      "location": "御机地下结构",
+      "significance": "揭露二十年前军火案的真相，哲也落入三船掌控",
+      "is_imaginary": false
+    },
+    {
+      "event": "三船闯入铁斋家，以哲也为质，逼迫铁斋交出般若并参加继位仪式",
+      "type": "confrontation",
+      "line_range": [
+        1956,
+        2021
+      ],
+      "participants": [
+        "三船",
+        "铁斋",
+        "吉星",
+        "萌萌香",
+        "哲也"
+      ],
+      "location": "铁斋家",
+      "significance": "三船利用父子之情彻底击垮铁斋的意志",
+      "is_imaginary": false
+    },
+    {
+      "event": "三船在拍卖会上逼迫铁斋以两亿天价拍下旧电视，抵押锻冶町地契，并让哲也全程观看",
+      "type": "betrayal",
+      "line_range": [
+        2022,
+        2115
+      ],
+      "participants": [
+        "三船",
+        "铁斋",
+        "哲也",
+        "澪",
+        "拍卖师"
+      ],
+      "location": "拍卖会场",
+      "significance": "三船用最残忍的方式摧毁了铁斋的尊严和哲也的认知，是剧情高潮之一",
+      "is_imaginary": false
+    },
+    {
+      "event": "铁斋重伤濒死，星熊赶到，铁斋嘱托她离开后去世",
+      "type": "sacrifice",
+      "line_range": [
+        2144,
+        2170
+      ],
+      "participants": [
+        "星熊",
+        "铁斋"
+      ],
+      "location": "锻冶町",
+      "significance": "铁斋之死彻底激化了矛盾，星熊失去最后的依靠",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊被警察以杀人嫌疑逮捕，她意识到这是三船的阴谋",
+      "type": "ambush",
+      "line_range": [
+        2171,
+        2181
+      ],
+      "participants": [
+        "星熊",
+        "疲惫的警察"
+      ],
+      "location": "锻冶町",
+      "significance": "三船试图让星熊再次背上杀人罪名",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊摆脱追捕，在铁斋墓前独饮，反思自己的处境和选择",
+      "type": "reflection",
+      "line_range": [
+        2182,
+        2250
+      ],
+      "participants": [
+        "星熊",
+        "疲惫的警察",
+        "泄气的警察",
+        "张狂的忍者",
+        "拉客的店员",
+        "打扮入时的男人",
+        "凑热闹的路人"
+      ],
+      "location": "御机街头",
+      "significance": "展现星熊内心的挣扎与迷茫，为后续决定做铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "惟任刑警找到星熊，揭露自己与二十年前案件的关联，并劝她回龙门",
+      "type": "revelation",
+      "line_range": [
+        2251,
+        2296
+      ],
+      "participants": [
+        "星熊",
+        "惟任刑警"
+      ],
+      "location": "御机街头",
+      "significance": "揭示惟任的动机，展现警察系统的无力与妥协",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊通过电视与萌萌香取得联系，得知她被关押，决定去救人",
+      "type": "rescue",
+      "line_range": [
+        2297,
+        2361
+      ],
+      "participants": [
+        "星熊",
+        "惟任刑警",
+        "萌萌香"
+      ],
+      "location": "御机街头",
+      "significance": "星熊找到新的行动目标，决定不再逃避",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊向惟任刑警表明决心，要兑现对萌萌香的承诺，并请求他帮忙顶住压力",
+      "type": "planning",
+      "line_range": [
+        2362,
+        2375
+      ],
+      "participants": [
+        "星熊",
+        "惟任刑警"
+      ],
+      "location": "御机街头",
+      "significance": "星熊与惟任达成默契，为最终决战做准备",
+      "is_imaginary": false
+    },
+    {
+      "event": "忍客更纱现身，帮助萌萌香，并策划利用电视直播揭露三船",
+      "type": "alliance",
+      "line_range": [
+        2376,
+        2440
+      ],
+      "participants": [
+        "萌萌香",
+        "更纱",
+        "懈怠的黑道"
+      ],
+      "location": "关押地点",
+      "significance": "更纱的加入为反抗行动提供了技术支持",
+      "is_imaginary": false
+    },
+    {
+      "event": "森内与久违的神明在天台重逢，神明劝他投靠三船以获取财富，森内拒绝并选择去帮助星熊",
+      "type": "ideological_clash",
+      "line_range": [
+        2441,
+        2540
+      ],
+      "participants": [
+        "森内",
+        "久违的神明",
+        "好事的神明"
+      ],
+      "location": "御机天台",
+      "significance": "森内完成了人物弧光，从追逐神明到选择真正的朋友，拒绝了财富即幸福的观念",
+      "is_imaginary": false
+    },
+    {
+      "event": "更纱通过电视联系上星熊和森内，召开作战会议，计划制造混乱并直播揭露三船",
+      "type": "planning",
+      "line_range": [
+        2541,
+        2555
+      ],
+      "participants": [
+        "星熊",
+        "森内",
+        "更纱",
+        "萌萌香",
+        "吉星"
+      ],
+      "location": "御机",
+      "significance": "各方势力集结，最终反击计划形成",
+      "is_imaginary": false
+    },
+    {
+      "event": "三船与澪对话，得知澪放走了哲也，并命令她去对付星熊",
+      "type": "confrontation",
+      "line_range": [
+        2556,
+        2598
+      ],
+      "participants": [
+        "三船",
+        "澪"
+      ],
+      "location": "继位仪式会场",
+      "significance": "澪的背叛初现端倪，三船开始失去控制",
+      "is_imaginary": false
+    },
+    {
+      "event": "更纱黑入应急广播系统，制造北院入侵的假警报，引发全城混乱",
+      "type": "infiltration",
+      "line_range": [
+        2599,
+        2625
+      ],
+      "participants": [
+        "三船",
+        "更纱",
+        "星熊",
+        "森内",
+        "焦急的忍者"
+      ],
+      "location": "御机全城",
+      "significance": "为星熊和萌萌香的行动创造机会，是反击的关键一步",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊闯入电视台，与昔日同僚对峙，最终突破防线",
+      "type": "confrontation",
+      "line_range": [
+        2626,
+        2650
+      ],
+      "participants": [
+        "星熊",
+        "黑道和忍者们"
+      ],
+      "location": "金石电视台",
+      "significance": "星熊以武力开路，展现其决心与实力",
+      "is_imaginary": false
+    },
+    {
+      "event": "萌萌香、吉星和更纱潜入继位仪式会场，但被澪拦截",
+      "type": "confrontation",
+      "line_range": [
+        2651,
+        2729
+      ],
+      "participants": [
+        "萌萌香",
+        "吉星",
+        "更纱",
+        "澪"
+      ],
+      "location": "继位仪式会场",
+      "significance": "澪选择在此处拦截，而非去对付星熊，表明其立场动摇",
+      "is_imaginary": false
+    },
+    {
+      "event": "惟任刑警在警局顶住上级压力，拒绝截断直播信号，并打发了议员的秘书",
+      "type": "political_intrigue",
+      "line_range": [
+        2730,
+        2770
+      ],
+      "participants": [
+        "惟任刑警",
+        "神秘的访客"
+      ],
+      "location": "警察局",
+      "significance": "惟任刑警以个人前途为赌注，为正义争取了空间",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊与澪展开对决，星熊最终克服恐惧，击败澪",
+      "type": "battle",
+      "line_range": [
+        2771,
+        2848
+      ],
+      "participants": [
+        "星熊",
+        "澪",
+        "森内"
+      ],
+      "location": "继位仪式会场",
+      "significance": "星熊战胜了内心的恐惧，澪承认失败并决定为金石会善后",
+      "is_imaginary": false
+    },
+    {
+      "event": "萌萌香通过被劫持的电视信号向全城直播，揭露三船的罪行并宣布与事务所决裂",
+      "type": "revelation",
+      "line_range": [
+        2891,
+        2961
+      ],
+      "participants": [
+        "萌萌香",
+        "三船",
+        "哲也"
+      ],
+      "location": "继位仪式会场",
+      "significance": "萌萌香完成了人物弧光，从被恐惧支配的偶像成长为揭露真相的斗士",
+      "is_imaginary": false
+    },
+    {
+      "event": "萌萌香在逃亡途中被忍者抓住，因对方剪断了她心爱的植物而暴怒反击",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2974,
+        3029
+      ],
+      "participants": [
+        "萌萌香",
+        "刚入行的忍者"
+      ],
+      "location": "御机后巷",
+      "significance": "展现萌萌香柔弱外表下的坚强与愤怒",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊与三船在锻冶町河滩边进行最终对决，三船倾诉了自己的怨恨与动机",
+      "type": "confrontation",
+      "line_range": [
+        3030,
+        3062
+      ],
+      "participants": [
+        "星熊",
+        "三船"
+      ],
+      "location": "锻冶町河滩",
+      "significance": "三船的人物动机得到完整揭示，为最终决战铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊在前往决斗途中被昔日同伴阻拦，对方指责她变成了恶鬼",
+      "type": "confrontation",
+      "line_range": [
+        3063,
+        3078
+      ],
+      "participants": [
+        "星熊",
+        "悲痛的黑道"
+      ],
+      "location": "锻冶町",
+      "significance": "展现星熊在御机已众叛亲离的处境",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊与三船在河滩边进行最终对决，三船倾诉了对铁斋和星熊的怨恨，星熊最终没有杀死他",
+      "type": "battle",
+      "line_range": [
+        3079,
+        3216
+      ],
+      "participants": [
+        "星熊",
+        "三船"
+      ],
+      "location": "锻冶町河滩",
+      "significance": "三船的人物弧光完成，星熊选择斩断因缘而非复仇，完成了自我救赎",
+      "is_imaginary": false
+    },
+    {
+      "event": "事后，萌萌香用烟花安慰星熊，众人短暂相聚后各自离去",
+      "type": "farewell",
+      "line_range": [
+        3217,
+        3242
+      ],
+      "participants": [
+        "星熊",
+        "萌萌香",
+        "吉星",
+        "森内"
+      ],
+      "location": "御机街头",
+      "significance": "展现事件后的温情与离别，为故事画上句号",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊回到龙门，与文月探讨龙门与御机的不同，并得知哲也和惟任的近况",
+      "type": "reflection",
+      "line_range": [
+        3243,
+        3310
+      ],
+      "participants": [
+        "星熊",
+        "文月",
+        "林雨霞",
+        "诗怀雅"
+      ],
+      "location": "龙门",
+      "significance": "星熊确认了自己的归属，故事主题得到升华",
+      "is_imaginary": false
+    },
+    {
+      "event": "萌萌香留在御机创办自己的事务所，与森内讨论未来的不确定性",
+      "type": "character_development",
+      "line_range": [
+        3311,
+        3355
+      ],
+      "participants": [
+        "萌萌香",
+        "森内",
+        "吉星"
+      ],
+      "location": "森内的关东煮摊",
+      "significance": "展现萌萌香和森内的新生活，以及对未来的预感",
+      "is_imaginary": false
+    },
+    {
+      "event": "澪向议员辞行，放弃接手金石会，选择离开",
+      "type": "departure",
+      "line_range": [
+        3356,
+        3371
+      ],
+      "participants": [
+        "澪",
+        "议员"
+      ],
+      "location": "议员宅邸",
+      "significance": "澪完成了自己的使命，选择自由",
+      "is_imaginary": false
+    },
+    {
+      "event": "幕后议员得到旧钢珠机，坚信这是神明的眷顾，而神明对此不以为然",
+      "type": "revelation",
+      "line_range": [
+        3372,
+        3408
+      ],
+      "participants": [
+        "议员",
+        "久违的神明"
+      ],
+      "location": "议员宅邸",
+      "significance": "揭示整个事件的幕后黑手，以及神明与人类认知的错位",
+      "is_imaginary": false
+    },
+    {
+      "event": "更纱被家族带回，与宫司大人一起面对北院两大家族的问责",
+      "type": "confrontation",
+      "line_range": [
+        3409,
+        3437
+      ],
+      "participants": [
+        "更纱",
+        "沉稳的神职",
+        "阿戈尔男性",
+        "埃拉菲亚女性"
+      ],
+      "location": "神社",
+      "significance": "揭示更纱的真实身份，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "星熊",
+      "type": "operator",
+      "role_in_chapter": "主角，龙门近卫局警察，回到御机处理过去恩怨，保护萌萌香，调查怪谈真相",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "三船（金兵卫）",
+      "type": "npc",
+      "role_in_chapter": "反派，金石会实际控制者，计划开发锻冶町，制造怪谈掩盖罪行",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "铁斋",
+      "type": "npc",
+      "role_in_chapter": "金石会名义会长，星熊的养父，被三船架空，决心与三船对抗",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "萌萌香（羽生萌萌香）",
+      "type": "npc",
+      "role_in_chapter": "人气偶像，被三船利用制造怪谈，因捡到断刀而被迫逃亡，与星熊同行",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "森内",
+      "type": "npc",
+      "role_in_chapter": "情报贩子，关东煮摊老板，寻找神明，帮助星熊和萌萌香分析怪谈真相",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "澪",
+      "type": "npc",
+      "role_in_chapter": "三船的手下，负责监视和处理萌萌香，内心有矛盾",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "惟任刑警",
+      "type": "npc",
+      "role_in_chapter": "御机警察，负责调查星熊，后放走她",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "好事的神明",
+      "type": "npc",
+      "role_in_chapter": "轮入道神明，追逐怪谈，帮助星熊和萌萌香",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "吉星",
+      "type": "npc",
+      "role_in_chapter": "锻冶町居民，萌萌香的粉丝，帮助星熊和萌萌香",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "哲也",
+      "type": "npc",
+      "role_in_chapter": "铁斋的儿子，在三船手下做事，内心矛盾",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "文月",
+      "type": "operator",
+      "role_in_chapter": "魏彦吾的妻子，星熊的同乡，劝说星熊回御机",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "三船",
+      "type": "npc",
+      "role_in_chapter": "主要反派，金石会实际控制人。策划了所有阴谋，逼迫铁斋至死，试图逼疯星熊。最终在河滩决战中被星熊击败，但未被杀死。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "萌萌香",
+      "type": "npc",
+      "role_in_chapter": "人气偶像，故事关键人物。被三船迫害，后在更纱帮助下通过电视直播揭露三船罪行，并宣布独立。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "更纱",
+      "type": "npc",
+      "role_in_chapter": "忍客，技术高手，真实身份是北院锦织家的大小姐。帮助萌萌香黑入电视台，策划了反击行动。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "久违的神明",
+      "type": "npc",
+      "role_in_chapter": "森内童年时遇到的神明。劝森内投靠三船以获取财富，被拒绝后离开。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "林",
+      "type": "operator",
+      "role_in_chapter": "龙门高官林舸瑞之女。在故事结尾与诗怀雅讨论星熊的近况。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "诗怀雅",
+      "type": "operator",
+      "role_in_chapter": "龙门近卫局高级警司。在故事结尾与林雨霞讨论星熊的近况。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "议员",
+      "type": "npc",
+      "role_in_chapter": "幕后黑手，三船的后台。指使三船夺取旧钢珠机，坚信自己被神明眷顾。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "沉稳的神职",
+      "type": "npc",
+      "role_in_chapter": "神社的宫司大人。帮助更纱应对北院家族的问责。",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "怪谈",
+      "line_range": [
+        1375,
+        1479
+      ],
+      "discussion_summary": "星熊、萌萌香、森内和好事的神明讨论御机怪谈的真相，发现大部分怪谈都是三船为了掩盖罪行而人为制造的，并非超自然现象。",
+      "is_substantive": true
+    },
+    {
+      "concept": "般若（盾）",
+      "line_range": [
+        468,
+        488
+      ],
+      "discussion_summary": "铁斋检查星熊的盾般若，指出其断面是被赤霄所砍，并讨论重铸般若以胜过赤霄的可能性。",
+      "is_substantive": true
+    },
+    {
+      "concept": "宿业",
+      "line_range": [
+        1678,
+        1779
+      ],
+      "discussion_summary": "铁斋和星熊讨论二十年前议员候选人被杀事件的真相，铁斋认为这是宿业，星熊决定亲手斩断这段因缘。",
+      "is_substantive": true
+    },
+    {
+      "concept": "漂亮",
+      "line_range": [
+        1788,
+        1797
+      ],
+      "discussion_summary": "三船向澪阐述其「漂亮」的处事哲学，认为做事要讲究美，要有始有终，让每个人都去该去的地方，实际上是把事情做绝。",
+      "is_substantive": true
+    },
+    {
+      "concept": "奎隆传说",
+      "line_range": [
+        1803,
+        1814
+      ],
+      "discussion_summary": "三船讲述奎隆因无力保护同族而失控杀死所有人的传说，以此暗示星熊会在无力感中陷入疯狂。",
+      "is_substantive": true
+    },
+    {
+      "concept": "任侠",
+      "line_range": [
+        3104,
+        3110
+      ],
+      "discussion_summary": "三船批判铁斋的「任侠」理念，认为任侠是一个人的事，一群任侠要么散伙，要么只是自欺欺人，黑道都是无法适应社会的可怜人。",
+      "is_substantive": true
+    },
+    {
+      "concept": "幸福",
+      "line_range": [
+        2463,
+        2498
+      ],
+      "discussion_summary": "久违的神明向森内解释，祂不会赠予人幸福，而是幸福发生时祂才会出现。祂认为财富就是幸福，劝森内投靠三船。",
+      "is_substantive": true
+    },
+    {
+      "concept": "恐惧",
+      "line_range": [
+        2928,
+        2941
+      ],
+      "discussion_summary": "萌萌香在直播中阐述自己对恐惧的理解，认为能为怪谈害怕是一种奢侈的幸福，而真正的恐惧是家乡后川城的疾病与死亡。",
+      "is_substantive": true
+    },
+    {
+      "concept": "武家的孑遗",
+      "line_range": [
+        3182,
+        3198
+      ],
+      "discussion_summary": "三船回忆铁斋曾说过的话，认为他们是武家最后的孑遗，忠义和任侠的魂灵一直在他们身上，但三船对此表示怀疑。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "金石会",
+      "line_range": [
+        260,
+        317
+      ],
+      "description": "三船向星熊解释金石会的现状，铁斋被架空，三船实际控制，并计划开发锻冶町。"
+    },
+    {
+      "faction": "金石集团",
+      "line_range": [
+        1199,
+        1249
+      ],
+      "description": "三船与澪讨论金石集团与金石会的剥离计划，以及他进入政界的野心。"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        223,
+        259
+      ],
+      "description": "星熊与文月讨论龙门近卫局的事务，以及星熊在龙门的生活。"
+    },
+    {
+      "faction": "金石会",
+      "line_range": [
+        1780,
+        1815
+      ],
+      "description": "三船与澪讨论金石会的未来，三船计划让澪成为四代目会长。"
+    },
+    {
+      "faction": "金石会",
+      "line_range": [
+        1980,
+        2008
+      ],
+      "description": "三船逼迫铁斋交出会长之位，并揭露铁斋为保全金石会而牺牲星熊和哲也母亲的往事。"
+    },
+    {
+      "faction": "金石会",
+      "line_range": [
+        2781,
+        2805
+      ],
+      "description": "澪向星熊解释自己效忠金石会的原因，认为金石会是让社会渣滓活下去的容身之处，铁斋无法保护它，而三船可以。"
+    },
+    {
+      "faction": "金石会",
+      "line_range": [
+        3104,
+        3132
+      ],
+      "description": "三船痛斥铁斋领导下的金石会虚伪无能，认为自己力挽狂澜却遭冷遇，铁斋只会不停地弃子。"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        2339,
+        2351
+      ],
+      "description": "惟任刑警劝星熊回龙门，认为龙门近卫局会帮她摆平事情。星熊也提到Missy、林雨霞和陈晖洁。"
+    },
+    {
+      "faction": "北院",
+      "line_range": [
+        1932,
+        1941
+      ],
+      "description": "哲也在御机地下发现印有北院帆足家家徽的军火，揭示了二十年前金石会与北院的军火交易。"
+    },
+    {
+      "faction": "北院",
+      "line_range": [
+        3409,
+        3437
+      ],
+      "description": "更纱的真实身份是北院锦织家的大小姐，因在御机闯祸而引来锦织家和叶家的家主问责。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "锻冶町",
+      "line_range": [
+        387,
+        497
+      ],
+      "description": "星熊回到锻冶町，发现这里已经破败，面临被三船开发的危机。铁斋的宅邸和星熊家的老宅都在这里。"
+    },
+    {
+      "location": "结缘的神社",
+      "line_range": [
+        1052,
+        1204
+      ],
+      "description": "星熊和萌萌香来到神社寻找轮入道神明，与宫司和神明进行交流，得知怪谈的真相。"
+    },
+    {
+      "location": "仁田街",
+      "line_range": [
+        799,
+        817
+      ],
+      "description": "星熊追捕轮入道时来到仁田街，遇到了森内的关东煮摊，并在此与森内达成协议。"
+    },
+    {
+      "location": "锻冶町",
+      "line_range": [
+        2144,
+        2170
+      ],
+      "description": "铁斋在此处重伤濒死，星熊赶到时已回天乏术。锻冶町已被三船夷平。"
+    },
+    {
+      "location": "锻冶町",
+      "line_range": [
+        3058,
+        3062
+      ],
+      "description": "三船提议去被夷平的锻冶町进行最终对决，认为那里承载着回忆。"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        3271,
+        3310
+      ],
+      "description": "星熊回到龙门后与文月交谈，探讨龙门与御机的不同，确认龙门才是自己的家。"
+    },
+    {
+      "location": "后川城",
+      "line_range": [
+        2931,
+        2934
+      ],
+      "description": "萌萌香的家乡，以水污染闻名。她在此处阐述真正的恐惧是疾病与死亡。"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:16:18.947302+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 75739,
+    "tokens_out": 9604,
+    "elapsed_s": 97.32166361808777
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "三船（金兵卫）",
+    "铁斋",
+    "萌萌香（羽生萌萌香）",
+    "森内",
+    "澪",
+    "惟任刑警",
+    "好事的神明",
+    "哲也",
+    "文月",
+    "三船",
+    "萌萌香",
+    "更纱",
+    "久违的神明",
+    "议员",
+    "沉稳的神职"
+  ]
+}

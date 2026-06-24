@@ -1,0 +1,441 @@
+{
+  "summary": "本章「骑兵与猎人」讲述了罗德岛干员格拉尼在卡西米尔滴水村执行委托，帮助村长可萝尔对抗赏金猎人、寻找古代骑士宝藏的故事。故事开篇，格拉尼从赏金猎人手中救出被折磨的可萝尔，得知滴水村因骑士宝藏传说而遭赏金猎人侵扰。两人在逃亡途中先后遭遇了同为罗德岛干员但行为神秘的斯卡蒂，以及自称赏金猎人的感染者大鲍勃。大鲍勃因感染矿石病而渴望用宝藏换取前往哥伦比亚的生存机会，斯卡蒂则似乎另有目的，执意要带走可萝尔。三方势力在塔拉特山的洞窟中围绕宝藏展开对峙与冲突。最终，格拉尼用自己的血液打开了需要卡西米尔血脉才能开启的宝箱，化解了危机。斯卡蒂在获得宝箱钥匙后，与格拉尼联手驱散了赏金猎人。故事尾声，斯卡蒂返回罗德岛，用钥匙与凯尔希交换关于幽灵鲨身上源石神经剂来源的信息，揭示了斯卡蒂此行与深海猎人秘密相关的深层动机。临光在另一条线中试图提醒格拉尼某些事情，但信件未能及时送达。",
+  "events": [
+    {
+      "event": "格拉尼从赏金猎人手中救出被吊打的可萝尔，得知滴水村因骑士宝藏传说而遭赏金猎人侵扰。",
+      "type": "rescue",
+      "line_range": [
+        1,
+        89
+      ],
+      "participants": [
+        "格拉尼",
+        "可萝尔",
+        "赏金猎人"
+      ],
+      "location": "滴水村某村庄内",
+      "significance": "建立主线任务：保护可萝尔并解决滴水村的赏金猎人危机。",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉尼与可萝尔在阁楼躲避赏金猎人，可萝尔透露宝藏钥匙和位置是历代村长口口相传的秘密。",
+      "type": "revelation",
+      "line_range": [
+        90,
+        125
+      ],
+      "participants": [
+        "格拉尼",
+        "可萝尔"
+      ],
+      "location": "滴水村阁楼",
+      "significance": "揭示宝藏的核心设定：需要钥匙和特定血脉才能开启。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂在滴水村外击退赏金猎人，格拉尼认出她是罗德岛同事，但斯卡蒂行为异常。",
+      "type": "confrontation",
+      "line_range": [
+        126,
+        185
+      ],
+      "participants": [
+        "斯卡蒂",
+        "格拉尼",
+        "可萝尔",
+        "赏金猎人"
+      ],
+      "location": "滴水村外",
+      "significance": "引入斯卡蒂作为第三方势力，制造悬念。",
+      "is_imaginary": false
+    },
+    {
+      "event": "赏金猎人使用虫子围攻格拉尼和可萝尔，大鲍勃出现用震撼弹解围，并提出合作寻宝。",
+      "type": "rescue",
+      "line_range": [
+        186,
+        259
+      ],
+      "participants": [
+        "格拉尼",
+        "可萝尔",
+        "大鲍勃",
+        "赏金猎人"
+      ],
+      "location": "滴水村村外树林",
+      "significance": "引入大鲍勃作为合作者，建立三方势力格局。",
+      "is_imaginary": false
+    },
+    {
+      "event": "大鲍勃带领格拉尼和可萝尔穿越塔拉特山前森林，途中遭遇斯卡蒂，斯卡蒂攻击格拉尼并追击三人。",
+      "type": "ambush",
+      "line_range": [
+        260,
+        337
+      ],
+      "participants": [
+        "格拉尼",
+        "可萝尔",
+        "大鲍勃",
+        "斯卡蒂",
+        "赏金猎人"
+      ],
+      "location": "塔拉特山前森林",
+      "significance": "斯卡蒂的敌对行为加剧冲突，迫使三人逃亡。",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉尼为大鲍勃包扎伤口，发现他是感染者，并表明罗德岛救助感染者的立场。",
+      "type": "character_development",
+      "line_range": [
+        338,
+        373
+      ],
+      "participants": [
+        "格拉尼",
+        "大鲍勃",
+        "可萝尔"
+      ],
+      "location": "塔拉特山前森林",
+      "significance": "深化格拉尼的角色信念，并揭示大鲍勃的感染者身份。",
+      "is_imaginary": false
+    },
+    {
+      "event": "大鲍勃在坑道中质疑罗德岛对感染者的救助，格拉尼坚持信念。三人遭遇整合运动，大鲍勃断后让格拉尼和可萝尔先走。",
+      "type": "ideological_clash",
+      "line_range": [
+        374,
+        454
+      ],
+      "participants": [
+        "格拉尼",
+        "大鲍勃",
+        "可萝尔",
+        "整合运动"
+      ],
+      "location": "塔拉特山坑道",
+      "significance": "展现感染者与罗德岛理念的冲突，以及大鲍勃的牺牲精神。",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉尼和可萝尔继续前进，可萝尔表达恐惧但决心为村子取回宝藏。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        455,
+        494
+      ],
+      "participants": [
+        "格拉尼",
+        "可萝尔"
+      ],
+      "location": "塔拉特山坑道外森林",
+      "significance": "强化可萝尔的角色动机和决心。",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉尼决定独自守住洞口，让可萝尔进入洞窟取宝。斯卡蒂出现并威胁格拉尼。",
+      "type": "planning",
+      "line_range": [
+        495,
+        537
+      ],
+      "participants": [
+        "格拉尼",
+        "可萝尔",
+        "斯卡蒂",
+        "赏金猎人",
+        "整合运动"
+      ],
+      "location": "莫蒂卡山洞窟入口",
+      "significance": "格拉尼做出牺牲决定，斯卡蒂的威胁升级。",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉尼与斯卡蒂对峙，斯卡蒂打破山壁开辟新通道。格拉尼趁机进入洞窟，发现大鲍勃已先一步到达并击倒赏金猎人。",
+      "type": "confrontation",
+      "line_range": [
+        538,
+        609
+      ],
+      "participants": [
+        "格拉尼",
+        "斯卡蒂",
+        "大鲍勃",
+        "赏金猎人"
+      ],
+      "location": "莫蒂卡山洞窟",
+      "significance": "揭示大鲍勃的背叛，三方势力在洞窟内汇聚。",
+      "is_imaginary": false
+    },
+    {
+      "event": "大鲍勃解释自己为感染者兄弟夺取宝藏的动机，三方在洞窟内对峙。可萝尔带着宝箱出现，斯卡蒂保护了她。",
+      "type": "confrontation",
+      "line_range": [
+        610,
+        694
+      ],
+      "participants": [
+        "格拉尼",
+        "可萝尔",
+        "大鲍勃",
+        "斯卡蒂",
+        "整合运动"
+      ],
+      "location": "莫蒂卡山洞窟深处",
+      "significance": "三方势力摊牌，斯卡蒂揭示其真正目标是可萝尔而非宝藏。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂揭示宝箱钥匙会吸干使用者的血，格拉尼用自己的血打开宝箱。数日后，格拉尼和斯卡蒂联手驱散赏金猎人。",
+      "type": "sacrifice",
+      "line_range": [
+        695,
+        771
+      ],
+      "participants": [
+        "格拉尼",
+        "可萝尔",
+        "斯卡蒂",
+        "大鲍勃",
+        "赏金猎人"
+      ],
+      "location": "莫蒂卡山洞窟深处",
+      "significance": "解决核心冲突，格拉尼的牺牲精神化解危机，斯卡蒂获得钥匙。",
+      "is_imaginary": false
+    },
+    {
+      "event": "幽灵鲨从噩梦中醒来，与斯卡蒂对话。斯卡蒂表示要去一个秘密被埋葬的地方。",
+      "type": "dream_vision",
+      "line_range": [
+        772,
+        798
+      ],
+      "participants": [
+        "幽灵鲨",
+        "斯卡蒂"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示斯卡蒂与幽灵鲨的关联，以及斯卡蒂的深层任务。",
+      "is_imaginary": false
+    },
+    {
+      "event": "临光在写信，试图提醒格拉尼某些事情，但信件未能及时发出。",
+      "type": "reflection",
+      "line_range": [
+        799,
+        804
+      ],
+      "participants": [
+        "临光"
+      ],
+      "location": "未指明",
+      "significance": "暗示临光与格拉尼的关系，以及可能存在的未告知的危机。",
+      "is_imaginary": false
+    },
+    {
+      "event": "格拉尼向可萝尔告别，收到临光的信但未阅读，将其折成纸飞机放飞。",
+      "type": "farewell",
+      "line_range": [
+        805,
+        817
+      ],
+      "participants": [
+        "格拉尼",
+        "可萝尔"
+      ],
+      "location": "滴水村",
+      "significance": "格拉尼与可萝尔的告别，临光的提醒被忽略。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯卡蒂返回罗德岛，用宝箱钥匙与凯尔希交换关于幽灵鲨身上源石神经剂来源的信息。",
+      "type": "negotiation",
+      "line_range": [
+        818,
+        851
+      ],
+      "participants": [
+        "斯卡蒂",
+        "凯尔希"
+      ],
+      "location": "罗德岛",
+      "significance": "揭示斯卡蒂此行的真正目的，以及凯尔希与深海猎人之间的交易。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "格拉尼",
+      "type": "operator",
+      "role_in_chapter": "主角，罗德岛干员，前维多利亚骑警。接受滴水村委托，保护可萝尔并寻找宝藏。展现坚定的信念和牺牲精神。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "可萝尔",
+      "type": "npc",
+      "role_in_chapter": "滴水村村长，宝藏钥匙的持有者。被赏金猎人折磨，后与格拉尼合作。决心为村子牺牲自己。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "斯卡蒂",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，赏金猎人。行为神秘，执意要带走可萝尔。最终揭示其目标是宝箱钥匙，用于与凯尔希交换信息。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "大鲍勃",
+      "type": "npc",
+      "role_in_chapter": "赏金猎人，感染者。为带领感染者兄弟前往哥伦比亚而争夺宝藏。与格拉尼合作后背叛，但最终放弃。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "幽灵鲨",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在罗德岛房间内与斯卡蒂对话，提及噩梦和深海。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛高层，与斯卡蒂进行交易，提供关于幽灵鲨的信息。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "临光",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在写信试图提醒格拉尼，但信件未及时送达。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "骑士宝藏传说",
+      "line_range": [
+        70,
+        81
+      ],
+      "discussion_summary": "可萝尔向格拉尼解释骑士宝藏传说的由来：赏金猎人挖出随从骑士石棺和金币，传说卡西米尔古代骑士带着财富和精神下葬，只有不惧牺牲的卡西米尔血脉才能破除阻碍。这个传说吸引了大量赏金猎人，给滴水村带来灾难。",
+      "is_substantive": true
+    },
+    {
+      "concept": "矿石病与感染者处境",
+      "line_range": [
+        393,
+        410
+      ],
+      "discussion_summary": "大鲍勃质疑罗德岛对感染者的救助，认为罗德岛只是嘴上说说，实际上感染者仍四处被追打。格拉尼承认罗德岛力量不足，但表示不会放弃任何一位无辜感染者。",
+      "is_substantive": true
+    },
+    {
+      "concept": "宝箱钥匙的吸血机制",
+      "line_range": [
+        708,
+        732
+      ],
+      "discussion_summary": "斯卡蒂揭示宝箱钥匙会割破使用者的手并吸走血液，只有库兰塔人的血才能开启。如果非库兰塔人使用，钥匙会毁掉。格拉尼推断钥匙吸走的血量有限，决定用自己的血打开宝箱。",
+      "is_substantive": true
+    },
+    {
+      "concept": "深海猎人血脉相连",
+      "line_range": [
+        844,
+        847
+      ],
+      "discussion_summary": "凯尔希用阿戈尔语说出「深海猎人血脉相连」，暗示她知晓斯卡蒂与幽灵鲨之间的深层联系，并以此作为谈判筹码。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "赏金猎人",
+      "line_range": [
+        4,
+        8
+      ],
+      "description": "赏金猎人折磨可萝尔逼问宝藏位置，是滴水村危机的直接制造者。"
+    },
+    {
+      "faction": "赏金猎人",
+      "line_range": [
+        216,
+        219
+      ],
+      "description": "大鲍勃介绍托伦团、佛罗茨团等多个赏金猎人团在区域进行地毯式搜索，并警告不同派系会为争夺宝藏而火并。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        358,
+        361
+      ],
+      "description": "格拉尼表明自己是罗德岛干员，罗德岛救助感染者。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        393,
+        410
+      ],
+      "description": "大鲍勃质疑罗德岛对感染者的救助，格拉尼坚持罗德岛的信念。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        444,
+        454
+      ],
+      "description": "整合运动成员出现在塔拉特山坑道出口，与格拉尼等人发生冲突。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        610,
+        614
+      ],
+      "description": "大鲍勃透露他曾是整合运动成员，但因感染者处境未改善而离开。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "滴水村",
+      "line_range": [
+        63,
+        68
+      ],
+      "description": "可萝尔描述滴水村是位于卡西米尔北部山区附近的偏远村庄，村民世代居住，自给自足，但为躲避天灾会暂时迁走。"
+    },
+    {
+      "location": "塔拉特山",
+      "line_range": [
+        245,
+        248
+      ],
+      "description": "大鲍勃指出要前往塔拉特山必须穿过北方森林，那片森林是赏金猎人互相争夺的战场。"
+    },
+    {
+      "location": "哥伦比亚",
+      "line_range": [
+        616,
+        617
+      ],
+      "description": "大鲍勃表示他和兄弟们想用宝藏前往哥伦比亚，因为那里感染者还能拥有自己的城镇和田地。"
+    }
+  ],
+  "chapter": "骑兵与猎人",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:30:13.626068+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 17096,
+    "tokens_out": 3792,
+    "elapsed_s": 32.21306586265564
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "可萝尔",
+    "大鲍勃"
+  ]
+}

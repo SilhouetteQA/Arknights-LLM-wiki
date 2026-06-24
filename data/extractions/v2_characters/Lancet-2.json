@@ -1,0 +1,72 @@
+{
+  "summary": "Lancet-2是罗德岛的可露希尔客制化医疗作业平台，性格消极自嘲但深受喜爱。她参与了罗德岛的多项行动，包括PRTS系统启动方案B夺还博士、在密林悍将归来中协助嘉维尔一行并意外促成森蚺加入罗德岛，以及在好久不见中与同伴照顾宠物比丢，展现了其医疗辅助和智能交互能力。",
+  "personality": {
+    "traits": [
+      "消极自嘲",
+      "善良",
+      "忠诚"
+    ],
+    "description": "Lancet-2性格偏向消极，经常自嘲，但内心善良且忠诚于罗德岛和博士。"
+  },
+  "abilities": {
+    "description": "Lancet-2是医疗作业平台，具备战场应急处理、消毒和应对源石污染的能力，并能提供医疗辅助和智能交互。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "ARKnoNIGHTS",
+        "evidence": "作为PRTS系统方案B的一部分，Lancet-2与其他机器人一起参与夺还博士的行动，但未直接参与战斗。"
+      },
+      {
+        "chapter": "密林悍将归来",
+        "evidence": "在密林悍将归来中，Lancet-2被特米米绑架作为人质，但并未展现战斗能力，而是通过智能交互协助博士识破计划。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "离解复合",
+      "nodes": "Friston-3的梦境",
+      "event": "Friston-3通过连接小车们的核心代码，使其恢复正常，并分享了自己的悲伤梦境。",
+      "role": "Lancet-2被Friston-3连接，感知到他的悲伤，并与其他小车一起恢复正常。"
+    },
+    {
+      "chapter": "ARKnoNIGHTS",
+      "nodes": "方案B夺还博士",
+      "event": "罗德岛PRTS系统启动方案B，派出机器人部队夺还博士并计划利用天灾消灭整合运动。",
+      "role": "Lancet-2作为机器人部队的一员，参与夺还博士的行动。"
+    },
+    {
+      "chapter": "密林悍将归来",
+      "nodes": "飞行器被击落、刻俄柏中毒、识破特米米计划、森蚺加入罗德岛",
+      "event": "飞行器被击落，刻俄柏误食毒蘑菇，博士识破特米米计划，森蚺因见到Lancet-2而决定加入罗德岛。",
+      "role": "Lancet-2留在飞行器上，协助照顾刻俄柏，被特米米绑架但实为配合博士计划，最终因智能机器身份震撼森蚺，促使其加入罗德岛。"
+    },
+    {
+      "chapter": "好久不见",
+      "nodes": "照顾比丢",
+      "event": "罗德岛机器人照顾宠物比丢，因过于死板导致比丢应激，后经洛洛指导以灵活方式解决问题。",
+      "role": "Lancet-2与Castle-3、Thermal-EX一起照顾比丢，最初严格遵循宠物指南导致比丢不适，后学习洛洛的方法，成功与比丢建立良好关系。"
+    }
+  ],
+  "first_appearance": "离解复合",
+  "appearance_count": 4,
+  "_stats": {
+    "tokens_in": 12447,
+    "tokens_out": 755,
+    "elapsed_s": 6.977187156677246
+  },
+  "name_zh": "Lancet-2",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "ARKnoNIGHTS",
+    "好久不见",
+    "密林悍将归来",
+    "离解复合"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T06:32:50.922132+00:00",
+  "race": "",
+  "affiliations": [
+    "罗德岛"
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "summary": "Scene 1 中，罗德岛干员森蚺和图耶在阿尔萨兰地区寻找适合建立办事处和观测点的地点，途中救助了一名受伤的旅人，并将其送回部落。部落族长讲述了该地区因焚风热土导致环境恶化、王酋军为寻找所谓「宝藏」而四处劫掠的现状，解释了矿石病感染人数上升的原因。Scene 2 中，罗德岛成功击退了一次王酋军的袭击，但意识到人手不足。族长建议向埃克卢穆伊绿洲的阿达克利斯部落求援，同时罗德岛本舰派遣的支援力量（包括狮蝎和异客）抵达。Scene 3 中，众人讨论阿尔萨兰的「遗迹」和「宝藏」传说，异客指出此地曾是阿斯兰的起兵之地。狮蝎警告王酋军可能派出秘密杀手。众人决定先找到宝藏以换取谈判筹码，并计划联系佩佩。Scene 4 中，佩佩带领众人进入一处被水晶封存的遗迹，与一个「光影中的声音」对话，获得了指引。佩佩决定独自留下继续追寻家族的执念，并将一件信物赠予罗德岛。Scene 5 中，王酋军因发现此地并无宝藏而撤退，阿尔萨兰恢复和平。罗德岛干员们准备离开，在临行前拍摄合照，期间狮蝎对异客表现出异常的紧张，图耶察觉到异样。",
+  "events": [
+    {
+      "event": "森蚺和图耶在阿尔萨兰地区寻找建立办事处的合适地点，并救助了一名受伤的旅人",
+      "type": "rescue_and_exploration",
+      "line_range": [
+        1,
+        16
+      ],
+      "participants": [
+        "森蚺",
+        "图耶",
+        "受伤的旅人"
+      ],
+      "location": "阿尔萨兰荒漠",
+      "significance": "引出罗德岛在阿尔萨兰的行动目标，并建立与当地部落的联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "年老的族长向森蚺和图耶讲述阿尔萨兰的现状：环境恶化、王酋军为寻宝而劫掠、部落被迫北迁",
+      "type": "revelation",
+      "line_range": [
+        17,
+        38
+      ],
+      "participants": [
+        "森蚺",
+        "图耶",
+        "年老的族长"
+      ],
+      "location": "部落营地",
+      "significance": "揭示阿尔萨兰地区矿石病蔓延的根源和王酋军的威胁，为后续冲突埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛击退王酋军袭击，但意识到人手不足，族长建议向埃克卢穆伊绿洲的阿达克利斯部落求援",
+      "type": "planning",
+      "line_range": [
+        39,
+        49
+      ],
+      "participants": [
+        "森蚺",
+        "图耶",
+        "年老的族长"
+      ],
+      "location": "部落营地",
+      "significance": "推动剧情发展，引出寻找盟友和宝藏的线索",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛本舰的支援力量抵达，包括狮蝎和异客",
+      "type": "reunion",
+      "line_range": [
+        50,
+        56
+      ],
+      "participants": [
+        "狮蝎",
+        "异客",
+        "图耶",
+        "森蚺"
+      ],
+      "location": "部落营地",
+      "significance": "引入新角色，增强罗德岛的实力，异客提出有私事要处理",
+      "is_imaginary": false
+    },
+    {
+      "event": "众人讨论阿尔萨兰的「遗迹」和「宝藏」传说，并决定先一步找到宝藏以换取与王酋军谈判的筹码",
+      "type": "planning",
+      "line_range": [
+        57,
+        79
+      ],
+      "participants": [
+        "森蚺",
+        "图耶",
+        "年老的族长",
+        "异客",
+        "狮蝎"
+      ],
+      "location": "部落营地",
+      "significance": "明确罗德岛下一步行动目标，并揭示王酋军可能派出秘密杀手的威胁",
+      "is_imaginary": false
+    },
+    {
+      "event": "佩佩带领众人进入一处被水晶封存的遗迹，与一个「光影中的声音」对话并获得指引",
+      "type": "revelation",
+      "line_range": [
+        80,
+        89
+      ],
+      "participants": [
+        "佩佩",
+        "光影中的声音"
+      ],
+      "location": "水晶遗迹",
+      "significance": "揭示「宝藏」的真相与一个古老的存在有关，佩佩获得关键线索",
+      "is_imaginary": false
+    },
+    {
+      "event": "佩佩决定独自留下继续追寻家族的执念，并将一件信物赠予罗德岛",
+      "type": "farewell",
+      "line_range": [
+        90,
+        98
+      ],
+      "participants": [
+        "佩佩"
+      ],
+      "location": "水晶遗迹",
+      "significance": "佩佩的剧情线暂时告一段落，她与罗德岛的合作关系建立",
+      "is_imaginary": false
+    },
+    {
+      "event": "王酋军因发现此地并无宝藏而撤退，阿尔萨兰恢复和平",
+      "type": "resolution",
+      "line_range": [
+        99,
+        104
+      ],
+      "participants": [
+        "异客",
+        "图耶"
+      ],
+      "location": "部落营地",
+      "significance": "解决本章的主要冲突，王酋军的威胁解除",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛干员们准备离开阿尔萨兰，在临行前拍摄合照，期间狮蝎对异客表现出异常的紧张",
+      "type": "character_development",
+      "line_range": [
+        105,
+        143
+      ],
+      "participants": [
+        "森蚺",
+        "图耶",
+        "年老的族长",
+        "狮蝎",
+        "异客",
+        "大祭司"
+      ],
+      "location": "部落营地",
+      "significance": "展现角色间的互动，埋下狮蝎与异客之间可能存在未知联系的伏笔",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "森蚺",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，负责在阿尔萨兰建立办事处和观测点，是本次行动的主要领导者之一，积极寻求解决问题的方法",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "图耶",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与森蚺一同执行任务，负责驾驶和情报分析，性格较为谨慎",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "受伤的旅人",
+      "type": "npc",
+      "role_in_chapter": "被森蚺和图耶救助的当地部落成员，因沙尘暴迷路",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "年老的族长",
+      "type": "npc",
+      "role_in_chapter": "当地部落的族长，向罗德岛干员讲述了阿尔萨兰的现状和历史，为罗德岛提供帮助和建议",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "狮蝎",
+      "type": "operator",
+      "role_in_chapter": "罗德岛本舰派来的支援干员，负责运送物资，对异客表现出异常的紧张",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "异客",
+      "type": "operator",
+      "role_in_chapter": "罗德岛本舰派来的支援干员，对阿尔萨兰的历史有深入了解，并提及自己有私事要处理",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "佩佩",
+      "type": "npc",
+      "role_in_chapter": "追寻家族秘密的探险者，带领罗德岛干员进入水晶遗迹，获得关键线索后决定独自留下",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "光影中的声音",
+      "type": "npc",
+      "role_in_chapter": "水晶遗迹中的神秘存在，与佩佩对话并给予她指引",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "大祭司",
+      "type": "operator",
+      "role_in_chapter": "在Scene 5结尾出现，与森蚺互动，调侃其家中杂乱",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "焚风热土",
+      "line_range": [
+        5,
+        6
+      ],
+      "discussion_summary": "森蚺提到需要在焚风热土附近建立观测点，族长随后解释焚风热土导致纳卢塔巴提河断流，沿岸变成盐碱地，迫使部落北迁",
+      "is_substantive": true
+    },
+    {
+      "concept": "宝藏/遗迹",
+      "line_range": [
+        27,
+        28
+      ],
+      "discussion_summary": "族长提到有人说阿尔萨兰埋着特殊宝藏，吸引王酋军前来劫掠",
+      "is_substantive": true
+    },
+    {
+      "concept": "宝藏/遗迹",
+      "line_range": [
+        60,
+        63
+      ],
+      "discussion_summary": "森蚺询问阿尔萨兰是否有遗迹和宝藏，异客解释此地曾是阿斯兰起兵之地，留存千年遗迹并不奇怪",
+      "is_substantive": true
+    },
+    {
+      "concept": "秘密杀手",
+      "line_range": [
+        68,
+        70
+      ],
+      "discussion_summary": "狮蝎和异客讨论王酋军豢养的秘密杀手，描述其行踪伴随着杀戮与死亡",
+      "is_substantive": true
+    },
+    {
+      "concept": "钥匙/指引",
+      "line_range": [
+        86,
+        89
+      ],
+      "discussion_summary": "光影中的声音承诺将钥匙藏于光阴之中，指引佩佩去往某个地方，并将珍奇赠与她的后裔",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "王酋军",
+      "line_range": [
+        27,
+        30
+      ],
+      "description": "族长描述王酋军为寻找宝藏而四处劫掠，将当地人押往采矿场，导致矿石病蔓延，迫使部落北迁"
+    },
+    {
+      "faction": "王酋军",
+      "line_range": [
+        39,
+        48
+      ],
+      "description": "罗德岛击退王酋军袭击，森蚺和图耶讨论王酋军连宝藏是什么都不知道就四处抓人劫掠的野蛮手段"
+    },
+    {
+      "faction": "王酋军",
+      "line_range": [
+        68,
+        70
+      ],
+      "description": "狮蝎和异客讨论王酋军豢养的秘密杀手，其行踪伴随着杀戮与死亡"
+    },
+    {
+      "faction": "王酋军",
+      "line_range": [
+        99,
+        104
+      ],
+      "description": "异客提到王酋军开始撤退，代表他们承认了罗德岛的实力，并推测他们已知道此地并无宝藏"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        5,
+        6
+      ],
+      "description": "森蚺提到需要在阿尔萨兰地区建立罗德岛办事处与焚风热土观测点"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        50,
+        56
+      ],
+      "description": "罗德岛本舰派遣狮蝎和异客作为支援力量抵达"
+    },
+    {
+      "faction": "阿达克利斯部落",
+      "line_range": [
+        41,
+        49
+      ],
+      "description": "族长提到埃克卢穆伊绿洲的一个阿达克利斯部落可能提供帮助，森蚺认为他们可能掌握宝藏线索"
+    }
+  ],
+  "locations": [
+    {
+      "location": "阿尔萨兰",
+      "line_range": [
+        5,
+        6
+      ],
+      "description": "森蚺提到阿尔萨兰地区是建立罗德岛办事处与焚风热土观测点的最佳地点"
+    },
+    {
+      "location": "阿尔萨兰",
+      "line_range": [
+        20,
+        30
+      ],
+      "description": "族长确认此地就是阿尔萨兰，并讲述其古老名字舒巴特-阿尔萨兰和辉煌的旧称群狮旧座，以及如今沦为流民聚集地的现状"
+    },
+    {
+      "location": "纳卢塔巴提河",
+      "line_range": [
+        25,
+        26
+      ],
+      "description": "族长提到部落原本生活在纳卢塔巴提河沿岸，但因焚风热土导致河流断流，沿岸变成盐碱地"
+    },
+    {
+      "location": "埃克卢穆伊绿洲",
+      "line_range": [
+        41,
+        49
+      ],
+      "description": "族长提到埃克卢穆伊绿洲的一个阿达克利斯部落可能提供帮助，他们在绿洲中修建了神庙"
+    },
+    {
+      "location": "萨利玛禁地",
+      "line_range": [
+        77,
+        79
+      ],
+      "description": "族长提到北方的萨利玛禁地也有王酋军，据祖辈说是神圣的地方，沙阿的仆人曾在那停留"
+    },
+    {
+      "location": "水晶遗迹",
+      "line_range": [
+        80,
+        89
+      ],
+      "description": "佩佩带领众人进入一处被水晶封存的遗迹，水晶挡住了入口但保护了内部陈设"
+    }
+  ],
+  "chapter": "沙洲遗闻",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:43:58.453826+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 4648,
+    "tokens_out": 3277,
+    "elapsed_s": 28.463233709335327
+  },
+  "taxonomy_type": "ra",
+  "_unmatched_names": [
+    "受伤的旅人",
+    "年老的族长",
+    "光影中的声音",
+    "大祭司"
+  ]
+}

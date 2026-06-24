@@ -1,0 +1,600 @@
+{
+  "summary": "本章为集成战略IF线剧情，非正史事件。\n\n## 序章/框架对话\nScene 1: 平凡即是喜乐 — 水月与西塞罗讨论海嗣化实验的成败，西塞罗认为水月是成功的范例，而海沫处于失败与成功之间。水月坚持要让海沫活下去，并邀请她一同前往罗德岛。\n\n## Ending 01：平凡即是喜乐（一结局，可能性最大的发展）\nScene 2: 平凡即是喜乐_ending PART 1 — 乌尔比安追踪西塞罗发现其实验室，从书信中得知深海教会计划将狩猎伊莎玛拉的猎人送回海洋以复活伊莎玛拉，恐鱼涌入实验室，乌尔比安决心阻止这一阴谋。\nScene 3: 平凡即是喜乐_ending PART 2 — 西塞罗的自述：他作为生物学学者研究生物进化，最终承认「神」的存在，认为海嗣是神设计的理想生物蓝图，他决心窃取神的果实为人类所用。\nScene 4: 平凡即是喜乐_ending PART 3 — 一位少女（海沫）接受了使者的馈赠却无法接纳自己，既不属于大群也不属于人类，她的存在撕扯着周遭，最终在痛苦中化作一朵虚无的花朵凋谢。\n\n## Ending 02：静谧时代（后续结局，基于更极端假设）\nScene 5: 静谧时代 — 水月与最后的骑士对话，最后的骑士感知到巨浪即将到来。\nScene 6: 静谧时代_ending PART 1 — 伊莎玛拉暴走导致大静谧再次降临，海嗣入侵陆地，人类文明崩溃。凯尔希建造了人类最后的城市，但无法容纳所有幸存者，她必须做出关闭大门的残酷决定。伊莎玛拉（斯卡蒂）仅剩的人性中只关注博士。\nScene 7: 静谧时代_ending PART 2 — 水月保护博士穿越海嗣封锁线，将博士送回陆地后，主动释放敌意信息素吸引海嗣追击自己，为人类争取时间，最终被大群吞噬。\nScene 8: 静谧时代_ending PART 3 — 水月的意识消散，躯体退行成一颗细胞，落入已逝的深海巨物「蔓延的枝条」的枯枝上。多年后，枯枝上长出了深蓝色的叶。\n\n## Ending 03：息潮的代价（后续结局）\nScene 9: 息潮的代价_ending PART 1 — 海嗣离去后，泰拉恢复常态但各国重回猜疑。博士每年到海边独处静思，向大海倾诉对水月的思念。海水如卷须般勾了勾博士的靴子，深蓝荧光闪闪发亮。\nScene 10: 息潮的代价_ending PART 2 — 伊莎玛拉失败后陷入沉睡，斯卡蒂的意识浮出水面。她厌恶海嗣同胞，被潜意识牵引向陆地游去，最终在海滩上看到一个戴兜帽的人类背影，记忆如潮水般涌回。\nScene 11: 息潮的代价_ending PART 3 — 斯卡蒂回忆起一切又失去一切，她既不属于人类也不属于海嗣，只能远远望着博士。她流着泪歌唱，这是她仅剩的本能。海岸边的博士似乎听到了什么，但回头时只有波涛声。\n\n## Ending 04：如星空般深蓝（后续结局）\nScene 12: 如星空般深蓝 — 水月向博士道别，感谢陪伴。\nScene 13: 如星空般深蓝_ending PART 1 — 海嗣离开后泰拉变成花园，水月寻找人类最后的城市。他点燃火堆、刻下告示等待回应，最终被一位黎博利用刀顶住脖子，她的肩章上刻着「罗德岛」。\nScene 14: 如星空般深蓝_ending PART 2 — 水月来到最后的城市，发现「罗德岛」已成为后勤医疗组织。他站在罗德岛总部大门前犹豫许久，最终走进去时，一个熟悉的声音说：「你回来了。」\nScene 15: 如星空般深蓝_ending PART 3 — 凯尔希告诉水月博士还活着，靠石棺维持生命。水月决定留在罗德岛。多年后人类重新扩张到海边，一个少女发现了一朵底海滑动者幼嗣，幼嗣确认友好信号后，整个大群接收到新观点：人类已无威胁，可以共生共存。",
+  "events": [
+    {
+      "event": "水月与西塞罗讨论海嗣化实验的成败，西塞罗认为水月是成功范例而海沫处于失败与成功之间",
+      "type": "ideological_clash",
+      "line_range": [
+        1,
+        36
+      ],
+      "participants": [
+        "水月",
+        "西塞罗"
+      ],
+      "location": "未指明",
+      "significance": "揭示西塞罗的实验哲学和水月对个体生命的坚持",
+      "is_imaginary": true
+    },
+    {
+      "event": "水月照顾苏醒的海沫，切除其增生组织并邀请她一同前往罗德岛",
+      "type": "rescue",
+      "line_range": [
+        37,
+        72
+      ],
+      "participants": [
+        "水月",
+        "海沫"
+      ],
+      "location": "未指明",
+      "significance": "水月帮助海沫恢复人类生活，展现其仁慈与关怀",
+      "is_imaginary": true
+    },
+    {
+      "event": "乌尔比安发现西塞罗的实验室，从书信中得知深海教会计划复活伊莎玛拉",
+      "type": "investigation",
+      "line_range": [
+        81,
+        98
+      ],
+      "participants": [
+        "乌尔比安"
+      ],
+      "location": "西塞罗的避难所/实验室",
+      "significance": "揭示深海教会的阴谋核心——将狩猎伊莎玛拉的猎人送回海洋以复活伊莎玛拉",
+      "is_imaginary": true
+    },
+    {
+      "event": "恐鱼涌入实验室，乌尔比安决心阻止深海教会的计划",
+      "type": "confrontation",
+      "line_range": [
+        99,
+        104
+      ],
+      "participants": [
+        "乌尔比安"
+      ],
+      "location": "西塞罗的避难所/实验室",
+      "significance": "乌尔比安立下决心保护深海猎人和阿戈尔",
+      "is_imaginary": true
+    },
+    {
+      "event": "西塞罗自述其研究动机：承认神的存在，决心窃取神的果实为人类所用",
+      "type": "revelation",
+      "line_range": [
+        107,
+        113
+      ],
+      "participants": [
+        "西塞罗"
+      ],
+      "location": "未指明",
+      "significance": "揭示西塞罗的哲学立场和深海教会的终极目标",
+      "is_imaginary": true
+    },
+    {
+      "event": "一位少女（海沫）接受馈赠后无法接纳自己，在痛苦中化作虚无的花朵凋谢",
+      "type": "sacrifice",
+      "line_range": [
+        116,
+        127
+      ],
+      "participants": [
+        "海沫"
+      ],
+      "location": "砂石之上",
+      "significance": "展现不完全海嗣化的悲剧结局——既不属于大群也不属于人类",
+      "is_imaginary": true
+    },
+    {
+      "event": "最后的骑士感知到巨浪即将到来",
+      "type": "revelation",
+      "line_range": [
+        128,
+        135
+      ],
+      "participants": [
+        "水月",
+        "最后的骑士",
+        "罗辛南特"
+      ],
+      "location": "未指明",
+      "significance": "预示静谧时代的到来",
+      "is_imaginary": true
+    },
+    {
+      "event": "伊莎玛拉暴走导致大静谧再次降临，人类文明崩溃，凯尔希建造最后的城市",
+      "type": "disaster",
+      "line_range": [
+        144,
+        162
+      ],
+      "participants": [
+        "凯尔希",
+        "博士",
+        "阿米娅"
+      ],
+      "location": "人类最后的城市",
+      "significance": "描绘人类文明在伊莎玛拉暴走后的末日景象",
+      "is_imaginary": true
+    },
+    {
+      "event": "伊莎玛拉（斯卡蒂）仅剩的人性中只关注博士，催促大群向博士所在处行进",
+      "type": "revelation",
+      "line_range": [
+        164,
+        169
+      ],
+      "participants": [
+        "伊莎玛拉/斯卡蒂",
+        "博士"
+      ],
+      "location": "伊比利亚王城",
+      "significance": "揭示斯卡蒂对博士的执念成为毁灭人类的驱动力",
+      "is_imaginary": true
+    },
+    {
+      "event": "水月保护博士穿越海嗣封锁线，将博士送回陆地后主动吸引海嗣追击自己",
+      "type": "sacrifice",
+      "line_range": [
+        172,
+        193
+      ],
+      "participants": [
+        "水月",
+        "博士"
+      ],
+      "location": "海洋/海滩",
+      "significance": "水月为保护博士和人类牺牲自己",
+      "is_imaginary": true
+    },
+    {
+      "event": "水月的意识消散，躯体退行成细胞，落入已逝的深海巨物「蔓延的枝条」的枯枝上",
+      "type": "death",
+      "line_range": [
+        196,
+        220
+      ],
+      "participants": [
+        "水月"
+      ],
+      "location": "深海",
+      "significance": "水月的最终归宿——成为深蓝之叶的种子",
+      "is_imaginary": true
+    },
+    {
+      "event": "多年后枯枝上长出了深蓝色的叶",
+      "type": "renewal",
+      "line_range": [
+        222,
+        223
+      ],
+      "participants": [],
+      "location": "深海枯枝上",
+      "significance": "水月的生命以另一种形式延续",
+      "is_imaginary": true
+    },
+    {
+      "event": "博士每年到海边独处静思，向大海倾诉对水月的思念",
+      "type": "reflection",
+      "line_range": [
+        232,
+        262
+      ],
+      "participants": [
+        "博士"
+      ],
+      "location": "海边",
+      "significance": "展现博士对水月的怀念和内心的孤独",
+      "is_imaginary": true
+    },
+    {
+      "event": "斯卡蒂苏醒后厌恶海嗣同胞，被潜意识牵引向陆地游去",
+      "type": "character_development",
+      "line_range": [
+        226,
+        247
+      ],
+      "participants": [
+        "斯卡蒂"
+      ],
+      "location": "海洋",
+      "significance": "斯卡蒂的人性逐渐复苏，与海嗣本能冲突",
+      "is_imaginary": true
+    },
+    {
+      "event": "斯卡蒂在海滩上看到博士的背影，记忆如潮水般涌回",
+      "type": "reunion",
+      "line_range": [
+        248,
+        250
+      ],
+      "participants": [
+        "斯卡蒂",
+        "博士"
+      ],
+      "location": "海滩",
+      "significance": "斯卡蒂与博士的隔空重逢，记忆恢复",
+      "is_imaginary": true
+    },
+    {
+      "event": "斯卡蒂回忆起一切又失去一切，流着泪歌唱，博士似乎听到了什么",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        265,
+        296
+      ],
+      "participants": [
+        "斯卡蒂",
+        "博士"
+      ],
+      "location": "海岸边",
+      "significance": "斯卡蒂的忏悔与痛苦，博士隐约感知到她的存在",
+      "is_imaginary": true
+    },
+    {
+      "event": "水月向博士道别，感谢陪伴",
+      "type": "farewell",
+      "line_range": [
+        290,
+        293
+      ],
+      "participants": [
+        "水月"
+      ],
+      "location": "未指明",
+      "significance": "水月与博士的告别",
+      "is_imaginary": true
+    },
+    {
+      "event": "海嗣离开后泰拉变成花园，水月寻找人类最后的城市",
+      "type": "journey",
+      "line_range": [
+        332,
+        352
+      ],
+      "participants": [
+        "水月"
+      ],
+      "location": "泰拉大地",
+      "significance": "描绘海嗣离去后泰拉的新生态",
+      "is_imaginary": true
+    },
+    {
+      "event": "水月被一位黎博利罗德岛干员发现，肩章上刻着罗德岛",
+      "type": "reunion",
+      "line_range": [
+        354,
+        358
+      ],
+      "participants": [
+        "水月",
+        "黎博利干员"
+      ],
+      "location": "高山",
+      "significance": "水月与罗德岛重新建立联系",
+      "is_imaginary": true
+    },
+    {
+      "event": "水月来到最后的城市，进入罗德岛总部时听到熟悉的声音说「你回来了」",
+      "type": "reunion",
+      "line_range": [
+        330,
+        341
+      ],
+      "participants": [
+        "水月"
+      ],
+      "location": "罗德岛总部",
+      "significance": "水月回到罗德岛，暗示有故人仍在",
+      "is_imaginary": true
+    },
+    {
+      "event": "凯尔希告诉水月博士还活着，靠石棺维持生命，水月决定留在罗德岛",
+      "type": "revelation",
+      "line_range": [
+        365,
+        388
+      ],
+      "participants": [
+        "水月",
+        "凯尔希"
+      ],
+      "location": "罗德岛会议室",
+      "significance": "博士仍存活的消息给水月带来希望",
+      "is_imaginary": true
+    },
+    {
+      "event": "多年后一个少女在海边发现底海滑动者幼嗣，幼嗣确认友好信号后大群接受与人类共生",
+      "type": "alliance",
+      "line_range": [
+        393,
+        408
+      ],
+      "participants": [
+        "少女",
+        "底海滑动者幼嗣"
+      ],
+      "location": "海边",
+      "significance": "人类与海嗣最终达成共生共存的新关系",
+      "is_imaginary": true
+    }
+  ],
+  "characters": [
+    {
+      "name": "水月",
+      "type": "operator",
+      "role_in_chapter": "核心主角。在序章中与西塞罗辩论海嗣化实验，照顾海沫；在各结局中分别扮演牺牲者、守护者、怀念对象和回归者",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "西塞罗",
+      "type": "npc",
+      "role_in_chapter": "深海主教，水月的导师。在序章中阐述实验哲学，在Ending 01 PART2中自述研究动机",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "海沫",
+      "type": "operator",
+      "role_in_chapter": "接受海嗣化实验但失败的少女。在序章中被水月照顾和邀请；在Ending 01 PART3中化作花朵凋谢",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "乌尔比安",
+      "type": "operator",
+      "role_in_chapter": "深海猎人。在Ending 01 PART1中发现西塞罗的实验室和深海教会的阴谋",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "最后的骑士",
+      "type": "npc",
+      "role_in_chapter": "在Scene 5中感知到巨浪的到来",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "罗辛南特",
+      "type": "npc",
+      "role_in_chapter": "最后的骑士的坐骑，在Scene 5中警觉地竖起耳朵",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛负责人。在Ending 02 PART1中建造人类最后的城市并做出关闭大门的残酷决定；在Ending 04 PART3中与回归的水月对话",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官。在多个结局中以不同形式出现：被水月保护、在海边怀念水月、被斯卡蒂注视、在石棺中维持生命",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "在Ending 02 PART1中被提及为关闭大门的事哭泣",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伊莎玛拉/斯卡蒂",
+      "type": "operator",
+      "role_in_chapter": "海神与深海猎人的融合体。在Ending 02 PART1中注视博士；在Ending 03 PART2-3中苏醒后恢复人性，在海边远远望着博士",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "黎博利干员",
+      "type": "npc",
+      "role_in_chapter": "在Ending 04 PART1中发现水月，肩章上刻有罗德岛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "少女",
+      "type": "npc",
+      "role_in_chapter": "在Ending 04 PART3结尾在海边发现底海滑动者幼嗣，开启人类与海嗣共生时代",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "海嗣化实验",
+      "line_range": [
+        1,
+        36
+      ],
+      "discussion_summary": "西塞罗阐述海嗣化实验的哲学：个体接受使者的馈赠后，意识被大群本能征服成为恐鱼或海嗣。水月是成功范例——接受海嗣之躯但保持人类认知和选择；海沫处于失败与成功之间——接受馈赠但拒绝割离自身，成为自然的不和谐音。",
+      "is_substantive": true
+    },
+    {
+      "concept": "如何成为一个更好的人类",
+      "line_range": [
+        23,
+        30
+      ],
+      "discussion_summary": "西塞罗向水月提出的核心问题。西塞罗认为真正的人类懂得运用超越物质的强韧精神克服道具的副作用，未能克服者无法承载「人类」一词的重量。水月通过自己的选择给出了答案。",
+      "is_substantive": true
+    },
+    {
+      "concept": "神的存在与海嗣的使命",
+      "line_range": [
+        107,
+        113
+      ],
+      "discussion_summary": "西塞罗自述：作为生物学学者，他最终承认「神」是切实存在的——并非伊莎玛拉那样的神，而是某种崇高的意志改变了海嗣并赋予其高洁使命，驱使它们以高效有序的方式探索生物的可能性直至终点。海嗣是远比人类更合理更理想的生物蓝图。",
+      "is_substantive": true
+    },
+    {
+      "concept": "大群的集体意志与个体反抗",
+      "line_range": [
+        176,
+        193
+      ],
+      "discussion_summary": "水月作为海嗣个体反抗大群集体意志：一个身处集体的个体无法反抗集体的意志，伊莎玛拉的信息素传递到水月脑中。但水月拒绝海神和大群，将博士送回陆地，通过调整信息素表达释放敌意，吸引海嗣追击自己。",
+      "is_substantive": true
+    },
+    {
+      "concept": "海嗣的循环与死亡",
+      "line_range": [
+        196,
+        223
+      ],
+      "discussion_summary": "水月死亡后躯体退行成细胞，落入已逝的深海巨物「蔓延的枝条」的枯枝上。该巨物意识早已死去，但身躯仍出于本能生长，为无数海嗣提供食粮。水月的细胞被枯枝包覆，多年后枯枝上长出了深蓝色的叶。",
+      "is_substantive": true
+    },
+    {
+      "concept": "人类与海嗣的共生可能性",
+      "line_range": [
+        393,
+        408
+      ],
+      "discussion_summary": "多年后人类重新扩张到海边，一个少女发现底海滑动者幼嗣。幼嗣本能地想要攻击，但在确认友好信号后放下腕肢。整个大群接收到新观点：如今的人类已无威胁，人类与海嗣能够共生共存。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "深海教会",
+      "line_range": [
+        89,
+        98
+      ],
+      "description": "乌尔比安从西塞罗的书信中得知深海教会成员分布于阿戈尔的技术院、科学院与艺术界，部分已被指认为主教，大部分仍在阿戈尔保持影响力。主教们达成共识：将狩猎伊莎玛拉的猎人送回海洋以复活伊莎玛拉。"
+    },
+    {
+      "faction": "阿戈尔",
+      "line_range": [
+        92,
+        94
+      ],
+      "description": "深海教会成员渗透阿戈尔的技术院、科学院与艺术界，对阿戈尔社会造成破坏。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        146,
+        162
+      ],
+      "description": "在伊莎玛拉暴走后的末日中，凯尔希作为罗德岛最高负责人建造人类最后的城市，但必须做出关闭大门的残酷决定。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        354,
+        358
+      ],
+      "description": "水月被一位黎博利罗德岛干员发现，其肩章上刻有罗德岛。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        330,
+        341
+      ],
+      "description": "在最后的城市中，罗德岛成为后勤医疗组织，负责维护其他组织的后勤和医疗任务。水月进入罗德岛总部时听到熟悉的声音。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        365,
+        388
+      ],
+      "description": "凯尔希在罗德岛会议室与回归的水月对话，告知博士靠石棺维持生命。水月决定留在罗德岛。"
+    },
+    {
+      "faction": "大群（海嗣）",
+      "line_range": [
+        176,
+        193
+      ],
+      "description": "水月作为海嗣个体反抗大群集体意志，通过调整信息素表达释放敌意吸引海嗣追击。"
+    },
+    {
+      "faction": "大群（海嗣）",
+      "line_range": [
+        393,
+        408
+      ],
+      "description": "多年后，一个底海滑动者幼嗣确认人类友好信号后，整个大群接收到新观点：人类已无威胁，可以共生共存。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "西塞罗的避难所/实验室",
+      "line_range": [
+        81,
+        99
+      ],
+      "description": "位于偏僻荒芜之地的岩洞实验室，所有资料与书信分门别类整齐收纳。乌尔比安在此发现深海教会的阴谋，随后海水灌入实验室摧毁一切。"
+    },
+    {
+      "location": "人类最后的城市",
+      "line_range": [
+        144,
+        162
+      ],
+      "description": "凯尔希恳求巨兽、与兽主立约、回收远古人类科技建造的奇观。无法容纳所有幸存者，凯尔希必须做出关闭大门的决定。"
+    },
+    {
+      "location": "伊比利亚王城",
+      "line_range": [
+        164,
+        169
+      ],
+      "description": "伊莎玛拉跨过空间在此注视博士。"
+    },
+    {
+      "location": "深海",
+      "line_range": [
+        196,
+        223
+      ],
+      "description": "水月死亡后躯体退行成细胞，在深海中随洋流漂荡，最终落到已逝的深海巨物「蔓延的枝条」的枯枝上。"
+    },
+    {
+      "location": "海边/海滩",
+      "line_range": [
+        232,
+        262
+      ],
+      "description": "博士每年到此独处静思，向大海倾诉对水月的思念。海水如卷须般勾了勾博士的靴子。"
+    },
+    {
+      "location": "泰拉大地（海嗣离去后）",
+      "line_range": [
+        332,
+        352
+      ],
+      "description": "海嗣彻底改变了这片大地：没有源石和荒野，整片大地被植被覆盖，动物成群结队。水月在此寻找人类最后的城市。"
+    },
+    {
+      "location": "最后的城市",
+      "line_range": [
+        330,
+        341
+      ],
+      "description": "人类在群山中筑起高墙依托先史科技苟延残喘的城市。国家、阶级、种族间的隔阂消弭，只剩下人民和松散联盟。罗德岛总部位于此处。"
+    }
+  ],
+  "chapter": "水月与深蓝之树",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:42:13.864187+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 11481,
+    "tokens_out": 5982,
+    "elapsed_s": 46.02358913421631
+  },
+  "taxonomy_type": "is",
+  "_unmatched_names": [
+    "西塞罗",
+    "最后的骑士",
+    "罗辛南特",
+    "博士",
+    "伊莎玛拉/斯卡蒂",
+    "黎博利干员",
+    "少女"
+  ]
+}

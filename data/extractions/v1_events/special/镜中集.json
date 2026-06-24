@@ -1,0 +1,785 @@
+{
+  "summary": "本章以邙山镇为舞台，讲述了多个因「岁」兽力量而诞生的「伥」的故事。天师麟青砚为追查一本从玉门失窃的《武典》来到这座地图上不存在的小镇，发现镇上居民多为器物所化的伥，而这一切的幕后推手是自称莫佚的山海众成员。莫佚利用《武典》作为诱饵，在镇上掀起腥风血雨，试图引出界园主人，以进入界园寻找能终止战争的关键物品。\n\n与此同时，云青萍受神秘指引前往后山，途中遇到寻找失踪郎君的白锦，并在一处古亭中破解了困扰棋手兰可百年的三劫循环棋局。兰可的执念与白锦的伥身最终在重逢后消散。云青萍随后被名为梁的伥引荐给莫佚，被迫鉴定《武典》真伪。\n\n剑客「渡魂剑」郑愁每年与一位神秘女子在茶馆相会，七年后发现该女子竟是自己丢失的佩剑所化的伥。剑伥渴望离开小镇，为此不惜抢夺《武典》。麟青砚在追捕过程中与剑伥和郑愁对峙，揭示了伥的悲剧性本质。\n\n槐天裴受莫佚蛊惑闯入玉门盗取《武典》，其女槐琥与老鲤追踪而至。在邙山山顶的英雄宴上，云青萍当众揭露《武典》并非秘籍，莫佚则召唤出岁相幻象引发混乱。槐天裴力战幻象后坠崖，左乐率玉门军赶到平息事态。\n\n最终，老天师现身调解，莫佚的真实目的被揭示。众人进入界园，梁在清理废墟时发现器伥们已萌生人性与情感，决定保留并重建小镇，让伥与人共同生活。",
+  "events": [
+    {
+      "event": "陆家兄弟在茶馆截杀伶俐少女，反被跑堂胡君下药制服",
+      "type": "ambush",
+      "line_range": [
+        1,
+        83
+      ],
+      "participants": [
+        "陆大",
+        "陆二",
+        "伶俐的少女",
+        "胡君"
+      ],
+      "location": "邙山镇茶馆",
+      "significance": "引出《武典》秘籍和胡君的身份",
+      "is_imaginary": false
+    },
+    {
+      "event": "云青萍在茶馆劝胡君放下杀念，反被胡君捆绑",
+      "type": "confrontation",
+      "line_range": [
+        85,
+        103
+      ],
+      "participants": [
+        "云青萍",
+        "胡君"
+      ],
+      "location": "邙山镇茶馆",
+      "significance": "展现云青萍的善良性格和胡君的谨慎",
+      "is_imaginary": false
+    },
+    {
+      "event": "麟青砚初入邙山镇，遇到行为怪异的镇民和打伞少女小舒",
+      "type": "investigation",
+      "line_range": [
+        105,
+        157
+      ],
+      "participants": [
+        "麟青砚",
+        "笑盈盈的路人",
+        "打伞的少女"
+      ],
+      "location": "邙山镇街道",
+      "significance": "揭示小镇的诡异氛围，为后续伥的设定铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "小舒与胡君在豆腐铺秘密会面，小舒弄丢了关键信件",
+      "type": "revelation",
+      "line_range": [
+        158,
+        185
+      ],
+      "participants": [
+        "胡君",
+        "打伞的少女"
+      ],
+      "location": "邙山镇豆腐铺",
+      "significance": "揭示胡君的计划和信件内容，推动剧情",
+      "is_imaginary": false
+    },
+    {
+      "event": "麟青砚在茶馆与胡君对峙，胡君坠楼化为碎茶壶",
+      "type": "confrontation",
+      "line_range": [
+        186,
+        229
+      ],
+      "participants": [
+        "麟青砚",
+        "胡君",
+        "云青萍",
+        "冷酷的剑客"
+      ],
+      "location": "邙山镇茶馆",
+      "significance": "关键转折，揭示胡君是伥，引出《武典》争夺",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒲先生得知胡君死讯，决定从麟青砚处取回胡君的遗骸",
+      "type": "planning",
+      "line_range": [
+        230,
+        257
+      ],
+      "participants": [
+        "慌张的学生",
+        "蒲先生"
+      ],
+      "location": "置锥学塾",
+      "significance": "引出蒲先生与胡君的关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "麟青砚拜访蒲先生，询问胡君和邙山镇的情况",
+      "type": "investigation",
+      "line_range": [
+        258,
+        310
+      ],
+      "participants": [
+        "麟青砚",
+        "蒲先生"
+      ],
+      "location": "置锥学塾",
+      "significance": "揭示蒲先生是前司岁台巨兽学士，邙山镇是伥的聚集地",
+      "is_imaginary": false
+    },
+    {
+      "event": "冷酷的剑客挟持蒲先生，逼问《武典》中化人的法门",
+      "type": "confrontation",
+      "line_range": [
+        331,
+        355
+      ],
+      "participants": [
+        "冷酷的剑客",
+        "蒲先生"
+      ],
+      "location": "置锥学塾外",
+      "significance": "揭示剑客也是伥，渴望变成人离开小镇",
+      "is_imaginary": false
+    },
+    {
+      "event": "麟青砚救下蒲先生，蒲先生解释邙山镇和伥的由来",
+      "type": "revelation",
+      "line_range": [
+        356,
+        422
+      ],
+      "participants": [
+        "麟青砚",
+        "蒲先生"
+      ],
+      "location": "置锥学塾",
+      "significance": "核心设定揭示：岁陵、伥的诞生、蒲先生的过往",
+      "is_imaginary": false
+    },
+    {
+      "event": "云青萍被礼貌的先生引路，前往后山赴约",
+      "type": "departure",
+      "line_range": [
+        424,
+        429
+      ],
+      "participants": [
+        "云青萍",
+        "礼貌的先生"
+      ],
+      "location": "邙山镇",
+      "significance": "开启云青萍的支线剧情",
+      "is_imaginary": false
+    },
+    {
+      "event": "温厚的男人与顽皮的小孩争夺一块石头",
+      "type": "confrontation",
+      "line_range": [
+        430,
+        449
+      ],
+      "participants": [
+        "温厚的男人",
+        "顽皮的小孩"
+      ],
+      "location": "邙山镇",
+      "significance": "引出石头故事的开端",
+      "is_imaginary": false
+    },
+    {
+      "event": "麟青砚调查万家石头失窃案，发现是二少爷所为",
+      "type": "investigation",
+      "line_range": [
+        464,
+        650
+      ],
+      "participants": [
+        "麟青砚",
+        "管家",
+        "万家的子女",
+        "病床上的老人"
+      ],
+      "location": "万家府邸",
+      "significance": "展现麟青砚的办案能力，揭示万家子女的贪婪",
+      "is_imaginary": false
+    },
+    {
+      "event": "温厚的男人与万老先生在病榻前对话，揭示石头背后的执念",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        651,
+        698
+      ],
+      "participants": [
+        "温厚的男人",
+        "病床上的老人",
+        "石头"
+      ],
+      "location": "万家府邸",
+      "significance": "核心故事：执念让顽石点头，石头化为伥",
+      "is_imaginary": false
+    },
+    {
+      "event": "云青萍在后山遇到寻找郎君的白锦，二人结伴上山",
+      "type": "reunion",
+      "line_range": [
+        720,
+        754
+      ],
+      "participants": [
+        "云青萍",
+        "白锦"
+      ],
+      "location": "邙山镇后山",
+      "significance": "开启白锦与兰可的故事线",
+      "is_imaginary": false
+    },
+    {
+      "event": "云青萍破解困扰兰可百年的三劫循环棋局",
+      "type": "revelation",
+      "line_range": [
+        755,
+        869
+      ],
+      "participants": [
+        "云青萍",
+        "兰可",
+        "老洛"
+      ],
+      "location": "后山古亭",
+      "significance": "关键转折：云青萍以武道之理破棋局，引出岁兽代理人",
+      "is_imaginary": false
+    },
+    {
+      "event": "兰可与白锦的伥身重逢后双双消散",
+      "type": "farewell",
+      "line_range": [
+        870,
+        898
+      ],
+      "participants": [
+        "兰可",
+        "白锦",
+        "云青萍"
+      ],
+      "location": "后山古亭",
+      "significance": "感人结局：执念消散，伥归于虚无",
+      "is_imaginary": false
+    },
+    {
+      "event": "梁现身，引云青萍上山见莫佚",
+      "type": "revelation",
+      "line_range": [
+        916,
+        945
+      ],
+      "participants": [
+        "云青萍",
+        "梁",
+        "莫佚"
+      ],
+      "location": "邙山山顶",
+      "significance": "揭示棋局是岁兽代理人布下的，引出莫佚",
+      "is_imaginary": false
+    },
+    {
+      "event": "剑客郑愁在茶馆等待第七年的约会，得知对方是剑伥",
+      "type": "revelation",
+      "line_range": [
+        946,
+        1067
+      ],
+      "participants": [
+        "剑客",
+        "掌柜"
+      ],
+      "location": "邙山镇茶馆",
+      "significance": "揭示剑客与剑伥的过往",
+      "is_imaginary": false
+    },
+    {
+      "event": "剑伥与麟青砚对峙，郑愁认出剑伥是自己的剑",
+      "type": "confrontation",
+      "line_range": [
+        1068,
+        1141
+      ],
+      "participants": [
+        "麟青砚",
+        "带剑的女子",
+        "剑客"
+      ],
+      "location": "邙山镇",
+      "significance": "核心冲突：剑伥渴望自由，麟青砚必须执法",
+      "is_imaginary": false
+    },
+    {
+      "event": "槐天裴闯入玉门盗取《武典》，左宣辽派人送信",
+      "type": "assassination",
+      "line_range": [
+        1191,
+        1207
+      ],
+      "participants": [
+        "左宣辽",
+        "玉门守军",
+        "槐天裴"
+      ],
+      "location": "玉门",
+      "significance": "揭示《武典》失窃的真相，引出槐天裴",
+      "is_imaginary": false
+    },
+    {
+      "event": "莫佚与槐天裴交易，约定十天后邙山山顶比武",
+      "type": "alliance",
+      "line_range": [
+        1208,
+        1220
+      ],
+      "participants": [
+        "莫佚",
+        "槐天裴"
+      ],
+      "location": "未知",
+      "significance": "揭示莫佚利用槐天裴盗书",
+      "is_imaginary": false
+    },
+    {
+      "event": "槐琥与老鲤追踪槐天裴至邙山镇，与麟青砚会合",
+      "type": "investigation",
+      "line_range": [
+        1221,
+        1285
+      ],
+      "participants": [
+        "槐琥",
+        "老鲤",
+        "麟青砚"
+      ],
+      "location": "邙山镇医馆",
+      "significance": "多条剧情线汇合",
+      "is_imaginary": false
+    },
+    {
+      "event": "莫佚在邙山山顶设英雄宴，云青萍当众揭露《武典》真相",
+      "type": "confrontation",
+      "line_range": [
+        1329,
+        1383
+      ],
+      "participants": [
+        "莫佚",
+        "云青萍",
+        "江湖豪杰"
+      ],
+      "location": "邙山山顶",
+      "significance": "剧情高潮：云青萍的勇气之举，瓦解莫佚的阴谋",
+      "is_imaginary": false
+    },
+    {
+      "event": "莫佚召唤岁相幻象，槐天裴力战幻象后坠崖",
+      "type": "battle",
+      "line_range": [
+        1384,
+        1446
+      ],
+      "participants": [
+        "莫佚",
+        "麟青砚",
+        "云青萍",
+        "槐天裴",
+        "槐琥",
+        "左乐"
+      ],
+      "location": "邙山山顶",
+      "significance": "关键战斗，揭示莫佚的真正力量",
+      "is_imaginary": false
+    },
+    {
+      "event": "左乐率玉门军平息事态，蒲先生劝回被蛊惑的伥",
+      "type": "resolution",
+      "line_range": [
+        1447,
+        1458
+      ],
+      "participants": [
+        "左乐",
+        "蒲先生"
+      ],
+      "location": "邙山山顶",
+      "significance": "事件初步平息",
+      "is_imaginary": false
+    },
+    {
+      "event": "老天师现身调解，莫佚的真实目的被揭示",
+      "type": "revelation",
+      "line_range": [
+        1459,
+        1520
+      ],
+      "participants": [
+        "麟青砚",
+        "左乐",
+        "莫佚",
+        "老天师",
+        "梁"
+      ],
+      "location": "邙山山顶",
+      "significance": "揭示莫佚是山海众，目的是进入界园寻找物品",
+      "is_imaginary": false
+    },
+    {
+      "event": "众人通过棋盘通道进入界园",
+      "type": "departure",
+      "line_range": [
+        1521,
+        1534
+      ],
+      "participants": [
+        "梁",
+        "麟青砚",
+        "左乐",
+        "云青萍",
+        "莫佚"
+      ],
+      "location": "界园入口",
+      "significance": "开启新篇章",
+      "is_imaginary": false
+    },
+    {
+      "event": "梁在废墟中清理器伥，发现它们已萌生人性",
+      "type": "revelation",
+      "line_range": [
+        1535,
+        1698
+      ],
+      "participants": [
+        "梁",
+        "神秘的生物",
+        "古怪的生物",
+        "返乡的路人",
+        "瓶状的生物",
+        "书简状的生物",
+        "剑状的生物"
+      ],
+      "location": "邙山镇废墟",
+      "significance": "核心主题：伥的人性化，人与伥共存的可能",
+      "is_imaginary": false
+    },
+    {
+      "event": "易与梁对话，决定保留并重建小镇",
+      "type": "planning",
+      "line_range": [
+        1699,
+        1721
+      ],
+      "participants": [
+        "易",
+        "梁"
+      ],
+      "location": "界园",
+      "significance": "结局：小镇重生，伥与人共同生活",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "惊蛰",
+      "type": "operator",
+      "role_in_chapter": "天师府天师，前大理寺少卿。追查《武典》失窃案来到邙山镇，调查胡君之死、万家石头案，追捕剑伥和莫佚，最终进入界园。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "录武官",
+      "type": "operator",
+      "role_in_chapter": "宗师重岳的录武官，手无缚鸡之力但心怀正义。在茶馆劝胡君、破解棋局、在英雄宴上揭露《武典》真相，最终进入界园。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "胡君",
+      "type": "npc",
+      "role_in_chapter": "茶馆跑堂，实为茶壶所化的伥。为离开小镇设计夺取《武典》，下药制服陆家兄弟，后坠楼化为碎茶壶。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "蒲先生",
+      "type": "npc",
+      "role_in_chapter": "置锥学塾的先生，前司岁台巨兽学士。教导伥们学习人性，是胡君的朋友，向麟青砚解释邙山镇和伥的由来。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莫佚",
+      "type": "npc",
+      "role_in_chapter": "山海众成员，伶俐的少女。策划盗取《武典》并在邙山镇掀起风波，目的是引出界园主人进入界园寻找物品。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "槐天裴",
+      "type": "operator",
+      "role_in_chapter": "武痴，受莫佚蛊惑闯入玉门盗取《武典》，在英雄宴上力战岁相幻象后坠崖。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "槐琥",
+      "type": "operator",
+      "role_in_chapter": "槐天裴之女，与老鲤追踪父亲至邙山镇，协助麟青砚。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老鲤",
+      "type": "operator",
+      "role_in_chapter": "与槐琥一同追踪槐天裴，提供线索和协助。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "左乐",
+      "type": "operator",
+      "role_in_chapter": "司岁台秉烛人，率玉门军赶到邙山山顶平息事态，后进入界园。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "梁",
+      "type": "npc",
+      "role_in_chapter": "界园主人易的造物，负责处理邙山镇废墟的器伥，引导众人进入界园。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "易",
+      "type": "npc",
+      "role_in_chapter": "界园主人，岁兽代理人。在结尾出现，决定保留并重建小镇。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老天师",
+      "type": "npc",
+      "role_in_chapter": "天师府祖师，在结尾现身调解，允许众人进入界园。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "剑客（郑愁）",
+      "type": "npc",
+      "role_in_chapter": "外号「渡魂剑」的剑客，七年前在邙山镇丢失佩剑，每年与剑伥相会。最终决定离开小镇。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "带剑的女子（剑伥）",
+      "type": "npc",
+      "role_in_chapter": "郑愁的佩剑所化的伥，渴望离开小镇成为真正的剑客，为此抢夺《武典》。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "兰可",
+      "type": "npc",
+      "role_in_chapter": "百年前邙山镇的棋手，为再见亡妻白锦而困于三劫循环棋局百年。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "白锦",
+      "type": "npc",
+      "role_in_chapter": "兰可的未婚妻，死于百年前的伥灾。其执念化为纸钱伥，与兰可重逢后消散。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "温厚的男人",
+      "type": "npc",
+      "role_in_chapter": "神秘的石头收藏家，几十年如一日想购买万老先生的石头，实为点醒石头的关键人物。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "病床上的老人（万老先生）",
+      "type": "npc",
+      "role_in_chapter": "一块石头的执念主人，从山洪中幸存，一生不肯放弃石头，临终前点醒石头。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "打伞的少女（小舒）",
+      "type": "npc",
+      "role_in_chapter": "胡君的朋友，帮胡君偷取信件但弄丢，行为天真。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "陆大",
+      "type": "npc",
+      "role_in_chapter": "「风云三刀」之一，在茶馆截杀伶俐少女，反被胡君下药制服。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "陆二",
+      "type": "npc",
+      "role_in_chapter": "「风云三刀」之一，陆大的弟弟。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "左宣辽",
+      "type": "npc",
+      "role_in_chapter": "玉门守将，发现《武典》失窃后派人送信。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "伥",
+      "line_range": [
+        368,
+        377
+      ],
+      "discussion_summary": "蒲先生向麟青砚解释，邙山镇的器物因受岁陵逸散力量影响而化为伥，拥有心智。",
+      "is_substantive": true
+    },
+    {
+      "concept": "伥的生死",
+      "line_range": [
+        409,
+        413
+      ],
+      "discussion_summary": "蒲先生解释伥生于人寄托于物的执念，亡于器物损毁或执念消弭，破损器物修复后可能重现神识。",
+      "is_substantive": true
+    },
+    {
+      "concept": "《武典》",
+      "line_range": [
+        1340,
+        1366
+      ],
+      "discussion_summary": "云青萍在英雄宴上当众揭露《武典》并非秘籍，而是宗师口述、由他记录的武学心得，旨在流传万民。",
+      "is_substantive": true
+    },
+    {
+      "concept": "执念",
+      "line_range": [
+        653,
+        698
+      ],
+      "discussion_summary": "温厚的男人与万老先生的对话揭示，万老先生的执拗让顽石点头，石头因执念而化为伥。",
+      "is_substantive": true
+    },
+    {
+      "concept": "执念",
+      "line_range": [
+        886,
+        898
+      ],
+      "discussion_summary": "白锦的伥身解释自己只是纸钱所化，因兰可的眼泪和思念而生，执念消散后归于虚无。",
+      "is_substantive": true
+    },
+    {
+      "concept": "化人",
+      "line_range": [
+        340,
+        353
+      ],
+      "discussion_summary": "冷酷的剑客逼问蒲先生《武典》中化人的法门，蒲先生认为剑客未学仁爱先学暴戾，拒绝教授。",
+      "is_substantive": true
+    },
+    {
+      "concept": "伥的屏障",
+      "line_range": [
+        1114,
+        1119
+      ],
+      "discussion_summary": "剑伥解释器物化身的伥无法走出小镇，镇子边缘有只阻隔伥的墙壁，她抢夺《武典》是为了找到突破屏障的方法。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "天师府",
+      "line_range": [
+        262,
+        266
+      ],
+      "description": "蒲先生认出麟青砚是天师打扮，表示镇上百姓生活多仰仗天师关照。"
+    },
+    {
+      "faction": "司岁台",
+      "line_range": [
+        379,
+        380
+      ],
+      "description": "蒲先生自称曾在司岁台当巨兽学士，后辞职隐居。"
+    },
+    {
+      "faction": "山海众",
+      "line_range": [
+        1484,
+        1494
+      ],
+      "description": "莫佚自称山海众，老天师指出其行事风格与山海众祖师相似，莫佚解释祖师理念是制止战事。"
+    },
+    {
+      "faction": "玉门守军",
+      "line_range": [
+        1191,
+        1207
+      ],
+      "description": "左宣辽发现《武典》失窃，派信使通知司岁台和天师府。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "邙山镇",
+      "line_range": [
+        105,
+        121
+      ],
+      "description": "麟青砚初入小镇，发现小镇入口隐蔽、地图上无标记、没有信号，镇民行为怪异。"
+    },
+    {
+      "location": "邙山镇",
+      "line_range": [
+        278,
+        286
+      ],
+      "description": "蒲先生解释小镇因百灶城发展而衰落，现仅五百多户，临近天师府，朝廷不管。"
+    },
+    {
+      "location": "置锥学塾",
+      "line_range": [
+        288,
+        290
+      ],
+      "description": "麟青砚注意到学塾内收藏大量书籍字画古董文玩，蒲先生解释为天师所赠。"
+    },
+    {
+      "location": "界园",
+      "line_range": [
+        1534,
+        1535
+      ],
+      "description": "梁通过棋盘通道打开入口，欢迎众人来到界园。"
+    },
+    {
+      "location": "邙山镇废墟",
+      "line_range": [
+        1536,
+        1556
+      ],
+      "description": "梁描述废墟曾是颇有生机的镇子，因岁陵异动而毁，如今只剩器伥游荡。"
+    },
+    {
+      "location": "玉门",
+      "line_range": [
+        1191,
+        1199
+      ],
+      "description": "槐天裴闯入玉门演武场打伤守军，军武库中宗师留下的《武典》失窃。"
+    }
+  ],
+  "chapter": "镜中集",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:45:33.325325+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 38437,
+    "tokens_out": 6382,
+    "elapsed_s": 47.58522009849548
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "胡君",
+    "蒲先生",
+    "莫佚",
+    "槐天裴",
+    "梁",
+    "易",
+    "老天师",
+    "剑客（郑愁）",
+    "带剑的女子（剑伥）",
+    "兰可",
+    "白锦",
+    "温厚的男人",
+    "病床上的老人（万老先生）",
+    "打伞的少女（小舒）",
+    "陆大",
+    "陆二",
+    "左宣辽"
+  ]
+}

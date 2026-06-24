@@ -1,0 +1,875 @@
+{
+  "summary": "本章「未尽篇章」由六个场景组成，分别讲述了谢拉格布朗陶家、大炎尚蜀、龙门叙拉古势力、卡西米尔无胄盟、汐斯塔市以及哥伦比亚监狱中的多个并行故事。\n\nScene 1中，休露丝代表布朗陶家前往维多利亚与富商哈里森谈判，遭遇对方的轻视。在宴会上，哈里森与维多利亚贵族埃文斯子爵发生冲突，休露丝抓住机会，通过帮助哈里森解决危机，重新掌握了谈判的主动权。\n\nScene 2聚焦于大炎尚蜀。太傅与老船夫谈论时局，梁洵与宁小姐在山上告别，梁洵流露出对尚蜀的不舍和对宁小姐的情意。同时，杜遥夜准备带队前往玉门城，与父亲郑掌柜告别。左乐与惊蛰（麟青砚）就天师府的任务和太傅的判断发生争执。\n\nScene 3回到龙门。卡彭和甘比诺受拉普兰德之命，寻找接头人并拿到西西里夫人的信。他们遭遇了叙拉古叛徒的阻挠和龙门近卫局的追捕。拉普兰德烧毁信件，并考验二人。同时，鼠王与西西里夫人的使者卡代杜进行了一场外交对话，双方就叙拉古势力在龙门的活动达成微妙共识。\n\nScene 4中，无胄盟的罗伊和莫妮克成功策划了血骑士的假死，并为其安排了新的身份。罗伊在街头与一名感染者骑士和一名企业员工喝酒聊天，暗示了联合会将对不合作的感染者骑士下手。之后，罗伊和莫妮克以新身份约尔·泰勒和唐娜·泰勒出现，讨论未来的生活。\n\nScene 5讲述汐斯塔市长赫尔曼与峯驰物流的欧厄尔先生就城市搬迁合作进行谈判。欧厄尔提出建立以峯驰为主导的新物流公司，并暗示汐斯塔未来的发展方向。两人在餐桌上谈论子女教育，从公事转向私交，最终达成合作意向。\n\nScene 6以伪纪录片的形式展现了杰斯顿在曼斯菲尔德监狱中的生活。他试图通过小恩小惠和伪造信件来操纵囚犯瑞克，但被狱警识破并戏弄。杰斯顿坚信公司会救他出去，但结尾的电视节目暗示这一切可能只是虚构故事。",
+  "events": [
+    {
+      "event": "休露丝代表布朗陶家在维多利亚与富商哈里森谈判，遭遇轻视后抓住机会重新掌握主动权",
+      "type": "negotiation",
+      "line_range": [
+        1,
+        310
+      ],
+      "participants": [
+        "休露丝",
+        "尤卡坦",
+        "菈塔托丝",
+        "维多利亚富商",
+        "贵族男性"
+      ],
+      "location": "维多利亚，哈里森先生的宴会厅",
+      "significance": "展现布朗陶家对外拓展的尝试，以及休露丝的成长和谈判手腕",
+      "is_imaginary": false
+    },
+    {
+      "event": "太傅与老船夫谈论尚蜀时局，梁洵与宁小姐在山上告别",
+      "type": "farewell",
+      "line_range": [
+        311,
+        564
+      ],
+      "participants": [
+        "太傅",
+        "老船夫",
+        "梁洵",
+        "宁小姐",
+        "老鲤"
+      ],
+      "location": "大炎尚蜀，渡口和山上",
+      "significance": "展现梁洵离开尚蜀前的复杂心情，以及他与宁小姐之间的情感",
+      "is_imaginary": false
+    },
+    {
+      "event": "杜遥夜与父亲郑掌柜告别，准备带队前往玉门城",
+      "type": "departure",
+      "line_range": [
+        416,
+        460
+      ],
+      "participants": [
+        "杜小姐",
+        "郑掌柜"
+      ],
+      "location": "大炎尚蜀，郑掌柜的客栈",
+      "significance": "展现新一代年轻人离开家乡、自立门户的决心",
+      "is_imaginary": false
+    },
+    {
+      "event": "左乐与惊蛰就天师府的任务和太傅的判断发生争执",
+      "type": "confrontation",
+      "line_range": [
+        461,
+        503
+      ],
+      "participants": [
+        "左乐",
+        "惊蛰"
+      ],
+      "location": "大炎尚蜀",
+      "significance": "揭示尚蜀事件背后有更深的内幕，以及左乐与惊蛰之间的家族关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡彭和甘比诺受拉普兰德之命寻找接头人，遭遇叙拉古叛徒和龙门近卫局追捕",
+      "type": "infiltration",
+      "line_range": [
+        565,
+        746
+      ],
+      "participants": [
+        "卡彭",
+        "甘比诺",
+        "拉普兰德",
+        "托马索"
+      ],
+      "location": "龙门",
+      "significance": "展现叙拉古势力在龙门的渗透和卡彭、甘比诺的困境",
+      "is_imaginary": false
+    },
+    {
+      "event": "拉普兰德烧毁西西里夫人的信，考验卡彭和甘比诺",
+      "type": "confrontation",
+      "line_range": [
+        747,
+        859
+      ],
+      "participants": [
+        "拉普兰德",
+        "卡彭",
+        "甘比诺"
+      ],
+      "location": "龙门",
+      "significance": "拉普兰德展现其疯狂和独立，并收服卡彭和甘比诺",
+      "is_imaginary": false
+    },
+    {
+      "event": "鼠王与西西里夫人的使者卡代杜进行外交对话",
+      "type": "negotiation",
+      "line_range": [
+        860,
+        930
+      ],
+      "participants": [
+        "鼠王",
+        "卡代杜"
+      ],
+      "location": "龙门",
+      "significance": "确立龙门与叙拉古在对待孤狼问题上的微妙平衡",
+      "is_imaginary": false
+    },
+    {
+      "event": "无胄盟的罗伊和莫妮克策划血骑士假死，并为其安排新身份",
+      "type": "revelation",
+      "line_range": [
+        931,
+        967
+      ],
+      "participants": [
+        "血骑士",
+        "莫妮克",
+        "罗伊"
+      ],
+      "location": "卡西米尔",
+      "significance": "揭示血骑士假死真相，展现无胄盟内部的运作",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗伊在街头与感染者骑士和企业员工喝酒聊天，暗示联合会将对不合作者下手",
+      "type": "revelation",
+      "line_range": [
+        968,
+        1122
+      ],
+      "participants": [
+        "罗伊",
+        "感染者骑士",
+        "企业员工"
+      ],
+      "location": "卡西米尔，大骑士领",
+      "significance": "展现卡西米尔底层骑士和普通市民的困境，暗示联合会清除异己",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗伊和莫妮克以新身份讨论未来生活",
+      "type": "character_development",
+      "line_range": [
+        1123,
+        1171
+      ],
+      "participants": [
+        "约尔",
+        "唐娜"
+      ],
+      "location": "卡西米尔",
+      "significance": "展现罗伊和莫妮克脱离无胄盟后的新生活规划",
+      "is_imaginary": false
+    },
+    {
+      "event": "汐斯塔市长赫尔曼与峯驰物流的欧厄尔先生就城市搬迁合作进行谈判",
+      "type": "negotiation",
+      "line_range": [
+        1172,
+        1437
+      ],
+      "participants": [
+        "赫尔曼",
+        "欧厄尔",
+        "拜松",
+        "秘书"
+      ],
+      "location": "汐斯塔",
+      "significance": "展现汐斯塔搬迁计划的关键谈判，以及赫尔曼对城市未来的规划",
+      "is_imaginary": false
+    },
+    {
+      "event": "赫尔曼与欧厄尔在餐桌上谈论子女教育，从公事转向私交",
+      "type": "family_moment",
+      "line_range": [
+        1347,
+        1437
+      ],
+      "participants": [
+        "赫尔曼",
+        "欧厄尔",
+        "拜松"
+      ],
+      "location": "汐斯塔，海边餐厅",
+      "significance": "通过谈论子女，拉近两位父亲的距离，促成合作",
+      "is_imaginary": false
+    },
+    {
+      "event": "杰斯顿在曼斯菲尔德监狱中试图操纵囚犯瑞克，但被狱警戏弄",
+      "type": "character_development",
+      "line_range": [
+        1438,
+        1715
+      ],
+      "participants": [
+        "杰斯顿",
+        "瑞克",
+        "狱警A"
+      ],
+      "location": "哥伦比亚，曼斯菲尔德监狱",
+      "significance": "展现杰斯顿在监狱中的处境和性格，以及他坚信公司会救他的执念",
+      "is_imaginary": false
+    },
+    {
+      "event": "电视节目《真实故事》播出杰斯顿的故事，暗示其可能是虚构",
+      "type": "revelation",
+      "line_range": [
+        1716,
+        1740
+      ],
+      "participants": [
+        "路人A",
+        "路人B"
+      ],
+      "location": "哥伦比亚",
+      "significance": "打破第四面墙，暗示杰斯顿的遭遇可能只是虚构节目，引发对真实性的思考",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "休露丝",
+      "type": "npc",
+      "role_in_chapter": "布朗陶家代表，前往维多利亚谈判，展现成长和谈判手腕",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "菈塔托丝",
+      "type": "npc",
+      "role_in_chapter": "布朗陶家实际掌权者，通过回忆和对话展现其对妹妹的关心和对恩希欧迪斯的复杂看法",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "尤卡坦",
+      "type": "npc",
+      "role_in_chapter": "休露丝的丈夫，陪伴并支持休露丝",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "维娜·维多利亚",
+      "type": "operator",
+      "role_in_chapter": "与布朗陶家谈判的维多利亚商人，起初轻视谢拉格，后因休露丝帮助而改变态度",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "贵族男性",
+      "type": "npc",
+      "role_in_chapter": "维多利亚子爵埃文斯，与哈里森有利益纠纷，带人砸场",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "太傅",
+      "type": "npc",
+      "role_in_chapter": "大炎高官，来尚蜀带走梁洵，与老船夫谈论时局",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老船夫",
+      "type": "npc",
+      "role_in_chapter": "尚蜀渡口船夫，为太傅摆渡，关心梁洵",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "梁洵",
+      "type": "npc",
+      "role_in_chapter": "尚蜀知府，即将随太傅回京，与宁小姐告别",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "宁小姐",
+      "type": "npc",
+      "role_in_chapter": "礼部左侍郎，与梁洵有情愫，鼓励他随太傅上京",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "杜小姐",
+      "type": "npc",
+      "role_in_chapter": "郑掌柜的女儿，准备带队前往玉门城",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "郑掌柜",
+      "type": "npc",
+      "role_in_chapter": "杜小姐的父亲，客栈老板，关心女儿并给予建议",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "左乐",
+      "type": "operator",
+      "role_in_chapter": "司岁台成员，主动请缨来尚蜀，与惊蛰争执",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "惊蛰",
+      "type": "operator",
+      "role_in_chapter": "大理寺成员，左乐的小姨，受天师府之命来尚蜀，阻止左乐行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老鲤",
+      "type": "operator",
+      "role_in_chapter": "在尚蜀寻找梁洵，目睹其与宁小姐告别，感慨万千",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "卡彭",
+      "type": "npc",
+      "role_in_chapter": "叙拉古黑帮成员，与甘比诺一起为拉普兰德做事，展现其狡猾和谨慎",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "甘比诺",
+      "type": "npc",
+      "role_in_chapter": "叙拉古黑帮成员，与卡彭一起为拉普兰德做事，性格冲动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "拉普兰德",
+      "type": "operator",
+      "role_in_chapter": "叙拉古孤狼，收服卡彭和甘比诺，烧毁西西里夫人的信，展现其疯狂和独立",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "鼠王",
+      "type": "npc",
+      "role_in_chapter": "龙门地下势力掌控者，与西西里夫人使者卡代杜谈判，维护龙门规矩",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "卡代杜",
+      "type": "npc",
+      "role_in_chapter": "西西里夫人的使者，与鼠王谈判，要求处理孤狼问题",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "血骑士",
+      "type": "npc",
+      "role_in_chapter": "卡西米尔前冠军，被无胄盟策划假死",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "莫妮克",
+      "type": "npc",
+      "role_in_chapter": "无胄盟青金，与罗伊一起策划血骑士假死，后以新身份唐娜·泰勒出现",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "罗伊",
+      "type": "npc",
+      "role_in_chapter": "无胄盟青金，策划血骑士假死，后以新身份约尔·泰勒出现，展现其洒脱和算计",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "感染者骑士",
+      "type": "npc",
+      "role_in_chapter": "卡西米尔感染者骑士，因不合作而面临危险，与罗伊喝酒",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "企业员工",
+      "type": "npc",
+      "role_in_chapter": "卡西米尔普通市民，与罗伊和感染者骑士喝酒，抱怨工作压力",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "赫尔曼",
+      "type": "npc",
+      "role_in_chapter": "汐斯塔市长，主导城市搬迁，与峯驰物流谈判",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "欧厄尔",
+      "type": "npc",
+      "role_in_chapter": "峯驰物流负责人，与赫尔曼谈判，展现其商业远见和作为父亲的一面",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "拜松",
+      "type": "operator",
+      "role_in_chapter": "欧厄尔的儿子，峯驰物流执行经理，陪同父亲谈判",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "杰斯顿",
+      "type": "npc",
+      "role_in_chapter": "沙滩伞公司前员工，现曼斯菲尔德监狱囚犯，试图操纵他人但被戏弄",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "瑞克",
+      "type": "npc",
+      "role_in_chapter": "曼斯菲尔德监狱囚犯，被杰斯顿试图操纵，后因妻子筹钱而获释",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "狱警A",
+      "type": "npc",
+      "role_in_chapter": "曼斯菲尔德监狱狱警，戏弄杰斯顿，揭露其小把戏",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "谢拉格的对外关系",
+      "line_range": [
+        1,
+        14
+      ],
+      "discussion_summary": "菈塔托丝叮嘱休露丝，维多利亚和谢拉格不同，布朗陶家处于弱势，对方会趁机狮子大开口，要求休露丝多看多听少说。",
+      "is_substantive": true
+    },
+    {
+      "concept": "维多利亚对谢拉格的偏见",
+      "line_range": [
+        55,
+        68
+      ],
+      "discussion_summary": "维多利亚富商哈里森将谢拉格说成「谢拉克」，并描述其宴会有烤整只肉兽和杂耍表演，展现其对谢拉格的刻板印象和轻视。",
+      "is_substantive": true
+    },
+    {
+      "concept": "谢拉格的发展与变革",
+      "line_range": [
+        103,
+        131
+      ],
+      "discussion_summary": "休露丝看到维多利亚的机械、街道、电灯等，认为谢拉格也应该有这些，并理解恩希欧迪斯推动铁路和工厂建设的初衷。",
+      "is_substantive": true
+    },
+    {
+      "concept": "恩希欧迪斯的决心",
+      "line_range": [
+        197,
+        200
+      ],
+      "discussion_summary": "菈塔托丝评价恩希欧迪斯是个狠心的家伙，因为他能下决心把一切都抛下，离开谢拉格去维多利亚。",
+      "is_substantive": true
+    },
+    {
+      "concept": "布朗陶家的责任与拖累",
+      "line_range": [
+        202,
+        209
+      ],
+      "discussion_summary": "休露丝反思，是否整个布朗陶家一直拖累菈塔托丝，尤其是在爷爷去世后，菈塔托丝独自承担家族重担。",
+      "is_substantive": true
+    },
+    {
+      "concept": "维多利亚商人与贵族的利益冲突",
+      "line_range": [
+        253,
+        284
+      ],
+      "discussion_summary": "埃文斯子爵因哈里森抢占其股份和土地而带人砸场，展现了维多利亚商人与贵族之间的利益纠纷和权力不对等。",
+      "is_substantive": true
+    },
+    {
+      "concept": "为官之道与百姓",
+      "line_range": [
+        332,
+        340
+      ],
+      "discussion_summary": "太傅认为人当看，不看人就是白走一遭。老船夫担心梁洵顶不住压力，太傅认为梁洵有才能有志气，顶得住便功成名就。",
+      "is_substantive": true
+    },
+    {
+      "concept": "适应与改变",
+      "line_range": [
+        366,
+        372
+      ],
+      "discussion_summary": "宁小姐认为适应新环境有心就不难，梁洵则承认这不是轻易能做到的。宁小姐重复「总归要适应的」，暗示对未来的态度。",
+      "is_substantive": true
+    },
+    {
+      "concept": "梁洵的志向",
+      "line_range": [
+        387,
+        391
+      ],
+      "discussion_summary": "梁洵表示自己要做的事，为一方百姓，从未变过。",
+      "is_substantive": true
+    },
+    {
+      "concept": "太傅给出的机会",
+      "line_range": [
+        397,
+        399
+      ],
+      "discussion_summary": "宁小姐认为太傅身边不留庸才，他给出的只会是最险、最难搏的机会，如果梁洵拒绝一定会后悔。",
+      "is_substantive": true
+    },
+    {
+      "concept": "时代变了与责任",
+      "line_range": [
+        426,
+        443
+      ],
+      "discussion_summary": "杜小姐认为时代不同了，不应翻老黄历。郑掌柜则告诫她，既然站出来一呼百应，往后遇上再难的事也不能退，必须担着。",
+      "is_substantive": true
+    },
+    {
+      "concept": "官场阴私与行事风格",
+      "line_range": [
+        488,
+        493
+      ],
+      "discussion_summary": "左乐讽刺惊蛰也开始揣测官场阴私，不符合她传闻中厌烦蝇营狗苟的风格。惊蛰回应自己的行事风格不必左乐提点。",
+      "is_substantive": true
+    },
+    {
+      "concept": "为国为民为天下",
+      "line_range": [
+        523,
+        527
+      ],
+      "discussion_summary": "宁小姐回忆祖父问她是否愿为国、为民、为天下，她回答肝脑涂地，在所不辞。",
+      "is_substantive": true
+    },
+    {
+      "concept": "龙门的规矩",
+      "line_range": [
+        607,
+        610
+      ],
+      "discussion_summary": "卡彭提醒甘比诺，龙门有龙门的规矩，他们曾是鼠王的手下败将，鼠王放他们一条生路，不能乱来。",
+      "is_substantive": true
+    },
+    {
+      "concept": "西西里夫人的权威与孤狼的处境",
+      "line_range": [
+        779,
+        782
+      ],
+      "discussion_summary": "拉普兰德指出，西西里夫人不关注两只丧家犬，是「叙拉古」要他们消失。这意味着他们被整个叙拉古体系抛弃。",
+      "is_substantive": true
+    },
+    {
+      "concept": "投名状与背叛",
+      "line_range": [
+        786,
+        790
+      ],
+      "discussion_summary": "甘比诺认为违背信中指示、背叛家族就是给拉普兰德交了投名状。拉普兰德则嘲笑他们相互背叛多次，无需提醒。",
+      "is_substantive": true
+    },
+    {
+      "concept": "叙拉古人的身份与温吞的茶水",
+      "line_range": [
+        866,
+        869
+      ],
+      "discussion_summary": "卡代杜强调叙拉古人永远是叙拉古人，不需要温吞的茶水。鼠王则指出有些来自叙拉古的朋友已经喜欢上茶叶的香气。",
+      "is_substantive": true
+    },
+    {
+      "concept": "龙门的规矩与叙拉古的干预",
+      "line_range": [
+        885,
+        895
+      ],
+      "discussion_summary": "鼠王警告卡代杜不要在龙门逾越龙门的规矩。卡代杜表示极度不希望与龙门乃至大炎产生摩擦，但有些事不得不做。",
+      "is_substantive": true
+    },
+    {
+      "concept": "血骑士的假死与无胄盟的运作",
+      "line_range": [
+        931,
+        948
+      ],
+      "discussion_summary": "罗伊和莫妮克与血骑士谈判，暗示可以不是无胄盟，要求血骑士帮忙脱身，这是一笔划算的买卖。",
+      "is_substantive": true
+    },
+    {
+      "concept": "骑士竞技的黑暗面",
+      "line_range": [
+        1022,
+        1023
+      ],
+      "discussion_summary": "感染者骑士指出，大多数时候不要押感染者骑士，因为幕后的家伙不会让他们赢。",
+      "is_substantive": true
+    },
+    {
+      "concept": "大企业工作的困境",
+      "line_range": [
+        1067,
+        1072
+      ],
+      "discussion_summary": "企业员工认为进大企业不容易，但进去之后往往就走不掉了，这才是最难的地方。",
+      "is_substantive": true
+    },
+    {
+      "concept": "汐斯塔的搬迁与转型",
+      "line_range": [
+        1190,
+        1195
+      ],
+      "discussion_summary": "工作人员讨论分区块迁移模式，先迁移关键技术人员和管理人员，但运力不够，需要解决。",
+      "is_substantive": true
+    },
+    {
+      "concept": "峯驰物流的提议与汐斯塔的未来",
+      "line_range": [
+        1251,
+        1273
+      ],
+      "discussion_summary": "欧厄尔提出以峯驰物流为主建立新公司，支持自由贸易，使汐斯塔成为商务活动枢纽。赫尔曼认为峯驰物流很有远见。",
+      "is_substantive": true
+    },
+    {
+      "concept": "提卡伦多模式与汐斯塔的独立性",
+      "line_range": [
+        1275,
+        1288
+      ],
+      "discussion_summary": "欧厄尔以提卡伦多为例，暗示汐斯塔搬迁后谁说了算。赫尔曼指出提卡伦多与汐斯塔不同，其未来只在哥伦比亚规划范围内。",
+      "is_substantive": true
+    },
+    {
+      "concept": "金钱与权力在哥伦比亚的支配地位",
+      "line_range": [
+        1636,
+        1637
+      ],
+      "discussion_summary": "杰斯顿向瑞克灌输，在哥伦比亚一切都逃不开金钱或权力的支配，爱能卖多少钱？",
+      "is_substantive": true
+    },
+    {
+      "concept": "真实与虚构的界限",
+      "line_range": [
+        1716,
+        1740
+      ],
+      "discussion_summary": "电视节目《真实故事》播出杰斯顿的故事，路人讨论其演技，节目最后声明为虚构作品，如有雷同纯属巧合，引发对故事真实性的思考。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "布朗陶家",
+      "line_range": [
+        1,
+        14
+      ],
+      "description": "菈塔托丝叮嘱休露丝代表布朗陶家，不能在外头犯蠢给家族丢人。"
+    },
+    {
+      "faction": "希瓦艾什家",
+      "line_range": [
+        120,
+        131
+      ],
+      "description": "休露丝谈论恩希欧迪斯，承认他有点本事，能理解他推动铁路和工厂建设的初衷。"
+    },
+    {
+      "faction": "维多利亚贵族",
+      "line_range": [
+        253,
+        284
+      ],
+      "description": "埃文斯子爵带人砸哈里森的场，展现贵族对商人的压迫和权力。"
+    },
+    {
+      "faction": "大理寺",
+      "line_range": [
+        470,
+        493
+      ],
+      "description": "惊蛰自称不代表大理寺走这一趟，左乐讽刺她揣测官场阴私不符合大理寺风格。"
+    },
+    {
+      "faction": "天师府",
+      "line_range": [
+        477,
+        478
+      ],
+      "description": "左乐质问惊蛰，天师府这次要她走这一趟到底为了什么。惊蛰回答为百姓苍生。"
+    },
+    {
+      "faction": "司岁台",
+      "line_range": [
+        484,
+        486
+      ],
+      "description": "惊蛰指出左乐入司岁台时日尚浅，对尚蜀背后之事不知情，荒唐。"
+    },
+    {
+      "faction": "叙拉古黑帮（叛徒）",
+      "line_range": [
+        597,
+        603
+      ],
+      "description": "卡彭怀疑从叙拉古带来的叛徒截走了接头人，与他们脱不了干系。"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        687,
+        718
+      ],
+      "description": "近卫局循着爆炸声追捕卡彭和甘比诺，包围现场。"
+    },
+    {
+      "faction": "西西里夫人（叙拉古）",
+      "line_range": [
+        779,
+        782
+      ],
+      "description": "拉普兰德指出是「叙拉古」要卡彭和甘比诺消失，西西里夫人不关注他们。"
+    },
+    {
+      "faction": "无胄盟",
+      "line_range": [
+        931,
+        948
+      ],
+      "description": "罗伊和莫妮克以无胄盟杀手身份找到血骑士，但暗示必要时候可以不是无胄盟。"
+    },
+    {
+      "faction": "联合会",
+      "line_range": [
+        951,
+        952
+      ],
+      "description": "莫妮克提到联合会的人还没完全相信他们和血骑士同归于尽，调查的人还没完全撤走。"
+    },
+    {
+      "faction": "汐斯塔市政府",
+      "line_range": [
+        1172,
+        1181
+      ],
+      "description": "工作人员讨论市长的意思很清楚，火山不等人，搬迁方案要尽快定下来。"
+    },
+    {
+      "faction": "峯驰物流",
+      "line_range": [
+        1226,
+        1253
+      ],
+      "description": "欧厄尔代表峯驰物流与市政府谈判，希望建立以峯驰为主导的新物流公司。"
+    },
+    {
+      "faction": "沙滩伞公司",
+      "line_range": [
+        1438,
+        1441
+      ],
+      "description": "杰斯顿收到公司来信，要求他在监狱内安心蛰伏，公司仍保留其职位和待遇。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "维多利亚",
+      "line_range": [
+        1,
+        14
+      ],
+      "description": "菈塔托丝提到维多利亚和谢拉格不一样，布朗陶家处于弱势，对方会血口大开。"
+    },
+    {
+      "location": "谢拉格",
+      "line_range": [
+        55,
+        61
+      ],
+      "description": "维多利亚富商将谢拉格说成「谢拉克」，并描述其落后的宴会习俗，展现偏见。"
+    },
+    {
+      "location": "尚蜀",
+      "line_range": [
+        311,
+        316
+      ],
+      "description": "老船夫谈论尚蜀的天气，太傅认为寒暑需有个度，尚蜀百姓早已适应。"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        607,
+        610
+      ],
+      "description": "卡彭提醒甘比诺，龙门有龙门的规矩，他们曾是鼠王的手下败将。"
+    },
+    {
+      "location": "卡西米尔",
+      "line_range": [
+        931,
+        936
+      ],
+      "description": "罗伊提到血骑士这样的名人一举一动都有人关注，能查到这里的人不止他们。"
+    },
+    {
+      "location": "大骑士领",
+      "line_range": [
+        1116,
+        1117
+      ],
+      "description": "感染者骑士描述凌晨的大骑士领，半个人都没有，只有满地垃圾和骑士海报。"
+    },
+    {
+      "location": "汐斯塔",
+      "line_range": [
+        1172,
+        1181
+      ],
+      "description": "工作人员提到市长的意思很清楚，火山不等人，搬迁方案要尽快定下来。"
+    },
+    {
+      "location": "哥伦比亚",
+      "line_range": [
+        1636,
+        1637
+      ],
+      "description": "杰斯顿向瑞克灌输，在哥伦比亚一切都逃不开金钱或权力的支配。"
+    },
+    {
+      "location": "曼斯菲尔德监狱",
+      "line_range": [
+        1438,
+        1441
+      ],
+      "description": "杰斯顿在监狱中收到公司来信，要求他安心蛰伏。"
+    }
+  ],
+  "chapter": "未尽篇章",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:39:41.571858+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 35355,
+    "tokens_out": 7733,
+    "elapsed_s": 57.53804874420166
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "休露丝",
+    "菈塔托丝",
+    "尤卡坦",
+    "贵族男性",
+    "太傅",
+    "老船夫",
+    "梁洵",
+    "宁小姐",
+    "杜小姐",
+    "郑掌柜",
+    "卡彭",
+    "甘比诺",
+    "鼠王",
+    "卡代杜",
+    "血骑士",
+    "莫妮克",
+    "罗伊",
+    "感染者骑士",
+    "企业员工",
+    "赫尔曼",
+    "欧厄尔",
+    "杰斯顿",
+    "瑞克",
+    "狱警A"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "concepts": [
+    {
+      "name": "源石",
+      "category": "自然现象/物质",
+      "definition": "...",
+      "summary": "基础设定。\n\n补充：视频展示了新的角度。",
+      "aliases": [],
+      "source_records": [],
+      "related_concepts": [],
+      "related_factions": [],
+      "related_locations": []
+    }
+  ],
+  "factions": [],
+  "locations": [],
+  "timeline_events": [],
+  "_meta": {
+    "phase": 2,
+    "model": "deepseek-chat",
+    "generated_at": "2026-06-24T03:34:23.723101+00:00",
+    "source": "大地巡旅 + 视频",
+    "stats": {
+      "tokens_in": 5000,
+      "tokens_out": 300,
+      "elapsed_s": 0.0,
+      "cost_usd": 0.00168
+    }
+  }
+}

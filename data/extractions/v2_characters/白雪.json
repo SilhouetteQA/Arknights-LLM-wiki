@@ -1,0 +1,42 @@
+{
+  "summary": "白雪是文月夫人的贴身护卫，被派往罗德岛保护博士。她沉默寡言但可靠，使用大型手里剑，擅长隐秘行动和情报收集。在「此地之外」中，她与星熊相遇，确认陈在罗德岛状态良好，并赠予星熊一本漫画，暗示了星熊的过去。",
+  "personality": {
+    "traits": [
+      "沉默寡言",
+      "忠诚",
+      "可靠"
+    ],
+    "description": "白雪惜字如金，但行动力强，在博士需要时总能适时出现，可靠到有些可怕。"
+  },
+  "abilities": {
+    "description": "使用大型手里剑作为武器，擅长隐秘行动和情报收集，于阴影中保护目标。",
+    "power_level": "信息不足",
+    "power_level_evidence": []
+  },
+  "participated_events": [
+    {
+      "chapter": "此地之外",
+      "nodes": "星熊与白雪相遇",
+      "event": "白雪与星熊在龙门相遇，谈论陈在罗德岛的情况，白雪赠予星熊一本漫画，暗示了星熊的过去。",
+      "role": "通过白雪之口确认陈在罗德岛状态良好，并赠予漫画以安慰星熊。"
+    }
+  ],
+  "first_appearance": "此地之外",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 3291,
+    "tokens_out": 298,
+    "elapsed_s": 3.015894651412964
+  },
+  "name_zh": "白雪",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "此地之外"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:53:00.995924+00:00",
+  "race": "阿纳缇",
+  "affiliations": [
+    "东"
+  ]
+}

@@ -1,0 +1,754 @@
+{
+  "summary": "本章剧情始于切尔诺伯格事件结束四天后，罗德岛与龙门达成初步合作框架，罗德岛协助龙门进行外环防卫以换取停泊和补给。博士在阿米娅和杜宾的催促下参与战术准备，随后前往龙门与陈警司会面。在龙门检疫口，陈警司展现了严厉作风，并带领罗德岛代表与龙门领袖魏彦吾进行谈判。谈判中，凯尔希医生以切尔诺伯格的经验和整合运动的威胁为筹码，争取罗德岛在龙门行动中的主动权，最终魏彦吾提出两个条件，阿米娅代表罗德岛接受。\n\n与此同时，罗德岛在龙门贫民区执行搜查任务，寻找一名叫米莎的乌萨斯感染者少女。阿米娅在救助被暴民欺凌的儿童时发现了米莎的踪迹，并决定保护她。罗德岛与企鹅物流合作，在整合运动的追击下护送米莎。整合运动领袖碎骨出现，目标明确指向米莎，罗德岛在楼顶和建筑间展开激烈战斗，最终将米莎移交给龙门近卫局。\n\n在护送过程中，米莎的矿石病急性发作，阿米娅承诺在事件平息后接她回罗德岛治疗。米莎对罗德岛逐渐产生信任，并请求阿米娅照顾贫民区的孩子们。然而，整合运动并未放弃，碎骨持续追击罗德岛，而另一名整合运动成员W成功劫持了被近卫局带走的米莎。陈警司在遭遇W的袭击后陷入困境，罗德岛意识到整合运动的行动是有预谋的，决定支援近卫局。\n\n本章还揭示了整合运动领袖塔露拉的动机，她将龙门视为下一个目标，并誓言要让某人付出代价。同时，米莎的身世被部分揭露，她的父亲是切尔诺伯格的重要科学家和政治人物，这可能是整合运动和龙门争夺她的关键原因。整体剧情围绕罗德岛在龙门立足、保护米莎、对抗整合运动渗透三条主线展开，为后续冲突埋下伏笔。",
+  "events": [
+    {
+      "event": "罗德岛与龙门达成初步合作框架，罗德岛协助龙门防卫以换取停泊和补给",
+      "type": "negotiation",
+      "line_range": [
+        16,
+        22
+      ],
+      "participants": [
+        "杜宾",
+        "阿米娅"
+      ],
+      "location": "罗德岛作战会议室",
+      "significance": "确立罗德岛在龙门行动的基本合作框架",
+      "is_imaginary": false
+    },
+    {
+      "event": "博士被叫醒参与战术准备，杜宾介绍新战术策略",
+      "type": "planning",
+      "line_range": [
+        4,
+        32
+      ],
+      "participants": [
+        "PRTS",
+        "阿米娅",
+        "杜宾",
+        "博士"
+      ],
+      "location": "罗德岛作战会议室",
+      "significance": "为后续行动做战术准备",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛抵达龙门检疫口，与陈警司会面，遭遇感染者骚乱",
+      "type": "confrontation",
+      "line_range": [
+        33,
+        73
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "近卫局队员",
+        "感染者",
+        "普通市民"
+      ],
+      "location": "龙门5区外检疫口",
+      "significance": "展现龙门对感染者的严苛政策和陈警司的强硬作风",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛代表与魏彦吾进行谈判，凯尔希以切尔诺伯格经验争取合作",
+      "type": "negotiation",
+      "line_range": [
+        99,
+        153
+      ],
+      "participants": [
+        "陈",
+        "阿米娅",
+        "凯尔希",
+        "博士",
+        "魏彦吾"
+      ],
+      "location": "龙门魏彦吾办公室",
+      "significance": "确立罗德岛与龙门的合作条件，魏彦吾提出两个要求",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏彦吾提出两个条件，阿米娅代表罗德岛接受",
+      "type": "negotiation",
+      "line_range": [
+        193,
+        219
+      ],
+      "participants": [
+        "魏彦吾",
+        "凯尔希",
+        "阿米娅",
+        "陈"
+      ],
+      "location": "龙门魏彦吾办公室",
+      "significance": "正式确立合作条款，陈警司负责对接",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅在贫民区救助被暴民欺凌的儿童，发现米莎踪迹",
+      "type": "rescue",
+      "line_range": [
+        236,
+        279
+      ],
+      "participants": [
+        "阿米娅",
+        "米莎",
+        "小孩们",
+        "暴民"
+      ],
+      "location": "龙门贫民区",
+      "significance": "引入关键角色米莎，展现阿米娅的正义感",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛接到近卫局命令，搜查并移交米莎",
+      "type": "investigation",
+      "line_range": [
+        290,
+        326
+      ],
+      "participants": [
+        "阿米娅",
+        "芙兰卡",
+        "雷蛇",
+        "陈"
+      ],
+      "location": "龙门贫民区",
+      "significance": "确立米莎为任务目标，罗德岛与近卫局目标一致",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅找到米莎并说服她接受罗德岛保护",
+      "type": "revelation",
+      "line_range": [
+        327,
+        386
+      ],
+      "participants": [
+        "米莎",
+        "阿米娅",
+        "芙兰卡",
+        "雷蛇"
+      ],
+      "location": "龙门贫民区",
+      "significance": "米莎开始信任罗德岛，阿米娅展示感染者身份建立共鸣",
+      "is_imaginary": false
+    },
+    {
+      "event": "企鹅物流提供情报，整合运动已渗透龙门并围堵罗德岛",
+      "type": "infiltration",
+      "line_range": [
+        413,
+        448
+      ],
+      "participants": [
+        "阿米娅",
+        "芙兰卡",
+        "雷蛇",
+        "能天使"
+      ],
+      "location": "龙门贫民区",
+      "significance": "揭示整合运动在龙门的渗透程度和行动目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛在整合运动追击下护送米莎，能天使提供撤退路线",
+      "type": "retreat",
+      "line_range": [
+        449,
+        491
+      ],
+      "participants": [
+        "芙兰卡",
+        "米莎",
+        "阿米娅",
+        "雷蛇",
+        "能天使"
+      ],
+      "location": "龙门贫民区",
+      "significance": "米莎对近卫局产生疑虑，阿米娅承诺解释一切",
+      "is_imaginary": false
+    },
+    {
+      "event": "整合运动领袖碎骨出现，目标明确指向米莎",
+      "type": "confrontation",
+      "line_range": [
+        492,
+        542
+      ],
+      "participants": [
+        "德克萨斯",
+        "整合运动",
+        "芙兰卡",
+        "阿米娅",
+        "雷蛇",
+        "碎骨",
+        "米莎"
+      ],
+      "location": "龙门贫民区",
+      "significance": "揭示整合运动对米莎的执着，碎骨与米莎有旧识关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛在楼顶转移，能天使和德克萨斯引导撤退路线",
+      "type": "retreat",
+      "line_range": [
+        543,
+        596
+      ],
+      "participants": [
+        "芙兰卡",
+        "阿米娅",
+        "米莎",
+        "德克萨斯",
+        "能天使",
+        "雷蛇",
+        "碎骨",
+        "整合运动成员"
+      ],
+      "location": "龙门贫民区楼顶",
+      "significance": "展现企鹅物流的独特撤退策略",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛通过楼顶转移，遭遇整合运动喷气背包突袭",
+      "type": "battle",
+      "line_range": [
+        597,
+        628
+      ],
+      "participants": [
+        "德克萨斯",
+        "阿米娅",
+        "雷蛇",
+        "芙兰卡",
+        "能天使",
+        "整合运动成员"
+      ],
+      "location": "龙门贫民区楼顶",
+      "significance": "展现整合运动的新型装备和战术",
+      "is_imaginary": false
+    },
+    {
+      "event": "米莎矿石病急性发作，阿米娅决定必须接她回罗德岛治疗",
+      "type": "character_development",
+      "line_range": [
+        629,
+        652
+      ],
+      "participants": [
+        "能天使",
+        "德克萨斯",
+        "阿米娅",
+        "米莎"
+      ],
+      "location": "龙门贫民区建筑内",
+      "significance": "揭示米莎病情严重，强化罗德岛救助感染者的使命",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛救助被整合运动攻击的本地感染者",
+      "type": "rescue",
+      "line_range": [
+        681,
+        710
+      ],
+      "participants": [
+        "芙兰卡",
+        "雷蛇",
+        "阿米娅",
+        "德克萨斯",
+        "能天使",
+        "感染者",
+        "整合运动成员"
+      ],
+      "location": "龙门贫民区",
+      "significance": "展现罗德岛救助感染者的立场与整合运动的暴力形成对比",
+      "is_imaginary": false
+    },
+    {
+      "event": "米莎表达对罗德岛的信任，阿米娅承诺保护贫民区孩子",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        711,
+        746
+      ],
+      "participants": [
+        "感染者",
+        "能天使",
+        "德克萨斯",
+        "芙兰卡",
+        "阿米娅",
+        "米莎"
+      ],
+      "location": "龙门贫民区",
+      "significance": "米莎与阿米娅建立信任关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛将米莎移交给龙门近卫局",
+      "type": "departure",
+      "line_range": [
+        747,
+        799
+      ],
+      "participants": [
+        "阿米娅",
+        "米莎",
+        "陈",
+        "近卫局队员",
+        "芙兰卡",
+        "德克萨斯",
+        "雷蛇"
+      ],
+      "location": "龙门贫民区汇合点",
+      "significance": "米莎被移交近卫局，但整合运动仍在追击",
+      "is_imaginary": false
+    },
+    {
+      "event": "整合运动领袖塔露拉与弑君者讨论进攻龙门的战略意义",
+      "type": "political_intrigue",
+      "line_range": [
+        834,
+        852
+      ],
+      "participants": [
+        "弑君者",
+        "塔露拉"
+      ],
+      "location": "龙门某处",
+      "significance": "揭示塔露拉的个人动机和整合运动的战略目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "碎骨率领整合运动对罗德岛发动总攻",
+      "type": "battle",
+      "line_range": [
+        853,
+        884
+      ],
+      "participants": [
+        "雷蛇",
+        "芙兰卡",
+        "阿米娅",
+        "碎骨",
+        "整合运动成员"
+      ],
+      "location": "龙门贫民区楼顶",
+      "significance": "整合运动发动大规模进攻，碎骨亲自指挥",
+      "is_imaginary": false
+    },
+    {
+      "event": "米莎向陈警司请求保护贫民区孩子，陈警司承诺尽职责",
+      "type": "family_moment",
+      "line_range": [
+        905,
+        920
+      ],
+      "participants": [
+        "米莎",
+        "陈"
+      ],
+      "location": "龙门近卫局护送途中",
+      "significance": "展现米莎的善良和陈警司的职责感",
+      "is_imaginary": false
+    },
+    {
+      "event": "米莎身世被部分揭露，其父是切尔诺伯格重要科学家和政治人物",
+      "type": "revelation",
+      "line_range": [
+        921,
+        933
+      ],
+      "participants": [
+        "陈",
+        "米莎"
+      ],
+      "location": "龙门近卫局护送途中",
+      "significance": "揭示整合运动和龙门争夺米莎的关键原因",
+      "is_imaginary": false
+    },
+    {
+      "event": "W成功劫持米莎，陈警司陷入困境",
+      "type": "assassination",
+      "line_range": [
+        934,
+        938
+      ],
+      "participants": [
+        "W",
+        "陈"
+      ],
+      "location": "龙门近卫局护送途中",
+      "significance": "整合运动成功劫走米莎，剧情转折",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛被整合运动逼入死路，阿米娅指责整合运动先使用暴力",
+      "type": "confrontation",
+      "line_range": [
+        939,
+        987
+      ],
+      "participants": [
+        "芙兰卡",
+        "雷蛇",
+        "阿米娅",
+        "碎骨",
+        "整合运动成员"
+      ],
+      "location": "龙门贫民区死胡同",
+      "significance": "罗德岛与整合运动正面冲突，阿米娅展现坚定立场",
+      "is_imaginary": false
+    },
+    {
+      "event": "整合运动撤退，罗德岛意识到近卫局有危险，决定支援",
+      "type": "rescue",
+      "line_range": [
+        988,
+        1022
+      ],
+      "participants": [
+        "碎骨",
+        "阿米娅",
+        "芙兰卡",
+        "雷蛇",
+        "陈",
+        "近卫局队员",
+        "整合运动成员"
+      ],
+      "location": "龙门贫民区",
+      "significance": "罗德岛决定支援近卫局，剧情进入新阶段",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛战术指挥官，被叫醒参与战术准备和后续行动，在谈判中作为代表之一",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，主导与龙门的谈判和贫民区行动，保护米莎并建立信任关系",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "杜宾",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，向博士介绍战术策略和龙门合作框架",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "陈",
+      "type": "npc",
+      "role_in_chapter": "龙门近卫局警司，负责与罗德岛对接，展现严厉作风和职责感，在护送米莎途中遭遇W袭击",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛代表，主导与魏彦吾的谈判，以切尔诺伯格经验争取合作条件",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "魏彦吾",
+      "type": "npc",
+      "role_in_chapter": "龙门领袖，与罗德岛谈判并提出两个合作条件，展现政治手腕",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "米莎",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯感染者少女，整合运动和龙门争夺的目标，其父是切尔诺伯格重要人物，被罗德岛保护后移交近卫局，最终被W劫持",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "芙兰卡",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，参与贫民区行动和护送米莎，展现战斗力和幽默感",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "雷蛇",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，参与贫民区行动和护送米莎，展现谨慎和责任感",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "能天使",
+      "type": "operator",
+      "role_in_chapter": "企鹅物流专员，为罗德岛提供情报和撤退路线，展现活泼性格",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "德克萨斯",
+      "type": "operator",
+      "role_in_chapter": "企鹅物流专员，参与战斗和引导撤退路线，展现冷静和高效",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "碎骨",
+      "type": "npc",
+      "role_in_chapter": "整合运动领袖，目标明确指向米莎，率领整合运动追击罗德岛，展现对罗德岛的敌意",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "弑君者",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，与塔露拉讨论进攻龙门的战略意义",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "塔露拉",
+      "type": "npc",
+      "role_in_chapter": "整合运动领袖，将龙门视为下一个目标，誓言要让某人付出代价",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "W",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，成功劫持米莎，展现神秘和危险",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "矿石病",
+      "line_range": [
+        655,
+        670
+      ],
+      "discussion_summary": "阿米娅解释米莎的矿石病急性发作，讨论急性和慢性之分，强调病情严重性和控制刻不容缓",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者政策",
+      "line_range": [
+        38,
+        43
+      ],
+      "discussion_summary": "广播宣布龙门对感染者的检疫政策和《紧急处理法案》，展现龙门对感染者的严苛态度",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动",
+      "line_range": [
+        109,
+        114
+      ],
+      "discussion_summary": "凯尔希讨论整合运动的威胁，强调龙门依靠当前感染者策略无法抵挡整合运动攻击",
+      "is_substantive": true
+    },
+    {
+      "concept": "切尔诺伯格事件",
+      "line_range": [
+        167,
+        186
+      ],
+      "discussion_summary": "凯尔希和阿米娅讨论切尔诺伯格一夜失陷的真正原因，包括天灾、整合运动领袖塔露拉和乌萨斯帝国的态度",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者身份",
+      "line_range": [
+        362,
+        367
+      ],
+      "discussion_summary": "阿米娅向米莎展示自己的感染者身份，建立共鸣和信任",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动的渗透",
+      "line_range": [
+        431,
+        435
+      ],
+      "discussion_summary": "雷蛇和能天使讨论整合运动已渗透进龙门，并摸清敌人分布和行动趋势",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动的本质",
+      "line_range": [
+        719,
+        728
+      ],
+      "discussion_summary": "能天使、德克萨斯和芙兰卡讨论整合运动自称感染者救星却攻击感染者，以及感染者为何宁可相信整合运动也不相信罗德岛",
+      "is_substantive": true
+    },
+    {
+      "concept": "龙门的象征",
+      "line_range": [
+        845,
+        850
+      ],
+      "discussion_summary": "塔露拉指出龙门建筑物是龙门的象征，她回到这里不仅是为夺回感染者的一切，还要让某人付出代价",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        16,
+        22
+      ],
+      "description": "杜宾和阿米娅讨论罗德岛与龙门达成合作框架，罗德岛协助龙门防卫以换取停泊和补给"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        33,
+        73
+      ],
+      "description": "陈警司和近卫局队员在检疫口处理感染者骚乱，展现近卫局的执法方式和陈警司的严厉作风"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        109,
+        114
+      ],
+      "description": "凯尔希讨论整合运动的威胁，强调龙门无法依靠当前策略抵挡整合运动攻击"
+    },
+    {
+      "faction": "企鹅物流",
+      "line_range": [
+        413,
+        423
+      ],
+      "description": "能天使与罗德岛互动，讨论企鹅物流提供的情报服务和对龙门感染者的信息掌握"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        530,
+        542
+      ],
+      "description": "碎骨率领整合运动出现，目标明确指向米莎，展现整合运动对米莎的执着"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        719,
+        728
+      ],
+      "description": "能天使、德克萨斯和芙兰卡讨论整合运动自称感染者救星却攻击感染者的矛盾行为"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        747,
+        772
+      ],
+      "description": "陈警司与阿米娅交接米莎，讨论近卫局对感染者的政策和米莎的安置问题"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        834,
+        852
+      ],
+      "description": "弑君者和塔露拉讨论进攻龙门的战略意义和塔露拉的个人动机"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        905,
+        920
+      ],
+      "description": "米莎请求陈警司保护贫民区孩子，陈警司承诺尽到职责"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        934,
+        938
+      ],
+      "description": "W出现并成功劫持米莎，展现整合运动的行动能力和对米莎的争夺"
+    }
+  ],
+  "locations": [
+    {
+      "location": "龙门",
+      "line_range": [
+        17,
+        22
+      ],
+      "description": "杜宾和阿米娅讨论龙门作为最近的移动城市，已向罗德岛发送合作框架协议，同意交换情报"
+    },
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        16,
+        17
+      ],
+      "description": "杜宾回顾在切城的行动，虽然遭受损失但获得整合运动情报并救出博士"
+    },
+    {
+      "location": "龙门5区外检疫口",
+      "line_range": [
+        33,
+        73
+      ],
+      "description": "罗德岛抵达龙门检疫口，遭遇感染者骚乱，陈警司处理现场并展现对感染者的严苛政策"
+    },
+    {
+      "location": "龙门贫民区",
+      "line_range": [
+        236,
+        279
+      ],
+      "description": "阿米娅在贫民区救助被暴民欺凌的儿童，发现米莎踪迹，展现贫民区的复杂形势"
+    },
+    {
+      "location": "龙门贫民区",
+      "line_range": [
+        424,
+        430
+      ],
+      "description": "能天使为罗德岛规划从贫民区中心向北移动再向南离开的路线，指出路上埋伏众多"
+    },
+    {
+      "location": "龙门贫民区楼顶",
+      "line_range": [
+        564,
+        578
+      ],
+      "description": "能天使引导罗德岛通过楼顶转移，讨论纵向移动的可行性"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        845,
+        850
+      ],
+      "description": "塔露拉指出龙门建筑物是龙门的象征，她回到这里不仅是为夺回感染者的一切，还要让某人付出代价"
+    }
+  ],
+  "chapter": "异卵同生",
+  "batch_count": 1,
+  "category": "main",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:34:53.553204+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 18138,
+    "tokens_out": 5884,
+    "elapsed_s": 43.19958305358887
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "博士",
+    "魏彦吾",
+    "米莎",
+    "碎骨",
+    "塔露拉"
+  ]
+}

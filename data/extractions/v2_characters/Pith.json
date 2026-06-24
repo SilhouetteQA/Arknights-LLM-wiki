@@ -1,0 +1,68 @@
+{
+  "summary": "罗德岛精英干员，资深术师，擅长在富源石环境中精确控制源石技艺。性格严谨负责，对后辈要求严格但关怀备至。在巴别塔时期便已加入，参与过天灾救援等行动。在离解复合事件中，与精英干员们一同应对源石敌人和Abyss的威胁。",
+  "personality": {
+    "traits": [
+      "严谨",
+      "负责",
+      "关怀后辈"
+    ],
+    "description": "Pith是一位严谨负责的术师，对后辈要求严格，但在关键时刻会挺身而出保护他们。"
+  },
+  "abilities": {
+    "description": "擅长在富源石环境中精确控制源石技艺，能够停滞暴雪、控制雪花冰晶。",
+    "power_level": "战场中坚",
+    "power_level_evidence": [
+      {
+        "chapter": "巴别塔",
+        "evidence": "在天灾环境下，精确控制雪花冰晶，停滞暴雪十分钟，为队伍争取撤退时间。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "离解复合",
+      "nodes": "罗德岛外勤队伍遭袭",
+      "event": "罗德岛多支外勤队伍遭到不明势力袭击，袭击者使用了阿戈尔武器。",
+      "role": "Pith与Mantra、Touch一同增援梓兰的队伍，并指出有内部泄密者。"
+    },
+    {
+      "chapter": "离解复合",
+      "nodes": "遭遇源石敌人与幻影",
+      "event": "Pith与Misery、阿斯卡纶遭遇源石构成的敌人，发现敌人死不透，并看到已故干员Outcast的幻影。",
+      "role": "Pith参与战斗，并确认通讯被屏蔽。"
+    },
+    {
+      "chapter": "离解复合",
+      "nodes": "精英干员集结",
+      "event": "罗德岛精英干员集结，准备向Abyss进发。",
+      "role": "Pith响应集结，确认就位。"
+    },
+    {
+      "chapter": "离解复合",
+      "nodes": "突入Abyss",
+      "event": "精英干员们突入Abyss，与PRTS核心生成的巨型源石造物交战。",
+      "role": "Pith参与战斗，并建议相信阿米娅和凯尔希能保护博士。"
+    },
+    {
+      "chapter": "巴别塔",
+      "nodes": "天灾救援行动",
+      "event": "巴别塔在天灾区域展开大规模救援，特蕾西娅安抚垂死感染者。",
+      "role": "Pith在天灾环境下精确控制源石技艺，停滞暴雪，为队伍争取时间，并指导后辈。"
+    }
+  ],
+  "first_appearance": "巴别塔",
+  "appearance_count": 2,
+  "_stats": {
+    "tokens_in": 9883,
+    "tokens_out": 635,
+    "elapsed_s": 6.109459161758423
+  },
+  "name_zh": "Pith",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "巴别塔",
+    "离解复合"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T06:57:48.872916+00:00"
+}

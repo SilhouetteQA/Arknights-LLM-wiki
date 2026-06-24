@@ -1,0 +1,421 @@
+{
+  "summary": "本章以新沃尔西尼为舞台，围绕红酒锦标赛展开多条剧情线。第一条线是红酒锦标赛上发生的谋杀案：来自莱塔尼亚的指挥家葆拉在担任评委时中毒身亡，本地酒商德米特里·贝洛内成为最大嫌疑人。第二条线是卡西米尔商人沙雷及其外甥女托希娅的商业扩张，托希娅在推销黄金平原酒业产品时与本地小女孩贝蒂产生交集，逐渐反思商业伦理。第三条线是维尔蒂酒庄的衰落与出售，庄主露彼娜在卡西米尔资本的挤压下被迫卖庄，老工人尼科洛和埃里奥试图破坏设备以阻止收购。第四条线是运输保障署的卡车司机们面临的困境，署长伊雷妮在卡西米尔商人的合同陷阱和家族势力的渗透之间艰难周旋。第五条线是黑绒幕乐团在葆拉去世后的挣扎，养女莉泽尔在悲痛中成长，发现凶手可能并非德米特里而是一个卡普里尼。最后，法庭审判揭示了谋杀案的真相——德米特里并非凶手，但埃里奥承认了破坏酒庄的行为。德米特里与沙雷达成合作意向，并与市长莱昂图索就新沃尔西尼的未来展开深刻对话，暗示家族势力将重新介入城市治理。",
+  "concepts": [
+    {
+      "concept": "公平竞争",
+      "line_range": [
+        58,
+        61
+      ],
+      "discussion_summary": "德米特里和沙雷讨论卡西米尔人对公平竞争的信心，沙雷认为新沃尔西尼是没有旧规则束缚的城市，适合公平竞争。",
+      "is_substantive": true
+    },
+    {
+      "concept": "新秩序/新生活",
+      "line_range": [
+        258,
+        260
+      ],
+      "discussion_summary": "沙雷向托希娅推销新沃尔西尼新生活的理念，认为复古怀旧是莱塔尼亚人的事，强调要拥抱新事物。",
+      "is_substantive": true
+    },
+    {
+      "concept": "传统酿酒工艺 vs 工业化生产",
+      "line_range": [
+        474,
+        481
+      ],
+      "discussion_summary": "尼科洛与露彼娜争论传统手工修剪葡萄藤与卡西米尔机器修剪的区别，强调传统工艺对葡萄品质和酒庄传承的重要性。",
+      "is_substantive": true
+    },
+    {
+      "concept": "家族的人情债",
+      "line_range": [
+        681,
+        689
+      ],
+      "discussion_summary": "伊雷妮警告鲁杰罗，家族的小恩小惠都是人情，总有一天要还，代价会比想象中大。",
+      "is_substantive": true
+    },
+    {
+      "concept": "卡西米尔的商业逻辑",
+      "line_range": [
+        1291,
+        1301
+      ],
+      "discussion_summary": "埃里奥在法庭上阐述卡西米尔商业逻辑：廉价倾销挤压本地企业，收购后遣散员工、荒废酒庄，最终垄断市场。",
+      "is_substantive": true
+    },
+    {
+      "concept": "家族的本质",
+      "line_range": [
+        1436,
+        1442
+      ],
+      "discussion_summary": "德米特里向莱昂图索解释家族最初是弱者的集合，为身边的人做力所能及的事，照拂家人是叙拉古的传统。",
+      "is_substantive": true
+    },
+    {
+      "concept": "铳与秩序",
+      "line_range": [
+        1456,
+        1457
+      ],
+      "discussion_summary": "德米特里提出莱昂图索的规则将成为新沃尔西尼家族行动的约束，他的方式将凝聚叙拉古人的力量与精神，成为城市全新的铳与秩序。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "贝洛内家族/萨卢佐酒业",
+      "line_range": [
+        186,
+        192
+      ],
+      "description": "德米特里作为贝洛内家族家主和萨卢佐酒业老板，在红酒锦标赛后被沙雷指控谋杀，莱昂图索安排他配合调查。"
+    },
+    {
+      "faction": "黄金平原酒业/卡西米尔商业联合会",
+      "line_range": [
+        247,
+        250
+      ],
+      "description": "沙雷向托希娅说明黄金平原酒业背后有商业联合会扶持，商业联合会锐意进取、拓张版图对商人来说是好事。"
+    },
+    {
+      "faction": "黑绒幕乐团",
+      "line_range": [
+        898,
+        940
+      ],
+      "description": "乐团成员在葆拉去世后讨论未来，定音鼓、长号、低音管等成员对叙拉古家族充满敌意，考虑离开新沃尔西尼。"
+    },
+    {
+      "faction": "新沃尔西尼市政厅",
+      "line_range": [
+        1170,
+        1199
+      ],
+      "description": "莱昂图索与拉维妮娅讨论市政厅面临的困境：外国资本挤压本地产业，物价上涨，就业岗位减少，公平公正的追求与市民生活产生矛盾。"
+    },
+    {
+      "faction": "莱塔尼亚势力",
+      "line_range": [
+        1420,
+        1423
+      ],
+      "description": "德米特里透露从莱塔尼亚境内有人被派来新沃尔西尼，专门处理流亡异见者葆拉·梅明格，永恒恩典不允许有人发出不同于赞歌的声音。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "新沃尔西尼",
+      "line_range": [
+        23,
+        26
+      ],
+      "description": "沙雷称赞新沃尔西尼是一座讲秩序、讲规则的城市，红酒需要时间，而时间只有在稳定的环境里才有意义。"
+    },
+    {
+      "location": "新沃尔西尼",
+      "line_range": [
+        1183,
+        1185
+      ],
+      "description": "拉维妮娅指出新沃尔西尼成了毫不设防的叙拉古门户，大敞着邀请各种目的的外人进来。"
+    },
+    {
+      "location": "维尔蒂酒庄",
+      "line_range": [
+        556,
+        593
+      ],
+      "description": "卡西米尔会计评估酒庄资产，认为传统机器与生产流水线不匹配、效率低下，橡木桶会产生不可控杂质，只重视地皮价值。"
+    }
+  ],
+  "events": [
+    {
+      "event": "红酒锦标赛上葆拉中毒身亡",
+      "type": "assassination",
+      "line_range": [
+        156,
+        165
+      ],
+      "participants": [
+        "葆拉",
+        "沙雷",
+        "德米特里",
+        "莱昂图索"
+      ],
+      "location": "红酒锦标赛会场",
+      "significance": "引发全章核心冲突，德米特里成为嫌疑人，新沃尔西尼的秩序面临考验",
+      "is_imaginary": false
+    },
+    {
+      "event": "托希娅与贝蒂相遇并教她销售",
+      "type": "character_development",
+      "line_range": [
+        222,
+        415
+      ],
+      "participants": [
+        "托希娅",
+        "小贝蒂"
+      ],
+      "location": "新沃尔西尼街头",
+      "significance": "展现托希娅从功利销售到反思商业伦理的转变，贝蒂坚持真诚待人的价值观",
+      "is_imaginary": false
+    },
+    {
+      "event": "维尔蒂酒庄被黄金平原收购",
+      "type": "takeover",
+      "line_range": [
+        459,
+        463
+      ],
+      "participants": [
+        "露彼娜",
+        "埃里奥"
+      ],
+      "location": "维尔蒂酒庄",
+      "significance": "展示卡西米尔资本对本地传统产业的挤压和收购过程",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡车司机吉安发生车祸",
+      "type": "disaster",
+      "line_range": [
+        767,
+        775
+      ],
+      "participants": [
+        "山姆",
+        "吉安",
+        "托马索"
+      ],
+      "location": "新沃尔西尼街头",
+      "significance": "成为卡西米尔商会向运输保障署施压的借口，加剧司机们的困境",
+      "is_imaginary": false
+    },
+    {
+      "event": "定音鼓和低音管在酒店冲突中被拘留",
+      "type": "confrontation",
+      "line_range": [
+        983,
+        1032
+      ],
+      "participants": [
+        "莉泽尔",
+        "定音鼓",
+        "低音管",
+        "哥伦比亚商人",
+        "贝洛内家族成员"
+      ],
+      "location": "阿尔多金厅大酒店",
+      "significance": "莉泽尔展现领导力，用免费演出换取谅解，乐团获得新机会",
+      "is_imaginary": false
+    },
+    {
+      "event": "法庭审判德米特里谋杀案",
+      "type": "revelation",
+      "line_range": [
+        1220,
+        1314
+      ],
+      "participants": [
+        "拉维妮娅",
+        "德米特里",
+        "托马索",
+        "莉泽尔",
+        "埃里奥"
+      ],
+      "location": "新沃尔西尼刑事法庭",
+      "significance": "揭示谋杀案真相，德米特里无罪，埃里奥承认破坏酒庄，德米特里愿代其受罚",
+      "is_imaginary": false
+    },
+    {
+      "event": "德米特里与沙雷达成合作意向",
+      "type": "alliance",
+      "line_range": [
+        1347,
+        1384
+      ],
+      "participants": [
+        "德米特里",
+        "沙雷"
+      ],
+      "location": "未指明",
+      "significance": "德米特里接受卡西米尔资本合作，展现其商业野心和政治算计",
+      "is_imaginary": false
+    },
+    {
+      "event": "德米特里与莱昂图索就新沃尔西尼未来对话",
+      "type": "ideological_clash",
+      "line_range": [
+        1386,
+        1457
+      ],
+      "participants": [
+        "德米特里",
+        "莱昂图索"
+      ],
+      "location": "德米特里的私人酒吧",
+      "significance": "揭示德米特里已见过西西里夫人，提出铳与秩序的新理念，莱昂图索面临是否签署修正案的抉择",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "贝洛内",
+      "type": "operator",
+      "role_in_chapter": "萨卢佐酒业老板，贝洛内家族家主，红酒锦标赛冠军，被指控谋杀但最终无罪，与沙雷达成合作，与莱昂图索讨论新沃尔西尼未来",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "贝洛内",
+      "type": "operator",
+      "role_in_chapter": "新沃尔西尼市长，试图建立无家族的城市秩序，在外国资本挤压下面临抉择，最终考虑签署修正案引入家族力量",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "沙雷",
+      "type": "npc",
+      "role_in_chapter": "黄金平原酒业老板，卡西米尔商人，红酒锦标赛主办者，指控德米特里谋杀，后寻求合作",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "托希娅",
+      "type": "npc",
+      "role_in_chapter": "沙雷的外甥女，黄金平原酒业销售代表，从功利销售到反思商业伦理，与贝蒂建立联系",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "小贝蒂",
+      "type": "npc",
+      "role_in_chapter": "维尔蒂酒庄老工人尼科洛的孙女，十岁，坚持真诚待人的销售方式，与托希娅成为朋友",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "露彼娜·维尔蒂",
+      "type": "npc",
+      "role_in_chapter": "维尔蒂酒庄继承人，因经营不善被迫将酒庄卖给黄金平原，关心工人安置，有音乐梦想",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "尼科洛",
+      "type": "npc",
+      "role_in_chapter": "维尔蒂酒庄老工人，反对出售酒庄，破坏设备试图阻止收购，孙女是贝蒂",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "埃里奥·法布里",
+      "type": "npc",
+      "role_in_chapter": "萨卢佐酒业采购员，破坏维尔蒂酒庄给排水设施，在法庭上承认罪行并阐述卡西米尔商业逻辑，德米特里愿代其受罚",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伊雷妮",
+      "type": "npc",
+      "role_in_chapter": "运输保障署署长，卡车互助会负责人，与卡西米尔商会谈判合同条款，努力保护司机们免受家族和资本的双重挤压",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "葆拉·梅明格",
+      "type": "npc",
+      "role_in_chapter": "莱塔尼亚音乐家，黑绒幕乐团指挥，红酒锦标赛评委，被毒杀身亡，实为莱塔尼亚流亡异见者",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莉泽尔·梅明格",
+      "type": "npc",
+      "role_in_chapter": "葆拉的养女，黑绒幕乐团负责人，在母亲死后成长，发现凶手是卡普里尼而非鲁珀，带领乐团走出困境",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "拉维妮娅",
+      "type": "npc",
+      "role_in_chapter": "新沃尔西尼法官，主持德米特里谋杀案审判，与莱昂图索讨论修正案，曾在贝洛内家生活十余年",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "托马索·埃斯波斯托",
+      "type": "npc",
+      "role_in_chapter": "萨卢佐酒业经理，负责货运协调，在法庭上作证说明送酒过程",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "山",
+      "type": "operator",
+      "role_in_chapter": "运输保障署卡车司机，受托马索委托送酒，目睹吉安车祸，后被卡西米尔商会追责",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "吉安",
+      "type": "npc",
+      "role_in_chapter": "运输保障署卡车司机，因疲劳驾驶发生车祸受伤，为黄金平原送货",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "鲁杰罗",
+      "type": "npc",
+      "role_in_chapter": "运输保障署卡车司机，与家族有私下往来，被伊雷妮警告",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "定音鼓",
+      "type": "npc",
+      "role_in_chapter": "黑绒幕乐团打击乐乐手，因与哥伦比亚商人冲突被拘留，后被莉泽尔解救",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "低音管",
+      "type": "npc",
+      "role_in_chapter": "黑绒幕乐团乐手，与定音鼓一同被拘留",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "甘比诺",
+      "type": "npc",
+      "role_in_chapter": "红酒锦标赛安保人员，前家族成员，与卡彭讨论新沃尔西尼的变化",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "卡彭",
+      "type": "npc",
+      "role_in_chapter": "红酒锦标赛安保人员，前家族成员，与甘比诺搭档巡逻",
+      "first_appearance_chapter": true
+    }
+  ],
+  "chapter": "十字路口",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-18T05:25:02.623726+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 36767,
+    "tokens_out": 3817,
+    "elapsed_s": 34.33852243423462
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "沙雷",
+    "托希娅",
+    "小贝蒂",
+    "露彼娜·维尔蒂",
+    "尼科洛",
+    "埃里奥·法布里",
+    "伊雷妮",
+    "葆拉·梅明格",
+    "莉泽尔·梅明格",
+    "拉维妮娅",
+    "托马索·埃斯波斯托",
+    "吉安",
+    "鲁杰罗",
+    "定音鼓",
+    "低音管",
+    "甘比诺",
+    "卡彭"
+  ]
+}

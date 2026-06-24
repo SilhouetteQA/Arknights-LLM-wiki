@@ -1,0 +1,57 @@
+{
+  "summary": "整合运动的一名普通战士，在塔露拉回归后随组织前往维多利亚。在切尔诺伯格撤退战中随凯文行动，后参与整合运动在卡拉顿的重建工作。性格谨慎多疑，对非感染者缺乏信任，但在Guard的引导下开始反思组织的理念转变。",
+  "personality": {
+    "traits": [
+      "谨慎",
+      "多疑",
+      "务实"
+    ],
+    "description": "对非感染者抱有天然的不信任，但愿意在讨论中接受新观点，表现出务实的一面。"
+  },
+  "abilities": {
+    "description": "作为整合运动普通战士，具备基本的战斗和生存能力，但无特殊技能。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "ARKnoNIGHTS",
+        "evidence": "在罗德岛攻击下随凯文撤退，未展现独立战斗能力。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "破碎日冕",
+      "nodes": "整合运动营地",
+      "event": "塔露拉回归并决定前往维多利亚",
+      "role": "作为营地成员，见证塔露拉与九的对话。"
+    },
+    {
+      "chapter": "ARKnoNIGHTS",
+      "nodes": "切尔诺伯格撤退",
+      "event": "整合运动在罗德岛攻击下撤退，凯文与博士建立信任",
+      "role": "作为撤退队伍成员，向凯文报告罗德岛进攻情况。"
+    },
+    {
+      "chapter": "阴云火花",
+      "nodes": "整合运动基地",
+      "event": "讨论信任问题和新制服的意义",
+      "role": "作为基地成员，表达对非感染者工程师的不信任，并与Guard讨论组织理念。"
+    }
+  ],
+  "first_appearance": "破碎日冕",
+  "appearance_count": 3,
+  "_stats": {
+    "tokens_in": 3479,
+    "tokens_out": 419,
+    "elapsed_s": 5.131432056427002
+  },
+  "name_zh": "整合运动战士",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "ARKnoNIGHTS",
+    "破碎日冕",
+    "阴云火花"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T06:42:12.608491+00:00"
+}

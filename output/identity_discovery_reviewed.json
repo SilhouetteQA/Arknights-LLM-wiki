@@ -1,0 +1,23 @@
+{
+  "confirmed": {
+    "Logos": {"operator_name": "逻各斯", "relation": "real_name", "reason": "Logos是逻各斯的英文代号"},
+    "烛骑士": {"operator_name": "薇薇安娜", "relation": "title", "reason": "烛骑士是薇薇安娜在长夜临光中的称号"},
+    "主播U": {"operator_name": "U-Official", "relation": "alias", "reason": "主播U是U-Official的别名"},
+    "Frost": {"operator_name": "霜华", "relation": "alias", "reason": "Frost是霜华的英文代号"},
+    "Thermal-EX": {"operator_name": "THRM-EX", "relation": "variant", "reason": "大小写变体"},
+    "朔": {"operator_name": "重岳", "relation": "real_name", "reason": "重岳的真名是朔（岁兽十二碎片之一）"},
+    "Raidian": {"operator_name": "电弧", "relation": "real_name", "reason": "Raidian是电弧的英文代号"}
+  },
+  "rejected": {
+    "博士": "已是干员名，无需映射",
+    "白垩": "不是干员，是尘影余音NPC",
+    "大帝": "不是干员，是企鹅物流老板NPC",
+    "灰礼帽": "不是干员，是NPC组织",
+    "血骑士": "不是瑕光，血骑士(Degenbrecher)是独立角色",
+    "剧团长": "不是傀影，剧团长是酒神的独立角色",
+    "皇帝的利刃": "不是霜华，皇帝的利刃是乌萨斯精英卫队(Emperor's Blade)",
+    "恩希亚": "不是银灰，银灰真名是恩希欧迪斯。恩希亚是崖心的真名",
+    "叶莲娜": "不是霜叶，叶莲娜是霜星(FrostNova)的真名，不是干员",
+    "后": "不是年，后是独立的岁兽碎片"
+  }
+}

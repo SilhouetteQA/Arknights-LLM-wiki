@@ -1,0 +1,60 @@
+{
+  "summary": "若叶睦是Ave Mujica的吉他手，沉默寡言但内心温柔。在梦境中，她面对多重人格的隐喻，最终选择告别虚假的幸福，回归现实。她重视祥子，努力通过种植蔬果表达感谢，但承受着来自家庭和社会的巨大压力。",
+  "personality": {
+    "traits": [
+      "沉默寡言",
+      "内心温柔",
+      "不善表达",
+      "自我压抑"
+    ],
+    "description": "若叶睦表面沉默寡言，内心却温柔细腻，渴望被理解，但常因外界期待而自我压抑。"
+  },
+  "abilities": {
+    "description": "没有战斗经验，主要能力体现在吉他演奏和园艺照料上。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "无忧梦呓",
+        "evidence": "没有直接战斗描写，仅作为乐队成员参与演出，无战斗表现。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "无忧梦呓",
+      "nodes": "IS-IF线",
+      "event": "祥子进入若叶睦的梦境，发现她与众多「睦」的化身生活在一起，揭示睦对家庭温暖的渴望和多重人格的隐喻。",
+      "role": "梦境中的核心人物，展现内心挣扎与自我认知。"
+    },
+    {
+      "chapter": "无忧梦呓",
+      "nodes": "IS-IF线",
+      "event": "祥子成功唤醒所有成员，并与爱丽丝联手制服莫菲丝，Ave Mujica成员集体觉醒。",
+      "role": "被唤醒的成员之一，在梦境中抱紧吉他，表达对祥子的思念。"
+    },
+    {
+      "chapter": "无忧梦呓",
+      "nodes": "IS-IF线",
+      "event": "Ave Mujica在梦城堡举办告别演出，为本章画上句号。",
+      "role": "作为吉他手参与演出，确认乐器顺手，与乐队共同表演。"
+    }
+  ],
+  "first_appearance": "无忧梦呓",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 6374,
+    "tokens_out": 474,
+    "elapsed_s": 4.813032865524292
+  },
+  "name_zh": "若叶睦",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "无忧梦呓"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:38:37.606786+00:00",
+  "race": "未知",
+  "affiliations": [
+    "Ave Mujica"
+  ]
+}

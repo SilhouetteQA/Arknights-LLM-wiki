@@ -1,0 +1,50 @@
+{
+  "summary": "U-Official，通称主播U，是一位来自罗德岛的札拉克族网络主播。她以策划直播事故、公开批评城市而闻名，性格叛逆且充满表现欲。在经历事业巅峰、粉丝开发AI分身等事件后，她选择通过身体改造以U-G-Official身份重新开播，展现了其与粉丝关系的扭曲与自我身份的迷失。",
+  "personality": {
+    "traits": [
+      "叛逆",
+      "自大",
+      "焦虑",
+      "职业精神"
+    ],
+    "description": "主播U性格叛逆，敢于公开批评城市，同时自大且焦虑，频繁更换直播主题以迎合观众，但对待工作有职业精神，如坚持完成吃播挑战。"
+  },
+  "abilities": {
+    "description": "主播U没有战斗能力，主要技能是直播策划与主持，擅长制造话题和吸引观众。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "主播U：全能系美少女",
+        "evidence": "主播U在剧情中没有参与任何战斗，其身体能力被描述为「物理强度普通」「战场机动缺陷」，无法评估战力。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "主播U：全能系美少女",
+      "nodes": "事件1-6",
+      "event": "主播U策划直播事故批评城市、尝试诵经直播失败、频繁更换直播主题、通过直播还清贷款并签约平台、设机关误伤榜一粉丝、发现AI分身并决定身体改造。",
+      "role": "作为主角，展现了其直播生涯的起伏与身份异化。"
+    }
+  ],
+  "first_appearance": "主播U：全能系美少女",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 7427,
+    "tokens_out": 395,
+    "elapsed_s": 4.995730400085449
+  },
+  "name_zh": "U-Official",
+  "aliases": [
+    "主播U"
+  ],
+  "source_pass1_chapters": [
+    "主播U：全能系美少女"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:31:03.085642+00:00",
+  "race": "札拉克",
+  "affiliations": [
+    "罗德岛"
+  ]
+}

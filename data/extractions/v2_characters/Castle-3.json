@@ -1,0 +1,69 @@
+{
+  "summary": "Castle-3是罗德岛上一台由可露希尔客制化的雷神存在者™Plus六轮作业平台，性格方方正正、坚定可靠，但因其性格正常而未能获得过多关注。在离解复合章节中，它被Friston-3通过核心代码覆写恢复正常，并短暂分享了Friston-3的梦境。在ARKnoNIGHTS章节中，它作为PRTS方案B的一部分，参与夺还博士的行动。在好久不见章节中，它与其他小车一起照顾宠物比丢，起初因严格遵循书本规则导致比丢应激，后在洛洛的指导下学会灵活变通，展现了其程序化但能学习成长的特点。",
+  "personality": {
+    "traits": [
+      "坚定可靠",
+      "程序化",
+      "善于学习"
+    ],
+    "description": "Castle-3性格方方正正，给人坚定可靠的感觉，但因其性格正常而未能获得过多关注。它严格遵循程序指令，但在经历中能学习并调整行为方式。"
+  },
+  "abilities": {
+    "description": "作为六轮作业平台，具备基础移动、环境扫描和数据分析能力，能执行工程类任务和照顾宠物。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "离解复合",
+        "evidence": "被Friston-3通过核心代码覆写恢复正常，未展现独立战斗能力。"
+      },
+      {
+        "chapter": "ARKnoNIGHTS",
+        "evidence": "作为PRTS方案B的一部分，参与夺还博士的行动，但未直接参与战斗。"
+      },
+      {
+        "chapter": "好久不见",
+        "evidence": "照顾宠物比丢时，展现环境扫描和数据分析能力，但无战斗表现。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "离解复合",
+      "nodes": "Friston-3的梦境",
+      "event": "Friston-3通过连接小车们的核心代码，使其恢复正常，并分享了自己的悲伤梦境。",
+      "role": "被Friston-3覆写代码恢复正常，短暂参与其梦境。"
+    },
+    {
+      "chapter": "ARKnoNIGHTS",
+      "nodes": "方案B",
+      "event": "罗德岛PRTS系统启动方案B，派出机器人部队夺还博士并计划利用天灾消灭整合运动。",
+      "role": "作为机器人部队一员，参与夺还博士的行动。"
+    },
+    {
+      "chapter": "好久不见",
+      "nodes": "照顾比丢",
+      "event": "罗德岛机器人照顾宠物比丢，因过于死板导致比丢应激，后以灵活方式解决问题。",
+      "role": "与其他小车一起照顾比丢，起初严格遵循书本规则，后学会灵活变通。"
+    }
+  ],
+  "first_appearance": "离解复合",
+  "appearance_count": 3,
+  "_stats": {
+    "tokens_in": 9597,
+    "tokens_out": 647,
+    "elapsed_s": 7.036520004272461
+  },
+  "name_zh": "Castle-3",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "ARKnoNIGHTS",
+    "好久不见",
+    "离解复合"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T06:43:31.011648+00:00",
+  "race": "",
+  "affiliations": [
+    "罗德岛"
+  ]
+}

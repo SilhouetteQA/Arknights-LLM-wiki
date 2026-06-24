@@ -1,0 +1,1384 @@
+{
+  "chapter": "风暴瞭望",
+  "category": "main",
+  "batch_count": 2,
+  "summary": "本章「风暴瞭望」讲述了维多利亚小丘郡在鬼魂部队（深池）袭击前夕的紧张局势。风暴突击队队长号角与队员风笛从伦蒂尼姆前来调查源石制品失窃案，却遭遇当地驻军指挥官汉密尔顿上校的阻挠与敌视。驻军以强硬手段镇压塔拉裔居民，而号角小队在调查中逐渐发现，失窃的武器被秘密送往驻军自己的炮兵营进行改造，暗示驻军内部存在更深的阴谋。与此同时，罗德岛精英干员Outcast抵达小丘郡，与当地办事处会合，她敏锐地察觉到塔拉文化复兴运动背后被人利用的危险信号。\n\n在另一条剧情线上，深池组织以领袖为首，在蔓德拉和阿赫茉妮的辅佐下，利用塔拉人的不满情绪发动袭击。他们通过贵族波顿男爵的集会渗透小丘郡，并在驻军围剿时反戈一击，迅速占领多个街区。深池领袖在处决叛徒西尔莎时表现出犹豫，暴露出其作为傀儡的本质。蔓德拉急于立功，而阿赫茉妮则暗中操控全局，计划在领袖抵达前彻底控制小丘郡。\n\n仪仗兵简妮在冲突中陷入道德困境。她试图帮助塔拉人，却因传递情报间接导致好友西尔莎被深池处决。在Outcast的开导下，简妮重新振作，决定以送药的方式继续帮助他人。风笛在调查中从被驻军抓捕的凯利上尉处获得关键证据，证明汉密尔顿上校正在制造非法源石武器。三角铁侦察小组在炮兵营发现真相后全员牺牲，号角也被驻军制服。最终，风笛在炸薯条店老板麦克马丁的帮助下，试图将情报送出城，但城外响起了炮击声，预示着一场更大的灾难即将降临。\n\n本段剧情紧接驻军使用脏弹轰炸城区之后，分为三条主线。第一条线：Outcast带领罗德岛办事处干员和简妮在废墟中展开救援，她独自前往交战区救下一名重伤的深池领袖（红龙），并识破其傀儡身份。深池高层六名核心干部（「雄辩家」「会计」「囚犯」「纵火家」「毒药学者」「强盗」）为找回领袖展开搜捕，最终与Outcast在巷口对峙。Outcast为掩护同伴撤离，独自留下迎战六人，以生命为代价释放了惊天动地的源石技艺，制造出「破晓」般的火光。第二条线：号角与汉密尔顿上校就脏弹事件爆发激烈争论后获释，率风暴突击队残部强攻通讯基站，与蔓德拉激战。风笛在寻找信使麦克马丁时发现其遗体，随后与号角会合，在战斗中利用蔓德拉源石技艺的间隙期将其击倒。蔓德拉在即将落败时因阿赫茉妮抢先广播而暴走，号角为掩护风笛突围，命令她使用破城矛弹射功能逃离。第三条线：罗德岛本舰在前往维多利亚途中遭遇整合运动精心策划的突袭。前干员Guard与九里应外合，瘫痪了可露希尔的系统，成功劫走囚禁中的塔露拉。阿米娅试图阻拦但被九的法术困住，凯尔希的Mon3tr虽及时赶到，塔露拉却主动选择跟随整合运动离开。塔露拉被带往乌萨斯旧据点，表示要寻找一个「自诩不死的恶神」并反抗他。此外，风笛与陈在维多利亚乡间寻找线索，推进之王与博士在罗德岛甲板上谈论回归伦蒂尼姆的决心，摄政王与赦罪师在伦蒂尼姆讨论深池使者和罗德岛的动向。",
+  "events": [
+    {
+      "event": "风暴突击队在仓库搜查时发现嫌疑人达米安，但被驻军凯利上尉以管辖权为由带走",
+      "type": "confrontation",
+      "line_range": [
+        1,
+        126
+      ],
+      "participants": [
+        "号角",
+        "风笛",
+        "凯利上尉",
+        "副官希尔",
+        "慌张的青年"
+      ],
+      "location": "小丘郡仓库",
+      "significance": "揭示驻军与伦蒂尼姆调查队之间的对立，以及塔拉裔居民遭受的压迫",
+      "is_imaginary": false
+    },
+    {
+      "event": "Outcast抵达小丘郡罗德岛办事处，与当地干员和简妮会面",
+      "type": "reunion",
+      "line_range": [
+        309,
+        457
+      ],
+      "participants": [
+        "Outcast",
+        "简妮",
+        "干员奥利弗",
+        "干员碎纸机",
+        "干员威尔"
+      ],
+      "location": "罗德岛小丘郡办事处",
+      "significance": "引入罗德岛视角，展示Outcast的观察力与亲和力",
+      "is_imaginary": false
+    },
+    {
+      "event": "风笛在塔拉人社区调查达米安背景，目睹居民对驻军的仇恨和凯利上尉的内心挣扎",
+      "type": "investigation",
+      "line_range": [
+        458,
+        558
+      ],
+      "participants": [
+        "风笛",
+        "凯利上尉",
+        "悲伤的女性",
+        "愤怒的男性",
+        "克雷格"
+      ],
+      "location": "小丘郡十七区",
+      "significance": "揭示塔拉人与维多利亚驻军之间的深刻矛盾，以及凯利上尉作为中间人的痛苦",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角与汉密尔顿上校正面交锋，上校将塔拉人视为整体敌人，拒绝合作",
+      "type": "confrontation",
+      "line_range": [
+        640,
+        709
+      ],
+      "participants": [
+        "号角",
+        "汉密尔顿上校"
+      ],
+      "location": "驻军指挥部",
+      "significance": "明确汉密尔顿上校的极端立场，为后续冲突埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "简妮从好友西尔莎处获得深池集会地址，转交给风笛",
+      "type": "revelation",
+      "line_range": [
+        741,
+        784
+      ],
+      "participants": [
+        "简妮",
+        "西尔莎",
+        "风笛"
+      ],
+      "location": "小丘郡街道",
+      "significance": "西尔莎的告密行为导致后续悲剧，推动剧情转折",
+      "is_imaginary": false
+    },
+    {
+      "event": "Outcast分析塔拉语言复兴现象，指出有人利用语言纽带煽动分裂",
+      "type": "investigation",
+      "line_range": [
+        786,
+        823
+      ],
+      "participants": [
+        "Outcast",
+        "干员碎纸机"
+      ],
+      "location": "罗德岛办事处",
+      "significance": "揭示深池利用文化复兴煽动塔拉人的策略",
+      "is_imaginary": false
+    },
+    {
+      "event": "深池领袖、蔓德拉和阿赫茉妮在波顿男爵府邸策划袭击，蔓德拉与阿赫茉妮发生争执",
+      "type": "planning",
+      "line_range": [
+        876,
+        925
+      ],
+      "participants": [
+        "蔓德拉",
+        "阿赫茉妮",
+        "野心勃勃的男爵"
+      ],
+      "location": "波顿男爵府邸",
+      "significance": "展示深池内部权力斗争和领袖的傀儡地位",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角和风笛潜入塔拉贵族集会，与诗人威廉姆斯交谈，探讨塔拉文化复兴",
+      "type": "investigation",
+      "line_range": [
+        926,
+        1006
+      ],
+      "participants": [
+        "号角",
+        "风笛",
+        "诗人威廉姆斯"
+      ],
+      "location": "波顿男爵府邸宴会厅",
+      "significance": "通过诗人威廉姆斯之口，展现塔拉文化复兴运动的温和派立场",
+      "is_imaginary": false
+    },
+    {
+      "event": "汉密尔顿上校率军包围集会，逮捕所有参与者，简妮试图阻止士兵虐待塔拉居民",
+      "type": "siege",
+      "line_range": [
+        1007,
+        1024
+      ],
+      "participants": [
+        "汉密尔顿上校",
+        "号角",
+        "风笛",
+        "简妮",
+        "诗人威廉姆斯"
+      ],
+      "location": "波顿男爵府邸及周边街区",
+      "significance": "驻军与塔拉人的冲突全面升级，简妮开始质疑自己的立场",
+      "is_imaginary": false
+    },
+    {
+      "event": "深池发动全面袭击，领袖用火焰术师能力炸毁宴会厅，诗人威廉姆斯牺牲",
+      "type": "battle",
+      "line_range": [
+        1160,
+        1187
+      ],
+      "participants": [
+        "号角",
+        "风笛",
+        "汉密尔顿上校",
+        "诗人威廉姆斯",
+        "深池士兵",
+        "领袖"
+      ],
+      "location": "波顿男爵府邸",
+      "significance": "深池正式登场，诗人威廉姆斯之死象征温和派希望的破灭",
+      "is_imaginary": false
+    },
+    {
+      "event": "三角铁侦察小组发现失窃源石制品被送往驻军炮兵营，并遭到改造",
+      "type": "revelation",
+      "line_range": [
+        1282,
+        1354
+      ],
+      "participants": [
+        "号角",
+        "三角铁"
+      ],
+      "location": "小丘郡郊区农用地块",
+      "significance": "揭示驻军内部有人利用失窃武器制造源石炸弹的阴谋",
+      "is_imaginary": false
+    },
+    {
+      "event": "深池领袖在蔓德拉逼迫下处决叛徒西尔莎，表现出内心的挣扎",
+      "type": "execution",
+      "line_range": [
+        1335,
+        1448
+      ],
+      "participants": [
+        "领袖",
+        "西尔莎",
+        "蔓德拉",
+        "阿赫茉妮"
+      ],
+      "location": "小丘郡广场",
+      "significance": "展示深池领袖的傀儡本质和蔓德拉的冷酷，西尔莎之死成为简妮转变的催化剂",
+      "is_imaginary": false
+    },
+    {
+      "event": "简妮被塔拉人驱逐，在Outcast开导下重新振作，决定继续帮助他人",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1449,
+        1587
+      ],
+      "participants": [
+        "简妮",
+        "Outcast",
+        "克雷格",
+        "悲伤的女性"
+      ],
+      "location": "小丘郡塔拉人社区",
+      "significance": "简妮经历信仰崩塌后重建自我，Outcast分享往事加深主题",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角被驻军制服，风笛从凯利上尉处获得驻军制造非法武器的证据",
+      "type": "revelation",
+      "line_range": [
+        1616,
+        1741
+      ],
+      "participants": [
+        "号角",
+        "副官希尔",
+        "风笛",
+        "信使麦克马丁"
+      ],
+      "location": "驻军军营及炸薯条店联络站",
+      "significance": "揭露汉密尔顿上校的最终计划，风笛试图将情报送出城",
+      "is_imaginary": false
+    },
+    {
+      "event": "Outcast识破驻军使用活性源石脏弹轰炸城区的真相，并带领罗德岛干员和简妮展开救援行动",
+      "type": "revelation",
+      "line_range": [
+        1742,
+        1821
+      ],
+      "participants": [
+        "Outcast",
+        "简妮",
+        "干员奥利弗",
+        "干员碎纸机",
+        "干员弗雷德",
+        "干员威尔"
+      ],
+      "location": "小丘郡罗德岛办事处",
+      "significance": "揭露驻军使用脏弹的真相，确立Outcast的救援行动主线",
+      "is_imaginary": false
+    },
+    {
+      "event": "风笛在废墟中发现信使麦克马丁的遗体，并遭遇濒死的深池士兵",
+      "type": "discovery",
+      "line_range": [
+        1822,
+        1865
+      ],
+      "participants": [
+        "风笛",
+        "麦克马丁",
+        "深池士兵"
+      ],
+      "location": "小丘郡城区废墟",
+      "significance": "风笛失去重要情报传递者，决定与号角会合夺取通讯基站",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角与汉密尔顿上校就脏弹事件爆发激烈争论，号角指责上校将维多利亚拖入内战边缘",
+      "type": "confrontation",
+      "line_range": [
+        1866,
+        1921
+      ],
+      "participants": [
+        "号角",
+        "汉密尔顿上校"
+      ],
+      "location": "驻军指挥部",
+      "significance": "揭示汉密尔顿上校的极端立场和伦蒂尼姆的沉默，号角决定将其送上军事法庭",
+      "is_imaginary": false
+    },
+    {
+      "event": "简妮在救援行动中与Outcast深入对话，反思维多利亚的阶级不平等和自身身份认同",
+      "type": "character_development",
+      "line_range": [
+        1926,
+        1982
+      ],
+      "participants": [
+        "简妮",
+        "Outcast"
+      ],
+      "location": "小丘郡城区",
+      "significance": "简妮完成从仪仗兵到独立个体的思想转变，决定继续帮助他人",
+      "is_imaginary": false
+    },
+    {
+      "event": "Outcast决定独自前往交战区救援重伤的深池领袖，罗德岛干员表示担忧但最终支持",
+      "type": "rescue",
+      "line_range": [
+        1983,
+        2042
+      ],
+      "participants": [
+        "Outcast",
+        "干员弗雷德",
+        "干员奥利弗",
+        "干员碎纸机",
+        "简妮"
+      ],
+      "location": "小丘郡城区",
+      "significance": "Outcast以个人名义承担风险，为后续牺牲埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "Outcast救治重伤的深池领袖（红龙），识破其傀儡身份，并推测背后有更强大的操控者",
+      "type": "revelation",
+      "line_range": [
+        2043,
+        2101
+      ],
+      "participants": [
+        "Outcast",
+        "重症感染者"
+      ],
+      "location": "小丘郡某建筑内",
+      "significance": "揭示深池领袖的真实身份和处境，为后续剧情提供关键情报",
+      "is_imaginary": false
+    },
+    {
+      "event": "深池六名核心干部（「雄辩家」「会计」「囚犯」「纵火家」「毒药学者」「强盗」）商议寻找失踪的领袖，并讨论蔓德拉和阿赫茉妮的动向",
+      "type": "planning",
+      "line_range": [
+        2102,
+        2166
+      ],
+      "participants": [
+        "「强盗」",
+        "「纵火家」",
+        "「毒药学者」",
+        "「会计」",
+        "「雄辩家」"
+      ],
+      "location": "小丘郡深池据点",
+      "significance": "展现深池内部权力结构和各干部的性格特点",
+      "is_imaginary": false
+    },
+    {
+      "event": "简妮在临时医疗点挺身而出，阻止深池士兵罗南欺凌塔拉居民，并揭露其出卖西尔莎的罪行",
+      "type": "confrontation",
+      "line_range": [
+        2167,
+        2279
+      ],
+      "participants": [
+        "简妮",
+        "深池士兵罗南",
+        "悲伤的女性",
+        "克雷格",
+        "志愿者青年",
+        "悲愤的青年"
+      ],
+      "location": "小丘郡塔拉居民临时医疗点",
+      "significance": "简妮获得塔拉居民的信任，完成从被排斥到被接纳的转变",
+      "is_imaginary": false
+    },
+    {
+      "event": "风笛在寻找号角途中遭遇深池士兵，与Outcast相遇并协助转移重伤的深池领袖",
+      "type": "rescue",
+      "line_range": [
+        2280,
+        2402
+      ],
+      "participants": [
+        "风笛",
+        "Outcast",
+        "重症感染者",
+        "深池士兵"
+      ],
+      "location": "小丘郡巷口",
+      "significance": "风笛与Outcast联手，为后续Outcast独自断后创造条件",
+      "is_imaginary": false
+    },
+    {
+      "event": "Outcast独自留下迎战深池六名核心干部，以生命为代价释放惊天源石技艺，制造出「破晓」般的火光",
+      "type": "sacrifice",
+      "line_range": [
+        2403,
+        2473
+      ],
+      "participants": [
+        "Outcast",
+        "风笛",
+        "简妮",
+        "干员碎纸机",
+        "「雄辩家」",
+        "「会计」",
+        "「囚犯」",
+        "「纵火家」",
+        "「毒药学者」",
+        "「强盗」"
+      ],
+      "location": "小丘郡巷口",
+      "significance": "Outcast牺牲，其源石技艺照亮夜空，成为本章最震撼的剧情高潮",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿赫茉妮与深池幕后领袖（「？？？」）对话，讨论小丘郡局势和拉芙希妮（深池领袖）失踪事件",
+      "type": "revelation",
+      "line_range": [
+        2474,
+        2528
+      ],
+      "participants": [
+        "阿赫茉妮",
+        "？？？"
+      ],
+      "location": "小丘郡深池据点",
+      "significance": "揭示深池的真正操控者另有其人，阿赫茉妮的哲学动机和深池的战略目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "汉密尔顿上校在驻军溃败后拒绝撤退，选择独自留下面对敌人",
+      "type": "confrontation",
+      "line_range": [
+        2529,
+        2547
+      ],
+      "participants": [
+        "汉密尔顿上校",
+        "维多利亚士兵"
+      ],
+      "location": "驻军指挥部",
+      "significance": "展现汉密尔顿上校的固执与军人尊严",
+      "is_imaginary": false
+    },
+    {
+      "event": "号角率风暴突击队强攻通讯基站，与蔓德拉激战，利用其源石技艺的间隙期将其击倒",
+      "type": "battle",
+      "line_range": [
+        2548,
+        2673
+      ],
+      "participants": [
+        "号角",
+        "风笛",
+        "蔓德拉",
+        "大提琴",
+        "双簧管"
+      ],
+      "location": "小丘郡通讯塔",
+      "significance": "风暴突击队与深池术师的正面交锋，揭示蔓德拉的源石技艺机制",
+      "is_imaginary": false
+    },
+    {
+      "event": "蔓德拉在即将落败时因阿赫茉妮抢先广播而暴走，号角为掩护风笛突围，命令其使用破城矛弹射功能逃离",
+      "type": "retreat",
+      "line_range": [
+        2674,
+        2769
+      ],
+      "participants": [
+        "号角",
+        "风笛",
+        "蔓德拉"
+      ],
+      "location": "小丘郡通讯塔",
+      "significance": "号角牺牲自己掩护风笛突围，风笛成为传递情报的最后希望",
+      "is_imaginary": false
+    },
+    {
+      "event": "简妮和罗德岛干员护送重伤的深池领袖撤离，简妮在Outcast牺牲后坚定信念",
+      "type": "departure",
+      "line_range": [
+        2770,
+        2780
+      ],
+      "participants": [
+        "简妮",
+        "干员奥利弗"
+      ],
+      "location": "小丘郡出城通道",
+      "significance": "简妮继承Outcast的意志，完成救援任务",
+      "is_imaginary": false
+    },
+    {
+      "event": "Outcast与深池六名核心干部对峙，逐一揭露其罪行，并宣告将在此进行「最终的审判」",
+      "type": "confrontation",
+      "line_range": [
+        2781,
+        2822
+      ],
+      "participants": [
+        "Outcast",
+        "「雄辩家」",
+        "「会计」",
+        "「囚犯」",
+        "「纵火家」",
+        "「毒药学者」",
+        "「强盗」"
+      ],
+      "location": "小丘郡巷口",
+      "significance": "Outcast以生命为代价阻止深池干部追击，展现其信念与决心",
+      "is_imaginary": false
+    },
+    {
+      "event": "Misery将Outcast的遗物和骨灰匣带回罗德岛，与凯尔希讨论牺牲和后续行动",
+      "type": "revelation",
+      "line_range": [
+        2823,
+        2853
+      ],
+      "participants": [
+        "Misery",
+        "凯尔希"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "确认Outcast牺牲，罗德岛决定加速进入伦蒂尼姆",
+      "is_imaginary": false
+    },
+    {
+      "event": "简妮（琴柳）在罗德岛本舰上与苇草（深池领袖）偶遇，两人进行简短对话",
+      "type": "reunion",
+      "line_range": [
+        2854,
+        2877
+      ],
+      "participants": [
+        "简妮",
+        "苇草"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "简妮与苇草在罗德岛重逢，苇草表现出对过去的疏离",
+      "is_imaginary": false
+    },
+    {
+      "event": "简妮（琴柳）与阿米娅在Outcast办公室会面，讨论Outcast的往事和性格",
+      "type": "reflection",
+      "line_range": [
+        2878,
+        2906
+      ],
+      "participants": [
+        "简妮",
+        "阿米娅"
+      ],
+      "location": "罗德岛本舰Outcast办公室",
+      "significance": "简妮正式加入罗德岛，与阿米娅建立联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "风笛与陈在维多利亚乡间安全屋中讨论小丘郡事件和后续计划，决定寻找同学休斯获取情报",
+      "type": "planning",
+      "line_range": [
+        2907,
+        2959
+      ],
+      "participants": [
+        "风笛",
+        "陈"
+      ],
+      "location": "维多利亚乡间安全屋",
+      "significance": "风笛与陈联手调查深池，为后续剧情铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "杰西卡与雷蛇通讯，讨论黑钢国际在维多利亚的撤侨任务和与罗德岛的合作",
+      "type": "planning",
+      "line_range": [
+        2960,
+        2981
+      ],
+      "participants": [
+        "杰西卡",
+        "雷蛇"
+      ],
+      "location": "维多利亚",
+      "significance": "展现黑钢国际在维多利亚的行动，为后续多方势力汇聚伦蒂尼姆铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "推进之王与博士在罗德岛甲板上谈论回归伦蒂尼姆的决心和对未来的不安",
+      "type": "reflection",
+      "line_range": [
+        2982,
+        3002
+      ],
+      "participants": [
+        "推进之王",
+        "博士"
+      ],
+      "location": "罗德岛本舰甲板",
+      "significance": "推进之王表达回归伦蒂尼姆的决心，为后续剧情铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "摄政王与赦罪师在伦蒂尼姆讨论深池使者和罗德岛的动向，决定让曼弗雷德处理深池问题",
+      "type": "political_intrigue",
+      "line_range": [
+        3003,
+        3029
+      ],
+      "participants": [
+        "摄政王",
+        "赦罪师"
+      ],
+      "location": "伦蒂尼姆",
+      "significance": "揭示萨卡兹王庭对深池和罗德岛的态度，为后续冲突铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "整合运动在九和Guard的策划下突袭罗德岛本舰，成功劫走塔露拉",
+      "type": "assassination",
+      "line_range": [
+        3030,
+        3130
+      ],
+      "participants": [
+        "可露希尔",
+        "九",
+        "塔露拉",
+        "Guard",
+        "整合运动士兵",
+        "Dijkstra"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "整合运动成功劫走塔露拉，罗德岛措手不及",
+      "is_imaginary": false
+    },
+    {
+      "event": "可露希尔发现Dijkstra瘫痪了罗德岛系统，意识到自己被利用",
+      "type": "revelation",
+      "line_range": [
+        3131,
+        3150
+      ],
+      "participants": [
+        "可露希尔",
+        "Dijkstra"
+      ],
+      "location": "罗德岛本舰",
+      "significance": "揭示Dijkstra与整合运动的合作，可露希尔面临信任危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "煌在罗德岛走廊遭遇Guard和游击队萨卡兹，双方对峙",
+      "type": "confrontation",
+      "line_range": [
+        3151,
+        3184
+      ],
+      "participants": [
+        "煌",
+        "Guard",
+        "游击队萨卡兹"
+      ],
+      "location": "罗德岛本舰走廊",
+      "significance": "揭示Guard的叛变动机和整合运动的诉求",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅在罗德岛甲板阻拦九和塔露拉，与九就信任和审判问题展开辩论",
+      "type": "confrontation",
+      "line_range": [
+        3199,
+        3231
+      ],
+      "participants": [
+        "阿米娅",
+        "九",
+        "塔露拉"
+      ],
+      "location": "罗德岛本舰甲板",
+      "significance": "阿米娅与九的理念冲突，塔露拉被劫走",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉在关键时刻使用源石技艺保护九，并主动选择跟随整合运动离开",
+      "type": "departure",
+      "line_range": [
+        3232,
+        3295
+      ],
+      "participants": [
+        "塔露拉",
+        "九",
+        "阿米娅",
+        "Mon3tr",
+        "凯尔希"
+      ],
+      "location": "罗德岛本舰甲板",
+      "significance": "塔露拉主动选择离开，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉被带往乌萨斯旧据点，在衣冠冢前反思自己的过去，决定寻找「自诩不死的恶神」",
+      "type": "reflection",
+      "line_range": [
+        3338,
+        3457
+      ],
+      "participants": [
+        "塔露拉",
+        "九",
+        "整合运动术师"
+      ],
+      "location": "乌萨斯整合运动旧据点",
+      "significance": "塔露拉确立新目标，为后续剧情铺垫",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "号角",
+      "type": "operator",
+      "role_in_chapter": "风暴突击队队长，从伦蒂尼姆前来调查源石制品失窃案，与驻军周旋，最终被制服",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "风笛",
+      "type": "operator",
+      "role_in_chapter": "风暴突击队队员，瓦伊凡战士，负责调查和联络，最终获得关键证据",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Outcast",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，萨科塔，抵达小丘郡调查局势，开导简妮，组织撤退",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "简妮",
+      "type": "npc",
+      "role_in_chapter": "维多利亚仪仗兵，瓦伊凡，与塔拉人交好，因传递情报导致好友西尔莎死亡，经历信仰危机后重新振作",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "汉密尔顿上校",
+      "type": "npc",
+      "role_in_chapter": "小丘郡驻军最高指挥官，极端仇视塔拉人，秘密制造非法源石武器",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯利上尉",
+      "type": "npc",
+      "role_in_chapter": "驻军军官，塔拉裔，因外甥达米安被处决而痛苦，最终被自己人抓捕，留下关键证据",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "副官希尔",
+      "type": "npc",
+      "role_in_chapter": "汉密尔顿上校的副官，执行上校的命令，冷酷无情",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "三角铁",
+      "type": "operator",
+      "role_in_chapter": "风暴突击队侦察组长，发现失窃武器被送往炮兵营，最终牺牲",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "诗人威廉姆斯",
+      "type": "npc",
+      "role_in_chapter": "塔拉诗人，温和派文化复兴者，在深池袭击中牺牲",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "西尔莎",
+      "type": "npc",
+      "role_in_chapter": "简妮的好友，塔拉人，因告密被深池处决",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "领袖",
+      "type": "npc",
+      "role_in_chapter": "深池组织的领袖，拥有强大火焰术师能力，但性格软弱，受蔓德拉和阿赫茉妮操控",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "蔓德拉",
+      "type": "npc",
+      "role_in_chapter": "深池干部，冷酷激进，急于立功，对领袖的软弱不满",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿赫茉妮",
+      "type": "npc",
+      "role_in_chapter": "深池干部，冷静狡诈，暗中操控局势，对蔓德拉和领袖都不屑一顾",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "信使麦克马丁",
+      "type": "npc",
+      "role_in_chapter": "罗德岛点灯人，以炸薯条店为掩护，负责传递情报，最终亲自出城送信",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "干员奥利弗",
+      "type": "operator",
+      "role_in_chapter": "罗德岛小丘郡办事处干员，负责日常事务",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "干员碎纸机",
+      "type": "operator",
+      "role_in_chapter": "罗德岛小丘郡办事处干员，沉默寡言，妻子是塔拉人",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "干员威尔",
+      "type": "operator",
+      "role_in_chapter": "罗德岛小丘郡办事处干员，年轻，有塔拉血统",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克雷格",
+      "type": "npc",
+      "role_in_chapter": "塔拉男孩，父亲因矿石病去世，对维多利亚士兵充满敌意",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "简妮（琴柳）",
+      "type": "operator",
+      "role_in_chapter": "前维多利亚仪仗兵，在Outcast开导下完成思想转变，参与救援行动，挺身保护塔拉居民，最终加入罗德岛",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "重症感染者（苇草/拉芙希妮）",
+      "type": "npc",
+      "role_in_chapter": "深池领袖，被Outcast救下，识破其傀儡身份，后被风笛转移至罗德岛",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "「雄辩家」",
+      "type": "npc",
+      "role_in_chapter": "深池核心干部之一，与Outcast对峙，最终被Outcast揭露罪行",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "「会计」",
+      "type": "npc",
+      "role_in_chapter": "深池核心干部之一，参与寻找领袖和与Outcast对峙",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "「囚犯」",
+      "type": "npc",
+      "role_in_chapter": "深池核心干部之一，参与寻找领袖和与Outcast对峙",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "「纵火家」",
+      "type": "npc",
+      "role_in_chapter": "深池核心干部之一，参与寻找领袖和与Outcast对峙",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "「毒药学者」",
+      "type": "npc",
+      "role_in_chapter": "深池核心干部之一，参与寻找领袖和与Outcast对峙",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "「强盗」",
+      "type": "npc",
+      "role_in_chapter": "深池核心干部之一，参与寻找领袖和与Outcast对峙",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "干员弗雷德",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在救援行动中受伤",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "麦克马丁",
+      "type": "npc",
+      "role_in_chapter": "炸薯条店老板，风笛的信使，在废墟中被发现遗体",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "深池士兵罗南",
+      "type": "npc",
+      "role_in_chapter": "深池士兵，出卖西尔莎，在临时医疗点与简妮对峙",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "悲伤的女性",
+      "type": "npc",
+      "role_in_chapter": "塔拉居民，在临时医疗点被简妮帮助",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "悲愤的青年",
+      "type": "npc",
+      "role_in_chapter": "塔拉居民，在临时医疗点支持简妮",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "大提琴",
+      "type": "npc",
+      "role_in_chapter": "风暴突击队成员，在通讯塔战斗中牺牲",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "双簧管",
+      "type": "npc",
+      "role_in_chapter": "风暴突击队成员，参与通讯塔战斗",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Misery",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，将Outcast的遗物带回罗德岛，决定加速进入伦蒂尼姆",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领导人，与Misery讨论Outcast牺牲，在整合运动袭击后稳定局势",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，与简妮会面，在整合运动袭击中试图阻拦九和塔露拉但失败",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "前龙门警司，与风笛在维多利亚乡间调查深池",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "杰西卡",
+      "type": "operator",
+      "role_in_chapter": "黑钢国际干员，在维多利亚执行撤侨任务",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "雷蛇",
+      "type": "operator",
+      "role_in_chapter": "黑钢国际干员，与杰西卡通讯讨论任务",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "推进之王",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，与博士讨论回归伦蒂尼姆的决心",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官，与推进之王在甲板上交谈",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "摄政王",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹领袖，在伦蒂尼姆与赦罪师讨论深池和罗德岛动向",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "赦罪师",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹王庭成员，向摄政王汇报情报",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "可露希尔",
+      "type": "operator",
+      "role_in_chapter": "罗德岛工程师，在整合运动袭击中被Dijkstra利用",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "九",
+      "type": "npc",
+      "role_in_chapter": "整合运动新领袖，策划并执行劫走塔露拉的行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "塔露拉",
+      "type": "npc",
+      "role_in_chapter": "前整合运动领袖，被罗德岛囚禁，后被九劫走，主动选择跟随整合运动离开",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "前罗德岛干员，整合运动内应，参与劫走塔露拉的行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "Dijkstra",
+      "type": "npc",
+      "role_in_chapter": "可露希尔的朋友，瘫痪罗德岛系统协助整合运动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "煌",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，在整合运动袭击中与Guard和游击队萨卡兹对峙",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "游击队萨卡兹",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，参与劫走塔露拉的行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "幻影弩手",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，参与劫走塔露拉的行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "整合运动术师",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，参与劫走塔露拉的行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "整合运动战士",
+      "type": "npc",
+      "role_in_chapter": "整合运动成员，参与劫走塔露拉的行动",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "塔拉身份认同",
+      "line_range": [
+        607,
+        626
+      ],
+      "discussion_summary": "简妮向风笛解释塔拉人的历史渊源，指出塔拉是维多利亚境内的一个族群，其身份认同源于数百年前的德拉克盖尔王时代，与阿斯兰王有过战争后签订和平条约。简妮认为维多利亚一直在变化，瓦伊凡也不是原住民，但都是维多利亚国民。",
+      "is_substantive": true
+    },
+    {
+      "concept": "塔拉语言复兴",
+      "line_range": [
+        786,
+        816
+      ],
+      "discussion_summary": "Outcast与碎纸机讨论塔拉语的复兴现象。Outcast指出语言纽带比血缘和利益更牢固，有人利用语言复兴令塔拉人重聚，但维多利亚不会放任，拉扯的力量越大，反弹就越超出预期。碎纸机提到三五年前很少有人常说塔拉语，但现在报纸上到处都是。",
+      "is_substantive": true
+    },
+    {
+      "concept": "鬼魂部队的本质",
+      "line_range": [
+        675,
+        696
+      ],
+      "discussion_summary": "汉密尔顿上校向号角阐述他对鬼魂部队的看法。他认为这不是案件，而是持续了几十年甚至上百年的战争。鬼魂是漂浮在城市上空、回荡在塔拉人脑袋里的幽灵，说着不一样的语言，歪曲历史，妄图借城市躯壳还魂。他认为塔拉人是一个整体，都是敌人。",
+      "is_substantive": true
+    },
+    {
+      "concept": "诗歌与思想的力量",
+      "line_range": [
+        967,
+        1006
+      ],
+      "discussion_summary": "号角与诗人威廉姆斯讨论诗歌和思想的作用。威廉姆斯认为语言和文字为交流而生，他选择用维多利亚语写作是因为思想已被语言塑造。他引用自己的诗句「思想有什么用？你在土里种下一根羽毛，想象它长成一只羽兽」来回答号角关于激进变革的问题，表示自己只是种下羽毛的人，思想是自由的。",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石炸弹改造",
+      "line_range": [
+        1600,
+        1604
+      ],
+      "discussion_summary": "三角铁向号角报告在炮兵营发现的源石制品改造情况。他指出源石制品的结构不完整，活性源石部分被取了下来，类似于仓库城连环爆炸案中使用的炸弹，会造成严重的源石粉尘污染。",
+      "is_substantive": true
+    },
+    {
+      "concept": "脏弹（活性源石武器）",
+      "line_range": [
+        1757,
+        1792
+      ],
+      "discussion_summary": "Outcast向简妮解释驻军使用活性源石脏弹轰炸城区的真相，指出其目的是制造矿石病感染以清理塔拉人",
+      "is_substantive": true
+    },
+    {
+      "concept": "维多利亚的阶级不平等与身份认同",
+      "line_range": [
+        1934,
+        1964
+      ],
+      "discussion_summary": "简妮与Outcast深入讨论维多利亚的阶级不平等，简妮反思自己作为瓦伊凡如何适应维多利亚规则，而规则之外的人从未被承认",
+      "is_substantive": true
+    },
+    {
+      "concept": "傀儡领袖与操控者",
+      "line_range": [
+        2059,
+        2068
+      ],
+      "discussion_summary": "Outcast识破深池领袖的傀儡身份，推测背后有更强大的操控者，并指出操控者拥有相同血脉",
+      "is_substantive": true
+    },
+    {
+      "concept": "矿石病患者的命运与社会排斥",
+      "line_range": [
+        2084,
+        2090
+      ],
+      "discussion_summary": "Outcast向深池领袖描述矿石病将彻底改变其命运，曾经跟随的人会离她而去，甚至仇视她",
+      "is_substantive": true
+    },
+    {
+      "concept": "正义与阵营",
+      "line_range": [
+        2238,
+        2253
+      ],
+      "discussion_summary": "简妮在保护塔拉居民时阐述自己的立场：眼前的恶必须被阻止，这与阵营无关",
+      "is_substantive": true
+    },
+    {
+      "concept": "战争的代价与胜利的意义",
+      "line_range": [
+        1866,
+        1908
+      ],
+      "discussion_summary": "号角与汉密尔顿上校就脏弹事件争论，号角指出战争不是目的而是手段，上校的行为摧毁了无数人的努力",
+      "is_substantive": true
+    },
+    {
+      "concept": "深池的战略目标",
+      "line_range": [
+        2518,
+        2527
+      ],
+      "discussion_summary": "阿赫茉妮阐述深池的真正目标：确保火能烧起来，让整个维多利亚看在眼里，而非真正占领小丘郡",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动的诉求与信任危机",
+      "line_range": [
+        3163,
+        3222
+      ],
+      "discussion_summary": "Guard和九阐述整合运动需要塔露拉给出真相和答复，阿米娅与九就信任和审判问题展开辩论",
+      "is_substantive": true
+    },
+    {
+      "concept": "塔露拉的自我审判与赎罪",
+      "line_range": [
+        3338,
+        3457
+      ],
+      "discussion_summary": "塔露拉在乌萨斯旧据点衣冠冢前反思自己的过去，决定寻找「自诩不死的恶神」并反抗他",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "风暴突击队",
+      "line_range": [
+        1,
+        126
+      ],
+      "description": "从伦蒂尼姆派来的调查小队，由号角率领，负责调查源石制品失窃案，与当地驻军产生冲突"
+    },
+    {
+      "faction": "小丘郡驻军",
+      "line_range": [
+        69,
+        126
+      ],
+      "description": "由汉密尔顿上校指挥的维多利亚驻军，对塔拉人采取高压政策，阻挠风暴突击队的调查"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        396,
+        457
+      ],
+      "description": "制药公司，在小丘郡设有办事处，Outcast作为精英干员前来调查局势，组织撤退"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        876,
+        925
+      ],
+      "description": "由领袖领导的塔拉反抗组织，蔓德拉和阿赫茉妮为干部，计划占领小丘郡并最终进军伦蒂尼姆"
+    },
+    {
+      "faction": "塔拉人社区",
+      "line_range": [
+        458,
+        558
+      ],
+      "description": "小丘郡的塔拉裔居民，遭受驻军压迫和歧视，部分人开始支持深池的反抗行动"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1742,
+        1821
+      ],
+      "description": "罗德岛小丘郡办事处在Outcast带领下展开救援行动，干员们讨论救援方案和防护措施"
+    },
+    {
+      "faction": "维多利亚驻军",
+      "line_range": [
+        1866,
+        1921
+      ],
+      "description": "汉密尔顿上校与号角争论脏弹事件，驻军使用活性源石武器无差别攻击平民"
+    },
+    {
+      "faction": "深池（鬼魂部队）",
+      "line_range": [
+        2102,
+        2166
+      ],
+      "description": "深池六名核心干部商议寻找失踪的领袖，讨论蔓德拉和阿赫茉妮的动向"
+    },
+    {
+      "faction": "深池（鬼魂部队）",
+      "line_range": [
+        2474,
+        2528
+      ],
+      "description": "阿赫茉妮与幕后领袖对话，阐述深池的战略目标和哲学动机"
+    },
+    {
+      "faction": "风暴突击队",
+      "line_range": [
+        2548,
+        2673
+      ],
+      "description": "号角率风暴突击队强攻通讯基站，与蔓德拉激战"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        3099,
+        3130
+      ],
+      "description": "整合运动在九和Guard的策划下突袭罗德岛本舰，劫走塔露拉"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        3163,
+        3222
+      ],
+      "description": "Guard和九阐述整合运动的诉求，与阿米娅就信任和审判问题辩论"
+    },
+    {
+      "faction": "萨卡兹王庭",
+      "line_range": [
+        3003,
+        3029
+      ],
+      "description": "摄政王与赦罪师在伦蒂尼姆讨论深池使者和罗德岛的动向"
+    },
+    {
+      "faction": "黑钢国际",
+      "line_range": [
+        2960,
+        2981
+      ],
+      "description": "杰西卡与雷蛇通讯，讨论在维多利亚的撤侨任务和与罗德岛的合作"
+    }
+  ],
+  "locations": [
+    {
+      "location": "小丘郡",
+      "line_range": [
+        127,
+        144
+      ],
+      "description": "Outcast描述小丘郡为中型移动城市，距离伦蒂尼姆不远不近，以农业与轻工业为支柱产业，管辖权不在任何大贵族手上，因其普通而可能潜藏暗流"
+    },
+    {
+      "location": "小丘郡十七区",
+      "line_range": [
+        458,
+        558
+      ],
+      "description": "塔拉人聚居的街区，风笛在此调查达米安背景，目睹居民对驻军的仇恨和凯利上尉的内心挣扎"
+    },
+    {
+      "location": "波顿男爵府邸",
+      "line_range": [
+        876,
+        1024
+      ],
+      "description": "位于第十区和十一区交界处，深池在此举办集会拉拢塔拉贵族和商人，后被驻军包围"
+    },
+    {
+      "location": "驻军炮兵营",
+      "line_range": [
+        1595,
+        1615
+      ],
+      "description": "三角铁侦察小组发现失窃的源石制品被送到此处进行改造，用于制造源石炸弹"
+    },
+    {
+      "location": "小丘郡",
+      "line_range": [
+        1742,
+        1821
+      ],
+      "description": "小丘郡城区在驻军脏弹轰炸后陷入混乱，罗德岛办事处展开救援行动"
+    },
+    {
+      "location": "小丘郡通讯塔",
+      "line_range": ""
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:57:29.690206+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 76811,
+    "tokens_out": 12781,
+    "elapsed_s": 106.30892300605774
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "Outcast",
+    "简妮",
+    "汉密尔顿上校",
+    "凯利上尉",
+    "副官希尔",
+    "三角铁",
+    "诗人威廉姆斯",
+    "西尔莎",
+    "领袖",
+    "蔓德拉",
+    "阿赫茉妮",
+    "信使麦克马丁",
+    "干员奥利弗",
+    "干员碎纸机",
+    "干员威尔",
+    "克雷格",
+    "简妮（琴柳）",
+    "重症感染者（苇草/拉芙希妮）",
+    "「雄辩家」",
+    "「会计」",
+    "「囚犯」",
+    "「纵火家」",
+    "「毒药学者」",
+    "「强盗」",
+    "干员弗雷德",
+    "麦克马丁",
+    "深池士兵罗南",
+    "悲伤的女性",
+    "悲愤的青年",
+    "大提琴",
+    "双簧管",
+    "Misery",
+    "博士",
+    "摄政王",
+    "赦罪师",
+    "九",
+    "塔露拉",
+    "Dijkstra",
+    "游击队萨卡兹",
+    "幻影弩手",
+    "整合运动术师",
+    "整合运动战士"
+  ]
+}

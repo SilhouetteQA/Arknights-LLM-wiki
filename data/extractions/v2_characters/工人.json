@@ -1,0 +1,44 @@
+{
+  "summary": "一位在维多利亚工业化浪潮中失去土地的工人，对贵族和工厂主抱有朴素的警惕与不满，但性格中仍保留着对陌生人的善意与对生活的乐观。他见证了乡村向工厂的转变，并对此感到无奈，但并未表现出强烈的反抗意识，更多是随波逐流地接受现实。",
+  "personality": {
+    "traits": [
+      "朴实",
+      "警惕",
+      "乐观"
+    ],
+    "description": "一位普通的维多利亚工人，对陌生人保持警惕但仍有善意，对生活现状感到无奈却仍能苦中作乐。"
+  },
+  "abilities": {
+    "description": "没有特殊战斗能力，仅具备普通工人的体力与劳作技能。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "此地之外",
+        "evidence": "在对话中仅作为普通工人出现，提醒爱丽丝注意安全，未展现任何战斗能力。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "此地之外",
+      "nodes": "爱丽丝寻找玛佩尔",
+      "event": "在维多利亚的村庄旧址，向爱丽丝解释村庄已变为工厂，并告知村民已迁走。",
+      "role": "作为当地工人，为爱丽丝提供关于村庄变迁的信息。"
+    }
+  ],
+  "first_appearance": "此地之外",
+  "appearance_count": 2,
+  "_stats": {
+    "tokens_in": 3168,
+    "tokens_out": 321,
+    "elapsed_s": 3.69889760017395
+  },
+  "name_zh": "工人",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "反常光谱",
+    "此地之外"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T06:54:08.292947+00:00"
+}

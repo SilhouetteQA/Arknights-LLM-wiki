@@ -1,0 +1,1386 @@
+{
+  "chapter": "怀黍离",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章以黍、年、夕三姐妹在画卷中讨论「十二楼五城」计划开场，该计划旨在制造一座移动城市作为「岁」兽的替代容器，以应对「岁」的威胁。随后场景切换至大荒城，展现了这座农业重镇在移动城市改造工程中的日常：左乐作为司岁台秉烛人被派来监管岁兽事务，却因不谙农事而显得格格不入；黍以农业天师身份融入当地，与职农、学生禾生和小满等人建立了深厚联系。大荒城正面临多重压力：工部侍郎万侍郎催促工程进度，礼部侍郎宁辞秋暗中观察，而一场突如其来的洪水灾害暴露了城市基础设施的脆弱，也引发了关于粮食安全与国防工程孰轻孰重的争论。在灾害应对中，禾生展现了出色的组织能力，左乐也开始反思自己的职责与使命。与此同时，岁兽代理人「绩」以商人身份悄然返回大荒城，他不仅与左乐进行了意味深长的对话，还试图接近年的工程，其真实意图成谜。夕则暗中向左乐提供帮助，暗示绩可能有所图谋。小满在河边遭遇了神秘樵夫的诡异引导，险些坠河，被一个暴躁的孩童救下。禾生则在田间陷入了一场关于时间与意义的幻象，最终被左乐唤醒。本章交织了农业建设、岁兽威胁、政治博弈与个人成长多条线索，为大荒城的危机埋下了伏笔。\n\nScene 11 中，太傅与太尉在天岳会面，太尉承认自己策划了玉门和大荒城的一系列事件，目的是为了应对即将到来的与「岁」的战争，并暗示玉门城已驶向京城。左乐收到复职信，麟青砚告知他朝廷已决定应对，并派他去罗德岛调查。禾生带着「万顷」的种子离开大荒城，踏上全国推广的旅程。夕在画中感慨，虽不知梦醒后画能否留住，但已尽兴。绩为望缝制了合身的衣裳，望表示胜算只有「半目胜负，生死之间」。黍则前往新的荒地，继续教导人们耕种，践行与神农的约定。绩回忆了养父临终前对他的教诲——估价估的是人心，并嘱托他去寻找能让普天下人共赢的「大利」。",
+  "events": [
+    {
+      "event": "黍、年、夕在画卷中讨论「十二楼五城」计划，作为岁兽的替代容器",
+      "type": "planning",
+      "line_range": [
+        22,
+        57
+      ],
+      "participants": [
+        "黍",
+        "年",
+        "夕"
+      ],
+      "location": "画卷/十二楼五城",
+      "significance": "揭示核心计划：制造移动城市作为岁兽容器，以应对岁兽威胁"
+    },
+    {
+      "event": "左乐抵达大荒城，与黍初次见面，被黍安排学习农活",
+      "type": "arrival",
+      "line_range": [
+        233,
+        288
+      ],
+      "participants": [
+        "左乐",
+        "黍",
+        "小满",
+        "禾生"
+      ],
+      "location": "大荒城田间",
+      "significance": "左乐作为秉烛人初到大荒城，因不谙农事而显得格格不入"
+    },
+    {
+      "event": "左乐、禾生、小满一起寻找走失的牧兽绵绵，左乐误带回两只幼兽",
+      "type": "investigation",
+      "line_range": [
+        289,
+        443
+      ],
+      "participants": [
+        "左乐",
+        "禾生",
+        "小满"
+      ],
+      "location": "大荒城林间河边",
+      "significance": "展现左乐与当地年轻人的互动，以及他对农事知识的缺乏"
+    },
+    {
+      "event": "左乐回忆被父亲左宣辽派往大荒城的经过，反思自己的使命",
+      "type": "flashback",
+      "line_range": [
+        444,
+        471
+      ],
+      "participants": [
+        "左乐",
+        "左宣辽"
+      ],
+      "location": "玉门（回忆中）",
+      "significance": "揭示左乐被父亲贬谪至大荒城的原因，以及他对自身职责的困惑"
+    },
+    {
+      "event": "云青萍与左乐夜谈，以电影和武学道理开导左乐，鼓励他多观察多思考",
+      "type": "reflection",
+      "line_range": [
+        472,
+        541
+      ],
+      "participants": [
+        "左乐",
+        "云青萍"
+      ],
+      "location": "大荒城夜间",
+      "significance": "云青萍以自身经历启发左乐，点明「心性」与「观察」的重要性"
+    },
+    {
+      "event": "禾生向黍汇报试验田数据，黍讲述「万顷」研究的漫长历史与意义",
+      "type": "revelation",
+      "line_range": [
+        543,
+        569
+      ],
+      "participants": [
+        "禾生",
+        "黍"
+      ],
+      "location": "实验室",
+      "significance": "揭示黍作为农业天师的坚持，以及「万顷」研究对解决粮食问题的重要性"
+    },
+    {
+      "event": "老乡长与黍深夜对话，表达对黍的弟弟（绩）回归的担忧与不信任",
+      "type": "confrontation",
+      "line_range": [
+        570,
+        606
+      ],
+      "participants": [
+        "黍",
+        "老乡长"
+      ],
+      "location": "黍的住处",
+      "significance": "揭示老乡长对岁兽代理人的警惕，以及她与黍之间因信任产生的张力"
+    },
+    {
+      "event": "小满、左乐、云青萍、禾生夜观流星，小满提议去追寻流星",
+      "type": "family_moment",
+      "line_range": [
+        663,
+        694
+      ],
+      "participants": [
+        "小满",
+        "左乐",
+        "云青萍",
+        "禾生"
+      ],
+      "location": "大荒城郊外",
+      "significance": "展现年轻人之间的友谊与憧憬，左乐开始思考「找星星」的隐喻"
+    },
+    {
+      "event": "禾生向左乐介绍神农祭和神农的传说",
+      "type": "revelation",
+      "line_range": [
+        695,
+        725
+      ],
+      "participants": [
+        "禾生",
+        "左乐"
+      ],
+      "location": "神农祭现场",
+      "significance": "揭示神农作为农业奠基人的历史，以及黍与神农的关联"
+    },
+    {
+      "event": "黍独自探望沉默的樵夫，与他对话并安抚他",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        738,
+        766
+      ],
+      "participants": [
+        "黍",
+        "沉默的樵夫"
+      ],
+      "location": "河边",
+      "significance": "揭示沉默的樵夫与黍有特殊关系，暗示其与岁兽或神农有关"
+    },
+    {
+      "event": "小满向黍透露自己反复做的噩梦，梦见天灾和怪物",
+      "type": "revelation",
+      "line_range": [
+        791,
+        814
+      ],
+      "participants": [
+        "小满",
+        "黍"
+      ],
+      "location": "河边",
+      "significance": "小满的噩梦暗示大荒城即将面临的危机，黍对此有所警觉"
+    },
+    {
+      "event": "堰口水坝因源石矿脉爆炸而崩塌，引发洪水灾害",
+      "type": "disaster",
+      "line_range": [
+        826,
+        839
+      ],
+      "participants": [
+        "资深土木天师",
+        "年轻的土木天师",
+        "农业天师"
+      ],
+      "location": "堰口水坝",
+      "significance": "突发灾害考验大荒城的应急能力，暴露基础设施隐患"
+    },
+    {
+      "event": "禾生指挥移动地块排布以排水抗洪，年出手相助",
+      "type": "rescue",
+      "line_range": [
+        874,
+        888
+      ],
+      "participants": [
+        "禾生",
+        "土木天师",
+        "年"
+      ],
+      "location": "大荒城地块控制中心",
+      "significance": "禾生展现出色的组织能力和对地块系统的熟悉，年临时救场"
+    },
+    {
+      "event": "夕使用能力帮助疏散受惊的牧兽和百姓",
+      "type": "rescue",
+      "line_range": [
+        907,
+        912
+      ],
+      "participants": [
+        "夕",
+        "左乐"
+      ],
+      "location": "大荒城地块边缘",
+      "significance": "夕破例使用能力帮助司岁台的人，展现其复杂立场"
+    },
+    {
+      "event": "黍驱散洪水后的乌云，使天气放晴",
+      "type": "rescue",
+      "line_range": [
+        916,
+        920
+      ],
+      "participants": [
+        "黍"
+      ],
+      "location": "大荒城上空",
+      "significance": "黍使用能力平息灾害，但消耗巨大"
+    },
+    {
+      "event": "万侍郎、老乡长、宁辞秋就灾后重建与十二楼五城工期进行争论",
+      "type": "political_intrigue",
+      "line_range": [
+        923,
+        974
+      ],
+      "participants": [
+        "万侍郎",
+        "老乡长",
+        "宁辞秋"
+      ],
+      "location": "灾后指挥部",
+      "significance": "展现粮食安全与国防工程之间的冲突，以及三位官员的不同立场"
+    },
+    {
+      "event": "黍在田间回忆与神农的往事，绩突然出现与她重逢",
+      "type": "reunion",
+      "line_range": [
+        983,
+        993
+      ],
+      "participants": [
+        "黍",
+        "绩"
+      ],
+      "location": "大荒城田间",
+      "significance": "绩正式登场，与黍的重逢暗示后续剧情发展"
+    },
+    {
+      "event": "年与夕讨论绩的回归，夕对绩的变化感到不安",
+      "type": "ideological_clash",
+      "line_range": [
+        994,
+        1048
+      ],
+      "participants": [
+        "年",
+        "夕"
+      ],
+      "location": "夕的住处",
+      "significance": "揭示绩近年来的变化及其与司岁台的关系，夕对其动机存疑"
+    },
+    {
+      "event": "禾生与左乐处理被污染的试验田，禾生表达对研究前景的迷茫",
+      "type": "reflection",
+      "line_range": [
+        1049,
+        1057
+      ],
+      "participants": [
+        "禾生",
+        "左乐"
+      ],
+      "location": "被污染的试验田",
+      "significance": "禾生对「万顷」研究的信心动摇，左乐开始理解农业研究的艰辛"
+    },
+    {
+      "event": "职农与土木天师因田地废弃问题发生冲突，禾生出面调解",
+      "type": "confrontation",
+      "line_range": [
+        1058,
+        1099
+      ],
+      "participants": [
+        "禾生",
+        "愤怒的职农",
+        "土木天师",
+        "小满"
+      ],
+      "location": "丁卯号地块",
+      "significance": "展现大荒城改造工程中本地居民与外来工程队的矛盾"
+    },
+    {
+      "event": "绩在田间与小满和禾生相遇，以商人的身份与他们交易愿望",
+      "type": "negotiation",
+      "line_range": [
+        1120,
+        1179
+      ],
+      "participants": [
+        "绩",
+        "小满",
+        "禾生"
+      ],
+      "location": "大荒城田间",
+      "significance": "绩以商人身份接触小满和禾生，展现其神秘能力与交易本质"
+    },
+    {
+      "event": "左乐认出绩，两人进行了一场充满试探的对话",
+      "type": "confrontation",
+      "line_range": [
+        1185,
+        1238
+      ],
+      "participants": [
+        "左乐",
+        "绩"
+      ],
+      "location": "大荒城某处",
+      "significance": "左乐与绩正面交锋，绩透露天机阁天师死亡的信息，暗示更大危机"
+    },
+    {
+      "event": "小满遭遇牧兽的诡异对话，被沉默的樵夫引导至河边险些坠河",
+      "type": "ambush",
+      "line_range": [
+        1239,
+        1351
+      ],
+      "participants": [
+        "小满",
+        "沉默的樵夫",
+        "暴躁的孩童"
+      ],
+      "location": "河边",
+      "significance": "小满被神秘力量引导至危险境地，被暴躁孩童救下，揭示沉默樵夫的非人身份"
+    },
+    {
+      "event": "宁辞秋私下委托左乐调查绩返回大荒城的目的",
+      "type": "investigation",
+      "line_range": [
+        1289,
+        1321
+      ],
+      "participants": [
+        "宁辞秋",
+        "左乐"
+      ],
+      "location": "大荒城某处",
+      "significance": "宁辞秋以个人身份委托左乐，暗示礼部与司岁台在岁兽问题上的分歧"
+    },
+    {
+      "event": "绩以幻象试探槐天裴，试图用其女儿的性命交换宝剑",
+      "type": "negotiation",
+      "line_range": [
+        1354,
+        1397
+      ],
+      "participants": [
+        "绩",
+        "槐天裴"
+      ],
+      "location": "荒野商道",
+      "significance": "展现绩的交易手段和冷酷本质，槐天裴的拒绝表明其原则"
+    },
+    {
+      "event": "绩试图接近年的工程，被年拒绝",
+      "type": "confrontation",
+      "line_range": [
+        1398,
+        1431
+      ],
+      "participants": [
+        "绩",
+        "年"
+      ],
+      "location": "工业重地",
+      "significance": "绩对十二楼五城工程表现出兴趣，年对其保持警惕"
+    },
+    {
+      "event": "夕向左乐提供一幅画，用于对付绩，并建议直接动手",
+      "type": "alliance",
+      "line_range": [
+        1432,
+        1468
+      ],
+      "participants": [
+        "夕",
+        "左乐"
+      ],
+      "location": "大荒城某处",
+      "significance": "夕主动向左乐提供帮助，暗示她对绩的戒备，以及左乐可能采取的行动"
+    },
+    {
+      "event": "暴躁的天师学徒（令）与小满互动，摘取特殊水稻作为作业",
+      "type": "character_development",
+      "line_range": [
+        1469,
+        1498
+      ],
+      "participants": [
+        "小满",
+        "暴躁的天师学徒"
+      ],
+      "location": "田间",
+      "significance": "揭示暴躁孩童的真实身份可能是令，以及特殊水稻的存在"
+    },
+    {
+      "event": "禾生在田间陷入幻象，看到老农和无法结果的庄稼，被左乐唤醒",
+      "type": "dream_vision",
+      "line_range": [
+        1499,
+        1530
+      ],
+      "participants": [
+        "禾生",
+        "老农",
+        "左乐"
+      ],
+      "location": "田间",
+      "significance": "禾生陷入关于时间与意义的幻象，暗示其精神压力或受到神秘力量影响"
+    },
+    {
+      "event": "令在梦境中与黍对话，探讨黍对结局的洞察与坚守",
+      "type": "philosophical_discussion",
+      "line_range": [
+        1531,
+        1565
+      ],
+      "participants": [
+        "令",
+        "黍"
+      ],
+      "location": "黍的梦境/画卷",
+      "significance": "揭示黍早已预见自身和这片土地的结局，但她认为生命的过程本身就是意义，深化了黍的人物动机"
+    },
+    {
+      "event": "小满向暴躁的天师学徒询问父母下落，未获明确答案",
+      "type": "character_development",
+      "line_range": [
+        1566,
+        1598
+      ],
+      "participants": [
+        "小满",
+        "暴躁的天师学徒"
+      ],
+      "location": "大荒城田间",
+      "significance": "延续小满对父母的思念线索，为后续揭示樵夫身份埋下伏笔"
+    },
+    {
+      "event": "绩与黍在神农塑像前重逢，绩质疑黍的付出并再次邀请她离开",
+      "type": "confrontation",
+      "line_range": [
+        1599,
+        1696
+      ],
+      "participants": [
+        "绩",
+        "黍"
+      ],
+      "location": "大荒城神农塑像前",
+      "significance": "正面展现绩与黍的价值观冲突，绩认为人类不值得信任，黍则坚守承诺，为后续冲突奠定基础"
+    },
+    {
+      "event": "左乐唤醒陷入幻象的禾生，并从小满处得知红黑色水稻的线索，警觉地让禾生检查粮仓",
+      "type": "investigation",
+      "line_range": [
+        1641,
+        1674
+      ],
+      "participants": [
+        "左乐",
+        "禾生",
+        "小满"
+      ],
+      "location": "大荒城田间",
+      "significance": "左乐开始主动调查邪魔污染的源头，将线索串联起来，推动剧情向危机发展"
+    },
+    {
+      "event": "黍回忆与神农的往事，神农坚持北行寻找耐源石种子",
+      "type": "flashback",
+      "line_range": [
+        1697,
+        1719
+      ],
+      "participants": [
+        "黍",
+        "年迈的女性（神农）"
+      ],
+      "location": "大荒城（回忆中）",
+      "significance": "揭示神农的理想和黍与神农的深厚羁绊，解释黍留守大荒城的根源"
+    },
+    {
+      "event": "左乐用夕的画卷困住绩，质问其罪行，绩反客为主质疑炎国除岁决策",
+      "type": "confrontation",
+      "line_range": [
+        1737,
+        1814
+      ],
+      "participants": [
+        "左乐",
+        "绩"
+      ],
+      "location": "大荒城",
+      "significance": "左乐与绩的首次正面交锋，绩抛出关于炎国与巨兽关系的深层质疑，动摇左乐的信念"
+    },
+    {
+      "event": "禾生发现粮仓粮食被污染，确认污染源在地下",
+      "type": "revelation",
+      "line_range": [
+        1815,
+        1816
+      ],
+      "participants": [
+        "禾生"
+      ],
+      "location": "大荒城粮仓",
+      "significance": "确认邪魔污染已深入地下，危机升级"
+    },
+    {
+      "event": "朝廷下令放弃整座大荒城，只保留核心城迁移",
+      "type": "disaster",
+      "line_range": [
+        1817,
+        1852
+      ],
+      "participants": [
+        "禾生",
+        "老乡长"
+      ],
+      "location": "大荒城",
+      "significance": "剧情重大转折，大荒城面临彻底废弃的命运，引发后续冲突"
+    },
+    {
+      "event": "天机阁确认地下污染已存在千年，全靠黍压制，并提出消极后撤方案",
+      "type": "revelation",
+      "line_range": [
+        1860,
+        1875
+      ],
+      "participants": [
+        "年",
+        "天机阁天师"
+      ],
+      "location": "大荒城",
+      "significance": "揭示黍千年守护的真相，以及天机阁的无力应对，凸显危机严重性"
+    },
+    {
+      "event": "黍牺牲自己清除地下污染，导致所有人忘记了她",
+      "type": "sacrifice",
+      "line_range": [
+        1889,
+        1922
+      ],
+      "participants": [
+        "黍",
+        "绩"
+      ],
+      "location": "大荒城",
+      "significance": "黍以自身存在为代价拯救大荒城，是本章核心事件之一，绩的言论揭示了人类对黍的依赖"
+    },
+    {
+      "event": "绩与望密谋，望提出以绩的命为代价进行合作",
+      "type": "alliance",
+      "line_range": [
+        1923,
+        1947
+      ],
+      "participants": [
+        "绩",
+        "望"
+      ],
+      "location": "古寺",
+      "significance": "揭示绩与望的同盟关系，以及望的冷酷计划，为后续剧情埋下重大伏笔"
+    },
+    {
+      "event": "禾生回忆被神农收养并立志研究耐源石作物的起源",
+      "type": "flashback",
+      "line_range": [
+        1948,
+        1956
+      ],
+      "participants": [
+        "禾生",
+        "温柔的女性（神农）"
+      ],
+      "location": "大荒城（回忆中）",
+      "significance": "揭示禾生的身世和理想来源，与黍的使命形成呼应"
+    },
+    {
+      "event": "绩控制核心装置，制服年与夕，声称要补全巨兽心脏",
+      "type": "confrontation",
+      "line_range": [
+        1983,
+        2014
+      ],
+      "participants": [
+        "绩",
+        "年",
+        "夕"
+      ],
+      "location": "大荒城核心装置处",
+      "significance": "绩的阴谋进入实施阶段，他控制了关键工程，与年、夕彻底决裂"
+    },
+    {
+      "event": "邪魔怪物从地下涌出，大荒城陷入混乱",
+      "type": "disaster",
+      "line_range": [
+        2015,
+        2062
+      ],
+      "participants": [
+        "禾生",
+        "小满",
+        "左乐",
+        "老乡长"
+      ],
+      "location": "大荒城",
+      "significance": "危机全面爆发，各方角色开始应对"
+    },
+    {
+      "event": "老乡长荣晚晴揭示自己曾是司岁台秉烛人，确认黍已牺牲",
+      "type": "revelation",
+      "line_range": [
+        2063,
+        2082
+      ],
+      "participants": [
+        "左乐",
+        "荣晚晴"
+      ],
+      "location": "大荒城",
+      "significance": "揭示荣晚晴的真实身份和使命，确认黍的牺牲，为左乐提供指导"
+    },
+    {
+      "event": "绩与荣晚晴对峙，提出交易：用十二楼五城换黍的自由",
+      "type": "negotiation",
+      "line_range": [
+        2083,
+        2104
+      ],
+      "participants": [
+        "绩",
+        "荣晚晴"
+      ],
+      "location": "大荒城",
+      "significance": "展现绩的另一种动机——试图解放黍，但被荣晚晴拒绝"
+    },
+    {
+      "event": "万侍郎回忆与绩的交易，决心亲手毁掉失控的工程",
+      "type": "flashback",
+      "line_range": [
+        2105,
+        2136
+      ],
+      "participants": [
+        "万侍郎",
+        "绩"
+      ],
+      "location": "大荒城核心装置处",
+      "significance": "揭示万侍郎的野心和与绩的勾结，以及他最后的觉悟"
+    },
+    {
+      "event": "小满决定去河边寻找沉默的樵夫",
+      "type": "rescue",
+      "line_range": [
+        2137,
+        2174
+      ],
+      "participants": [
+        "小满",
+        "禾生"
+      ],
+      "location": "大荒城",
+      "significance": "小满的勇敢行动，为后续与樵夫和老天师的相遇做铺垫"
+    },
+    {
+      "event": "小满找到沉默的樵夫，樵夫为保护她而受伤，老天师现身揭示樵夫是小满的父亲",
+      "type": "rescue",
+      "line_range": [
+        2175,
+        2244
+      ],
+      "participants": [
+        "小满",
+        "沉默的樵夫",
+        "老天师"
+      ],
+      "location": "大荒城河边树林",
+      "significance": "重大情感揭示，沉默的樵夫身份揭晓，老天师首次正式登场"
+    },
+    {
+      "event": "老天师轻松击退怪物，绩完成茧准备抽丝",
+      "type": "confrontation",
+      "line_range": [
+        2245,
+        2256
+      ],
+      "participants": [
+        "老天师",
+        "绩",
+        "混沌的声音"
+      ],
+      "location": "大荒城",
+      "significance": "老天师展现强大实力，绩的计划进入最后阶段"
+    },
+    {
+      "event": "年、夕、黍三人陷入由巨兽心脏引发的幻象，各自经历内心拷问",
+      "type": "dream_vision",
+      "line_range": [
+        2257,
+        2405
+      ],
+      "participants": [
+        "年",
+        "夕",
+        "黍"
+      ],
+      "location": "巨兽心脏/幻象空间",
+      "significance": "三姐妹在幻象中面对自己的过去和内心，完成角色成长，为挣脱幻象做准备"
+    },
+    {
+      "event": "禾生和左乐在救援行动中遇险，禾生准备牺牲但被牧兽绵绵救回",
+      "type": "rescue",
+      "line_range": [
+        2406,
+        2522
+      ],
+      "participants": [
+        "禾生",
+        "左乐"
+      ],
+      "location": "大荒城脱离的地块",
+      "significance": "展现禾生和左乐的成长与友谊，禾生的牺牲精神"
+    },
+    {
+      "event": "禾生在废弃试验田中发现耐源石水稻「万顷」，看到希望",
+      "type": "revelation",
+      "line_range": [
+        2523,
+        2532
+      ],
+      "participants": [
+        "禾生",
+        "左乐"
+      ],
+      "location": "大荒城甲辰号地块",
+      "significance": "禾生多年研究的成果显现，为未来粮食问题带来转机"
+    },
+    {
+      "event": "左乐找到绩，发现他正在用炎国国祚织布",
+      "type": "revelation",
+      "line_range": [
+        2533,
+        2548
+      ],
+      "participants": [
+        "左乐",
+        "绩"
+      ],
+      "location": "大荒城核心装置处",
+      "significance": "揭示绩的真正目的——织就一幅以国祚为染料的锦绣，为望的行动做准备"
+    },
+    {
+      "event": "绩回忆跟随商人学习行商之道以及与望的密谋",
+      "type": "flashback",
+      "line_range": [
+        2549,
+        2619
+      ],
+      "participants": [
+        "绩",
+        "精明的商人",
+        "望"
+      ],
+      "location": "炎国各地（回忆中）",
+      "significance": "揭示绩的价值观形成过程，以及他与望计划的根源——为颉复仇"
+    },
+    {
+      "event": "年与夕赶到，与绩对峙，绩承认与望合谋",
+      "type": "confrontation",
+      "line_range": [
+        2620,
+        2664
+      ],
+      "participants": [
+        "年",
+        "夕",
+        "绩",
+        "左乐"
+      ],
+      "location": "大荒城核心装置处",
+      "significance": "家庭内部冲突升级，绩表明无人能阻止他"
+    },
+    {
+      "event": "黍现身阻止绩，望也现身，与黍进行关于命运和结局的对话",
+      "type": "confrontation",
+      "line_range": [
+        2665,
+        2779
+      ],
+      "participants": [
+        "黍",
+        "绩",
+        "望",
+        "年",
+        "夕"
+      ],
+      "location": "大荒城核心装置处",
+      "significance": "本章核心哲学对话，望揭示其计划——杀死并取代岁，黍给予他一颗种子作为因果"
+    },
+    {
+      "event": "老天师出现与望短暂交手，因顾及北境防线而放其离开",
+      "type": "confrontation",
+      "line_range": [
+        2795,
+        2812
+      ],
+      "participants": [
+        "老天师",
+        "望",
+        "绩"
+      ],
+      "location": "大荒城",
+      "significance": "老天师与望的正面冲突，揭示望的威胁和老天师的顾虑"
+    },
+    {
+      "event": "万侍郎被黍所救，黍收下他的梦想；荣晚晴醒来，祝愿黍自由",
+      "type": "rescue",
+      "line_range": [
+        2813,
+        2842
+      ],
+      "participants": [
+        "万侍郎",
+        "黍",
+        "荣晚晴"
+      ],
+      "location": "大荒城",
+      "significance": "万侍郎和荣晚晴的结局，黍的善举和获得理解"
+    },
+    {
+      "event": "禾生发现耐源石水稻，并与化身为普通天师的黍告别",
+      "type": "revelation",
+      "line_range": [
+        2843,
+        2869
+      ],
+      "participants": [
+        "禾生",
+        "黍"
+      ],
+      "location": "大荒城试验田",
+      "significance": "禾生的研究成果得到确认，黍以另一种形式继续守护这片土地"
+    },
+    {
+      "event": "绩与老天师对话，解释自己的行动是为了替颉复仇",
+      "type": "confrontation",
+      "line_range": [
+        2870,
+        2909
+      ],
+      "participants": [
+        "绩",
+        "老天师"
+      ],
+      "location": "大荒城",
+      "significance": "绩的动机最终阐明——为颉复仇，让庙堂之上的某些人付出代价"
+    },
+    {
+      "event": "太傅与太尉在天岳会面，太尉承认策划了玉门和大荒城事件",
+      "type": "political_intrigue",
+      "line_range": [
+        2910,
+        2933
+      ],
+      "participants": [
+        "太傅",
+        "太尉"
+      ],
+      "location": "天岳",
+      "significance": "揭示朝廷高层的内斗和布局，为后续炎国与岁的全面冲突做铺垫"
+    },
+    {
+      "event": "左乐收到复职信，被派往罗德岛调查",
+      "type": "departure",
+      "line_range": [
+        2934,
+        2958
+      ],
+      "participants": [
+        "左乐",
+        "麟青砚"
+      ],
+      "location": "大荒城",
+      "significance": "左乐的成长和新的使命，连接主线剧情"
+    },
+    {
+      "event": "禾生带着万顷种子离开大荒城，踏上全国推广的旅程",
+      "type": "departure",
+      "line_range": [
+        2959,
+        2971
+      ],
+      "participants": [
+        "禾生",
+        "小满"
+      ],
+      "location": "大荒城",
+      "significance": "禾生继承神农和黍的遗志，开启新的征程"
+    },
+    {
+      "event": "夕在画中感慨，虽不知梦醒后画能否留住，但已尽兴",
+      "type": "reflection",
+      "line_range": [
+        2972,
+        2976
+      ],
+      "participants": [
+        "夕"
+      ],
+      "location": "画卷中",
+      "significance": "夕的内心独白，展现她对存在意义的思考"
+    },
+    {
+      "event": "绩为望缝制衣裳，望表示胜算只有半目胜负",
+      "type": "planning",
+      "line_range": [
+        2977,
+        2985
+      ],
+      "participants": [
+        "绩",
+        "望"
+      ],
+      "location": "未知",
+      "significance": "望和绩的计划即将实施，生死未卜"
+    },
+    {
+      "event": "黍前往新的荒地，继续教导人们耕种",
+      "type": "departure",
+      "line_range": [
+        2986,
+        2993
+      ],
+      "participants": [
+        "黍",
+        "农人"
+      ],
+      "location": "新的荒地",
+      "significance": "黍获得自由后，继续践行与神农的约定，传播农耕知识"
+    },
+    {
+      "event": "绩回忆养父临终教诲，嘱托他寻找能让普天下人共赢的「大利」",
+      "type": "flashback",
+      "line_range": [
+        2994,
+        3038
+      ],
+      "participants": [
+        "绩",
+        "年迈的商人"
+      ],
+      "location": "炎国（回忆中）",
+      "significance": "揭示绩价值观的另一面，他并非完全唯利是图，也在寻找更大的意义"
+    }
+  ],
+  "characters": [
+    {
+      "name": "黍",
+      "type": "operator",
+      "role_in_chapter": "岁兽代理人，以农业天师身份在大荒城生活，参与十二楼五城计划，与当地居民关系密切，是绩的姐姐",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "年",
+      "type": "operator",
+      "role_in_chapter": "岁兽代理人，十二楼五城计划的主要设计者，与黍、夕共同行动，对绩保持警惕",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "夕",
+      "type": "operator",
+      "role_in_chapter": "岁兽代理人，参与十二楼五城计划，对绩的变化感到不安，暗中向左乐提供帮助",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "左乐",
+      "type": "operator",
+      "role_in_chapter": "司岁台秉烛人，被父亲派往大荒城学习，初来乍到不谙农事，在经历中反思自身使命，接受宁辞秋和夕的委托调查绩",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "万顷",
+      "type": "operator",
+      "role_in_chapter": "黍的学生，天师学徒，负责试验田研究，在洪灾中展现组织能力，对「万顷」研究的前景感到迷茫",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "小满",
+      "type": "npc",
+      "role_in_chapter": "大荒城少女，与牧兽关系亲密，性格活泼，与禾生、左乐成为朋友，经历诡异事件后被救",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "录武官",
+      "type": "operator",
+      "role_in_chapter": "录武官，重岳的弟子，跟随左乐来到大荒城，以旁观者视角开导左乐",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老乡长",
+      "type": "npc",
+      "role_in_chapter": "大荒城管理者，对岁兽代理人保持警惕，与黍关系复杂，在灾后与万侍郎争论工程优先级",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "万侍郎",
+      "type": "npc",
+      "role_in_chapter": "工部侍郎，负责大荒城移动地块建设，强调工程进度，与老乡长和宁辞秋存在分歧",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "宁辞秋",
+      "type": "npc",
+      "role_in_chapter": "礼部侍郎，以个人身份委托左乐调查绩，暗示礼部与司岁台在岁兽问题上的分歧",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "绩",
+      "type": "operator",
+      "role_in_chapter": "岁兽代理人，以商人身份返回大荒城，与黍重逢，试图接近年的工程，与左乐进行试探性对话",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "沉默的樵夫",
+      "type": "npc",
+      "role_in_chapter": "住在河边的神秘樵夫，与黍有特殊关系，引导小满至危险境地，疑似非人存在",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "暴躁的孩童",
+      "type": "npc",
+      "role_in_chapter": "天师学徒，逃学在外，救下险些坠河的小满，疑似令的化身",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "槐天裴",
+      "type": "operator",
+      "role_in_chapter": "武者，在荒野中遭遇绩的幻象试探，拒绝用宝剑交换女儿的性命",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "左宣辽",
+      "type": "npc",
+      "role_in_chapter": "左乐的父亲，玉门守将，在回忆中将左乐派往大荒城",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "令",
+      "type": "operator",
+      "role_in_chapter": "岁兽代理人，黍的姐姐。以梦境形式与黍对话，探讨结局与生命的意义。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "暴躁的天师学徒",
+      "type": "npc",
+      "role_in_chapter": "天师府学徒，委托小满寻找特殊水稻。对小满态度粗暴但暗中关心。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "荣晚晴（老乡长）",
+      "type": "npc",
+      "role_in_chapter": "大荒城同知，前司岁台秉烛人。揭示真实身份，与绩对峙，被黍所救后祝愿黍自由。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "万侍郎（万勤城）",
+      "type": "npc",
+      "role_in_chapter": "工部侍郎，十二楼五城工程负责人。回忆与绩的交易，决心亲手毁掉失控的工程，最终被黍所救。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "老天师",
+      "type": "npc",
+      "role_in_chapter": "天机阁领袖，实力强大。首次正式登场，救下小满和樵夫，与望短暂交手，最终放绩离开。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "望",
+      "type": "npc",
+      "role_in_chapter": "岁兽代理人，绩的二哥。与绩密谋，计划杀死并取代岁，与黍进行哲学对话，最终被老天师放走。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "神农（年迈的女性/温柔的女性）",
+      "type": "npc",
+      "role_in_chapter": "传说中的农业先驱，黍的朋友。在回忆中出现，坚持北行寻找耐源石种子，收养禾生。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "太傅",
+      "type": "npc",
+      "role_in_chapter": "炎国朝廷高官。与太尉在天岳会面，质问其策划的事件。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "太尉",
+      "type": "npc",
+      "role_in_chapter": "炎国朝廷高官。承认策划了玉门和大荒城事件，目的是应对与岁的战争。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "惊蛰",
+      "type": "operator",
+      "role_in_chapter": "左乐的母亲或上级。为左乐送来复职信，告知他新的任务。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "精明的商人/年迈的商人",
+      "type": "npc",
+      "role_in_chapter": "绩的养父和导师。教导绩行商之道和「天下熙熙，皆为利来」的道理，临终嘱托他寻找普天下人共赢的「大利」。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "十二楼五城",
+      "line_range": [
+        36,
+        62
+      ],
+      "discussion_summary": "年、黍、夕讨论用整座移动城市模拟巨兽，作为岁兽的替代容器，让岁兽代理人有所依凭",
+      "is_substantive": true
+    },
+    {
+      "concept": "万顷研究",
+      "line_range": [
+        543,
+        569
+      ],
+      "discussion_summary": "黍向禾生解释「万顷」研究的目标是突破源石对土地的限制，培育能在高源石活性环境中生长的庄稼，以喂饱偏远地区的人们",
+      "is_substantive": true
+    },
+    {
+      "concept": "神农",
+      "line_range": [
+        695,
+        725
+      ],
+      "discussion_summary": "禾生向左乐介绍神农的传说：神农是炎国农业理论的奠基人，曾在大荒城开垦土地，培育谷种，最终在寻找新种的路上离世",
+      "is_substantive": true
+    },
+    {
+      "concept": "源石活性率",
+      "line_range": [
+        543,
+        569
+      ],
+      "discussion_summary": "禾生汇报试验田数据时讨论源石活性率对庄稼存活率的影响，指出超过25%时存活率断崖式下跌，黍回顾了从15%到25%的漫长突破过程",
+      "is_substantive": true
+    },
+    {
+      "concept": "岁兽代理人",
+      "line_range": [
+        1195,
+        1198
+      ],
+      "discussion_summary": "左乐与绩对话时提及巨兽代理人的能力难以琢磨，绩自谦为雕虫绣花的功夫",
+      "is_substantive": true
+    },
+    {
+      "concept": "交易/买卖愿望",
+      "line_range": [
+        1143,
+        1179
+      ],
+      "discussion_summary": "绩以商人身份向小满和禾生提出交易愿望，声称什么都能买、什么都能卖，小满用一首曲子交换了「大荒城年年丰收」的愿望，禾生则被问及愿意用什么代价买一个能喂饱天下人的未来",
+      "is_substantive": true
+    },
+    {
+      "concept": "结局/命运",
+      "line_range": [
+        1556,
+        1562
+      ],
+      "discussion_summary": "令问黍看到的结局是否有变化，黍回答始终是「白茫茫一片大雪」。令问黍是否失望或遗憾，黍认为生命的过程本身就是结果，就像世人不会因为生命有终点而无所适从。",
+      "is_substantive": true
+    },
+    {
+      "concept": "留下什么/存在的意义",
+      "line_range": [
+        1551,
+        1555
+      ],
+      "discussion_summary": "黍以颉为例，说明即使她的书卷字帖消失，她说过的话和写过的字仍在学生中流传。黍表示她在看这片稻田的尽头能留下什么，如果她消散了能为这里留下什么。",
+      "is_substantive": true
+    },
+    {
+      "concept": "邪魔/邪祟诡魔",
+      "line_range": [
+        1684,
+        1688
+      ],
+      "discussion_summary": "绩提到北方的邪魔碎片是千年前人们不择手段寻来对付岁的方法，而岁的化身如今却在帮人们抵挡邪魔灾害。他指出这片少受源石污染的土地与秽土一河之隔，人们在此耕作千年。",
+      "is_substantive": true
+    },
+    {
+      "concept": "除岁/炎国与巨兽的关系",
+      "line_range": [
+        1790,
+        1813
+      ],
+      "discussion_summary": "绩质疑炎国除岁决策的动机，指出巨兽代理人千年来为炎国所做的贡献，包括将危险挡在国门外、帮助建造移动城市、黍的守护。他认为巨兽所求只是像人一样活着，而炎国却因无妄之灾要他们性命。左乐反驳说炎国不曾忘记他们的贡献，但现在是有人选择站在了敌对一面。",
+      "is_substantive": true
+    },
+    {
+      "concept": "神迹与自力更生",
+      "line_range": [
+        1892,
+        1897
+      ],
+      "discussion_summary": "黍反思自己的能力无法被人类复现，如果她每次都使用神迹救人，人们就会依赖这种力量。她认为自己总有一天会消失，到那时她的力量只会变成害人的恶因。她选择将经验记下来告诉后人，让人们靠自己扛过灾年。",
+      "is_substantive": true
+    },
+    {
+      "concept": "生命的意义/过程与结果",
+      "line_range": [
+        2721,
+        2738
+      ],
+      "discussion_summary": "黍与望辩论生命的意义。黍认为巨兽万年寿命与蜉蝣朝生暮死都是生命，都有终时。她认为世间万物可爱在其此时此刻的模样，万物有时，春草年年绿，我们来过存在过就够了。望则不甘于接受这样的结局，认为他们从未真正作为自己活过。",
+      "is_substantive": true
+    },
+    {
+      "concept": "规则与秩序/围棋",
+      "line_range": [
+        2727,
+        2730
+      ],
+      "discussion_summary": "望解释他为什么选择战争杀伐作为自己的事——他从中看到了规则与秩序。他学会围棋后更明白，纷纷世事看似混沌无序，但只要掌握规则就能计算出最终结局。",
+      "is_substantive": true
+    },
+    {
+      "concept": "估价/人心",
+      "line_range": [
+        3009,
+        3016
+      ],
+      "discussion_summary": "年迈的商人以自己身上的玉坠为例教导绩：玉坠本身只值二两银子，但作为母亲的遗物对他价值无量。他总结说估价到头来估的是人心。",
+      "is_substantive": true
+    },
+    {
+      "concept": "大利/共赢",
+      "line_range": [
+        3031,
+        3038
+      ],
+      "discussion_summary": "年迈的商人在临终前告诉绩，天下若只用一个利字就说尽了未免太无聊。他嘱托绩走遍这片大地，去寻找一个能让普天下人共赢的「大利」。绩表示他会记得并去看看。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "司岁台",
+      "line_range": [
+        233,
+        252
+      ],
+      "description": "左乐作为司岁台秉烛人奉命监管大荒城建设及岁兽相关事务，与黍进行例行检查的对话"
+    },
+    {
+      "faction": "天师府",
+      "line_range": [
+        110,
+        124
+      ],
+      "description": "农业天师学徒和土木天师学徒在神农祠祈祷，讨论各自的课题和工程，展现天师府学生的日常"
+    },
+    {
+      "faction": "工部",
+      "line_range": [
+        338,
+        350
+      ],
+      "description": "万侍郎以工部侍郎身份与土木天师讨论十二楼五城工程进度，强调工期和物资补给的重要性"
+    },
+    {
+      "faction": "礼部",
+      "line_range": [
+        1289,
+        1321
+      ],
+      "description": "宁辞秋以礼部侍郎身份私下委托左乐调查绩，暗示礼部与司岁台在岁兽问题上的分歧"
+    },
+    {
+      "faction": "山海众",
+      "line_range": [
+        466,
+        468
+      ],
+      "description": "左乐在回忆中向父亲报告追查山海众行动路线时发现的疑点，暗示其可能获取了玉门守军的布防信息"
+    },
+    {
+      "faction": "司岁台",
+      "line_range": [
+        1742,
+        1759
+      ],
+      "description": "左乐以司岁台秉烛人身份与绩对峙，绩讽刺司岁台朝令夕改，左乐表示司岁台对巨兽学士的能力了如"
+    }
+  ],
+  "locations": [
+    {
+      "location": "大荒城",
+      "line_range": [
+        140,
+        186
+      ],
+      "description": "老乡长与职农讨论大荒城的改造工程，包括移动地块建设、天桩使用、夏收准备等，展现其作为农业重镇的现状"
+    },
+    {
+      "location": "大荒城",
+      "line_range": [
+        507,
+        511
+      ],
+      "description": "左乐向云青萍介绍大荒城的基本情况：地理位置特殊、少受源石污染、重要粮食基地，现有大型地块十六块、小型地块六十余块、天师七百三十人、常住百姓五万余人"
+    },
+    {
+      "location": "玉门",
+      "line_range": [
+        444,
+        471
+      ],
+      "description": "左乐回忆在玉门与父亲的对话，提及玉门归京的后续事务以及山海众的行动路线疑点"
+    },
+    {
+      "location": "神农祠",
+      "line_range": [
+        110,
+        138
+      ],
+      "description": "天师学徒在神农祠祈祷，被一个脾气很差的小孩（疑似令）用桃核驱赶，小孩抱怨天师府学生不争气"
+    },
+    {
+      "location": "堰口水坝",
+      "line_range": [
+        826,
+        839
+      ],
+      "description": "洪水灾害的源头，因上游源石矿脉爆炸导致碎屑冲入轮机炸出缺口，引发洪水"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T14:29:54",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 65711,
+    "tokens_out": 13843,
+    "elapsed_s": 145.01788473129272
+  },
+  "_unmatched_names": [
+    "老乡长",
+    "万侍郎",
+    "宁辞秋",
+    "绩",
+    "沉默的樵夫",
+    "暴躁的孩童",
+    "槐天裴",
+    "左宣辽",
+    "暴躁的天师学徒",
+    "荣晚晴（老乡长）",
+    "万侍郎（万勤城）",
+    "老天师",
+    "神农（年迈的女性/温柔的女性）",
+    "太傅",
+    "太尉",
+    "精明的商人/年迈的商人"
+  ]
+}

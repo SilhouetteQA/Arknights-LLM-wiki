@@ -1,0 +1,47 @@
+{
+  "summary": "星极是哥伦比亚神秘学组织的会员，因妹妹埃琳娜感染矿石病而一同加入罗德岛。她擅长占星术与家族剑仪，但矿石病影响了她的源石技艺。在绿野幻梦中，她在莱茵总部等待妹妹时发现天体仪异常，暗示与剧情线索相关。",
+  "personality": {
+    "traits": [
+      "关怀家人",
+      "神秘学精通",
+      "坚韧"
+    ],
+    "description": "星极深爱妹妹，因矿石病而自责，但仍保持坚韧。她精通占星术，善于洞察他人，但对自己的力量消退感到忧虑。"
+  },
+  "abilities": {
+    "description": "星极使用家族传承的剑仪，结合天球仪与源石剑，能施展类似法术的近战攻击，并展现星空幻象。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "绿野幻梦",
+        "evidence": "星极在莱茵总部等待妹妹时，天体仪突然发亮，暗示其源石技艺与星象相关，但未直接参与战斗。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "绿野幻梦",
+      "nodes": "莱茵总部",
+      "event": "星极在莱茵总部等待妹妹埃琳娜，发现天体仪异常发亮，暗示与剧情线索相关。",
+      "role": "作为线索发现者，推动剧情发展。"
+    }
+  ],
+  "first_appearance": "绿野幻梦",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 2590,
+    "tokens_out": 352,
+    "elapsed_s": 3.7785391807556152
+  },
+  "name_zh": "星极",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "绿野幻梦"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:47:11.221744+00:00",
+  "race": "黎博利",
+  "affiliations": [
+    "哥伦比亚"
+  ]
+}

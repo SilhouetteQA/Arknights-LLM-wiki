@@ -1,0 +1,47 @@
+{
+  "summary": "蓝毒是罗德岛狙击干员，拥有毒物能力，性格温和但内心坚韧。在伊比利亚灯塔探索中，她展现了对深海威胁的警觉与历史洞察，并引导艾莉亚加入罗德岛。",
+  "personality": {
+    "traits": [
+      "温和",
+      "敏锐",
+      "坚韧"
+    ],
+    "description": "蓝毒表面礼貌温和，实则内心坚韧，对自身毒物能力有深刻理解，并能在危险环境中保持冷静与洞察。"
+  },
+  "abilities": {
+    "description": "蓝毒擅长使用毒制剂弩箭，能精准攻击敌人弱点，并具备毒理学知识。",
+    "power_level": "战场中坚",
+    "power_level_evidence": [
+      {
+        "chapter": "灯火序曲",
+        "evidence": "蓝毒在探索中迅速识别赏金猎人死因，并利用毒弩箭制服艾莉亚，展现战斗技巧与毒物运用能力。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "灯火序曲",
+      "nodes": "废弃建筑探索、灯塔发现",
+      "event": "蓝毒与格劳克斯在伊比利亚废弃建筑中探索，发现赏金猎人尸体，并遇到艾莉亚，得知建筑实为灯塔。",
+      "role": "蓝毒主导探索，分析环境危险，并决定带艾莉亚回罗德岛。"
+    }
+  ],
+  "first_appearance": "灯火序曲",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 9646,
+    "tokens_out": 336,
+    "elapsed_s": 4.706875324249268
+  },
+  "name_zh": "蓝毒",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "灯火序曲"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:53:49.173434+00:00",
+  "race": "安努拉",
+  "affiliations": [
+    "伊比利亚"
+  ]
+}

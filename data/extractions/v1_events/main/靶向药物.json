@@ -1,0 +1,560 @@
+{
+  "summary": "本章围绕龙门近卫局反攻整合运动展开。陈警司在罗德岛舱室中苏醒，与诗怀雅发生激烈争执，后者指责其擅离职守导致近卫局失守。陈与星熊前往木禾仓库营救线人阿发，阿发临终前交付关键情报，揭示整合运动在寻找高价值目标。陈发现目标竟是自己的旧宅，并在其中找到一张旧照片。近卫局在大古广场主动暴露位置，引诱整合运动聚集。陈与星熊遭遇爆炸被埋，星熊再次救下陈。陈独自攻入近卫局大楼天台，与整合运动指挥官梅菲斯特和狙击手浮士德激战，赤霄剑失控。危急时刻，罗德岛的阿米娅和煌乘飞行器赶到支援。四人联手击退梅菲斯特，夺回近卫局。魏彦吾通过通讯宣布计划成功，整合运动已被引入包围圈，但要求罗德岛和近卫局在一天内彻底解决战斗。结尾处魏彦吾与文月谈及乌萨斯方面的沉默和科西切公爵的往事。",
+  "events": [
+    {
+      "event": "陈在罗德岛舱室苏醒，与诗怀雅争吵",
+      "type": "confrontation",
+      "line_range": [
+        1,
+        38
+      ],
+      "participants": [
+        "陈",
+        "诗怀雅",
+        "星熊"
+      ],
+      "location": "罗德岛七号舱室",
+      "significance": "揭示陈因擅离职守导致近卫局失守的矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "诗怀雅指责陈导致近卫局失守，要求其辞职",
+      "type": "confrontation",
+      "line_range": [
+        39,
+        65
+      ],
+      "participants": [
+        "陈",
+        "诗怀雅",
+        "星熊"
+      ],
+      "location": "龙门接舷区，落蹄州，罗德岛七号舱室",
+      "significance": "深化陈与诗怀雅之间的冲突，揭示陈的失职",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与星熊讨论任务，陈接到线人阿发的求救通讯",
+      "type": "planning",
+      "line_range": [
+        66,
+        149
+      ],
+      "participants": [
+        "陈",
+        "星熊",
+        "罗德岛干员",
+        "线人"
+      ],
+      "location": "罗德岛七号舱室",
+      "significance": "陈决定前往木禾仓库营救线人，获取关键情报",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛干员质问陈为何抛弃阿米娅小队",
+      "type": "confrontation",
+      "line_range": [
+        150,
+        216
+      ],
+      "participants": [
+        "陈",
+        "星熊",
+        "罗德岛干员",
+        "诗怀雅"
+      ],
+      "location": "罗德岛七号舱室",
+      "significance": "揭示陈与罗德岛之间的信任裂痕，陈解释是魏彦吾的命令",
+      "is_imaginary": false
+    },
+    {
+      "event": "星熊独自突袭木禾仓库，击溃所有整合运动埋伏",
+      "type": "battle",
+      "line_range": [
+        217,
+        245
+      ],
+      "participants": [
+        "陈",
+        "星熊"
+      ],
+      "location": "龙门中城区，三窗仔，木禾仓库外",
+      "significance": "星熊展现强大战斗力，为营救线人创造条件",
+      "is_imaginary": false
+    },
+    {
+      "event": "线人阿发临终交付情报，与星熊告别",
+      "type": "sacrifice",
+      "line_range": [
+        246,
+        340
+      ],
+      "participants": [
+        "陈",
+        "星熊",
+        "线人"
+      ],
+      "location": "木禾仓库内",
+      "significance": "阿发牺牲，交付关键情报，揭示整合运动在寻找高价值目标",
+      "is_imaginary": false
+    },
+    {
+      "event": "近卫局突袭整合运动据点，发现目标竟是陈的旧宅",
+      "type": "revelation",
+      "line_range": [
+        341,
+        381
+      ],
+      "participants": [
+        "陈",
+        "星熊"
+      ],
+      "location": "龙门中城区某街区",
+      "significance": "发现整合运动的目标是陈的旧宅，引出陈的家族背景",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈进入旧宅，找到旧照片，回忆起往事",
+      "type": "flashback",
+      "line_range": [
+        382,
+        432
+      ],
+      "participants": [
+        "陈",
+        "星熊"
+      ],
+      "location": "陈的旧宅",
+      "significance": "陈发现整合运动在寻找旧照片，暗示与塔露拉有关",
+      "is_imaginary": false
+    },
+    {
+      "event": "近卫局在大古广场主动暴露位置，引诱整合运动聚集",
+      "type": "planning",
+      "line_range": [
+        433,
+        486
+      ],
+      "participants": [
+        "陈",
+        "星熊",
+        "诗怀雅",
+        "整合运动成员",
+        "整合运动术师"
+      ],
+      "location": "龙门上城区，大古广场",
+      "significance": "陈故意暴露位置，为最终决战做准备",
+      "is_imaginary": false
+    },
+    {
+      "event": "整合运动术师引爆爆炸物，陈和星熊被埋",
+      "type": "ambush",
+      "line_range": [
+        487,
+        522
+      ],
+      "participants": [
+        "陈",
+        "星熊",
+        "整合运动术师"
+      ],
+      "location": "大古广场",
+      "significance": "星熊再次救下陈，两人被困废墟",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与星熊在废墟中互相支持，陈决定不再抛弃同伴",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        523,
+        570
+      ],
+      "participants": [
+        "陈",
+        "星熊"
+      ],
+      "location": "大古广场废墟",
+      "significance": "陈承认对抛弃阿米娅感到不适，决定保护星熊",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与诗怀雅通话，约定战后饮茶",
+      "type": "reconciliation",
+      "line_range": [
+        571,
+        662
+      ],
+      "participants": [
+        "陈",
+        "诗怀雅",
+        "星熊"
+      ],
+      "location": "龙门上城区，近卫局大楼东侧",
+      "significance": "陈与诗怀雅关系缓和，陈准备攻入近卫局",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈独自攻入近卫局天台，与梅菲斯特和浮士德对峙",
+      "type": "confrontation",
+      "line_range": [
+        663,
+        708
+      ],
+      "participants": [
+        "陈",
+        "梅菲斯特",
+        "浮士德"
+      ],
+      "location": "龙门上城区，近卫局天台",
+      "significance": "陈与整合运动指挥官正面交锋",
+      "is_imaginary": false
+    },
+    {
+      "event": "梅菲斯特使用源石技艺将感染者转化为牧群，陈陷入苦战",
+      "type": "battle",
+      "line_range": [
+        709,
+        844
+      ],
+      "participants": [
+        "陈",
+        "梅菲斯特",
+        "浮士德",
+        "梅菲斯特的护卫",
+        "梅菲斯特的牧群"
+      ],
+      "location": "近卫局天台",
+      "significance": "揭示梅菲斯特的可怕能力，陈的赤霄剑失控",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅和煌乘飞行器赶到，支援陈",
+      "type": "rescue",
+      "line_range": [
+        845,
+        1091
+      ],
+      "participants": [
+        "陈",
+        "阿米娅",
+        "煌",
+        "梅菲斯特",
+        "浮士德"
+      ],
+      "location": "近卫局大楼上空及天台",
+      "significance": "罗德岛及时支援，四人联手对抗整合运动",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈拔剑击溃梅菲斯特的护卫，梅菲斯特和浮士德逃走",
+      "type": "battle",
+      "line_range": [
+        1092,
+        1241
+      ],
+      "participants": [
+        "陈",
+        "煌",
+        "阿米娅",
+        "梅菲斯特",
+        "浮士德"
+      ],
+      "location": "近卫局天台",
+      "significance": "陈成功拔剑，但梅菲斯特和浮士德逃脱，近卫局被夺回",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏彦吾宣布计划成功，整合运动被引入包围圈",
+      "type": "revelation",
+      "line_range": [
+        1225,
+        1241
+      ],
+      "participants": [
+        "陈",
+        "魏彦吾",
+        "诗怀雅"
+      ],
+      "location": "近卫局天台",
+      "significance": "揭示魏彦吾的全局计划，整合运动已被算计",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏彦吾与罗德岛对话，要求一天内解决战斗",
+      "type": "negotiation",
+      "line_range": [
+        1242,
+        1325
+      ],
+      "participants": [
+        "魏彦吾",
+        "阿米娅",
+        "煌",
+        "陈",
+        "诗怀雅"
+      ],
+      "location": "近卫局大楼天台废墟",
+      "significance": "魏彦吾解释其策略，要求罗德岛和近卫局在一天内结束战斗",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏彦吾与文月讨论乌萨斯方面的沉默和科西切公爵",
+      "type": "political_intrigue",
+      "line_range": [
+        1326,
+        1348
+      ],
+      "participants": [
+        "魏彦吾",
+        "文月"
+      ],
+      "location": "龙门上城区，行政长官办事处",
+      "significance": "揭示乌萨斯帝国的疑云和科西切公爵的往事，暗示更大的阴谋",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "龙门近卫局特别督察组组长，本章中领导反攻整合运动，与诗怀雅争吵，营救线人阿发，攻入近卫局天台与梅菲斯特战斗，最终在罗德岛协助下夺回近卫局",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "诗怀雅",
+      "type": "operator",
+      "role_in_chapter": "龙门近卫局警司，本章中指责陈擅离职守，与陈争吵，后接应罗德岛，与陈关系缓和",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "星熊",
+      "type": "operator",
+      "role_in_chapter": "龙门近卫局高级督察，陈的搭档，本章中多次救下陈，独自击溃整合运动埋伏，与线人阿发告别",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "线人",
+      "type": "npc",
+      "role_in_chapter": "陈的线人，代号XR02，原名阿发，曾是星熊的旧识，本章中牺牲，临终交付关键情报",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "罗德岛干员",
+      "type": "npc",
+      "role_in_chapter": "罗德岛联络干员，本章中与陈沟通任务，质问陈为何抛弃阿米娅",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "梅菲斯特",
+      "type": "npc",
+      "role_in_chapter": "整合运动指挥官，本章中占据近卫局天台，使用源石技艺将感染者转化为牧群，与陈战斗，最终被击退",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "浮士德",
+      "type": "npc",
+      "role_in_chapter": "整合运动狙击手，梅菲斯特的同伴，本章中与陈战斗，最终掩护梅菲斯特撤退",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖，本章中乘飞行器赶到支援陈，与梅菲斯特对峙，协助夺回近卫局",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "煌",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，本章中与阿米娅一同支援陈，使用热流能力击破浮士德的伪装",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "魏彦吾",
+      "type": "npc",
+      "role_in_chapter": "龙门行政长官，本章中通过通讯指挥全局，揭示其计划，要求一天内解决战斗",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "文月",
+      "type": "npc",
+      "role_in_chapter": "魏彦吾的妻子，本章中与魏彦吾讨论乌萨斯方面的沉默和科西切公爵的往事",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "赤霄剑",
+      "line_range": [
+        823,
+        844
+      ],
+      "discussion_summary": "陈回忆魏彦吾赠剑时的对话，魏彦吾称赤霄是斩龙之剑，非庸常武器，需有出鞘的价值。陈在战斗中试图拔剑但失控。",
+      "is_substantive": true
+    },
+    {
+      "concept": "梅菲斯特的源石技艺（牧群）",
+      "line_range": [
+        741,
+        774
+      ],
+      "discussion_summary": "梅菲斯特解释其法术能让源石刺穿感染者身体，使其成为不死的护卫和牧群，他像操作手指一样操控他们。陈斥其为傀儡。",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动的理想与手段",
+      "line_range": [
+        938,
+        954
+      ],
+      "discussion_summary": "梅菲斯特声称要摧毁大地现在的样子，让锈蚀的城市重生，并邀请陈加入。陈拒绝，认为梅菲斯特的行为与高尚理念无关。",
+      "is_substantive": true
+    },
+    {
+      "concept": "龙门的立场与策略",
+      "line_range": [
+        1247,
+        1255
+      ],
+      "discussion_summary": "魏彦吾解释其位置迫使他不能全盘披露情报，任何城邦都无法在阴谋中独善其身。阿米娅认为魏彦吾应分享信息。",
+      "is_substantive": true
+    },
+    {
+      "concept": "科西切公爵与塔露拉的关系",
+      "line_range": [
+        1342,
+        1348
+      ],
+      "discussion_summary": "文月指出塔露拉身上有科西切公爵的影子，魏彦吾确认科西切已被塔露拉亲手所杀。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        39,
+        65
+      ],
+      "description": "诗怀雅指责陈导致近卫局失守，要求其辞职。陈与诗怀雅讨论反攻计划。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        87,
+        149
+      ],
+      "description": "罗德岛干员与陈磋商任务，表示已集结小队待命，愿意协助近卫局。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        433,
+        455
+      ],
+      "description": "整合运动术师讨论龙门与切尔诺伯格的不同，怀疑其他队伍消失，感到不安。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        741,
+        774
+      ],
+      "description": "梅菲斯特展示其牧群能力，解释其源石技艺如何操控感染者。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        964,
+        1032
+      ],
+      "description": "阿米娅和煌乘飞行器赶到支援，阿米娅表示要铲除矿石病带来的灾难。"
+    },
+    {
+      "faction": "龙门",
+      "line_range": [
+        1247,
+        1255
+      ],
+      "description": "魏彦吾解释龙门的处境，夹在数个庞然巨物之间，必须考虑全局。"
+    },
+    {
+      "faction": "乌萨斯帝国",
+      "line_range": [
+        1329,
+        1335
+      ],
+      "description": "魏彦吾与文月讨论乌萨斯方面没有回应，联系不上维特议长，整个帝国笼罩在疑云中。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "罗德岛七号舱室",
+      "line_range": [
+        1,
+        38
+      ],
+      "description": "陈在此苏醒，与诗怀雅和星熊争吵，讨论任务。"
+    },
+    {
+      "location": "木禾仓库",
+      "line_range": [
+        217,
+        245
+      ],
+      "description": "龙门中城区三窗仔的仓库，整合运动在此设伏，星熊独自突袭。"
+    },
+    {
+      "location": "陈的旧宅",
+      "line_range": [
+        382,
+        432
+      ],
+      "description": "陈生父一族的宅邸，位于大学道，整合运动试图闯入寻找旧照片。"
+    },
+    {
+      "location": "大古广场",
+      "line_range": [
+        433,
+        486
+      ],
+      "description": "龙门上城区广场，诗怀雅家族的财产，近卫局在此主动暴露位置引诱整合运动。"
+    },
+    {
+      "location": "近卫局大楼天台",
+      "line_range": [
+        663,
+        708
+      ],
+      "description": "龙门上城区近卫局大楼顶部，梅菲斯特将指挥部设在此处，陈与梅菲斯特在此决战。"
+    },
+    {
+      "location": "龙门上城区行政长官办事处",
+      "line_range": [
+        1310,
+        1348
+      ],
+      "description": "魏彦吾的办公室，诗怀雅与魏彦吾讨论时限，魏彦吾与文月讨论乌萨斯和科西切。"
+    }
+  ],
+  "chapter": "靶向药物",
+  "batch_count": 1,
+  "category": "main",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:55:42.814425+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 26989,
+    "tokens_out": 4504,
+    "elapsed_s": 34.21972608566284
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "线人",
+    "罗德岛干员",
+    "梅菲斯特",
+    "浮士德",
+    "魏彦吾",
+    "文月"
+  ]
+}

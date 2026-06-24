@@ -1,0 +1,771 @@
+{
+  "chapter": "眠于树影之中",
+  "category": "special",
+  "batch_count": 2,
+  "summary": "Scene 1: 麦哲伦抵达乌萨斯境内的莱茵生命科考补给站，发现物资被玛丽老师的队伍大量消耗，并得知玛丽老师在冰原失踪。她计划独自搜救，但乌萨斯信使伊万以所有冰原考察许可被取消为由阻止她，并提议同行。伊万暗中与上级通讯，意图利用麦哲伦。麦哲伦提出改道萨米进入冰原，伊万同意。途中，伊万向麦哲伦灌输对萨米人的负面看法，并讲述「女巫」的传说。在枯树哨所，麦哲伦遇到旧识寒檀（西蒙娜），寒檀表示愿意帮助她。伊万外出布置信标时，寒檀外出寻找他，但未果。暴风雪将至，寒檀催促麦哲伦离开，麦哲伦留下记号后随寒檀进入萨米。\n\nScene 2: 麦哲伦与寒檀在萨米冬牙群山中行进。麦哲伦出现幻听，听到失踪的玛丽老师的声音，被提丰（一位萨卡兹猎人）用苔藓泥团和法术救下。提丰决定同行保护麦哲伦。三人遭遇萨米山地战士的阻拦，寒檀以昔日萨满身份恳求放行，但战士以埃克提尔尼尔的预言和提丰的黑弓为由拒绝。提丰带领二人从一条通往独眼巨人洞窟的密道逃脱。在洞窟中，麦哲伦发现自己的幻听内容与独眼巨人艾尔启的笔记内容一致。寒檀收到一段断断续续的乌萨斯通讯，提及「列巴羽」和「黑印」。\n\nScene 3: 三人下山进入林地部族领地。麦哲伦因误触族树引发不满，提丰解围。麦哲伦与提丰在夜晚谈论恐惧与未知，提丰鼓励她直面恐惧。次日，部族举行唤醒大树的仪式，寒檀协助萨满解读树谱，成功唤醒大树。仪式后，寒檀模仿乌萨斯信使的声音进行通讯，似乎另有目的。三人继续向察帕特进发。\n\nScene 1中，麦哲伦、寒檀和提丰进入萨米原初森林，遇到萨满学徒橡杯。橡杯加入队伍并担任向导。途中他们发现一只被邪魔污染的岩角兽，橡杯为其施行了安乐的仪式。寒檀察觉到乌萨斯「黑印」与污染有关，并让橡杯向他的师父树冠贤者传话。Scene 2中，三人抵达泽地部族集市，寒檀被请去检查阵亡战士的遗体，得知部族因没有雪祀而面临困境。麦哲伦遇到罗德岛干员远山，她因占卜到兄长的死亡而回乡。远山通过占卜促成了葬礼的举行。寒檀发现乌萨斯商队与战士遗体有关，独自追查。Scene 3中，葬礼船队遭遇水下邪魔污染，提丰和寒檀联手对抗。埃克提尔尼尔率树痕部族战士赶到，与主持仪式的萨满就萨米人是否应南迁展开辩论。远山在事后独自离开。埃克提尔尼尔与寒檀对话，指出她因仇恨而迷失。Scene 4中，三人抵达察帕特小镇，寒檀与众人告别。麦哲伦在莱茵生命办事处得知，独眼巨人艾尔启曾与失踪的科考队合作，并带回了一个装有奇异花朵的匣子。打开匣子后，花朵引发异象。提丰传达了艾尔启的警告。寒檀在另一处审问一名乌萨斯间谍，得知「黑印」是一名被邪魔完全夺走的皇帝内卫，她决定返回冰原履行自己的职责。",
+  "events": [
+    {
+      "event": "麦哲伦抵达科考站，发现物资短缺并得知玛丽老师失踪",
+      "type": "revelation",
+      "line_range": [
+        1,
+        36
+      ],
+      "participants": [
+        "麦哲伦",
+        "科考科成员"
+      ],
+      "location": "莱特-科钦斯基科考补给站",
+      "significance": "揭示本章核心任务：搜救失踪的玛丽老师",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊万以考察许可被取消为由阻止麦哲伦，并暗中与上级通讯",
+      "type": "political_intrigue",
+      "line_range": [
+        80,
+        124
+      ],
+      "participants": [
+        "麦哲伦",
+        "伊万"
+      ],
+      "location": "科考站外",
+      "significance": "展现乌萨斯对哥伦比亚人的监视与利用意图",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊万向麦哲伦灌输对萨米人的偏见，讲述「女巫」传说",
+      "type": "ideological_clash",
+      "line_range": [
+        163,
+        194
+      ],
+      "participants": [
+        "麦哲伦",
+        "伊万"
+      ],
+      "location": "前往边境哨所的路上",
+      "significance": "铺垫乌萨斯与萨米的敌对关系，为寒檀的身份埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "麦哲伦在枯树哨所与寒檀重逢，寒檀答应帮助她",
+      "type": "reunion",
+      "line_range": [
+        288,
+        331
+      ],
+      "participants": [
+        "麦哲伦",
+        "寒檀"
+      ],
+      "location": "枯树哨所",
+      "significance": "引入关键盟友寒檀，推动剧情转向萨米路线",
+      "is_imaginary": false
+    },
+    {
+      "event": "麦哲伦出现幻听，被提丰救下",
+      "type": "rescue",
+      "line_range": [
+        420,
+        472
+      ],
+      "participants": [
+        "麦哲伦",
+        "寒檀",
+        "提丰"
+      ],
+      "location": "冬牙群山",
+      "significance": "揭示萨米地区存在超自然干扰，引入新角色提丰",
+      "is_imaginary": false
+    },
+    {
+      "event": "寒檀与萨米山地战士交涉失败，提丰带领众人从密道逃脱",
+      "type": "confrontation",
+      "line_range": [
+        483,
+        546
+      ],
+      "participants": [
+        "寒檀",
+        "提丰",
+        "麦哲伦",
+        "萨米山地斥候"
+      ],
+      "location": "冬牙群山山地阵线",
+      "significance": "展现萨米内部对外来者的戒备，以及提丰的特殊身份",
+      "is_imaginary": false
+    },
+    {
+      "event": "麦哲伦在独眼巨人洞窟发现幻听内容与笔记一致",
+      "type": "revelation",
+      "line_range": [
+        669,
+        678
+      ],
+      "participants": [
+        "麦哲伦",
+        "提丰"
+      ],
+      "location": "独眼巨人洞窟",
+      "significance": "暗示幻听与独眼巨人的预言能力有关，连接主线",
+      "is_imaginary": false
+    },
+    {
+      "event": "寒檀收到乌萨斯通讯，提及「列巴羽」和「黑印」",
+      "type": "revelation",
+      "line_range": [
+        679,
+        682
+      ],
+      "participants": [
+        "寒檀"
+      ],
+      "location": "独眼巨人洞窟",
+      "significance": "揭示寒檀与乌萨斯方面存在秘密联系，增加悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "寒檀协助林地萨满成功唤醒大树",
+      "type": "ceremony",
+      "line_range": [
+        805,
+        1050
+      ],
+      "participants": [
+        "寒檀",
+        "林地萨满"
+      ],
+      "location": "林地部族大树下",
+      "significance": "展现萨米萨满的仪式与力量，寒檀展现其能力",
+      "is_imaginary": false
+    },
+    {
+      "event": "麦哲伦误触族树引发不满，提丰解围",
+      "type": "confrontation",
+      "line_range": [
+        830,
+        849
+      ],
+      "participants": [
+        "麦哲伦",
+        "提丰"
+      ],
+      "location": "林地部族",
+      "significance": "展现萨米文化禁忌，深化角色互动",
+      "is_imaginary": false
+    },
+    {
+      "event": "麦哲伦与提丰在夜晚谈论恐惧与未知",
+      "type": "character_development",
+      "line_range": [
+        888,
+        978
+      ],
+      "participants": [
+        "麦哲伦",
+        "提丰"
+      ],
+      "location": "林地部族树屋外",
+      "significance": "深化麦哲伦与提丰的友谊，探讨面对未知的态度",
+      "is_imaginary": false
+    },
+    {
+      "event": "寒檀模仿乌萨斯信使进行秘密通讯",
+      "type": "infiltration",
+      "line_range": [
+        1052,
+        1054
+      ],
+      "participants": [
+        "寒檀"
+      ],
+      "location": "林地部族",
+      "significance": "揭示寒檀的真实身份与任务，制造悬念",
+      "is_imaginary": false
+    },
+    {
+      "event": "橡杯加入队伍，担任向导穿越原初森林",
+      "type": "alliance",
+      "line_range": [
+        1104,
+        1140
+      ],
+      "participants": [
+        "橡杯",
+        "寒檀",
+        "提丰",
+        "麦哲伦"
+      ],
+      "location": "原初森林",
+      "significance": "引入新角色橡杯，为后续剧情提供向导和线索",
+      "is_imaginary": false
+    },
+    {
+      "event": "发现被邪魔污染的岩角兽，橡杯为其施行安乐死仪式",
+      "type": "confrontation",
+      "line_range": [
+        1323,
+        1375
+      ],
+      "participants": [
+        "橡杯",
+        "寒檀",
+        "提丰",
+        "麦哲伦"
+      ],
+      "location": "原初森林",
+      "significance": "展示邪魔污染对萨米生态的影响，以及萨米人对生命的尊重",
+      "is_imaginary": false
+    },
+    {
+      "event": "寒檀让橡杯向树冠贤者传话，提及乌萨斯「黑印」",
+      "type": "revelation",
+      "line_range": [
+        1384,
+        1388
+      ],
+      "participants": [
+        "寒檀",
+        "橡杯"
+      ],
+      "location": "原初森林",
+      "significance": "将「黑印」线索与邪魔污染联系起来，推动主线",
+      "is_imaginary": false
+    },
+    {
+      "event": "寒檀检查阵亡战士遗体，得知部族因无雪祀而面临困境",
+      "type": "investigation",
+      "line_range": [
+        1449,
+        1513
+      ],
+      "participants": [
+        "寒檀",
+        "悲愁的萨满学徒"
+      ],
+      "location": "泽地部族",
+      "significance": "揭示部族困境，为远山的出场和后续冲突铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "寒檀发现乌萨斯商队与战士遗体有关，独自追查",
+      "type": "investigation",
+      "line_range": [
+        1549,
+        1561
+      ],
+      "participants": [
+        "寒檀",
+        "麦哲伦",
+        "提丰"
+      ],
+      "location": "泽地部族集市",
+      "significance": "寒檀开始独立行动，追查「黑印」线索",
+      "is_imaginary": false
+    },
+    {
+      "event": "麦哲伦与远山重逢，远山因占卜到兄长死亡而回乡",
+      "type": "reunion",
+      "line_range": [
+        1584,
+        1593
+      ],
+      "participants": [
+        "麦哲伦",
+        "远山",
+        "提丰"
+      ],
+      "location": "泽地部族集市",
+      "significance": "引入罗德岛干员远山，连接主线与支线",
+      "is_imaginary": false
+    },
+    {
+      "event": "远山通过占卜促成葬礼举行，但发现死者中有一人保持沉默",
+      "type": "ceremony",
+      "line_range": [
+        1701,
+        1707
+      ],
+      "participants": [
+        "远山",
+        "严厉的萨满",
+        "温和的萨满"
+      ],
+      "location": "泽地部族",
+      "significance": "为后续邪魔污染爆发埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "葬礼船队遭遇水下邪魔污染，提丰和寒檀联手对抗",
+      "type": "battle",
+      "line_range": [
+        1884,
+        1975
+      ],
+      "participants": [
+        "提丰",
+        "寒檀",
+        "麦哲伦",
+        "远山"
+      ],
+      "location": "泽地水域",
+      "significance": "高潮战斗，展示邪魔的威胁和提丰、寒檀的能力",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃克提尔尼尔率树痕部族战士赶到，与萨满辩论南迁问题",
+      "type": "ideological_clash",
+      "line_range": [
+        1985,
+        2016
+      ],
+      "participants": [
+        "埃克提尔尼尔",
+        "主持仪式的萨满"
+      ],
+      "location": "泽地水域",
+      "significance": "揭示萨米内部关于对抗邪魔策略的分歧",
+      "is_imaginary": false
+    },
+    {
+      "event": "远山在葬礼后独自离开",
+      "type": "departure",
+      "line_range": [
+        2063,
+        2064
+      ],
+      "participants": [
+        "远山"
+      ],
+      "location": "泽地",
+      "significance": "远山支线暂时结束，留下开放结局",
+      "is_imaginary": false
+    },
+    {
+      "event": "埃克提尔尼尔与寒檀对话，指出她因仇恨而迷失",
+      "type": "confrontation",
+      "line_range": [
+        2075,
+        2098
+      ],
+      "participants": [
+        "埃克提尔尼尔",
+        "寒檀"
+      ],
+      "location": "泽地水域",
+      "significance": "推动寒檀的角色发展，为她的最终决定铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "寒檀与麦哲伦、提丰在察帕特告别",
+      "type": "farewell",
+      "line_range": [
+        2146,
+        2152
+      ],
+      "participants": [
+        "寒檀",
+        "麦哲伦",
+        "提丰"
+      ],
+      "location": "察帕特",
+      "significance": "寒檀开始独立行动，追查「黑印」",
+      "is_imaginary": false
+    },
+    {
+      "event": "麦哲伦在莱茵生命办事处得知艾尔启与科考队合作，带回奇异花朵",
+      "type": "revelation",
+      "line_range": [
+        2200,
+        2268
+      ],
+      "participants": [
+        "麦哲伦",
+        "提丰",
+        "艾尔启",
+        "莱茵生命研究员"
+      ],
+      "location": "察帕特莱茵生命办事处",
+      "significance": "揭示科考队命运，引入关键物品「花朵」",
+      "is_imaginary": false
+    },
+    {
+      "event": "打开匣子后花朵引发异象，提丰传达艾尔启的警告",
+      "type": "disaster",
+      "line_range": [
+        2295,
+        2316
+      ],
+      "participants": [
+        "麦哲伦",
+        "提丰",
+        "莱茵生命研究员"
+      ],
+      "location": "察帕特莱茵生命办事处",
+      "significance": "展示花朵的危险性，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "寒檀审问乌萨斯间谍，得知「黑印」是被邪魔夺走的皇帝内卫",
+      "type": "revelation",
+      "line_range": [
+        2346,
+        2368
+      ],
+      "participants": [
+        "寒檀",
+        "可疑的黎博利"
+      ],
+      "location": "察帕特附近",
+      "significance": "揭示「黑印」真相，推动寒檀返回冰原的决定",
+      "is_imaginary": false
+    },
+    {
+      "event": "寒檀决定返回冰原履行自己的职责",
+      "type": "character_development",
+      "line_range": [
+        2369,
+        2372
+      ],
+      "participants": [
+        "寒檀"
+      ],
+      "location": "察帕特附近",
+      "significance": "寒檀角色弧光的完成，从复仇转向守护",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "麦哲伦",
+      "type": "operator",
+      "role_in_chapter": "主角，哥伦比亚探险家，为搜救失踪的玛丽老师而进入萨米",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伊万",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯信使，表面协助麦哲伦，实则受命监视并利用她",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "寒檀",
+      "type": "operator",
+      "role_in_chapter": "萨米人，麦哲伦的旧识，前萨满，现罗德岛干员，暗中执行任务",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "提丰",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹猎人，在冬牙群山救下麦哲伦，并决定同行保护她",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "科考科成员",
+      "type": "npc",
+      "role_in_chapter": "莱茵生命科考站成员，告知麦哲伦玛丽老师失踪的消息",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "林地萨满",
+      "type": "npc",
+      "role_in_chapter": "林地部族的萨满，向寒檀求助解读树谱，成功唤醒大树",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "萨米山地斥候",
+      "type": "npc",
+      "role_in_chapter": "北地阵线的战士，阻止寒檀等人进入冰原",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "橡杯",
+      "type": "npc",
+      "role_in_chapter": "萨满学徒，在原初森林加入队伍担任向导，处理了被污染的岩角兽，并向树冠贤者传话",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "远山",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，占卜师，因占卜到兄长死亡而回乡，促成葬礼举行，事后独自离开",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "埃克提尔尼尔",
+      "type": "npc",
+      "role_in_chapter": "树痕部族雪祀，北地战士领袖，率队救援，与萨满辩论南迁问题，并点醒寒檀",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "艾尔启",
+      "type": "npc",
+      "role_in_chapter": "独眼巨人，与失踪科考队合作，通过提丰将匣子交给莱茵生命，传达警告",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "主持仪式的萨满",
+      "type": "npc",
+      "role_in_chapter": "泽地部族萨满，主持葬礼，与埃克提尔尼尔就南迁问题辩论",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "悲愁的萨满学徒",
+      "type": "npc",
+      "role_in_chapter": "泽地部族萨满学徒，向寒檀讲述部族历史和战士遗体的故事",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "可疑的黎博利",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯间谍，被寒檀审问，透露「黑印」是被邪魔夺走的皇帝内卫",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "女巫",
+      "line_range": [
+        185,
+        191
+      ],
+      "discussion_summary": "伊万向麦哲伦讲述「女巫」传说，描述她杀死哨所所有乌萨斯士兵，并在边境游荡袭击队伍",
+      "is_substantive": true
+    },
+    {
+      "concept": "幻听/灾异",
+      "line_range": [
+        420,
+        472
+      ],
+      "discussion_summary": "麦哲伦出现幻听，听到失踪老师的声音；提丰用苔藓泥团和法术帮她隔绝干扰，解释这是灾异征兆",
+      "is_substantive": true
+    },
+    {
+      "concept": "族树",
+      "line_range": [
+        730,
+        732
+      ],
+      "discussion_summary": "寒檀解释族树对萨米部族的重要性，没有族树的部族会遭人耻笑",
+      "is_substantive": true
+    },
+    {
+      "concept": "树谱",
+      "line_range": [
+        817,
+        828
+      ],
+      "discussion_summary": "林地萨满向寒檀展示树谱，表示自己无法完全理解，请求寒檀帮助解读",
+      "is_substantive": true
+    },
+    {
+      "concept": "安玛的爱",
+      "line_range": [
+        996,
+        1007
+      ],
+      "discussion_summary": "提丰找到「安玛的爱」并赠予麦哲伦，解释这是萨米人最渴望的庇护，代表纯净与真善，贪婪者不配拥有",
+      "is_substantive": true
+    },
+    {
+      "concept": "雪祀",
+      "line_range": [
+        1224,
+        1231
+      ],
+      "discussion_summary": "橡杯向麦哲伦解释雪祀是首席萨满或大萨满，是地方首领，不一定最年长但最有能力和权威。橡杯的师父就是一位雪祀，但橡杯本人不想成为雪祀。",
+      "is_substantive": true
+    },
+    {
+      "concept": "萨米的意志",
+      "line_range": [
+        1230,
+        1234
+      ],
+      "discussion_summary": "橡杯被师父要求体悟「萨米的意志」，但他表示自己既不懂萨米想要什么，也不知道萨米要他做什么，觉得树叶照常落、溪水照常流，没什么特别。",
+      "is_substantive": true
+    },
+    {
+      "concept": "邪魔/安德斯科塔尔尼尔",
+      "line_range": [
+        2024,
+        2026
+      ],
+      "discussion_summary": "麦哲伦偷听到埃克提尔尼尔与萨满的对话，得知萨米人将灾异称为「安德斯科塔尔尼尔」，意思是「敌人」。麦哲伦记下这个词。",
+      "is_substantive": true
+    },
+    {
+      "concept": "黑印",
+      "line_range": [
+        2360,
+        2362
+      ],
+      "discussion_summary": "寒檀审问乌萨斯间谍，得知「黑印」是一名失踪的皇帝内卫，其国度已经坍塌，邪魔完全夺走了他，他正在永久地污染萨米的土地。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        1,
+        36
+      ],
+      "description": "麦哲伦所属的科考机构，其科考站物资被消耗，玛丽老师队伍失踪"
+    },
+    {
+      "faction": "乌萨斯",
+      "line_range": [
+        80,
+        124
+      ],
+      "description": "伊万代表乌萨斯官方，以取消考察许可为由阻止麦哲伦，并暗中监视她"
+    },
+    {
+      "faction": "乌萨斯军队",
+      "line_range": [
+        126,
+        162
+      ],
+      "description": "乌萨斯军官与士兵讨论对待萨米人的态度，军官主张以暴力征服"
+    },
+    {
+      "faction": "萨米山地战士/北地阵线",
+      "line_range": [
+        483,
+        519
+      ],
+      "description": "寒檀与萨米山地斥候交涉，斥候以埃克提尔尼尔的预言和提丰的黑弓为由拒绝放行"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        747,
+        750
+      ],
+      "description": "寒檀自称是罗德岛人，暗示其身份与任务"
+    },
+    {
+      "faction": "树痕部族",
+      "line_range": [
+        1985,
+        2016
+      ],
+      "description": "埃克提尔尼尔率领树痕部族战士赶到救援，埃克提尔尼尔与主持仪式的萨满就萨米人是否应南迁展开辩论，主张绝不离去，将灾异阻挡在群山之外。"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        2167,
+        2198
+      ],
+      "description": "麦哲伦在察帕特的莱茵生命办事处报到，研究员们正在组织搜救队寻找失踪的马里亚姆主任，麦哲伦汇报了沿途见闻并申请随队。"
+    },
+    {
+      "faction": "乌萨斯",
+      "line_range": [
+        2346,
+        2368
+      ],
+      "description": "寒檀审问一名乌萨斯间谍，得知乌萨斯方面在萨米的活动与「黑印」有关，一名皇帝内卫被邪魔夺走，正在污染萨米土地。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "莱特-科钦斯基科考补给站",
+      "line_range": [
+        1,
+        10
+      ],
+      "description": "麦哲伦抵达的乌萨斯境内莱茵生命科考站，语音系统受损"
+    },
+    {
+      "location": "枯树哨所",
+      "line_range": [
+        224,
+        231
+      ],
+      "description": "乌萨斯边境哨所，中间有一棵萨米人栽种的枯死大树，麦哲伦在此采集样本"
+    },
+    {
+      "location": "冬牙群山",
+      "line_range": [
+        391,
+        393
+      ],
+      "description": "萨米境内的山脉，麦哲伦在此记录气温，并出现幻听"
+    },
+    {
+      "location": "独眼巨人洞窟",
+      "line_range": [
+        590,
+        594
+      ],
+      "description": "提丰长大的地方，独眼巨人艾尔启的住处，麦哲伦在此发现笔记与幻听内容一致"
+    },
+    {
+      "location": "林地部族",
+      "line_range": [
+        752,
+        764
+      ],
+      "description": "萨米林地人的聚落，拥有一棵巨大的族树，部族正在准备迁徙"
+    },
+    {
+      "location": "察帕特",
+      "line_range": [
+        576,
+        580
+      ],
+      "description": "萨米最南端的城市，许多哥伦比亚公司在此设有办事处，麦哲伦计划前往求援"
+    },
+    {
+      "location": "原初森林",
+      "line_range": [
+        1092,
+        1093
+      ],
+      "description": "提丰和寒檀称原初森林为「萨米的心脏」「我们的来处与去处」，是萨米最神圣的地方之一。"
+    },
+    {
+      "location": "泽地部族",
+      "line_range": [
+        1417,
+        1513
+      ],
+      "description": "一个没有雪祀的萨米部族，因灾害频发而面临举族南迁的困境，正在为阵亡的北地战士举行葬礼。"
+    },
+    {
+      "location": "察帕特",
+      "line_range": [
+        2105,
+        2139
+      ],
+      "description": "萨米南部的一个小镇，有电力、信号和城际网络，是各大科技公司办事处的聚集地，也是游客前往温泉度假村的中转站。"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:43:34.458793+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 50245,
+    "tokens_out": 7016,
+    "elapsed_s": 53.662304639816284
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "伊万",
+    "科考科成员",
+    "林地萨满",
+    "萨米山地斥候",
+    "橡杯",
+    "埃克提尔尼尔",
+    "艾尔启",
+    "主持仪式的萨满",
+    "悲愁的萨满学徒",
+    "可疑的黎博利"
+  ]
+}

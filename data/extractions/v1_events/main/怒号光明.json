@@ -1,0 +1,1574 @@
+{
+  "chapter": "怒号光明",
+  "category": "main",
+  "batch_count": 3,
+  "summary": "本章通过两条时间线并行叙事。一条是塔露拉的过去：她作为感染者被一对老夫妇收留，因反抗感染者纠察队而被迫逃离村庄，与阿丽娜一同踏上冻原。她回忆了与养父科西切公爵的决裂——科西切试图将她塑造成自己的继承人，而塔露拉通过主动感染矿石病来摆脱他的控制，并最终刺杀了科西切。此后她带领感染者队伍，试图与爱国者的游击队合流，并与霜星发生了冲突与初步合作。\n\n另一条是罗德岛在切尔诺伯格核心城的当下行动。阿米娅和迷迭香小队正突破整合运动的封锁，面对已陷入疯狂和自相残杀的整合运动成员，以及被梅菲斯特转化为牧群的萨卡兹雇佣兵。凯尔希则与博士分析塔露拉的阴谋本质，认为整合运动从一开始就被设计为注定毁灭的工具，而塔露拉背后有更深层的操纵者。\n\n在核心城，游击队（盾卫）与罗德岛达成临时合作，共同向指挥塔推进。迷迭香在情感冲击下强行摧毁了封闭层，导致自身意识受损。同时，闪回片段揭示了陈晖洁的过去：她在维多利亚皇家近卫学校毕业时得知塔露拉杀死科西切后再次失踪，决心回龙门积蓄力量寻找她。魏彦吾则回忆了当年塔露拉被科西切带走时，他因外交顾虑未能阻止的往事。\n\n过去时间线中，塔露拉与阿丽娜进行了多次关于理想、仇恨与未来的深刻对话。阿丽娜质疑塔露拉是否会在不断战斗和牺牲中迷失初心，并预言了科西切种下的思想种子终将发芽。塔露拉则坚持要为感染者寻找一个家，并最终在冻原上遇到了爱国者，但遭到了他的质疑与拒绝。\n\n本章的核心冲突在于理想与现实的碰撞：塔露拉试图用爱与团结对抗科西切灌输的仇恨哲学，而罗德岛则必须在整合运动崩溃的混乱中寻找阻止切尔诺伯格毁灭的方法。两条时间线最终都指向了指挥塔——塔露拉过去的抉择将决定她现在的命运。\n\n本段剧情延续了切尔诺伯格核心城与塔露拉过去两条时间线的叙事。在核心城，罗德岛与游击队（盾卫）继续向指挥塔推进，遭遇了伪装成整合运动的乌萨斯正规军，局势更加混乱。迷迭香在队员牺牲后坚定了战斗意志，与盾卫和幻影弩手协同作战。凯尔希与博士深入石棺区域，揭示了石棺的来历、二十多年前科学家团队的悲剧，以及博士本人与特蕾西娅之死的关联。同时，阿米娅决定独自面对塔露拉，与陈汇合。在过去时间线中，塔露拉经历了阿丽娜被杀害的惨剧，以及皇帝内卫的突然出现，后者揭露了她作为科西切公爵养女的身份，引发了队伍内部的信任危机。塔露拉在愤怒与仇恨中挣扎，最终在一个村庄中目睹了感染者被村民活活饿死的惨状，她的信念开始动摇。\n\nScene 1中，塔露拉在愤怒中焚烧了村庄，阿米娅和陈突然出现，阻止了她。Scene 2中，阿米娅通过读心能力揭示了塔露拉被科西切（不死的黑蛇）附身的真相，陈与阿米娅联手对抗塔露拉。Scene 3中，阿米娅利用从陈处习得的赤霄剑术与塔露拉战斗，并进一步揭露科西切对塔露拉记忆的扭曲。Scene 4中，科西切以乌萨斯化身自居，发表长篇演说阐述其通过战争重塑乌萨斯的理念，魏彦吾与鼠王在另一处对峙，迷迭香与盾卫在指挥塔外激战。Scene 5中，阿米娅和陈成功唤醒了塔露拉的本我意识，塔露拉压制了科西切，交出核心城制动钥匙，W用钥匙停下城市。Scene 6为尾声，凯尔希分析罗德岛扣押塔露拉的政治博弈，陈与魏彦吾在无名冢前和解并告别，陈决定加入罗德岛，乌萨斯皇帝与维特大臣讨论事件善后，塔露拉在罗德岛监禁中回忆过去。Scene 7-11为多个回忆片段，分别展现了塔露拉与感染者战士的告别、迷迭香与盾卫的对话、凯尔希对梅菲斯特手术的说明、罗德岛干员在指挥塔内的战斗、以及12F与博士的哲学对话。",
+  "events": [
+    {
+      "event": "塔露拉因反抗感染者纠察队而被迫逃离收养她的村庄",
+      "type": "confrontation_and_flight",
+      "line_range": [
+        78,
+        103
+      ],
+      "participants": [
+        "塔露拉",
+        "老汉",
+        "老妇",
+        "感染者纠察队"
+      ],
+      "location": "乌萨斯村庄",
+      "significance": "触发塔露拉走上反抗道路的关键事件",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛在核心城遭遇疯狂整合运动和牧群萨卡兹的袭击",
+      "type": "battle",
+      "line_range": [
+        131,
+        279
+      ],
+      "participants": [
+        "迷迭香",
+        "阿米娅",
+        "凯尔希",
+        "整合运动感染者",
+        "萨卡兹雇佣兵",
+        "牧群化萨卡兹战士"
+      ],
+      "location": "切尔诺伯格核心城",
+      "significance": "展现整合运动崩溃后的混乱局面和梅菲斯特牧群的威胁",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉放火烧死纠察队，与阿丽娜一同逃亡",
+      "type": "violence_and_escape",
+      "line_range": [
+        280,
+        342
+      ],
+      "participants": [
+        "塔露拉",
+        "阿丽娜",
+        "老妇",
+        "老汉",
+        "感染者纠察队"
+      ],
+      "location": "乌萨斯村庄",
+      "significance": "塔露拉第一次主动使用暴力反抗，导致她彻底与村庄决裂",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希向博士分析塔露拉的阴谋本质",
+      "type": "revelation",
+      "line_range": [
+        389,
+        422
+      ],
+      "participants": [
+        "凯尔希",
+        "博士"
+      ],
+      "location": "切尔诺伯格核心城",
+      "significance": "揭示塔露拉可能是一个阴谋家，整合运动被设计为注定毁灭的工具",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏彦吾回忆塔露拉被科西切带走时的往事",
+      "type": "flashback",
+      "line_range": [
+        463,
+        522
+      ],
+      "participants": [
+        "魏彦吾",
+        "陈晖洁",
+        "影卫"
+      ],
+      "location": "龙门",
+      "significance": "揭示塔露拉与陈的姐妹关系以及魏彦吾的愧疚",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉在废弃城市向感染者发表演说，号召他们反抗",
+      "type": "speech_and_recruitment",
+      "line_range": [
+        523,
+        568
+      ],
+      "participants": [
+        "塔露拉",
+        "感染者",
+        "感染者纠察队"
+      ],
+      "location": "废弃城市",
+      "significance": "塔露拉开始建立自己的追随者群体，传播反抗思想",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉与阿丽娜讨论科西切的教导和她的反抗决心",
+      "type": "ideological_clash",
+      "line_range": [
+        569,
+        621
+      ],
+      "participants": [
+        "塔露拉",
+        "阿丽娜"
+      ],
+      "location": "感染者临时营地",
+      "significance": "揭示塔露拉反抗的根源和她的理想主义",
+      "is_imaginary": false
+    },
+    {
+      "event": "迷迭香与萨卡兹雇佣兵对峙，阿米娅使用法术镇压",
+      "type": "confrontation",
+      "line_range": [
+        622,
+        713
+      ],
+      "participants": [
+        "迷迭香",
+        "阿米娅",
+        "萨卡兹雇佣兵",
+        "整合运动成员"
+      ],
+      "location": "切尔诺伯格核心城街区",
+      "significance": "展现萨卡兹雇佣兵的绝望心态和阿米娅的成长",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉回忆与科西切的最终决裂和刺杀",
+      "type": "flashback_and_confrontation",
+      "line_range": [
+        890,
+        1117
+      ],
+      "participants": [
+        "塔露拉",
+        "科西切"
+      ],
+      "location": "科西切的公爵领",
+      "significance": "揭示塔露拉与科西切的师徒关系、科西切的阴谋哲学以及塔露拉通过感染矿石病来摆脱控制",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉与霜星初次相遇并发生冲突",
+      "type": "confrontation",
+      "line_range": [
+        1171,
+        1194
+      ],
+      "participants": [
+        "塔露拉",
+        "霜星",
+        "雪怪小队成员"
+      ],
+      "location": "冻原",
+      "significance": "塔露拉与游击队核心成员建立联系的开端",
+      "is_imaginary": false
+    },
+    {
+      "event": "盾卫邀请罗德岛合作，迷迭香摧毁封闭层",
+      "type": "alliance_and_sacrifice",
+      "line_range": [
+        1195,
+        1373
+      ],
+      "participants": [
+        "盾卫",
+        "阿米娅",
+        "迷迭香",
+        "罗德岛干员"
+      ],
+      "location": "切尔诺伯格核心城封闭层",
+      "significance": "游击队与罗德岛达成临时同盟，迷迭香因情感冲击而失控",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈晖洁在维多利亚皇家近卫学校毕业时得知塔露拉消息",
+      "type": "revelation",
+      "line_range": [
+        1375,
+        1430
+      ],
+      "participants": [
+        "陈",
+        "风笛",
+        "学院信使"
+      ],
+      "location": "维多利亚皇家近卫学校",
+      "significance": "陈决定回龙门积蓄力量寻找塔露拉",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉与爱国者就南下计划发生激烈争论",
+      "type": "ideological_clash",
+      "line_range": [
+        1593,
+        1640
+      ],
+      "participants": [
+        "塔露拉",
+        "爱国者",
+        "霜星"
+      ],
+      "location": "冻原矿场",
+      "significance": "展现塔露拉与爱国者之间关于战略和理念的根本分歧",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿丽娜与塔露拉进行关于理想、仇恨与未来的深刻对话",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1672,
+        1827
+      ],
+      "participants": [
+        "塔露拉",
+        "阿丽娜"
+      ],
+      "location": "游击队营地",
+      "significance": "阿丽娜试图引导塔露拉避免陷入仇恨和暴力循环，是本章核心哲学对话",
+      "is_imaginary": false
+    },
+    {
+      "event": "迷迭香小队成员牺牲，迷迭香在悲痛中坚定了战斗意志，与盾卫和幻影弩手协同作战，突破乌萨斯军伪装成的整合运动防线。",
+      "type": "emotional_breakthrough_and_battle",
+      "line_range": [
+        1828,
+        1875
+      ],
+      "participants": [
+        "迷迭香",
+        "阿米娅",
+        "迷迭香小队成员",
+        "盾卫",
+        "罗德岛干员"
+      ],
+      "location": "切尔诺伯格核心城",
+      "significance": "迷迭香在失去队员后，从依赖他人到主动承担起战士的责任，完成了角色成长。",
+      "is_imaginary": false
+    },
+    {
+      "event": "罗德岛干员极境和霍克发现核心城内藏有大量乌萨斯新式军备，推测乌萨斯正规军已渗透进整合运动。",
+      "type": "revelation",
+      "line_range": [
+        1916,
+        1956
+      ],
+      "participants": [
+        "极境",
+        "霍克"
+      ],
+      "location": "切尔诺伯格核心城",
+      "significance": "揭示了塔露拉阴谋的一环：利用乌萨斯军伪装成整合运动，制造混乱并消灭异己。",
+      "is_imaginary": false
+    },
+    {
+      "event": "过去时间线中，塔露拉与雪怪小队攻下一座移动城市，但部分感染者队伍要求分道扬镳，塔露拉同意并阻止了爱国者的惩罚。",
+      "type": "ideological_clash",
+      "line_range": [
+        1957,
+        2064
+      ],
+      "participants": [
+        "塔露拉",
+        "爱国者",
+        "佩特洛娃",
+        "感染者"
+      ],
+      "location": "乌萨斯冻原移动城市",
+      "significance": "展现了塔露拉与爱国者在领导理念上的分歧：塔露拉主张团结与希望，爱国者强调纪律与纯洁。",
+      "is_imaginary": false
+    },
+    {
+      "event": "过去时间线中，塔露拉与爱国者就牺牲、战争与正义进行深入辩论，爱国者最终表示支持塔露拉，但警告她未来可能遭遇真正的邪恶。",
+      "type": "ideological_clash",
+      "line_range": [
+        2065,
+        2113
+      ],
+      "participants": [
+        "塔露拉",
+        "爱国者"
+      ],
+      "location": "乌萨斯冻原",
+      "significance": "深化了塔露拉与爱国者之间的信任关系，同时为塔露拉未来的转变埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "过去时间线中，塔露拉与年幼的伊诺和萨沙（未来的梅菲斯特和浮士德）交谈，阐述了自己对名字、身份和友谊的看法。",
+      "type": "character_development",
+      "line_range": [
+        2120,
+        2161
+      ],
+      "participants": [
+        "塔露拉",
+        "伊诺",
+        "萨沙"
+      ],
+      "location": "乌萨斯冻原",
+      "significance": "展现了塔露拉对个人身份与集体事业的思考，以及她对后辈的关怀和引导。",
+      "is_imaginary": false
+    },
+    {
+      "event": "核心城战场，阿米娅决定独自前往指挥塔面对塔露拉，并命令迷迭香留在外围战场，保证大家活下去。",
+      "type": "planning_and_farewell",
+      "line_range": [
+        2210,
+        2292
+      ],
+      "participants": [
+        "阿米娅",
+        "迷迭香",
+        "盾卫",
+        "罗德岛近卫干员"
+      ],
+      "location": "切尔诺伯格核心城指挥塔下",
+      "significance": "阿米娅展现出作为领袖的决断力，强调生命的重要性，与塔露拉的理念形成对比。",
+      "is_imaginary": false
+    },
+    {
+      "event": "闪回中，陈晖洁向魏彦吾汇报自己加入龙门近卫局的志愿，并提及十年前龙门市民被绑架失踪事件，暗示她已开始调查塔露拉相关线索。",
+      "type": "flashback_and_revelation",
+      "line_range": [
+        2297,
+        2316
+      ],
+      "participants": [
+        "陈",
+        "魏彦吾"
+      ],
+      "location": "龙门",
+      "significance": "揭示了陈加入近卫局的深层动机，以及她与魏彦吾之间关于龙门黑暗历史的微妙关系。",
+      "is_imaginary": false
+    },
+    {
+      "event": "过去时间线中，阿丽娜在与塔露拉告别后外出换取物资，被流放的感染者杀害。塔露拉发现阿丽娜的尸体，陷入巨大的悲痛和愤怒。",
+      "type": "sacrifice_and_tragedy",
+      "line_range": [
+        2399,
+        2493
+      ],
+      "participants": [
+        "塔露拉",
+        "阿丽娜",
+        "盾卫",
+        "雪怪小队成员",
+        "霜星"
+      ],
+      "location": "乌萨斯冻原",
+      "significance": "阿丽娜之死是塔露拉转变的关键转折点，她临终前要求塔露拉不要恨任何人，但塔露拉的内心已被仇恨侵蚀。",
+      "is_imaginary": false
+    },
+    {
+      "event": "核心城战场，W出现并与罗德岛和盾卫对峙，澄清了自己杀害Scout的真相，并警告乌萨斯军已渗透，表示自己要与塔露拉为敌。",
+      "type": "confrontation_and_revelation",
+      "line_range": [
+        2494,
+        2593
+      ],
+      "participants": [
+        "W",
+        "迷迭香",
+        "盾卫",
+        "罗德岛近卫干员"
+      ],
+      "location": "切尔诺伯格核心城",
+      "significance": "W的立场得到澄清，她并非完全效忠塔露拉，而是有自己的目的，同时揭示了乌萨斯军渗透的严重性。",
+      "is_imaginary": false
+    },
+    {
+      "event": "过去时间线中，塔露拉遭遇乌萨斯皇帝内卫，内卫揭露了她作为科西切公爵养女的身份，并试图挑拨她与感染者队伍的关系。",
+      "type": "confrontation_and_revelation",
+      "line_range": [
+        2675,
+        2855
+      ],
+      "participants": [
+        "塔露拉",
+        "皇帝内卫",
+        "盾卫",
+        "感染者"
+      ],
+      "location": "乌萨斯冻原",
+      "significance": "塔露拉的真实身份被公开，导致队伍内部出现信任危机，为后续整合运动的分裂埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱国者与皇帝内卫对峙，拒绝了内卫的招揽，坚定地选择支持塔露拉和感染者的事业。",
+      "type": "ideological_clash",
+      "line_range": [
+        2854,
+        3034
+      ],
+      "participants": [
+        "爱国者",
+        "皇帝内卫",
+        "塔露拉",
+        "霜星",
+        "盾卫"
+      ],
+      "location": "乌萨斯冻原",
+      "significance": "爱国者明确了自己的立场，与乌萨斯帝国彻底决裂，巩固了塔露拉在整合运动中的领导地位。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与博士深入石棺区域，遭遇牧群，并揭示了石棺的来历、二十多年前科学家团队的悲剧，以及博士与特蕾西娅之死的关联。",
+      "type": "revelation_and_flashback",
+      "line_range": [
+        3149,
+        3379
+      ],
+      "participants": [
+        "凯尔希",
+        "博士"
+      ],
+      "location": "切尔诺伯格核心城石棺",
+      "significance": "揭示了切尔诺伯格事件的深层根源，以及博士过去的身份和罪行，是本章最重要的剧情揭露。",
+      "is_imaginary": false
+    },
+    {
+      "event": "过去时间线中，塔露拉在一个村庄发现感染者被村民活活饿死，她的愤怒达到顶点，开始憎恨所有压迫者。",
+      "type": "emotional_breakthrough_and_ideological_clash",
+      "line_range": [
+        3483,
+        3603
+      ],
+      "participants": [
+        "塔露拉",
+        "乌萨斯农民"
+      ],
+      "location": "乌萨斯村庄",
+      "significance": "塔露拉亲眼目睹了人性的极致恶毒，她的信念从团结与希望转向了仇恨与毁灭，是黑化的关键节点。",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉焚烧村庄，阿米娅和陈赶到阻止",
+      "type": "confrontation",
+      "line_range": [
+        3604,
+        3616
+      ],
+      "participants": [
+        "塔露拉",
+        "阿米娅",
+        "陈"
+      ],
+      "location": "乌萨斯村庄",
+      "significance": "揭示塔露拉已陷入疯狂，阿米娅和陈介入最终决战",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅通过读心能力揭示塔露拉被科西切附身",
+      "type": "revelation",
+      "line_range": [
+        3625,
+        3669
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "塔露拉"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "揭露塔露拉并非完全自主，科西切的意识仍在其体内",
+      "is_imaginary": false
+    },
+    {
+      "event": "科西切识破阿米娅的魔王身份并感到畏惧",
+      "type": "revelation",
+      "line_range": [
+        3699,
+        3723
+      ],
+      "participants": [
+        "阿米娅",
+        "塔露拉"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "揭示阿米娅是萨卡兹魔王，科西切对此感到恐惧",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与塔露拉进行关于信任与决裂的激烈辩论",
+      "type": "ideological_clash",
+      "line_range": [
+        3751,
+        3802
+      ],
+      "participants": [
+        "陈",
+        "塔露拉"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "陈表明自己来此是为了审判而非和解，与塔露拉彻底决裂",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅利用从陈处习得的赤霄剑术与塔露拉战斗",
+      "type": "battle",
+      "line_range": [
+        3891,
+        3936
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "塔露拉"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "阿米娅复制赤霄剑术，证明自己作为魔王的潜力",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅揭露科西切对塔露拉记忆的扭曲",
+      "type": "revelation",
+      "line_range": [
+        3957,
+        3972
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "塔露拉"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "证明科西切的法术早在塔露拉幼年时就开始影响她",
+      "is_imaginary": false
+    },
+    {
+      "event": "魏彦吾与鼠王对峙，鼠王阻止魏彦吾介入战斗",
+      "type": "confrontation",
+      "line_range": [
+        4036,
+        4057
+      ],
+      "participants": [
+        "魏彦吾",
+        "鼠王"
+      ],
+      "location": "龙门",
+      "significance": "鼠王以死相逼阻止魏彦吾，相信陈和阿米娅能解决问题",
+      "is_imaginary": false
+    },
+    {
+      "event": "迷迭香与盾卫在指挥塔外激战，决心保护阿米娅",
+      "type": "battle",
+      "line_range": [
+        4059,
+        4073
+      ],
+      "participants": [
+        "迷迭香",
+        "盾卫"
+      ],
+      "location": "核心城指挥塔外围",
+      "significance": "迷迭香展现坚定意志，与盾卫协同作战",
+      "is_imaginary": false
+    },
+    {
+      "event": "科西切以乌萨斯化身自居，发表长篇演说阐述其理念",
+      "type": "ideological_clash",
+      "line_range": [
+        4074,
+        4151
+      ],
+      "participants": [
+        "塔露拉",
+        "阿米娅",
+        "陈"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "科西切揭示其通过战争重塑乌萨斯的宏大计划，与阿米娅和陈的理念形成根本对立",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅和陈成功唤醒塔露拉的本我意识",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        4200,
+        4226
+      ],
+      "participants": [
+        "阿米娅",
+        "陈",
+        "塔露拉"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "塔露拉压制科西切，恢复自我意识，决定终结诅咒",
+      "is_imaginary": false
+    },
+    {
+      "event": "W出现并取得核心城制动钥匙，成功停下城市",
+      "type": "rescue",
+      "line_range": [
+        4254,
+        4311
+      ],
+      "participants": [
+        "W",
+        "阿米娅",
+        "塔露拉",
+        "陈"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "W利用特蕾西娅的遗言取得阿米娅信任，塔露拉交出钥匙，城市被停下",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与塔露拉在战后进行姐妹间的对话与和解",
+      "type": "reunion",
+      "line_range": [
+        4351,
+        4400
+      ],
+      "participants": [
+        "陈",
+        "塔露拉"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "陈逮捕塔露拉，但两人关系有所缓和，塔露拉决定活下去面对罪责",
+      "is_imaginary": false
+    },
+    {
+      "event": "W向阿米娅解释自己杀害米莎的真相并告别",
+      "type": "farewell",
+      "line_range": [
+        4401,
+        4428
+      ],
+      "participants": [
+        "W",
+        "阿米娅"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "W承认错误，表示不会再与阿米娅见面，阿米娅要求她不再滥杀",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希分析罗德岛扣押塔露拉的政治博弈",
+      "type": "planning",
+      "line_range": [
+        4477,
+        4503
+      ],
+      "participants": [
+        "凯尔希",
+        "博士",
+        "陈"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "凯尔希解释扣押塔露拉可让龙门和乌萨斯相互制衡，保护罗德岛",
+      "is_imaginary": false
+    },
+    {
+      "event": "W召集萨卡兹雇佣兵，宣布脱离整合运动",
+      "type": "departure",
+      "line_range": [
+        4505,
+        4524
+      ],
+      "participants": [
+        "W",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "核心城",
+      "significance": "W带领萨卡兹雇佣兵独立，不再为任何势力卖命",
+      "is_imaginary": false
+    },
+    {
+      "event": "迷迭香与盾卫达成协议，罗德岛带走塔露拉",
+      "type": "alliance",
+      "line_range": [
+        4537,
+        4583
+      ],
+      "participants": [
+        "迷迭香",
+        "盾卫"
+      ],
+      "location": "核心城",
+      "significance": "迷迭香以个人信誉担保，盾卫同意暂时不追究塔露拉",
+      "is_imaginary": false
+    },
+    {
+      "event": "影卫与皇帝内卫对峙，阻止乌萨斯军进一步行动",
+      "type": "confrontation",
+      "line_range": [
+        4588,
+        4624
+      ],
+      "participants": [
+        "影卫",
+        "皇帝内卫"
+      ],
+      "location": "核心城",
+      "significance": "影卫以高卢语劝诫内卫，阻止了乌萨斯军的后续计划",
+      "is_imaginary": false
+    },
+    {
+      "event": "弑君者解散整合运动残部，决定回叙拉古",
+      "type": "departure",
+      "line_range": [
+        4645,
+        4680
+      ],
+      "participants": [
+        "弑君者",
+        "九",
+        "整合运动成员"
+      ],
+      "location": "核心城",
+      "significance": "弑君者承认自己太弱，决定回叙拉古变强，将残部托付给九",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈与魏彦吾在无名冢前和解并告别",
+      "type": "farewell",
+      "line_range": [
+        4711,
+        4793
+      ],
+      "participants": [
+        "陈",
+        "魏彦吾",
+        "鼠王"
+      ],
+      "location": "龙门无名冢",
+      "significance": "魏彦吾讲述过去，陈决定加入罗德岛，两人达成和解",
+      "is_imaginary": false
+    },
+    {
+      "event": "乌萨斯皇帝费奥多尔与维特大臣讨论事件善后",
+      "type": "political_intrigue",
+      "line_range": [
+        4963,
+        5025
+      ],
+      "participants": [
+        "费奥多尔",
+        "伊斯拉姆·维特"
+      ],
+      "location": "乌萨斯皇宫",
+      "significance": "揭示主谋已畏罪自杀，皇帝对感染者政策感到无力",
+      "is_imaginary": false
+    },
+    {
+      "event": "塔露拉在罗德岛监禁中回忆与霜星和孩子们的过去",
+      "type": "flashback",
+      "line_range": [
+        5026,
+        5058
+      ],
+      "participants": [
+        "塔露拉",
+        "霜星"
+      ],
+      "location": "罗德岛监禁室/冻原回忆",
+      "significance": "展现塔露拉与霜星及孩子们的温馨过往，与现状形成对比",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆片段：塔露拉与决定留下的感染者战士告别",
+      "type": "farewell",
+      "line_range": [
+        5059,
+        5117
+      ],
+      "participants": [
+        "塔露拉",
+        "感染者战士"
+      ],
+      "location": "冻原营地",
+      "significance": "展现塔露拉尊重他人选择，不强迫追随的理念",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆片段：迷迭香与盾卫讨论仇恨与战斗的意义",
+      "type": "ideological_clash",
+      "line_range": [
+        5118,
+        5180
+      ],
+      "participants": [
+        "迷迭香",
+        "盾卫"
+      ],
+      "location": "核心城战场",
+      "significance": "盾卫认为迷迭香更适合加入他们，迷迭香坚定选择阿米娅",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆片段：凯尔希向博士说明对梅菲斯特的手术方案",
+      "type": "revelation",
+      "line_range": [
+        5181,
+        5217
+      ],
+      "participants": [
+        "凯尔希",
+        "博士"
+      ],
+      "location": "罗德岛医疗区",
+      "significance": "凯尔希将梅菲斯特的命运交给博士决定，强调选择权",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆片段：罗德岛干员在指挥塔内与萨卡兹雇佣兵激战",
+      "type": "battle",
+      "line_range": [
+        5218,
+        5299
+      ],
+      "participants": [
+        "罗德岛干员",
+        "萨卡兹雇佣兵"
+      ],
+      "location": "核心城指挥塔",
+      "significance": "展现罗德岛干员在塔顶战斗中的英勇与牺牲精神",
+      "is_imaginary": false
+    },
+    {
+      "event": "回忆片段：12F与博士进行关于选择与命运的哲学对话",
+      "type": "reflection",
+      "line_range": [
+        5300,
+        5378
+      ],
+      "participants": [
+        "12F",
+        "博士"
+      ],
+      "location": "核心城战场",
+      "significance": "12F鼓励博士，认为博士一直有选择的权利",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "塔露拉",
+      "type": "npc",
+      "role_in_chapter": "核心主角。过去时间线中从被收养的感染者成长为反抗领袖，与科西切决裂并刺杀他，带领感染者队伍试图与游击队合流。现在时间线中作为整合运动领袖，其阴谋被凯尔希分析。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿兰娜",
+      "type": "operator",
+      "role_in_chapter": "塔露拉的挚友和精神导师。在村庄收留塔露拉，后与她一同逃亡，在游击队营地担任教师，多次与塔露拉进行关于理想和仇恨的深刻对话。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老妇",
+      "type": "npc",
+      "role_in_chapter": "收养塔露拉的乌萨斯老妇人，对塔露拉有深厚的感情，最终为保护她而牺牲。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老汉",
+      "type": "npc",
+      "role_in_chapter": "收养塔露拉的乌萨斯老人，也是感染者，为保护塔露拉而自首被纠察队带走。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "科西切",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯公爵，塔露拉的养父和导师。在闪回中与塔露拉进行长篇对话，阐述其仇恨哲学，被塔露拉刺杀。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "霜星",
+      "type": "npc",
+      "role_in_chapter": "游击队雪怪小队队长，强大的冰系术师。与塔露拉初次相遇时发生冲突，后成为塔露拉与爱国者之间的桥梁。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "爱国者",
+      "type": "npc",
+      "role_in_chapter": "游击队领袖，萨卡兹战士。在冻原上与塔露拉就南下计划发生激烈争论，质疑她的理想主义。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "罗德岛领袖。在核心城指挥行动，与迷迭香一同突破封锁，与盾卫谈判合作，使用法术镇压萨卡兹雇佣兵。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "迷迭香",
+      "type": "operator",
+      "role_in_chapter": "罗德岛精英干员，强大的源石技艺使用者。在核心城与整合运动和萨卡兹雇佣兵战斗，因工程小队遇伏而情感失控，强行摧毁封闭层。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛高层。向博士分析塔露拉的阴谋本质，指挥小队避开牧群萨卡兹，讨论阿米娅使用戒指法术的风险。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "博士",
+      "type": "operator",
+      "role_in_chapter": "罗德岛指挥官。与凯尔希一同分析局势，被凯尔希告知塔露拉的阴谋。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "盾卫",
+      "type": "npc",
+      "role_in_chapter": "游击队战士。在核心城与罗德岛谈判合作，主张以暴制暴的复仇哲学，与阿米娅和迷迭香发生理念冲突。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "魏彦吾",
+      "type": "npc",
+      "role_in_chapter": "龙门实际统治者，陈的舅舅。在闪回中回忆塔露拉被科西切带走时的往事，表达对陈的教导和期望。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "陈晖洁",
+      "type": "npc",
+      "role_in_chapter": "龙门近卫局高级警司，塔露拉的姐妹。在闪回中回忆童年时塔露拉被带走，以及在维多利亚毕业时得知塔露拉消息后决定回龙门。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "风笛",
+      "type": "npc",
+      "role_in_chapter": "陈在维多利亚皇家近卫学校的同学，与陈讨论毕业后的去向。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "W",
+      "type": "operator",
+      "role_in_chapter": "出现并与罗德岛和盾卫对峙，澄清了杀害Scout的真相，表明自己与塔露拉为敌的立场，并警告乌萨斯军已渗透。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "在闪回中向魏彦吾汇报志愿，暗示调查塔露拉相关线索；在核心城与九相遇，九因感染矿石病而离开，陈坚定了证明龙门能接纳感染者的决心。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "伊诺",
+      "type": "npc",
+      "role_in_chapter": "作为年幼的梅菲斯特，与萨沙一起与塔露拉交谈，塔露拉教导他们关于名字和友谊的意义。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "萨沙",
+      "type": "npc",
+      "role_in_chapter": "作为年幼的浮士德，与伊诺一起与塔露拉交谈，塔露拉教导他们关于名字和友谊的意义。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "九",
+      "type": "npc",
+      "role_in_chapter": "在核心城与陈相遇，因感染矿石病而决定离开龙门，与陈就龙门能否接纳感染者进行了激烈辩论。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "极境",
+      "type": "operator",
+      "role_in_chapter": "与霍克发现核心城内藏有乌萨斯新式军备，推测乌萨斯军已渗透。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "霍克",
+      "type": "operator",
+      "role_in_chapter": "与极境发现核心城内藏有乌萨斯新式军备，推测乌萨斯军已渗透。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "佩特洛娃",
+      "type": "npc",
+      "role_in_chapter": "作为雪怪小队成员，与塔露拉一同作战，并见证了部分感染者队伍的离开。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "皇帝内卫",
+      "type": "npc",
+      "role_in_chapter": "出现并揭露了塔露拉作为科西切公爵养女的身份，试图挑拨她与感染者队伍的关系，并与爱国者对峙。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "鼠王",
+      "type": "npc",
+      "role_in_chapter": "以死相逼阻止魏彦吾，相信陈和阿米娅能解决问题",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "弑君者",
+      "type": "npc",
+      "role_in_chapter": "解散整合运动残部，将成员托付给九，决定回叙拉古变强",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "费奥多尔",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯皇帝，与维特讨论事件善后，对感染者政策感到无力",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "伊斯拉姆·维特",
+      "type": "npc",
+      "role_in_chapter": "乌萨斯大臣，向皇帝汇报主谋已畏罪自杀，建议暂缓感染者政策改革",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "影卫",
+      "type": "npc",
+      "role_in_chapter": "与皇帝内卫对峙，以高卢语劝诫，阻止乌萨斯军进一步行动",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "12F",
+      "type": "operator",
+      "role_in_chapter": "与博士进行关于选择与命运的哲学对话，鼓励博士",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "感染者战士",
+      "type": "npc",
+      "role_in_chapter": "在回忆中与塔露拉告别，决定留在冻原",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "仇恨与统治的哲学",
+      "line_range": [
+        965,
+        1075
+      ],
+      "discussion_summary": "科西切向塔露拉阐述其核心哲学：人与人之间由恨意统治，统治者利用不平等塑造假象，人民只畏惧权力和暴力。他预言塔露拉终将因对人性失望而走上他的道路。",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者的身份与骄傲",
+      "line_range": [
+        1710,
+        1717
+      ],
+      "discussion_summary": "塔露拉对阿丽娜表示，她作为感染者感到骄傲，因为这片大地还没杀得了她。她认为追求公平不需要原因，因为本来就该追求公平。",
+      "is_substantive": true
+    },
+    {
+      "concept": "公义与暴力的关系",
+      "line_range": [
+        380,
+        382
+      ],
+      "discussion_summary": "塔露拉质疑：如果公义需要更多暴力才能伸张，那还怎么能被称得上是公义？阿丽娜后来引用这句话，认为它困扰了她多年。",
+      "is_substantive": true
+    },
+    {
+      "concept": "整合运动的本质",
+      "line_range": [
+        401,
+        421
+      ],
+      "discussion_summary": "凯尔希分析塔露拉是阴谋家，整合运动被设计为注定毁灭的工具。塔露拉维护形象是为了让不同派系服从她，而乌萨斯第三集团军默许整合运动的暴力行为。",
+      "is_substantive": true
+    },
+    {
+      "concept": "武器与人的定义",
+      "line_range": [
+        208,
+        253
+      ],
+      "discussion_summary": "阿米娅与凯尔希争论她是否是一件武器。阿米娅认为特蕾西娅留给她的戒指不是武器，而是用来救人的工具。凯尔希则质疑谁来定义什么是武器，认为拥有自我意识不代表不是武器。",
+      "is_substantive": true
+    },
+    {
+      "concept": "复仇与毁灭之路",
+      "line_range": [
+        1237,
+        1262
+      ],
+      "discussion_summary": "盾卫阐述游击队的复仇哲学：要杀就杀干净，把统治者、军队和叛徒全部杀了，直到雪原一片白茫茫。他认为阿米娅的讲道理方式看不到头。",
+      "is_substantive": true
+    },
+    {
+      "concept": "命运与抗争",
+      "line_range": [
+        1728,
+        1745
+      ],
+      "discussion_summary": "阿丽娜表示不相信命运，因为看不见它。她认为看得见摸得着的事情才是可靠的。塔露拉则坚持不会低头，如果命运嘲讽她，她会把它烧成灰。",
+      "is_substantive": true
+    },
+    {
+      "concept": "牺牲的必要性",
+      "line_range": [
+        2081,
+        2097
+      ],
+      "discussion_summary": "爱国者认为不流血无以得胜，牺牲是必要的；塔露拉则反对牺牲别人，认为没有人有义务去面对战争。",
+      "is_substantive": true
+    },
+    {
+      "concept": "名字与身份",
+      "line_range": [
+        2125,
+        2161
+      ],
+      "discussion_summary": "塔露拉向伊诺和萨沙解释，名字不应成为符号或权力，她希望被当作朋友而非斗士记住，强调个人身份不应被集体事业所掩盖。",
+      "is_substantive": true
+    },
+    {
+      "concept": "仇恨与愤怒",
+      "line_range": [
+        2426,
+        2454
+      ],
+      "discussion_summary": "阿丽娜临终前要求塔露拉不要恨任何人，认为仇恨会让她被科西切的诅咒吞噬；塔露拉则无法抑制自己的愤怒。",
+      "is_substantive": true
+    },
+    {
+      "concept": "暴力与文明",
+      "line_range": [
+        2656,
+        2660
+      ],
+      "discussion_summary": "凯尔希认为暴力是源于生命未遭文明驯化的部分，恶意的链条不会自行消失，暴力行过的道路寸草不生。",
+      "is_substantive": true
+    },
+    {
+      "concept": "国家的善恶",
+      "line_range": [
+        2876,
+        2882
+      ],
+      "discussion_summary": "皇帝内卫认为一个国家绝非善恶可以衡量，乌萨斯的善举与恶行并重，要求塔露拉面对恶行的同时也要面对善举培养的一切。",
+      "is_substantive": true
+    },
+    {
+      "concept": "正义与人数",
+      "line_range": [
+        2944,
+        2947
+      ],
+      "discussion_summary": "皇帝内卫质疑为少数人而战如何取得多数人的认同；爱国者反驳正义与否与人数多寡无关。",
+      "is_substantive": true
+    },
+    {
+      "concept": "医生的天职",
+      "line_range": [
+        3115,
+        3130
+      ],
+      "discussion_summary": "凯尔希阐述医生不会承认无药可医，医治矿石病患者是她的天职，但医生也必须采取必要措施阻止更多人受疾病侵袭。",
+      "is_substantive": true
+    },
+    {
+      "concept": "善意与邪恶",
+      "line_range": [
+        3217,
+        3224
+      ],
+      "discussion_summary": "凯尔希反思自己因假设一条不成熟的道路，将善良的科学家们送上了屠宰场，认为在一个邪恶的世界里，善意会被扭曲。",
+      "is_substantive": true
+    },
+    {
+      "concept": "身份与审判",
+      "line_range": [
+        3235,
+        3239
+      ],
+      "discussion_summary": "凯尔希探讨人们因不了解对方而施暴，以及身份（贵族/贫民、普通人/感染者）是否应成为审判的依据。",
+      "is_substantive": true
+    },
+    {
+      "concept": "信任的崩塌",
+      "line_range": [
+        3494,
+        3497
+      ],
+      "discussion_summary": "塔露拉认为信任的崩塌只是一瞬间的事情，流言会摧毁他人，在没有流言蜚语之前，清白的人是清白的，流言出现以后，就没有人是清白的了。",
+      "is_substantive": true
+    },
+    {
+      "concept": "不死的黑蛇",
+      "line_range": [
+        3723,
+        3747
+      ],
+      "discussion_summary": "阿米娅指出科西切是不死的黑蛇，科西切承认自己可以控制情感，但阿米娅能感受其畏惧",
+      "is_substantive": true
+    },
+    {
+      "concept": "魔王",
+      "line_range": [
+        3699,
+        3722
+      ],
+      "discussion_summary": "科西切识破阿米娅是萨卡兹魔王，质疑她作为异族魔王的合法性，认为她只是玩具",
+      "is_substantive": true
+    },
+    {
+      "concept": "赤霄剑术",
+      "line_range": [
+        3904,
+        3915
+      ],
+      "discussion_summary": "陈惊讶阿米娅会赤霄剑术，魏彦吾说使唤赤霄靠的是心境而非剑术",
+      "is_substantive": true
+    },
+    {
+      "concept": "乌萨斯的爱",
+      "line_range": [
+        4074,
+        4097
+      ],
+      "discussion_summary": "科西切阐述其爱乌萨斯所有人的理念，认为爱是相同的，生命都是乌萨斯的沙粒",
+      "is_substantive": true
+    },
+    {
+      "concept": "乌萨斯的战争与重生",
+      "line_range": [
+        4100,
+        4151
+      ],
+      "discussion_summary": "科西切以乌萨斯化身自居，阐述通过战争让乌萨斯重获尊严、让感染者与普通人同仇敌忾的理念",
+      "is_substantive": true
+    },
+    {
+      "concept": "审判的资格",
+      "line_range": [
+        4355,
+        4363
+      ],
+      "discussion_summary": "陈认为这片大地上还没有足够公正审判感染者的地方，塔露拉认同这是陈的理想",
+      "is_substantive": true
+    },
+    {
+      "concept": "政治平衡",
+      "line_range": [
+        4477,
+        4503
+      ],
+      "discussion_summary": "凯尔希分析扣押塔露拉可让龙门和乌萨斯相互制衡，保护罗德岛",
+      "is_substantive": true
+    },
+    {
+      "concept": "选择与命运",
+      "line_range": [
+        5359,
+        5378
+      ],
+      "discussion_summary": "12F认为博士一直有选择的权利，即使被推着走，选择依然存在",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "感染者纠察队",
+      "line_range": [
+        80,
+        103
+      ],
+      "description": "在村庄进行暴力搜查，殴打老汉，被塔露拉质问和威胁。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        131,
+        189
+      ],
+      "description": "在核心城已陷入疯狂和自相残杀，成员对罗德岛和萨卡兹雇佣兵都充满敌意，爱国者死后组织崩溃。"
+    },
+    {
+      "faction": "萨卡兹雇佣兵",
+      "line_range": [
+        650,
+        696
+      ],
+      "description": "在核心城屠杀其他整合运动成员，认为感染者不是同胞，表现出绝望和自暴自弃的心态。"
+    },
+    {
+      "faction": "游击队（盾卫）",
+      "line_range": [
+        1195,
+        1286
+      ],
+      "description": "在核心城与罗德岛谈判合作，主张以暴制暴的复仇哲学，目标是摧毁塔露拉和乌萨斯腐朽的统治。"
+    },
+    {
+      "faction": "乌萨斯第三集团军",
+      "line_range": [
+        409,
+        412
+      ],
+      "description": "凯尔希推测第三集团军默许整合运动的暴力行为，可能也是塔露拉阴谋的一部分。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        174,
+        192
+      ],
+      "description": "在核心城执行突破任务，阿米娅和迷迭香小队正面作战，凯尔希和博士从旁分析指挥。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        1828,
+        1875
+      ],
+      "description": "罗德岛干员与迷迭香小队通讯，得知工程小组一人牺牲，其他人暂时安全。迷迭香在队员鼓励下坚定了战斗意志。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        1872,
+        1874
+      ],
+      "description": "阿米娅指出整合运动已陷入一片混乱，什么都是他们的敌人，有的人在缺少敌人的时候就会为自己创造敌人。"
+    },
+    {
+      "faction": "游击队（盾卫）",
+      "line_range": [
+        2162,
+        2209
+      ],
+      "description": "盾卫与罗德岛在指挥塔下遭遇伪装成整合运动的乌萨斯军，盾卫愤怒地斥责这些乌萨斯军人，并与罗德岛协同作战。"
+    },
+    {
+      "faction": "乌萨斯军",
+      "line_range": [
+        1916,
+        1956
+      ],
+      "description": "极境和霍克发现核心城内藏有大量乌萨斯新式军备，推测乌萨斯正规军已渗透进整合运动，并发出警告。"
+    },
+    {
+      "faction": "雪怪小队",
+      "line_range": [
+        1957,
+        1964
+      ],
+      "description": "佩特洛娃代表雪怪小队与塔露拉并肩作战，称赞她的法术，并表示信任她。"
+    },
+    {
+      "faction": "乌萨斯皇帝内卫",
+      "line_range": [
+        2730,
+        2855
+      ],
+      "description": "皇帝内卫出现并袭击了塔露拉的队伍，揭露了塔露拉作为科西切公爵养女的身份，试图挑拨她与感染者队伍的关系。"
+    },
+    {
+      "faction": "龙门近卫局",
+      "line_range": [
+        3414,
+        3477
+      ],
+      "description": "九与陈讨论龙门对感染者的政策，九因感染矿石病而决定离开，认为龙门并未准备好接纳感染者，陈则决心证明龙门可以。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        4477,
+        4503
+      ],
+      "description": "凯尔希分析罗德岛扣押塔露拉的政治博弈，认为这是保护罗德岛的唯一方法"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        4645,
+        4680
+      ],
+      "description": "弑君者解散整合运动残部，认为整合运动已经完蛋，将成员托付给九"
+    },
+    {
+      "faction": "乌萨斯第三集团军",
+      "line_range": [
+        4482,
+        4497
+      ],
+      "description": "凯尔希分析第三集团军会因塔露拉被扣押而不敢轻易对罗德岛出手"
+    },
+    {
+      "faction": "龙门",
+      "line_range": [
+        4482,
+        4497
+      ],
+      "description": "凯尔希分析龙门会因塔露拉被扣押而不敢轻易对罗德岛出手"
+    },
+    {
+      "faction": "萨卡兹雇佣兵",
+      "line_range": [
+        4505,
+        4524
+      ],
+      "description": "W召集萨卡兹雇佣兵，宣布脱离整合运动，为自己而战"
+    },
+    {
+      "faction": "盾卫",
+      "line_range": [
+        4537,
+        4583
+      ],
+      "description": "盾卫与迷迭香达成协议，同意罗德岛带走塔露拉，但警告若为非作歹必会报复"
+    },
+    {
+      "faction": "皇帝内卫",
+      "line_range": [
+        4588,
+        4624
+      ],
+      "description": "影卫与皇帝内卫对峙，内卫最终被说服停止行动"
+    },
+    {
+      "faction": "乌萨斯皇室",
+      "line_range": [
+        4963,
+        5025
+      ],
+      "description": "皇帝费奥多尔与维特讨论事件善后，对感染者政策感到无力"
+    }
+  ],
+  "locations": [
+    {
+      "location": "乌萨斯村庄",
+      "line_range": [
+        1,
+        103
+      ],
+      "description": "塔露拉被收养的村庄，生活贫困，受到感染者纠察队的压迫。"
+    },
+    {
+      "location": "切尔诺伯格核心城",
+      "line_range": [
+        131,
+        279
+      ],
+      "description": "整合运动占领的城市，现在陷入混乱和自相残杀，罗德岛在此执行突破任务。"
+    },
+    {
+      "location": "科西切的公爵领",
+      "line_range": [
+        890,
+        1117
+      ],
+      "description": "科西切的领地，塔露拉在此接受教育并与科西切决裂。科西切刻意制造感染者和居民之间的不平等。"
+    },
+    {
+      "location": "冻原",
+      "line_range": [
+        1171,
+        1194
+      ],
+      "description": "游击队活动的区域，环境寒冷恶劣，塔露拉在此与霜星和爱国者相遇。"
+    },
+    {
+      "location": "维多利亚皇家近卫学校",
+      "line_range": [
+        1375,
+        1430
+      ],
+      "description": "陈晖洁和风笛毕业的军校，陈在此得知塔露拉的消息。"
+    },
+    {
+      "location": "切尔诺伯格核心城",
+      "line_range": [
+        1828,
+        1956
+      ],
+      "description": "罗德岛与整合运动、乌萨斯军在此激战，迷迭香小队在此牺牲，极境和霍克在此发现乌萨斯军备。"
+    },
+    {
+      "location": "乌萨斯冻原",
+      "line_range": [
+        1957,
+        2064
+      ],
+      "description": "塔露拉与雪怪小队攻下一座移动城市，部分感染者队伍要求分道扬镳，塔露拉与爱国者就此事发生争执。"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        2297,
+        2316
+      ],
+      "description": "闪回中，陈向魏彦吾汇报自己加入龙门近卫局的志愿，并提及十年前龙门市民被绑架失踪事件。"
+    },
+    {
+      "location": "乌萨斯村庄",
+      "line_range": [
+        3483,
+        3603
+      ],
+      "description": "塔露拉在此发现感染者被村民活活饿死的惨状，她的愤怒达到顶点，开始憎恨所有压迫者。"
+    },
+    {
+      "location": "核心城指挥塔",
+      "line_range": [
+        3617,
+        3845
+      ],
+      "description": "阿米娅、陈与塔露拉在此进行最终决战，揭露科西切附身真相"
+    },
+    {
+      "location": "龙门无名冢",
+      "line_range": [
+        4711,
+        4793
+      ],
+      "description": "魏彦吾向陈讲述过去，两人在此和解并告别"
+    },
+    {
+      "location": "乌萨斯皇宫",
+      "line_range": [
+        4963,
+        5025
+      ],
+      "description": "皇帝费奥多尔与维特大臣讨论切尔诺伯格事件的善后事宜"
+    },
+    {
+      "location": "冻原营地",
+      "line_range": [
+        5059,
+        5117
+      ],
+      "description": "塔露拉与决定留下的感染者战士告别，展现其尊重他人选择的理念"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T08:36:58.008473+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 124344,
+    "tokens_out": 15498,
+    "elapsed_s": 123.80349612236023
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "塔露拉",
+    "老妇",
+    "老汉",
+    "科西切",
+    "霜星",
+    "爱国者",
+    "博士",
+    "盾卫",
+    "魏彦吾",
+    "陈晖洁",
+    "伊诺",
+    "萨沙",
+    "九",
+    "霍克",
+    "佩特洛娃",
+    "皇帝内卫",
+    "鼠王",
+    "费奥多尔",
+    "伊斯拉姆·维特",
+    "影卫",
+    "感染者战士"
+  ]
+}

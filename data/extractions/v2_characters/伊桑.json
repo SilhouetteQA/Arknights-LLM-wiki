@@ -1,0 +1,48 @@
+{
+  "summary": "伊桑是罗德岛特种干员，拥有变色龙般的源石技艺，能隐身并模拟环境。他看似随性、爱开玩笑，实则内心细腻，关心他人。他曾是整合运动成员，后脱离加入罗德岛，在战场上虽不勇敢，但关键时刻会做出自己的选择。",
+  "personality": {
+    "traits": [
+      "随性",
+      "细腻",
+      "关心他人",
+      "不勇敢"
+    ],
+    "description": "伊桑表面轻浮爱开玩笑，实则内心细腻，能察觉他人情绪并用自己的方式给予关心。"
+  },
+  "abilities": {
+    "description": "伊桑能运用源石技艺改变体表颜色，甚至使接触的物品一同变色，实现隐身和模拟环境。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "午间逸话",
+        "evidence": "伊桑利用隐身能力潜入厨房偷吃，但被角峰通过食物总量减少发现，展现其能力在非战斗场景的应用。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "午间逸话",
+      "nodes": "厨房对话",
+      "event": "伊桑在厨房偷吃被角峰发现，两人就卫生习惯和做菜的心意展开对话。",
+      "role": "伊桑以看似胡闹的方式关心角峰的低落情绪，并用自己的三明治作为回礼。"
+    }
+  ],
+  "first_appearance": "午间逸话",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 4336,
+    "tokens_out": 347,
+    "elapsed_s": 4.697894096374512
+  },
+  "name_zh": "伊桑",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "午间逸话"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:51:24.725178+00:00",
+  "race": "萨弗拉",
+  "affiliations": [
+    "罗德岛"
+  ]
+}

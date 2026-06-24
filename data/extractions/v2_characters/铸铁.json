@@ -1,0 +1,48 @@
+{
+  "summary": "来自米诺斯的丰蹄族佣兵，性格务实且富有责任心，擅长保护与押运。在罗德岛展现出惊人的学习能力与照顾他人的热情，尤其关注博士的健康与锻炼。在多索雷斯假日中与陈、星熊等人重聚并合影，体现其融入罗德岛社交圈的一面。",
+  "personality": {
+    "traits": [
+      "务实",
+      "富有责任心",
+      "热情",
+      "善于照顾人"
+    ],
+    "description": "表面冷淡但内心充满关怀，习惯为他人多做一步，将任务与照顾他人视为己任。"
+  },
+  "abilities": {
+    "description": "经验丰富的佣兵，擅长保护目标与押运货物，具备优良的物理强度与战斗技巧，同时拥有惊人的学习能力（如快速掌握烹饪与营养学）。",
+    "power_level": "信息不足",
+    "power_level_evidence": [
+      {
+        "chapter": "多索雷斯假日",
+        "evidence": "未直接参与战斗，仅作为社交角色出现，无法评估其战力。"
+      }
+    ]
+  },
+  "participated_events": [
+    {
+      "chapter": "多索雷斯假日",
+      "nodes": "尾声",
+      "event": "与诗怀雅、星熊、陈、林雨霞重聚并合影，为本章画上温馨句号。",
+      "role": "作为摄影师记录友谊时刻，展现其社交与融入能力。"
+    }
+  ],
+  "first_appearance": "多索雷斯假日",
+  "appearance_count": 1,
+  "_stats": {
+    "tokens_in": 3189,
+    "tokens_out": 341,
+    "elapsed_s": 4.088166952133179
+  },
+  "name_zh": "铸铁",
+  "aliases": [],
+  "source_pass1_chapters": [
+    "多索雷斯假日"
+  ],
+  "model": "deepseek-chat",
+  "generated_at": "2026-06-21T07:33:53.061159+00:00",
+  "race": "丰蹄",
+  "affiliations": [
+    "米诺斯"
+  ]
+}

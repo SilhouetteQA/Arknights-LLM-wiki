@@ -1,0 +1,1200 @@
+{
+  "chapter": "红丝绒",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章以蓝卡坞电影《杜邦夫人之死》的拍摄现场为舞台。开场是剧组在移动地块上的彩排，导演斯蒂芬对演员表演不满，老牌女星米兰妮与新人迈克尔发生冲突。一只神秘的黑猫闯入片场，引出了制片人格蕾塔邀请的新演员卢西恩（傀影）。在卢西恩的第一场戏中，饰演杜邦爵士的醉鬼演员道尔顿意外被真刀刺死，剧组陷入恐慌。\n\n格蕾塔迅速将道尔顿之死定性为意外并恢复拍摄，但统筹谢莉因五年前一名新人演员劳拉在威亚事故中坠亡的往事而精神紧张，怀疑道尔顿之死是报复。卢西恩与他的同伴Miss.Christine确认，剧本中隐藏着猩红剧团的印记，认为这是剧团长死而复生的邀请。谢莉在调查格蕾塔的秘密文件时，被幻觉中的劳拉逼问，承认自己当年因私心未检查设备，间接导致劳拉死亡。\n\n谢莉随后被发现冻死在冷库中。道具组实习生莫伊拉为迈克尔作证，称他当晚是来找自己咨询如何秘密离开地块。摄影助理从卢西恩处得知天灾将至的消息并公开，引发剧组骚动。格蕾塔承认自己计划让地块接近天灾拍摄实景，并揭露了五年前劳拉之死的真相，以及自己曾因贿赂评委被逐出蓝卡坞的过往。\n\n迈克尔试图带女友玛丽昂逃离，但两人在化妆间激烈争吵，互相指责对方在劳拉之死中的责任。迈克尔最终被玛丽昂威胁留下。与此同时，蒂比和莫伊拉在观影中加深友谊，而一名倒霉的场工在黑暗的摄影棚中遭遇袭击。\n\n格蕾塔在众人面前宣布已结清所有酬劳，并讲述了自己年轻时因行贿被蓝卡坞学院奖除名的故事。她表示剧组人员可以自由离开，但她和米兰妮、斯蒂芬等人将坚持完成电影拍摄。\n\n格蕾塔正式解散剧组后，米兰妮邀请蒂比协助设计杜邦夫人的谢幕场景，两人在交谈中揭示了米兰妮与已故女星玛丽安娜·布莱克（雅拉）的竞争往事。斯蒂芬在创作困境中遭遇自称「神」的神秘存在，对方引导他将焦点转向卢西恩饰演的信使角色，从而获得结局灵感。格蕾塔向卢西恩坦陈自己利用劳拉之死挽救电影的真相，并正式邀请他担任主演。\n\n卢西恩与格蕾塔对峙时，莫伊拉突然现身并承认自己是三起命案的凶手。卢西恩揭露莫伊拉并非劳拉的妹妹，而是被剧团长植入虚假记忆的复仇工具。莫伊拉在身份认知崩溃后，展现出将情绪具象化的源石技艺，与卢西恩展开战斗。卢西恩被迫动用「血钻的歌声」击败莫伊拉，但自身也陷入混乱状态。\n\n蒂比在得知莫伊拉是凶手后，凭借对恐怖片的记忆找到地块备用控制室，手动调整航向试图避开天灾。剧团长以道尔顿的面貌现身，与卢西恩在天灾中重逢。剧团长复盘了道尔顿、迈克尔与玛丽昂、莫伊拉等人的死亡，阐述死亡作为戏剧核心的美学理念。\n\n卢西恩揭露剧团长的真实身份是长生者「酒神」，并讲述了自己走遍泰拉追寻其历史踪迹的过程。卢西恩指出酒神对死亡的执着源于其作为长生者永远无法亲身经历死亡的悖论。两人在天灾中展开最终对决，卢西恩以源石技艺对抗天灾，并接受了酒神的传承，成为新的「酒神」。\n\n两个月后，蒂比探望狱中的莫伊拉，两人和解。电影《杜邦夫人》在另类电影节展映，米兰妮与雅拉（玛丽安娜）重逢。卢西恩与剧作家、暮落会面，宣布猩红剧团不复存在，但邀请他们加入自己即将组建的新剧团。",
+  "events": [
+    {
+      "event": "剧组彩排《杜邦夫人之死》，演员表演引发导演和主演不满",
+      "type": "rehearsal",
+      "line_range": [
+        1,
+        25
+      ],
+      "participants": [
+        "斯蒂芬",
+        "米兰妮",
+        "迈克尔"
+      ],
+      "location": "移动地块片场",
+      "significance": "建立电影拍摄背景和主要角色关系",
+      "is_imaginary": false
+    },
+    {
+      "event": "神秘黑猫闯入片场，引荐新演员卢西恩",
+      "type": "introduction",
+      "line_range": [
+        79,
+        127
+      ],
+      "participants": [
+        "格蕾塔",
+        "卢西恩",
+        "Miss.Christine",
+        "斯蒂芬"
+      ],
+      "location": "移动地块片场",
+      "significance": "卢西恩正式加入剧组，剧情核心人物登场",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩与道尔顿对戏，道尔顿被真刀刺死",
+      "type": "death",
+      "line_range": [
+        132,
+        210
+      ],
+      "participants": [
+        "卢西恩",
+        "道尔顿",
+        "斯蒂芬",
+        "谢莉"
+      ],
+      "location": "移动地块片场",
+      "significance": "第一起命案发生，引发后续悬疑",
+      "is_imaginary": false
+    },
+    {
+      "event": "格蕾塔将道尔顿之死定性为意外，开除道具组长并提拔莫伊拉",
+      "type": "investigation",
+      "line_range": [
+        211,
+        247
+      ],
+      "participants": [
+        "格蕾塔",
+        "谢莉",
+        "莫伊拉"
+      ],
+      "location": "移动地块片场",
+      "significance": "格蕾塔展现强硬手腕，莫伊拉获得晋升",
+      "is_imaginary": false
+    },
+    {
+      "event": "谢莉向阿布纳表达对道尔顿之死的怀疑，联想到五年前劳拉坠亡事故",
+      "type": "revelation",
+      "line_range": [
+        283,
+        302
+      ],
+      "participants": [
+        "谢莉",
+        "阿布纳"
+      ],
+      "location": "移动地块片场",
+      "significance": "揭示五年前事故背景，谢莉精神压力来源",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩回忆剧团训练，剧团长教导他使用武器和感受戏剧",
+      "type": "flashback",
+      "line_range": [
+        303,
+        351
+      ],
+      "participants": [
+        "小卢西恩",
+        "剧团长",
+        "白英花"
+      ],
+      "location": "猩红剧团",
+      "significance": "揭示卢西恩的过去和剧团长的教导",
+      "is_imaginary": false
+    },
+    {
+      "event": "格蕾塔在剧本拍卖会上拍下《杜邦夫人之死》，并招募卢西恩",
+      "type": "recruitment",
+      "line_range": [
+        357,
+        404
+      ],
+      "participants": [
+        "格蕾塔",
+        "卢西恩"
+      ],
+      "location": "蓝卡坞剧本拍卖会",
+      "significance": "揭示格蕾塔与卢西恩的初遇和招募过程",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩与Miss.Christine确认剧本中有剧团印记，认为是剧团长的邀请",
+      "type": "revelation",
+      "line_range": [
+        420,
+        441
+      ],
+      "participants": [
+        "卢西恩",
+        "Miss.Christine"
+      ],
+      "location": "移动地块",
+      "significance": "揭示卢西恩加入剧组的真实目的",
+      "is_imaginary": false
+    },
+    {
+      "event": "谢莉在拍摄威亚戏时受惊，货箱险些砸中她，被卢西恩所救",
+      "type": "accident",
+      "line_range": [
+        462,
+        488
+      ],
+      "participants": [
+        "谢莉",
+        "卢西恩",
+        "莫伊拉"
+      ],
+      "location": "移动地块片场",
+      "significance": "谢莉精神状况恶化，卢西恩展现观察力",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩与谢莉交谈，建议她用疼痛对抗幻觉，并分享自己过去的经历",
+      "type": "conversation",
+      "line_range": [
+        522,
+        597
+      ],
+      "participants": [
+        "卢西恩",
+        "谢莉"
+      ],
+      "location": "移动地块片场",
+      "significance": "卢西恩揭示自己也曾受幻觉困扰，与谢莉建立联系",
+      "is_imaginary": false
+    },
+    {
+      "event": "谢莉收到神秘讯息后离开观影会，在幻觉中被劳拉逼问，承认自己当年因私心未检查设备",
+      "type": "confession",
+      "line_range": [
+        641,
+        670
+      ],
+      "participants": [
+        "谢莉",
+        "劳拉"
+      ],
+      "location": "移动地块",
+      "significance": "揭示谢莉在五年前事故中的责任，为她的死亡埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "谢莉被发现冻死在冷库中，蒂比怀疑迈克尔是凶手",
+      "type": "death",
+      "line_range": [
+        671,
+        743
+      ],
+      "participants": [
+        "蒂比",
+        "迈克尔",
+        "玛丽昂"
+      ],
+      "location": "移动地块冷库",
+      "significance": "第二起命案发生，迈克尔成为嫌疑人",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩向摄影助理透露天灾将至的消息，摄影助理公开文件引发剧组骚动",
+      "type": "revelation",
+      "line_range": [
+        756,
+        781
+      ],
+      "participants": [
+        "卢西恩",
+        "摄影助理"
+      ],
+      "location": "移动地块",
+      "significance": "揭示格蕾塔的计划，加剧剧组恐慌",
+      "is_imaginary": false
+    },
+    {
+      "event": "格蕾塔承认计划拍摄天灾，并揭露五年前劳拉之死的真相",
+      "type": "confrontation",
+      "line_range": [
+        782,
+        828
+      ],
+      "participants": [
+        "格蕾塔",
+        "阿布纳",
+        "摄影助理"
+      ],
+      "location": "移动地块",
+      "significance": "格蕾塔的野心和过往被公开",
+      "is_imaginary": false
+    },
+    {
+      "event": "莫伊拉为迈克尔作证，并透露迈克尔想秘密离开地块",
+      "type": "revelation",
+      "line_range": [
+        841,
+        876
+      ],
+      "participants": [
+        "莫伊拉",
+        "蒂比",
+        "迈克尔",
+        "玛丽昂"
+      ],
+      "location": "移动地块",
+      "significance": "迈克尔动机被揭示，莫伊拉与蒂比关系深化",
+      "is_imaginary": false
+    },
+    {
+      "event": "迈克尔回忆五年前劳拉坠亡时自己见死不救的经过",
+      "type": "flashback",
+      "line_range": [
+        877,
+        939
+      ],
+      "participants": [
+        "迈克尔",
+        "劳拉",
+        "玛丽昂"
+      ],
+      "location": "移动地块片场",
+      "significance": "揭示迈克尔在五年前事故中的责任",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩回忆剧团演出后的场景，剧团长教导他生活即是戏剧",
+      "type": "flashback",
+      "line_range": [
+        945,
+        977
+      ],
+      "participants": [
+        "卢西恩",
+        "剧团长",
+        "沉渊"
+      ],
+      "location": "猩红剧团",
+      "significance": "进一步揭示卢西恩的过去和剧团长的哲学",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩与Miss.Christine分析局势，决定推动故事发展以引出剧团长",
+      "type": "planning",
+      "line_range": [
+        978,
+        1005
+      ],
+      "participants": [
+        "卢西恩",
+        "Miss.Christine"
+      ],
+      "location": "移动地块",
+      "significance": "卢西恩明确目标，剧情进入主动阶段",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂比与莫伊拉谈心，莫伊拉透露迈克尔多次找她寻求离开地块的方法",
+      "type": "conversation",
+      "line_range": [
+        1006,
+        1032
+      ],
+      "participants": [
+        "蒂比",
+        "莫伊拉"
+      ],
+      "location": "移动地块",
+      "significance": "深化蒂比与莫伊拉的友谊，揭示迈克尔行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "迈克尔与玛丽昂在化妆间激烈争吵，互相指责对方在劳拉之死中的责任",
+      "type": "confrontation",
+      "line_range": [
+        1033,
+        1078
+      ],
+      "participants": [
+        "迈克尔",
+        "玛丽昂"
+      ],
+      "location": "移动地块化妆间",
+      "significance": "揭示两人关系的本质和各自在事故中的角色",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂比和莫伊拉观看恐怖片，蒂比暗示自己身份不简单",
+      "type": "character_development",
+      "line_range": [
+        1081,
+        1116
+      ],
+      "participants": [
+        "蒂比",
+        "莫伊拉"
+      ],
+      "location": "移动地块",
+      "significance": "蒂比的神秘背景被暗示",
+      "is_imaginary": false
+    },
+    {
+      "event": "一名倒霉的场工在黑暗的摄影棚中遭遇袭击",
+      "type": "ambush",
+      "line_range": [
+        1117,
+        1125
+      ],
+      "participants": [
+        "倒霉的场工"
+      ],
+      "location": "移动地块摄影棚",
+      "significance": "暗示凶手仍在活动，制造紧张气氛",
+      "is_imaginary": false
+    },
+    {
+      "event": "格蕾塔宣布已结清酬劳，剧组人员可自由离开，但她和米兰妮、斯蒂芬将坚持完成拍摄",
+      "type": "resolution",
+      "line_range": [
+        1159,
+        1250
+      ],
+      "participants": [
+        "格蕾塔",
+        "米兰妮",
+        "斯蒂芬",
+        "阿布纳"
+      ],
+      "location": "移动地块",
+      "significance": "剧情转折点，核心成员决定留下面对危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "格蕾塔向全体剧组讲述自己年轻时因行贿被蓝卡坞学院奖除名的故事",
+      "type": "confession",
+      "line_range": [
+        1174,
+        1202
+      ],
+      "participants": [
+        "格蕾塔",
+        "米兰妮",
+        "阿布纳",
+        "摄影助理"
+      ],
+      "location": "移动地块",
+      "significance": "揭示格蕾塔的过去和性格成因",
+      "is_imaginary": false
+    },
+    {
+      "event": "米兰妮邀请蒂比协助设计杜邦夫人的谢幕场景，两人交谈中揭示米兰妮与玛丽安娜·布莱克的竞争往事",
+      "type": "conversation",
+      "line_range": [
+        1279,
+        1343
+      ],
+      "participants": [
+        "米兰妮",
+        "蒂比"
+      ],
+      "location": "道具间",
+      "significance": "揭示米兰妮的过去和动机，深化角色背景",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯蒂芬在创作困境中遭遇自称「神」的神秘存在，对方引导他将焦点转向卢西恩",
+      "type": "revelation",
+      "line_range": [
+        1344,
+        1384
+      ],
+      "participants": [
+        "斯蒂芬",
+        "剧团长"
+      ],
+      "location": "斯蒂芬的工作室",
+      "significance": "剧团长现身引导斯蒂芬修改剧本，推动剧情发展",
+      "is_imaginary": false
+    },
+    {
+      "event": "格蕾塔向卢西恩坦陈自己利用劳拉之死挽救电影的真相，并邀请他担任主演",
+      "type": "confession",
+      "line_range": [
+        1532,
+        1574
+      ],
+      "participants": [
+        "格蕾塔",
+        "卢西恩"
+      ],
+      "location": "格蕾塔的房间",
+      "significance": "揭示格蕾塔的罪责和动机，卢西恩接受主演邀约",
+      "is_imaginary": false
+    },
+    {
+      "event": "莫伊拉现身承认自己是三起命案的凶手，卢西恩揭露她并非劳拉的妹妹",
+      "type": "confrontation",
+      "line_range": [
+        1576,
+        1615
+      ],
+      "participants": [
+        "卢西恩",
+        "格蕾塔",
+        "莫伊拉"
+      ],
+      "location": "格蕾塔的房间",
+      "significance": "揭露莫伊拉的真实身份和作案动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩详细推理莫伊拉的作案手法，莫伊拉承认复仇动机",
+      "type": "investigation",
+      "line_range": [
+        1616,
+        1650
+      ],
+      "participants": [
+        "卢西恩",
+        "格蕾塔",
+        "莫伊拉"
+      ],
+      "location": "格蕾塔的房间",
+      "significance": "完整揭示莫伊拉的犯罪过程和动机",
+      "is_imaginary": false
+    },
+    {
+      "event": "格蕾塔证实劳拉没有妹妹，莫伊拉的身份认知崩溃",
+      "type": "revelation",
+      "line_range": [
+        1651,
+        1697
+      ],
+      "participants": [
+        "卢西恩",
+        "格蕾塔",
+        "莫伊拉"
+      ],
+      "location": "格蕾塔的房间",
+      "significance": "莫伊拉发现自己的记忆和身份都是虚假的",
+      "is_imaginary": false
+    },
+    {
+      "event": "地块驾驶室被炸毁，天灾逼近，剧组陷入恐慌",
+      "type": "disaster",
+      "line_range": [
+        1671,
+        1708
+      ],
+      "participants": [
+        "慌乱的工作人员",
+        "害怕的工作人员",
+        "倒霉的场工"
+      ],
+      "location": "地块",
+      "significance": "天灾危机升级，地块失控",
+      "is_imaginary": false
+    },
+    {
+      "event": "摄影助理通过广播公开莫伊拉是凶手，剧组人员陷入混乱",
+      "type": "revelation",
+      "line_range": [
+        1709,
+        1738
+      ],
+      "participants": [
+        "愤怒的工作人员",
+        "害怕的工作人员",
+        "摄影助理"
+      ],
+      "location": "地块",
+      "significance": "凶手身份公开，加剧恐慌",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂比得知莫伊拉是凶手后陷入痛苦，但决定前往备用控制室改变地块航向",
+      "type": "character_development",
+      "line_range": [
+        1739,
+        1791
+      ],
+      "participants": [
+        "蒂比",
+        "米兰妮"
+      ],
+      "location": "米兰妮的房间",
+      "significance": "蒂比展现勇气和决心，决定拯救所有人",
+      "is_imaginary": false
+    },
+    {
+      "event": "莫伊拉回忆自己如何被剧团长植入劳拉的记忆，卢西恩揭示剧团长是他的旧识",
+      "type": "flashback",
+      "line_range": [
+        1792,
+        1849
+      ],
+      "participants": [
+        "莫伊拉",
+        "卢西恩"
+      ],
+      "location": "地块某处",
+      "significance": "揭示莫伊拉被操纵的真相，卢西恩的动机明确",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂比在Miss.Christine的帮助下突破阻拦，成功进入备用控制室调整地块航向",
+      "type": "rescue",
+      "line_range": [
+        1850,
+        1901
+      ],
+      "participants": [
+        "蒂比",
+        "Miss.Christine"
+      ],
+      "location": "地块动力层",
+      "significance": "蒂比成功改变地块航向，为众人争取生机",
+      "is_imaginary": false
+    },
+    {
+      "event": "莫伊拉与卢西恩展开战斗，卢西恩被迫动用「血钻的歌声」击败莫伊拉",
+      "type": "battle",
+      "line_range": [
+        1904,
+        1929
+      ],
+      "participants": [
+        "莫伊拉",
+        "卢西恩"
+      ],
+      "location": "地块某处",
+      "significance": "卢西恩击败莫伊拉，但自身陷入混乱",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩回忆当年与沉渊试图逃离剧团失败的经历",
+      "type": "flashback",
+      "line_range": [
+        1930,
+        1961
+      ],
+      "participants": [
+        "卢西恩",
+        "沉渊",
+        "剧团长",
+        "剧作家"
+      ],
+      "location": "河边（回忆）",
+      "significance": "揭示卢西恩与剧团长的过往和宿命",
+      "is_imaginary": false
+    },
+    {
+      "event": "Miss.Christine与卢西恩对话，表达对他的关心和支持",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1962,
+        1988
+      ],
+      "participants": [
+        "Miss.Christine",
+        "卢西恩"
+      ],
+      "location": "地块某处",
+      "significance": "展现Miss.Christine与卢西恩的深厚羁绊",
+      "is_imaginary": false
+    },
+    {
+      "event": "格蕾塔组织剧组人员避难，米兰妮决定与天灾共舞",
+      "type": "planning",
+      "line_range": [
+        1989,
+        2013
+      ],
+      "participants": [
+        "格蕾塔",
+        "米兰妮",
+        "阿布纳",
+        "倒霉的场工"
+      ],
+      "location": "地块",
+      "significance": "米兰妮展现决心，阿布纳决定继续拍摄",
+      "is_imaginary": false
+    },
+    {
+      "event": "剧团长以道尔顿的面貌现身，与卢西恩在天灾中重逢",
+      "type": "reunion",
+      "line_range": [
+        2014,
+        2045
+      ],
+      "participants": [
+        "卢西恩",
+        "剧团长"
+      ],
+      "location": "地块",
+      "significance": "卢西恩与剧团长的最终对决拉开序幕",
+      "is_imaginary": false
+    },
+    {
+      "event": "剧团长复盘道尔顿、迈克尔与玛丽昂、莫伊拉的死亡，阐述死亡作为戏剧核心的美学",
+      "type": "ideological_clash",
+      "line_range": [
+        2046,
+        2158
+      ],
+      "participants": [
+        "卢西恩",
+        "剧团长"
+      ],
+      "location": "地块",
+      "significance": "剧团长阐述死亡美学，与卢西恩的理念冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩揭露剧团长的真实身份是长生者「酒神」，并讲述自己追寻其历史踪迹的过程",
+      "type": "revelation",
+      "line_range": [
+        2159,
+        2188
+      ],
+      "participants": [
+        "卢西恩",
+        "剧团长"
+      ],
+      "location": "地块",
+      "significance": "揭示酒神的真实身份和卢西恩的追寻",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩讲述自己走遍泰拉追寻酒神历史踪迹的发现",
+      "type": "flashback",
+      "line_range": [
+        2189,
+        2266
+      ],
+      "participants": [
+        "卢西恩",
+        "酒神"
+      ],
+      "location": "地块",
+      "significance": "揭示酒神在历史中的活动和卢西恩的发现",
+      "is_imaginary": false
+    },
+    {
+      "event": "格蕾塔救出被困的斯蒂芬，斯蒂芬意识到自己并不认同「神」的方法",
+      "type": "rescue",
+      "line_range": [
+        2267,
+        2305
+      ],
+      "participants": [
+        "格蕾塔",
+        "斯蒂芬"
+      ],
+      "location": "斯蒂芬的工作室",
+      "significance": "斯蒂芬的创作理念觉醒",
+      "is_imaginary": false
+    },
+    {
+      "event": "米兰妮决定与天灾共舞，阿布纳决定继续拍摄",
+      "type": "ceremony",
+      "line_range": [
+        2306,
+        2357
+      ],
+      "participants": [
+        "米兰妮",
+        "阿布纳"
+      ],
+      "location": "地块",
+      "significance": "米兰妮完成自我救赎，阿布纳重拾职业信念",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩指出酒神对死亡的执着源于其作为长生者永远无法亲身经历死亡的悖论",
+      "type": "ideological_clash",
+      "line_range": [
+        2358,
+        2406
+      ],
+      "participants": [
+        "卢西恩",
+        "酒神"
+      ],
+      "location": "地块",
+      "significance": "卢西恩揭示酒神美学的根本矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩与酒神在天灾中展开最终对决，卢西恩接受酒神的传承成为新的「酒神」",
+      "type": "confrontation",
+      "line_range": [
+        2407,
+        2448
+      ],
+      "participants": [
+        "卢西恩",
+        "酒神"
+      ],
+      "location": "地块",
+      "significance": "卢西恩继承酒神之位，完成角色转变",
+      "is_imaginary": false
+    },
+    {
+      "event": "蒂比探望狱中的莫伊拉，两人和解",
+      "type": "reunion",
+      "line_range": [
+        2449,
+        2480
+      ],
+      "participants": [
+        "蒂比",
+        "莫伊拉"
+      ],
+      "location": "联邦移动监狱",
+      "significance": "莫伊拉接受审判，蒂比表达怀念但不原谅",
+      "is_imaginary": false
+    },
+    {
+      "event": "电影《杜邦夫人》在另类电影节展映，米兰妮与雅拉（玛丽安娜）重逢",
+      "type": "ceremony",
+      "line_range": [
+        2481,
+        2542
+      ],
+      "participants": [
+        "斯蒂芬",
+        "格蕾塔",
+        "米兰妮",
+        "雅拉",
+        "蒂比"
+      ],
+      "location": "另类电影节",
+      "significance": "电影完成展映，米兰妮与雅拉和解",
+      "is_imaginary": false
+    },
+    {
+      "event": "观众对《杜邦夫人》的评价褒贬不一，但认为它值得一看",
+      "type": "reflection",
+      "line_range": [
+        2543,
+        2564
+      ],
+      "participants": [
+        "观众A",
+        "观众B",
+        "霍汀"
+      ],
+      "location": "另类电影节放映厅",
+      "significance": "电影获得观众认可，霍汀的倒霉经历延续",
+      "is_imaginary": false
+    },
+    {
+      "event": "卢西恩与剧作家、暮落会面，宣布猩红剧团不复存在，邀请他们加入新剧团",
+      "type": "farewell",
+      "line_range": [
+        2565,
+        2593
+      ],
+      "participants": [
+        "卢西恩",
+        "剧作家",
+        "暮落"
+      ],
+      "location": "另类电影节放映厅外",
+      "significance": "卢西恩开启新篇章，剧作家和暮落获得自由",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "卢西恩",
+      "type": "operator",
+      "role_in_chapter": "前猩红剧团演员，受格蕾塔邀请加入剧组饰演信使。他加入剧组的真实目的是追寻剧团长的踪迹，认为剧本中的印记是剧团长的邀请。他观察力敏锐，与谢莉交流对抗幻觉的方法，并主动推动剧情发展以引出剧团长。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "格蕾塔",
+      "type": "npc",
+      "role_in_chapter": "蓝卡坞电影制片人，《杜邦夫人之死》的制片人和投资人。她招募了卢西恩，并计划让移动地块接近天灾拍摄实景。她年轻时曾因行贿被蓝卡坞学院奖除名，后改名重回蓝卡坞。她性格强硬果断，在命案发生后仍坚持完成电影。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "斯卡蒂",
+      "type": "operator",
+      "role_in_chapter": "《杜邦夫人之死》的导演，也是剧本的原创作者。他因结局未定稿而焦虑，在命案发生后仍试图完成电影。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "米兰妮",
+      "type": "npc",
+      "role_in_chapter": "蓝卡坞资深女演员，饰演杜邦夫人，也是电影的投资人。她严格遵循片场规矩，对迈克尔的表现不满，并视玛丽安娜为竞争对手。在危机中她选择留下完成拍摄。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "迈克尔",
+      "type": "npc",
+      "role_in_chapter": "男主演，一人分饰三角。他花心滥情，与玛丽昂是情侣关系。他在五年前劳拉坠亡事故中见死不救，因恐惧报复而试图逃离地块。他与玛丽昂争吵后，被发现死亡。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "玛丽昂",
+      "type": "npc",
+      "role_in_chapter": "剧组的服装师，迈克尔的女友。她为迈克尔的事业投入了大量金钱和精力，控制欲强。她在五年前事故中事后才知情，与迈克尔争吵后，被发现死亡。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "谢莉",
+      "type": "npc",
+      "role_in_chapter": "剧组统筹，五年前劳拉坠亡事故的亲历者。她因内疚和恐惧而精神紧张，出现幻觉。她承认自己当年因私心未检查设备，间接导致劳拉死亡。后被发现在冷库中冻死。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "道尔顿",
+      "type": "npc",
+      "role_in_chapter": "过气男演员，饰演杜邦爵士。他酗酒成性，在五年前事故中故意为难劳拉。在拍摄中被真刀刺死，是第一起命案的受害者。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿布纳",
+      "type": "npc",
+      "role_in_chapter": "剧组摄影师，曾获蓝卡坞最佳摄影奖。他因五年前事故中拍下劳拉坠亡画面并被格蕾塔剪入电影而自暴自弃。他憎恨格蕾塔和自己的摄影机。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "蒂比",
+      "type": "npc",
+      "role_in_chapter": "剧组的场景喷绘师，恐怖片爱好者。她与莫伊拉是好友，在谢莉死后积极调查真相。她暗示自己身份不简单，拥有送审原片的复制碟。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莫伊拉",
+      "type": "npc",
+      "role_in_chapter": "道具组实习生，后因组长被开除而升任道具组长。她性格温和，受姐姐影响来到蓝卡坞。她为迈克尔作证，并透露迈克尔想秘密离开地块。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Miss.Christine",
+      "type": "npc",
+      "role_in_chapter": "卢西恩的同伴，一只神秘的双尾黑猫。她能说话并与卢西恩交流，感知情绪。她陪伴卢西恩追寻剧团长的踪迹。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "摄影助理",
+      "type": "npc",
+      "role_in_chapter": "阿布纳的摄影助理，想靠出卖剧组消息赚钱。他从卢西恩处得知天灾消息并公开，后被格蕾塔允许记录她的故事。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "剧团长",
+      "type": "npc",
+      "role_in_chapter": "猩红剧团的团长，卢西恩的老师。他在回忆中出现，教导卢西恩使用武器和感受戏剧。卢西恩认为他可能死而复生，并追寻他的踪迹。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "劳拉",
+      "type": "npc",
+      "role_in_chapter": "五年前在威亚事故中坠亡的新人演员。她在谢莉的幻觉中出现，逼问谢莉当年为何不检查设备。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "沉渊",
+      "type": "npc",
+      "role_in_chapter": "卢西恩在猩红剧团的朋友，在回忆中出现。他因演出失败而心灰意冷，但仍关心卢西恩，劝他不要像剧团其他人一样。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "白英花",
+      "type": "npc",
+      "role_in_chapter": "猩红剧团的成员，在回忆中试图教导小卢西恩刺杀技巧。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "剧团长/酒神",
+      "type": "npc",
+      "role_in_chapter": "以「神」的面貌引导斯蒂芬，以道尔顿的面貌与卢西恩重逢，阐述死亡美学，被卢西恩揭露为长生者酒神，与卢西恩对决后将传承交给卢西恩",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "雅拉/玛丽安娜·布莱克",
+      "type": "npc",
+      "role_in_chapter": "在米兰妮的回忆中出现，在电影节与米兰妮和蒂比重逢，帮助《杜邦夫人》在另类电影节展映",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "剧作家",
+      "type": "npc",
+      "role_in_chapter": "在卢西恩的回忆中出现，在电影节与卢西恩会面，接受卢西恩的邀请加入新剧团",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "暮落",
+      "type": "npc",
+      "role_in_chapter": "在卢西恩的回忆中出现，在电影节与卢西恩会面，接受卢西恩的邀请加入新剧团",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "倒霉的场工/霍汀",
+      "type": "npc",
+      "role_in_chapter": "目睹天灾，报告斯蒂芬失踪，在电影节作为观众出现",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "戏剧与生活的关系",
+      "line_range": [
+        338,
+        348
+      ],
+      "discussion_summary": "剧团长教导卢西恩，角色和台词只是戏剧的载体，而非戏剧本身。所有的故事最终都只会剩下某种情绪或某段密不可分的关系。",
+      "is_substantive": true
+    },
+    {
+      "concept": "疼痛作为对抗幻觉的方法",
+      "line_range": [
+        551,
+        558
+      ],
+      "discussion_summary": "卢西恩向谢莉建议，疼痛无法解决幻觉和癔症，但能提供喘息的机会，对抗那些难以分辨真假的声音和影子。他详细描述了使用笔尖、刀锋等锐利物品在舌头、手背、腿根等敏感部位制造疼痛的方法。",
+      "is_substantive": true
+    },
+    {
+      "concept": "情感是演员的武器",
+      "line_range": [
+        571,
+        576
+      ],
+      "discussion_summary": "卢西恩回忆剧团长的教导：情感是演员的武器，狂喜和狂悲都只是表象，形似的模仿只会丧失对更复杂情感的感知。真正的绝望会让你失去最珍视之物，同时为你打开一扇新的门。",
+      "is_substantive": true
+    },
+    {
+      "concept": "宿命的美学",
+      "line_range": [
+        972,
+        974
+      ],
+      "discussion_summary": "剧团长对卢西恩说，生活本身便是最好的戏剧，宿命的美学从不局限于载体。",
+      "is_substantive": true
+    },
+    {
+      "concept": "蓝卡坞学院奖的腐败与公正",
+      "line_range": [
+        1183,
+        1196
+      ],
+      "discussion_summary": "格蕾塔讲述自己年轻时因贿赂评委而被蓝卡坞学院奖组委会公开除名的故事，揭示了学院奖的公正性以及她个人的失败经历。",
+      "is_substantive": true
+    },
+    {
+      "concept": "死亡/毁灭作为戏剧核心",
+      "line_range": [
+        2140,
+        2158
+      ],
+      "discussion_summary": "剧团长阐述死亡是戏剧的因与果，魂与肉，驱动创造的伟力，万物的归宿，认为死亡让伟大者自毁名节，让苦修者打破戒律，让圣洁者走入泥淖",
+      "is_substantive": true
+    },
+    {
+      "concept": "酒神/长生者的悖论",
+      "line_range": [
+        2384,
+        2406
+      ],
+      "discussion_summary": "卢西恩指出酒神作为长生者，死亡是其永远无法到达的彼岸，永远无法亲身完成的演出，永远无法自证的艺术，其美学和洞见都不曾滋养自己",
+      "is_substantive": true
+    },
+    {
+      "concept": "戏剧的本质",
+      "line_range": [
+        1357,
+        1358
+      ],
+      "discussion_summary": "剧团长指出蓝卡坞误解了戏剧的本质，戏剧操纵生活，但并非用机械的方式",
+      "is_substantive": true
+    },
+    {
+      "concept": "飞页/虚假记忆",
+      "line_range": [
+        1823,
+        1826
+      ],
+      "discussion_summary": "卢西恩解释剧团长擅长将一段本不存在的喜怒嫁接进他人的人生，像恣意妄为的导演在乏味的故事里添加飞页",
+      "is_substantive": true
+    },
+    {
+      "concept": "死亡赋予可能",
+      "line_range": [
+        2101,
+        2106
+      ],
+      "discussion_summary": "剧团长和卢西恩讨论死亡是否赋予人可能，剧团长认为死亡让钻营者和纵欲者在最后关头流露真情",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "猩红剧团",
+      "line_range": [
+        303,
+        351
+      ],
+      "description": "卢西恩回忆在剧团接受剧团长和白英花的训练，剧团长亲自教导他使用武器和感受戏剧的本质。"
+    },
+    {
+      "faction": "猩红剧团",
+      "line_range": [
+        420,
+        441
+      ],
+      "description": "卢西恩与Miss.Christine确认剧本中刻有剧团的双生相印，认为这是剧团长的邀请，并回忆杀死剧团长后仍在追寻他的踪迹。"
+    },
+    {
+      "faction": "猩红剧团",
+      "line_range": [
+        562,
+        594
+      ],
+      "description": "卢西恩回忆剧团成员讨论他演技瓶颈，以及沉渊劝他不要像剧团其他人一样迷失。"
+    },
+    {
+      "faction": "猩红剧团",
+      "line_range": [
+        945,
+        977
+      ],
+      "description": "卢西恩回忆剧团演出后，剧团长教导他生活即是戏剧，并讨论收留一个失去家乡的孩童。"
+    },
+    {
+      "faction": "猩红剧团",
+      "line_range": [
+        1930,
+        1961
+      ],
+      "description": "卢西恩回忆在剧团中的经历，包括与沉渊试图逃离、剧团长操纵演出等"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2029,
+        2029
+      ],
+      "description": "剧团长提到罗德岛给了卢西恩和暮落新的身份、生活和归宿"
+    },
+    {
+      "faction": "蓝卡坞",
+      "line_range": [
+        2528,
+        2529
+      ],
+      "description": "雅拉评论蓝卡坞记性差、包容心小，不一定能接纳重回怀抱的恋人"
+    }
+  ],
+  "locations": [
+    {
+      "location": "蓝卡坞",
+      "line_range": [
+        23,
+        24
+      ],
+      "description": "斯蒂芬介绍电影《杜邦夫人之死》是蓝卡坞近期少见的上个时代的悲剧题材，通过一位贵族女性的荒唐婚变来反映哥伦比亚时代交替的阵痛。"
+    },
+    {
+      "location": "蓝卡坞",
+      "line_range": [
+        357,
+        362
+      ],
+      "description": "拍卖师介绍蓝卡坞最具特色的活动「剧本拍卖」，这里仅出售尚未成稿的剧本创意、粗纲和相关版权，不保证拍品的实际价值。"
+    },
+    {
+      "location": "蓝卡坞",
+      "line_range": [
+        383,
+        384
+      ],
+      "description": "格蕾塔向卢西恩介绍蓝卡坞是全泰拉最具娱乐性的移动城市，气候宜人、阳光充足的拍摄地。"
+    },
+    {
+      "location": "蓝卡坞",
+      "line_range": [
+        1183,
+        1185
+      ],
+      "description": "格蕾塔介绍蓝卡坞学院奖是面向新人的专业奖项，每年都有无数影视学院学生、电影爱好者向它投稿，渴望作品能入选以获得进入蓝卡坞的资格。"
+    },
+    {
+      "location": "移动地块",
+      "line_range": [
+        229,
+        233
+      ],
+      "description": "格蕾塔解释蓝卡坞专用于拍摄的移动地块与移动城市不同，虽然同样受中心控制塔管控，但部分调配权限会直接分享给剧组。租赁合约到期后摄影棚会陆续关闭，地块将自动返航，临时延长租赁需要支付高额违约金。"
+    },
+    {
+      "location": "加莱",
+      "line_range": [
+        2196,
+        2210
+      ],
+      "description": "卢西恩讲述加莱围城战，副将打开城门后自杀，尸体上发现剧团标志"
+    },
+    {
+      "location": "拉特兰",
+      "line_range": [
+        2213,
+        2226
+      ],
+      "description": "卢西恩讲述两百多年前一位枢机因被酒神告知绝症而发动政变，最终被铳骑格杀"
+    },
+    {
+      "location": "伊比利亚",
+      "line_range": [
+        2229,
+        2231
+      ],
+      "description": "卢西恩提及伊比利亚黄金时代，灯塔照亮大船，发现剧团演出票根"
+    },
+    {
+      "location": "莱塔尼亚",
+      "line_range": [
+        2233,
+        2233
+      ],
+      "description": "卢西恩提及莱塔尼亚高塔之间记录着贵族的悲鸣与疾呼"
+    },
+    {
+      "location": "另类电影节",
+      "line_range": [
+        2481,
+        2564
+      ],
+      "description": "《杜邦夫人》在此展映，米兰妮与雅拉重逢，观众对电影评价褒贬不一"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:09:45.059942+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 60916,
+    "tokens_out": 11138,
+    "elapsed_s": 88.16848039627075
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "卢西恩",
+    "格蕾塔",
+    "米兰妮",
+    "迈克尔",
+    "玛丽昂",
+    "谢莉",
+    "道尔顿",
+    "阿布纳",
+    "莫伊拉",
+    "摄影助理",
+    "剧团长",
+    "劳拉",
+    "沉渊",
+    "白英花",
+    "剧团长/酒神",
+    "雅拉/玛丽安娜·布莱克",
+    "剧作家",
+    "倒霉的场工/霍汀"
+  ]
+}

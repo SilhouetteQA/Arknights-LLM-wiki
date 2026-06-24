@@ -1,0 +1,1675 @@
+{
+  "chapter": "照我以火",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章以维多利亚塔拉地区为背景，讲述了三条并行剧情线。第一条线围绕苇草展开，她在荒野中偶遇被通缉的塔拉流民维恩和费加尔，并卷入与巡逻队的冲突。苇草自称在寻找与深池相关的事物，并决定护送这群流民前往安全地带。途中，她与同样在追踪深池鬼魂部队的陈和风笛重逢，三人共同面对深池部队留下的诡异亡灵士兵。第二条线聚焦于深池内部，间谍阿赫茉妮与深池军官「校官」在特伦特郡会面，讨论领袖的计划、铁公爵威灵顿的立场以及监视者开斯特公爵的动向。阿赫茉妮被开斯特公爵的情报人员菲舍尔盯上，菲舍尔通过分析纵火案和情报，怀疑荒野上存在另一位德拉克后裔。第三条线则通过沃里克伯爵的宴会和塔拉流民的视角，展现了塔拉民族主义思潮的兴起、维多利亚当局的压迫以及普通塔拉人在夹缝中的挣扎与选择。最终，苇草在帮助流民的过程中，不得不面对自己作为深池「领袖」之一的过去，并与塞尔蒙的哥哥——一名已死的深池士兵——的亡灵对峙。\n\n本段剧情紧接前段，分为三条并行线。第一条线围绕苇草与塔拉流民展开：在短暂休整后，流民队伍被开斯特公爵的情报官菲舍尔率领的特别行动队包围。菲舍尔试图通过审讯确认苇草就是另一条德拉克，并劝诱她接受庇护。陈和风笛准备营救时，深池的阿赫茉妮与校官率赤铁近卫队赶到，三方势力在荒野上爆发混战。苇草在战斗中被迫使用源石技艺，其德拉克身份彻底暴露。风笛在得知苇草就是小丘郡事件的术师后，与苇草发生激烈对峙，最终分道扬镳。第二条线聚焦于深池内部：阿赫茉妮与校官在追击苇草的过程中互相牵制，校官试图直接除掉苇草，而阿赫茉妮则希望将她带回深池。最终，校官因威灵顿公爵的舰队逼近而收队。第三条线通过沃里克伯爵的宴会和爱布拉娜的演讲，展现了塔拉民族主义的全面爆发：沃里克伯爵的集会解散，爱布拉娜与威灵顿公爵联手，在橡林郡集结深池军队，发表煽动性演说，宣布将进军伦蒂尼姆。苇草在塔拉王城废墟中与姐姐爱布拉娜的幻影/记忆对峙，最终坚定了自己的道路——不成为爱布拉娜的影子，而是成为塔拉人理想中领袖的影子。",
+  "events": [
+    {
+      "event": "苇草在荒野中偶遇被巡逻队追捕的塔拉流民维恩和费加尔，并帮助他们逃脱。",
+      "type": "rescue",
+      "line_range": [
+        37,
+        77
+      ],
+      "participants": [
+        "苇草",
+        "维恩",
+        "塔拉流民",
+        "巡逻队队长",
+        "巡逻队队员"
+      ],
+      "location": "石高原野的沼泽地",
+      "significance": "苇草与塔拉流民建立联系，开始介入他们的逃亡。",
+      "is_imaginary": false
+    },
+    {
+      "event": "自称深池士兵的塞尔蒙出现并制服巡逻队，但苇草识破其并非深池成员。",
+      "type": "confrontation",
+      "line_range": [
+        171,
+        205
+      ],
+      "participants": [
+        "苇草",
+        "塞尔蒙",
+        "维恩",
+        "塔拉流民",
+        "巡逻队队员"
+      ],
+      "location": "石高原野的沼泽地",
+      "significance": "揭示塞尔蒙冒充深池的身份，并引出苇草对深池的了解。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈和风笛在荒野中调查深池鬼魂部队的踪迹，发现一群已死亡但仍站立的深池士兵。",
+      "type": "investigation",
+      "line_range": [
+        253,
+        283
+      ],
+      "participants": [
+        "陈",
+        "风笛"
+      ],
+      "location": "特伦特郡外的荒野",
+      "significance": "引入深池操控亡灵的诡异源石技艺，推动陈和风笛的追查。",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草被巡逻队队长盘问，队长认出她曾击退深池士兵，并试图以塔拉语套近乎。",
+      "type": "confrontation",
+      "line_range": [
+        326,
+        366
+      ],
+      "participants": [
+        "苇草",
+        "巡逻队队长",
+        "巡逻队士兵"
+      ],
+      "location": "荒野聚落附近",
+      "significance": "揭示苇草曾与深池敌对，并展现她不愿伤人的矛盾心理。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿赫茉妮与休斯在旧宅密谈，暗示休斯向陈和风笛提供情报的行为已引起注意，并提及铁公爵的立场。",
+      "type": "political_intrigue",
+      "line_range": [
+        370,
+        404
+      ],
+      "participants": [
+        "阿赫茉妮",
+        "休斯"
+      ],
+      "location": "特伦特郡的一处僻静旧宅",
+      "significance": "揭示深池间谍阿赫茉妮的活动，以及维多利亚高层公爵间的权力博弈。",
+      "is_imaginary": false
+    },
+    {
+      "event": "维恩返回寻找苇草，请求她护送流民队伍搭上逃命的运载车。",
+      "type": "alliance",
+      "line_range": [
+        406,
+        431
+      ],
+      "participants": [
+        "苇草",
+        "维恩"
+      ],
+      "location": "荒野",
+      "significance": "苇草正式决定护送这群塔拉流民。",
+      "is_imaginary": false
+    },
+    {
+      "event": "菲舍尔与特别行动队队长讨论对阿赫茉妮的监视任务，并提及自己的健康状况。",
+      "type": "planning",
+      "line_range": [
+        432,
+        454
+      ],
+      "participants": [
+        "菲舍尔",
+        "特别行动队队长"
+      ],
+      "location": "特伦特郡市政厅",
+      "significance": "引入开斯特公爵的情报人员菲舍尔，揭示其正在调查阿赫茉妮。",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞尔蒙与维恩因逃亡路线发生争执，塞尔蒙坚持要前往深池，并故意将苇草留下吸引追兵。",
+      "type": "betrayal",
+      "line_range": [
+        455,
+        486
+      ],
+      "participants": [
+        "塞尔蒙",
+        "维恩",
+        "苇草"
+      ],
+      "location": "荒野",
+      "significance": "展现塞尔蒙的冷酷和维恩的善良，加深队伍内部矛盾。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈和风笛跟随商队途中，遭遇塞尔蒙带领的塔拉流民抢劫商队。",
+      "type": "ambush",
+      "line_range": [
+        534,
+        558
+      ],
+      "participants": [
+        "陈",
+        "风笛",
+        "塞尔蒙",
+        "商队首领",
+        "商队护卫",
+        "塔拉流民"
+      ],
+      "location": "荒野公路",
+      "significance": "陈和风笛介入冲突，与苇草重逢。",
+      "is_imaginary": false
+    },
+    {
+      "event": "风笛与苇草重逢，苇草解释自己正在追踪深池相关的事情。",
+      "type": "reunion",
+      "line_range": [
+        573,
+        605
+      ],
+      "participants": [
+        "苇草",
+        "风笛",
+        "陈"
+      ],
+      "location": "荒野公路",
+      "significance": "三条剧情线交汇，苇草、陈、风笛三人组再次合作。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿赫茉妮与深池军官「校官」在特伦特郡会面，讨论领袖的计划、蔓德拉之死以及苇草（拉芙希妮）的威胁。",
+      "type": "political_intrigue",
+      "line_range": [
+        606,
+        645
+      ],
+      "participants": [
+        "阿赫茉妮",
+        "校官"
+      ],
+      "location": "特伦特郡某会客室",
+      "significance": "揭示深池内部对苇草的敌意，以及阿赫茉妮的复杂立场。",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草决定带上追随队伍的感染者莫兰等人一起逃亡。",
+      "type": "character_development",
+      "line_range": [
+        646,
+        666
+      ],
+      "participants": [
+        "苇草",
+        "维恩",
+        "塞尔蒙"
+      ],
+      "location": "荒野",
+      "significance": "苇草展现同情心和领导力，决定保护更弱势的群体。",
+      "is_imaginary": false
+    },
+    {
+      "event": "沃里克伯爵与诗人威廉姆斯在宴会上讨论塔拉民族的历史与未来。",
+      "type": "ideological_clash",
+      "line_range": [
+        667,
+        681
+      ],
+      "participants": [
+        "沃里克伯爵",
+        "衣着朴素的诗人"
+      ],
+      "location": "沃里克伯爵的宴会",
+      "significance": "展现塔拉民族主义思潮的不同派别：激进独立派与渐进改良派。",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草说服队伍带上感染者，并透露自己也是感染者，同时塞尔蒙坚持要前往深池。",
+      "type": "revelation",
+      "line_range": [
+        682,
+        715
+      ],
+      "participants": [
+        "苇草",
+        "塞尔蒙",
+        "紧张的塔拉流民"
+      ],
+      "location": "荒野",
+      "significance": "苇草公开自己的感染者身份，加深与流民的联系；塞尔蒙的执念与队伍产生分裂。",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈、风笛和苇草发现一处维多利亚驻军全军覆没的战场，并讨论深池操控亡魂的源石技艺。",
+      "type": "investigation",
+      "line_range": [
+        756,
+        780
+      ],
+      "participants": [
+        "陈",
+        "风笛",
+        "苇草"
+      ],
+      "location": "荒野战场",
+      "significance": "进一步揭示深池亡灵法术的恐怖，苇草确认自己了解这种法术。",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞尔蒙与苇草发生激烈争执，塞尔蒙指责苇草只想安置他们，并独自走向战场方向。",
+      "type": "confrontation",
+      "line_range": [
+        781,
+        810
+      ],
+      "participants": [
+        "苇草",
+        "塞尔蒙",
+        "风笛"
+      ],
+      "location": "荒野战场边缘",
+      "significance": "塞尔蒙与苇草彻底决裂，苇草决定跟随塞尔蒙以确保其安全。",
+      "is_imaginary": false
+    },
+    {
+      "event": "风笛与苇草在干草垛上谈心，苇草回忆过去并提及自己的姐姐。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        833,
+        892
+      ],
+      "participants": [
+        "苇草",
+        "风笛"
+      ],
+      "location": "聚落附近的干草垛",
+      "significance": "苇草敞开心扉，谈及自己的过去和Outcast的救赎，角色得到深化。",
+      "is_imaginary": false
+    },
+    {
+      "event": "感染者莫兰请求与苇草一起走，希望为塔拉人做点什么。",
+      "type": "alliance",
+      "line_range": [
+        898,
+        917
+      ],
+      "participants": [
+        "苇草",
+        "风笛",
+        "莫兰"
+      ],
+      "location": "聚落附近的干草垛",
+      "significance": "莫兰的加入象征着苇草的行动获得了塔拉底层民众的信任。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿赫茉妮在子爵的酒会上与商人交谈，并注意到情报人员菲舍尔。",
+      "type": "political_intrigue",
+      "line_range": [
+        918,
+        948
+      ],
+      "participants": [
+        "阿赫茉妮",
+        "热情的商人",
+        "菲舍尔"
+      ],
+      "location": "特伦特郡子爵的酒会",
+      "significance": "阿赫茉妮得知纵火案的传闻，并意识到自己被监视。",
+      "is_imaginary": false
+    },
+    {
+      "event": "开斯特公爵在酒会隔间与菲舍尔会面，嘉奖其工作并询问其身体状况。",
+      "type": "political_intrigue",
+      "line_range": [
+        949,
+        963
+      ],
+      "participants": [
+        "菲舍尔",
+        "开斯特公爵"
+      ],
+      "location": "特伦特郡子爵的酒会",
+      "significance": "揭示开斯特公爵是菲舍尔的上级，并暗示菲舍尔可能因感染矿石病而面临退役。",
+      "is_imaginary": false
+    },
+    {
+      "event": "流民队伍遭遇维多利亚特别行动队与深池亡灵部队的交火，陷入双重攻击。",
+      "type": "battle",
+      "line_range": [
+        964,
+        1061
+      ],
+      "participants": [
+        "苇草",
+        "风笛",
+        "陈",
+        "塞尔蒙",
+        "维恩",
+        "塔拉流民",
+        "菲舍尔",
+        "特别行动队队长",
+        "深池士兵"
+      ],
+      "location": "荒野隘道",
+      "significance": "剧情高潮，流民队伍被卷入战争，塞尔蒙见到已死的哥哥。",
+      "is_imaginary": false
+    },
+    {
+      "event": "菲舍尔通过观察纵火案和阿赫茉妮的反应，推断出荒野上存在另一位德拉克后裔（苇草）。",
+      "type": "revelation",
+      "line_range": [
+        993,
+        1017
+      ],
+      "participants": [
+        "菲舍尔",
+        "特别行动队士兵"
+      ],
+      "location": "荒野隘道",
+      "significance": "揭示菲舍尔的调查结论，苇草的身份成为各方势力关注的焦点。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿赫茉妮得知开斯特公爵的人可能在寻找苇草，决定优先确保她的安全。",
+      "type": "planning",
+      "line_range": [
+        1018,
+        1031
+      ],
+      "participants": [
+        "阿赫茉妮",
+        "深池士兵"
+      ],
+      "location": "特伦特郡某处",
+      "significance": "阿赫茉妮的立场复杂化，她试图保护苇草免于落入开斯特公爵之手。",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞尔蒙在战后独自追踪深池亡灵部队，找到已死的哥哥，并试图攻击他。",
+      "type": "confrontation",
+      "line_range": [
+        1119,
+        1140
+      ],
+      "participants": [
+        "塞尔蒙",
+        "深池士兵"
+      ],
+      "location": "荒野",
+      "significance": "塞尔蒙与哥哥的亡灵对峙，情感崩溃。",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草在梦境/回忆中与姐姐爱布拉娜对话，回忆起被培养成「领袖」的过去。",
+      "type": "flashback",
+      "line_range": [
+        1141,
+        1170
+      ],
+      "participants": [
+        "拉芙希妮",
+        "父亲",
+        "爱布拉娜"
+      ],
+      "location": "梦境/回忆中的雪夜",
+      "significance": "揭示苇草（拉芙希妮）与深池领袖爱布拉娜的姐妹关系，以及她成为「领袖」的缘由。",
+      "is_imaginary": true
+    },
+    {
+      "event": "苇草找到塞尔蒙，并安抚她，两人讨论深池的目标和塞尔蒙哥哥的信念。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1171,
+        1231
+      ],
+      "participants": [
+        "苇草",
+        "塞尔蒙"
+      ],
+      "location": "荒野",
+      "significance": "苇草与塞尔蒙达成和解，塞尔蒙质疑深池许诺的未来是否虚假。",
+      "is_imaginary": false
+    },
+    {
+      "event": "菲舍尔率特别行动队包围流民营地，审讯苇草并确认其德拉克身份",
+      "type": "confrontation",
+      "line_range": [
+        1383,
+        1406
+      ],
+      "participants": [
+        "菲舍尔",
+        "苇草",
+        "陈",
+        "风笛",
+        "维恩",
+        "塞尔蒙",
+        "塔拉流民"
+      ],
+      "location": "特伦特郡边界荒野营地",
+      "significance": "菲舍尔正式确认苇草为另一条德拉克，并试图劝降",
+      "is_imaginary": false
+    },
+    {
+      "event": "菲舍尔与苇草单独审讯对话，揭露苇草没有档案记录，并提及小丘郡和半岛郡事件",
+      "type": "interrogation",
+      "line_range": [
+        1460,
+        1481
+      ],
+      "participants": [
+        "菲舍尔",
+        "苇草"
+      ],
+      "location": "营地篝火旁",
+      "significance": "菲舍尔通过情报分析确认苇草就是深池的影子领袖拉芙希妮",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈和风笛决定营救苇草，使用手势交流制定计划",
+      "type": "planning",
+      "line_range": [
+        1482,
+        1503
+      ],
+      "participants": [
+        "陈",
+        "风笛"
+      ],
+      "location": "营地看守处",
+      "significance": "陈和风笛决定帮助苇草脱离菲舍尔的控制",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿赫茉妮与校官追踪车辙抵达战场，讨论深池的立场和苇草的身份",
+      "type": "revelation",
+      "line_range": [
+        1504,
+        1511
+      ],
+      "participants": [
+        "阿赫茉妮",
+        "校官"
+      ],
+      "location": "荒野车辙处",
+      "significance": "揭示深池内部对苇草的不同态度：阿赫茉妮想救，校官想杀",
+      "is_imaginary": false
+    },
+    {
+      "event": "菲舍尔通过羽兽叫声异常判断深池部队到来，并再次劝诱苇草接受庇护",
+      "type": "confrontation",
+      "line_range": [
+        1512,
+        1531
+      ],
+      "participants": [
+        "菲舍尔",
+        "苇草"
+      ],
+      "location": "营地篝火旁",
+      "significance": "菲舍尔指出苇草作为影子的痛苦生活，提供摆脱罪名的选择",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈和风笛趁深池部队到来之际发动突袭，试图救出苇草",
+      "type": "rescue",
+      "line_range": [
+        1532,
+        1535
+      ],
+      "participants": [
+        "陈",
+        "风笛"
+      ],
+      "location": "营地",
+      "significance": "营救行动开始",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞尔蒙与看守士兵发生冲突，被压制后仍不屈反抗",
+      "type": "confrontation",
+      "line_range": [
+        1536,
+        1545
+      ],
+      "participants": [
+        "塞尔蒙",
+        "看守士兵"
+      ],
+      "location": "营地看守处",
+      "significance": "展现塞尔蒙的倔强和塔拉人的反抗精神",
+      "is_imaginary": false
+    },
+    {
+      "event": "深池赤铁近卫队与特别行动队交火，苇草被阿赫茉妮控制",
+      "type": "battle",
+      "line_range": [
+        1566,
+        1585
+      ],
+      "participants": [
+        "苇草",
+        "风笛",
+        "陈",
+        "菲舍尔",
+        "阿赫茉妮",
+        "深池士兵",
+        "特别行动队士兵"
+      ],
+      "location": "荒野战场",
+      "significance": "三方势力混战，苇草被深池捕获",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿赫茉妮与苇草对话，揭露深池内部对小丘郡事件和蔓德拉之死的真相",
+      "type": "revelation",
+      "line_range": [
+        1585,
+        1610
+      ],
+      "participants": [
+        "阿赫茉妮",
+        "苇草"
+      ],
+      "location": "战场中央",
+      "significance": "揭示爱布拉娜早就知道小丘郡的阴谋，蔓德拉因任务失败被处决",
+      "is_imaginary": false
+    },
+    {
+      "event": "风笛击退深池士兵，试图救出苇草",
+      "type": "rescue",
+      "line_range": [
+        1611,
+        1616
+      ],
+      "participants": [
+        "风笛",
+        "苇草",
+        "陈"
+      ],
+      "location": "战场中央",
+      "significance": "风笛介入苇草与阿赫茉妮的对话",
+      "is_imaginary": false
+    },
+    {
+      "event": "菲舍尔下令直接突击，不惜伤害苇草",
+      "type": "battle",
+      "line_range": [
+        1618,
+        1622
+      ],
+      "participants": [
+        "菲舍尔",
+        "特别行动队士兵",
+        "深池士兵"
+      ],
+      "location": "战场",
+      "significance": "菲舍尔改变策略，不再顾及苇草安全",
+      "is_imaginary": false
+    },
+    {
+      "event": "维恩磨断绳子逃脱，与塞尔蒙等人一起反抗看守士兵，救出其他流民",
+      "type": "rescue",
+      "line_range": [
+        1623,
+        1649
+      ],
+      "participants": [
+        "维恩",
+        "塞尔蒙",
+        "莫兰",
+        "塔拉流民",
+        "看守士兵"
+      ],
+      "location": "营地看守处",
+      "significance": "塔拉流民自救成功，决定去救苇草",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞尔蒙带领流民决定去救苇草，莫兰加入",
+      "type": "planning",
+      "line_range": [
+        1650,
+        1663
+      ],
+      "participants": [
+        "塞尔蒙",
+        "维恩",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "营地",
+      "significance": "流民队伍决定主动出击营救苇草",
+      "is_imaginary": false
+    },
+    {
+      "event": "沃里克伯爵宣布塔拉人之家集会解散，与诗人威廉姆斯在风雪中散步",
+      "type": "political_intrigue",
+      "line_range": [
+        1666,
+        1680
+      ],
+      "participants": [
+        "沃里克伯爵",
+        "衣着朴素的诗人"
+      ],
+      "location": "沃里克伯爵的宴会厅外",
+      "significance": "塔拉民族主义运动失去温和派领袖，预示暴力革命即将到来",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞尔蒙带领流民在树林中躲避追兵，分两队寻找苇草",
+      "type": "search",
+      "line_range": [
+        1681,
+        1688
+      ],
+      "participants": [
+        "塞尔蒙",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "树林",
+      "significance": "流民队伍继续寻找苇草",
+      "is_imaginary": false
+    },
+    {
+      "event": "校官刺伤苇草，指责其愚善导致局面失控",
+      "type": "confrontation",
+      "line_range": [
+        1693,
+        1708
+      ],
+      "participants": [
+        "校官",
+        "苇草",
+        "阿赫茉妮"
+      ],
+      "location": "战场边缘",
+      "significance": "校官试图直接除掉苇草，认为她是深池的不稳定因素",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈被神秘人拦截，对方质问其来维多利亚的目的以及与魏彦吾的关系",
+      "type": "confrontation",
+      "line_range": [
+        1709,
+        1724
+      ],
+      "participants": [
+        "陈",
+        "？？？"
+      ],
+      "location": "战场另一侧",
+      "significance": "暗示陈的维多利亚之行背后有更复杂的政治因素",
+      "is_imaginary": false
+    },
+    {
+      "event": "风笛与菲舍尔对峙，菲舍尔试图说服风笛联手对付深池",
+      "type": "confrontation",
+      "line_range": [
+        1725,
+        1746
+      ],
+      "participants": [
+        "风笛",
+        "菲舍尔"
+      ],
+      "location": "战场",
+      "significance": "菲舍尔透露赤铁近卫队的情报，试图拉拢风笛",
+      "is_imaginary": false
+    },
+    {
+      "event": "维恩加入风笛的战斗，塞尔蒙和莫兰与特别行动队士兵搏斗",
+      "type": "battle",
+      "line_range": [
+        1747,
+        1766
+      ],
+      "participants": [
+        "维恩",
+        "风笛",
+        "塞尔蒙",
+        "莫兰",
+        "特别行动队士兵"
+      ],
+      "location": "战场各处",
+      "significance": "流民队伍积极参与战斗",
+      "is_imaginary": false
+    },
+    {
+      "event": "深池士兵放过塞尔蒙和莫兰，让他们去安全的地方",
+      "type": "alliance",
+      "line_range": [
+        1771,
+        1774
+      ],
+      "participants": [
+        "塞尔蒙",
+        "莫兰",
+        "深池士兵"
+      ],
+      "location": "树林边缘",
+      "significance": "深池士兵认出塞尔蒙是塔拉人，未加害",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草与校官辩论，表明自己不想与爱布拉娜为敌，只想纠正她的过错",
+      "type": "ideological_clash",
+      "line_range": [
+        1775,
+        1780
+      ],
+      "participants": [
+        "苇草",
+        "校官"
+      ],
+      "location": "战场中央",
+      "significance": "苇草明确自己的立场：不是反对深池，而是反对深池的暴力手段",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草爆发源石技艺，火焰席卷战场，陈提醒众人小心",
+      "type": "battle",
+      "line_range": [
+        1781,
+        1785
+      ],
+      "participants": [
+        "苇草",
+        "陈",
+        "塔拉流民"
+      ],
+      "location": "战场中央",
+      "significance": "苇草被迫使用德拉克之力，身份彻底暴露",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿赫茉妮与菲舍尔短暂对话后，深池部队向西北方向追击苇草",
+      "type": "pursuit",
+      "line_range": [
+        1786,
+        1806
+      ],
+      "participants": [
+        "阿赫茉妮",
+        "菲舍尔"
+      ],
+      "location": "战场",
+      "significance": "苇草逃向威灵顿公爵领地，深池计划在那里控制她",
+      "is_imaginary": false
+    },
+    {
+      "event": "塞尔蒙和莫兰在树林中休息，塞尔蒙称赞苇草的火焰壮观",
+      "type": "reflection",
+      "line_range": [
+        1807,
+        1820
+      ],
+      "participants": [
+        "塞尔蒙",
+        "莫兰"
+      ],
+      "location": "树林深处",
+      "significance": "展现塞尔蒙对苇草的信任和敬佩",
+      "is_imaginary": false
+    },
+    {
+      "event": "校官发现前方公路关卡驻军异常，菲舍尔透露自己已提前布置后手",
+      "type": "political_intrigue",
+      "line_range": [
+        1821,
+        1827
+      ],
+      "participants": [
+        "校官",
+        "菲舍尔",
+        "阿赫茉妮"
+      ],
+      "location": "战场边缘",
+      "significance": "揭示菲舍尔与开斯特公爵的布局，威灵顿公爵的舰队逼近",
+      "is_imaginary": false
+    },
+    {
+      "event": "校官下令收队，承认这是一场败仗",
+      "type": "retreat",
+      "line_range": [
+        1836,
+        1837
+      ],
+      "participants": [
+        "校官"
+      ],
+      "location": "战场",
+      "significance": "深池暂时放弃追击",
+      "is_imaginary": false
+    },
+    {
+      "event": "菲舍尔因持续使用源石技艺导致矿石病发作，被队长提醒",
+      "type": "character_development",
+      "line_range": [
+        1838,
+        1846
+      ],
+      "participants": [
+        "菲舍尔",
+        "特别行动队队长"
+      ],
+      "location": "战场",
+      "significance": "揭示菲舍尔是感染者，身体状况恶化，同时发现开斯特公爵派来了灰礼帽",
+      "is_imaginary": false
+    },
+    {
+      "event": "流民队伍在树林中集合，清点伤亡，苇草承认自己就是深池领袖",
+      "type": "revelation",
+      "line_range": [
+        1847,
+        1873
+      ],
+      "participants": [
+        "苇草",
+        "陈",
+        "风笛",
+        "维恩"
+      ],
+      "location": "树林",
+      "significance": "苇草向风笛坦白身份，承认小丘郡的罪行",
+      "is_imaginary": false
+    },
+    {
+      "event": "风笛质问苇草关于深池和赤铁近卫队的关系，苇草否认深池是公爵私兵",
+      "type": "ideological_clash",
+      "line_range": [
+        1874,
+        1889
+      ],
+      "participants": [
+        "风笛",
+        "苇草"
+      ],
+      "location": "树林",
+      "significance": "苇草阐述自己对深池的理想：为塔拉人而战，而非为公爵",
+      "is_imaginary": false
+    },
+    {
+      "event": "风笛决定与苇草分道扬镳，维恩赠送收音机作为告别礼物",
+      "type": "farewell",
+      "line_range": [
+        1890,
+        1912
+      ],
+      "participants": [
+        "风笛",
+        "陈",
+        "维恩",
+        "苇草"
+      ],
+      "location": "树林边缘",
+      "significance": "风笛与苇草因立场不同而分离，维恩表达感激",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草为受伤的流民处理伤口，得知塞尔蒙和莫兰失踪",
+      "type": "aftermath",
+      "line_range": [
+        1913,
+        1934
+      ],
+      "participants": [
+        "苇草",
+        "维恩",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "树林",
+      "significance": "队伍减员，苇草继续带领剩余流民",
+      "is_imaginary": false
+    },
+    {
+      "event": "菲舍尔向开斯特公爵汇报，公爵赞赏其能力并派其监视威灵顿公爵",
+      "type": "political_intrigue",
+      "line_range": [
+        1935,
+        1950
+      ],
+      "participants": [
+        "菲舍尔",
+        "开斯特公爵"
+      ],
+      "location": "开斯特公爵的会客厅",
+      "significance": "开斯特公爵对菲舍尔委以重任，追捕苇草的任务交给其他人",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草安排流民跟随商队逃往橡林郡，自己决定继续带领愿意战斗的人",
+      "type": "planning",
+      "line_range": [
+        1951,
+        1969
+      ],
+      "participants": [
+        "苇草",
+        "维恩",
+        "受伤的流民",
+        "塔拉流民"
+      ],
+      "location": "荒野商道旁",
+      "significance": "苇草决定分头行动，让老弱病残逃生，自己带领战斗人员",
+      "is_imaginary": false
+    },
+    {
+      "event": "维恩向苇草坦白自己才是最初引发冲突的人，请求原谅",
+      "type": "confession",
+      "line_range": [
+        1970,
+        1987
+      ],
+      "participants": [
+        "维恩",
+        "苇草"
+      ],
+      "location": "荒野商道旁",
+      "significance": "维恩卸下心理负担，苇草安慰他",
+      "is_imaginary": false
+    },
+    {
+      "event": "莫兰决定跟随苇草继续战斗，维恩选择离开",
+      "type": "farewell",
+      "line_range": [
+        1988,
+        2004
+      ],
+      "participants": [
+        "莫兰",
+        "维恩",
+        "苇草"
+      ],
+      "location": "荒野商道旁",
+      "significance": "莫兰选择战斗，维恩选择回归平凡生活",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜与威灵顿公爵在高速战舰上会面，讨论橡林郡和塔拉王城",
+      "type": "alliance",
+      "line_range": [
+        2005,
+        2034
+      ],
+      "participants": [
+        "爱布拉娜",
+        "威灵顿公爵",
+        "维多利亚军官"
+      ],
+      "location": "威灵顿公爵的高速战舰",
+      "significance": "威灵顿公爵正式与深池结盟，战舰驶向橡林郡",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜回忆与沃里克伯爵的对话，伯爵在临终前认可她为塔拉的新领袖",
+      "type": "flashback",
+      "line_range": [
+        2035,
+        2052
+      ],
+      "participants": [
+        "爱布拉娜",
+        "沃里克伯爵"
+      ],
+      "location": "沃里克伯爵的宅邸",
+      "significance": "沃里克伯爵之死标志着温和派塔拉运动的终结，爱布拉娜继承其事业",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草带领流民躲入塔拉王城废墟，发现被源石技艺控制的死者",
+      "type": "exploration",
+      "line_range": [
+        2053,
+        2088
+      ],
+      "participants": [
+        "苇草",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "塔拉王城废墟",
+      "significance": "苇草进入王城废墟，发现爱布拉娜的火焰仍在燃烧",
+      "is_imaginary": false
+    },
+    {
+      "event": "流民发现王城废墟中的熔炉和遗迹，讨论塔拉历史传说",
+      "type": "revelation",
+      "line_range": [
+        2089,
+        2100
+      ],
+      "participants": [
+        "莫兰",
+        "塔拉流民",
+        "苇草"
+      ],
+      "location": "塔拉王城废墟内部",
+      "significance": "塔拉历史遗迹的真实存在震撼了流民",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草在废墟中与自己的幻影/记忆对话，讨论德拉克的命运和塔拉的历史",
+      "type": "dream_vision",
+      "line_range": [
+        2114,
+        2159
+      ],
+      "participants": [
+        "苇草",
+        "拉芙希妮",
+        "领袖"
+      ],
+      "location": "塔拉王城废墟深处",
+      "significance": "苇草与内心对话，质疑自己作为影子的身份，决心走出自己的路",
+      "is_imaginary": true
+    },
+    {
+      "event": "苇草在幻境中与爱布拉娜对峙，爱布拉娜称赞她的火焰并挑战她",
+      "type": "confrontation",
+      "line_range": [
+        2160,
+        2170
+      ],
+      "participants": [
+        "苇草",
+        "爱布拉娜"
+      ],
+      "location": "塔拉王城废墟（幻境）",
+      "significance": "爱布拉娜承认苇草的力量，姐妹对决一触即发",
+      "is_imaginary": true
+    },
+    {
+      "event": "苇草在幻境中回应爱布拉娜，表明自己不是她的影子，而是塔拉人理想的影子",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2171,
+        2185
+      ],
+      "participants": [
+        "苇草",
+        "爱布拉娜"
+      ],
+      "location": "塔拉王城废墟（幻境）",
+      "significance": "苇草完成自我认知的转变，不再畏惧姐姐",
+      "is_imaginary": true
+    },
+    {
+      "event": "苇草回到现实，为受伤的凯莉治疗，并询问流民是否害怕她的火焰",
+      "type": "character_development",
+      "line_range": [
+        2186,
+        2205
+      ],
+      "participants": [
+        "苇草",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "塔拉王城废墟",
+      "significance": "苇草开始主动关心他人，建立信任",
+      "is_imaginary": false
+    },
+    {
+      "event": "爱布拉娜在威灵顿公爵的战舰上发表演讲，号召塔拉人进军伦蒂尼姆",
+      "type": "speech",
+      "line_range": [
+        2206,
+        2283
+      ],
+      "participants": [
+        "爱布拉娜",
+        "维多利亚军官",
+        "深池军官",
+        "威灵顿公爵"
+      ],
+      "location": "威灵顿公爵的高速战舰",
+      "significance": "爱布拉娜正式宣布深池的战争目标：进军伦蒂尼姆，争取塔拉人的命运",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草与莫兰等人讨论塔拉人的定义和战斗的意义",
+      "type": "ideological_clash",
+      "line_range": [
+        2231,
+        2270
+      ],
+      "participants": [
+        "苇草",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "塔拉王城废墟",
+      "significance": "苇草阐述自己对塔拉人身份的理解：不是血统，而是共同的苦难和希望",
+      "is_imaginary": false
+    },
+    {
+      "event": "苇草阐述自己的理想：塔拉人应有温暖的火、杯中的酒、平静的家园",
+      "type": "speech",
+      "line_range": [
+        2284,
+        2298
+      ],
+      "participants": [
+        "苇草",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "塔拉王城废墟",
+      "significance": "苇草提出与爱布拉娜不同的愿景：重视生命尊严而非牺牲",
+      "is_imaginary": false
+    },
+    {
+      "event": "流民收到家信，莫兰思考生活应有的样子，苇草表示会去见爱布拉娜",
+      "type": "reflection",
+      "line_range": [
+        2299,
+        2309
+      ],
+      "participants": [
+        "苇草",
+        "莫兰",
+        "塔拉流民"
+      ],
+      "location": "塔拉王城废墟",
+      "significance": "苇草决定直面姐姐，但坚持自己的道路",
+      "is_imaginary": false
+    },
+    {
+      "event": "校官向爱布拉娜汇报未能带回苇草，爱布拉娜表示妹妹很快就会回到她身边",
+      "type": "report",
+      "line_range": [
+        2310,
+        2349
+      ],
+      "participants": [
+        "校官",
+        "阿赫茉妮",
+        "爱布拉娜"
+      ],
+      "location": "深池战舰",
+      "significance": "爱布拉娜对苇草的觉醒感到满意，认为她终将回归",
+      "is_imaginary": false
+    },
+    {
+      "event": "陈和风笛在荒野中收听收音机，得知伦蒂尼姆战争升级，威灵顿公爵参战",
+      "type": "revelation",
+      "line_range": [
+        2350,
+        2377
+      ],
+      "participants": [
+        "陈",
+        "风笛"
+      ],
+      "location": "荒野长途货车旁",
+      "significance": "维多利亚全面战争爆发，风笛决心继续调查并改变维多利亚",
+      "is_imaginary": false
+    },
+    {
+      "event": "菲舍尔驾车返回，决定销毁所有痕迹接受公爵提拔，途中遇到维恩",
+      "type": "character_development",
+      "line_range": [
+        2378,
+        2414
+      ],
+      "participants": [
+        "菲舍尔",
+        "维恩"
+      ],
+      "location": "开斯特公爵领地边缘",
+      "significance": "菲舍尔警告维恩逃离，暗示战争即将波及此地，特伦特侯爵将加强压迫",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "苇草",
+      "type": "operator",
+      "role_in_chapter": "主角，罗德岛干员，实为深池领袖之一拉芙希妮。在荒野中偶遇塔拉流民并决定护送他们，同时追踪深池的亡灵部队。与陈和风笛重逢，共同面对深池的威胁。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "维恩",
+      "type": "npc",
+      "role_in_chapter": "塔拉流民，商贩出身，性格善良但胆小。因与巡逻队冲突而被通缉，带领一群同伴逃亡。信任苇草，并多次试图调解队伍内部矛盾。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "塞尔蒙",
+      "type": "npc",
+      "role_in_chapter": "塔拉流民，性格强硬，冒充深池成员。目标是找到加入深池的哥哥，并带领队伍投奔深池。与苇草多次发生冲突，最终在见到已死的哥哥后崩溃。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "陈",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，前龙门警察。与风笛一同追踪深池鬼魂部队，在荒野中与苇草重逢，共同保护塔拉流民。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "风笛",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，前维多利亚风暴突击队成员。与陈一同行动，性格开朗直率。与苇草重逢后，试图开导她。",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "阿赫茉妮",
+      "type": "npc",
+      "role_in_chapter": "深池间谍，伪装成商人活动。与深池军官「校官」会面，讨论领袖计划。被开斯特公爵的情报人员菲舍尔监视，试图保护苇草。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "菲舍尔",
+      "type": "npc",
+      "role_in_chapter": "开斯特公爵的情报人员，负责监视阿赫茉妮。通过分析情报，推断出荒野上存在另一位德拉克后裔（苇草）。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "沃里克伯爵",
+      "type": "npc",
+      "role_in_chapter": "塔拉民族主义贵族，在宴会上发表演讲，批判维多利亚文化对塔拉人的侵蚀，并暗示德拉克血脉可能复兴。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "衣着朴素的诗人",
+      "type": "npc",
+      "role_in_chapter": "塔拉诗人威廉姆斯，剧作《荒地钟声》的作者。与沃里克伯爵辩论，主张通过教育和文化启蒙来拯救塔拉人。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "校官",
+      "type": "npc",
+      "role_in_chapter": "深池军官，威灵顿公爵的近卫队成员。与阿赫茉妮会面，对苇草（拉芙希妮）的存在表示警惕，认为她对深池构成威胁。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "开斯特公爵",
+      "type": "npc",
+      "role_in_chapter": "维多利亚大公爵，菲舍尔的上级。在酒会隔间与菲舍尔会面，嘉奖其工作并询问其身体状况。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "莫兰",
+      "type": "npc",
+      "role_in_chapter": "塔拉感染者，眼睛在饥荒中失明。请求与苇草一起走，希望为塔拉人做点什么。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "爱布拉娜",
+      "type": "npc",
+      "role_in_chapter": "苇草的姐姐，深池的真正领袖。在苇草的回忆中出现，教导她成为「领袖」。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "休谟斯",
+      "type": "operator",
+      "role_in_chapter": "小贵族兼商人，陈和风笛的同学。曾向她们提供情报，被阿赫茉妮警告。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "特别行动队队长",
+      "type": "npc",
+      "role_in_chapter": "开斯特公爵特别行动队队长，受菲舍尔委托跟踪线索，与风笛和陈发生冲突。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "巡逻队队长",
+      "type": "npc",
+      "role_in_chapter": "维多利亚巡逻队队长，塔拉人但否认自己的身份。盘问苇草，并试图抓捕她。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "威灵顿公爵",
+      "type": "npc",
+      "role_in_chapter": "维多利亚大公爵，塔拉血统，与爱布拉娜结盟，提供高速战舰支持深池",
+      "first_appearance_chapter": false
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "深池的目标与手段",
+      "line_range": [
+        1190,
+        1200
+      ],
+      "discussion_summary": "塞尔蒙回忆深池成员的话，称深池的目标不是报复或抢劫，而是改变塔拉人的境况，避免塔拉人变成维多利亚人。苇草补充说深池是一支军队，军队面前只有战争。",
+      "is_substantive": true
+    },
+    {
+      "concept": "塔拉人的身份",
+      "line_range": [
+        2231,
+        2270
+      ],
+      "discussion_summary": "莫兰质疑塔拉人的定义：工厂老板也是塔拉人，有标准口音的塔拉人害怕暴露乡音。苇草回答：塔拉是几百年苦难得到的一个名字，维多利亚人用口音、出身来歧视塔拉人。爱布拉娜的演讲补充：塔拉人必须告别文化、背叛家庭才能获得尊严。",
+      "is_substantive": true
+    },
+    {
+      "concept": "影子的身份",
+      "line_range": [
+        2114,
+        2159
+      ],
+      "discussion_summary": "苇草与内心对话：拉芙希妮指责她只能成为爱布拉娜的影子，害怕自己的力量。苇草反驳：现在的她已经握住过他人的手，她的火可以烧出道路。领袖指出她只是在模仿爱布拉娜，苇草承认但不后悔。",
+      "is_substantive": true
+    },
+    {
+      "concept": "深池的梦想",
+      "line_range": [
+        1874,
+        1889
+      ],
+      "discussion_summary": "风笛质问深池是否是公爵私兵，苇草否认：深池背后不该有任何势力，应该是所有想要安宁的塔拉人。但她也承认深池里全是暴徒和阴谋家。",
+      "is_substantive": true
+    },
+    {
+      "concept": "生命的重量",
+      "line_range": [
+        2284,
+        2298
+      ],
+      "discussion_summary": "苇草阐述：生命很脆弱，我们无法战胜死亡，但应该给生命以生活的尊严。塔拉人应该在夜晚有温暖的火，在唱起歌谣时杯中有酒，不用再逃亡。深池的火很残酷，但生命的重量不会减轻。",
+      "is_substantive": true
+    },
+    {
+      "concept": "塔拉的历史与传说",
+      "line_range": [
+        2089,
+        2106
+      ],
+      "discussion_summary": "流民发现王城废墟中的熔炉遗迹，莫兰回忆城里人说过传说中有历史痕迹。苇草表示自己读过很多塔拉传奇，但德拉克的天性是争斗，王城里遍布阴谋与鲜血，她害怕这里。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "深池",
+      "line_range": [
+        150,
+        153
+      ],
+      "description": "苇草向维恩和费加尔询问是否了解深池，二人沉默，苇草表示理解。"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        193,
+        194
+      ],
+      "description": "苇草识破塞尔蒙冒充深池，指出他模仿鬼魂部队的做事方法。"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        272,
+        273
+      ],
+      "description": "陈分析深池部队正在靠近特伦特郡外的无人区。"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        606,
+        645
+      ],
+      "description": "阿赫茉妮与「校官」讨论深池领袖的计划、蔓德拉之死以及苇草的威胁。"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        993,
+        1017
+      ],
+      "description": "菲舍尔分析深池领袖利用小丘郡事件，并怀疑存在另一位「领袖」。"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        1018,
+        1031
+      ],
+      "description": "阿赫茉妮决定优先确保苇草的安全，避免她落入开斯特公爵手中。"
+    },
+    {
+      "faction": "维多利亚驻军/巡逻队",
+      "line_range": [
+        37,
+        53
+      ],
+      "description": "巡逻队抓捕塔拉流民，队长表达对塔拉人的歧视和暴力倾向。"
+    },
+    {
+      "faction": "维多利亚驻军/巡逻队",
+      "line_range": [
+        326,
+        352
+      ],
+      "description": "巡逻队队长盘问苇草，承认自己是塔拉人但否认身份，认为塔拉人是匪徒。"
+    },
+    {
+      "faction": "维多利亚驻军/巡逻队",
+      "line_range": [
+        716,
+        723
+      ],
+      "description": "两名军官讨论深池引发的暴力事件，特伦特侯爵坚持控制局势。"
+    },
+    {
+      "faction": "开斯特公爵势力",
+      "line_range": [
+        432,
+        454
+      ],
+      "description": "菲舍尔与特别行动队队长讨论对阿赫茉妮的监视任务。"
+    },
+    {
+      "faction": "开斯特公爵势力",
+      "line_range": [
+        949,
+        963
+      ],
+      "description": "开斯特公爵在酒会隔间与菲舍尔会面，嘉奖其工作。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        589,
+        591
+      ],
+      "description": "风笛提及在罗德岛时不被允许探望苇草。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        687,
+        688
+      ],
+      "description": "苇草通过风笛和陈联系罗德岛，确认安全屋的位置。"
+    },
+    {
+      "faction": "威灵顿公爵势力",
+      "line_range": [
+        609,
+        610
+      ],
+      "description": "「校官」称自己是威灵顿公爵的近卫队成员，也是深池军官。"
+    },
+    {
+      "faction": "威灵顿公爵势力",
+      "line_range": [
+        1017,
+        1017
+      ],
+      "description": "菲舍尔怀疑威灵顿公爵放任另一位德拉克后裔在荒野上行走。"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        1504,
+        1511
+      ],
+      "description": "阿赫茉妮与校官讨论深池的立场：去救苇草会暴露她的身份，但为了不让另一条德拉克落入开斯特公爵手中，不得不去。"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        1585,
+        1610
+      ],
+      "description": "阿赫茉妮向苇草揭露深池内部真相：小丘郡的野心家本就会被领袖处决，蔓德拉因任务失败而死。"
+    },
+    {
+      "faction": "深池",
+      "line_range": [
+        2206,
+        2283
+      ],
+      "description": "爱布拉娜在威灵顿公爵战舰上发表演讲，宣布深池的战争目标：进军伦蒂尼姆，争取塔拉人的命运。"
+    },
+    {
+      "faction": "开斯特公爵",
+      "line_range": [
+        1935,
+        1950
+      ],
+      "description": "菲舍尔向开斯特公爵汇报，公爵赞赏其能力，派其监视威灵顿公爵，追捕苇草的任务交给其他人。"
+    },
+    {
+      "faction": "威灵顿公爵",
+      "line_range": [
+        2005,
+        2034
+      ],
+      "description": "威灵顿公爵与爱布拉娜在高速战舰上会面，讨论橡林郡和塔拉王城，公爵正式与深池结盟。"
+    },
+    {
+      "faction": "特别行动队",
+      "line_range": [
+        1383,
+        1406
+      ],
+      "description": "菲舍尔率领特别行动队包围流民营地，执行市议会的调查令，调查纵火案疑点。"
+    },
+    {
+      "faction": "赤铁近卫队",
+      "line_range": [
+        1566,
+        1585
+      ],
+      "description": "深池赤铁近卫队队长校官率队赶到战场，试图抓捕苇草。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "石高原野",
+      "line_range": [
+        103,
+        107
+      ],
+      "description": "苇草提到以前来过石高原野，那时还没有熄火钟的规定。塔拉流民解释熄火钟的规矩和新的严苛规定。"
+    },
+    {
+      "location": "特伦特郡",
+      "line_range": [
+        336,
+        337
+      ],
+      "description": "巡逻队队长声称特伦特侯爵绝不会放任深池煽风点火，并提及特伦特郡航道附近的事件。"
+    },
+    {
+      "location": "特伦特郡",
+      "line_range": [
+        538,
+        538
+      ],
+      "description": "菲舍尔在特伦特郡市政厅工作，负责监视阿赫茉妮。"
+    },
+    {
+      "location": "特伦特郡",
+      "line_range": [
+        931,
+        935
+      ],
+      "description": "商人提及源石燃料流向特伦特郡，侯爵与开斯特公爵交好，但领地与铁公爵毗邻。"
+    },
+    {
+      "location": "小丘郡",
+      "line_range": [
+        220,
+        221
+      ],
+      "description": "风笛回忆在小丘郡见过紫火和鬼魂部队的术师。"
+    },
+    {
+      "location": "小丘郡",
+      "line_range": [
+        589,
+        598
+      ],
+      "description": "风笛提及苇草在小丘郡受重伤，苇草表示深池改变了她的命运。"
+    },
+    {
+      "location": "小丘郡",
+      "line_range": [
+        1001,
+        1006
+      ],
+      "description": "菲舍尔分析深池领袖利用小丘郡事件肃清内部，全身而退。"
+    },
+    {
+      "location": "伦蒂尼姆",
+      "line_range": [
+        619,
+        620
+      ],
+      "description": "阿赫茉妮提及伦蒂尼姆城内有萨卡兹和蛰伏的势力，情报因「间谍」之死而减少。"
+    },
+    {
+      "location": "橡林郡",
+      "line_range": [
+        497,
+        497
+      ],
+      "description": "商队首领提及橡林郡要长距离移动，商队路线因此改变。"
+    },
+    {
+      "location": "橡林郡",
+      "line_range": [
+        615,
+        615
+      ],
+      "description": "阿赫茉妮担心如果深池的真正目的地橡林郡被过早发现，公爵们会提前反应。"
+    },
+    {
+      "location": "特伦特郡边界荒野",
+      "line_range": [
+        1232,
+        1239
+      ],
+      "description": "流民营地所在，风笛表示这里已是特伦特郡辖区边界，应该不会再有驻军找麻烦。"
+    },
+    {
+      "location": ""
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:53:46.552450+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 57432,
+    "tokens_out": 15278,
+    "elapsed_s": 138.28006196022034
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "维恩",
+    "塞尔蒙",
+    "阿赫茉妮",
+    "菲舍尔",
+    "沃里克伯爵",
+    "衣着朴素的诗人",
+    "校官",
+    "开斯特公爵",
+    "莫兰",
+    "爱布拉娜",
+    "特别行动队队长",
+    "巡逻队队长",
+    "威灵顿公爵"
+  ]
+}

@@ -1,0 +1,1267 @@
+{
+  "chapter": "玛莉娅·临光",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章讲述了玛莉娅·临光为挽救家族骑士贵族地位而参加卡西米尔骑士竞技的故事。开场玛莉娅在修车时展现出对机械的兴趣，随后在酒吧与老骑士、老工匠和佐菲娅的对话中，她表达了参加骑士竞技的决心。尽管佐菲娅最初反对，但最终被玛莉娅的坚持打动，同意担任她的教练。玛莉娅的叔叔玛恩纳则强烈反对她参赛，认为骑士竞技是商业闹剧。\n\n玛莉娅在佐菲娅的严格训练下快速进步，并在首场比赛中对阵呼啸骑士团的塑料骑士瑟奇亚克。尽管初期被压制，玛莉娅通过观察发现对方新型护甲的散热缺陷，最终一击制胜。赛后，多家企业前来寻求赞助合作，但玛莉娅拒绝了商业联合会的邀请，坚持要靠自己的实力。\n\n随后玛莉娅遭遇了残暴的锈铜骑士英格拉，在激战中双方两败俱伤，以平局收场。佐菲娅对此非常担忧，但玛莉娅仍坚持继续参赛。在炎刃混战赛中，玛莉娅遇到了自称感染者的焰尾骑士索娜，索娜向她揭示了感染者骑士的残酷处境，并指出她仍未真正理解骑士竞技的本质。\n\n商业联合会的发言人恰尔内开始暗中布局，他挖角了解说员大嘴莫布，并与无胄盟的白金大位会面，计划处理不听话的骑士。同时，恰尔内威胁塑料骑士瑟奇亚克，迫使他参与积分转让的阴谋。玛莉娅在竞速赛中获得亚军后，与叔叔玛恩纳发生激烈争执，玛恩纳痛斥骑士竞技的虚伪和玛嘉烈的失败，但玛莉娅仍坚持自己的道路。\n\n玛莉娅在蓝耳酒窖中与老骑士、老工匠和光头马丁交谈，表达了对佐菲娅的担忧，并决心继续参赛。商业联合会发言人恰尔内突然到访，试图说服玛莉娅接受商业合作，但遭到老骑士的激烈反对。恰尔内离开后，受伤的焰尾骑士索娜和灰毫骑士逃入酒窖寻求庇护，她们遭到了不明势力的袭击。玛莉娅得知下一场比赛的对手是锋盔骑士团的左手骑士泰特斯·白杨，一场实力悬殊的战斗即将开始。\n\n玛莉娅在与左手骑士的比赛中被完全压制，多次被击倒，但她凭借顽强的意志一次次站起来。在佐菲娅的鼓励下，玛莉娅最终抓住左手骑士因傲慢而露出的破绽，奇迹般地赢得了比赛。与此同时，老骑士和老工匠发现焰尾骑士和灰毫骑士正在秘密救助感染者斗士，而商业联合会和无胄盟则开始对玛莉娅和感染者骑士们采取行动。恰尔内与白金大位在冠军墙前会面，讨论了对玛恩纳的监视以及青金大位的秘密行动。\n\n玛莉娅的下一场比赛被安排为二对二小队战，对手是雪踵骑士团。然而，她的队友远牙骑士在赛前被袭击失踪，玛莉娅被迫独自面对腐败与凋零两位萨卡兹骑士。比赛中，腐败与凋零骑士使用抑制法术的毒雾，玛莉娅陷入绝境。关键时刻，耀骑士玛嘉烈·临光突然回归，击退了两位萨卡兹骑士，救下了妹妹。玛嘉烈的回归引发了巨大轰动，佐菲娅激动地打了她一巴掌，但随后众人决定先离开竞技场。\n\n玛嘉烈与玛莉娅回到家中，与叔叔玛恩纳发生了激烈争执。玛恩纳反对玛嘉烈回归并参加骑士竞技，认为这毫无意义且危险，但玛嘉烈坚持自己的信念。玛恩纳最终拔剑相向，要求与玛嘉烈决斗。与此同时，商业联合会迅速处理了恰尔内，将其流放，并提拔了其下属马克维茨为新的发言人。无胄盟接到了新的任务，包括监视耀骑士和应对红松骑士团的威胁。焰尾骑士和灰毫骑士则计划继续对抗无胄盟，而征战骑士和罗德岛的人员也已抵达卡西米尔。",
+  "events": [
+    {
+      "event": "玛莉娅在酒吧向佐菲娅等人宣布参加骑士竞技的决定",
+      "type": "revelation",
+      "line_range": [
+        126,
+        193
+      ],
+      "participants": [
+        "玛莉娅",
+        "佐菲娅",
+        "光头马丁",
+        "老骑士",
+        "老工匠"
+      ],
+      "location": "马丁的酒吧",
+      "significance": "确立玛莉娅参赛的核心动机和剧情主线",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛恩纳叔叔反对玛莉娅参赛，认为骑士竞技配不上临光之名",
+      "type": "confrontation",
+      "line_range": [
+        218,
+        237
+      ],
+      "participants": [
+        "玛莉娅",
+        "玛恩纳"
+      ],
+      "location": "临光家宅邸",
+      "significance": "展现家族内部对骑士竞技的不同态度和玛恩纳的复杂立场",
+      "is_imaginary": false
+    },
+    {
+      "event": "佐菲娅开始对玛莉娅进行高强度训练",
+      "type": "training",
+      "line_range": [
+        242,
+        359
+      ],
+      "participants": [
+        "玛莉娅",
+        "佐菲娅"
+      ],
+      "location": "佐菲娅的花园训练场",
+      "significance": "展示玛莉娅的进步和决心，为后续比赛做铺垫",
+      "is_imaginary": false
+    },
+    {
+      "event": "商业联合会工作人员要求塑料骑士在比赛中拖延时间并测试新护甲",
+      "type": "political_intrigue",
+      "line_range": [
+        375,
+        389
+      ],
+      "participants": [
+        "塑料骑士",
+        "工作人员"
+      ],
+      "location": "呼啸竞技场",
+      "significance": "揭示企业操纵比赛的幕后黑手",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛莉娅首战击败塑料骑士瑟奇亚克",
+      "type": "battle",
+      "line_range": [
+        470,
+        619
+      ],
+      "participants": [
+        "玛莉娅",
+        "塑料骑士",
+        "佐菲娅",
+        "大嘴莫布"
+      ],
+      "location": "呼啸竞技场",
+      "significance": "玛莉娅的首次胜利，展现其观察力和战术智慧",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛莉娅拒绝斯沃玛公司的赞助邀请",
+      "type": "negotiation",
+      "line_range": [
+        719,
+        781
+      ],
+      "participants": [
+        "玛莉娅",
+        "佐菲娅",
+        "企业员工",
+        "老骑士",
+        "老工匠",
+        "光头马丁"
+      ],
+      "location": "马丁的酒吧",
+      "significance": "展现玛莉娅坚持独立、不愿成为企业附庸的立场",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛莉娅与锈铜骑士英格拉激战，双方两败俱伤",
+      "type": "battle",
+      "line_range": [
+        827,
+        883
+      ],
+      "participants": [
+        "玛莉娅",
+        "锈铜骑士",
+        "佐菲娅",
+        "大嘴莫布"
+      ],
+      "location": "呼啸竞技场",
+      "significance": "展现骑士竞技的残酷性和玛莉娅的顽强",
+      "is_imaginary": false
+    },
+    {
+      "event": "恰尔内挖角大嘴莫布，并会见无胄盟白金大位",
+      "type": "alliance",
+      "line_range": [
+        928,
+        952
+      ],
+      "participants": [
+        "发言人恰尔内",
+        "大嘴莫布"
+      ],
+      "location": "梅什科集团办公室",
+      "significance": "揭示商业联合会与无胄盟的勾结，为后续冲突埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛莉娅在炎刃混战赛中与焰尾骑士索娜交手，了解感染者骑士的处境",
+      "type": "confrontation",
+      "line_range": [
+        1022,
+        1107
+      ],
+      "participants": [
+        "玛莉娅",
+        "焰尾骑士",
+        "大嘴莫布"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "揭示感染者骑士的残酷现实，促使玛莉娅反思骑士竞技的本质",
+      "is_imaginary": false
+    },
+    {
+      "event": "恰尔内与无胄盟白金大位会面，讨论处理不听话的骑士",
+      "type": "political_intrigue",
+      "line_range": [
+        1109,
+        1119
+      ],
+      "participants": [
+        "发言人恰尔内",
+        "白金"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "明确商业联合会与无胄盟的合作关系，威胁玛莉娅等人",
+      "is_imaginary": false
+    },
+    {
+      "event": "佐菲娅得知商业联合会可能对玛莉娅不利，要求她停止参赛",
+      "type": "confrontation",
+      "line_range": [
+        1201,
+        1247
+      ],
+      "participants": [
+        "玛莉娅",
+        "佐菲娅",
+        "光头马丁"
+      ],
+      "location": "马丁的酒吧",
+      "significance": "展现佐菲娅对玛莉娅安全的担忧和两人理念的冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "恰尔内威胁塑料骑士，迫使他参与积分转让阴谋",
+      "type": "political_intrigue",
+      "line_range": [
+        1272,
+        1297
+      ],
+      "participants": [
+        "发言人恰尔内",
+        "塑料骑士"
+      ],
+      "location": "呼啸守卫训练基地",
+      "significance": "展现商业联合会操纵骑士竞技的卑劣手段",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛恩纳与玛莉娅激烈争吵，痛斥骑士竞技和玛嘉烈的失败",
+      "type": "confrontation",
+      "line_range": [
+        1349,
+        1409
+      ],
+      "participants": [
+        "玛莉娅",
+        "玛恩纳"
+      ],
+      "location": "临光家宅邸",
+      "significance": "揭示玛恩纳的内心痛苦和对卡西米尔的失望，深化家族矛盾",
+      "is_imaginary": false
+    },
+    {
+      "event": "恰尔内到访蓝耳酒窖，试图说服玛莉娅接受商业合作，并与老骑士就荣耀与商业展开辩论",
+      "type": "confrontation",
+      "line_range": [
+        1435,
+        1509
+      ],
+      "participants": [
+        "发言人恰尔内",
+        "玛莉娅",
+        "老骑士",
+        "光头马丁",
+        "老工匠"
+      ],
+      "location": "蓝耳酒窖",
+      "significance": "揭示了商业联合会与坚守传统荣耀的骑士之间的根本矛盾，恰尔内对玛莉娅施加压力",
+      "is_imaginary": false
+    },
+    {
+      "event": "焰尾骑士索娜和灰毫骑士受伤逃入蓝耳酒窖寻求庇护",
+      "type": "rescue",
+      "line_range": [
+        1519,
+        1537
+      ],
+      "participants": [
+        "焰尾骑士",
+        "灰毫骑士",
+        "玛莉娅",
+        "光头马丁",
+        "老骑士",
+        "老工匠"
+      ],
+      "location": "蓝耳酒窖",
+      "significance": "揭示了感染者骑士正遭受不明势力的追杀，玛莉娅开始卷入更深的冲突",
+      "is_imaginary": false
+    },
+    {
+      "event": "恰尔内与下属谈论前任白金大位的往事，暗示无胄盟内部的复杂关系",
+      "type": "revelation",
+      "line_range": [
+        1538,
+        1556
+      ],
+      "participants": [
+        "发言人恰尔内",
+        "企业员工"
+      ],
+      "location": "未指明",
+      "significance": "揭示了无胄盟白金大位的继承内幕，以及恰尔内对权力运作的深刻理解",
+      "is_imaginary": false
+    },
+    {
+      "event": "佐菲娅与光头马丁讨论玛莉娅的处境，佐菲娅担心玛莉娅重蹈玛嘉烈的覆辙",
+      "type": "character_development",
+      "line_range": [
+        1557,
+        1595
+      ],
+      "participants": [
+        "佐菲娅",
+        "光头马丁"
+      ],
+      "location": "蓝耳酒窖",
+      "significance": "展现了佐菲娅对玛莉娅的关心和矛盾心理，以及她对玛嘉烈道路的反思",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛莉娅与左手骑士泰特斯·白杨进行单挑赛，玛莉娅被完全压制",
+      "type": "battle",
+      "line_range": [
+        1596,
+        1647
+      ],
+      "participants": [
+        "玛莉娅",
+        "左手骑士",
+        "大嘴莫布"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "展示了玛莉娅与顶级骑士之间的巨大实力差距，左手骑士的傲慢成为伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "佐菲娅在家中回忆起过去，重新拿起玛莉娅修好的剑，决定前往赛场",
+      "type": "character_development",
+      "line_range": [
+        1648,
+        1671
+      ],
+      "participants": [
+        "佐菲娅",
+        "仆人"
+      ],
+      "location": "佐菲娅宅邸",
+      "significance": "展现了佐菲娅对过去的怀念和对玛莉娅的关心，她决定介入比赛",
+      "is_imaginary": false
+    },
+    {
+      "event": "老骑士和老工匠报告焰尾骑士和灰毫骑士正在秘密救助感染者斗士，情况复杂",
+      "type": "revelation",
+      "line_range": [
+        1672,
+        1693
+      ],
+      "participants": [
+        "老骑士",
+        "老工匠",
+        "光头马丁"
+      ],
+      "location": "蓝耳酒窖",
+      "significance": "揭示了感染者骑士的悲惨处境和他们的反抗行动，玛莉娅的处境更加危险",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛莉娅在比赛中被左手骑士反复击倒，但凭借顽强意志坚持战斗",
+      "type": "battle",
+      "line_range": [
+        1694,
+        1744
+      ],
+      "participants": [
+        "玛莉娅",
+        "左手骑士",
+        "大嘴莫布"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "展现了玛莉娅不屈的意志，为后续的逆转埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛莉娅在比赛中逐渐适应左手骑士的攻击，并开始反击",
+      "type": "battle",
+      "line_range": [
+        1745,
+        1808
+      ],
+      "participants": [
+        "玛莉娅",
+        "左手骑士",
+        "大嘴莫布",
+        "佐菲娅"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "玛莉娅通过观察和坚持，找到了对抗左手骑士的方法，比赛出现转机",
+      "is_imaginary": false
+    },
+    {
+      "event": "恰尔内在VIP席评论比赛，认为左手骑士因傲慢而可能输掉比赛",
+      "type": "political_intrigue",
+      "line_range": [
+        1809,
+        1823
+      ],
+      "participants": [
+        "发言人恰尔内",
+        "企业员工"
+      ],
+      "location": "炎刃竞技场VIP席",
+      "significance": "揭示了商业联合会操纵比赛的意图，以及恰尔内对局势的精准判断",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛莉娅最终击败左手骑士，赢得比赛，创造了奇迹",
+      "type": "battle",
+      "line_range": [
+        1824,
+        1860
+      ],
+      "participants": [
+        "玛莉娅",
+        "左手骑士",
+        "大嘴莫布",
+        "佐菲娅"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "玛莉娅以弱胜强，证明了自己的实力和意志，但也引起了更大的关注",
+      "is_imaginary": false
+    },
+    {
+      "event": "佐菲娅向玛莉娅道歉，承认自己轻视了她的想法，玛莉娅表示自己与姐姐不同",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        1861,
+        1874
+      ],
+      "participants": [
+        "玛莉娅",
+        "佐菲娅"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "佐菲娅与玛莉娅和解，玛莉娅开始形成独立的自我认知",
+      "is_imaginary": false
+    },
+    {
+      "event": "光头马丁请求玛恩纳帮助玛莉娅，但遭到玛恩纳的拒绝",
+      "type": "confrontation",
+      "line_range": [
+        1875,
+        1893
+      ],
+      "participants": [
+        "光头马丁",
+        "玛恩纳"
+      ],
+      "location": "未指明",
+      "significance": "展现了玛恩纳的冷漠和无奈，他与临光家族其他成员的分歧加深",
+      "is_imaginary": false
+    },
+    {
+      "event": "焰尾骑士和灰毫骑士讨论他们的处境和计划，决定继续对抗无胄盟",
+      "type": "planning",
+      "line_range": [
+        1894,
+        1915
+      ],
+      "participants": [
+        "焰尾骑士",
+        "灰毫骑士"
+      ],
+      "location": "未指明",
+      "significance": "揭示了感染者骑士的反抗决心，以及他们与无胄盟的对抗",
+      "is_imaginary": false
+    },
+    {
+      "event": "恰尔内与左手骑士讨论比赛结果，左手骑士表示不会找借口",
+      "type": "negotiation",
+      "line_range": [
+        1916,
+        1935
+      ],
+      "participants": [
+        "发言人恰尔内",
+        "左手骑士"
+      ],
+      "location": "未指明",
+      "significance": "展现了商业联合会与骑士之间的利益关系，左手骑士的傲慢与务实并存",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛莉娅和佐菲娅等人讨论感染者骑士的处境，玛莉娅决心继续前进",
+      "type": "character_development",
+      "line_range": [
+        1936,
+        1953
+      ],
+      "participants": [
+        "玛莉娅",
+        "佐菲娅",
+        "老骑士",
+        "老工匠"
+      ],
+      "location": "未指明",
+      "significance": "玛莉娅对感染者问题有了更深的认识，坚定了自己的信念",
+      "is_imaginary": false
+    },
+    {
+      "event": "恰尔内与白金大位在冠军墙前会面，讨论黑骑士、耀骑士和血骑士的历史，以及青金大位的秘密行动",
+      "type": "political_intrigue",
+      "line_range": [
+        1955,
+        1998
+      ],
+      "participants": [
+        "发言人恰尔内",
+        "白金"
+      ],
+      "location": "冠军墙",
+      "significance": "揭示了卡西米尔骑士竞技的历史和商业运作内幕，以及无胄盟内部的权力斗争",
+      "is_imaginary": false
+    },
+    {
+      "event": "佐菲娅为玛莉娅治疗伤势，并回忆自己与左手骑士和玛嘉烈的往事",
+      "type": "flashback",
+      "line_range": [
+        1999,
+        2042
+      ],
+      "participants": [
+        "玛莉娅",
+        "佐菲娅"
+      ],
+      "location": "未指明",
+      "significance": "展现了佐菲娅的过去，以及玛嘉烈对周围人的影响",
+      "is_imaginary": false
+    },
+    {
+      "event": "老骑士和老工匠讨论感染者骑士和玛莉娅的安危，感到担忧",
+      "type": "reflection",
+      "line_range": [
+        2043,
+        2054
+      ],
+      "participants": [
+        "老骑士",
+        "老工匠"
+      ],
+      "location": "车内",
+      "significance": "暗示了更大的阴谋正在逼近玛莉娅",
+      "is_imaginary": false
+    },
+    {
+      "event": "佐菲娅为玛莉娅介绍二对二小队赛的赛制和队友远牙骑士",
+      "type": "planning",
+      "line_range": [
+        2055,
+        2093
+      ],
+      "participants": [
+        "玛莉娅",
+        "佐菲娅",
+        "光头马丁"
+      ],
+      "location": "未指明",
+      "significance": "为接下来的比赛做铺垫，展现了独立骑士的劣势",
+      "is_imaginary": false
+    },
+    {
+      "event": "恰尔内与下属讨论工作方式，并准备与雪踵骑士团的会议",
+      "type": "political_intrigue",
+      "line_range": [
+        2094,
+        2131
+      ],
+      "participants": [
+        "发言人恰尔内",
+        "企业员工"
+      ],
+      "location": "街道",
+      "significance": "展现了恰尔内的操控手段，暗示了针对玛莉娅的阴谋",
+      "is_imaginary": false
+    },
+    {
+      "event": "佐菲娅教导玛莉娅关于源石技艺和战斗技巧，鼓励她掌握自己的光",
+      "type": "training",
+      "line_range": [
+        2107,
+        2123
+      ],
+      "participants": [
+        "玛莉娅",
+        "佐菲娅"
+      ],
+      "location": "未指明",
+      "significance": "玛莉娅在佐菲娅的指导下成长，为后续战斗做准备",
+      "is_imaginary": false
+    },
+    {
+      "event": "老骑士和老工匠扫墓归来，回忆过去，感叹时光流逝",
+      "type": "reflection",
+      "line_range": [
+        2132,
+        2156
+      ],
+      "participants": [
+        "老骑士",
+        "老工匠",
+        "光头马丁"
+      ],
+      "location": "蓝耳酒窖",
+      "significance": "展现了老一代骑士的过去和他们对玛莉娅的关心",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛莉娅的队友远牙骑士被袭击失踪，玛莉娅被迫独自面对雪踵骑士团",
+      "type": "ambush",
+      "line_range": [
+        2157,
+        2201
+      ],
+      "participants": [
+        "玛莉娅",
+        "佐菲娅",
+        "光头马丁",
+        "大嘴莫布"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "商业联合会通过袭击远牙骑士，迫使玛莉娅陷入以一敌二的绝境",
+      "is_imaginary": false
+    },
+    {
+      "event": "腐败与凋零两位萨卡兹骑士作为雪踵骑士团的成员登场，使用抑制法术的毒雾攻击玛莉娅",
+      "type": "battle",
+      "line_range": [
+        2202,
+        2318
+      ],
+      "participants": [
+        "玛莉娅",
+        "腐败骑士",
+        "凋零骑士",
+        "大嘴莫布"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "玛莉娅陷入生死危机，商业联合会意图通过比赛除掉她",
+      "is_imaginary": false
+    },
+    {
+      "event": "老骑士和老工匠试图冲入竞技场救援玛莉娅，但被白金大位拦截",
+      "type": "confrontation",
+      "line_range": [
+        2270,
+        2304
+      ],
+      "participants": [
+        "老骑士",
+        "老工匠",
+        "白金"
+      ],
+      "location": "炎刃竞技场外",
+      "significance": "无胄盟介入，阻止任何人救援玛莉娅，展现了白金大位的实力",
+      "is_imaginary": false
+    },
+    {
+      "event": "耀骑士玛嘉烈·临光突然回归，击退腐败与凋零骑士，救下玛莉娅",
+      "type": "rescue",
+      "line_range": [
+        2319,
+        2354
+      ],
+      "participants": [
+        "玛嘉烈",
+        "玛莉娅",
+        "腐败骑士",
+        "凋零骑士",
+        "大嘴莫布"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "玛嘉烈的回归是本章最大的转折点，彻底改变了局势",
+      "is_imaginary": false
+    },
+    {
+      "event": "白金大位接到青金大位的通知，得知耀骑士回归，任务撤销",
+      "type": "revelation",
+      "line_range": [
+        2355,
+        2422
+      ],
+      "participants": [
+        "白金",
+        "老骑士",
+        "老工匠",
+        "闪灵",
+        "夜莺"
+      ],
+      "location": "炎刃竞技场外",
+      "significance": "揭示了无胄盟内部对耀骑士回归的反应，以及闪灵和夜莺的出现",
+      "is_imaginary": false
+    },
+    {
+      "event": "恰尔内得知耀骑士回归，意识到自己的计划失败，准备接受流放",
+      "type": "confrontation",
+      "line_range": [
+        2423,
+        2442
+      ],
+      "participants": [
+        "发言人恰尔内",
+        "企业员工"
+      ],
+      "location": "炎刃竞技场VIP席",
+      "significance": "恰尔内的阴谋破产，他即将被商业联合会抛弃",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛嘉烈与玛莉娅联手击败腐败与凋零骑士，展现了耀骑士的强大实力",
+      "type": "battle",
+      "line_range": [
+        2443,
+        2524
+      ],
+      "participants": [
+        "玛嘉烈",
+        "玛莉娅",
+        "腐败骑士",
+        "凋零骑士",
+        "大嘴莫布"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "玛嘉烈以绝对实力碾压对手，宣告了她的回归",
+      "is_imaginary": false
+    },
+    {
+      "event": "佐菲娅激动地打了玛嘉烈一巴掌，随后众人计划撤离竞技场",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        2525,
+        2590
+      ],
+      "participants": [
+        "玛嘉烈",
+        "玛莉娅",
+        "佐菲娅",
+        "光头马丁",
+        "老骑士",
+        "老工匠",
+        "闪灵",
+        "夜莺"
+      ],
+      "location": "炎刃竞技场",
+      "significance": "展现了佐菲娅对玛嘉烈回归的复杂情感，以及众人团结一致应对危机",
+      "is_imaginary": false
+    },
+    {
+      "event": "恰尔内与白金大位会面，确认自己被流放，并请求白金处理掉目击者瑟奇亚克的小儿子",
+      "type": "political_intrigue",
+      "line_range": [
+        2591,
+        2607
+      ],
+      "participants": [
+        "发言人恰尔内",
+        "白金"
+      ],
+      "location": "未指明",
+      "significance": "恰尔内的结局，以及他最后的阴暗请求，展现了商业联合会的冷酷",
+      "is_imaginary": false
+    },
+    {
+      "event": "白金大位接到上级指示，得知征战骑士秘密行动，任务转为监视耀骑士",
+      "type": "political_intrigue",
+      "line_range": [
+        2608,
+        2630
+      ],
+      "participants": [
+        "白金",
+        "神秘人"
+      ],
+      "location": "未指明",
+      "significance": "揭示了无胄盟和商业联合会对耀骑士回归的应对策略，以及更大的势力介入",
+      "is_imaginary": false
+    },
+    {
+      "event": "商业联合会直接任命恰尔内的下属马克维茨为新的发言人，并下达三项指令",
+      "type": "political_intrigue",
+      "line_range": [
+        2631,
+        2664
+      ],
+      "participants": [
+        "企业员工",
+        "浑厚的男声",
+        "豪迈的女声"
+      ],
+      "location": "未指明",
+      "significance": "商业联合会迅速重组，展现了其高效和冷酷的运作方式",
+      "is_imaginary": false
+    },
+    {
+      "event": "新任发言人马克维茨与白金大位会面，得知无胄盟正在对抗红松骑士团",
+      "type": "revelation",
+      "line_range": [
+        2665,
+        2684
+      ],
+      "participants": [
+        "发言人马克维茨",
+        "白金"
+      ],
+      "location": "未指明",
+      "significance": "揭示了红松骑士团的存在，以及他们与无胄盟的公开对抗",
+      "is_imaginary": false
+    },
+    {
+      "event": "焰尾骑士和灰毫骑士讨论耀骑士回归的影响，并计划继续对抗无胄盟",
+      "type": "planning",
+      "line_range": [
+        2685,
+        2710
+      ],
+      "participants": [
+        "焰尾骑士",
+        "灰毫骑士"
+      ],
+      "location": "未指明",
+      "significance": "感染者骑士们决定利用耀骑士回归的时机，继续他们的反抗行动",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛嘉烈与玛莉娅在家中团聚，玛嘉烈称赞玛莉娅的成长",
+      "type": "family_moment",
+      "line_range": [
+        2711,
+        2736
+      ],
+      "participants": [
+        "玛嘉烈",
+        "玛莉娅"
+      ],
+      "location": "临光家宅邸",
+      "significance": "姐妹重逢的温馨时刻，玛莉娅表达了对姐姐的支持",
+      "is_imaginary": false
+    },
+    {
+      "event": "玛恩纳与玛嘉烈发生激烈争执，玛恩纳反对玛嘉烈回归并拔剑相向",
+      "type": "confrontation",
+      "line_range": [
+        2737,
+        2778
+      ],
+      "participants": [
+        "玛嘉烈",
+        "玛莉娅",
+        "玛恩纳"
+      ],
+      "location": "临光家宅邸",
+      "significance": "玛恩纳与玛嘉烈的理念冲突达到顶点，玛恩纳试图用武力阻止玛嘉烈",
+      "is_imaginary": false
+    },
+    {
+      "event": "征战骑士的使者塞诺蜜向大骑士长报告，并提及罗德岛的人员已经抵达",
+      "type": "revelation",
+      "line_range": [
+        2779,
+        2797
+      ],
+      "participants": [
+        "塞诺蜜",
+        "大骑士长"
+      ],
+      "location": "未指明",
+      "significance": "揭示了征战骑士和罗德岛对卡西米尔局势的介入，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "瑕光",
+      "type": "operator",
+      "role_in_chapter": "主角，临光家小女儿，为挽救家族贵族地位参加骑士竞技，展现出机械天赋和战斗潜力",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "鞭刃",
+      "type": "operator",
+      "role_in_chapter": "临光家陪侍，前竞技骑士，玛莉娅的教练，对玛莉娅的安全极度担忧",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "玛恩纳",
+      "type": "operator",
+      "role_in_chapter": "玛莉娅的叔叔，反对骑士竞技，在企业工作，对卡西米尔的现状感到失望",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "光头马丁",
+      "type": "npc",
+      "role_in_chapter": "酒吧老板，前竞技骑士，玛莉娅的支持者和顾问",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老骑士",
+      "type": "npc",
+      "role_in_chapter": "退役骑士，玛莉娅的支持者，常与老工匠斗嘴",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "老工匠",
+      "type": "npc",
+      "role_in_chapter": "退役工匠，玛莉娅的机械导师，支持她参赛",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "塑料骑士",
+      "type": "npc",
+      "role_in_chapter": "呼啸骑士团骑士，被企业操纵，后试图反抗",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "大嘴莫布",
+      "type": "npc",
+      "role_in_chapter": "竞技场解说员，被商业联合会挖角",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "发言人恰尔内",
+      "type": "npc",
+      "role_in_chapter": "商业联合会驻赛区发言人，幕后操纵骑士竞技的阴谋家",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "锈铜骑士",
+      "type": "npc",
+      "role_in_chapter": "残暴的竞技骑士，与玛莉娅激战",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "焰尾",
+      "type": "operator",
+      "role_in_chapter": "感染者骑士，在混战赛中与玛莉娅交手并教导她",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "白金",
+      "type": "npc",
+      "role_in_chapter": "无胄盟白金大位，与恰尔内会面，计划处理不听话的骑士",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "灰毫",
+      "type": "operator",
+      "role_in_chapter": "感染者骑士，与焰尾骑士一起行动，受伤后逃入蓝耳酒窖",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "左手骑士",
+      "type": "npc",
+      "role_in_chapter": "锋盔骑士团主将，与玛莉娅比赛，因傲慢而被玛莉娅击败",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "腐败骑士",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹骑士，与凋零骑士搭档，在比赛中使用抑制法术的毒雾攻击玛莉娅，被玛嘉烈击败",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凋零骑士",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹骑士，与腐败骑士搭档，在比赛中使用抑制法术的毒雾攻击玛莉娅，被玛嘉烈击败",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "临光",
+      "type": "operator",
+      "role_in_chapter": "耀骑士，玛莉娅的姐姐，在关键时刻回归，救下玛莉娅，与玛恩纳发生争执",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "闪灵",
+      "type": "operator",
+      "role_in_chapter": "萨卡兹医师，与玛嘉烈同行，治疗了腐败骑士，与夜莺一起跟随玛嘉烈",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "夜莺",
+      "type": "operator",
+      "role_in_chapter": "萨卡兹女性，与闪灵和玛嘉烈同行，跟随玛嘉烈进入竞技场",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "企业员工",
+      "type": "npc",
+      "role_in_chapter": "恰尔内的下属，后被商业联合会任命为新的发言人马克维茨",
+      "first_appearance_chapter": false
+    },
+    {
+      "name": "塞诺蜜",
+      "type": "npc",
+      "role_in_chapter": "征战骑士的使者，向大骑士长报告耀骑士回归的消息，并提及罗德岛的人员已到",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "临光家的信条",
+      "line_range": [
+        190,
+        228
+      ],
+      "discussion_summary": "玛莉娅表示要保护姐姐和爷爷一直捍卫的东西，不能坐视临光家没落\n\n玛恩纳认为即使被剥夺贵族身份，临光的信条也不会动摇，没有什么需要保护",
+      "is_substantive": true
+    },
+    {
+      "concept": "荣耀",
+      "line_range": [
+        1457,
+        1474
+      ],
+      "discussion_summary": "恰尔内与老骑士就荣耀展开辩论。恰尔内认为荣耀没有被抛弃，只是现代人不需要了，是进步的遗忘。老骑士则认为恰尔内不配谈论荣耀。",
+      "is_substantive": true
+    },
+    {
+      "concept": "骑士的本质",
+      "line_range": [
+        1617,
+        1622
+      ],
+      "discussion_summary": "左手骑士对玛莉娅说，并非持武器者就能被叫做骑士，暗示骑士需要具备某种资格或精神。",
+      "is_substantive": true
+    },
+    {
+      "concept": "骑士竞技的公平性",
+      "line_range": [
+        1425,
+        1427
+      ],
+      "discussion_summary": "老骑士指出骑士竞技没有一丝一毫称得上公平公正的地方，一旦踏足更高领域，要面对的是企业和家族的博弈。",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者的处境",
+      "line_range": [
+        1936,
+        1944
+      ],
+      "discussion_summary": "老骑士解释感染者被允许参赛，但无法成为社会的中流砥柱，只能成为供人取乐的角斗士。佐菲娅和玛莉娅对此表示关注。",
+      "is_substantive": true
+    },
+    {
+      "concept": "骑士的信仰与光芒",
+      "line_range": [
+        1780,
+        1782
+      ],
+      "discussion_summary": "玛莉娅在濒临失败时回忆起爷爷和姐姐的话：不畏苦暗，所谓骑士是照亮整片大地的崇高者。这成为她重新站起来的动力。",
+      "is_substantive": true
+    },
+    {
+      "concept": "骑士竞技的商业本质",
+      "line_range": [
+        1960,
+        1968
+      ],
+      "discussion_summary": "恰尔内向白金解释黑骑士被排挤的原因：过于膨胀的个人秀不利于竞技业发展，能合理地更新换代是产业进步的体现。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "商业联合会",
+      "line_range": [
+        375,
+        383
+      ],
+      "description": "工作人员透露呼啸守卫公司要求塑料骑士拖延战斗时间，以获取商业联合会的发言权",
+      "is_substantive": true
+    },
+    {
+      "faction": "商业联合会",
+      "line_range": [
+        928,
+        952
+      ],
+      "description": "恰尔内作为商业联合会驻赛区发言人，向大嘴莫布阐述卡西米尔的进步需要商业支持，并挖角他",
+      "is_substantive": true
+    },
+    {
+      "faction": "商业联合会",
+      "line_range": [
+        1109,
+        1119
+      ],
+      "description": "恰尔内与无胄盟白金大位会面，讨论处理不听话的感染者和骑士",
+      "is_substantive": true
+    },
+    {
+      "faction": "无胄盟",
+      "line_range": [
+        1109,
+        1119
+      ],
+      "description": "白金大位与恰尔内会面，讨论处理不听话的感染者和骑士",
+      "is_substantive": true
+    },
+    {
+      "faction": "呼啸守卫公司",
+      "line_range": [
+        375,
+        383
+      ],
+      "description": "工作人员要求塑料骑士装备新护甲并拖延战斗时间，以测试产品和获取商业联合会发言权",
+      "is_substantive": true
+    },
+    {
+      "faction": "呼啸守卫公司",
+      "line_range": [
+        487,
+        489
+      ],
+      "description": "大嘴莫布在解说中宣传呼啸守卫的Jack2护甲产品",
+      "is_substantive": true
+    },
+    {
+      "faction": "斯沃玛公司",
+      "line_range": [
+        719,
+        781
+      ],
+      "description": "企业员工代表斯沃玛公司和群月骑士团邀请玛莉娅入团，被拒绝",
+      "is_substantive": true
+    },
+    {
+      "faction": "骑士协会",
+      "line_range": [
+        928,
+        931
+      ],
+      "description": "恰尔内自称是骑士协会赛区轮换负责人之一",
+      "is_substantive": true
+    },
+    {
+      "faction": "商业联合会",
+      "line_range": [
+        1435,
+        1509
+      ],
+      "description": "恰尔内作为商业联合会发言人，试图说服玛莉娅接受商业合作，并威胁老骑士等人，展现了商业联合会对骑士竞技的操控。"
+    },
+    {
+      "faction": "无胄盟",
+      "line_range": [
+        1955,
+        1998
+      ],
+      "description": "恰尔内与白金大位在冠军墙会面，讨论无胄盟的内部事务，包括前任白金大位的死因和青金大位的秘密行动。"
+    },
+    {
+      "faction": "锋盔骑士团",
+      "line_range": [
+        1612,
+        1622
+      ],
+      "description": "左手骑士泰特斯·白杨作为锋盔骑士团主将登场，对玛莉娅表现出轻蔑和敌意。"
+    },
+    {
+      "faction": "雪踵骑士团",
+      "line_range": [
+        2202,
+        2318
+      ],
+      "description": "雪踵骑士团的两位成员腐败与凋零骑士在比赛中登场，意图杀死玛莉娅。"
+    },
+    {
+      "faction": "红松骑士团",
+      "line_range": [
+        2684,
+        2710
+      ],
+      "description": "白金向新任发言人马克维茨透露，红松骑士团正在公开与无胄盟对抗，焰尾骑士和灰毫骑士计划继续他们的行动。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        2797,
+        2797
+      ],
+      "description": "塞诺蜜向大骑士长报告，罗德岛的人员已经抵达卡西米尔。"
+    },
+    {
+      "faction": "征战骑士",
+      "line_range": [
+        2779,
+        2797
+      ],
+      "description": "塞诺蜜作为征战骑士的使者，向大骑士长报告耀骑士回归的消息，并提及征战骑士对商业联合会的不满。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "卡瓦莱利亚基",
+      "line_range": [
+        52,
+        52
+      ],
+      "description": "大嘴莫布介绍卡瓦莱利亚基中央赛区的呼啸竞技场",
+      "is_substantive": true
+    },
+    {
+      "location": "马丁的酒吧",
+      "line_range": [
+        77,
+        213
+      ],
+      "description": "玛莉娅与佐菲娅、老骑士、老工匠等人讨论参赛事宜的场所",
+      "is_substantive": true
+    },
+    {
+      "location": "佐菲娅的花园训练场",
+      "line_range": [
+        242,
+        359
+      ],
+      "description": "佐菲娅对玛莉娅进行高强度训练的场所",
+      "is_substantive": true
+    },
+    {
+      "location": "呼啸竞技场",
+      "line_range": [
+        407,
+        469
+      ],
+      "description": "玛莉娅首战塑料骑士的竞技场",
+      "is_substantive": true
+    },
+    {
+      "location": "炎刃竞技场",
+      "line_range": [
+        991,
+        1021
+      ],
+      "description": "玛莉娅参加混战赛的竞技场",
+      "is_substantive": true
+    },
+    {
+      "location": "蓝耳酒窖",
+      "line_range": [
+        1410,
+        1537
+      ],
+      "description": "玛莉娅与老骑士等人聚会的地点，恰尔内到访，焰尾骑士和灰毫骑士逃入此处寻求庇护。"
+    },
+    {
+      "location": "炎刃竞技场",
+      "line_range": [
+        1596,
+        1647
+      ],
+      "description": "玛莉娅与左手骑士的比赛场地，也是后续玛嘉烈回归的战场。"
+    },
+    {
+      "location": "冠军墙",
+      "line_range": [
+        1955,
+        1998
+      ],
+      "description": "恰尔内与白金大位会面的地点，展示了历代冠军像，包括黑骑士、耀骑士和血骑士。"
+    },
+    {
+      "location": "临光家宅邸",
+      "line_range": [
+        2711,
+        2778
+      ],
+      "description": "玛嘉烈与玛莉娅团聚，并与玛恩纳发生争执的地点。"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:55:45.663829+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 62836,
+    "tokens_out": 11841,
+    "elapsed_s": 106.13250875473022
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "光头马丁",
+    "老骑士",
+    "老工匠",
+    "塑料骑士",
+    "大嘴莫布",
+    "发言人恰尔内",
+    "锈铜骑士",
+    "左手骑士",
+    "腐败骑士",
+    "凋零骑士",
+    "企业员工",
+    "塞诺蜜"
+  ]
+}

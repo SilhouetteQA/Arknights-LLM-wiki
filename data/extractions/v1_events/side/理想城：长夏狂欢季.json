@@ -1,0 +1,1111 @@
+{
+  "chapter": "理想城：长夏狂欢季",
+  "category": "side",
+  "batch_count": 2,
+  "summary": "本章为「理想城：长夏狂欢季」的序幕，主要讲述了阿卡胡拉地区的阿达克利斯人尤塔和尤吉兄弟在讨论工业发展带来的宏伟计划，以及特米米、依娜姆与杜林人斯第奇·画布相遇，得知其地下城市际崖城面临危机并决定前往援助的故事。同时，罗德岛的干员嘉维尔和森蚺在接到消息后，也准备动身前往地下。\n\n剧情随后转向地下世界，斯第奇带领特米米、依娜姆和极境抵达际崖城，众人被杜林人独特的城市风貌和娱乐设施所吸引。嘉维尔和森蚺则在寻找地下城市的过程中，遇到了大祭司，并选择了一条危险但快速的路径。\n\n在际崖城，众人遇到了设计代表卡奇·叙光，并通过一场市民表决获得了停留许可。斯第奇透露了真正的目的：修复因地震损坏的铁路桥以重新布置源石勘测装置，并计划炸掉挡路的「大水坑」滑梯。嘉维尔和森蚺随后与从地上来的鲁珀阿芙朵嘉发生冲突，但最终化解了误会。\n\n为了推进计划，嘉维尔、依娜姆等人分头行动，说服了商业代表克罗绮·砖石和工业代表黛柯绮·银币。森蚺在帮助助理机器人0429的过程中，与黛柯绮建立了联系。最终，在代表会议上，各方达成共识，同意拆除「大水坑」并重建铁路桥，同时由斯第奇和卡奇竞标设计新的地标。\n\n本章以「大水坑」即将被拆除、众人享受最后的狂欢时光作为结尾。嘉维尔与依娜姆就阿卡胡拉未来的领导权问题进行了简短交流，而斯第奇和卡奇也准备在未来的竞标中一决高下。整个故事充满了轻松愉快的氛围，为后续的冒险和建设活动奠定了基础。\n\n撤离完成后，众人在地面汇合。依娜姆决定前往面见帕夏争取王酋之位，以合法化杜林人的停留。卡奇踏上寻找芬奇大师的旅程，与众人道别。大祭司与嘉维尔讨论她正在创造的历史意义。最后，嘉维尔提议大家去湖里玩个痛快，为这次危机画上充满希望的句号。",
+  "events": [
+    {
+      "event": "尤塔和尤吉兄弟讨论工业发展带来的宏伟计划，并规划建造巨型雕像和纪念塔。",
+      "type": "planning",
+      "line_range": [
+        1,
+        25
+      ],
+      "participants": [
+        "尤塔",
+        "尤吉"
+      ],
+      "location": "阿卡胡拉雨林",
+      "significance": "展现阿卡胡拉地区在获得新技术后的乐观与野心，引出后续剧情。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯第奇·画布向尤塔、尤吉和特米米说明杜林城市际崖城面临危机，请求地上人帮助。",
+      "type": "revelation",
+      "line_range": [
+        52,
+        90
+      ],
+      "participants": [
+        "斯第奇·画布",
+        "尤塔",
+        "尤吉",
+        "特米米"
+      ],
+      "location": "阿卡胡拉雨林",
+      "significance": "揭示本章核心冲突，即杜林城市的危机，并促使主角团前往地下。",
+      "is_imaginary": false
+    },
+    {
+      "event": "嘉维尔和森蚺在罗德岛接到消息，准备返回阿卡胡拉并前往地下城市。",
+      "type": "departure",
+      "line_range": [
+        56,
+        138
+      ],
+      "participants": [
+        "嘉维尔",
+        "森蚺"
+      ],
+      "location": "罗德岛",
+      "significance": "引入主要角色嘉维尔和森蚺，并确立她们的行动目标。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯第奇带领特米米、依娜姆和极境乘坐升降梯抵达际崖城，众人被城市景观吸引。",
+      "type": "arrival",
+      "line_range": [
+        139,
+        185
+      ],
+      "participants": [
+        "斯第奇·画布",
+        "特米米",
+        "依娜姆",
+        "极境"
+      ],
+      "location": "际崖城",
+      "significance": "正式进入地下世界，展现杜林城市风貌，为后续探索做铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "嘉维尔和森蚺在大祭司的指引下，选择跳入地下河以快速前往际崖城。",
+      "type": "journey",
+      "line_range": [
+        187,
+        212
+      ],
+      "participants": [
+        "嘉维尔",
+        "森蚺",
+        "大祭司"
+      ],
+      "location": "地下洞窟",
+      "significance": "展现嘉维尔和森蚺的行动风格，并制造悬念。",
+      "is_imaginary": false
+    },
+    {
+      "event": "特米米、依娜姆和极境在际崖城游玩，遇到老卡尔蜜酿爱好者协会的成员并参与饮酒。",
+      "type": "celebration",
+      "line_range": [
+        239,
+        292
+      ],
+      "participants": [
+        "特米米",
+        "依娜姆",
+        "极境",
+        "斯第奇·画布"
+      ],
+      "location": "际崖城",
+      "significance": "展现杜林人热情好客、热爱享乐的性格，丰富世界观。",
+      "is_imaginary": false
+    },
+    {
+      "event": "依娜姆回忆与斯第奇初次相遇的场景，并解释自己帮助斯第奇的原因。",
+      "type": "flashback",
+      "line_range": [
+        332,
+        405
+      ],
+      "participants": [
+        "依娜姆",
+        "特米米"
+      ],
+      "location": "阿卡胡拉雨林",
+      "significance": "补充背景故事，解释依娜姆参与此行的动机。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯第奇与耶奇·地心重逢，讨论际崖城穹顶的问题和修复铁路桥的计划。",
+      "type": "planning",
+      "line_range": [
+        422,
+        438
+      ],
+      "participants": [
+        "斯第奇·画布",
+        "耶奇·地心"
+      ],
+      "location": "际崖城",
+      "significance": "揭示际崖城面临的具体问题（穹顶漏水、源石勘测系统失效）和斯第奇的解决方案。",
+      "is_imaginary": false
+    },
+    {
+      "event": "特米米、依娜姆和极境在「大水坑」游玩，遇到设计代表卡奇·叙光，并通过市民表决获得停留许可。",
+      "type": "negotiation",
+      "line_range": [
+        467,
+        544
+      ],
+      "participants": [
+        "特米米",
+        "依娜姆",
+        "极境",
+        "卡奇·叙光"
+      ],
+      "location": "际崖城「大水坑」",
+      "significance": "展现杜林人的民主表决文化，并让主角团正式融入际崖城。",
+      "is_imaginary": false
+    },
+    {
+      "event": "嘉维尔和森蚺从高处坠落，撞到正在创作的鲁珀阿芙朵嘉。",
+      "type": "accident",
+      "line_range": [
+        624,
+        661
+      ],
+      "participants": [
+        "嘉维尔",
+        "森蚺",
+        "阿芙朵嘉"
+      ],
+      "location": "际崖城附近",
+      "significance": "引入新角色阿芙朵嘉，并制造冲突。",
+      "is_imaginary": false
+    },
+    {
+      "event": "嘉维尔和森蚺从天而降，与特米米等人会合，并与阿芙朵嘉发生激烈冲突。",
+      "type": "confrontation",
+      "line_range": [
+        694,
+        732
+      ],
+      "participants": [
+        "嘉维尔",
+        "森蚺",
+        "阿芙朵嘉",
+        "特米米",
+        "依娜姆",
+        "极境"
+      ],
+      "location": "际崖城「大水坑」",
+      "significance": "阿芙朵嘉对地上人的敌意达到顶点，成为剧情冲突点。",
+      "is_imaginary": false
+    },
+    {
+      "event": "杜林人对嘉维尔从天而降的行为表示兴奋和欢迎，化解了紧张气氛。",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        735,
+        757
+      ],
+      "participants": [
+        "嘉维尔",
+        "阿芙朵嘉"
+      ],
+      "location": "际崖城「大水坑」",
+      "significance": "展现杜林人乐观的性格，缓和了阿芙朵嘉与主角团的矛盾。",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯第奇向嘉维尔等人解释际崖城的真正危机是修复铁路桥以重新布置源石勘测装置，并计划炸掉「大水坑」。",
+      "type": "revelation",
+      "line_range": [
+        768,
+        809
+      ],
+      "participants": [
+        "斯第奇·画布",
+        "嘉维尔",
+        "依娜姆",
+        "特米米"
+      ],
+      "location": "际崖城",
+      "significance": "揭示斯第奇的真实目的，推动剧情进入下一阶段。",
+      "is_imaginary": false
+    },
+    {
+      "event": "森蚺在际崖城追逐并试图检修一个奇怪的助理机器人0429。",
+      "type": "investigation",
+      "line_range": [
+        812,
+        816
+      ],
+      "participants": [
+        "森蚺",
+        "奇怪的机械0429"
+      ],
+      "location": "际崖城",
+      "significance": "引入森蚺与杜林科技的互动线，为后续与黛柯绮的相遇做铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "嘉维尔和依娜姆分头行动，嘉维尔去找商业代表克罗绮·砖石，依娜姆则与克罗绮单独谈判。",
+      "type": "planning",
+      "line_range": [
+        817,
+        824
+      ],
+      "participants": [
+        "嘉维尔",
+        "斯第奇·画布"
+      ],
+      "location": "际崖城",
+      "significance": "确立说服三位代表的目标，推动剧情发展。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿芙朵嘉向克罗绮抱怨嘉维尔，并表达对地上人的不信任。",
+      "type": "character_development",
+      "line_range": [
+        835,
+        853
+      ],
+      "participants": [
+        "阿芙朵嘉",
+        "克罗绮·砖石"
+      ],
+      "location": "际崖城",
+      "significance": "深化阿芙朵嘉的背景和性格，解释她对地上人的敌意。",
+      "is_imaginary": false
+    },
+    {
+      "event": "嘉维尔直接闯入克罗绮的办公室，提出要炸掉大滑梯。",
+      "type": "confrontation",
+      "line_range": [
+        854,
+        861
+      ],
+      "participants": [
+        "嘉维尔",
+        "克罗绮·砖石",
+        "阿芙朵嘉"
+      ],
+      "location": "克罗绮·砖石的办公室",
+      "significance": "展现嘉维尔直率的行事风格，引发冲突。",
+      "is_imaginary": false
+    },
+    {
+      "event": "依娜姆与克罗绮进行商业谈判，用多索雷斯「极限铁人大奖赛」的录像带打动克罗绮。",
+      "type": "negotiation",
+      "line_range": [
+        892,
+        999
+      ],
+      "participants": [
+        "依娜姆",
+        "克罗绮·砖石"
+      ],
+      "location": "克罗绮·砖石的办公室",
+      "significance": "成功说服商业代表，为炸滑梯计划扫清一个障碍。",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿芙朵嘉跟踪嘉维尔和特米米，再次质问她们的目的，嘉维尔解释后双方关系缓和。",
+      "type": "reconciliation",
+      "line_range": [
+        925,
+        976
+      ],
+      "participants": [
+        "嘉维尔",
+        "阿芙朵嘉",
+        "特米米"
+      ],
+      "location": "际崖城",
+      "significance": "阿芙朵嘉与嘉维尔的关系从敌对转向监视，为后续合作铺垫。",
+      "is_imaginary": false
+    },
+    {
+      "event": "森蚺在图书馆遇到工业代表黛柯绮·银币，并讨论如何对待助理机器人。",
+      "type": "ideological_clash",
+      "line_range": [
+        1000,
+        1099
+      ],
+      "participants": [
+        "森蚺",
+        "黛柯绮·银币",
+        "奇怪的机械0429"
+      ],
+      "location": "际崖城图书馆",
+      "significance": "展现森蚺与黛柯绮在对待机器人态度上的差异，并促使黛柯绮改变观念。",
+      "is_imaginary": false
+    },
+    {
+      "event": "嘉维尔与阿芙朵嘉在逛街后深入交谈，阿芙朵嘉讲述自己逃离乌萨斯、选择际崖城作为容身之所的经历。",
+      "type": "character_development",
+      "line_range": [
+        1109,
+        1159
+      ],
+      "participants": [
+        "嘉维尔",
+        "阿芙朵嘉"
+      ],
+      "location": "际崖城",
+      "significance": "完整揭示阿芙朵嘉的背景故事，深化角色形象。",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡奇·叙光找到斯第奇，试图说服他参与穹顶改造，但斯第奇拒绝并警告卡奇不准动穹顶。",
+      "type": "confrontation",
+      "line_range": [
+        1062,
+        1148
+      ],
+      "participants": [
+        "斯第奇·画布",
+        "卡奇·叙光"
+      ],
+      "location": "际崖城",
+      "significance": "揭示斯第奇与穹顶的复杂关系，以及他与卡奇在建筑理念上的冲突。",
+      "is_imaginary": false
+    },
+    {
+      "event": "代表们召开会议，一致同意拆除「大水坑」并重建铁路桥。",
+      "type": "decision",
+      "line_range": [
+        1223,
+        1256
+      ],
+      "participants": [
+        "卡奇·叙光",
+        "克罗绮·砖石",
+        "黛柯绮·银币",
+        "耶奇·地心",
+        "斯第奇·画布",
+        "嘉维尔"
+      ],
+      "location": "际崖城",
+      "significance": "达成核心决议，推动剧情进入实施阶段。",
+      "is_imaginary": false
+    },
+    {
+      "event": "克罗绮·砖石主持「大水坑」的告别仪式，宣布其即将被拆除。",
+      "type": "ceremony",
+      "line_range": [
+        1283,
+        1300
+      ],
+      "participants": [
+        "克罗绮·砖石"
+      ],
+      "location": "际崖城「大水坑」",
+      "significance": "标志着一个阶段的结束，为新的建设拉开序幕。",
+      "is_imaginary": false
+    },
+    {
+      "event": "嘉维尔与依娜姆就阿卡胡拉未来的领导权问题进行简短交流。",
+      "type": "political_intrigue",
+      "line_range": [
+        1344,
+        1366
+      ],
+      "participants": [
+        "嘉维尔",
+        "依娜姆",
+        "森蚺"
+      ],
+      "location": "际崖城",
+      "significance": "暗示阿卡胡拉地区未来的政治走向，为后续剧情埋下伏笔。",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡奇为众人拍摄合照，斯第奇和卡奇握手言和，准备在未来的竞标中一决高下。",
+      "type": "farewell",
+      "line_range": [
+        1367,
+        1394
+      ],
+      "participants": [
+        "卡奇·叙光",
+        "斯第奇·画布",
+        "嘉维尔",
+        "森蚺",
+        "特米米",
+        "极境"
+      ],
+      "location": "际崖城「大水坑」",
+      "significance": "本章结尾，展现角色间的和解与对未来的期待。",
+      "is_imaginary": false
+    },
+    {
+      "event": "嘉维尔、阿芙朵嘉和极境进行游泳比赛，斯第奇驾驶小船意外撞开隧道入口",
+      "type": "competition",
+      "line_range": [
+        1395,
+        1555
+      ],
+      "participants": [
+        "嘉维尔",
+        "阿芙朵嘉",
+        "极境",
+        "耶奇·地心",
+        "斯第奇·画布",
+        "克罗绮·砖石"
+      ],
+      "location": "际崖城地下湖",
+      "significance": "以轻松的比赛引出后续危机，并意外打通了通往源石矿脉的隧道",
+      "is_imaginary": false
+    },
+    {
+      "event": "耶奇大师在隧道中发现活性源石矿脉，预计一个月内爆发，际崖城面临毁灭",
+      "type": "revelation",
+      "line_range": [
+        1704,
+        1717
+      ],
+      "participants": [
+        "耶奇·地心",
+        "极境",
+        "斯第奇·画布",
+        "嘉维尔"
+      ],
+      "location": "隧道内",
+      "significance": "揭示本章核心危机，推动后续所有决策",
+      "is_imaginary": false
+    },
+    {
+      "event": "嘉维尔提出让全体杜林人通过扩建升降梯前往地面阿卡胡拉避难的方案",
+      "type": "planning",
+      "line_range": [
+        1776,
+        1781
+      ],
+      "participants": [
+        "嘉维尔",
+        "阿芙朵嘉",
+        "耶奇·地心"
+      ],
+      "location": "隧道出口附近",
+      "significance": "提出解决危机的核心方案，引发后续关于杜林与地面关系的讨论",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿芙朵嘉因自身经历对返回地面表示抵触，并与嘉维尔就政治现实展开辩论",
+      "type": "ideological_clash",
+      "line_range": [
+        1856,
+        1876
+      ],
+      "participants": [
+        "阿芙朵嘉",
+        "嘉维尔"
+      ],
+      "location": "隧道出口附近",
+      "significance": "展现阿芙朵嘉的内心矛盾，以及嘉维尔方案面临的政治挑战",
+      "is_imaginary": false
+    },
+    {
+      "event": "特米米和依娜姆先后主动提出担任阿卡胡拉王酋，以解决杜林人前往地面的政治合法性问题",
+      "type": "decision",
+      "line_range": [
+        1879,
+        1957
+      ],
+      "participants": [
+        "特米米",
+        "依娜姆",
+        "嘉维尔",
+        "森蚺",
+        "阿芙朵嘉"
+      ],
+      "location": "隧道出口附近",
+      "significance": "解决嘉维尔方案的关键政治障碍，展现阿卡胡拉群体的团结与担当",
+      "is_imaginary": false
+    },
+    {
+      "event": "森蚺与阿芙朵嘉在图书馆就杜林与阿卡胡拉的生活方式展开辩论",
+      "type": "ideological_clash",
+      "line_range": [
+        2068,
+        2097
+      ],
+      "participants": [
+        "森蚺",
+        "阿芙朵嘉",
+        "大祭司"
+      ],
+      "location": "际崖城图书馆",
+      "significance": "深入探讨两种文明价值观的差异，大祭司指出阿芙朵嘉的偏见",
+      "is_imaginary": false
+    },
+    {
+      "event": "克罗绮向依娜姆解释杜林人「打扮城市遗容」的文化传统",
+      "type": "revelation",
+      "line_range": [
+        2081,
+        2110
+      ],
+      "participants": [
+        "克罗绮·砖石",
+        "依娜姆"
+      ],
+      "location": "图书馆门口",
+      "significance": "揭示杜林人面对灾难的独特哲学和生活方式",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿芙朵嘉向森蚺讲述自己从乌萨斯逃亡到地下的经历",
+      "type": "flashback",
+      "line_range": [
+        2124,
+        2143
+      ],
+      "participants": [
+        "阿芙朵嘉",
+        "森蚺"
+      ],
+      "location": "际崖城图书馆",
+      "significance": "揭示阿芙朵嘉的过去，解释她对地面生活的抵触根源",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡奇和极境讨论如何帮助陷入自卑的斯第奇，卡奇决定用激将法",
+      "type": "planning",
+      "line_range": [
+        2281,
+        2309
+      ],
+      "participants": [
+        "卡奇·叙光",
+        "极境",
+        "黛柯绮·银币"
+      ],
+      "location": "斯第奇的花园",
+      "significance": "展现卡奇对斯第奇的关心，以及极境对人际关系的洞察",
+      "is_imaginary": false
+    },
+    {
+      "event": "黛柯绮决定尊重斯第奇的逃避，派机器人去帮助他",
+      "type": "decision",
+      "line_range": [
+        2313,
+        2322
+      ],
+      "participants": [
+        "黛柯绮·银币",
+        "极境"
+      ],
+      "location": "斯第奇的花园",
+      "significance": "展现与卡奇不同的处理方式，体现对斯第奇个人选择的尊重",
+      "is_imaginary": false
+    },
+    {
+      "event": "嘉维尔找到斯第奇，得知他因老师芬奇留下的课题和多次失败而恐惧穹顶设计",
+      "type": "revelation",
+      "line_range": [
+        2484,
+        2531
+      ],
+      "participants": [
+        "嘉维尔",
+        "斯第奇·画布"
+      ],
+      "location": "斯第奇在湖边的旧居",
+      "significance": "揭示斯第奇逃避穹顶设计的根本原因，推动其角色成长",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿芙朵嘉在全体大会上公开讲述自己的过去，并提出三套撤离方案",
+      "type": "ceremony",
+      "line_range": [
+        2601,
+        2630
+      ],
+      "participants": [
+        "阿芙朵嘉"
+      ],
+      "location": "际崖城广场",
+      "significance": "阿芙朵嘉完成自我和解，并正式提出前往地面的方案",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡奇以辞职去寻找芬奇大师为由，将设计代表的职责推给斯第奇，迫使其面对挑战",
+      "type": "confrontation",
+      "line_range": [
+        2632,
+        2681
+      ],
+      "participants": [
+        "卡奇·叙光",
+        "斯第奇·画布",
+        "嘉维尔"
+      ],
+      "location": "斯第奇在湖边的旧居",
+      "significance": "卡奇用激将法成功迫使斯第奇走出逃避，接受挑战",
+      "is_imaginary": false
+    },
+    {
+      "event": "斯第奇在全体大会上承诺会尝试设计穹顶修缮方案，并支持前往地面的方案",
+      "type": "character_development",
+      "line_range": [
+        2736,
+        2747
+      ],
+      "participants": [
+        "斯第奇·画布",
+        "耶奇·地心"
+      ],
+      "location": "际崖城广场",
+      "significance": "斯第奇完成角色成长，从逃避转向承担责任",
+      "is_imaginary": false
+    },
+    {
+      "event": "卡奇踏上寻找芬奇大师的旅程，与众人道别",
+      "type": "departure",
+      "line_range": [
+        2761,
+        2784
+      ],
+      "participants": [
+        "卡奇·叙光",
+        "极境",
+        "黛柯绮·银币"
+      ],
+      "location": "际崖城广场",
+      "significance": "卡奇开启新的旅程，为未来可能的重逢埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "大祭司与嘉维尔讨论她正在创造的历史意义",
+      "type": "reflection",
+      "line_range": [
+        2823,
+        2849
+      ],
+      "participants": [
+        "大祭司",
+        "嘉维尔"
+      ],
+      "location": "际崖城广场",
+      "significance": "总结嘉维尔行动的历史意义，升华主题",
+      "is_imaginary": false
+    },
+    {
+      "event": "际崖城居民全部安全撤离至地面，城市在源石矿脉爆发中毁灭",
+      "type": "disaster",
+      "line_range": [
+        2854,
+        2858
+      ],
+      "participants": [
+        "嘉维尔",
+        "特米米",
+        "阿芙朵嘉"
+      ],
+      "location": "际崖城升降梯出口",
+      "significance": "危机解决，际崖城毁灭，但所有居民获救",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "尤塔",
+      "type": "npc",
+      "role_in_chapter": "阿卡胡拉的阿达克利斯人，尤吉的哥哥，患有矿石病，对工业发展充满热情，规划建造巨型纪念塔。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "尤吉",
+      "type": "npc",
+      "role_in_chapter": "阿卡胡拉的阿达克利斯人，尤塔的弟弟，负责纠正哥哥的用词，并支持他的计划。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "特米米",
+      "type": "operator",
+      "role_in_chapter": "「嘉维尔意志」的族长，罗德岛干员，休假回家探亲，并作为向导和联络人参与此次行动。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "斯第奇·画布",
+      "type": "npc",
+      "role_in_chapter": "际崖城的建筑设计师，因城市危机前往地上求援，是本次行动的核心发起者和策划者。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "嘉维尔",
+      "type": "operator",
+      "role_in_chapter": "罗德岛医疗干员，阿卡胡拉出身，接到消息后与森蚺一同返回并前往际崖城，是行动的主要武力担当。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "森蚺",
+      "type": "operator",
+      "role_in_chapter": "罗德岛工程干员，阿卡胡拉出身，与嘉维尔一同行动，对机械有浓厚兴趣，负责技术支援。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "依娜姆",
+      "type": "npc",
+      "role_in_chapter": "阿卡胡拉的大酋长，商人，负责与斯第奇接洽，并主导与杜林人的商业谈判。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "极境",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，职业向导和通讯专家，作为向导加入队伍，性格开朗，迅速融入杜林人的生活。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "大祭司",
+      "type": "npc",
+      "role_in_chapter": "阿卡胡拉的大祭司，神秘而博学，为嘉维尔和森蚺指路。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "卡奇·叙光",
+      "type": "npc",
+      "role_in_chapter": "际崖城的设计代表，建筑设计师，与斯第奇是竞争对手，负责管理「大水坑」。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "耶奇·地心",
+      "type": "npc",
+      "role_in_chapter": "际崖城的老人，关心城市穹顶和源石勘测问题，是斯第奇的主要对话对象。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿芙朵嘉",
+      "type": "npc",
+      "role_in_chapter": "从乌萨斯逃到际崖城的鲁珀，对地上人充满警惕，后与嘉维尔等人缓和关系。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克罗绮·砖石",
+      "type": "npc",
+      "role_in_chapter": "际崖城的商业代表，负责城市商业活动，被依娜姆用地上比赛录像说服。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "黛柯绮·银币",
+      "type": "npc",
+      "role_in_chapter": "际崖城的工业代表，助理机器人的管理员，在森蚺的影响下改变了对机器人的态度。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "奇怪的机械0429",
+      "type": "npc",
+      "role_in_chapter": "际崖城的R3-E3型助理机器人，与森蚺互动，成为连接森蚺和黛柯绮的桥梁。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "工业",
+      "line_range": [
+        1,
+        11
+      ],
+      "discussion_summary": "尤塔和尤吉讨论「工业」这个词的发音和用法，尤塔对工业带来的巨大机械和简单操作感到兴奋。",
+      "is_substantive": true
+    },
+    {
+      "concept": "杜林人的城市结构",
+      "line_range": [
+        73,
+        77
+      ],
+      "discussion_summary": "斯第奇向尤塔等人解释杜林族的城市结构，并说明城市危机可能影响地上。",
+      "is_substantive": true
+    },
+    {
+      "concept": "杜林人的科技",
+      "line_range": [
+        80,
+        83
+      ],
+      "discussion_summary": "斯第奇提出用杜林人的科技作为回报，并评价地上人的科学发展「原始得离谱」。",
+      "is_substantive": true
+    },
+    {
+      "concept": "简约（建筑理念）",
+      "line_range": [
+        179,
+        185
+      ],
+      "discussion_summary": "斯第奇介绍际崖城是由传奇设计师们建立的城市，追求「美与和谐」，并批评极境等人不关注他简约的作品。",
+      "is_substantive": true
+    },
+    {
+      "concept": "财富",
+      "line_range": [
+        399,
+        403
+      ],
+      "discussion_summary": "依娜姆向特米米阐述她对财富的理解，认为真正流动起来的才能被称作财富，而阿卡胡拉需要发展的契机。",
+      "is_substantive": true
+    },
+    {
+      "concept": "领袖",
+      "line_range": [
+        408,
+        411
+      ],
+      "discussion_summary": "依娜姆表示自己无法成为将提亚卡乌团结在一起的领袖，暗示需要嘉维尔这样的人。",
+      "is_substantive": true
+    },
+    {
+      "concept": "表决（杜林人的民主）",
+      "line_range": [
+        497,
+        544
+      ],
+      "discussion_summary": "卡奇·叙光主持市民表决，决定是否接纳地上人，展现了杜林人通过投票决定公共事务的习俗。",
+      "is_substantive": true
+    },
+    {
+      "concept": "穹顶的功能与问题",
+      "line_range": [
+        559,
+        575
+      ],
+      "discussion_summary": "耶奇·地心和斯第奇讨论穹顶的漏水、温控系统和源石勘测系统问题，斯第奇提出绕开穹顶、修复铁路桥的方案。",
+      "is_substantive": true
+    },
+    {
+      "concept": "贪婪与阴谋（地上人的本性）",
+      "line_range": [
+        723,
+        732
+      ],
+      "discussion_summary": "阿芙朵嘉指责地上人，认为对利益的追求和对掠夺的渴望是地上人的本性，并警告他们不要玷污际崖城。",
+      "is_substantive": true
+    },
+    {
+      "concept": "修辞手法",
+      "line_range": [
+        772,
+        778
+      ],
+      "discussion_summary": "斯第奇承认自己之前对危机的描述使用了「修辞的手法」，进行了夸张，以说服地上人帮忙。",
+      "is_substantive": true
+    },
+    {
+      "concept": "竞争（商业/娱乐概念）",
+      "line_range": [
+        993,
+        999
+      ],
+      "discussion_summary": "依娜姆向克罗绮提出引入「竞争」概念，认为这能让娱乐更刺激，并提议建造超级水上赛道。",
+      "is_substantive": true
+    },
+    {
+      "concept": "朋友（人与机器人的关系）",
+      "line_range": [
+        1028,
+        1054
+      ],
+      "discussion_summary": "森蚺向黛柯绮阐述她与机器人「大姐」的友谊，并建议黛柯绮以更友善的方式与助理机器人相处，定义「朋友」关系。",
+      "is_substantive": true
+    },
+    {
+      "concept": "恶（地上人的恶习）",
+      "line_range": [
+        1151,
+        1157
+      ],
+      "discussion_summary": "阿芙朵嘉向嘉维尔阐述她对「恶」的理解，认为地上人习惯于暴力、渴求财货，而杜林人没有抵抗力，她决心保护际崖城。",
+      "is_substantive": true
+    },
+    {
+      "concept": "杜林人的哲学",
+      "line_range": [
+        1367,
+        1373
+      ],
+      "discussion_summary": "卡奇·叙光认为「该结束的总会结束」，并称赞嘉维尔等人已经学会了杜林人的哲学，即享受当下。",
+      "is_substantive": true
+    },
+    {
+      "concept": "打扮城市的遗容",
+      "line_range": [
+        2081,
+        2110
+      ],
+      "discussion_summary": "克罗绮向依娜姆解释杜林人在城市面临毁灭时，会将其修缮到最好状态以迎接毁灭，让后来者赞叹其成就，这是一种面对无法逃避的命运时的积极态度",
+      "is_substantive": true
+    },
+    {
+      "concept": "物性",
+      "line_range": [
+        2503,
+        2509
+      ],
+      "discussion_summary": "斯第奇解释其老师芬奇大师的极简主义设计理念，主张凸显事物的本来面貌，反对不必要的功能性，是对欲望生活的反叛",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        95,
+        101
+      ],
+      "description": "极境自我介绍是罗德岛的干员，特米米和嘉维尔也是罗德岛成员，他们因假期或任务卷入此事。"
+    },
+    {
+      "faction": "嘉维尔意志",
+      "line_range": [
+        86,
+        87
+      ],
+      "description": "特米米自称是「嘉维尔意志」的族长，并提到要照顾提亚卡乌的大家。"
+    },
+    {
+      "faction": "老卡尔蜜酿爱好者协会",
+      "line_range": [
+        254,
+        291
+      ],
+      "description": "一群杜林人自称是老卡尔蜜酿爱好者协会成员，邀请极境等人喝酒，并因斯第奇不喝酒而怀疑他是异族。"
+    },
+    {
+      "faction": "烈酒爱好者协会",
+      "line_range": [
+        522,
+        532
+      ],
+      "description": "与老卡尔蜜酿爱好者协会对立的杜林人群体，邀请极境喝烈酒，双方互相嘲讽。"
+    },
+    {
+      "faction": "际崖城设计代表",
+      "line_range": [
+        483,
+        484
+      ],
+      "description": "卡奇·叙光自我介绍是这座城市的设计代表，负责主持表决。"
+    },
+    {
+      "faction": "萨尔贡（王酋）",
+      "line_range": [
+        930,
+        931
+      ],
+      "description": "阿芙朵嘉怀疑地上人是萨尔贡的王酋派来掠夺地下财富的。"
+    },
+    {
+      "faction": "际崖城商业代表",
+      "line_range": [
+        854,
+        857
+      ],
+      "description": "嘉维尔和依娜姆前往商业代表克罗绮·砖石的办公室，试图说服她。"
+    },
+    {
+      "faction": "际崖城工业代表",
+      "line_range": [
+        1084,
+        1085
+      ],
+      "description": "黛柯绮·银币自我介绍是际崖城的工业代表，也是助理机器人的管理员。"
+    },
+    {
+      "faction": "际崖城居民",
+      "line_range": [
+        1727,
+        1745
+      ],
+      "description": "杜林居民在得知危机后表现出冷静和接受，表示他们理解并接受了建造大水坑的潜在后果，愿意承担选择的后果"
+    },
+    {
+      "faction": "阿卡胡拉提亚卡乌",
+      "line_range": [
+        1879,
+        1957
+      ],
+      "description": "特米米、依娜姆和森蚺主动提出担任王酋或提供支持，以解决杜林人前往地面的政治合法性问题，展现群体的团结"
+    },
+    {
+      "faction": "萨尔贡政府",
+      "line_range": [
+        1863,
+        1867
+      ],
+      "description": "阿芙朵嘉警告嘉维尔，几十万杜林人凭空出现在萨尔贡地区会引起当地王酋和国家的注意，可能带来残酷的现实"
+    }
+  ],
+  "locations": [
+    {
+      "location": "阿卡胡拉雨林",
+      "line_range": [
+        1,
+        4
+      ],
+      "description": "尤塔和尤吉讨论工业的地方，是阿达克利斯人的聚居地，也是故事的主要起点。"
+    },
+    {
+      "location": "际崖城",
+      "line_range": [
+        171,
+        179
+      ],
+      "description": "斯第奇介绍际崖城是杜林人的城市，由传奇设计师们建立，是一座美与和谐的城市。"
+    },
+    {
+      "location": "际崖城「大水坑」",
+      "line_range": [
+        467,
+        471
+      ],
+      "description": "特米米等人到达的水上乐园，由卡奇·叙光设计，是际崖城的主要娱乐设施。"
+    },
+    {
+      "location": "际崖城图书馆",
+      "line_range": [
+        1063,
+        1081
+      ],
+      "description": "森蚺和助理机器人0429来到图书馆寻找检修资料，发现大量地上书籍和杂志。"
+    },
+    {
+      "location": "乌萨斯",
+      "line_range": [
+        1109,
+        1124
+      ],
+      "description": "阿芙朵嘉的故乡，她因痛苦的经历逃离了那里，不愿多提。"
+    },
+    {
+      "location": "多索雷斯",
+      "line_range": [
+        990,
+        991
+      ],
+      "description": "依娜姆带来的「极限铁人大奖赛」录像带的举办地，是地上的一座城市。"
+    },
+    {
+      "location": "际崖城",
+      "line_range": [
+        1718,
+        1726
+      ],
+      "description": "广播通知全城居民，因发现活性源石矿脉，城市面临毁灭，要求居民做好撤离准备"
+    },
+    {
+      "location": "阿卡胡拉",
+      "line_range": [
+        2691,
+        2695
+      ],
+      "description": "阿芙朵嘉在表决时介绍阿卡胡拉是一片湿润的雨林，拥有丰富的湖泊、瀑布、矿物资源和土地，适合杜林人重建城市"
+    }
+  ],
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T09:57:29.092376+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 69990,
+    "tokens_out": 10741,
+    "elapsed_s": 102.8322160243988
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "尤塔",
+    "尤吉",
+    "斯第奇·画布",
+    "依娜姆",
+    "大祭司",
+    "卡奇·叙光",
+    "耶奇·地心",
+    "阿芙朵嘉",
+    "克罗绮·砖石",
+    "黛柯绮·银币",
+    "奇怪的机械0429"
+  ]
+}

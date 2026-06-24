@@ -1,0 +1,397 @@
+{
+  "summary": "本章「战地秘闻」由七个相对独立的场景组成，共同描绘了切尔诺伯格事件前后罗德岛及其相关人物的群像。Scene 1 以一名近卫干员的视角展开，他醒来后发现已故精英干员Scout留下的遗书，并意外旁听了乌萨斯老将赫拉格与整合运动领袖爱国者之间的沉重对话。两人回顾了过往的军旅生涯，并就战争、乌萨斯的现状、感染者的命运以及整合运动的道路进行了深刻而充满分歧的辩论。赫拉格最终拒绝了爱国者的邀请，选择前往罗德岛。\n\nScene 2 聚焦于萨卡兹佣兵W与旧识炎客的对峙。W试图招募这位强大的刀术师，但炎客拒绝了整合运动的无序破坏，并暗示自己已发现W与罗德岛的交易。他最终选择加入罗德岛，以寻求更强大的对手和战斗的意义。Scene 3 则转向罗德岛内部，黑钢干员雷蛇和芙兰卡正在对杰西卡进行射击训练，讨论了她缺乏自信的问题以及黑钢的武器理念。\n\nScene 4 讲述了拉特兰公证所执行者送葬人寻找遗嘱继承人红云的故事。红云是一名生活在荒野的年轻感染者猎人，对陌生人充满敌意。送葬人传达了已故委托人的遗愿——希望红云活下去，并最终说服她前往罗德岛接受治疗。Scene 5 描绘了伊芙利特在罗德岛上的日常生活，她因无法控制源石技艺和感到被孤立而情绪失控，最终在博士的安抚和承诺下，决心做出改变。\n\nScene 6 发生在北地冰原，莱茵生命科考员麦哲伦在暴风雪中遇到了自称西蒙娜的罗德岛干员寒檀。寒檀受命来接麦哲伦，两人就孤独、探险的意义和坚持进行了温暖的交流。寒檀最终替麦哲伦冒险修复了观测站的供暖设备。Scene 7 以凯尔希和可露希尔在罗德岛舰内维修电路为背景，两人讨论了博士的回归、阿米娅的决定、凯尔希对干员暴雨的安置以及罗德岛的未来，展现了她们之间深厚的信任与默契。",
+  "events": [
+    {
+      "event": "近卫干员发现Scout的遗书，并旁听赫拉格与爱国者的对话",
+      "type": "revelation",
+      "line_range": [
+        1,
+        359
+      ],
+      "participants": [
+        "近卫干员",
+        "赫拉格",
+        "爱国者"
+      ],
+      "location": "切尔诺伯格废墟",
+      "significance": "揭示了Scout的牺牲与遗愿，展现了赫拉格与爱国者两位老将的立场分歧与个人羁绊。",
+      "is_imaginary": false
+    },
+    {
+      "event": "W与炎客对峙并试图招募他",
+      "type": "confrontation",
+      "line_range": [
+        360,
+        506
+      ],
+      "participants": [
+        "W",
+        "炎客"
+      ],
+      "location": "切尔诺伯格城郊",
+      "significance": "展现了炎客的强大实力和加入罗德岛的动机，暗示了W与罗德岛之间的秘密交易。",
+      "is_imaginary": false
+    },
+    {
+      "event": "雷蛇和芙兰卡对杰西卡进行射击训练",
+      "type": "training",
+      "line_range": [
+        528,
+        626
+      ],
+      "participants": [
+        "雷蛇",
+        "芙兰卡",
+        "杰西卡"
+      ],
+      "location": "罗德岛训练室",
+      "significance": "展现了杰西卡缺乏自信的性格，以及黑钢干员之间的战友情谊。",
+      "is_imaginary": false
+    },
+    {
+      "event": "送葬人找到红云并传达遗嘱",
+      "type": "negotiation",
+      "line_range": [
+        627,
+        772
+      ],
+      "participants": [
+        "送葬人",
+        "红云"
+      ],
+      "location": "乌萨斯荒野森林",
+      "significance": "介绍了红云的背景和送葬人的职责，红云最终同意前往罗德岛。",
+      "is_imaginary": false
+    },
+    {
+      "event": "伊芙利特因情绪失控在走廊引发冲突，后被博士安抚",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        773,
+        1023
+      ],
+      "participants": [
+        "伊芙利特",
+        "霜叶",
+        "红",
+        "缪缪"
+      ],
+      "location": "罗德岛走廊",
+      "significance": "展现了伊芙利特内心的孤独与挣扎，以及她与博士之间的信任关系。",
+      "is_imaginary": false
+    },
+    {
+      "event": "麦哲伦在暴风雪中遇到罗德岛干员寒檀",
+      "type": "reunion",
+      "line_range": [
+        1024,
+        1280
+      ],
+      "participants": [
+        "麦哲伦",
+        "寒檀"
+      ],
+      "location": "北地冰原观测站",
+      "significance": "展现了麦哲伦对探险事业的执着，以及寒檀对她的保护与认可。",
+      "is_imaginary": false
+    },
+    {
+      "event": "凯尔希与可露希尔在罗德岛舰内维修电路并讨论现状",
+      "type": "planning",
+      "line_range": [
+        1281,
+        1446
+      ],
+      "participants": [
+        "凯尔希",
+        "可露希尔",
+        "暴雨"
+      ],
+      "location": "罗德岛舰内",
+      "significance": "揭示了凯尔希对博士回归和阿米娅决策的态度，以及罗德岛面临的挑战。",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "近卫干员",
+      "type": "operator",
+      "role_in_chapter": "无名罗德岛干员，Scout的部下，通过旁听赫拉格与爱国者的对话获得情报，并决心继承Scout的意志。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "赫拉格",
+      "type": "operator",
+      "role_in_chapter": "乌萨斯老将军，与爱国者重逢，就战争与感染者问题展开辩论，最终拒绝整合运动，选择前往罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "爱国者",
+      "type": "npc",
+      "role_in_chapter": "整合运动指挥官，与赫拉格叙旧并阐述自己的战争理念，试图招募赫拉格未果。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "W",
+      "type": "npc",
+      "role_in_chapter": "萨卡兹佣兵新领头人，与炎客对峙并试图招募他，暗示与罗德岛有秘密交易。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "炎客",
+      "type": "operator",
+      "role_in_chapter": "强大的萨卡兹刀术师，拒绝W的招募，选择加入罗德岛以寻求更强的对手。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "雷蛇",
+      "type": "operator",
+      "role_in_chapter": "黑钢干员，负责训练杰西卡，展现了其严谨负责的态度。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "芙兰卡",
+      "type": "operator",
+      "role_in_chapter": "黑钢干员，与雷蛇一同训练杰西卡，性格较为随性，但观察力敏锐。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "杰西卡",
+      "type": "operator",
+      "role_in_chapter": "黑钢干员，缺乏自信，正在接受雷蛇和芙兰卡的射击训练。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "送葬人",
+      "type": "operator",
+      "role_in_chapter": "拉特兰公证所执行者，负责执行遗嘱，将红云带往罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "红云",
+      "type": "operator",
+      "role_in_chapter": "年轻的感染者猎人，性格暴躁排外，最终被送葬人说服前往罗德岛。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "伊芙利特",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，因无法控制源石技艺和感到孤立而情绪失控，后在博士安抚下决心改变。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "霜叶",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在走廊遇到伊芙利特和红，试图调解冲突。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "红",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在走廊与霜叶讨论作业，后与伊芙利特发生冲突。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "缪缪",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，在走廊阻止了伊芙利特的失控，并安抚了她。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "麦哲伦",
+      "type": "operator",
+      "role_in_chapter": "莱茵生命科考专员，在北地观测站遇到寒檀，展现了其对探险事业的执着。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "寒檀",
+      "type": "operator",
+      "role_in_chapter": "罗德岛干员，受命来接麦哲伦，替她冒险修复了观测站设备。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "罗德岛高层，与可露希尔讨论博士回归、阿米娅决策和罗德岛现状。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "可露希尔",
+      "type": "operator",
+      "role_in_chapter": "罗德岛总工程师，与凯尔希一起维修电路，并关心凯尔希的状态。",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "暴雨",
+      "type": "operator",
+      "role_in_chapter": "罗德岛新干员，前萨尔贡军事人员，在凯尔希的指导下熟悉舰内环境。",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "战争的意义",
+      "line_range": [
+        162,
+        174
+      ],
+      "discussion_summary": "爱国者认为过去的乌萨斯战争是正义的，现在的感染者战争也是正义的，他为正义而战。赫拉格则质疑战争的意义，认为战争只带来毁灭。",
+      "is_substantive": true
+    },
+    {
+      "concept": "感染者的权力",
+      "line_range": [
+        71,
+        92
+      ],
+      "discussion_summary": "爱国者认为整合运动的目标是解放乌萨斯，让感染者和普通人平等相处。赫拉格则指出整合运动的行为是发动战争，会导致乌萨斯人自相残杀。",
+      "is_substantive": true
+    },
+    {
+      "concept": "战士的无名与尊严",
+      "line_range": [
+        149,
+        150
+      ],
+      "discussion_summary": "爱国者评价Scout为「真正的战士...没有姓名」，赫拉格表示认同。Scout在遗书中也强调自己的队员死得尊严，他们的牺牲是为了自己相信的理念。",
+      "is_substantive": true
+    },
+    {
+      "concept": "博士的过去与未来",
+      "line_range": [
+        293,
+        324
+      ],
+      "discussion_summary": "Scout在遗书中表达了对博士的担忧，认为博士在战争中变成了一台战争机器，希望博士能重新开始生活，不再走上战争之路。",
+      "is_substantive": true
+    },
+    {
+      "concept": "铳械的使用原理",
+      "line_range": [
+        542,
+        549
+      ],
+      "discussion_summary": "雷蛇向杰西卡讲解手持铳械的基础运用准则，包括保持姿态稳定、控制源石技艺推送弹药、以及瞄准射击和移动。",
+      "is_substantive": true
+    },
+    {
+      "concept": "探险的意义",
+      "line_range": [
+        1203,
+        1233
+      ],
+      "discussion_summary": "麦哲伦阐述了她对探险事业的理解：观测站是探险家的生命节点，探险家一生都在发现和失望，但每一个发现都连接着过去，为后来者铺路，即使希望渺茫也有意义。",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "整合运动",
+      "line_range": [
+        69,
+        71
+      ],
+      "description": "爱国者承认整合运动内部有隔阂，有些散乱。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        86,
+        92
+      ],
+      "description": "赫拉格批评整合运动的行为是发动战争，会导致乌萨斯人自相残杀。"
+    },
+    {
+      "faction": "整合运动",
+      "line_range": [
+        176,
+        198
+      ],
+      "description": "爱国者严厉处理违纪的整合运动成员，强调军纪的重要性，并警告梅菲斯特和弑君者。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        128,
+        131
+      ],
+      "description": "爱国者告知赫拉格，整合运动刚刚袭击了罗德岛。"
+    },
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        507,
+        527
+      ],
+      "description": "杜宾代表罗德岛欢迎炎客，并强调遵守规则的重要性。"
+    },
+    {
+      "faction": "黑钢",
+      "line_range": [
+        598,
+        603
+      ],
+      "description": "雷蛇解释黑钢选择手枪作为制式武器的原因：降低管理难度、筛选庸才、保证射速和效率、易于携带隐藏。"
+    },
+    {
+      "faction": "拉特兰公证所",
+      "line_range": [
+        631,
+        655
+      ],
+      "description": "送葬人自我介绍为拉特兰公证所的执行者，负责执行遗嘱。"
+    },
+    {
+      "faction": "莱茵生命",
+      "line_range": [
+        1162,
+        1170
+      ],
+      "description": "麦哲伦介绍莱茵生命在矿石病研究方面不如罗德岛，因此双方进行了合作。"
+    }
+  ],
+  "locations": [
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        73,
+        78
+      ],
+      "description": "赫拉格指着被源石刺穿的建筑，回忆它曾是商场，天灾摧毁了城市。"
+    },
+    {
+      "location": "切尔诺伯格",
+      "line_range": [
+        83,
+        84
+      ],
+      "description": "爱国者让赫拉格看看这座城市，看看被丢进源石矿场等死的感染者。"
+    },
+    {
+      "location": "龙门",
+      "line_range": [
+        1309,
+        1316
+      ],
+      "description": "凯尔希告知可露希尔，罗德岛将前往龙门，因为它是离切尔诺伯格最近的城市，但已变得相当危险。"
+    }
+  ],
+  "chapter": "战地秘闻",
+  "batch_count": 1,
+  "category": "special",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:37:03.531884+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 29673,
+    "tokens_out": 3715,
+    "elapsed_s": 34.353259325027466
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "近卫干员",
+    "爱国者",
+    "缪缪"
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "summary": "本章「重启锚点」描绘了罗德岛在遭受重创后，于新地块上重建基地的收尾与庆祝时刻。Scene 1以可露希尔向凯尔希汇报新基地的建设成果开场，展示了医疗区、生活区、工程区和港口等设施的完善，以及Mon3tr归来的活泼表现。Scene 2转向基地内日常的温馨场景：医疗干员照料伤患、温米为大家做饭、工程部成功组装天灾预警系统并升空悬浮探针，荒地人对罗德岛的信任逐渐建立。Scene 3聚焦于净水系统测试完成、疗养庭院恢复，以及峯联贸易的拜松送来物资并带来外界对罗德岛本舰被毁消息已传开的担忧。Scene 4描绘了新病房的启用、病人们以果干和奶酪表达感激，以及维娜等干员在基地中回忆往昔的温情时刻。Scene 5是本章高潮，阿米娅通过全基地广播宣布最后一个地块投入使用，罗德岛新基地正式建设完成，全体干员欢欣鼓舞。Scene 6以Stormeye酒后向新干员吹嘘打猎经历的轻松插曲收尾。Scene 7中，病人们向阿米娅和Mon3tr赠送礼物，表达感激之情，为本章画上温暖的句号。",
+  "events": [
+    {
+      "event": "可露希尔向凯尔希汇报罗德岛新基地的建设成果",
+      "type": "planning",
+      "line_range": [
+        15,
+        29
+      ],
+      "participants": [
+        "可露希尔",
+        "凯尔希"
+      ],
+      "location": "罗德岛新基地",
+      "significance": "展示重建工作的全面完成，奠定本章基调",
+      "is_imaginary": false
+    },
+    {
+      "event": "医疗干员告知伤愈的荒地人怪物已被解决，他们可以安全返回",
+      "type": "rescue",
+      "line_range": [
+        31,
+        35
+      ],
+      "participants": [
+        "医疗干员",
+        "疗伤的荒地人",
+        "休息的荒地人"
+      ],
+      "location": "罗德岛新基地医疗区",
+      "significance": "体现罗德岛对当地居民的庇护与帮助",
+      "is_imaginary": false
+    },
+    {
+      "event": "温米为归来的干员们做饭，Raidian和Logos品尝并称赞",
+      "type": "family_moment",
+      "line_range": [
+        41,
+        53
+      ],
+      "participants": [
+        "温米",
+        "Raidian",
+        "Logos"
+      ],
+      "location": "罗德岛新基地生活区",
+      "significance": "展现基地内互助与温馨的日常生活",
+      "is_imaginary": false
+    },
+    {
+      "event": "工程部成功组装并升空悬浮探针，天灾预警系统完成",
+      "type": "ceremony",
+      "line_range": [
+        54,
+        59
+      ],
+      "participants": [
+        "Mechanist",
+        "工程部干员"
+      ],
+      "location": "罗德岛新基地工程区",
+      "significance": "标志基地关键防御系统建成，提升安全感",
+      "is_imaginary": false
+    },
+    {
+      "event": "荒地人讨论罗德岛的医疗能力，决定攒钱治病并回报罗德岛",
+      "type": "character_development",
+      "line_range": [
+        60,
+        73
+      ],
+      "participants": [
+        "高兴的荒地人",
+        "伤愈的荒地人"
+      ],
+      "location": "罗德岛新基地",
+      "significance": "体现罗德岛赢得当地居民的信任与感激",
+      "is_imaginary": false
+    },
+    {
+      "event": "可露希尔宣布庆祝天灾预警系统组装成功，后勤部准备聚餐",
+      "type": "ceremony",
+      "line_range": [
+        74,
+        79
+      ],
+      "participants": [
+        "可露希尔",
+        "后勤部干员"
+      ],
+      "location": "罗德岛新基地",
+      "significance": "营造集体庆祝的氛围，标志阶段性胜利",
+      "is_imaginary": false
+    },
+    {
+      "event": "净水系统测试完成，疗养庭院恢复，清流和克洛丝告别",
+      "type": "revelation",
+      "line_range": [
+        80,
+        88
+      ],
+      "participants": [
+        "工程部干员",
+        "清流",
+        "克洛丝"
+      ],
+      "location": "罗德岛新基地疗养庭院",
+      "significance": "展示基地基础设施的完善与干员间的协作",
+      "is_imaginary": false
+    },
+    {
+      "event": "峯联贸易的拜松运送物资抵达，并带来外界对罗德岛本舰被毁消息已传开的担忧",
+      "type": "negotiation",
+      "line_range": [
+        92,
+        111
+      ],
+      "participants": [
+        "外勤干员",
+        "拜松",
+        "可露希尔"
+      ],
+      "location": "罗德岛新基地安全区",
+      "significance": "引入外部威胁，为后续剧情埋下伏笔",
+      "is_imaginary": false
+    },
+    {
+      "event": "新病房启用，病人们以果干和奶酪表达感激",
+      "type": "family_moment",
+      "line_range": [
+        112,
+        127
+      ],
+      "participants": [
+        "劳累的病人",
+        "开心的病人",
+        "安静的病人",
+        "华法琳",
+        "医疗干员"
+      ],
+      "location": "罗德岛新基地住院部",
+      "significance": "体现罗德岛与病人之间的温情互动",
+      "is_imaginary": false
+    },
+    {
+      "event": "维娜、摩根等干员在基地中回忆往昔，因陀罗品尝瘤奶酪",
+      "type": "reunion",
+      "line_range": [
+        135,
+        150
+      ],
+      "participants": [
+        "维娜",
+        "摩根",
+        "因陀罗",
+        "达格达"
+      ],
+      "location": "罗德岛新基地生活区",
+      "significance": "展现干员间的深厚情谊与对新环境的适应",
+      "is_imaginary": false
+    },
+    {
+      "event": "阿米娅通过全基地广播宣布罗德岛新基地建设完成",
+      "type": "ceremony",
+      "line_range": [
+        200,
+        219
+      ],
+      "participants": [
+        "阿米娅"
+      ],
+      "location": "罗德岛新基地",
+      "significance": "本章核心事件，标志重建工作圆满成功",
+      "is_imaginary": false
+    },
+    {
+      "event": "全体干员庆祝基地建成，可露希尔激动落泪",
+      "type": "emotional_breakthrough",
+      "line_range": [
+        220,
+        233
+      ],
+      "participants": [
+        "泡普卡",
+        "Thermal-EX",
+        "阿米娅",
+        "可露希尔",
+        "Mon3tr"
+      ],
+      "location": "罗德岛新基地",
+      "significance": "渲染集体成就带来的喜悦与感动",
+      "is_imaginary": false
+    },
+    {
+      "event": "Stormeye酒后向新干员吹嘘打猎经历，被Sharp调侃",
+      "type": "character_development",
+      "line_range": [
+        234,
+        241
+      ],
+      "participants": [
+        "Stormeye",
+        "Sharp"
+      ],
+      "location": "罗德岛新基地",
+      "significance": "以轻松插曲展现干员个性，调节剧情节奏",
+      "is_imaginary": false
+    },
+    {
+      "event": "病人们向阿米娅和Mon3tr赠送礼物，表达感激",
+      "type": "farewell",
+      "line_range": [
+        242,
+        252
+      ],
+      "participants": [
+        "感激的病人",
+        "开心的病人",
+        "小病人",
+        "阿米娅",
+        "Mon3tr"
+      ],
+      "location": "罗德岛新基地",
+      "significance": "以温暖收尾，强调罗德岛与受助者之间的情感纽带",
+      "is_imaginary": false
+    }
+  ],
+  "characters": [
+    {
+      "name": "可露希尔",
+      "type": "operator",
+      "role_in_chapter": "主导新基地建设汇报，协调各方事务，宣布庆祝活动，并在基地建成时激动落泪",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "阿米娅",
+      "type": "operator",
+      "role_in_chapter": "参与广播稿修改，发表全基地广播宣布基地建成，接受病人礼物",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "凯尔希",
+      "type": "operator",
+      "role_in_chapter": "听取可露希尔汇报，关心博士状态",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Mon3tr",
+      "type": "operator",
+      "role_in_chapter": "展示新技能，参与广播稿修改，接受病人礼物",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "泡普卡",
+      "type": "operator",
+      "role_in_chapter": "参与击退怪物，帮助搬运，听到广播后兴奋",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "温米",
+      "type": "operator",
+      "role_in_chapter": "为干员们做饭，展现后勤能力",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Raidian",
+      "type": "operator",
+      "role_in_chapter": "品尝温米做的浓汤，称赞",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Logos",
+      "type": "operator",
+      "role_in_chapter": "品尝浓汤，并给Mechanist送去",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Mechanist",
+      "type": "operator",
+      "role_in_chapter": "监督悬浮探针升空，参与工程工作",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "清流",
+      "type": "operator",
+      "role_in_chapter": "参与净水系统测试，与克洛丝告别",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "克洛丝",
+      "type": "operator",
+      "role_in_chapter": "帮助清流，计划与炎熔前往炎国",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "炎熔",
+      "type": "operator",
+      "role_in_chapter": "与克洛丝计划前往炎国，关心基地人力",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "拜松",
+      "type": "operator",
+      "role_in_chapter": "代表峯联贸易运送物资，带来外界消息",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "华法琳",
+      "type": "operator",
+      "role_in_chapter": "引导新病人入住病房",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "推进之王",
+      "type": "operator",
+      "role_in_chapter": "参观新基地，回忆往昔",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "摩根",
+      "type": "operator",
+      "role_in_chapter": "与维娜一起参观，回忆过去",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "因陀罗",
+      "type": "operator",
+      "role_in_chapter": "品尝瘤奶酪，与摩根互动",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "达格达",
+      "type": "operator",
+      "role_in_chapter": "与维娜等人同行，提及废弃地块手续",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Stormeye",
+      "type": "operator",
+      "role_in_chapter": "酒后向新干员吹嘘打猎经历",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Sharp",
+      "type": "operator",
+      "role_in_chapter": "调侃Stormeye的醉酒行为",
+      "first_appearance_chapter": true
+    },
+    {
+      "name": "Thermal-EX",
+      "type": "operator",
+      "role_in_chapter": "帮助泡普卡搬运，听到广播后兴奋",
+      "first_appearance_chapter": true
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "罗德岛新基地",
+      "line_range": [
+        18,
+        21
+      ],
+      "discussion_summary": "可露希尔详细描述新基地分为核心地块、医疗区、生活区、工程区和港口五个类型，并介绍了各区的设施，如药物生产线、花园、食堂、宿舍楼等",
+      "is_substantive": true
+    },
+    {
+      "concept": "天灾预警系统",
+      "line_range": [
+        54,
+        58
+      ],
+      "discussion_summary": "工程部干员汇报悬浮探针的升空过程，说明底部信息处理基站已准备好接口，系统完成接入，即将升空探测大气数据",
+      "is_substantive": true
+    },
+    {
+      "concept": "罗德岛的使命与凝聚力",
+      "line_range": [
+        202,
+        216
+      ],
+      "discussion_summary": "阿米娅在广播中反思罗德岛为何能聚集不同种族、国家的人共同生活，强调大家因共同目标而团结，靠双手建设家园",
+      "is_substantive": true
+    }
+  ],
+  "factions": [
+    {
+      "faction": "罗德岛",
+      "line_range": [
+        15,
+        21
+      ],
+      "description": "可露希尔向凯尔希汇报罗德岛新基地的建设成果，详细描述各区域功能"
+    },
+    {
+      "faction": "峯联贸易",
+      "line_range": [
+        95,
+        98
+      ],
+      "description": "拜松代表峯联贸易运送物资抵达罗德岛新基地，表示愿意提供更多帮助"
+    },
+    {
+      "faction": "荒地人",
+      "line_range": [
+        60,
+        73
+      ],
+      "description": "荒地人讨论罗德岛的医疗能力，决定攒钱治病并回报罗德岛，表达对罗德岛的信任"
+    }
+  ],
+  "locations": [
+    {
+      "location": "罗德岛新基地",
+      "line_range": [
+        18,
+        21
+      ],
+      "description": "可露希尔描述新基地分为核心地块、医疗区、生活区、工程区和港口五个类型，并介绍各区设施"
+    },
+    {
+      "location": "维多利亚",
+      "line_range": [
+        107,
+        108
+      ],
+      "description": "拜松提及维多利亚情况复杂，物资运输困难，暗示该地区局势不稳定"
+    }
+  ],
+  "chapter": "重启锚点",
+  "batch_count": 1,
+  "category": "side",
+  "_raw": "",
+  "_parse_error": false,
+  "processed_at": "2026-06-17T10:19:38.121029+00:00",
+  "model": "deepseek-chat",
+  "stats": {
+    "tokens_in": 6959,
+    "tokens_out": 3505,
+    "elapsed_s": 25.61243963241577
+  },
+  "taxonomy_type": "full",
+  "_unmatched_names": [
+    "Raidian",
+    "Logos",
+    "Mechanist",
+    "Stormeye",
+    "Sharp",
+    "Thermal-EX"
+  ]
+}
