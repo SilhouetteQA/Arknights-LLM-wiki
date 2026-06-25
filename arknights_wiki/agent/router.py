@@ -3,7 +3,7 @@ import json
 import os
 import re
 
-from arknights_wiki.config import DATA_DIR
+from arknights_wiki.config import DATA_DIR, PROJECT_ROOT
 from arknights_wiki.agent.retrieval import WikiStore
 
 
@@ -69,6 +69,13 @@ def _extract_entities_local(question: str, data_dir: str | None = None) -> list[
     event_match = re.findall(r'「([^」]+)」', question)
     entities.extend(event_match)
 
+    # 6. 联动活动系列别名映射
+    collab_series = _load_collab_series()
+    for series_name, series_info in collab_series.items():
+        for alias in series_info.get("aliases", []):
+            if alias in question:
+                entities.extend(series_info.get("chapters", []))
+
     return list(set(entities))
 
 
@@ -125,6 +132,63 @@ def _infer_time_scope(question: str, entities: list[str]) -> str:
     if re.search(r'(序章|第[0-9零一二三四五六七八九十]+章)', question):
         return 'chapter'
     return 'cross_arc'
+
+
+def _load_chapter_timeline() -> dict:
+    """加载章节发布时间线 {章节名: 序号, ...}"""
+    fp = os.path.join(PROJECT_ROOT, "config", "chapter_timeline.json")
+    if os.path.exists(fp):
+        with open(fp, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            chapters = data.get("chapters", [])
+            return {ch: i for i, ch in enumerate(chapters)}
+    return {}
+
+
+def _load_collab_series() -> dict:
+    """加载联动活动系列映射 {别名: series_info, ...}"""
+    fp = os.path.join(PROJECT_ROOT, "config", "collab_series.json")
+    if os.path.exists(fp):
+        with open(fp, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return data.get("series", {})
+    return {}
+
+
+def _resolve_temporal_entities(question: str, entities: list[str]) -> tuple[list[str], str]:
+    """时序消歧：处理'最新''最近'等时间词，替换联动系列的实体"""
+    temporal_newest = any(kw in question for kw in ['最新', '最近', '最后的', '最后一次'])
+    temporal_first = any(kw in question for kw in ['第一', '首个', '最初', '最早的', '第一次'])
+
+    if not (temporal_newest or temporal_first):
+        return entities, ""
+
+    collab_series = _load_collab_series()
+    if not collab_series:
+        return entities, ""
+
+    timeline = _load_chapter_timeline()
+    resolved = list(entities)
+    notes = []
+
+    for series_name, series_info in collab_series.items():
+        series_chapters = series_info.get("chapters", [])
+        if len(series_chapters) < 2:
+            continue
+
+        # 按发布时间排序章节
+        ordered = sorted(series_chapters, key=lambda ch: timeline.get(ch, 999))
+        target = ordered[-1] if temporal_newest else ordered[0]
+
+        for i, entity in enumerate(resolved):
+            if entity in series_chapters and entity != target:
+                resolved[i] = target
+                if temporal_newest:
+                    notes.append(f"'{entity}'为较早的{series_info['label']}，'最新'应指'{target}'")
+                else:
+                    notes.append(f"'{entity}'为较晚的{series_info['label']}，'首个'应指'{target}'")
+
+    return resolved, "; ".join(notes) if notes else ""
 
 
 def recognize_intent_and_rewrite(question: str, use_llm: bool = True) -> dict:
@@ -250,11 +314,15 @@ def classify_complexity_local(
 
 
 def route_query(question: str, history=None) -> dict:
-    """查询路由主函数：意图识别+改写 → 复杂度分类"""
+    """查询路由主函数：意图识别+改写 → 时序消歧 → 复杂度分类"""
     intent_result = recognize_intent_and_rewrite(question)
 
     entities = intent_result["canonical_entities"] + intent_result["expansion_hints"]
-    entities = list(set(entities))
+
+    # 时序消歧：处理"最新""最近"等时间词
+    resolved_entities, temporal_note = _resolve_temporal_entities(question, entities)
+
+    entities = list(set(resolved_entities))
     question_type = intent_result["intent"]
 
     time_scope = _infer_time_scope(question, entities)
@@ -262,6 +330,10 @@ def route_query(question: str, history=None) -> dict:
 
     result["rewritten_question"] = intent_result["rewritten_question"]
     result["expansion_hints"] = intent_result["expansion_hints"]
-    result["disambiguation_note"] = intent_result["disambiguation_note"]
+    # 合并消歧备注
+    disambig = intent_result.get("disambiguation_note", "")
+    if temporal_note:
+        disambig = f"{disambig}; {temporal_note}" if disambig else temporal_note
+    result["disambiguation_note"] = disambig
     result["source"] = intent_result.get("source", "local")
     return result

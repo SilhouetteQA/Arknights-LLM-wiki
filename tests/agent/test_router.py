@@ -8,6 +8,7 @@ from arknights_wiki.agent.router import (
     classify_complexity_local,
     recognize_intent_and_rewrite,
     route_query,
+    _resolve_temporal_entities,
 )
 
 
@@ -158,3 +159,47 @@ class TestRouteQuery:
             assert "expansion_hints" in result
             assert "disambiguation_note" in result
             assert result["question_type"] == "concept_definition"
+
+
+class TestTemporalResolution:
+    """时序消歧测试"""
+    def test_resolve_newest_replaces_earlier(self):
+        from arknights_wiki.agent.router import _resolve_temporal_entities
+        entities, note = _resolve_temporal_entities(
+            "最新怪猎活动", ["落叶逐火", "泡影苍霆"]
+        )
+        assert "泡影苍霆" in entities
+        assert "落叶逐火" not in entities
+        assert "落叶逐火" in note
+
+    def test_resolve_first_picks_earliest(self):
+        from arknights_wiki.agent.router import _resolve_temporal_entities
+        entities, note = _resolve_temporal_entities(
+            "第一个怪猎联动", ["落叶逐火", "泡影苍霆"]
+        )
+        assert "落叶逐火" in entities
+        assert "泡影苍霆" not in entities
+
+    def test_no_temporal_keyword_no_change(self):
+        from arknights_wiki.agent.router import _resolve_temporal_entities
+        entities, note = _resolve_temporal_entities(
+            "怪猎联动讲了什么", ["落叶逐火", "泡影苍霆"]
+        )
+        # 没有时间关键词，保持原样（两个都在，让 LLM 自行判断）
+        assert len(entities) == 2
+
+    def test_single_chapter_series_no_change(self):
+        from arknights_wiki.agent.router import _resolve_temporal_entities
+        entities, note = _resolve_temporal_entities(
+            "最新孤星活动", ["孤星"]
+        )
+        assert "孤星" in entities
+
+    def test_route_query_resolves_mh_newest(self, temp_data_dir):
+        with patch("arknights_wiki.agent.router.DATA_DIR", temp_data_dir):
+            result = route_query("最新怪猎联动讲了什么")
+            entities = result["entities"]
+            # 属于联动系列且有"最新" → 应替换为泡影苍霆
+            assert "泡影苍霆" in entities
+            # 消歧备注应包含信息
+            assert len(result.get("disambiguation_note", "")) > 0
