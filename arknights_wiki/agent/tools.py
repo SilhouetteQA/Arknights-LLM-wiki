@@ -121,6 +121,33 @@ def semantic_search_tool(query: str, top_k: int = 10) -> str:
     return "\n".join(lines)
 
 
+def lookup_entity_index(entity_name: str) -> str:
+    """查找实体在预构建索引中的关联实体和相关章节。用于确定检索范围和发现相关实体。"""
+    from arknights_wiki.agent.retrieval import EntityIndexStore
+    store = EntityIndexStore(data_dir=_get_data_dir())
+    entry = store.lookup(entity_name)
+    if entry is None:
+        return f"未在索引中找到实体: {entity_name}"
+
+    lines = [f"实体 '{entity_name}' ({entry['type']}):"]
+
+    for field, label in [
+        ("related_entities", "关联概念"),
+        ("related_factions", "关联阵营"),
+        ("related_locations", "关联地点"),
+        ("related_characters", "关联角色"),
+    ]:
+        items = entry.get(field, [])
+        if items:
+            lines.append(f"  {label}: {', '.join(items[:10])}")
+
+    chapters = store.get_source_chapters(entity_name)
+    if chapters:
+        lines.append(f"  出现章节: {', '.join(chapters[:10])}")
+
+    return "\n".join(lines)
+
+
 # LangGraph function calling 工具定义
 TOOL_DEFINITIONS = [
     {
@@ -234,6 +261,20 @@ TOOL_DEFINITIONS = [
             },
         },
     },
+    {
+        "type": "function",
+        "function": {
+            "name": "lookup_entity_index",
+            "description": "查找实体在预构建索引中的关联实体、相关章节。用于确定检索方向和发现相关实体。",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "entity_name": {"type": "string", "description": "实体名称"},
+                },
+                "required": ["entity_name"],
+            },
+        },
+    },
 ]
 
 # tool name -> executor mapping
@@ -245,4 +286,5 @@ TOOL_EXECUTORS = {
     "search_timeline": search_timeline,
     "get_chapter_summary": get_chapter_summary,
     "semantic_search": semantic_search_tool,
+    "lookup_entity_index": lookup_entity_index,
 }

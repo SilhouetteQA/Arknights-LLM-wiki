@@ -10,6 +10,9 @@ from arknights_wiki.agent.tools import (
     search_timeline,
     get_chapter_summary,
     semantic_search_tool,
+    lookup_entity_index,
+    TOOL_DEFINITIONS,
+    TOOL_EXECUTORS,
 )
 
 
@@ -71,3 +74,19 @@ class TestSemanticSearchTool:
         with patch("arknights_wiki.agent.tools._get_data_dir", return_value=temp_data_dir):
             result = semantic_search_tool("源石")
             assert isinstance(result, str)
+
+
+class TestLookupEntityIndex:
+    """lookup_entity_index 工具测试"""
+
+    def test_lookup_missing_entity(self, temp_data_dir):
+        with patch("arknights_wiki.agent.tools._get_data_dir", return_value=temp_data_dir):
+            result = lookup_entity_index("不存在的实体XYZ")
+            assert "未在索引中找到" in result
+
+    def test_tool_in_definitions(self):
+        tool_names = [t["function"]["name"] for t in TOOL_DEFINITIONS]
+        assert "lookup_entity_index" in tool_names
+
+    def test_tool_in_executors(self):
+        assert "lookup_entity_index" in TOOL_EXECUTORS

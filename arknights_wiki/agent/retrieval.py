@@ -267,3 +267,47 @@ class TimelineStore:
             if len(results) >= limit:
                 break
         return results
+
+
+class EntityIndexStore:
+    """实体双向索引 -- 加载 entity_source_map.json 提供 O(1) 查找"""
+
+    def __init__(self, data_dir: str | None = None):
+        self.data_dir = data_dir or DATA_DIR
+        self._index_path = os.path.join(self.data_dir, "entity_source_map.json")
+        self._index: dict | None = None
+
+    def _load(self) -> dict:
+        if self._index is None:
+            if os.path.exists(self._index_path):
+                self._index = json.loads(Path(self._index_path).read_text(encoding="utf-8"))
+            else:
+                self._index = {}
+        return self._index
+
+    def lookup(self, name: str) -> dict | None:
+        """查找实体索引条目"""
+        return self._load().get(name)
+
+    def search_related(self, name: str) -> list[str]:
+        """获取实体的所有关联实体名"""
+        entry = self.lookup(name)
+        if not entry:
+            return []
+        related = []
+        for field in ["related_entities", "related_factions", "related_locations", "related_characters"]:
+            related.extend(entry.get(field, []))
+        return related
+
+    def get_source_chapters(self, name: str) -> list[str]:
+        """获取实体出现的章节列表（从 pass1_events 提取章节名）"""
+        entry = self.lookup(name)
+        if not entry:
+            return []
+        pass1 = entry.get("source_files", {}).get("pass1_events", [])
+        return [f.replace(".json", "") for f in pass1]
+
+    def get_type(self, name: str) -> str | None:
+        """获取实体类型"""
+        entry = self.lookup(name)
+        return entry["type"] if entry else None
