@@ -29,7 +29,7 @@ def search_and_collect(
     chapter: str | None = None,
     max_sources: int = 20,
 ) -> list[dict]:
-    """执行多层检索，合并收集的文档"""
+    """多层检索，根据意图类型调整检索策略"""
     data_dir = _get_data_dir()
     collected = []
     seen = set()
@@ -40,28 +40,39 @@ def search_and_collect(
             seen.add(key)
             collected.append(doc)
 
-    # Layer 0: Wiki 精确匹配
     wiki_store = WikiStore(data_dir=data_dir)
+    event_store = EventStore(data_dir=data_dir)
+
+    # 概念定义/角色资料/事实查询：精确 get_page 优先
+    if question_type in ("concept_definition", "character_profile", "fact_lookup"):
+        for entity in entities:
+            for etype in ["concept", "faction", "location", "character"]:
+                page = wiki_store.get_page(entity, etype)
+                if page:
+                    add(page)
+                    break
+
+    # 常规 wiki 搜索
     for entity in entities:
-        for etype in ["concept", "faction", "location", "character"]:
-            page = wiki_store.get_page(entity, etype)
-            if page:
-                add(page)
-                break
         for result in wiki_store.search(entity, limit=3):
             add(result)
 
-    # Layer 1: Events 结构化查询
-    event_store = EventStore(data_dir=data_dir)
-    if chapter:
-        summary = event_store.get_chapter_summary(chapter)
-        if summary:
-            add(summary)
-    for entity in entities:
-        for evt in event_store.search(entity=entity, limit=5):
-            add(evt)
+    # 章节总结：精确 get_chapter_summary + 该章 events
+    if question_type == "chapter_summary":
+        for entity in entities:
+            summary = event_store.get_chapter_summary(entity)
+            if summary:
+                add(summary)
+            for evt in event_store.search(chapter=entity, limit=10):
+                add(evt)
 
-    # Layer 2: FAISS 语义搜索
+    # 常规事件搜索
+    if question_type != "chapter_summary":
+        for entity in entities:
+            for evt in event_store.search(entity=entity, limit=5):
+                add(evt)
+
+    # FAISS 语义搜索 (提高阈值减少噪声)
     index_dir = os.path.join(data_dir, "index")
     index_path = os.path.join(index_dir, "faiss.index")
     map_path = os.path.join(index_dir, "chunk_map.json")
@@ -69,9 +80,9 @@ def search_and_collect(
         from arknights_wiki.agent.vector_index import load_index, semantic_search
         try:
             index, chunk_map = load_index(index_path, map_path)
-            faiss_results = semantic_search(question, index, chunk_map, top_k=10)
+            faiss_results = semantic_search(question, index, chunk_map, top_k=5)
             for r in faiss_results:
-                if r["score"] > 0.3:
+                if r["score"] > 0.4:
                     add({
                         "entity_type": r["entity_type"],
                         "name": r["name"],
@@ -81,14 +92,14 @@ def search_and_collect(
         except Exception:
             pass
 
-    # Layer 3: Dialogue 兜底（仅在结果少时触发）
+    # Dialogue 兜底
     if len(collected) < 5:
         dialogue_store = DialogueStore(data_dir=data_dir)
         for result in dialogue_store.search(question[:50], chapter=chapter, limit=5):
             add(result)
 
-    # Timeline（时间/因果类问题）
-    if question_type in ("event", "comparison") or any(
+    # Timeline
+    if question_type in ("causal_reasoning", "comparison") or any(
         kw in question for kw in ["时间线", "先后", "年表", "历史"]
     ):
         timeline_store = TimelineStore(data_dir=data_dir)
@@ -99,19 +110,26 @@ def search_and_collect(
 
 
 def build_answer_prompt(question: str, sources: list[dict]) -> str:
-    """构建 LLM answer prompt"""
+    """构建 CASUAL 风格 LLM answer prompt"""
     source_text = ""
     for i, s in enumerate(sources, 1):
-        header = f"[{i}] [{s.get('entity_type', 'unknown')}] {s.get('name', '')}"
-        source_text += f"{header}\n{s.get('text', '')[:1000]}\n\n"
+        header = f"[参考{i}] [{s.get('entity_type', 'unknown')}] {s.get('name', '')}"
+        source_text += f"{header}\n{s.get('text', '')[:800]}\n\n"
 
-    return f"""## 用户问题
+    return f"""## 玩家问题
 {question}
 
 ## 参考资料
 {source_text}
 
-请基于以上参考资料，以连贯的叙述方式回答用户问题。将零散的对话片段组织成有逻辑的、易读的叙事文本，按照时间顺序展开，自然地在文中标注引用来源 [1][2]。"""
+## 回答要求
+- 用口语化、朋友聊天的语气回答
+- 先给一句核心答案，再展开细节
+- 将资料融合成连贯叙述，不要逐条罗列事件
+- 禁止输出 [参考N] 这类引用标记
+- 用你自己的话重组信息
+- 忽略与问题无关的资料
+- 说清楚为止，不限制字数"""
 
 
 def simple_search(question: str, route: dict) -> dict:

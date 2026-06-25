@@ -36,7 +36,7 @@ class TestBuildAnswerPrompt:
         ]
         prompt = build_answer_prompt("源石是什么", sources)
         assert "源石是什么" in prompt
-        assert "[1]" in prompt
+        assert "[参考1]" in prompt
         assert "源石是泰拉世界的核心能源" in prompt
 
 
@@ -56,3 +56,24 @@ class TestSimpleSearch:
                 assert "answer" in result
                 assert "sources" in result
                 assert len(result["sources"]) > 0
+
+
+class TestCASUALSearch:
+    """CASUAL 风格搜索测试"""
+    def test_build_answer_prompt_casual_style(self):
+        sources = [{"entity_type": "concept", "name": "源石", "text": "源石是泰拉世界的核心能源。"}]
+        prompt = build_answer_prompt("源石是什么", sources)
+        assert "口语化" in prompt
+        assert "禁止" in prompt
+        assert "源石" in prompt
+
+    def test_search_concept_prioritizes_page(self, temp_data_dir):
+        with patch("arknights_wiki.agent.simple_search.DATA_DIR", temp_data_dir):
+            sources = search_and_collect(
+                entities=["源石"], question="源石是什么",
+                question_type="concept_definition",
+            )
+            assert len(sources) > 0
+            # First result should be exact match
+            exact_matches = [s for s in sources if s.get("entity_type") == "concept" and s.get("name") == "源石"]
+            assert len(exact_matches) > 0
