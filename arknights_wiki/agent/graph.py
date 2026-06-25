@@ -120,7 +120,7 @@ def synthesize_node(state: AgentState) -> AgentState:
     evidence_text = "\n".join(evidence_parts) if evidence_parts else "无证据收集到。"
 
     if not collected_docs:
-        answer = "未能收集到与问题相关的证据，无法回答。请尝试更具体地描述问题。"
+        answer = "抱歉，我目前掌握的剧情资料里还没有这部分内容。你可以换个方式问我，或者问点别的。"
     else:
         prompt = SYNTHESIS_PROMPT.format(evidence=evidence_text, question=question)
         try:
@@ -136,7 +136,7 @@ def synthesize_node(state: AgentState) -> AgentState:
             )
             answer = response.choices[0].message.content or ""
         except Exception as e:
-            answer = f"回答生成失败: {str(e)}"
+            answer = "抱歉，回答生成出了点问题。请稍后再试。"
 
     state["messages"] = state["messages"] + [
         {"role": "assistant", "content": answer}

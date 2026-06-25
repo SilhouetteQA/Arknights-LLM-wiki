@@ -1,7 +1,8 @@
 """LangGraph Agent 测试"""
 from unittest.mock import patch
 
-from arknights_wiki.agent.graph import build_agent_graph, call_model, tool_node
+from arknights_wiki.agent.graph import build_agent_graph, call_model, tool_node, synthesize_node
+from arknights_wiki.agent.tools import TOOL_DEFINITIONS
 from arknights_wiki.agent.state import AgentState
 
 
@@ -57,3 +58,48 @@ class TestAgentNode:
             mock_execs.get.return_value = lambda **kwargs: "找到 3 个结果"
             result = tool_node(state)
             assert len(result["collected_docs"]) > 0
+
+
+class TestCASUALSynthesis:
+    """CASUAL 风格 synthesis 测试"""
+    def test_synthesis_no_docs_casual_message(self):
+        state: AgentState = {
+            "messages": [
+                {"role": "system", "content": "test"},
+                {"role": "user", "content": "不存在的实体是什么"},
+            ],
+            "question": "不存在的实体是什么",
+            "collected_docs": [],
+            "iteration": 1,
+            "route": {"intent": "concept_definition", "entities": []},
+        }
+        result = synthesize_node(state)
+        messages = result.get("messages", [])
+        answer = messages[-1].get("content", "")
+        assert "抱歉" in answer
+        assert len(answer) > 0
+
+    def test_synthesis_with_docs_uses_synthesis_prompt(self, mock_llm_client):
+        mock_llm_client.chat.completions.create.return_value.choices[0].message.content = "测试回答"
+        state: AgentState = {
+            "messages": [
+                {"role": "system", "content": "test"},
+                {"role": "user", "content": "源石是什么"},
+            ],
+            "question": "源石是什么",
+            "collected_docs": [
+                {"tool": "get_entity_page", "args": {"name": "源石", "entity_type": "concept"},
+                 "result": "源石是泰拉世界的核心能源。"},
+            ],
+            "iteration": 1,
+            "route": {"intent": "concept_definition", "entities": ["源石"]},
+        }
+        with patch("arknights_wiki.extraction.llm_client.create_client", return_value=mock_llm_client):
+            result = synthesize_node(state)
+            messages = result.get("messages", [])
+            answer = messages[-1].get("content", "")
+            assert "测试回答" in answer
+
+    def test_lookup_entity_index_in_tool_definitions(self):
+        tool_names = [t["function"]["name"] for t in TOOL_DEFINITIONS]
+        assert "lookup_entity_index" in tool_names
