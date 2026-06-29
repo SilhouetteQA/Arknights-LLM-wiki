@@ -210,7 +210,7 @@ def search_and_collect(
 
 
 def build_answer_prompt(question: str, sources: list[dict]) -> str:
-    """构建 CASUAL 风格 LLM answer prompt"""
+    """构建百科风格 LLM answer prompt"""
     source_text = ""
     for i, s in enumerate(sources, 1):
         header = f"[参考{i}] [{s.get('entity_type', 'unknown')}] {s.get('name', '')}"

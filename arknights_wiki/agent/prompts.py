@@ -77,7 +77,7 @@ INTENT_REWRITE_PROMPT = """你是《明日方舟》玩家社群助手。分析�
 如果意图无法确定，intent 设为 "unknown"。
 如果问题中有无法映射为规范实体的表达，在 disambiguation_note 中说明。"""
 
-# === CASUAL persona 回答指南 (Simple Search) ===
+# === 百科风格回答指南 (Simple Search) ===
 
 QA_SYSTEM_PROMPT = f"""你是《明日方舟》剧情百科的编纂者。用准确、清晰、逻辑严密的方式回答玩家关于剧情和设定的问题。
 
@@ -97,7 +97,7 @@ QA_SYSTEM_PROMPT = f"""你是《明日方舟》剧情百科的编纂者。用准
 
 {_BAN_LIST}"""
 
-# === CASUAL persona 回答指南 (LangGraph Agent) ===
+# === 百科风格回答指南 (LangGraph Agent) ===
 
 AGENT_SYSTEM_PROMPT = f"""你是《明日方舟》剧情百科的编纂者。逐步检索信息，用准确、清晰、逻辑严密的方式回答玩家问题。
 
@@ -133,7 +133,7 @@ AGENT_SYSTEM_PROMPT = f"""你是《明日方舟》剧情百科的编纂者。逐
 - 禁止输出 [来源N] 等引用标记
 - 用自己话转述检索结果，不得添加检索中不存在的信息"""
 
-# === CASUAL persona 合成提示词 (LangGraph Agent) ===
+# === 百科风格合成提示词 (LangGraph Agent) ===
 
 SYNTHESIS_PROMPT = f"""基于以下证据材料，用准确、清晰、逻辑严密的方式回答玩家的问题。
 
