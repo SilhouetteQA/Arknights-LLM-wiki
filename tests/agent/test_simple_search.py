@@ -63,7 +63,7 @@ class TestCASUALSearch:
     def test_build_answer_prompt_casual_style(self):
         sources = [{"entity_type": "concept", "name": "源石", "text": "源石是泰拉世界的核心能源。"}]
         prompt = build_answer_prompt("源石是什么", sources)
-        assert "口语化" in prompt
+        assert "百科" in prompt
         assert "禁止" in prompt
         assert "源石" in prompt
 

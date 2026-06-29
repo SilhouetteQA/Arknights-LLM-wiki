@@ -167,6 +167,10 @@ def temp_data_dir():
                 ],
             }, f, ensure_ascii=False)
 
+        # operators.json 供实体提取使用
+        with open(os.path.join(tmpdir, "operators.json"), "w", encoding="utf-8") as f:
+            json.dump({"阿米娅": {}, "凯尔希": {}, "陈": {}}, f, ensure_ascii=False)
+
         with open(os.path.join(stories_dir, "main_01_01.json"), "w", encoding="utf-8") as f:
             json.dump({
                 "id": "main_01_01",

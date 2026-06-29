@@ -3,18 +3,38 @@ import json
 import os
 import re
 from pathlib import Path
+from typing import TypedDict
 
 from arknights_wiki.config import DATA_DIR
 
 
-class WikiStore:
+class SearchResult(TypedDict, total=False):
+    """所有 Store.search() 返回 dict 的统一字段约定。
+
+    必含字段: entity_type, name, text, file_path
+    可选字段: match_type, event, chapter, speaker, node_id, year, content
+    """
+    entity_type: str
+    name: str
+    text: str
+    file_path: str
+
+
+class _BaseStore:
+    """Store 基类——统一 data_dir 初始化模式，减少子类样板代码。"""
+
+    def __init__(self, data_dir: str | None = None):
+        self.data_dir = data_dir or DATA_DIR
+
+
+class WikiStore(_BaseStore):
     """Wiki 页面存储（Pass 2 角色 + Pass 3 概念/阵营/地点）
 
     按实体名精确匹配，支持子串搜索内容。
     """
 
     def __init__(self, data_dir: str | None = None):
-        self.data_dir = data_dir or DATA_DIR
+        super().__init__(data_dir)
         self._name_cache: dict[str, list[str]] = {}
 
     def _get_dir(self, entity_type: str) -> str:
@@ -103,11 +123,11 @@ class WikiStore:
         }
 
 
-class EventStore:
+class EventStore(_BaseStore):
     """Pass 1 事件存储"""
 
     def __init__(self, data_dir: str | None = None):
-        self.data_dir = data_dir or DATA_DIR
+        super().__init__(data_dir)
         self._events_dir = os.path.join(self.data_dir, "extractions", "v1_events")
 
     def _load_chapter(self, chapter: str) -> dict | None:
@@ -143,7 +163,7 @@ class EventStore:
     ) -> list[dict]:
         results = []
         for ch, evt, fp in self._iter_events():
-            if chapter and chapter not in ch and ch not in chapter:
+            if chapter and ch != chapter:
                 continue
             if event_type and evt.get("type") != event_type:
                 continue
@@ -183,11 +203,11 @@ class EventStore:
         return {"entity_type": "chapter_summary", "name": chapter, "text": summary}
 
 
-class DialogueStore:
+class DialogueStore(_BaseStore):
     """原始对话全文搜索"""
 
     def __init__(self, data_dir: str | None = None):
-        self.data_dir = data_dir or DATA_DIR
+        super().__init__(data_dir)
         self._stories_dir = os.path.join(self.data_dir, "stories")
 
     def search(self, query: str, chapter: str | None = None, limit: int = 20) -> list[dict]:
@@ -204,6 +224,8 @@ class DialogueStore:
                 try:
                     data = json.loads(Path(fp).read_text(encoding="utf-8"))
                 except Exception:
+                    continue
+                if not isinstance(data, dict):
                     continue
                 ch = data.get("chapter", "")
                 node_id = data.get("id", "")
@@ -237,11 +259,11 @@ class DialogueStore:
         return results
 
 
-class TimelineStore:
+class TimelineStore(_BaseStore):
     """时间线搜索"""
 
     def __init__(self, data_dir: str | None = None):
-        self.data_dir = data_dir or DATA_DIR
+        super().__init__(data_dir)
         self._timeline_path = os.path.join(self.data_dir, "extractions", "v3_wiki", "timeline.md")
 
     def search(self, query: str, limit: int = 20) -> list[dict]:
@@ -269,11 +291,11 @@ class TimelineStore:
         return results
 
 
-class EntityIndexStore:
+class EntityIndexStore(_BaseStore):
     """实体双向索引 -- 加载 entity_source_map.json 提供 O(1) 查找"""
 
     def __init__(self, data_dir: str | None = None):
-        self.data_dir = data_dir or DATA_DIR
+        super().__init__(data_dir)
         self._index_path = os.path.join(self.data_dir, "entity_source_map.json")
         self._index: dict | None = None
 

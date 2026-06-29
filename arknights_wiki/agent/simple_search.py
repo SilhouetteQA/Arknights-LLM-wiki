@@ -13,66 +13,105 @@ from arknights_wiki.agent.retrieval import (
     DialogueStore,
     TimelineStore,
 )
-from arknights_wiki.agent.prompts import QA_SYSTEM_PROMPT
+from arknights_wiki.agent.prompts import QA_SYSTEM_PROMPT, _SOURCE_FIDELITY_RULES, _LOGICAL_ORGANIZATION_SYNTHESIS
 from arknights_wiki.config import DATA_DIR
 from arknights_wiki.extraction.llm_client import create_client
 
 
 def _get_data_dir():
+    """获取数据目录路径"""
     return os.environ.get("ARKNIGHTS_DATA_DIR", DATA_DIR)
 
 
-def search_and_collect(
+def _resolve_chapter_context(
     entities: list[str],
-    question: str,
-    question_type: str,
-    chapter: str | None = None,
-    max_sources: int = 20,
-) -> list[dict]:
-    """多层检索，根据意图类型调整检索策略"""
-    data_dir = _get_data_dir()
-    collected = []
-    seen = set()
+    event_store: EventStore,
+    add,
+) -> tuple[list[str], list[str]]:
+    """分离章节实体和非章节实体，同时添加章节摘要。
 
-    def add(doc: dict):
-        key = f"{doc.get('entity_type', '')}:{doc.get('name', '')}"
-        if key not in seen:
-            seen.add(key)
-            collected.append(doc)
-
-    wiki_store = WikiStore(data_dir=data_dir)
-    event_store = EventStore(data_dir=data_dir)
-
-    # 概念定义/角色资料/事实查询：精确 get_page 优先
-    if question_type in ("concept_definition", "character_profile", "fact_lookup"):
-        for entity in entities:
-            for etype in ["concept", "faction", "location", "character"]:
-                page = wiki_store.get_page(entity, etype)
-                if page:
-                    add(page)
-                    break
-
-    # 常规 wiki 搜索
+    能通过 event_store 查到 chapter_summary 的实体即为章节名。
+    返回 (chapter_entities, non_chapter_entities)。
+    """
+    chapter_entities = []
+    non_chapter_entities = []
     for entity in entities:
-        for result in wiki_store.search(entity, limit=3):
+        summary = event_store.get_chapter_summary(entity)
+        if summary:
+            chapter_entities.append(entity)
+            add(summary)
+        else:
+            non_chapter_entities.append(entity)
+    return chapter_entities, non_chapter_entities
+
+
+def _collect_structured_sources(
+    entities: list[str],
+    chapter_entities: list[str],
+    non_chapter_entities: list[str],
+    expansion_hints: list[str],
+    wiki_store: WikiStore,
+    event_store: EventStore,
+    add,
+):
+    """Layer 1-4: 结构化检索——章节事件、实体页面、wiki 搜索、扩展提示词。
+
+    Layer 1: 章节事件（始终优先，按章节过滤）
+    Layer 2: 非章节实体的精确页面 + 章节内/全局事件
+    Layer 3: wiki 精确搜索
+    Layer 4: expansion_hints wiki 补充搜索
+    """
+    # Layer 1: 章节事件（始终优先，按章节过滤）
+    for ch in chapter_entities:
+        for evt in event_store.search(chapter=ch, limit=10):
+            add(evt)
+
+    # Layer 2: 非章节实体的精确页面 + 章节内事件
+    for entity in non_chapter_entities:
+        for etype in ["concept", "faction", "location", "character"]:
+            page = wiki_store.get_page(entity, etype)
+            if page:
+                add(page)
+                break
+
+        # 如有章节上下文，优先搜索该章内与实体相关的事件
+        for ch in chapter_entities:
+            for evt in event_store.search(entity=entity, chapter=ch, limit=5):
+                add(evt)
+
+        # 无章节上下文时才做全局事件搜索（且限制条数，留空间给章节事件）
+        if not chapter_entities:
+            for evt in event_store.search(entity=entity, limit=3):
+                add(evt)
+
+    # Layer 3: wiki 搜索（精确实体优先，少量条数）
+    for entity in entities:
+        wiki_limit = 2 if chapter_entities else 3
+        for result in wiki_store.search(entity, limit=wiki_limit):
             add(result)
 
-    # 章节总结：精确 get_chapter_summary + 该章 events
-    if question_type == "chapter_summary":
-        for entity in entities:
-            summary = event_store.get_chapter_summary(entity)
-            if summary:
-                add(summary)
-            for evt in event_store.search(chapter=entity, limit=10):
-                add(evt)
+    # Layer 4: expansion_hints 仅用于 wiki 补充搜索，不影响事件定位
+    for hint in expansion_hints:
+        for result in wiki_store.search(hint, limit=1):
+            add(result)
 
-    # 常规事件搜索
-    if question_type != "chapter_summary":
-        for entity in entities:
-            for evt in event_store.search(entity=entity, limit=5):
-                add(evt)
 
-    # FAISS 语义搜索 (提高阈值减少噪声)
+def _collect_semantic_fallback(
+    question: str,
+    question_type: str,
+    chapter_entities: list[str],
+    chapter: str | None,
+    data_dir: str,
+    collected: list[dict],
+    add,
+):
+    """Layer 5-7: 语义搜索兜底——FAISS、对话、时间线。
+
+    Layer 5: FAISS 语义搜索
+    Layer 6: Dialogue 兜底（结果不足时）
+    Layer 7: Timeline（因果/历史类问题）
+    """
+    # Layer 5: FAISS 语义搜索
     index_dir = os.path.join(data_dir, "index")
     index_path = os.path.join(index_dir, "faiss.index")
     map_path = os.path.join(index_dir, "chunk_map.json")
@@ -92,19 +131,80 @@ def search_and_collect(
         except Exception:
             pass
 
-    # Dialogue 兜底
+    # Layer 6: Dialogue 兜底
     if len(collected) < 5:
         dialogue_store = DialogueStore(data_dir=data_dir)
-        for result in dialogue_store.search(question[:50], chapter=chapter, limit=5):
+        for ch in chapter_entities:
+            for result in dialogue_store.search(question[:50], chapter=ch, limit=3):
+                add(result)
+        for result in dialogue_store.search(question[:50], chapter=chapter, limit=3):
             add(result)
 
-    # Timeline
+    # Layer 7: Timeline
     if question_type in ("causal_reasoning", "comparison") or any(
         kw in question for kw in ["时间线", "先后", "年表", "历史"]
     ):
         timeline_store = TimelineStore(data_dir=data_dir)
         for result in timeline_store.search(question[:30], limit=5):
             add(result)
+
+
+def search_and_collect(
+    entities: list[str],
+    question: str,
+    question_type: str,
+    expansion_hints: list[str] | None = None,
+    chapter: str | None = None,
+    max_sources: int = 20,
+) -> list[dict]:
+    """多层检索，根据意图类型调整检索策略。
+
+    核心改进：
+    1. 识别实体中的章节名，章节事件始终按 chapter 过滤
+    2. expansion_hints 仅作 wiki 补充搜索，不影响事件/页面定位
+    3. 角色+章节组合时，优先搜索该章内的事件
+    """
+    data_dir = _get_data_dir()
+    collected = []
+    seen = set()
+    if expansion_hints is None:
+        expansion_hints = []
+
+    def add(doc: dict):
+        key = f"{doc.get('entity_type', '')}:{doc.get('name', '')}"
+        if key not in seen:
+            seen.add(key)
+            collected.append(doc)
+
+    wiki_store = WikiStore(data_dir=data_dir)
+    event_store = EventStore(data_dir=data_dir)
+
+    # 步骤 1: 分离章节/非章节实体
+    chapter_entities, non_chapter_entities = _resolve_chapter_context(
+        entities, event_store, add
+    )
+
+    # 步骤 2: 结构化检索（事件 + 页面 + wiki）
+    _collect_structured_sources(
+        entities=entities,
+        chapter_entities=chapter_entities,
+        non_chapter_entities=non_chapter_entities,
+        expansion_hints=expansion_hints,
+        wiki_store=wiki_store,
+        event_store=event_store,
+        add=add,
+    )
+
+    # 步骤 3: 语义搜索兜底（FAISS + 对话 + 时间线）
+    _collect_semantic_fallback(
+        question=question,
+        question_type=question_type,
+        chapter_entities=chapter_entities,
+        chapter=chapter,
+        data_dir=data_dir,
+        collected=collected,
+        add=add,
+    )
 
     return collected[:max_sources]
 
@@ -114,7 +214,7 @@ def build_answer_prompt(question: str, sources: list[dict]) -> str:
     source_text = ""
     for i, s in enumerate(sources, 1):
         header = f"[参考{i}] [{s.get('entity_type', 'unknown')}] {s.get('name', '')}"
-        source_text += f"{header}\n{s.get('text', '')[:800]}\n\n"
+        source_text += f"{header}\n{s.get('text', '')[:2000]}\n\n"
 
     return f"""## 玩家问题
 {question}
@@ -123,24 +223,24 @@ def build_answer_prompt(question: str, sources: list[dict]) -> str:
 {source_text}
 
 ## 回答要求
-- 用口语化、朋友聊天的语气回答
-- 先给一句核心答案，再展开细节
-- 将资料融合成连贯叙述，不要逐条罗列事件
+{_SOURCE_FIDELITY_RULES}
+
+{_LOGICAL_ORGANIZATION_SYNTHESIS}
 - 禁止输出 [参考N] 这类引用标记
-- 用你自己的话重组信息
-- 忽略与问题无关的资料
 - 说清楚为止，不限制字数"""
 
 
 def simple_search(question: str, route: dict) -> dict:
     """简单检索路径主函数"""
     entities = route.get("entities", [])
+    expansion_hints = route.get("expansion_hints", [])
     question_type = route.get("question_type", "summary")
 
     sources = search_and_collect(
         entities=entities,
         question=question,
         question_type=question_type,
+        expansion_hints=expansion_hints,
     )
 
     if not sources:

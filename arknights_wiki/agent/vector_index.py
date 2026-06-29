@@ -134,38 +134,17 @@ def build_chunk_map(data_dir: str | None = None) -> dict:
     base = Path(data_dir)
     chunk_map = {}
 
-    # ── Pass 3 Concepts ──
-    concepts_dir = base / "extractions" / "v3_wiki" / "concepts"
-    for fp in _list_markdown_files(str(concepts_dir)):
-        name = fp.stem
-        text = fp.read_text(encoding="utf-8")
-        chunk_map[("concept", name)] = {
-            "file_path": str(fp),
-            "text": text,
-            "chunk_id": f"concept:{name}",
-        }
-
-    # ── Pass 3 Factions ──
-    factions_dir = base / "extractions" / "v3_wiki" / "factions"
-    for fp in _list_markdown_files(str(factions_dir)):
-        name = fp.stem
-        text = fp.read_text(encoding="utf-8")
-        chunk_map[("faction", name)] = {
-            "file_path": str(fp),
-            "text": text,
-            "chunk_id": f"faction:{name}",
-        }
-
-    # ── Pass 3 Locations ──
-    locations_dir = base / "extractions" / "v3_wiki" / "locations"
-    for fp in _list_markdown_files(str(locations_dir)):
-        name = fp.stem
-        text = fp.read_text(encoding="utf-8")
-        chunk_map[("location", name)] = {
-            "file_path": str(fp),
-            "text": text,
-            "chunk_id": f"location:{name}",
-        }
+    # ── Pass 3 Wiki: concept / faction / location（三种实体共享相同加载模式） ──
+    for entity_type in ("concept", "faction", "location"):
+        md_dir = base / "extractions" / "v3_wiki" / f"{entity_type}s"
+        for fp in _list_markdown_files(str(md_dir)):
+            name = fp.stem
+            text = fp.read_text(encoding="utf-8")
+            chunk_map[(entity_type, name)] = {
+                "file_path": str(fp),
+                "text": text,
+                "chunk_id": f"{entity_type}:{name}",
+            }
 
     # ── Pass 2 Characters ──
     characters_dir = base / "extractions" / "v2_characters"
@@ -249,19 +228,14 @@ def build_chunk_map(data_dir: str | None = None) -> dict:
 def build_faiss_index(texts: list[str], dimension: int = 384, model=None) -> "faiss.IndexFlatIP":
     """编码文本列表并构建 FAISS IndexFlatIP
 
-    优先使用 BGE AutoModel + mean pooling。加载失败时回退到随机向量。
+    使用 BGE AutoModel + mean pooling 编码。嵌入模型不可用时抛出明确错误，
+    避免静默回退到随机向量导致语义搜索返回无意义结果。
     """
     import faiss
 
-    try:
-        embeddings = _encode_texts(texts)
-        actual_dim = embeddings.shape[1]
-        dimension = actual_dim
-    except Exception:
-        # 回退: 随机向量
-        embeddings = np.random.randn(len(texts), dimension).astype(np.float32)
-        norms = np.linalg.norm(embeddings, axis=1, keepdims=True)
-        embeddings = embeddings / norms
+    embeddings = _encode_texts(texts)
+    actual_dim = embeddings.shape[1]
+    dimension = actual_dim
 
     index = faiss.IndexFlatIP(dimension)
     index.add(np.array(embeddings, dtype=np.float32))
@@ -320,13 +294,7 @@ def semantic_search(
 
     每个结果包含 chunk_id, entity_type, name, score, text, file_path
     """
-    try:
-        query_vec = _encode_texts([query])
-    except Exception:
-        # 回退: 随机向量
-        dim = index.d
-        query_vec = np.random.randn(1, dim).astype(np.float32)
-        query_vec = query_vec / np.linalg.norm(query_vec)
+    query_vec = _encode_texts([query])
 
     scores, indices = index.search(np.array(query_vec, dtype=np.float32), top_k)
 

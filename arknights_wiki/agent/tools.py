@@ -1,7 +1,7 @@
-"""LangGraph Agent 工具函数 -- 7 个检索工具
+"""LangGraph Agent 工具函数 -- 8 个检索工具
 
-每个工具接收参数，返回字符串结果供 ToolMessage 使用。
-包含 TOOL_DEFINITIONS (供 LLM function calling) 和 TOOL_EXECUTORS (供 graph 执行)。
+使用 @tool 装饰器注册，TOOL_DEFINITIONS 和 TOOL_EXECUTORS 自动生成，
+添加新工具只需定义函数 + 装饰器，无需手动同步三处。
 """
 import json
 import os
@@ -19,6 +19,73 @@ def _get_data_dir():
     return os.environ.get("ARKNIGHTS_DATA_DIR", DATA_DIR)
 
 
+# === 工具注册表 ===
+
+_tool_registry: list[tuple] = []
+
+
+def tool(description: str, param_descriptions: dict[str, str], required: list[str] | None = None, *, name: str | None = None):
+    """装饰器：注册函数为 Agent 工具，同时记录 LLM function calling 所需的元数据。
+
+    参数:
+        description: 工具描述（供 LLM 阅读）
+        param_descriptions: 参数名 → 参数描述
+        required: 必填参数名列表
+        name: LLM 可见的工具名（默认使用函数名）。用于函数名与 LLM 名不一致的情况。
+
+    使用方式:
+        @tool("搜索 Wiki 页面", {"query": "搜索关键词"}, required=["query"])
+        def search_wiki(query: str, category: str | None = None) -> str:
+            ...
+    """
+    def decorator(func):
+        _tool_registry.append((func, description, param_descriptions, required or [], name or func.__name__))
+        return func
+    return decorator
+
+
+def _build_param_schema(func, param_descriptions: dict[str, str]) -> dict:
+    """从函数类型注解和参数描述构建 JSON Schema properties"""
+    import typing
+    hints = typing.get_type_hints(func)
+    properties = {}
+    for name, desc in param_descriptions.items():
+        hint = hints.get(name)
+        if hint is int:
+            properties[name] = {"type": "integer", "description": desc}
+        else:
+            properties[name] = {"type": "string", "description": desc}
+    return properties
+
+
+def _build_tool_definitions() -> list[dict]:
+    """从注册表自动生成 LangGraph function calling 工具定义"""
+    definitions = []
+    for func, description, param_descriptions, required, tool_name in _tool_registry:
+        properties = _build_param_schema(func, param_descriptions)
+        definitions.append({
+            "type": "function",
+            "function": {
+                "name": tool_name,
+                "description": description,
+                "parameters": {
+                    "type": "object",
+                    "properties": properties,
+                    "required": required,
+                },
+            },
+        })
+    return definitions
+
+
+def _build_tool_executors() -> dict:
+    """从注册表自动生成 tool name → executor 映射"""
+    return {tool_name: func for func, _, _, _, tool_name in _tool_registry}
+
+
+@tool("全文搜索 Wiki 页面。用于查找角色、概念、阵营、地点的名称或相关描述。",
+      {"query": "搜索关键词（实体名或描述）", "category": "限定类别: concept/faction/location/character，不传则搜索全部"},
+      required=["query"])
 def search_wiki(query: str, category: str | None = None) -> str:
     """全文搜索 Wiki 页面（概念/阵营/地点/角色）。"""
     store = WikiStore(data_dir=_get_data_dir())
@@ -28,10 +95,13 @@ def search_wiki(query: str, category: str | None = None) -> str:
     lines = [f"搜索 '{query}' 找到 {len(results)} 个结果:"]
     for i, r in enumerate(results, 1):
         lines.append(f"\n[{i}] [{r['entity_type']}] {r['name']} ({r['match_type']})")
-        lines.append(r["text"][:800])
+        lines.append(r["text"][:2000])
     return "\n".join(lines)
 
 
+@tool("获取实体完整 Wiki 页面。当发现关键实体需要深入了解时使用。",
+      {"name": "实体名称", "entity_type": "实体类型: concept/faction/location/character"},
+      required=["name", "entity_type"])
 def get_entity_page(name: str, entity_type: str) -> str:
     """获取实体完整 Wiki 页面。"""
     store = WikiStore(data_dir=_get_data_dir())
@@ -41,6 +111,8 @@ def get_entity_page(name: str, entity_type: str) -> str:
     return page["text"]
 
 
+@tool("搜索剧情事件。按参与者、事件类型或章节筛选。",
+      {"entity": "参与者名称（可选）", "event_type": "事件类型（可选）", "chapter": "章节名称（可选）"})
 def search_events(
     entity: str | None = None,
     event_type: str | None = None,
@@ -60,10 +132,13 @@ def search_events(
         return f"未找到匹配的事件 ({', '.join(parts)})。"
     lines = [f"找到 {len(results)} 个事件:"]
     for i, r in enumerate(results, 1):
-        lines.append(f"\n[{i}] {r['text'][:500]}")
+        lines.append(f"\n[{i}] {r['text'][:1000]}")
     return "\n".join(lines)
 
 
+@tool("全文搜索原始剧情对话文本。适合查找 Wiki 和 Events 未覆盖的具体对话。",
+      {"query": "搜索关键词", "chapter": "限定章节（可选）"},
+      required=["query"])
 def search_dialogue(query: str, chapter: str | None = None) -> str:
     """全文搜索原始剧情对话。"""
     store = DialogueStore(data_dir=_get_data_dir())
@@ -74,10 +149,13 @@ def search_dialogue(query: str, chapter: str | None = None) -> str:
     for i, r in enumerate(results, 1):
         source = f"[{r.get('chapter', '')}/{r.get('node_id', '')}]"
         lines.append(f"\n[{i}] {source}")
-        lines.append(r["text"][:500])
+        lines.append(r["text"][:1000])
     return "\n".join(lines)
 
 
+@tool("搜索泰拉历史时间线。用于时间/因果关系问题。",
+      {"query": "搜索关键词"},
+      required=["query"])
 def search_timeline(query: str) -> str:
     """搜索泰拉历史时间线。"""
     store = TimelineStore(data_dir=_get_data_dir())
@@ -90,6 +168,9 @@ def search_timeline(query: str) -> str:
     return "\n".join(lines)
 
 
+@tool("获取指定章节的叙事摘要。",
+      {"chapter": "章节名称"},
+      required=["chapter"])
 def get_chapter_summary(chapter: str) -> str:
     """获取指定章节的叙事摘要。"""
     store = EventStore(data_dir=_get_data_dir())
@@ -99,6 +180,10 @@ def get_chapter_summary(chapter: str) -> str:
     return f"[{chapter}] 章节摘要:\n{result['text']}"
 
 
+@tool("FAISS 语义搜索。处理描述性/模糊查询，也能查到精确实体名匹配不到的相关内容。",
+      {"query": "搜索查询", "top_k": "返回结果数，默认10"},
+      required=["query"],
+      name="semantic_search")
 def semantic_search_tool(query: str, top_k: int = 10) -> str:
     """FAISS 语义搜索 -- 处理描述性/模糊查询。"""
     index_dir = os.path.join(_get_data_dir(), "index")
@@ -117,10 +202,13 @@ def semantic_search_tool(query: str, top_k: int = 10) -> str:
     lines = [f"语义搜索 '{query}' 找到 {len(results)} 个结果:"]
     for i, r in enumerate(results, 1):
         lines.append(f"\n[{i}] [{r['entity_type']}] {r['name']} (score: {r['score']:.3f})")
-        lines.append(r["text"][:400])
+        lines.append(r["text"][:800])
     return "\n".join(lines)
 
 
+@tool("查找实体在预构建索引中的关联实体、相关章节。用于确定检索方向和发现相关实体。",
+      {"entity_name": "实体名称"},
+      required=["entity_name"])
 def lookup_entity_index(entity_name: str) -> str:
     """查找实体在预构建索引中的关联实体和相关章节。用于确定检索范围和发现相关实体。"""
     from arknights_wiki.agent.retrieval import EntityIndexStore
@@ -148,143 +236,7 @@ def lookup_entity_index(entity_name: str) -> str:
     return "\n".join(lines)
 
 
-# LangGraph function calling 工具定义
-TOOL_DEFINITIONS = [
-    {
-        "type": "function",
-        "function": {
-            "name": "search_wiki",
-            "description": "全文搜索 Wiki 页面。用于查找角色、概念、阵营、地点的名称或相关描述。",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "query": {"type": "string", "description": "搜索关键词（实体名或描述）"},
-                    "category": {
-                        "type": "string",
-                        "enum": ["concept", "faction", "location", "character"],
-                        "description": "限定类别，不传则搜索全部",
-                    },
-                },
-                "required": ["query"],
-            },
-        },
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "get_entity_page",
-            "description": "获取实体完整 Wiki 页面。当发现关键实体需要深入了解时使用。",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "name": {"type": "string", "description": "实体名称"},
-                    "entity_type": {
-                        "type": "string",
-                        "enum": ["concept", "faction", "location", "character"],
-                        "description": "实体类型",
-                    },
-                },
-                "required": ["name", "entity_type"],
-            },
-        },
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "search_events",
-            "description": "搜索剧情事件。按参与者、事件类型或章节筛选。",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "entity": {"type": "string", "description": "参与者名称（可选）"},
-                    "event_type": {"type": "string", "description": "事件类型（可选）"},
-                    "chapter": {"type": "string", "description": "章节名称（可选）"},
-                },
-            },
-        },
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "search_dialogue",
-            "description": "全文搜索原始剧情对话文本。适合查找 Wiki 和 Events 未覆盖的具体对话。",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "query": {"type": "string", "description": "搜索关键词"},
-                    "chapter": {"type": "string", "description": "限定章节（可选）"},
-                },
-                "required": ["query"],
-            },
-        },
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "search_timeline",
-            "description": "搜索泰拉历史时间线。用于时间/因果关系问题。",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "query": {"type": "string", "description": "搜索关键词"},
-                },
-                "required": ["query"],
-            },
-        },
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "get_chapter_summary",
-            "description": "获取指定章节的叙事摘要。",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "chapter": {"type": "string", "description": "章节名称"},
-                },
-                "required": ["chapter"],
-            },
-        },
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "semantic_search",
-            "description": "FAISS 语义搜索。处理描述性/模糊查询（如'那个整合运动的女领袖'），也能查到精确实体名匹配不到的相关内容。",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "query": {"type": "string", "description": "搜索查询"},
-                    "top_k": {"type": "integer", "description": "返回结果数，默认10"},
-                },
-                "required": ["query"],
-            },
-        },
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "lookup_entity_index",
-            "description": "查找实体在预构建索引中的关联实体、相关章节。用于确定检索方向和发现相关实体。",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "entity_name": {"type": "string", "description": "实体名称"},
-                },
-                "required": ["entity_name"],
-            },
-        },
-    },
-]
+# === 自动生成: 工具定义 + 执行器映射（来源: @tool 装饰器注册表） ===
 
-# tool name -> executor mapping
-TOOL_EXECUTORS = {
-    "search_wiki": search_wiki,
-    "get_entity_page": get_entity_page,
-    "search_events": search_events,
-    "search_dialogue": search_dialogue,
-    "search_timeline": search_timeline,
-    "get_chapter_summary": get_chapter_summary,
-    "semantic_search": semantic_search_tool,
-    "lookup_entity_index": lookup_entity_index,
-}
+TOOL_DEFINITIONS = _build_tool_definitions()
+TOOL_EXECUTORS = _build_tool_executors()

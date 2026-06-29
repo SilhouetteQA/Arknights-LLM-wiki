@@ -18,7 +18,7 @@ MAX_ITERATIONS = 8
 
 def call_model(state: AgentState) -> AgentState:
     """调用 LLM（带 tool 定义），决定下一步: tool_call 或 final answer"""
-    from arknights_wiki.extraction.llm_client import create_client
+    from arknights_wiki.extraction.llm_client import chat_completion
 
     question = state["question"]
     iteration = state.get("iteration", 0)
@@ -32,21 +32,15 @@ def call_model(state: AgentState) -> AgentState:
         if state["messages"][0].get("role") != "system":
             state["messages"].insert(0, {"role": "system", "content": AGENT_SYSTEM_PROMPT})
 
-    client = create_client()
-    response = client.chat.completions.create(
-        model="deepseek-chat",
+    content, assistant_message = chat_completion(
         messages=state["messages"],
-        tools=TOOL_DEFINITIONS,
         temperature=0.1,
-        max_tokens=8192,
+        tools=TOOL_DEFINITIONS,
     )
 
-    choice = response.choices[0]
-    assistant_message = choice.message
-
     new_message = {"role": "assistant"}
-    if assistant_message.content:
-        new_message["content"] = assistant_message.content
+    if content:
+        new_message["content"] = content
     if assistant_message.tool_calls:
         new_message["tool_calls"] = [
             {
@@ -88,7 +82,7 @@ def tool_node(state: AgentState) -> AgentState:
         collected_docs.append({
             "tool": func_name,
             "args": func_args,
-            "result": result_text[:500],
+            "result": result_text[:1000],
         })
 
         state["messages"] = state["messages"] + [
@@ -106,35 +100,32 @@ def tool_node(state: AgentState) -> AgentState:
 
 def synthesize_node(state: AgentState) -> AgentState:
     """综合所有证据，生成最终回答"""
-    from arknights_wiki.extraction.llm_client import create_client
+    from arknights_wiki.extraction.llm_client import chat_completion
 
     question = state["question"]
     collected_docs = state.get("collected_docs", [])
 
     evidence_parts = []
     for i, doc in enumerate(collected_docs, 1):
-        evidence_parts.append(f"[来源{i}] 工具: {doc['tool']}, 参数: {doc['args']}")
+        evidence_parts.append(f"--- 资料 {i}: {doc['tool']} ---")
+        evidence_parts.append(f"查询参数: {doc['args']}")
         evidence_parts.append(doc["result"])
         evidence_parts.append("")
 
     evidence_text = "\n".join(evidence_parts) if evidence_parts else "无证据收集到。"
 
     if not collected_docs:
-        answer = "抱歉，我目前掌握的剧情资料里还没有这部分内容。你可以换个方式问我，或者问点别的。"
+        answer = "当前检索到的剧情资料中未找到相关内容，无法给出可靠回答。"
     else:
         prompt = SYNTHESIS_PROMPT.format(evidence=evidence_text, question=question)
         try:
-            client = create_client()
-            response = client.chat.completions.create(
-                model="deepseek-chat",
+            answer, _ = chat_completion(
                 messages=[
                     {"role": "system", "content": AGENT_SYSTEM_PROMPT},
                     {"role": "user", "content": prompt},
                 ],
                 temperature=0.3,
-                max_tokens=8192,
             )
-            answer = response.choices[0].message.content or ""
         except Exception as e:
             answer = "抱歉，回答生成出了点问题。请稍后再试。"
 

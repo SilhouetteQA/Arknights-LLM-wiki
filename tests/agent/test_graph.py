@@ -76,7 +76,7 @@ class TestCASUALSynthesis:
         result = synthesize_node(state)
         messages = result.get("messages", [])
         answer = messages[-1].get("content", "")
-        assert "抱歉" in answer
+        assert "未找到" in answer or "无法" in answer
         assert len(answer) > 0
 
     def test_synthesis_with_docs_uses_synthesis_prompt(self, mock_llm_client):

@@ -71,10 +71,11 @@ class TestComplexity:
         assert result["complexity"] == "complex"
 
     def test_complex_concept_definition(self):
+        """concept_definition 不再强制 complex，单实体走 simple"""
         result = classify_complexity_local(
             "巨兽是什么", ["巨兽"], "concept_definition", "cross_arc"
         )
-        assert result["complexity"] == "complex"
+        assert result["complexity"] == "simple"
 
     def test_complex_list_enumeration(self):
         result = classify_complexity_local(
@@ -89,8 +90,9 @@ class TestComplexity:
         assert result["complexity"] == "complex"
 
     def test_complex_multi_entity(self):
+        """>3 个实体才触发 multi-entity complex"""
         result = classify_complexity_local(
-            "阿米娅和陈的关系", ["阿米娅", "陈"], "character_profile", "cross_arc"
+            "整合运动、罗德岛、龙门、乌萨斯的关系", ["整合运动", "罗德岛", "龙门", "乌萨斯"], "chapter_summary", "cross_arc"
         )
         assert result["complexity"] == "complex"
 
@@ -104,10 +106,11 @@ class TestComplexity:
 class TestRecognizeIntentAndRewrite:
     """意图识别+问题改写合并测试"""
     def test_concept_definition_local(self, temp_data_dir):
+        """角色档案类问题走本地路径（干员名可通过 operators 匹配）"""
         with patch("arknights_wiki.agent.router.DATA_DIR", temp_data_dir):
-            result = recognize_intent_and_rewrite("源石是什么")
-            assert result["intent"] == "concept_definition"
-            assert "源石" in result["canonical_entities"]
+            result = recognize_intent_and_rewrite("阿米娅是什么样的人", use_llm=False)
+            assert result["intent"] == "character_profile"
+            assert "阿米娅" in result["canonical_entities"]
             assert result["source"] == "local"
 
     def test_chapter_summary_local(self, temp_data_dir):
