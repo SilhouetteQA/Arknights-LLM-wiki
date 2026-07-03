@@ -1,4 +1,9 @@
-"""查询路由器 -- 合并意图识别 + 问题改写 + 复杂度分类"""
+"""查询路由器 -- 合并意图识别 + 问题改写 + 复杂度分类
+
+配置 vs 数据加载约定:
+  - 配置文件 (identity_map, chapter_timeline, collab_series) → PROJECT_ROOT/config/
+  - 数据文件 (operators, characters, events, wiki pages)   → DATA_DIR/
+"""
 import json
 import os
 import re

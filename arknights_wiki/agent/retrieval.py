@@ -21,10 +21,26 @@ class SearchResult(TypedDict, total=False):
 
 
 class _BaseStore:
-    """Store 基类——统一 data_dir 初始化模式，减少子类样板代码。"""
+    """Store 基类——统一 data_dir 初始化模式 + 惰性加载缓存。
+
+    子类可重写 _do_load() 实现一次性全量加载，通过 _ensure_loaded() 触发。
+    需要缓存的子类在 __init__ 中初始化 self._cache = None，并在 _do_load() 中填充。
+    """
 
     def __init__(self, data_dir: str | None = None):
         self.data_dir = data_dir or DATA_DIR
+        self._loaded = False
+
+    def _ensure_loaded(self):
+        """保证数据已加载（首次调用触发 _do_load，后续调用直接返回）"""
+        if self._loaded:
+            return
+        self._do_load()
+        self._loaded = True
+
+    def _do_load(self):
+        """子类重写: 一次性加载全部数据到内存缓存。默认无操作。"""
+        pass
 
 
 class WikiStore(_BaseStore):
@@ -129,13 +145,11 @@ class EventStore(_BaseStore):
     def __init__(self, data_dir: str | None = None):
         super().__init__(data_dir)
         self._events_dir = os.path.join(self.data_dir, "extractions", "v1_events")
-        self._cache: list[tuple] | None = None
+        self._cache: list[tuple] = []
         self._chapter_data: dict[str, dict] = {}
 
-    def _ensure_loaded(self):
-        """惰性加载: 首次调用时遍历全部 JSON 文件并缓存"""
-        if self._cache is not None:
-            return
+    def _do_load(self):
+        """一次性遍历全部 JSON 文件并缓存事件 + 章节数据"""
         self._cache = []
         for root, dirs, files in os.walk(self._events_dir):
             for f in files:
@@ -205,12 +219,10 @@ class DialogueStore(_BaseStore):
     def __init__(self, data_dir: str | None = None):
         super().__init__(data_dir)
         self._stories_dir = os.path.join(self.data_dir, "stories")
-        self._cache: list[tuple] | None = None
+        self._cache: list[tuple] = []
 
-    def _ensure_loaded(self):
-        """惰性加载: 首次调用时遍历全部对话 JSON 并缓存 (fp, data, chapter, node_id, lines)"""
-        if self._cache is not None:
-            return
+    def _do_load(self):
+        """一次性遍历全部对话 JSON 并缓存 (fp, data, chapter, node_id, lines)"""
         self._cache = []
         for root, dirs, files in os.walk(self._stories_dir):
             for f in files:
