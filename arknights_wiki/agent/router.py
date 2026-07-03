@@ -5,6 +5,12 @@ import re
 
 from arknights_wiki.config import DATA_DIR, PROJECT_ROOT
 
+# 有效意图类型（与 prompts.py INTENT_REWRITE_PROMPT 保持同步）
+VALID_INTENTS = {
+    "concept_definition", "chapter_summary", "character_profile",
+    "causal_reasoning", "comparison", "fact_lookup", "list_enumeration",
+}
+
 
 def _load_identity_map(data_dir: str | None = None) -> dict:
     """加载身份映射表（别名 -> 规范名）"""
@@ -265,14 +271,18 @@ def recognize_intent_and_rewrite(question: str, use_llm: bool = True) -> dict:
     entities = _extract_entities_local(question)
     clean_entities = [e for e in entities if not e.startswith("__")]
 
-    # 本地规则命中：意图明确且提取到实体
+    # 本地规则命中：意图明确且提取到实体，完全使用本地结果
     if intent != "unknown" and len(clean_entities) > 0:
         return _make_intent_result(intent, question, clean_entities)
 
-    # LLM 兜底
+    # LLM 兜底（意图未知 或 意图已知但实体为空时，让 LLM 补充实体）
     if use_llm:
         llm_result = _llm_intent_rewrite(question)
         if llm_result is not None:
+            # 校验 LLM 返回的 intent 在有效范围内，防止幻觉出无效意图
+            if llm_result.get("intent") not in VALID_INTENTS:
+                # 本地意图已知时保留本地意图；否则退为 fact_lookup
+                llm_result["intent"] = intent if intent != "unknown" else "fact_lookup"
             return llm_result
 
     # 最终兜底

@@ -1,7 +1,6 @@
 """FastAPI Web 服务 -- SSE 流式对话 API"""
 import json
 import os
-from datetime import datetime
 
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
@@ -14,9 +13,6 @@ from arknights_wiki.config import DATA_DIR
 from arknights_wiki.agent.router import route_query
 from arknights_wiki.agent.simple_search import simple_search
 from arknights_wiki.agent.state import AgentState
-
-
-QA_LOG_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "output")
 
 
 class ChatRequest(BaseModel):
@@ -141,44 +137,7 @@ async def chat(req: ChatRequest):
     else:
         event_generator = _agent_search_events(question, route)
 
-    return EventSourceResponse(_log_and_stream(question, route, event_generator))
-
-
-async def _log_and_stream(question: str, route: dict, event_generator):
-    """包装 SSE 流，捕获完整回答后写入 JSONL 日志"""
-    answer_chunks = []
-    sources = []
-    yield_msg = None
-    try:
-        async for msg in event_generator:
-            yield msg
-            event = msg.get("event", "")
-            if event == "token":
-                data = json.loads(msg["data"])
-                answer_chunks.append(data.get("text", ""))
-            elif event == "sources":
-                sources = json.loads(msg["data"])
-            elif event == "done":
-                yield_msg = msg
-    except Exception:
-        pass
-
-    # 写入日志
-    full_answer = "".join(answer_chunks)
-    log_entry = {
-        "timestamp": datetime.now().isoformat(),
-        "question": question,
-        "route_complexity": route.get("complexity", ""),
-        "route_intent": route.get("question_type", ""),
-        "route_entities": route.get("entities", []),
-        "route_reason": route.get("reason", ""),
-        "answer": full_answer,
-        "sources": sources,
-    }
-    os.makedirs(QA_LOG_DIR, exist_ok=True)
-    log_path = os.path.join(QA_LOG_DIR, "qa_log.jsonl")
-    with open(log_path, "a", encoding="utf-8") as f:
-        f.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
+    return EventSourceResponse(event_generator)
 
 
 @app.get("/", response_class=HTMLResponse)
