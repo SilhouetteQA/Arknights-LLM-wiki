@@ -8,6 +8,7 @@ Layer 3: Dialogue 兜底
 import json
 import os
 
+from arknights_wiki.agent import wrap_user_input
 from arknights_wiki.agent.retrieval import (
     WikiStore,
     EventStore,
@@ -318,7 +319,7 @@ def build_answer_prompt(question: str, sources: list[dict]) -> str:
         source_text += f"{header}\n{s.get('text', '')[:2000]}\n\n"
 
     return f"""## 玩家问题
-{question}
+{wrap_user_input(question)}
 
 ## 参考资料
 {source_text}

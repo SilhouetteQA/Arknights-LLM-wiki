@@ -3,12 +3,13 @@ import asyncio
 import json
 import os
 import queue
+import time
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from sse_starlette.sse import EventSourceResponse
 
 from arknights_wiki.config import DATA_DIR
@@ -18,8 +19,28 @@ from arknights_wiki.agent.state import AgentState
 
 
 class ChatRequest(BaseModel):
-    question: str
+    question: str = Field(..., min_length=1, max_length=2000)
     history: list[dict] | None = None
+
+
+# 简易内存速率限制器: 每个 IP 每分钟最多 30 次请求
+_rate_limit_store: dict[str, list[float]] = {}
+_RATE_LIMIT_MAX = 30
+_RATE_LIMIT_WINDOW = 60.0
+
+
+def _check_rate_limit(client_ip: str) -> bool:
+    """检查 IP 是否超过速率限制，未超过返回 True"""
+    now = time.time()
+    timestamps = _rate_limit_store.get(client_ip, [])
+    # 清理过期记录
+    timestamps = [t for t in timestamps if now - t < _RATE_LIMIT_WINDOW]
+    if len(timestamps) >= _RATE_LIMIT_MAX:
+        _rate_limit_store[client_ip] = timestamps
+        return False
+    timestamps.append(now)
+    _rate_limit_store[client_ip] = timestamps
+    return True
 
 
 app = FastAPI(title="明日方舟剧情 Wiki Agent", version="0.1.0")
@@ -170,10 +191,15 @@ def _split_text(text: str, chunk_size: int = 50) -> list[str]:
 
 
 @app.post("/chat")
-async def chat(req: ChatRequest):
+async def chat(req: ChatRequest, request: Request):
     question = req.question.strip()
     if not question:
         raise HTTPException(status_code=400, detail="问题不能为空")
+
+    # 速率限制检查
+    client_ip = request.client.host if request.client else "unknown"
+    if not _check_rate_limit(client_ip):
+        raise HTTPException(status_code=429, detail="请求过于频繁，请稍后再试")
 
     route = route_query(question)
 

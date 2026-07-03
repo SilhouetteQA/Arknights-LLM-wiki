@@ -17,7 +17,7 @@ def _load_identity_map(data_dir: str | None = None) -> dict:
 
     identity_map.json 结构: {_description, _source, _updated, mappings: {alias: canonical, ...}}
     """
-    base = data_dir if data_dir is not None else DATA_DIR
+    base = data_dir if data_dir is not None else PROJECT_ROOT
     fp = os.path.join(base, "config", "identity_map.json")
     if os.path.exists(fp):
         with open(fp, "r", encoding="utf-8") as f:
@@ -238,13 +238,14 @@ def _llm_intent_rewrite(question: str) -> dict | None:
     try:
         from arknights_wiki.extraction.llm_client import create_client
         from arknights_wiki.agent.prompts import INTENT_REWRITE_PROMPT
+        from arknights_wiki.agent import wrap_user_input
 
         client = create_client()
         response = client.chat.completions.create(
             model="deepseek-chat",
             messages=[
                 {"role": "system", "content": INTENT_REWRITE_PROMPT},
-                {"role": "user", "content": question},
+                {"role": "user", "content": wrap_user_input(question)},
             ],
             temperature=0.1,
             max_tokens=400,

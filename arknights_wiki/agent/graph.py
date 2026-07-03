@@ -19,6 +19,7 @@ MAX_ITERATIONS = 8
 def call_model(state: AgentState) -> AgentState:
     """调用 LLM（带 tool 定义），决定下一步: tool_call 或 final answer"""
     from arknights_wiki.extraction.llm_client import chat_completion
+    from arknights_wiki.agent import wrap_user_input
 
     question = state["question"]
     iteration = state.get("iteration", 0)
@@ -26,7 +27,7 @@ def call_model(state: AgentState) -> AgentState:
     if not state.get("messages"):
         state["messages"] = [
             {"role": "system", "content": AGENT_SYSTEM_PROMPT},
-            {"role": "user", "content": question},
+            {"role": "user", "content": wrap_user_input(question)},
         ]
     else:
         if state["messages"][0].get("role") != "system":
@@ -101,6 +102,7 @@ def tool_node(state: AgentState) -> AgentState:
 def synthesize_node(state: AgentState) -> AgentState:
     """综合所有证据，生成最终回答"""
     from arknights_wiki.extraction.llm_client import chat_completion
+    from arknights_wiki.agent import wrap_user_input
 
     question = state["question"]
     collected_docs = state.get("collected_docs", [])
@@ -117,7 +119,7 @@ def synthesize_node(state: AgentState) -> AgentState:
     if not collected_docs:
         answer = "当前检索到的剧情资料中未找到相关内容，无法给出可靠回答。"
     else:
-        prompt = SYNTHESIS_PROMPT.format(evidence=evidence_text, question=question)
+        prompt = SYNTHESIS_PROMPT.format(evidence=evidence_text, question=wrap_user_input(question))
         try:
             answer, _ = chat_completion(
                 messages=[

@@ -1,4 +1,5 @@
 """Agent 和 Simple Search 的 LLM 提示词模板"""
+from arknights_wiki.agent import _INJECTION_DEFENSE
 
 # === 共享回答规则块（消除 QA_SYSTEM_PROMPT / AGENT_SYSTEM_PROMPT / SYNTHESIS_PROMPT / build_answer_prompt 四处重复） ===
 
@@ -75,11 +76,15 @@ INTENT_REWRITE_PROMPT = """你是《明日方舟》玩家社群助手。分析�
 }
 
 如果意图无法确定，intent 设为 "unknown"。
-如果问题中有无法映射为规范实体的表达，在 disambiguation_note 中说明。"""
+如果问题中有无法映射为规范实体的表达，在 disambiguation_note 中说明。
+
+{_INJECTION_DEFENSE}"""
 
 # === 百科风格回答指南 (Simple Search) ===
 
 QA_SYSTEM_PROMPT = f"""你是《明日方舟》剧情百科的编纂者。用准确、清晰、逻辑严密的方式回答玩家关于剧情和设定的问题。
+
+{_INJECTION_DEFENSE}
 
 {_SOURCE_FIDELITY_RULES}
 {_SOURCE_FIDELITY_EXTENDED}
@@ -100,6 +105,8 @@ QA_SYSTEM_PROMPT = f"""你是《明日方舟》剧情百科的编纂者。用准
 # === 百科风格回答指南 (LangGraph Agent) ===
 
 AGENT_SYSTEM_PROMPT = f"""你是《明日方舟》剧情百科的编纂者。逐步检索信息，用准确、清晰、逻辑严密的方式回答玩家问题。
+
+{_INJECTION_DEFENSE}
 
 {_SOURCE_FIDELITY_RULES}
 - 对于具体机制/过程，如果检索结果只说"X发生了"而未描述具体方式，就只说"X发生了"，不要自行补充"通过Y方式""经过Z步骤"等细节
