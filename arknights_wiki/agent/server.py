@@ -1,6 +1,8 @@
 """FastAPI Web 服务 -- SSE 流式对话 API"""
+import asyncio
 import json
 import os
+import queue
 
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
@@ -33,14 +35,45 @@ async def health():
 
 
 async def _simple_search_events(question: str, route: dict):
-    """Simple search SSE 事件流"""
-    yield {"event": "route", "data": json.dumps(route, ensure_ascii=False)}
+    """Simple search SSE 事件流
 
-    result = simple_search(question, route)
+    通过 queue.Queue 让检索线程推送进度事件，主协程实时 yield 到前端。
+    """
+    yield {"event": "route", "data": json.dumps(route, ensure_ascii=False)}
+    await asyncio.sleep(0)  # 强制刷新
+
+    progress_queue = queue.Queue()
+
+    def on_progress(tool: str, summary: str):
+        progress_queue.put({"tool": tool, "summary": summary})
+
+    # 在独立线程中执行同步阻塞的检索+LLM调用
+    loop = asyncio.get_event_loop()
+    search_future = loop.run_in_executor(
+        None, simple_search, question, route, on_progress
+    )
+
+    # 检索进行中持续从队列取进度事件发送到前端
+    while not search_future.done():
+        try:
+            evt = progress_queue.get_nowait()
+            yield {"event": "step", "data": json.dumps(evt, ensure_ascii=False)}
+            await asyncio.sleep(0)
+        except queue.Empty:
+            await asyncio.sleep(0.05)
+
+    # 排空残留进度事件
+    while not progress_queue.empty():
+        evt = progress_queue.get_nowait()
+        yield {"event": "step", "data": json.dumps(evt, ensure_ascii=False)}
+        await asyncio.sleep(0)
+
+    result = search_future.result()
     answer = result.get("answer", "")
 
     for chunk in _split_text(answer):
         yield {"event": "token", "data": json.dumps({"text": chunk}, ensure_ascii=False)}
+        await asyncio.sleep(0.015)  # 逐字流式效果
 
     yield {
         "event": "sources",
@@ -50,10 +83,15 @@ async def _simple_search_events(question: str, route: dict):
 
 
 async def _agent_search_events(question: str, route: dict):
-    """Complex (LangGraph Agent) SSE 事件流"""
+    """Complex (LangGraph Agent) SSE 事件流
+
+    每个工具调用后立即 yield step 事件 + await asyncio.sleep(0) 刷新，
+    确保前端检索追踪面板实时更新。
+    """
     from arknights_wiki.agent.graph import build_agent_graph
 
     yield {"event": "route", "data": json.dumps(route, ensure_ascii=False)}
+    await asyncio.sleep(0)  # 强制刷新
 
     graph = build_agent_graph()
     initial_state: AgentState = {
@@ -74,14 +112,20 @@ async def _agent_search_events(question: str, route: dict):
             docs = node_state.get("collected_docs", [])
             if docs:
                 last_doc = docs[-1]
+                tool_name = last_doc.get("tool", "")
+                tool_args = last_doc.get("args", {})
+                # 构造可读的工具调用描述
+                query = tool_args.get("query", "") or tool_args.get("entity_name", "") or tool_args.get("chapter", "") or tool_args.get("name", "")
+                label = f"{tool_name}({query})" if query else tool_name
                 yield {
                     "event": "step",
                     "data": json.dumps({
                         "step": len(docs),
-                        "tool": last_doc.get("tool", ""),
+                        "tool": label,
                         "summary": last_doc.get("result", "")[:200],
                     }, ensure_ascii=False),
                 }
+                await asyncio.sleep(0)  # 每个工具调用后立即刷新到前端
         elif node_name == "synthesize":
             messages = node_state.get("messages", [])
             if messages:
@@ -89,6 +133,7 @@ async def _agent_search_events(question: str, route: dict):
                 answer = final_message.get("content", "")
                 for chunk in _split_text(answer):
                     yield {"event": "token", "data": json.dumps({"text": chunk}, ensure_ascii=False)}
+                    await asyncio.sleep(0.015)  # 逐字流式效果
 
     sources = []
     for i, doc in enumerate(final_state.get("collected_docs", []), 1):

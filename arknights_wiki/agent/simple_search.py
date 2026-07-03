@@ -5,6 +5,7 @@ Layer 1: Events 结构化查询
 Layer 2: FAISS 语义搜索
 Layer 3: Dialogue 兜底
 """
+import json
 import os
 
 from arknights_wiki.agent.retrieval import (
@@ -14,13 +15,84 @@ from arknights_wiki.agent.retrieval import (
     TimelineStore,
 )
 from arknights_wiki.agent.prompts import QA_SYSTEM_PROMPT, _SOURCE_FIDELITY_RULES, _LOGICAL_ORGANIZATION_SYNTHESIS
-from arknights_wiki.config import DATA_DIR
+from arknights_wiki.config import DATA_DIR, PROJECT_ROOT
 from arknights_wiki.extraction.llm_client import create_client
 
 
 def _get_data_dir():
     """获取数据目录路径"""
     return os.environ.get("ARKNIGHTS_DATA_DIR", DATA_DIR)
+
+
+def _load_chapter_timeline_order() -> dict[str, int]:
+    """加载章节时间线排序 {章节名: 序号}"""
+    fp = os.path.join(PROJECT_ROOT, "config", "chapter_timeline.json")
+    if os.path.exists(fp):
+        with open(fp, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            chapters = data.get("chapters", [])
+            return {ch: i for i, ch in enumerate(chapters)}
+    return {}
+
+
+def _get_character_chapters(entity: str, data_dir: str) -> list[str]:
+    """从实体索引获取角色所有出场章节，按时间线排序"""
+    entity_map_path = os.path.join(data_dir, "entity_source_map.json")
+    if not os.path.exists(entity_map_path):
+        return []
+    try:
+        with open(entity_map_path, "r", encoding="utf-8") as f:
+            entity_map = json.load(f)
+    except Exception:
+        return []
+
+    if entity not in entity_map:
+        return []
+
+    pass1_files = entity_map[entity].get("source_files", {}).get("pass1_events", [])
+    chapters = [f[:-5] for f in pass1_files if f.endswith(".json")]  # 去 .json
+
+    # 按时间线排序
+    timeline = _load_chapter_timeline_order()
+    return sorted(chapters, key=lambda ch: timeline.get(ch, 999))
+
+
+def _sample_events_across_arc(
+    entity: str,
+    event_store: EventStore,
+    add,
+    data_dir: str,
+    chapter_entities: list[str],
+    question_type: str,
+):
+    """对角色查询，从实体索引获取所有出场章节，跨时间线均匀采样事件。
+
+    解决 limit=3 硬编码导致的角色剧情覆盖不全：
+    - 阿米娅 32 章只取 3 个事件 → 漏掉维多利亚、乌萨斯等关键时期
+    - 改为从角色全出场章节中均匀选 5 个代表性章节，每章取 2-3 个事件
+    """
+    if question_type != "character_profile":
+        return
+
+    chapters = _get_character_chapters(entity, data_dir)
+    if len(chapters) <= 3:
+        # 出场章节少，全取
+        for ch in chapters:
+            if ch not in chapter_entities:
+                for evt in event_store.search(entity=entity, chapter=ch, limit=2):
+                    add(evt)
+        return
+
+    # 均匀选取 5 个代表性章节：最早 → 1/4 → 中点 → 3/4 → 最新
+    n = len(chapters)
+    sample_indices = [0, max(1, n // 4), n // 2, min(n - 2, 3 * n // 4), n - 1]
+    sample_indices = sorted(set(sample_indices))  # 去重
+
+    for idx in sample_indices:
+        ch = chapters[idx]
+        if ch not in chapter_entities:
+            for evt in event_store.search(entity=entity, chapter=ch, limit=3):
+                add(evt)
 
 
 def _resolve_chapter_context(
@@ -53,6 +125,8 @@ def _collect_structured_sources(
     wiki_store: WikiStore,
     event_store: EventStore,
     add,
+    question_type: str = "",
+    data_dir: str = "",
 ):
     """Layer 1-4: 结构化检索——章节事件、实体页面、wiki 搜索、扩展提示词。
 
@@ -79,14 +153,21 @@ def _collect_structured_sources(
             for evt in event_store.search(entity=entity, chapter=ch, limit=5):
                 add(evt)
 
-        # 无章节上下文时才做全局事件搜索（且限制条数，留空间给章节事件）
+        # 无章节上下文
         if not chapter_entities:
-            for evt in event_store.search(entity=entity, limit=3):
-                add(evt)
+            if question_type == "character_profile":
+                # 角色查询：跨章均匀采样，覆盖完整角色弧线
+                _sample_events_across_arc(
+                    entity, event_store, add, data_dir, chapter_entities, question_type,
+                )
+            else:
+                # 概念/事实类查询：全局搜索但适度提高上限
+                for evt in event_store.search(entity=entity, limit=6):
+                    add(evt)
 
     # Layer 3: wiki 搜索（精确实体优先，少量条数）
     for entity in entities:
-        wiki_limit = 2 if chapter_entities else 3
+        wiki_limit = 2 if chapter_entities else 4
         for result in wiki_store.search(entity, limit=wiki_limit):
             add(result)
 
@@ -156,6 +237,7 @@ def search_and_collect(
     expansion_hints: list[str] | None = None,
     chapter: str | None = None,
     max_sources: int = 20,
+    progress_callback=None,
 ) -> list[dict]:
     """多层检索，根据意图类型调整检索策略。
 
@@ -163,6 +245,7 @@ def search_and_collect(
     1. 识别实体中的章节名，章节事件始终按 chapter 过滤
     2. expansion_hints 仅作 wiki 补充搜索，不影响事件/页面定位
     3. 角色+章节组合时，优先搜索该章内的事件
+    4. progress_callback(tool, summary) 用于向前端实时推送检索进度
     """
     data_dir = _get_data_dir()
     collected = []
@@ -180,9 +263,18 @@ def search_and_collect(
     event_store = EventStore(data_dir=data_dir)
 
     # 步骤 1: 分离章节/非章节实体
+    if progress_callback:
+        progress_callback("实体解析", f"正在解析 {len(entities)} 个实体...")
     chapter_entities, non_chapter_entities = _resolve_chapter_context(
         entities, event_store, add
     )
+    if progress_callback:
+        parts = []
+        if chapter_entities:
+            parts.append(f"章节: {', '.join(chapter_entities)}")
+        if non_chapter_entities:
+            parts.append(f"实体: {', '.join(non_chapter_entities)}")
+        progress_callback("解析结果", " | ".join(parts) if parts else "未识别到章节或实体")
 
     # 步骤 2: 结构化检索（事件 + 页面 + wiki）
     _collect_structured_sources(
@@ -193,9 +285,15 @@ def search_and_collect(
         wiki_store=wiki_store,
         event_store=event_store,
         add=add,
+        question_type=question_type,
+        data_dir=data_dir,
     )
+    if progress_callback:
+        progress_callback("结构化检索完成", f"已收集 {len(collected)} 条来源")
 
     # 步骤 3: 语义搜索兜底（FAISS + 对话 + 时间线）
+    if progress_callback:
+        progress_callback("语义搜索", "FAISS 向量检索中...")
     _collect_semantic_fallback(
         question=question,
         question_type=question_type,
@@ -205,6 +303,9 @@ def search_and_collect(
         collected=collected,
         add=add,
     )
+
+    if progress_callback:
+        progress_callback("检索完成", f"共收集 {min(len(collected), max_sources)} 条来源，开始生成回答...")
 
     return collected[:max_sources]
 
@@ -230,7 +331,7 @@ def build_answer_prompt(question: str, sources: list[dict]) -> str:
 - 说清楚为止，不限制字数"""
 
 
-def simple_search(question: str, route: dict) -> dict:
+def simple_search(question: str, route: dict, progress_callback=None) -> dict:
     """简单检索路径主函数"""
     entities = route.get("entities", [])
     expansion_hints = route.get("expansion_hints", [])
@@ -241,6 +342,7 @@ def simple_search(question: str, route: dict) -> dict:
         question=question,
         question_type=question_type,
         expansion_hints=expansion_hints,
+        progress_callback=progress_callback,
     )
 
     if not sources:
@@ -248,6 +350,9 @@ def simple_search(question: str, route: dict) -> dict:
             "answer": "未找到与问题相关的资料。请尝试更具体地描述问题。",
             "sources": [],
         }
+
+    if progress_callback:
+        progress_callback("生成回答", "LLM 正在整理答案...")
 
     user_prompt = build_answer_prompt(question, sources)
 

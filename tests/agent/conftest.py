@@ -167,9 +167,24 @@ def temp_data_dir():
                 ],
             }, f, ensure_ascii=False)
 
-        # operators.json 供实体提取使用
+        # operators.json 供实体提取使用（与真实数据格式一致）
         with open(os.path.join(tmpdir, "operators.json"), "w", encoding="utf-8") as f:
-            json.dump({"阿米娅": {}, "凯尔希": {}, "陈": {}}, f, ensure_ascii=False)
+            json.dump({
+                "fetched_at": "2026-01-01",
+                "total": 3,
+                "operators": [
+                    {"name_zh": "阿米娅"},
+                    {"name_zh": "凯尔希"},
+                    {"name_zh": "陈"},
+                ],
+            }, f, ensure_ascii=False)
+
+        # v2_characters 角色名（供实体提取 NPC 匹配）
+        os.makedirs(os.path.join(tmpdir, "extractions", "v2_characters"), exist_ok=True)
+        for name in ["阿米娅", "凯尔希", "陈", "塔露拉"]:
+            char_fp = os.path.join(tmpdir, "extractions", "v2_characters", f"{name}.json")
+            with open(char_fp, "w", encoding="utf-8") as f:
+                json.dump({"name": name, "power_level": "信息不足"}, f, ensure_ascii=False)
 
         with open(os.path.join(stories_dir, "main_01_01.json"), "w", encoding="utf-8") as f:
             json.dump({

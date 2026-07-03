@@ -13,29 +13,52 @@ VALID_INTENTS = {
 
 
 def _load_identity_map(data_dir: str | None = None) -> dict:
-    """加载身份映射表（别名 -> 规范名）"""
+    """加载身份映射表（别名 -> 规范名）
+
+    identity_map.json 结构: {_description, _source, _updated, mappings: {alias: canonical, ...}}
+    """
     base = data_dir if data_dir is not None else DATA_DIR
     fp = os.path.join(base, "config", "identity_map.json")
     if os.path.exists(fp):
         with open(fp, "r", encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+            return data.get("mappings", {})
     return {}
 
 
 def _load_operators(data_dir: str | None = None) -> dict:
-    """加载干员列表"""
+    """加载干员名称列表 {name_zh: True}
+
+    operators.json 结构: {fetched_at, source_list_url, total, operators: [{name_zh, ...}, ...]}
+    """
     base = data_dir if data_dir is not None else DATA_DIR
     fp = os.path.join(base, "operators.json")
     if os.path.exists(fp):
         with open(fp, "r", encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+            op_list = data.get("operators", [])
+            return {op["name_zh"]: True for op in op_list if isinstance(op, dict) and op.get("name_zh")}
     return {}
+
+
+def _load_character_names(data_dir: str | None = None) -> set[str]:
+    """从 v2_characters 文件名提取所有角色名（干员+NPC，~642 个）"""
+    base = data_dir if data_dir is not None else DATA_DIR
+    char_dir = os.path.join(base, "extractions", "v2_characters")
+    names = set()
+    if os.path.exists(char_dir):
+        for fname in os.listdir(char_dir):
+            if fname.endswith(".json"):
+                name = fname[:-5]  # 去掉 .json
+                if len(name) >= 2:
+                    names.add(name)
+    return names
 
 
 def _extract_entities_local(question: str, data_dir: str | None = None) -> list[str]:
     """从问题文本中提取实体名（纯本地，不调 LLM）
 
-    三层精确提取: identity_map → operators → chapter_timeline
+    四层精确提取: identity_map → operators → character_names → chapter_timeline
     不再扫描 WikiStore 做子串匹配（5213 实体噪声太大）。
     """
     entities = []
@@ -59,19 +82,25 @@ def _extract_entities_local(question: str, data_dir: str | None = None) -> list[
         if len(op_name) >= 2 and op_name in question and op_name not in entities:
             entities.append(op_name)
 
-    # 3. 章节/活动名（从 chapter_timeline.json，min 3 chars 防短名噪声）
+    # 3. v2_characters 角色名（干员+NPC，~642 个，min 2 chars）
+    char_names = _load_character_names(data_dir)
+    for name in char_names:
+        if len(name) >= 2 and name in question and name not in entities:
+            entities.append(name)
+
+    # 4. 章节/活动名（从 chapter_timeline.json，min 3 chars 防短名噪声）
     timeline = _load_chapter_timeline()
     for ch_name in timeline:
         if len(ch_name) >= 3 and ch_name in question and ch_name not in entities:
             entities.append(ch_name)
 
-    # 4. 「...」书名号活动名
+    # 5. 「...」书名号活动名
     event_match = re.findall(r'「([^」]+)」', question)
     for m in event_match:
         if m not in entities:
             entities.append(m)
 
-    # 5. 联动活动系列别名→目标章节
+    # 6. 联动活动系列别名→目标章节
     collab_series = _load_collab_series()
     for series_name, series_info in collab_series.items():
         for alias in series_info.get("aliases", []):

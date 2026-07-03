@@ -118,7 +118,12 @@ AGENT_SYSTEM_PROMPT = f"""你是《明日方舟》剧情百科的编纂者。逐
 ## 检索策略
 - 概念定义类问题：先 lookup_entity_index 确定实体类型和关联章，再 get_entity_page 获取核心定义
 - 剧情总结类问题：先 get_chapter_summary，再 search_events(chapter=具体章) 补细节。收集足够素材后，按时间线或因果链组织回答
-- 角色类问题：先 get_entity_page 获取角色页面，再 search_events 补关键事件，按性格→经历→关系→弧线的逻辑展开
+- **角色类问题（重要）**：
+  1. 先 lookup_entity_index 获取角色所有出场章节（source_files.pass1_events）
+  2. 按时间线排序，选取早期、中期、晚期各至少 1-2 个代表性章节
+  3. 对每个代表性章节执行 search_events(entity=角色名, chapter=该章)，获取该时期的关键事件
+  4. 角色页面（get_entity_page）提供概述，但事件细节分散在不同章节，必须跨章检索才能覆盖完整成长弧线
+  5. 至少检索 3 个不同时期的章节事件，确保覆盖角色的完整故事脉络
 - 多实体/跨章/世界观概念 → 先用 lookup_entity_index 获取索引，定向检索
 - 因果分析/时间线 → 必需 search_timeline
 - 发现关键实体立即用 get_entity_page 深入

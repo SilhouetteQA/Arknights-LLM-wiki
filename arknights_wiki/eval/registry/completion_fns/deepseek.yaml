@@ -1,2 +1,0 @@
-deepseek-chat:
-  class: arknights_wiki.eval.completion_fns:DeepSeekCompletionFn
