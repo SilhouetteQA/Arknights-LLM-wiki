@@ -699,3 +699,229 @@ scripts/build_agent_index.py (新建)
 2. 读本文件末尾 — 最新决策
 3. 读 output/sessions/2026-06-24-3.md — 完整会话记录
 4. 下一步：前端重构 → 评估器测试
+
+---
+
+## Agent 前端 UI 重设计 (2026-06-24)
+
+### 架构决策
+
+- **PRTS 终端美学**: 模拟游戏内 PRTS 系统。Share Tech Mono + Source Code Pro 等宽字体，罗德岛靛蓝 (#4fc3f7) + 源石琥珀 (#ffb000) + 金色高亮 (#e6b422)。10 个 CSS 变量统一管理配色
+- **双栏布局**: 左侧聊天面板 (flex:1) + 右侧检索追踪面板 (280px)。5 种 SSE 事件完整映射到 UI 组件
+- **纯 HTML/CSS/JS**：无框架，FastAPI StaticFiles 挂载。SSE ReadableStream 逐行解析，tokenCount 实时计数
+- **3 种视觉效果**: 文字 glow (text-shadow) + 发光边框角标 (::before L 形) + 自定义光标 (caret-color amber / cursor crosshair)
+- **Subagent-Driven TDD**: brainstorming (visual companion) → writing-plans → 5 Tasks subagent 实施 → 每 task 双审 (spec + code quality)
+
+### 代码基线
+
+```
+arknights_wiki/agent/
+├── server.py           # 修改: -53 行 (删除内嵌 HTML), +StaticFiles mount
+└── static/             # 新建
+    ├── index.html      # 1,731 B
+    ├── style.css       # 8,463 B (365 行)
+    └── app.js          # 6,415 B (205 行)
+```
+
+### 验证
+
+| 指标 | 值 |
+|------|-----|
+| 测试 | 45/45 passed |
+| 端点 | 4/4 200 (/, /static/style.css, /static/app.js, /health) |
+| Commits | 6 |
+
+### 已知问题
+
+- Firefox scrollbar 兼容性 (-webkit- 前缀)
+- 四角 L 形装饰仅顶角 (plan 本身如此)
+- 部分背景色硬编码 #0a1020 未提取 CSS 变量
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-24-4.md — 完整会话记录
+4. 下一步：浏览器验证 UI → finishing-a-development-branch → 评估器测试
+
+---
+
+## Agent 提示词工程 (2026-06-25)
+
+### 架构决策
+
+- **CASUAL persona 固定**：所有回答采用"朋友聊天补课"风格 — 口语化、先核心答案再展开、禁止 [N] 引用标记、禁止事件罗列。识别了 4 种用户 persona（CORE/CASUAL/OUTSIDER/MAKER），当前固定 CASUAL
+- **意图识别 + 问题改写合并**：关键词规则（7 类意图）先行 → LLM 兜底（`INTENT_REWRITE_PROMPT`）。本地规则：concept_definition / chapter_summary / character_profile / causal_reasoning / comparison / fact_lookup / list_enumeration
+- **复杂度路由更新**：concept_definition / comparison / list_enumeration / causal_reasoning / 多实体（>1 clean_entity）→ 强制 complex（LangGraph Agent 多步检索）
+- **预构建双向实体索引**：`scripts/build_entity_index.py` 一次性构建 `entity_source_map.json`（5,213 实体, 25,300 双向引用）。数据源：Pass1 events + Pass2 characters + Pass3 wiki + operators.json + 大地巡旅。原文路径存储但不默认加载
+- **第 8 个 tool**：`lookup_entity_index` — LangGraph Agent 可查询实体关联和出现章节
+- **检索策略意图驱动**：concept_definition → get_page 优先；chapter_summary → get_chapter_summary + 限定章 events；FAISS 阈值 0.3→0.4 减少噪声
+- **Superpowers 升级**：v5.0.7 → v6.0.3（手动 tarball 安装），13/14 skills 变更，SDD 审查流程重写
+- **grill-with-docs 引入**：建立 `CONTEXT.md`（领域术语 + persona + 意图分类 + 索引设计）
+
+### 代码基线
+
+```
+arknights_wiki/agent/
+├── prompts.py          # 重写: 4 prompt (INTENT_REWRITE + 3 CASUAL)
+├── router.py           # 重写: 意图+改写合并, 更新复杂度规则
+├── retrieval.py        # +EntityIndexStore
+├── tools.py            # +lookup_entity_index (8 tools total)
+├── simple_search.py    # CASUAL prompt + 意图驱动检索
+├── graph.py            # CASUAL 错误消息
+scripts/
+└── build_entity_index.py  # 新建
+data/
+└── entity_source_map.json # 新建, 2.3MB, 5,213实体
+CONTEXT.md              # 新建: 领域术语
+```
+
+### 数据基线
+
+| 指标 | 值 |
+|------|-----|
+| 测试 | 71/71 passed (+26 from 45 baseline) |
+| 工具数 | 8 (新增 lookup_entity_index) |
+| 实体索引 | 5,213 实体, 25,300 双向引用 |
+| 路由 "巨兽是什么" | concept_definition + complex ✅ |
+| 路由 "最新怪猎活动" | chapter_summary + complex, LLM改写 ✅ |
+
+### 已知问题
+
+- **怪猎联动消歧**：有两期联动（落叶逐火 CF + 泡影苍霆 TD），"最新"应指向泡影苍霆但 LLM 改写只输出落叶逐火。缺少章节发布时序元数据
+- 评估器已实施（5 维体系，100 题基线），未做真机端到端测试
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-25-2.md — 完整会话记录
+4. 下一步：修复 CASUAL prompt 幻觉 → 评估方法论改进 → 真机验证
+
+---
+
+## Agent 五维评估器实施 (2026-06-25)
+
+### 架构决策
+
+- **五维评估 + MiniMax M3 judge**：entity_link_precision / source_relevance / answer_accuracy / answer_focus / routing_correctness，MiniMax M3 独立评估（与 agent DeepSeek 解耦），`thinking: disabled` 防止 think 块污染
+- **100 题测试集**：吸收 mrfz 项目 `batch_qa.py` (165题/13类) + `qa_log.json` (15条真实用户查询) 的模式，覆盖 14 类别/5 维/3 难度/7 意图
+- **路由器修复**：`_infer_intent_local` 优先级 chapter_summary → character_profile → concept_definition。根因：`'是什么' in "孤星讲了什么"` 被 concept_definition 先匹配。修复后意图 100%，路由 92%
+- **评估方法论缺陷**：answer_accuracy (1.36/3.0) 混入了检索失败与真实幻觉。案例 q063 "罗德岛精英干员"：Sharp 真实存在于 `factions/罗德岛.md` 但 agent 检索未命中 → MiniMax judge 判 D。需拆分为来源忠实度 + 事实正确性子维度
+- **CASUAL persona 幻觉问题**：22/100 题 answer_accuracy=D，LLM 自由发挥超出检索来源
+
+### 评估基线
+
+| 维度 | 均分 | A+B率 | A | B | C | D |
+|------|------|-------|---|---|---|---|---|
+| entity_link_precision | 2.67 | 89% | 82 | 7 | 7 | 4 |
+| source_relevance | 2.17 | 90% | 31 | 59 | 6 | 4 |
+| answer_accuracy | 1.36 | 49% | 9 | 40 | 29 | 22 |
+| answer_focus | 2.50 | 96% | 56 | 40 | 2 | 2 |
+| routing_correctness | 2.30 | 83% | 55 | 28 | 9 | 8 |
+| **综合** | **2.20** | — | — | — | — | — |
+
+### 代码基线
+
+```
+arknights_wiki/eval/agent_evaluator.py              # 新建
+arknights_wiki/eval/registry/data/agent_eval_questions.jsonl  # 新建 — 100题
+arknights_wiki/eval/registry/modelgraded/{5-dim}.yaml         # 新建
+scripts/run_agent_eval.py                           # 新建
+arknights_wiki/agent/router.py                      # 修改 — 意图优先级
+output/agent_eval_20260625_233940.json              # 766KB
+output/agent_eval_report.md                         # 评估报告
+```
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-27-1.md — 完整会话记录
+4. 下一步：实体噪声过滤 → search_dialogue bugfix → 意图关键词补充
+
+---
+
+## Agent Persona 重写 (2026-06-27)
+
+### 架构决策
+
+- **Persona 三轮迭代至百科编纂者**：CASUAL "朋友聊天" → "知识解说" → "百科编纂者"。Why: CASUAL 不适合讲述性质内容，复杂问题回答过短；知识解说介于聊天和百科之间仍不满意；最终确定准确、逻辑严密、行文有前后逻辑脉络的百科全书风格
+- **来源忠实度维持不动**：首次 prompt 修复中的"首要原则：忠于来源"验证通过（8/10 D 级题提升），本轮不改
+- **回答结构按问题类型**：剧情按时间线/因果链，概念从定义到展开，角色从概括到细节
+- **去口语化**：禁止口语闲聊、碎片罗列、分点列表
+- **QA 日志机制**：server.py 中 `_log_and_stream` 包装 SSE 流，每次对话自动写入 `output/qa_log.jsonl`
+- **evidence 格式优化**：graph.py 去掉 `[来源N]` 标记改为 `--- 资料 N: tool ---` 分隔，消除 prompt 中"禁止输出引用标记"与 evidence 格式的认知冲突
+
+### 前端验证发现
+
+通过 5 个实际提问发现三个系统性缺陷：
+1. **实体提取噪声** — WikiStore name 匹配引入大量弱相关实体（如"相变临界"匹配到"罗德岛""乌萨斯"）
+2. **search_dialogue 崩溃** — `'list' object has no attribute 'get'`，连崩 5 次
+3. **意图关键词缺失** — "肉鸽""结局""集成战略"未映射
+
+### 代码基线
+
+```
+arknights_wiki/agent/
+├── prompts.py           # 重写: QA/AGENT/SYNTHESIS 三 prompt 转为百科编纂者
+├── server.py            # +_log_and_stream Q&A 日志包装器
+├── graph.py             # evidence 格式去 [来源N] + 无docs消息去口语化
+└── simple_search.py     # build_answer_prompt 转为百科编纂者
+output/
+└── qa_log.jsonl          # 新建 — 前端 Q&A 日志 (5 条)
+```
+
+---
+
+## Agent Pipeline 系统性优化 (2026-06-27)
+
+### 诊断方法
+
+基于 qa_log.jsonl 14 条真实对话，按 5 阶段逐条诊断：意图识别→实体提取→复杂度路由→多源检索→回答合成。
+
+发现 12 个缺陷，按影响面优先修复 8 个。
+
+### 架构决策
+
+- **实体提取砍掉 WikiStore 全量扫描**：5213 实体子串匹配 → identity_map(150) + operators(340) + chapter_timeline(109) 三层精确提取。实体噪声从 5-9 降至 1-2
+- **章节感知事件检索**：自动识别实体中的章节名（通过 get_chapter_summary 试探），将章节实体与角色/概念实体分离，事件搜索始终按章节过滤。解决 "相变临界中凯尔希怎么样" 检索漏配问题
+- **expansion_hints 与 canonical_entities 分离**：LLM 返回的扩展词不再参与路由决策和事件检索，仅用于 wiki 补充搜索。避免 "界园肉鸽" 被 LLM 扩展的 "探索者的银凇止境" 带偏
+- **LLM 章节名幻觉过滤**：LLM 返回的 canonical_entities 中，如实体在 chapter_timeline 中存在但不在问题文本中，自动降为 expansion_hints
+- **复杂度路由修正**：concept_definition 不再强制 complex；多实体阈值 >1→>3
+- **叙事弧线 prompt**：章节总结类回答强制 "起因→经过→关键转折→高潮→结局" 结构，禁止事件罗列
+- **来源忠实度强化**：新增 "不自行补充具体方式/机制""不添加资料中没有的数字/序号" 规则。经查 "第2068次复生实验" 实为数据源中存在的原文
+- **search_dialogue 类型守卫**：`_order.json` 为纯数组导致 `'list' has no 'get'`，加 `isinstance(data, dict)` 跳过
+
+### 代码基线
+
+```
+arknights_wiki/agent/
+├── retrieval.py       # +2 行: DialogueStore isinstance 守卫 + EventStore == 精确匹配
+├── router.py          # 重写: 实体提取 + 意图关键词 + LLM 章节幻觉过滤 + hints 分离
+├── simple_search.py   # 重写: 章节感知检索 + hints 降权 search_and_collect
+├── prompts.py         # 4 处: 叙事弧线 + 来源忠实度 + 章节名约束
+├── tools.py           # 文本截断 500→1000/2000
+└── graph.py           # 文本截断 500→1000
+tests/agent/
+├── conftest.py        # +operators.json fixture
+└── test_router.py     # 3 处断言匹配新路由规则
+```
+
+### 验证基线
+
+| 指标 | 修复前 | 修复后 |
+|------|--------|--------|
+| 测试 | 76 passed | 76 passed |
+| search_dialogue 崩溃 | 15 次/5 问题 | 0 |
+| simple 路由占比 | ~20% | ~83% |
+| 平均实体数 | 5-9 | 1.3 |
+| 相变临界+凯尔希 | "未提及" | 正确追踪完整弧线 |
+| 界园肉鸽 | IS4 银凇止境 | IS5 岁的界园志异 |
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态、快速启动命令
+2. 读本文件末尾 — 最新决策
+3. 读 output/sessions/2026-06-27-2.md — 完整修复清单
+4. 下一步：用户手动测试前端 → 评估器重跑基线

@@ -11,9 +11,42 @@
 
 | 维度 | 值 | 说明 |
 |------|-----|------|
-| Phase | 0 - 初始化 | 已完成，规则体系+骨架就绪 |
-| 数据 | 待从 mrfz 迁移 | 1,112/1,651 节点, 105/108 章 |
-| 技术栈 | 已确认 | 保持 mrfz 选型，核心改代码组织 |
+| Phase | 4 - LangGraph Agent | v2 优化完成：实体噪声/路由过拟合/检索漏配/叙事逻辑已修复 |
+| 分支 | feature/langgraph-agent | Agent pipeline 系统性优化 |
+| 数据 | v3_wiki + 实体索引 | 6666 FAISS 向量, 5213 实体索引, 25300 双向引用 |
+| 测试 | 76/76 passed | agent 测试全通过 |
+| 前端 | PRTS 终端风格 | 双栏 SSE 聊天 UI + QA 日志机制 |
+
+---
+
+## 快速启动
+
+### 1. 启动 Agent 服务
+
+```bash
+cd "D:\AI project\Arknights LLM Wiki"
+python -m arknights_wiki.agent.server
+```
+
+服务启动后访问 **http://localhost:8000** 进入 PRTS 终端对话界面。
+
+### 2. 运行评估
+
+```bash
+python scripts/run_agent_eval.py
+```
+
+评估报告输出到 `output/agent_eval_*.json` 和 `output/agent_eval_report.md`。
+
+### 3. 构建/更新索引
+
+```bash
+# FAISS 向量索引
+python scripts/build_agent_index.py
+
+# 实体双向索引
+python scripts/build_entity_index.py
+```
 
 ---
 
@@ -27,9 +60,10 @@
 | LLM API | OpenAI SDK (MiniMax M2.5 + DeepSeek) | 剥离 tokenizer，结构化成本日志 |
 | Web 框架 | FastAPI + SSE | 保持 |
 | 前端 | 原生 HTML+CSS+JS | CSS/JS 从单文件拆分为独立文件 |
-| 代码组织 | scripts/ → arknights_wiki/ 包 | 拆分 God Object，每表一个 repository |
+| 代码组织 | arknights_wiki/ Python 包 | 拆分 God Object，每表一个 repository |
+| Agent 框架 | LangGraph | ReAct Agent + 8 tools |
 | 依赖管理 | pyproject.toml (PEP 621) | 从 requirements.txt 升级 |
-| 测试 | pytest + TDD | 逐模块补测试 |
+| 测试 | pytest | 逐模块补测试 |
 
 ---
 
@@ -38,115 +72,148 @@
 ```
 Arknights LLM Wiki/
 ├── README.md
-├── pyproject.toml                 # 依赖与项目元数据（待创建）
+├── pyproject.toml
+├── CONTEXT.md                    # 领域术语
 ├── docs/
-├── CLAUDE.md                     # 项目规则（开发流程/Git/多会话管理）
-├── arknights_wiki/               # 主代码包（待迁移）
-│   ├── cli.py
+│   ├── specs/                    # 设计规格
+│   ├── plans/                    # 实施计划
+│   └── adr/                      # 架构决策记录
+├── arknights_wiki/               # 主代码包
 │   ├── config.py
-│   ├── store/repositories/
-│   ├── pipeline/
-│   ├── retrieval/
-│   ├── llm/
-│   └── web/
+│   ├── extraction/               # Pass 1/2/3 提取模块
+│   ├── agent/                    # LangGraph Agent
+│   │   ├── server.py             # FastAPI + SSE 服务
+│   │   ├── static/               # 前端 (index.html + CSS + JS)
+│   │   ├── router.py             # 查询路由（意图识别+实体提取+复杂度）
+│   │   ├── simple_search.py      # Simple 检索路径
+│   │   ├── graph.py              # Complex LangGraph ReAct Agent
+│   │   ├── tools.py              # 8 个检索工具
+│   │   ├── retrieval.py          # Wiki/Event/Dialogue/Timeline 数据层
+│   │   └── prompts.py            # LLM 提示词模板
+│   ├── eval/                     # 评估器
+│   ├── store/                    # SQLite 数据层
+│   └── web/                      # Web 工具
 ├── config/
-│   ├── llm_config.json
+│   ├── chapter_timeline.json     # 109 章发布时间线
+│   ├── collab_series.json        # 联动活动系列映射
+│   ├── identity_map.json         # 角色身份映射(~150 条)
 │   └── hooks/                    # 会话管理 Hook 脚本
+├── data/
+│   ├── stories/                  # 原始剧情对话 (2160 JSON)
+│   ├── extractions/
+│   │   ├── v1_events/            # Pass 1 剧情事件 (106 章)
+│   │   ├── v2_characters/        # Pass 2 角色 Wiki (641 角色)
+│   │   └── v3_wiki/              # Pass 3 世界观 Wiki (概念/阵营/地点)
+│   ├── lorebook/                 # 大地巡旅 OCR
+│   ├── operators.json            # 干员列表
+│   ├── entity_source_map.json    # 实体双向索引 (5213 实体, 2.3MB)
+│   └── index/                    # FAISS 向量索引
 ├── output/
 │   ├── devlog.md
+│   ├── qa_log.jsonl
 │   └── sessions/
-└── .claude/
-    ├── settings.local.json
-    └── skills/architecture-diagrams/
+├── scripts/                      # 构建和评估脚本
+└── tests/
+    └── agent/                    # Agent 测试 (76 tests)
 ```
 
 ---
 
-## 下一步
+## Agent Pipeline 架构
 
-1. 产出整体架构 Spec + 迁移 Plan
-2. 确定首个迁移模块（建议 `store/` 数据层）
-3. 用户深度参与每个模块设计
+```
+用户问题
+  │
+  ▼
+[router.py] route_query()
+  ├── _infer_intent_local()     → 7 类意图（关键词规则）
+  ├── _extract_entities_local() → identity_map + operators + chapter_timeline
+  ├── recognize_intent_and_rewrite() → LLM 兜底（无本地结果时）
+  └── classify_complexity_local() → simple / complex
+  │
+  ├── simple (实体<=3, 非comparison/list_enumeration/causal_reasoning)
+  │     │
+  │     ▼
+  │   [simple_search.py] search_and_collect()
+  │     ├── Chapter 识别 → get_chapter_summary + 章节事件
+  │     ├── Entity get_page → WikiStore 精确页面
+  │     ├── Events(chapter=章节名, entity=实体名) → 章节感知事件
+  │     ├── Wiki 搜索 + expansion_hints 补充
+  │     ├── FAISS 语义搜索
+  │     └── Dialogue / Timeline 兜底
+  │     │
+  │     ▼
+  │   build_answer_prompt() → DeepSeek LLM → 百科编纂者回答
+  │
+  └── complex (comparison/list_enumeration/causal_reasoning/实体>3)
+        │
+        ▼
+      [graph.py] LangGraph ReAct Agent
+        ├── call_model (DeepSeek + 8 tool definitions)
+        ├── tool_node → 执行检索工具
+        ├── 循环最多 8 轮
+        └── synthesize_node → 综合证据生成回答
+```
+
+### 8 个检索工具
+
+| 工具 | 用途 |
+|------|------|
+| `search_wiki` | 全文搜索 Wiki 页面 |
+| `get_entity_page` | 获取实体完整页面 |
+| `search_events` | 搜索剧情事件（按参与者/类型/章节） |
+| `search_dialogue` | 搜索原始对话文本 |
+| `search_timeline` | 搜索泰拉历史时间线 |
+| `get_chapter_summary` | 获取章节叙事摘要 |
+| `semantic_search` | FAISS 语义搜索 |
+| `lookup_entity_index` | 查找实体关联和相关章节 |
 
 ---
 
-## Phase 1 完成 (2026-06-15)
+## Phase 进度
+
+### Phase 1: 原始内容提取 — 完成 (2026-06-15)
 
 | 维度 | 值 |
 |------|-----|
-| 故事节点 | 1,663/1,669 (99.6%) |
-| 干员档案 | 420/420 (100%, 1,134,547 字) |
-| 模块文件 | 8 个 pipeline 模块 + config + utils |
-| 测试 | 87 全部通过 |
-| 源码行数 | ~940 行 |
+| 故事节点 | 1,663/1,669 |
+| 干员档案 | 420/420 |
+| 测试 | 87 passed |
 
-## Phase 2: M0 store/ 完成 + 质量修复 (2026-06-16)
+### Phase 2: 知识提取 — 完成 (2026-06-21)
 
-| 维度 | 值 |
-|------|-----|
-| character 实体 | 381 (仅干员，异格去重) |
-| faction / region | 44 / 34 |
-| 别名映射 | 40 (异格→基体) |
-| source_index | 3,615 (仅干员档案) |
-| 测试 | 119 全部通过 |
-| seed 耗时 | <2 秒 |
+Pass 1 剧情骨架: 106 章 / 4129 事件 / 957 概念  
+Pass 2 角色 Wiki: 641 角色 / $4.63 / 210 tests  
+Pass 3 世界观 Wiki: 概念/阵营/地点 三层独立 / $0.18 / 271 tests
 
-### M0 职责边界
+### Phase 3: 数据质量 — 完成 (2026-06-24)
 
-- M0 只做确定性种子：干员/faction/region + 别名 + 档案索引
-- NPC 实体 + 故事对话索引 → M1 按需创建
-- 概念实体 + 关键词索引 → M3 LLM 提取
+OpenAI Evals 评估框架集成 / 4 维数据质量评估 / 大地巡旅 OCR 401 页
 
-## Pass 1 剧情骨架提取完成 (2026-06-16)
+### Phase 4: LangGraph Agent — 当前 (2026-06-27)
 
 | 维度 | 值 |
 |------|-----|
-| 架构 | v3 三遍独立提取 |
-| 模型 | DeepSeek v4-flash (MiniMax M3 因 think 块问题淘汰) |
-| 提取模块 | 5 文件 (dialogue_loader/prompt_builder/llm_client/post_processor/orchestrator) |
-| 测试 | 163 all pass (28 extraction + 135 existing) |
-| 试跑 | 6 章全成功, $0.08, ~5 min |
-| 分支 | feature/pass1-event-extraction |
+| 模块 | 10 源文件 |
+| 工具 | 8 LangGraph tools |
+| 测试 | 76 passed |
+| FAISS 索引 | 6,666 实体 (512-dim BGE) |
+| 实体索引 | 5,213 实体 / 25,300 双向引用 |
+| 前端 | PRTS 终端风格双栏 SSE 聊天 UI |
 
-## Pass 2 全量提取完成 (2026-06-21)
+#### Phase 4 关键优化 (2026-06-27)
 
-| 维度 | 值 |
-|------|-----|
-| 实施 | 4 模块 TDD (character_aggregator/prompt_builder/post_processor/orchestrator) |
-| 测试 | 210 passed |
-| 全量提取 | 641/641 角色成功, $4.63, 100% JSON 解析, 0 校验错误 |
-| tokens | 14,969,572 in / 534,594 out |
-| 耗时 | 1h48m |
-| 输出 | `data/extractions/v2_characters/` |
-| identity_map | ~157 条 |
-| 分支 | feature/pass2-entity-extraction |
+- 实体提取从 5213 WikiStore 全量扫描改为三层精确提取
+- 章节感知事件检索（自动识别章节名→事件按章过滤）
+- expansion_hints 与 canonical_entities 分离（噪声-83%）
+- 叙事弧线 prompt 工程（起因→经过→转折→高潮→结局）
+- LLM 章节名幻觉过滤
+- search_dialogue 崩溃修复
 
-### 已知问题
-
-- **战力评级分布严重不均**：战场中坚 61.8%，大国将军 0.2%，王庭之主 10%，中间档位大量空白
-- **IS-IF 事件未被充分纳入角色总结**
-- 90 干员（381→291）未在 Pass 1 事件中出场
+---
 
 ## 下一步
 
-1. ~~战力评级体系重新设计~~ — 已完成 (2026-06-21)
-2. ~~IS-IF 事件整合~~ — 暂缓
-3. ~~Pass 3：世界观实体提取~~ — 已完成 (2026-06-24)
-4. ~~OpenAI Evals 评估框架集成~~ — 已完成 (2026-06-24)
-5. **LangGraph AI Agent** — 已完成核心实施 (2026-06-24)
-   - Query Router (本地规则) → SimpleSearch / LangGraph ReAct Agent
-   - FAISS 语义搜索 (BGE-small-zh-v1.5, 6,666 实体)
-   - FastAPI + SSE 流式 API, 45 tests
-   - 分支: feature/langgraph-agent
-6. **下一步：前端重构 → 评估器测试**
-
-## Phase 4: LangGraph AI Agent (2026-06-24)
-
-| 维度 | 值 |
-|------|-----|
-| 模块 | 7 个源文件 + 1 构建脚本 |
-| 工具 | 7 个 LangGraph tools (search_wiki/get_entity_page/search_events/search_dialogue/search_timeline/get_chapter_summary/semantic_search) |
-| FAISS 索引 | 6,666 实体 (512-dim BGE, IndexFlatIP) |
-| 测试 | 45 passed |
-| 服务 | FastAPI + SSE, http://localhost:8000 |
-| 分支 | feature/langgraph-agent |
+1. 用户手动测试前端
+2. 评估器重新跑基线（路由/检索变化影响较大）
+3. 根据评估结果继续调优 prompt 和检索策略

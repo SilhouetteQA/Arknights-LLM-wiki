@@ -87,6 +87,30 @@ def create_client() -> OpenAI:
     )
 
 
+def chat_completion(
+    messages: list[dict],
+    temperature: float = 0.1,
+    max_tokens: int | None = None,
+    tools: list[dict] | None = None,
+) -> tuple[str, object]:
+    """统一的 LLM 聊天补全封装
+
+    自动创建客户端、读取模型配置，返回 (content, message) 元组。
+    调用方根据需求使用 content（纯文本回答）或 message（含 tool_calls 等元信息）。
+    """
+    client = create_client()
+    config = _get_model_config()
+    response = client.chat.completions.create(
+        model=config["model"],
+        messages=messages,
+        temperature=temperature,
+        max_tokens=max_tokens or config["max_tokens"],
+        tools=tools,
+    )
+    message = response.choices[0].message
+    return message.content or "", message
+
+
 def call_llm(
     client: OpenAI,
     system_prompt: str,
