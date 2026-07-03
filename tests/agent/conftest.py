@@ -114,7 +114,7 @@ def mock_llm_client():
     client = MagicMock()
     mock_response = MagicMock()
     mock_choice = MagicMock()
-    mock_choice.message.content = '{"complexity": "simple", "question_type": "worldview", "entities": ["源石"], "time_scope": "cross_arc", "reason": "简单事实查询"}'
+    mock_choice.message.content = "源石是泰拉世界一种蕴含巨大能量的矿物，是最核心的能源来源和工业原料，同时也是矿石病的病原体。"
     mock_response.choices = [mock_choice]
     mock_response.usage = MagicMock()
     mock_response.usage.prompt_tokens = 100

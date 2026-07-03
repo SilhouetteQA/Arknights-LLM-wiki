@@ -89,7 +89,14 @@ async def _simple_search_events(question: str, route: dict):
         yield {"event": "step", "data": json.dumps(evt, ensure_ascii=False)}
         await asyncio.sleep(0)
 
-    result = search_future.result()
+    try:
+        result = search_future.result()
+    except Exception as e:
+        yield {
+            "event": "error",
+            "data": json.dumps({"error": f"检索过程出错: {str(e)}"}, ensure_ascii=False),
+        }
+        return
     answer = result.get("answer", "")
 
     for chunk in _split_text(answer):

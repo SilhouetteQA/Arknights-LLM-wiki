@@ -56,6 +56,9 @@ class TestSimpleSearch:
                 assert "answer" in result
                 assert "sources" in result
                 assert len(result["sources"]) > 0
+                # 验证答案内容是真实回答而非路由 JSON
+                assert "源石" in result["answer"]
+                assert len(result["answer"]) > 20
 
 
 class TestCASUALSearch:

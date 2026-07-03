@@ -240,3 +240,20 @@ def lookup_entity_index(entity_name: str) -> str:
 
 TOOL_DEFINITIONS = _build_tool_definitions()
 TOOL_EXECUTORS = _build_tool_executors()
+
+
+def build_tool_listing() -> str:
+    """从 @tool 注册表自动生成工具列表文本，供提示词使用。
+
+    与 AGENT_SYSTEM_PROMPT 手工维护的工具列表不同，
+    此函数直接读取 _tool_registry 元数据，确保与 TOOL_DEFINITIONS 保持同步。
+    """
+    lines = []
+    for i, (func, description, param_descriptions, required, tool_name) in enumerate(_tool_registry, 1):
+        params = []
+        for pname, pdesc in param_descriptions.items():
+            marker = " (必填)" if pname in required else " (可选)"
+            params.append(f"{pname}{marker}")
+        param_str = ", ".join(params) if params else "无"
+        lines.append(f"{i}. {tool_name}({param_str}) — {description}")
+    return "\n".join(lines)

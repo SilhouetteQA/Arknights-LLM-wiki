@@ -124,25 +124,19 @@ class WikiStore(_BaseStore):
 
 
 class EventStore(_BaseStore):
-    """Pass 1 事件存储"""
+    """Pass 1 事件存储 -- 首次访问时全量加载到内存缓存"""
 
     def __init__(self, data_dir: str | None = None):
         super().__init__(data_dir)
         self._events_dir = os.path.join(self.data_dir, "extractions", "v1_events")
+        self._cache: list[tuple] | None = None
+        self._chapter_data: dict[str, dict] = {}
 
-    def _load_chapter(self, chapter: str) -> dict | None:
-        for root, dirs, files in os.walk(self._events_dir):
-            for f in files:
-                if f.startswith(chapter) and f.endswith(".json"):
-                    fp = os.path.join(root, f)
-                    try:
-                        return json.loads(Path(fp).read_text(encoding="utf-8"))
-                    except Exception:
-                        continue
-        return None
-
-    def _iter_events(self) -> list[tuple]:
-        results = []
+    def _ensure_loaded(self):
+        """惰性加载: 首次调用时遍历全部 JSON 文件并缓存"""
+        if self._cache is not None:
+            return
+        self._cache = []
         for root, dirs, files in os.walk(self._events_dir):
             for f in files:
                 if not f.endswith(".json"):
@@ -153,16 +147,17 @@ class EventStore(_BaseStore):
                 except Exception:
                     continue
                 chapter = os.path.splitext(f)[0]
+                self._chapter_data[chapter] = data
                 for evt in data.get("events", []):
-                    results.append((chapter, evt, fp))
-        return results
+                    self._cache.append((chapter, evt, fp))
 
     def search(
         self, entity: str | None = None, event_type: str | None = None,
         chapter: str | None = None, limit: int = 20,
     ) -> list[dict]:
+        self._ensure_loaded()
         results = []
-        for ch, evt, fp in self._iter_events():
+        for ch, evt, fp in self._cache:
             if chapter and ch != chapter:
                 continue
             if event_type and evt.get("type") != event_type:
@@ -194,7 +189,8 @@ class EventStore(_BaseStore):
         return results
 
     def get_chapter_summary(self, chapter: str) -> dict | None:
-        data = self._load_chapter(chapter)
+        self._ensure_loaded()
+        data = self._chapter_data.get(chapter)
         if data is None:
             return None
         summary = data.get("summary", "")
@@ -204,19 +200,19 @@ class EventStore(_BaseStore):
 
 
 class DialogueStore(_BaseStore):
-    """原始对话全文搜索"""
+    """原始对话全文搜索 -- 首次访问时全量加载到内存缓存"""
 
     def __init__(self, data_dir: str | None = None):
         super().__init__(data_dir)
         self._stories_dir = os.path.join(self.data_dir, "stories")
+        self._cache: list[tuple] | None = None
 
-    def search(self, query: str, chapter: str | None = None, limit: int = 20) -> list[dict]:
-        results = []
+    def _ensure_loaded(self):
+        """惰性加载: 首次调用时遍历全部对话 JSON 并缓存 (fp, data, chapter, node_id, lines)"""
+        if self._cache is not None:
+            return
+        self._cache = []
         for root, dirs, files in os.walk(self._stories_dir):
-            if chapter:
-                dir_name = os.path.basename(root)
-                if chapter not in dir_name:
-                    continue
             for f in files:
                 if not f.endswith(".json"):
                     continue
@@ -230,32 +226,39 @@ class DialogueStore(_BaseStore):
                 ch = data.get("chapter", "")
                 node_id = data.get("id", "")
                 lines = data.get("lines", [])
+                self._cache.append((fp, data, ch, node_id, lines))
 
-                for i, line in enumerate(lines):
-                    text = line.get("text", "")
-                    if query not in text:
-                        continue
-                    speaker = line.get("speaker", "旁白" if line.get("type") == "narration" else "???")
-                    start = max(0, i - 2)
-                    end = min(len(lines), i + 3)
-                    context_lines = []
-                    for j in range(start, end):
-                        l = lines[j]
-                        s = l.get("speaker", "旁白" if l.get("type") == "narration" else "???")
-                        context_lines.append(f"[{s}] {l.get('text', '')}")
-                    context = "\n".join(context_lines)
+    def search(self, query: str, chapter: str | None = None, limit: int = 20) -> list[dict]:
+        self._ensure_loaded()
+        results = []
+        for fp, data, ch, node_id, lines in self._cache:
+            if chapter and chapter not in ch:
+                continue
+            for i, line in enumerate(lines):
+                text = line.get("text", "")
+                if query not in text:
+                    continue
+                speaker = line.get("speaker", "旁白" if line.get("type") == "narration" else "???")
+                start = max(0, i - 2)
+                end = min(len(lines), i + 3)
+                context_lines = []
+                for j in range(start, end):
+                    l = lines[j]
+                    s = l.get("speaker", "旁白" if l.get("type") == "narration" else "???")
+                    context_lines.append(f"[{s}] {l.get('text', '')}")
+                context = "\n".join(context_lines)
 
-                    results.append({
-                        "entity_type": "dialogue",
-                        "name": f"{ch} / {node_id}",
-                        "text": context,
-                        "file_path": fp,
-                        "speaker": speaker,
-                        "chapter": ch,
-                        "node_id": node_id,
-                    })
-                    if len(results) >= limit:
-                        return results
+                results.append({
+                    "entity_type": "dialogue",
+                    "name": f"{ch} / {node_id}",
+                    "text": context,
+                    "file_path": fp,
+                    "speaker": speaker,
+                    "chapter": ch,
+                    "node_id": node_id,
+                })
+                if len(results) >= limit:
+                    return results
         return results
 
 

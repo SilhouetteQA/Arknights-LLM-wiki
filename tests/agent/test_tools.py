@@ -27,6 +27,7 @@ class TestSearchWiki:
         with patch("arknights_wiki.agent.tools._get_data_dir", return_value=temp_data_dir):
             result = search_wiki("不存在的实体名称xyz123")
             assert isinstance(result, str)
+            assert "未找到" in result
 
 
 class TestGetEntityPage:
@@ -46,6 +47,8 @@ class TestSearchEvents:
         with patch("arknights_wiki.agent.tools._get_data_dir", return_value=temp_data_dir):
             result = search_events(entity="阿米娅")
             assert isinstance(result, str)
+            assert "阿米娅" in result
+            assert len(result) > 0
 
 
 class TestSearchDialogue:
@@ -53,6 +56,8 @@ class TestSearchDialogue:
         with patch("arknights_wiki.agent.tools._get_data_dir", return_value=temp_data_dir):
             result = search_dialogue("博士")
             assert isinstance(result, str)
+            assert "博士" in result
+            assert len(result) > 0
 
 
 class TestTimeline:
@@ -60,6 +65,8 @@ class TestTimeline:
         with patch("arknights_wiki.agent.tools._get_data_dir", return_value=temp_data_dir):
             result = search_timeline("移动城市")
             assert isinstance(result, str)
+            assert "移动城市" in result
+            assert len(result) > 0
 
 
 class TestChapterSummary:
@@ -67,6 +74,8 @@ class TestChapterSummary:
         with patch("arknights_wiki.agent.tools._get_data_dir", return_value=temp_data_dir):
             result = get_chapter_summary("黑暗时代·上")
             assert isinstance(result, str)
+            assert "博士" in result or "整合运动" in result
+            assert len(result) > 0
 
 
 class TestSemanticSearchTool:
@@ -74,6 +83,9 @@ class TestSemanticSearchTool:
         with patch("arknights_wiki.agent.tools._get_data_dir", return_value=temp_data_dir):
             result = semantic_search_tool("源石")
             assert isinstance(result, str)
+            assert len(result) > 0
+            assert "FAISS" in result
+            assert "build_agent_index" in result
 
 
 class TestLookupEntityIndex:

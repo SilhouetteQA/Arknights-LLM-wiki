@@ -1,5 +1,6 @@
 """Agent 和 Simple Search 的 LLM 提示词模板"""
 from arknights_wiki.agent import _INJECTION_DEFENSE
+from arknights_wiki.agent.tools import build_tool_listing
 
 # === 共享回答规则块（消除 QA_SYSTEM_PROMPT / AGENT_SYSTEM_PROMPT / SYNTHESIS_PROMPT / build_answer_prompt 四处重复） ===
 
@@ -113,14 +114,7 @@ AGENT_SYSTEM_PROMPT = f"""你是《明日方舟》剧情百科的编纂者。逐
 - 如果检索结果中描述了一个结果但未说明原因，说"资料未记录具体原因"，不要推断
 
 ## 可用工具
-1. search_wiki(query, category) — 全文搜索 Wiki 页面（概念/阵营/地点/角色）
-2. get_entity_page(name, entity_type) — 获取实体完整 Wiki 页面
-3. search_events(entity, event_type, chapter) — 搜索剧情事件
-4. search_dialogue(query, chapter) — 搜索原始对话文本
-5. search_timeline(query) — 搜索历史时间线
-6. get_chapter_summary(chapter) — 获取章节摘要
-7. semantic_search(query, top_k) — FAISS 语义搜索（模糊/描述性查询）
-8. lookup_entity_index(entity_name) — 查找实体的关联实体和相关章节
+{build_tool_listing()}
 
 ## 检索策略
 - 概念定义类问题：先 lookup_entity_index 确定实体类型和关联章，再 get_entity_page 获取核心定义
