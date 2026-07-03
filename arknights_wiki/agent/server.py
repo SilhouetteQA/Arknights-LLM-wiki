@@ -113,55 +113,90 @@ async def _simple_search_events(question: str, route: dict):
 async def _agent_search_events(question: str, route: dict):
     """Complex (LangGraph Agent) SSE 事件流
 
-    每个工具调用后立即 yield step 事件 + await asyncio.sleep(0) 刷新，
-    确保前端检索追踪面板实时更新。
+    通过 queue.Queue 让 graph.stream() 在独立线程中执行（避免同步 LLM 调
+    用阻塞事件循环），主协程从队列拉取事件实时 yield 到前端。
     """
     from arknights_wiki.agent.graph import build_agent_graph
 
     yield {"event": "route", "data": json.dumps(route, ensure_ascii=False)}
     await asyncio.sleep(0)  # 强制刷新
 
-    graph = build_agent_graph()
-    initial_state: AgentState = {
-        "messages": [],
-        "question": question,
-        "collected_docs": [],
-        "iteration": 0,
-        "route": route,
-    }
+    progress_queue: queue.Queue = queue.Queue()
 
-    final_state = initial_state
-    for event in graph.stream(initial_state):
-        node_name = list(event.keys())[0]
-        node_state = event[node_name]
-        final_state = node_state
+    def _run_graph():
+        """在独立线程中执行 LangGraph agent，事件推入队列"""
+        try:
+            graph = build_agent_graph()
+            initial_state: AgentState = {
+                "messages": [],
+                "question": question,
+                "collected_docs": [],
+                "iteration": 0,
+                "route": route,
+            }
+            for event in graph.stream(initial_state):
+                progress_queue.put(("graph_event", event))
+            progress_queue.put(("graph_done", None))
+        except Exception as e:
+            progress_queue.put(("graph_error", str(e)))
 
-        if node_name == "tools":
-            docs = node_state.get("collected_docs", [])
-            if docs:
-                last_doc = docs[-1]
-                tool_name = last_doc.get("tool", "")
-                tool_args = last_doc.get("args", {})
-                # 构造可读的工具调用描述
-                query = tool_args.get("query", "") or tool_args.get("entity_name", "") or tool_args.get("chapter", "") or tool_args.get("name", "")
-                label = f"{tool_name}({query})" if query else tool_name
-                yield {
-                    "event": "step",
-                    "data": json.dumps({
-                        "step": len(docs),
-                        "tool": label,
-                        "summary": last_doc.get("result", "")[:200],
-                    }, ensure_ascii=False),
-                }
-                await asyncio.sleep(0)  # 每个工具调用后立即刷新到前端
-        elif node_name == "synthesize":
-            messages = node_state.get("messages", [])
-            if messages:
-                final_message = messages[-1]
-                answer = final_message.get("content", "")
-                for chunk in _split_text(answer):
-                    yield {"event": "token", "data": json.dumps({"text": chunk}, ensure_ascii=False)}
-                    await asyncio.sleep(0.015)  # 逐字流式效果
+    loop = asyncio.get_event_loop()
+    graph_future = loop.run_in_executor(None, _run_graph)
+
+    final_state: AgentState | dict = {}
+    while True:
+        # 非阻塞轮询队列
+        try:
+            evt_type, evt_data = progress_queue.get_nowait()
+        except queue.Empty:
+            if graph_future.done():
+                # 线程已结束，排空残留事件后退出
+                try:
+                    evt_type, evt_data = progress_queue.get_nowait()
+                except queue.Empty:
+                    break
+            else:
+                await asyncio.sleep(0.05)
+                continue
+
+        if evt_type == "graph_error":
+            yield {
+                "event": "error",
+                "data": json.dumps({"error": f"Agent 执行出错: {evt_data}"}, ensure_ascii=False),
+            }
+            return
+        elif evt_type == "graph_done":
+            break
+        elif evt_type == "graph_event":
+            node_name = list(evt_data.keys())[0]
+            node_state = evt_data[node_name]
+            final_state = node_state
+
+            if node_name == "tools":
+                docs = node_state.get("collected_docs", [])
+                if docs:
+                    last_doc = docs[-1]
+                    tool_name = last_doc.get("tool", "")
+                    tool_args = last_doc.get("args", {})
+                    query = tool_args.get("query", "") or tool_args.get("entity_name", "") or tool_args.get("chapter", "") or tool_args.get("name", "")
+                    label = f"{tool_name}({query})" if query else tool_name
+                    yield {
+                        "event": "step",
+                        "data": json.dumps({
+                            "step": len(docs),
+                            "tool": label,
+                            "summary": last_doc.get("result", "")[:200],
+                        }, ensure_ascii=False),
+                    }
+                    await asyncio.sleep(0)
+            elif node_name == "synthesize":
+                messages = node_state.get("messages", [])
+                if messages:
+                    final_message = messages[-1]
+                    answer = final_message.get("content", "")
+                    for chunk in _split_text(answer):
+                        yield {"event": "token", "data": json.dumps({"text": chunk}, ensure_ascii=False)}
+                        await asyncio.sleep(0.015)
 
     sources = []
     for i, doc in enumerate(final_state.get("collected_docs", []), 1):
