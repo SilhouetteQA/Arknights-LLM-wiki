@@ -45,18 +45,34 @@ _BAN_LIST = """## 禁止事项
 - 禁止碎片化罗列事实，所有信息都要按逻辑结构组织
 - 禁止分点列表格式，使用连贯的段落叙述"""
 
+# === 意图类型（单一数据源，router.py 和 INTENT_REWRITE_PROMPT 共用） ===
+
+INTENT_META: dict[str, str] = {
+    "concept_definition": "询问某个概念/设定/机制的定义或本质（如\"X是什么\"、\"X的设定\"）",
+    "chapter_summary": "询问某个活动/章节的剧情概要（如\"X讲了什么\"、\"X的剧情\"）",
+    "character_profile": "询问角色性格/战力/背景（如\"X是什么样的人\"、\"X的实力\"）",
+    "causal_reasoning": "询问因果/原因/演变（如\"为什么X\"、\"X如何变化\"）",
+    "comparison": "实体间对比（如\"A和B的区别\"、\"谁更强\"）",
+    "fact_lookup": "简短事实查询（如\"X的出生地\"、\"X属于哪个阵营\"）",
+    "list_enumeration": "列举清单（如\"有哪些X\"、\"X的成员\"）",
+}
+
+VALID_INTENTS: set[str] = set(INTENT_META.keys())
+
+
+def _build_intent_listing() -> str:
+    """从 INTENT_META 生成意图类型列表文本，供 INTENT_REWRITE_PROMPT 使用"""
+    return "\n".join(
+        f"- {name}: {desc}" for name, desc in INTENT_META.items()
+    )
+
+
 # === 意图识别 + 问题改写 (合并) ===
 
-INTENT_REWRITE_PROMPT = """你是《明日方舟》玩家社群助手。分析用户问题，输出意图分类和改写后的检索用问题。
+INTENT_REWRITE_PROMPT = f"""你是《明日方舟》玩家社群助手。分析用户问题，输出意图分类和改写后的检索用问题。
 
 ## 意图类型
-- concept_definition: 询问某个概念/设定/机制的定义或本质（如"X是什么"、"X的设定"）
-- chapter_summary: 询问某个活动/章节的剧情概要（如"X讲了什么"、"X的剧情"）
-- character_profile: 询问角色性格/战力/背景（如"X是什么样的人"、"X的实力"）
-- causal_reasoning: 询问因果/原因/演变（如"为什么X"、"X如何变化"）
-- comparison: 实体间对比（如"A和B的区别"、"谁更强"）
-- fact_lookup: 简短事实查询（如"X的出生地"、"X属于哪个阵营"）
-- list_enumeration: 列举清单（如"有哪些X"、"X的成员"）
+{_build_intent_listing()}
 
 ## 改写原则
 - 将口语俗称替换为规范名（"怪猎"→"落叶逐火"或"泡影苍霆"）
@@ -68,13 +84,13 @@ INTENT_REWRITE_PROMPT = """你是《明日方舟》玩家社群助手。分析�
 
 ## 输出格式
 输出 JSON:
-{
+{{
   "intent": "concept_definition",
   "rewritten_question": "源石是什么？它的本质和特性是什么？",
   "canonical_entities": ["源石"],
   "expansion_hints": ["源石技艺", "矿石病", "天灾"],
   "disambiguation_note": ""
-}
+}}
 
 如果意图无法确定，intent 设为 "unknown"。
 如果问题中有无法映射为规范实体的表达，在 disambiguation_note 中说明。

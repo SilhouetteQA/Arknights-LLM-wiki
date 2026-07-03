@@ -9,12 +9,7 @@ import os
 import re
 
 from arknights_wiki.config import DATA_DIR, PROJECT_ROOT
-
-# 有效意图类型（与 prompts.py INTENT_REWRITE_PROMPT 保持同步）
-VALID_INTENTS = {
-    "concept_definition", "chapter_summary", "character_profile",
-    "causal_reasoning", "comparison", "fact_lookup", "list_enumeration",
-}
+from arknights_wiki.agent.prompts import VALID_INTENTS
 
 
 def _load_identity_map(data_dir: str | None = None) -> dict:
