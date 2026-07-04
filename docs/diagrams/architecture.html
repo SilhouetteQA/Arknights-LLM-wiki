@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>明日方舟 LLM Wiki - 架构图</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<style>
+  :root {
+    --bg: #0a1020;
+    --surface: #111827;
+    --border: #1e3a5f;
+    --text: #c8d6e5;
+    --text-dim: #6b8299;
+    --accent: #4fc3f7;
+    --amber: #ffb000;
+    --gold: #e6b422;
+    --font-mono: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+    --font-sans: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* 终端风格顶部栏 */
+  .terminal-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+  .terminal-header .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .terminal-header .dot.red { background: #ff5f57; }
+  .terminal-header .dot.yellow { background: #ffbd2e; }
+  .terminal-header .dot.green { background: #27ca40; }
+  .terminal-header .title {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-left: 8px;
+  }
+  .terminal-header .title span { color: var(--accent); }
+
+  /* 主内容 */
+  .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+
+  .page-title {
+    font-family: var(--font-mono);
+    font-size: 28px;
+    color: var(--accent);
+    text-shadow: 0 0 20px rgba(79, 195, 247, 0.3);
+    margin-bottom: 8px;
+  }
+  .page-meta {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 40px;
+  }
+
+  /* 图卡片 */
+  .diagram-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .diagram-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.5;
+  }
+  .diagram-card .card-header {
+    padding: 20px 24px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .diagram-card .card-number {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .diagram-card .card-title {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    color: var(--accent);
+  }
+  .diagram-card .card-desc {
+    padding: 8px 24px 16px;
+    font-size: 14px;
+    color: var(--text-dim);
+  }
+  .diagram-card .mermaid-wrap {
+    padding: 16px 24px 24px;
+    overflow-x: auto;
+  }
+  .diagram-card .mermaid-wrap .mermaid {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* 页脚 */
+  .footer {
+    text-align: center;
+    padding: 32px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  /* Mermaid 主题覆盖 */
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="terminal-header">
+  <div class="dot red"></div>
+  <div class="dot yellow"></div>
+  <div class="dot green"></div>
+  <div class="title">PRTS://<span>docs/diagrams/architecture</span></div>
+</div>
+
+<div class="container">
+  <h1 class="page-title">明日方舟 LLM Wiki</h1>
+  <p class="page-meta">架构图 &middot; 2026-07-04 &middot; Mermaid</p>
+
+  <!-- 图 1: C4 Context -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-number">[ 01 ]</span>
+      <h2 class="card-title">C4 Context -- 系统上下文图</h2>
+    </div>
+    <p class="card-desc">Wiki Agent 是一个独立的 RAG 问答系统，数据离线预处理，对外仅依赖 DeepSeek API 做推理。</p>
+    <div class="mermaid-wrap">
+      <pre class="mermaid">
+graph TB
+    subgraph "用户"
+        Player["玩家 / 剧情爱好者\n提问明日方舟世界观问题"]
+    end
+
+    subgraph "明日方舟 LLM Wiki 系统"
+        Agent["Wiki Agent\nRAG 问答 + 百科编纂风格\n端口 8000"]
+    end
+
+    subgraph "外部系统"
+        DeepSeek["DeepSeek API\nLLM 推理\n模型: deepseek-chat"]
+        PRTS["PRTS Wiki\n原始数据源\n抓取后离线使用"]
+        ModelScope["ModelScope\nBGE-small-zh-v1.5\nEmbedding 模型下载"]
+    end
+
+    Player -->|"提问 (SSE 流式)"| Agent
+    Agent -->|"LLM 调用\n(OpenAI SDK 兼容)"| DeepSeek
+    Agent -->|"离线数据\n(剧情/干员/Wiki)"| PRTS
+    Agent -->|"向量化检索\n(FAISS + BGE)"| ModelScope
+
+    style Agent fill:#1168bd,color:#fff
+    style Player fill:#08427b,color:#fff
+    style DeepSeek fill:#6c757d,color:#fff
+    style PRTS fill:#6c757d,color:#fff
+    style ModelScope fill:#6c757d,color:#fff
+      </pre>
+    </div>
+  </div>
+
+  <!-- 图 2: System Architecture -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-number">[ 02 ]</span>
+      <h2 class="card-title">System Architecture -- 系统架构图</h2>
+    </div>
+    <p class="card-desc">六层架构：前端层 → API 层 → Agent Pipeline → 检索层 → 数据层 → LLM 层</p>
+    <div class="mermaid-wrap">
+      <pre class="mermaid">
+graph TB
+    subgraph "前端层"
+        HTML["index.html\nPRTS 终端风格 UI"]
+        CSS["style.css\n配色/动画/响应式"]
+        JS["app.js\nSSE ReadableStream\ntokenCount 实时计数"]
+    end
+
+    subgraph "API 层 (FastAPI + SSE)"
+        Server["server.py\nPOST /chat → SSE 流"]
+        RateLimiter["速率限制器\n30 req/min per IP"]
+        LogQA["QA 日志\nqa_log.jsonl 自动记录"]
+    end
+
+    subgraph "Agent Pipeline"
+        Router["router.py\n意图识别 + 实体提取 + 复杂度分类"]
+        Simple["simple_search.py\n4 层检索 → LLM 直接回答"]
+        Complex["graph.py\nLangGraph ReAct Agent\n多步检索 max 8 轮"]
+        Prompts["prompts.py\n百科编纂者风格\n来源忠实度约束"]
+        State["state.py\nAgentState TypedDict"]
+    end
+
+    subgraph "检索层 (Data Access)"
+        Wiki["WikiStore\nv3_wiki 精确页面"]
+        Event["EventStore\nv1_events 结构化查询"]
+        Dialogue["DialogueStore\n原始剧情对话"]
+        Timeline["TimelineStore\n泰拉历史时间线"]
+        FAISS["FAISS 语义搜索\n6666 向量 512-dim BGE"]
+        EntityIndex["entity_source_map.json\n5213 实体 25300 双向引用"]
+    end
+
+    subgraph "数据层"
+        Stories["data/stories/\n2160 剧情 JSON"]
+        Extractions["data/extractions/\nv1_events + v2_characters + v3_wiki"]
+        Operators["operators.json\n340 干员档案"]
+        Lorebook["data/lorebook/\n大地巡旅 401 页 OCR"]
+        Index["data/index/\nFAISS 索引 + chunk_map"]
+    end
+
+    subgraph "LLM 层"
+        LLMClient["llm_client.py\nOpenAI SDK 统一接口"]
+        DeepSeekAPI["DeepSeek API\ndeepseek-chat"]
+    end
+
+    HTML --> Server
+    CSS --> HTML
+    JS --> Server
+
+    Server --> Router
+    Router -->|"simple (实体≤3)"| Simple
+    Router -->|"complex (对比/列举/因果/实体>3)"| Complex
+
+    Simple --> Wiki
+    Simple --> Event
+    Simple --> FAISS
+    Simple --> Dialogue
+    Simple --> Timeline
+    Simple --> Prompts
+    Simple --> LLMClient
+
+    Complex --> Wiki
+    Complex --> Event
+    Complex --> FAISS
+    Complex --> Dialogue
+    Complex --> EntityIndex
+    Complex --> Prompts
+    Complex --> State
+    Complex --> LLMClient
+
+    Wiki --> Extractions
+    Wiki --> Lorebook
+    Event --> Extractions
+    Dialogue --> Stories
+    Timeline --> Extractions
+    FAISS --> Index
+    EntityIndex --> Extractions
+
+    LLMClient --> DeepSeekAPI
+
+    style Server fill:#ff6b6b,color:#fff
+    style Router fill:#f39c12,color:#fff
+    style Simple fill:#2ecc71,color:#fff
+    style Complex fill:#2ecc71,color:#fff
+    style LLMClient fill:#9b59b6,color:#fff
+    style DeepSeekAPI fill:#9b59b6,color:#fff
+      </pre>
+    </div>
+  </div>
+
+  <!-- 图 3: Agent Pipeline Data Flow -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-number">[ 03 ]</span>
+      <h2 class="card-title">Agent Pipeline -- 数据流图</h2>
+    </div>
+    <p class="card-desc">查询路由核心流程：意图识别 → 实体提取 → 复杂度分类 → Simple(4层检索) / Complex(LangGraph ReAct 8轮)</p>
+    <div class="mermaid-wrap">
+      <pre class="mermaid">
+graph TD
+    Q["用户问题"] --> Wrap["wrap_user_input\n注入防护包裹"]
+    Wrap --> Router
+
+    subgraph "router.py -- route_query()"
+        Router{"识别结果"} --> IntentLocal["_infer_intent_local\n7 类意图关键词规则"]
+        IntentLocal -->|"命中"| Intent
+        IntentLocal -->|"未命中"| IntentLLM["recognize_intent_and_rewrite\nLLM 兜底"]
+        IntentLLM --> Intent["意图 + 改写后问题"]
+
+        Intent --> EntityLocal["_extract_entities_local\nidentity_map + operators + chapter_timeline"]
+        EntityLocal --> FilterHallucination["章节名幻觉过滤\n不在问题文本中的章节名降为 hints"]
+        FilterHallucination --> Classify["classify_complexity_local"]
+
+        Classify -->|"simple"| SimplePath
+        Classify -->|"complex"| ComplexPath
+    end
+
+    subgraph "simple_search.py"
+        SimplePath["search_and_collect"] --> ChId["章节识别\nget_chapter_summary 试探"]
+        ChId --> L0["Layer 0: Wiki 精确匹配\nget_entity_page"]
+        L0 --> L1["Layer 1: Events 章节感知\nsearch_events 按章过滤"]
+        L1 --> L2["Layer 2: FAISS 语义搜索\ncosine similarity ≥0.4"]
+        L2 --> L3["Layer 3: Dialogue 兜底\n原始文本搜索"]
+        L3 --> Collect["去重合并\nexpansion_hints 仅补充 Wiki"]
+        Collect --> BuildSimple["build_answer_prompt\n百科编纂者风格"]
+        BuildSimple --> CallLLM1["DeepSeek LLM"]
+    end
+
+    subgraph "graph.py -- LangGraph ReAct Agent"
+        ComplexPath --> InitState["初始化 AgentState\nquestion + messages"]
+        InitState --> CallModel["call_model\nLLM + 8 tool definitions"]
+        CallModel -->|"tool_calls"| ToolNode["tool_node\n执行检索工具\n结果追加到 messages"]
+        ToolNode -->|"继续 (≤8轮)"| CallModel
+        CallModel -->|"no tool_calls"| Synthesize["synthesize_node\nSYNTHESIS_PROMPT\n综合证据生成回答"]
+    end
+
+    CallLLM1 --> SSE1["SSE 流式输出"]
+    Synthesize --> SSE2["SSE 流式输出"]
+
+    SSE1 --> UI["前端 PRTS 终端"]
+    SSE2 --> UI
+
+    style Router fill:#f39c12,color:#fff
+    style SimplePath fill:#2ecc71,color:#fff
+    style ComplexPath fill:#3498db,color:#fff
+    style CallLLM1 fill:#9b59b6,color:#fff
+    style CallModel fill:#9b59b6,color:#fff
+    style UI fill:#1168bd,color:#fff
+      </pre>
+    </div>
+  </div>
+
+  <!-- 图 4: Component Diagram -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-number">[ 04 ]</span>
+      <h2 class="card-title">Component Diagram -- 代码模块依赖图</h2>
+    </div>
+    <p class="card-desc">5 个子包 (agent / extraction / pipeline / store / stats) + config 配置 + 外部依赖</p>
+    <div class="mermaid-wrap">
+      <pre class="mermaid">
+graph LR
+    subgraph "arknights_wiki/"
+        subgraph "agent/"
+            Server["server.py\nFastAPI + SSE"]
+            Router2["router.py\n查询路由"]
+            Simple2["simple_search.py\n简单检索"]
+            Graph2["graph.py\nLangGraph Agent"]
+            Tools["tools.py\n8 个检索工具"]
+            Prompts2["prompts.py\n提示词模板"]
+            Retrieval2["retrieval.py\n数据访问层"]
+            State2["state.py\nAgentState"]
+            Init["__init__.py\nwrap_user_input"]
+        end
+
+        subgraph "extraction/"
+            LLMClient2["llm_client.py\nOpenAI SDK 封装"]
+            DialogueLoader["dialogue_loader.py"]
+            Orchestrator["orchestrator.py\nPass 1 编排"]
+            CharacterAggregator["character_aggregator.py"]
+            PromptBuilder["prompt_builder.py"]
+            PostProcessor["post_processor.py"]
+            WorldbuildingOrch["worldbuilding_orchestrator.py"]
+            WorldbuildingProc["worldbuilding_processor.py"]
+            WorldbuildingPrompts["worldbuilding_prompts.py"]
+            WorldbuildingSchema["worldbuilding_schema.py"]
+            BookSplitter["book_splitter.py"]
+            VideoMerger["video_merger.py"]
+        end
+
+        subgraph "pipeline/"
+            FetchStories["fetch_stories.py"]
+            FetchIndex["fetch_index.py"]
+            FetchOperators["fetch_operators.py"]
+            ParseDialogue["parse_dialogue.py"]
+            GenMarkdown["gen_markdown.py"]
+            GenOpMD["gen_operators_md.py"]
+            Orchestrate["orchestrate.py"]
+        end
+
+        subgraph "store/"
+            Seed["seed.py"]
+            EntityRepo["entity_repository.py"]
+            PageRepo["page_repository.py"]
+            SourceRepo["source_repository.py"]
+            Schema["_schema.py"]
+            Report["_report.py"]
+        end
+
+        subgraph "stats/"
+            Collector["collector.py"]
+            Reporter["reporter.py"]
+        end
+
+        Config["config.py\nDATA_DIR / PROJECT_ROOT"]
+        Utils["_utils.py"]
+    end
+
+    subgraph "config/"
+        IdentityMap["identity_map.json"]
+        ChapterTimeline["chapter_timeline.json"]
+        CollabSeries["collab_series.json"]
+    end
+
+    subgraph "外部依赖"
+        LangGraph["LangGraph"]
+        FastAPI2["FastAPI"]
+        FAISS2["faiss-cpu"]
+        OpenAISDK["openai"]
+        SentenceTF["sentence-transformers"]
+    end
+
+    Server --> Router2
+    Server --> Simple2
+    Server --> Graph2
+    Router2 --> Prompts2
+    Router2 --> Config
+    Simple2 --> Retrieval2
+    Simple2 --> Prompts2
+    Simple2 --> LLMClient2
+    Graph2 --> Tools
+    Graph2 --> Prompts2
+    Graph2 --> State2
+    Graph2 --> LLMClient2
+    Graph2 --> Init
+    Tools --> Retrieval2
+    Retrieval2 --> Config
+
+    Simple2 --> Init
+    Prompts2 --> Tools
+
+    Router2 --> IdentityMap
+    Router2 --> ChapterTimeline
+
+    Orchestrator --> LLMClient2
+    Orchestrator --> DialogueLoader
+    CharacterAggregator --> LLMClient2
+    WorldbuildingOrch --> LLMClient2
+    WorldbuildingOrch --> WorldbuildingPrompts
+    WorldbuildingOrch --> WorldbuildingProc
+    WorldbuildingProc --> WorldbuildingSchema
+
+    Seed --> EntityRepo
+    Seed --> PageRepo
+    Seed --> SourceRepo
+    Seed --> Schema
+
+    Graph2 --> LangGraph
+    Server --> FastAPI2
+    Retrieval2 --> FAISS2
+    LLMClient2 --> OpenAISDK
+    Tools --> SentenceTF
+
+    style Server fill:#ff6b6b,color:#fff
+    style Router2 fill:#f39c12,color:#fff
+    style Simple2 fill:#2ecc71,color:#fff
+    style Graph2 fill:#3498db,color:#fff
+    style LLMClient2 fill:#9b59b6,color:#fff
+    style Config fill:#95a5a6,color:#fff
+      </pre>
+    </div>
+  </div>
+
+  <div class="footer">
+    PRTS Terminal &middot; Arknights LLM Wiki &middot; Architecture Diagrams
+  </div>
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#1e3a5f',
+      primaryTextColor: '#c8d6e5',
+      primaryBorderColor: '#2d5a8a',
+      lineColor: '#4fc3f7',
+      secondaryColor: '#111827',
+      tertiaryColor: '#0a1020',
+    },
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: 'basis',
+    },
+  });
+</script>
+
+</body>
+</html>

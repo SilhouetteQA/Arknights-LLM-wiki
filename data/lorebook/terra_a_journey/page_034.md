@@ -1,4 +1,0 @@
-# CHAPTER 2
-
-# 泰拉科技
-## TECHNOLOGIES OF TERRA

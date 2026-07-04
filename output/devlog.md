@@ -105,6 +105,87 @@
 
 ---
 
+## M0 质量修复 (2026-06-16)
+
+### 架构决策
+
+- **M0 职责收缩**：M0 只做确定性种子数据（干员/faction/region/别名/档案索引），NPC 实体和概念索引移除，留到 M1/M3 按需创建
+- **组合过滤策略失败**：尝试用正则+台词行数过滤 NPC 不可行，根本问题是 M0 纯规则层不应创建低信息量实体
+- **异格去重**：identity_map 中的异格干员不建独立 entity，只作为基体 alias，档案索引挂在基体上。character 从 418 降到 381
+- **岁兽误报**：概念关键词"岁"单字匹配 89% 误报，移除单字关键词。概念索引整体移入 M3 LLM 提取
+
+### 数据基线
+
+| 指标 | 修复前 | 修复后 |
+|------|--------|--------|
+| character | 3,766 (含 NPC) | 381 (仅干员) |
+| source_index(exact) | 246,214 | 3,615 (仅档案) |
+| source_index(concept) | 4,794 | 0 (移入 M3) |
+
+### 修改文件
+
+- `seed.py` — 3 步简化流程，移除 NPC/概念/章节种子
+- `entity_repository.py` — `seed_from_operators` 接受 idmap 跳过异格
+- `source_repository.py` — `seed_operator_archives` 异格档案挂基体
+- `config/concept_keywords.json` — 移除单字"岁"关键词
+
+---
+
+## 统计系统 (2026-06-16)
+
+### 架构决策
+
+- **JSONL 存储**：选 JSONL 而非 SQLite stats_log 表，schema 漂移友好
+- **Subagent-Driven 执行**：12 tasks 逐个派独立 agent 实现 + spec review + code review
+- **成本追踪粒度**：按模型拆分（deepseek-v4-flash / deepseek-v4-flash-think）
+- **进度可见性**：stderr 实时输出 + 每 10 分钟后台自动快照
+- **Windows 兼容**：RMB 符号导致 GBK 编码崩溃，替换为 RMB + stdout UTF-8 reconfigure
+
+### 代码基线
+
+```
+arknights_wiki/stats/
+├── __init__.py      # 导出 StatsCollector, StatsReporter
+├── __main__.py      # CLI: python -m arknights_wiki.stats
+├── collector.py     # 生命周期+记录+JSONL写入+成本估算
+└── reporter.py      # 读取JSONL+详情/表格/diff 渲染
+```
+
+### 数据基线
+
+| 指标 | 值 |
+|------|-----|
+| stats 测试 | 16 (10 collector + 6 reporter) |
+| 全部测试 | 135 pass |
+| 模块行数 | ~440 |
+| commits | 10 on feature/stats-system |
+
+---
+
+## 架构 v3 重设计 (2026-06-16)
+
+### 架构决策
+
+- **三遍独立提取**替代 M0-M9：剧情骨架 -> 世界观概念 -> 角色 Wiki，每遍独立扫描原文，互不依赖
+- **source_index 表砍掉**：提取结果自带 line_range 源引用
+- **entity_aliases 表砍掉**：干员别名在 config/identity_map.json 维护
+- **concept_keywords.json 砍掉**：LLM 自行发现概念
+- **事件数量随内容密度浮动**，不设固定上限
+- **概念由 LLM 自行判断**是否被实质性讨论
+- **角色双源融合**：operators.json 档案 + 故事对话出场
+- **模型选定 MiniMax M3**：经 5 模型对比测试（慈悲灯塔 122K tokens），M3 提取最全面
+
+### mrfz 失败根因确认
+
+- 1,475 concepts 全部 appear_node_count=0，2,314 relations 全部 total_nodes=0
+- 根因：逐 chunk 提取 + 无源链接 + LLM 聚合失败
+
+### 成本估算
+
+~590 次 LLM 调用，估算 $8-15 (MiniMax M3)
+
+---
+
 ## 数据整理 (2026-06-17)
 
 ### 架构决策
@@ -419,6 +500,44 @@ run_pass2_full.py          # 新建 — 全量提取脚本
 
 ---
 
+## Pass 2 战力评级重设计 (2026-06-21)
+
+### 架构决策
+
+- **去掉上下位子级**：旧格式「战场中坚·标准」-> 新格式「战场中坚」
+- **每级增加锚点基准角色**：用户提供 9 级定义，每级含 2-7 个基准角色示例
+- **移除"灭世灾厄"**：已并入"文明之敌"，VALID_POWER_LEVELS 从 30 个值收敛为 10 个
+- **power_level_evidence 字段**：新增，LLM 列出支撑评级的 1-3 个关键战斗事件，实现战力评级到具体章节事件的追溯链路
+
+### 执行结果
+
+| 指标 | 值 |
+|------|-----|
+| 成功/失败 | 641/641 (全量重提取) |
+| 输入 tokens | 15,167,618 |
+| 输出 tokens | 520,356 |
+| 费用 | $4.67 USD |
+| 耗时 | 111 min |
+
+### 分布对比
+
+| 等级 | 旧版 | 新版 |
+|------|------|------|
+| 信息不足 | 204 (31.8%) | 359 (56.0%) |
+| 战场中坚 | 271 (61.8%) | 166 (25.9%) |
+| 军事精锐 | — | 56 (8.7%) |
+| 传奇英雄 | 19 (4.3%) | 28 (4.4%) |
+| 王庭之主 | 44 (10.0%) | 21 (3.3%) |
+| 神明碎片 | — | 7 (1.1%) |
+
+### 代码变更
+
+- `prompt_builder.py` — 战力评级 prompt 重写（9级锚点+去子级）+ power_level_evidence 输出指令
+- `post_processor.py` — VALID_POWER_LEVELS 简化 + power_level_evidence 校验
+- `data/extractions/v2_characters/*.json` — 641 角色全量重提取
+
+---
+
 ## Pass 2 Mantra 修复 + Pass 3 预研 (2026-06-21)
 
 ### 架构决策
@@ -522,6 +641,43 @@ Pass 1 概念提取只能做章节级"这段在讨论什么"标注，无法做�
 
 ---
 
+## Pass 3 Phase 1+2 大地巡旅+视频提取 (2026-06-23)
+
+### 架构决策
+
+- **Schema 确认**：概念 6 子类独有字段、阵营 2 子类（国家含 key_figures/historical_events/foreign_relations，组织含 member_composition）、地点 2 子类
+- **story_events 通用字段**：Phase 3 原文阶段填充
+- **国家间用 foreign_relations** 替代 allies/enemies 二元对立
+- **两遍提取策略**：DeepSeek 8192 token 输出上限导致 concepts 抢占 factions/locations 空间。Phase 1a（factions+locations 优先输出）+ Phase 1b（concepts 专用提取）
+- **Ch5 拆分**：原 240 页国家与地区超出 token 预算，拆为 4 段
+- **时间线统一**：正文散布年份事件 + 附录泰拉纪年 -> 统一 timeline_events 字段，49 条（34 附录 + 15 视频），跨度 759-1099
+
+### 数据基线
+
+| 指标 | 值 |
+|------|-----|
+| 概念 | 110（种族 45 + 技术 20 + 社会制度 19 + 自然现象 15 + 超自然 6 + 异域 5） |
+| 阵营 | 74（31 国家 + 43 组织） |
+| 地点 | 23 |
+| 时间线 | 49 |
+| 国家覆盖 | 17/18（缺萨米） |
+| tokens | 304,874 in / 84,560 out |
+| 成本 | ~$0.18 USD |
+
+### 新建文件
+
+```
+arknights_wiki/extraction/
+├── book_splitter.py + tests
+├── video_merger.py + tests
+├── worldbuilding_schema.py + tests
+├── worldbuilding_prompts.py + tests
+├── worldbuilding_processor.py + tests
+└── worldbuilding_orchestrator.py + tests
+```
+
+---
+
 ## Pass 3 Phase 3 试跑调优 (2026-06-23)
 
 ### 架构决策
@@ -566,6 +722,30 @@ arknights_wiki/extraction/
 2. 读本文件末尾 — 最新决策
 3. 读 output/sessions/2026-06-23-3.md — 完整会话记录
 4. 下一步：全量 106 章 Phase 3 执行（过滤+字符分批已就位）
+
+---
+
+## Pass 3 Phase 3 全量执行 (2026-06-23)
+
+### 架构决策
+
+- **三批执行逐步修复**：第1批 API 挂起 -> max_chars_per_batch 42K->35K + API 300s 超时 + 指数退避重试；第2批崩溃 -> LLM 输出 `new_entities` 混入字符串，加 `isinstance(entity, dict)` 类型保护
+- **断点续跑机制**：每章完成保存检查点到 `v3_seed_db_v3_checkpoint.json`，恢复时从 source_records 提取已处理章节名自动跳过
+- **跳过策略**：7 个炎国章节（已正确跑过）+ 3 个空内容章（预期 0 mentions）
+- **分批字符数阈值**：从 42K 降至 35K，批数动态计算替代硬编码 3 批
+
+### 最终基线
+
+| 指标 | 值 |
+|------|-----|
+| 概念 | 1,199 |
+| 阵营 | 234 |
+| 地点 | 245 |
+| 时间线事件 | 49 |
+| 有 story_events 的实体 | 1,427 |
+| 总 story_events | 5,088 |
+| Wiki 页面 | 1,679 |
+| 成本 | ~$3.00 USD |
 
 ---
 
@@ -925,3 +1105,157 @@ tests/agent/
 2. 读本文件末尾 — 最新决策
 3. 读 output/sessions/2026-06-27-2.md — 完整修复清单
 4. 下一步：用户手动测试前端 → 评估器重跑基线
+
+---
+
+## Agent 技术债务修复 (2026-06-29)
+
+### 架构决策
+
+- **brooks:debt 扫描**：发现 26 项技术债务，按 PxS 优先级修复 8 项（PxS 3-9）
+- **FAISS 嵌入失败静默回退修复 (PxS=9)**：移除 `build_faiss_index` 和 `semantic_search` 中 `except Exception: np.random.randn` 静默回退，改为明确 `RuntimeError`
+- **提示词重复消除**：4 处重复 -> 提取 5 个共享规则块（来源忠实度/逻辑组织/禁止列表）
+- **`search_and_collect` 拆分**：108 行单体函数 -> `_resolve_chapter_context` + `_collect_structured_sources` + `_collect_semantic_fallback`
+- **`_BaseStore` 基类**：5 个 Store 类统一 `__init__` 模式 + `SearchResult` TypedDict
+- **`@tool` 装饰器注册**：TOOL_DEFINITIONS 从手动 3 处同步 -> 自动生成 `TOOL_DEFINITIONS` + `TOOL_EXECUTORS`
+- **router.py 职责分离**：提取 `_llm_intent_rewrite` + `_make_intent_result`/`_make_complexity_result` 工厂函数
+- **Persona 命名修正**：4 处 "CASUAL persona" 改为 "百科风格"（实际为严肃百科，非闲聊）
+- **主线章节映射**：identity_map 添加主线别名 -> 创建 `主线章节.md` 概念页（18 章）
+
+### 代码基线
+
+| 分支 | 提交 | 说明 |
+|------|------|------|
+| fix/tech-debt-agent-priority | 542c00f | 8 项债务修复 |
+| feature/langgraph-agent | 94d5063 | 合并修复 + persona + 主线映射 |
+
+---
+
+## Agent 检索质量全面修复 + 前端重设计 (2026-07-03)
+
+### 关键修复
+
+#### 数据加载 Bug（3 个静默失效）
+
+- `_load_operators` 结构错误：operators.json 结构为 `{fetched_at, total, operators: [...]}`，原代码遍历顶层 key 只拿到 4 个字段名 -> 修复后正确读取 420 个干员
+- `_load_identity_map` 结构错误：identity_map.json 结构为 `{_description, mappings: {alias: canonical}}`，原代码遍历顶层 key 只拿到 4 个元数据 -> 修复后正确读取 137 条映射
+- **NPC 无法匹配**：新增 `_load_character_names()` 从 `v2_characters/*.json` 提取 642 个角色名，实体提取覆盖 identity_map(137) + operators(420) + characters(642) + chapters(109)
+
+#### 检索质量核心修复
+
+- **角色查询跨章均匀采样**：从 entity_source_map 获取全部出场章节，按时间线排序后均匀选取 5 个代表性章节（0%/25%/50%/75%/100%），每章取 2-3 个事件
+- **LLM 意图幻觉校验**：`_llm_intent_rewrite` 返回非 7 种有效意图时回退本地意图
+- **非角色查询 limit 提升**：3 -> 6
+
+#### 流式体验
+
+- **SSE 事件不刷新**：每个 `yield` 后加 `await asyncio.sleep(0)` 强制刷新事件循环
+- **simple_search 阻塞**：改为 `loop.run_in_executor` + `queue.Queue` 实时推送检索进度
+- **token 一次性到达**：块间加 15ms 延迟模拟逐字流式
+
+#### 前端重设计：Noir Archive 风格
+
+- **配色**：冷蓝+琥珀 PRTS 终端 -> "Noir Archive" 暗暖色系（古铜金 #d4b56a + 奶油白 #f0ebe1）
+- **字体**：13px mono -> 15px 系统无衬线，行高 1.85
+- **文本可读性**：textContent -> innerHTML，支持段落/粗体/标题/分隔线
+- **新增功能**：智能滚动、流式闪烁光标、hover 复制按钮、Shift+Enter 换行
+
+### 代码基线
+
+| 分支 | 提交 | 说明 |
+|------|------|------|
+| feature/langgraph-agent | 7b5e1e9 | intent校验 + 删QA日志 |
+| feature/langgraph-agent | 49bbd70 | 检索质量全面修复 + 前端重设计 |
+
+### 清理
+
+- 删除 `arknights_wiki/eval/` 全部评估器文件
+- 删除 server.py 中 QA 日志功能（`_log_and_stream`）
+
+---
+
+## Ultracode 对抗式审查 (2026-07-03)
+
+### 审查方法
+
+19 个代理并行侦察/审查/验证 6 维度（正确性/安全/性能/架构/测试/LLM），237 工具调用，967K tokens，~12 分钟。评分：C+ (63/100)
+
+### 修复清单（5 commits, 14 项修复）
+
+#### 提交 7f00553 — 3 CRITICAL
+
+- C-1: identity_map 路径错误 (DATA_DIR -> PROJECT_ROOT)
+- C-2: 提示注入零防护 -> wrap_user_input + _INJECTION_DEFENSE
+- C-3: 无输入长度/速率限制 -> max_length=2000 + rate limiter 30/min
+
+#### 提交 8a45b1d — 7 HIGH
+
+- H-1: EventStore 内存缓存
+- H-2: DialogueStore 内存缓存
+- H-3: Mock LLM 默认返回真实答案
+- H-4: 工具测试添加内容断言
+- H-5: search_future.result() 异常处理
+- H-6: build_tool_listing() 从 @tool 注册表自动生成
+- H-7: 已在 C-3 中修复
+
+#### 提交 8897bfa — 3 架构改进
+
+- 配置加载约定文档化 (router.py docstring)
+- _BaseStore 缓存抽象 (_ensure_loaded + _do_load 模板方法)
+- _RETRIEVAL_STRATEGY 提取为独立常量
+
+#### 提交 29d4f83 — INTENT_META 单一数据源
+
+- M-1: VALID_INTENTS 自动生成，_build_intent_listing 单一数据源
+- 顺手修复: INTENT_REWRITE_PROMPT 改为 f-string，_INJECTION_DEFENSE 正确插值
+
+#### 提交 c1cb347 — Agent SSE 修复
+
+- 根因: graph.stream() 同步阻塞在 async generator 中，阻塞事件循环
+- 修复: run_in_executor + queue.Queue，与 _simple_search_events 模式一致
+
+### 代码基线
+
+| 分支 | 提交 | 说明 |
+|------|------|------|
+| master | a43fc02 | feature/langgraph-agent 合并（1266 files, 37856 lines） |
+| feature/langgraph-agent | 7f00553 -> c1cb347 | 5 commits, 14 fixes |
+
+测试: **76/76 passed**（全程保持）
+
+---
+
+## 会话历史摘要
+
+| 日期 | 会话 | 主要工作 | 关键产出 |
+|------|------|----------|----------|
+| 2026-06-15 | #1 | Phase 1 原始内容提取：Spec -> Plan -> TDD，mrfz scraper 管线迁移 | 87 tests, 1663 节点, 420 干员档案 |
+| 2026-06-16 | #1 | M0 质量修复：职责收缩，移除 NPC/概念索引，异格去重 | 381 干员, 3,615 索引 |
+| 2026-06-16 | #2 | 统计系统：Spec -> Subagent TDD -> 135 tests | stats/ 模块, JSONL 存储 |
+| 2026-06-16 | #3 | 架构 v3 重设计：grill-with-docs 深挖，三遍独立提取替代 M0-M9 | 5 模型对比测试，确认 MiniMax M3 |
+| 2026-06-16 | #4 | Pass 1 剧情骨架提取：Spec -> TDD -> 试跑 6 章 | extraction/ 5 模块, 28 tests, DeepSeek 选定 |
+| 2026-06-17 | #1 | Pass 1 质量修复：场景级行号、自然节点分块、概念严格化 | identity_map 120+ 条, factions/locations 支持 |
+| 2026-06-17 | IS | IS 结局适配 + 数据整理：5 级 taxonomy，PART 拆分 | 18 个 IS 结局，560 万字基线 |
+| 2026-06-18 | #1 | Pass 1 全量质量修复：JSON schema 重排，三维质量审计 | 4,129 事件/957 概念/1,152 阵营, ~$3.0 |
+| 2026-06-20 | #1 | Pass 2 Spec: brainstorming + grill-with-docs + NPC 清单 | 九级战力体系, ~658 目标角色 |
+| 2026-06-20 | #2 | Pass 2 实施: Subagent TDD 4 Tasks | character_aggregator, filter_targets +113, 210 tests |
+| 2026-06-21 | #1 | Pass 2 全量提取: 641 角色, 100% 成功, $4.63 | v2_characters/ 641 JSON, 战力评级审计 |
+| 2026-06-21 | #2 | Pass 2 战力评级重设计：去子级、锚点基准、power_level_evidence | 641 重提取, $4.67, 分布显著改善 |
+| 2026-06-21 | #3 | Mantra 修复 + Pass 3 预研：方案 C 选定 | Pass 1 数据摸底（1,678 实体） |
+| 2026-06-22 | #1 | Pass 3 brainstorming：视频 37 部 + 大地巡旅 426 页 | 6 子类概念体系, 2 子类阵营/地点, 验证 7 章 |
+| 2026-06-22 | #2 | 大地巡旅 OCR: MiniMax M3 视觉 403 页 | 401/403 成功, RMB 5.23, 1.2MB Markdown |
+| 2026-06-23 | #1 | Pass 3 Phase 1+2: 大地巡旅+视频提取, Subagent TDD | 110 概念/74 阵营/23 地点/49 时间线, $0.18 |
+| 2026-06-23 | #2 | Pass 3 Phase 3 试跑: prompt 4 轮演进 + merge 6 次增强 | 实体清单按章过滤(缩减 90%), 字符数驱动分批 |
+| 2026-06-23 | #3 | Pass 3 炎国验证: 实体清单过滤 + 字符分批修复 | 炎国 7 章重跑 100% 成功, 338c/100f/58l |
+| 2026-06-23 | #4 | Pass 3 Phase 3 全量: 三批执行 + 断点续跑 | 1,199 概念/234 阵营/245 地点, 5,088 events, ~$3.0 |
+| 2026-06-24 | #1 | Pass 3 质量修复: 阵营成员去重 + 概述 LLM 重写 + 兽主/巨兽补全 | faction_roster_index, 16 阵营概述重写, 5 兽主+3 巨兽 |
+| 2026-06-24 | #2 | OpenAI Evals 集成: 三 Pass 可追溯性评估 | P1 90% A+B, P2 96%, P3 87%, D 级失效根因诊断 |
+| 2026-06-24 | #3 | LangGraph AI Agent: Spec -> 10 Tasks TDD | 7 tools, FAISS 6,666 向量, 45 tests |
+| 2026-06-24 | #4 | Agent 前端 UI: PRTS 终端双栏 SSE 聊天 | 365 行 CSS, 205 行 JS, 6 commits |
+| 2026-06-25 | #1 | Agent 提示词工程: grill-with-docs + SDD | CASUAL persona, 意图改写合并, 实体索引 5,213/25,300 |
+| 2026-06-25 | #2 | Agent 五维评估器: 100 题 + MiniMax M3 judge | 综合 2.20/3.0, answer_accuracy 方法论缺陷发现 |
+| 2026-06-27 | #1 | Agent Persona 重写: CASUAL -> 百科编纂者 | QA 日志机制, 3 个系统性缺陷发现 |
+| 2026-06-27 | #2 | Agent Pipeline 系统性优化: 5 阶段诊断 -> 8 缺陷修复 | 实体噪声 5-9->1.3, simple 路由 20%->83% |
+| 2026-06-29 | #1 | Agent 技术债务修复: brooks:debt 26 项 -> 修复 8 项 | _BaseStore, @tool 注册器, 提示词共享块 |
+| 2026-07-03 | #1 | Agent 检索修复 + 前端重设计: 数据加载 3 bug + Noir Archive | 跨章采样, SSE 刷新, 新前端配色 |
+| 2026-07-03 | #2 | Ultracode 对抗式审查: 19 代理/967K tokens/6 维度 | 14 项修复, 5 commits, C+ -> 76 tests 保全

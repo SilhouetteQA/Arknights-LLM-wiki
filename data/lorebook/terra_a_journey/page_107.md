@@ -1,5 +1,0 @@
-# CHAPTER 5
-
-# 国家与地区
-
-## COUNTRIES AND REGIONS OF TERRA

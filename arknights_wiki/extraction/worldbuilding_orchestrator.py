@@ -33,9 +33,19 @@ def run_phase1_book(
 ) -> dict:
     """Phase 1: 提取大地巡旅设定集 (6章正文 + 泰拉纪年)
 
+    大地巡旅原文不包含在本仓库中。如需运行此函数，请将 terra_a_journey_full.md 放回 data/lorebook/。
+    参考 data/lorebook/README.md 了解详情。
+
     Returns:
         种子库 v1 dict (含 concepts/factions/locations + timeline_events)
     """
+    if not os.path.exists(book_path):
+        raise FileNotFoundError(
+            f"大地巡旅原文不存在: {book_path}\n"
+            "原始文件已移至 D:\\AI project\\Terra A Journey\\\n"
+            "详见 data/lorebook/README.md"
+        )
+
     segments = split_book(book_path)
 
     # 分离泰拉纪年段和正文章节

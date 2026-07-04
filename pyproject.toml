@@ -10,7 +10,6 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "pytest-asyncio>=0.25"]
-eval = ["evals>=3.0"]
 agent = [
     "fastapi>=0.115",
     "sse-starlette>=2.0",

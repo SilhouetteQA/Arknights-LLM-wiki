@@ -1,4 +1,5 @@
 import os, tempfile
+import pytest
 from unittest.mock import patch, MagicMock
 from arknights_wiki.extraction.worldbuilding_orchestrator import (
     run_phase1_book,
@@ -6,7 +7,11 @@ from arknights_wiki.extraction.worldbuilding_orchestrator import (
     run_pass3,
 )
 
+LOREBORN_PATH = "data/lorebook/terra_a_journey_full.md"
+_HAS_LOREBORN = os.path.exists(LOREBORN_PATH)
 
+
+@pytest.mark.skipif(not _HAS_LOREBORN, reason="大地巡旅原文已移除")
 class TestPhase1Book:
     @patch("arknights_wiki.extraction.worldbuilding_orchestrator.call_llm")
     @patch("arknights_wiki.extraction.worldbuilding_orchestrator.create_client")
@@ -94,6 +99,7 @@ class TestPhase2Video:
             assert "补充" in result["concepts"][0]["summary"]
 
 
+@pytest.mark.skipif(not _HAS_LOREBORN, reason="大地巡旅原文已移除")
 class TestRunPass3:
     @patch("arknights_wiki.extraction.worldbuilding_orchestrator.run_phase1_book")
     @patch("arknights_wiki.extraction.worldbuilding_orchestrator.run_phase2_video")

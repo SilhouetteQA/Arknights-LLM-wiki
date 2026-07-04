@@ -18,7 +18,7 @@
 - Create: `tests/test_config.py`
 - Create: `arknights_wiki/pipeline/__init__.py`
 
-- [ ] **Step 1: 写 config 测试**
+- [x] **Step 1: 写 config 测试**
 
 ```python
 # tests/test_config.py
@@ -61,13 +61,13 @@ def test_category_label_map_keys():
     assert config.CATEGORY_LABEL_MAP["主线"] == "main"
 ```
 
-- [ ] **Step 2: 运行测试确认失败（config.py 尚未创建）**
+- [x] **Step 2: 运行测试确认失败（config.py 尚未创建）**
 
 ```bash
 python -m pytest tests/test_config.py -v
 ```
 
-- [ ] **Step 3: 创建 pyproject.toml + __init__.py + config.py + pipeline/__init__.py**
+- [x] **Step 3: 创建 pyproject.toml + __init__.py + config.py + pipeline/__init__.py**
 
 ```toml
 # pyproject.toml
@@ -142,13 +142,13 @@ OPERATOR_DATA_ATTR_MAP = {
 # pipeline — 原始内容提取管线
 ```
 
-- [ ] **Step 4: 运行测试确认通过**
+- [x] **Step 4: 运行测试确认通过**
 
 ```bash
 python -m pytest tests/test_config.py -v
 ```
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add pyproject.toml arknights_wiki/ tests/ docs/plans/
@@ -163,7 +163,7 @@ git commit -m "feat: add project skeleton with config and initial tests"
 - Create: `arknights_wiki/_utils.py`
 - Create: `tests/test_utils.py`
 
-- [ ] **Step 1: 写 _utils 测试**
+- [x] **Step 1: 写 _utils 测试**
 
 ```python
 # tests/test_utils.py
@@ -241,21 +241,21 @@ def test_normalize_url_path_only():
     assert normalize_url("/w/test") == "https://prts.wiki/w/test"
 ```
 
-- [ ] **Step 2: 运行测试确认失败**
+- [x] **Step 2: 运行测试确认失败**
 
 ```bash
 python -m pytest tests/test_utils.py -v
 ```
 
-- [ ] **Step 3: 创建 _utils.py 使测试通过**
+- [x] **Step 3: 创建 _utils.py 使测试通过**
 
-- [ ] **Step 4: 运行测试确认通过**
+- [x] **Step 4: 运行测试确认通过**
 
 ```bash
 python -m pytest tests/test_utils.py -v
 ```
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add arknights_wiki/_utils.py tests/test_utils.py
@@ -270,7 +270,7 @@ git commit -m "feat: add utility functions with tests"
 - Create: `arknights_wiki/pipeline/fetch_index.py`
 - Create: `tests/test_fetch_index.py`
 
-- [ ] **Step 1: 写测试（用本地 HTML fixture）**
+- [x] **Step 1: 写测试（用本地 HTML fixture）**
 
 ```python
 # tests/test_fetch_index.py
@@ -340,21 +340,21 @@ def test_index_to_batch_state():
     assert state["next_batch_available"] is True
 ```
 
-- [ ] **Step 2: 运行测试确认失败**
+- [x] **Step 2: 运行测试确认失败**
 
 ```bash
 python -m pytest tests/test_fetch_index.py -v
 ```
 
-- [ ] **Step 3: 创建 fetch_index.py 使测试通过**
+- [x] **Step 3: 创建 fetch_index.py 使测试通过**
 
-- [ ] **Step 4: 运行测试确认通过**
+- [x] **Step 4: 运行测试确认通过**
 
 ```bash
 python -m pytest tests/test_fetch_index.py -v
 ```
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ---
 
@@ -364,7 +364,7 @@ python -m pytest tests/test_fetch_index.py -v
 - Create: `arknights_wiki/pipeline/fetch_stories.py`
 - Create: `tests/test_fetch_stories.py`
 
-- [ ] **Step 1: 写测试**
+- [x] **Step 1: 写测试**
 
 ```python
 # tests/test_fetch_stories.py
@@ -415,9 +415,9 @@ def test_story_url_from_id_no_url():
     assert "test" in url
 ```
 
-- [ ] **Step 2-4: 标准 TDD 循环**
+- [x] **Step 2-4: 标准 TDD 循环**
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ---
 
@@ -427,7 +427,7 @@ def test_story_url_from_id_no_url():
 - Create: `arknights_wiki/pipeline/parse_dialogue.py`
 - Create: `tests/test_parse_dialogue.py`
 
-- [ ] **Step 1: 写测试**
+- [x] **Step 1: 写测试**
 
 ```python
 # tests/test_parse_dialogue.py
@@ -509,9 +509,9 @@ def test_parse_story_html():
     assert len(story["lines"]) == 2
 ```
 
-- [ ] **Step 2-4: TDD 循环**
+- [x] **Step 2-4: TDD 循环**
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ---
 
@@ -521,7 +521,7 @@ def test_parse_story_html():
 - Files: `arknights_wiki/pipeline/gen_markdown.py`
 - Create: `tests/test_gen_markdown.py`
 
-- [ ] **Step 1: 写测试**
+- [x] **Step 1: 写测试**
 
 ```python
 # tests/test_gen_markdown.py
@@ -548,9 +548,9 @@ def test_story_to_markdown_basic():
     assert "主线" in md
 ```
 
-- [ ] **Step 2-4: TDD 循环**
+- [x] **Step 2-4: TDD 循环**
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ---
 
@@ -560,7 +560,7 @@ def test_story_to_markdown_basic():
 - Create: `arknights_wiki/pipeline/fetch_operators.py`
 - Create: `tests/test_fetch_operators.py`
 
-- [ ] **Step 1: 写测试**
+- [x] **Step 1: 写测试**
 
 ```python
 # tests/test_fetch_operators.py
@@ -646,21 +646,21 @@ def test_parse_operator_page_empty():
     assert parse_operator_page("<div></div>") == {}
 ```
 
-- [ ] **Step 2: 运行测试确认失败**
+- [x] **Step 2: 运行测试确认失败**
 
 ```bash
 python -m pytest tests/test_fetch_operators.py -v
 ```
 
-- [ ] **Step 3: 创建 fetch_operators.py 使测试通过**
+- [x] **Step 3: 创建 fetch_operators.py 使测试通过**
 
-- [ ] **Step 4: 运行测试确认通过**
+- [x] **Step 4: 运行测试确认通过**
 
 ```bash
 python -m pytest tests/test_fetch_operators.py -v
 ```
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ---
 
@@ -670,7 +670,7 @@ python -m pytest tests/test_fetch_operators.py -v
 - Create: `arknights_wiki/pipeline/gen_operators_md.py`
 - Create: `tests/test_gen_operators_md.py`
 
-- [ ] **Step 1: 写测试**
+- [x] **Step 1: 写测试**
 
 ```python
 # tests/test_gen_operators_md.py
@@ -741,9 +741,9 @@ def test_operator_to_markdown_archive_order():
     assert pos_first < pos_third < pos_second
 ```
 
-- [ ] **Step 2-4: TDD 循环**
+- [x] **Step 2-4: TDD 循环**
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ---
 
@@ -753,7 +753,7 @@ def test_operator_to_markdown_archive_order():
 - Create: `arknights_wiki/pipeline/orchestrate.py`
 - Create: `tests/test_orchestrate.py`
 
-- [ ] **Step 1: 写测试**
+- [x] **Step 1: 写测试**
 
 ```python
 # tests/test_orchestrate.py
@@ -781,15 +781,15 @@ def test_select_batch_nodes_empty():
     assert result == []
 ```
 
-- [ ] **Step 2-4: TDD 循环**
+- [x] **Step 2-4: TDD 循环**
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ---
 
 ### Task 10: 集成测试 + 全模块导入验证
 
-- [ ] **Step 1: 写集成测试**
+- [x] **Step 1: 写集成测试**
 
 ```python
 # tests/test_integration.py
@@ -806,11 +806,11 @@ def test_all_modules_importable():
     from arknights_wiki.pipeline import orchestrate
 ```
 
-- [ ] **Step 2: 运行全部测试**
+- [x] **Step 2: 运行全部测试**
 
 ```bash
 python -m pytest tests/ -v
 ```
 
-- [ ] **Step 3: Commit 最终版本**
+- [x] **Step 3: Commit 最终版本**
 

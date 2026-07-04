@@ -1,11 +1,18 @@
 import os
+import pytest
 from arknights_wiki.extraction.book_splitter import split_book, ChapterSegment
+
+LOREBORN_PATH = "data/lorebook/terra_a_journey_full.md"
+pytestmark = pytest.mark.skipif(
+    not os.path.exists(LOREBORN_PATH),
+    reason="大地巡旅原文已移除，见 data/lorebook/README.md"
+)
 
 
 class TestBookSplitter:
     def test_split_returns_chapter_segments(self):
         """切分返回 ChapterSegment 列表，至少 9 段 (3+4+1+1)"""
-        segments = split_book("data/lorebook/terra_a_journey_full.md")
+        segments = split_book(LOREBORN_PATH)
         assert len(segments) >= 9
         for seg in segments:
             assert isinstance(seg, ChapterSegment)

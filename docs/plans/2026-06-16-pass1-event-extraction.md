@@ -1,5 +1,6 @@
 # Pass 1 剧情骨架提取 — 实施计划
 
+> **状态**: 已完成
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** 实现三遍独立提取的第一遍——逐章拼接对话、调用 MiniMax M3 提取事件/角色/概念位置、后处理对齐、产出 JSON + 审阅 Markdown
@@ -9,6 +10,8 @@
 **Tech Stack:** Python 3.12+, openai SDK, MiniMax M3 (128K context, 16384 max_tokens), difflib (标准库)
 
 **Spec:** `docs/specs/2026-06-16-pass1-event-extraction.md`
+
+> **状态**: 已完成
 
 ---
 
@@ -42,7 +45,7 @@ tests/test_extraction/
 - Create: `tests/test_extraction/__init__.py`
 - Create: `tests/test_extraction/test_dialogue_loader.py`
 
-- [ ] **Step 1: 写失败测试 — 加载单章对话**
+- [x] **Step 1: 写失败测试 — 加载单章对话**
 
 ```python
 # tests/test_extraction/test_dialogue_loader.py
@@ -80,14 +83,14 @@ def test_load_chapter_single_node():
     assert "罗德岛的走廊空无一人" in result.text
 ```
 
-- [ ] **Step 2: 运行测试确认失败**
+- [x] **Step 2: 运行测试确认失败**
 
 ```bash
 python -m pytest tests/test_extraction/test_dialogue_loader.py::test_load_chapter_single_node -v
 ```
 Expected: FAIL (ModuleNotFoundError)
 
-- [ ] **Step 3: 实现 dialogue_loader.py**
+- [x] **Step 3: 实现 dialogue_loader.py**
 
 ```python
 # arknights_wiki/extraction/dialogue_loader.py
@@ -196,14 +199,14 @@ for line in node.get("lines", []):
     })
 ```
 
-- [ ] **Step 4: 运行测试确认通过**
+- [x] **Step 4: 运行测试确认通过**
 
 ```bash
 python -m pytest tests/test_extraction/test_dialogue_loader.py::test_load_chapter_single_node -v
 ```
 Expected: PASS
 
-- [ ] **Step 5: 写多 node 排序测试**
+- [x] **Step 5: 写多 node 排序测试**
 
 ```python
 def test_load_chapter_multi_node_order():
@@ -227,14 +230,14 @@ def test_load_chapter_multi_node_order():
     assert result.category == "side"
 ```
 
-- [ ] **Step 6: 运行测试确认通过**
+- [x] **Step 6: 运行测试确认通过**
 
 ```bash
 python -m pytest tests/test_extraction/test_dialogue_loader.py -v
 ```
 Expected: 2 PASS
 
-- [ ] **Step 7: 写分批测试**
+- [x] **Step 7: 写分批测试**
 
 ```python
 def test_split_chapter_single_batch():
@@ -275,14 +278,14 @@ def test_split_chapter_two_batches():
     assert len(batches[0].lines) + len(batches[1].lines) == len(lines)
 ```
 
-- [ ] **Step 8: 运行测试确认通过**
+- [x] **Step 8: 运行测试确认通过**
 
 ```bash
 python -m pytest tests/test_extraction/test_dialogue_loader.py -v
 ```
 Expected: 4 PASS
 
-- [ ] **Step 9: Commit**
+- [x] **Step 9: Commit**
 
 ```bash
 git add arknights_wiki/extraction/__init__.py arknights_wiki/extraction/dialogue_loader.py tests/test_extraction/
@@ -297,7 +300,7 @@ git commit -m "feat(extraction): add dialogue_loader — chapter JSON loading, c
 - Create: `arknights_wiki/extraction/prompt_builder.py`
 - Create: `tests/test_extraction/test_prompt_builder.py`
 
-- [ ] **Step 1: 写失败测试 — 基础 prompt 构建**
+- [x] **Step 1: 写失败测试 — 基础 prompt 构建**
 
 ```python
 # tests/test_extraction/test_prompt_builder.py
@@ -326,14 +329,14 @@ def test_build_user_prompt_includes_chapter_and_dialogue():
     assert "output_schema" in prompt or "events" in prompt
 ```
 
-- [ ] **Step 2: 运行测试确认失败**
+- [x] **Step 2: 运行测试确认失败**
 
 ```bash
 python -m pytest tests/test_extraction/test_prompt_builder.py -v
 ```
 Expected: FAIL
 
-- [ ] **Step 3: 实现 prompt_builder.py**
+- [x] **Step 3: 实现 prompt_builder.py**
 
 ```python
 # arknights_wiki/extraction/prompt_builder.py
@@ -405,14 +408,14 @@ def build_user_prompt(chapter: str, dialogue_text: str, total_lines: int) -> str
 - line_range 对应上述对话文本的行号（从第 1 行开始计数）"""
 ```
 
-- [ ] **Step 4: 运行测试确认通过**
+- [x] **Step 4: 运行测试确认通过**
 
 ```bash
 python -m pytest tests/test_extraction/test_prompt_builder.py -v
 ```
 Expected: 2 PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add arknights_wiki/extraction/prompt_builder.py tests/test_extraction/test_prompt_builder.py
@@ -427,7 +430,7 @@ git commit -m "feat(extraction): add prompt_builder — system + user prompt ass
 - Create: `arknights_wiki/extraction/llm_client.py`
 - Create: `tests/test_extraction/test_llm_client.py`
 
-- [ ] **Step 1: 写失败测试 — JSON 解析与 think 标签剥离**
+- [x] **Step 1: 写失败测试 — JSON 解析与 think 标签剥离**
 
 ```python
 # tests/test_extraction/test_llm_client.py
@@ -477,14 +480,14 @@ def test_parse_llm_response_malformed_returns_none():
     assert result is None
 ```
 
-- [ ] **Step 2: 运行测试确认失败**
+- [x] **Step 2: 运行测试确认失败**
 
 ```bash
 python -m pytest tests/test_extraction/test_llm_client.py -v
 ```
 Expected: FAIL
 
-- [ ] **Step 3: 实现 llm_client.py**
+- [x] **Step 3: 实现 llm_client.py**
 
 ```python
 # arknights_wiki/extraction/llm_client.py
@@ -573,14 +576,14 @@ def call_llm(
     return {"_parse_error": True, "_raw": last_raw, "_stats": stats}
 ```
 
-- [ ] **Step 4: 运行测试确认通过**
+- [x] **Step 4: 运行测试确认通过**
 
 ```bash
 python -m pytest tests/test_extraction/test_llm_client.py -v
 ```
 Expected: 7 PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add arknights_wiki/extraction/llm_client.py tests/test_extraction/test_llm_client.py
@@ -595,7 +598,7 @@ git commit -m "feat(extraction): add llm_client — MiniMax M3 wrapper with thin
 - Create: `arknights_wiki/extraction/post_processor.py`
 - Create: `tests/test_extraction/test_post_processor.py`
 
-- [ ] **Step 1: 写失败测试**
+- [x] **Step 1: 写失败测试**
 
 ```python
 # tests/test_extraction/test_post_processor.py
@@ -734,14 +737,14 @@ def test_validate_extraction_line_range_out_of_bounds():
     assert any("999" in e or "超出" in e for e in errors)
 ```
 
-- [ ] **Step 2: 运行测试确认失败**
+- [x] **Step 2: 运行测试确认失败**
 
 ```bash
 python -m pytest tests/test_extraction/test_post_processor.py -v
 ```
 Expected: FAIL
 
-- [ ] **Step 3: 实现 post_processor.py**
+- [x] **Step 3: 实现 post_processor.py**
 
 ```python
 # arknights_wiki/extraction/post_processor.py
@@ -906,14 +909,14 @@ def validate_extraction(data: dict, total_lines: int) -> list[str]:
     return errors
 ```
 
-- [ ] **Step 4: 运行测试确认通过**
+- [x] **Step 4: 运行测试确认通过**
 
 ```bash
 python -m pytest tests/test_extraction/test_post_processor.py -v
 ```
 Expected: 10 PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add arknights_wiki/extraction/post_processor.py tests/test_extraction/test_post_processor.py
@@ -928,7 +931,7 @@ git commit -m "feat(extraction): add post_processor — character alignment, eve
 - Create: `arknights_wiki/extraction/orchestrator.py`
 - Create: `tests/test_extraction/test_orchestrator.py`
 
-- [ ] **Step 1: 写失败测试 — 单章提取流程**
+- [x] **Step 1: 写失败测试 — 单章提取流程**
 
 ```python
 # tests/test_extraction/test_orchestrator.py
@@ -1002,14 +1005,14 @@ def test_save_extraction_creates_directory_and_file():
     assert loaded["chapter"] == "测试章"
 ```
 
-- [ ] **Step 2: 运行测试确认失败**
+- [x] **Step 2: 运行测试确认失败**
 
 ```bash
 python -m pytest tests/test_extraction/test_orchestrator.py -v
 ```
 Expected: FAIL
 
-- [ ] **Step 3: 实现 orchestrator.py**
+- [x] **Step 3: 实现 orchestrator.py**
 
 ```python
 # arknights_wiki/extraction/orchestrator.py
@@ -1248,14 +1251,14 @@ def run_all(
     return results
 ```
 
-- [ ] **Step 4: 运行测试确认通过**
+- [x] **Step 4: 运行测试确认通过**
 
 ```bash
 python -m pytest tests/test_extraction/test_orchestrator.py -v
 ```
 Expected: 3 PASS
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add arknights_wiki/extraction/orchestrator.py tests/test_extraction/test_orchestrator.py
@@ -1266,7 +1269,7 @@ git commit -m "feat(extraction): add orchestrator — chapter extraction pipelin
 
 ### Task 6: 试跑 6 章
 
-- [ ] **Step 1: 运行试跑脚本**
+- [x] **Step 1: 运行试跑脚本**
 
 ```python
 # 在项目根目录交互运行
@@ -1284,7 +1287,7 @@ TRIAL = [
 results = run_trial(TRIAL)
 ```
 
-- [ ] **Step 2: 检查输出文件**
+- [x] **Step 2: 检查输出文件**
 
 ```bash
 ls data/extractions/v1_events/main/
@@ -1294,7 +1297,7 @@ ls output/trial_review/
 
 Expected: 6 个 JSON + 6 个 Markdown 都存在
 
-- [ ] **Step 3: 呈现试跑结果给用户审阅**
+- [x] **Step 3: 呈现试跑结果给用户审阅**
 
 ```
 试跑完成。输出位置:
@@ -1305,7 +1308,7 @@ Expected: 6 个 JSON + 6 个 Markdown 都存在
   ...summary table...
 ```
 
-- [ ] **Step 4: Commit 试跑结果**
+- [x] **Step 4: Commit 试跑结果**
 
 ```bash
 git add data/extractions/v1_events/ output/trial_review/
@@ -1316,7 +1319,7 @@ git commit -m "feat(extraction): add 6-chapter trial run results"
 
 ### Task 7: 全量 109 章运行（试跑审阅通过后）
 
-- [ ] **Step 1: 运行全量**
+- [x] **Step 1: 运行全量**
 
 ```python
 from arknights_wiki.extraction.orchestrator import run_all
@@ -1327,7 +1330,7 @@ results = run_all(skip_chapters={
 print(f"全量完成: {len(results)} 章")
 ```
 
-- [ ] **Step 2: 汇总统计**
+- [x] **Step 2: 汇总统计**
 
 ```bash
 python -c "
@@ -1357,7 +1360,7 @@ print(f'Token out: {total_tokens_out:,}')
 "
 ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add data/extractions/v1_events/
