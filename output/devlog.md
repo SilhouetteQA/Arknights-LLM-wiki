@@ -1259,3 +1259,52 @@ tests/agent/
 | 2026-06-29 | #1 | Agent 技术债务修复: brooks:debt 26 项 -> 修复 8 项 | _BaseStore, @tool 注册器, 提示词共享块 |
 | 2026-07-03 | #1 | Agent 检索修复 + 前端重设计: 数据加载 3 bug + Noir Archive | 跨章采样, SSE 刷新, 新前端配色 |
 | 2026-07-03 | #2 | Ultracode 对抗式审查: 19 代理/967K tokens/6 维度 | 14 项修复, 5 commits, C+ -> 76 tests 保全
+---
+
+## 升级阶段启动 (2026-08-15)
+
+### 背景
+
+- 用户提供《01_现有明日方舟LLM_Wiki项目评估与升级方案.md》（当前未跟踪，待提交）
+- 方案核心结论：项目已超出普通 RAG 问答，**停止扩大数据量**，从「问答 Agent」升级为「**领域自治研究 Agent**」，目标是可评测 / 可观测 / 可控 / 可恢复的生产级 Agent 系统
+- 优先级：P0 = Evaluation · Observability · MCP · Planner · Failure Recovery；P1 = Multi-Agent · Memory · HITL · Guardrails · 成本优化
+
+### 本次产出
+
+| 文件 | 说明 |
+|------|------|
+| CLAUDE.md | 新增第五章「升级阶段规则」U-01~U-14 + 第六章「升级工作流」（窗口任务制 / 数据冻结 / 评测优先 / 可观测 / MCP / 规划 / 恢复链 / 护栏 / HITL / 成本量化 / Memory / 上下文预算 / Benchmark 建库） |
+| docs/plans/2026-08-15-upgrade-roadmap.md | 窗口任务制路线图：W0-W10 共 11 个任务，每窗口一个任务，含依赖图 / 验收标准 / 交接协议 |
+
+### 子代理探索（三路并行，符合 U-13 上下文预算）
+
+1. **Agent 与 Web 层**：8 个工具 @tool 注册表、LangGraph ReAct（无 checkpoint）、SSE 流式（run_in_executor + queue）；与升级规则逐条对照确认差距：eval/tracing/MCP/planner/memory 均为 0 痕迹；retrieval.py 5 个 Store 接口干净（MCP 低成本包装点）、@tool 注册表是权限分级理想注入点、ChatRequest.history 声明未接线（Memory 切入点）（补充：retrieval.py 的 5 个 Store 直接读 data/extractions 的 JSON/MD 文件，**非 SQLite**——Agent 检索层未用 store/ 的 M0 SQLite 层，W3 MCP 后端应基于文件读取层）
+2. **抽取管线与数据层**：Pass1/2/3 三遍提取（13 模块），DeepSeek 优先 / MiniMax 回退，temperature=0.1，max_retries=3 + 指数退避 + 300s timeout；**无 LLM 结果缓存**（仅文件级 resume）→ 升级价值高（U-10）；store/ 4 张 SQLite 表；scripts/ 19 个；BGE-small-zh-v1.5 FAISS 6666 向量；任何 extraction schema 变更会波及 vector_index / router（补充：store/ SQLite 与 extraction/agent **零接线**——grep 仅命中 store 内部，三轨独立运行，升级时需决策三轨合一；stats/ 模块仅接入 store/seed.py 未接入 extraction；Pass3 逐章 checkpoint 续跑；FAISS 实际约 8.5k 向量，chunk 无文本级切分）
+3. **测试、文档与工程规范**：350 个 test 函数（76 agent tests），**全 mock 零 API**（conftest mock_llm_client + ARKNIGHTS_SKIP_EMBED_MODEL）→ eval 基建底子好；**无 CI / 无 lint 配置 / 无 langfuse-langsmith-otel 依赖**；devlog 1261 行记录完整（06-15 → 07-03）；arknights_wiki/eval/ 已在 9ec03d2 删除，但旧 worktree 残留 OpenAI Evals 配置（wiki_quality / modelgraded traceability yaml）可作 W0 重建参考
+
+### 关键差距（对照升级方案）
+
+| 能力 | 现状 | 备注 |
+|------|------|------|
+| Evaluation | 有先例（06-24 可追溯性 P1 90%/P2 96%/P3 87%、06-25 100 题 2.20/3.0）但 eval/ 已删，无固定 Benchmark | W0 重建 |
+| Observability | 0 配置，仅 stats/ JSONL | W1 Langfuse+OTel |
+| MCP | 0，检索硬编码在 tools.py | W3 |
+| Planner / Multi-Agent / Memory / HITL | 0 | W4-W7 |
+| Failure Recovery | 仅 try/except 单层；call_llm 有重试但 agent 用 chat_completion 无 | W2 |
+| Guardrails | 已有注入防御（wrap_user_input）、限流 30/min、长度 2000 | W8 补权限/输出校验 |
+
+### 遗留事项
+
+- output/frontend-comparison.html 未跟踪（临时对比产物，建议清理或归档）
+- output/qa_log.jsonl 不在 .gitignore 白名单（核实是否会被误提交）
+- CONTEXT.md 仍写 CASUAL persona，与 devlog 已改的「百科编纂者」不一致（文档分层同步瑕疵）
+- 升级方案 md 与 CLAUDE.md/路线图变更均未 commit（按规则 review 后提交）
+- 旧 worktree（.claude/worktrees/，已 gitignore）中保留 eval 参考配置
+
+### 会话恢复指南
+
+1. 读 README.md — 项目状态
+2. 读本文件末尾 — 升级启动决策
+3. 读 docs/plans/2026-08-15-upgrade-roadmap.md — 窗口任务清单
+4. 下一步：开新窗口执行 **W0 Evaluation Benchmark 建库**（U-14 P0 首任务），参考旧 worktree 中 eval 配置重建评测体系
+
