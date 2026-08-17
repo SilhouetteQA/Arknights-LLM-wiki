@@ -17,7 +17,7 @@ from arknights_wiki.agent.retrieval import (
 )
 from arknights_wiki.agent.prompts import QA_SYSTEM_PROMPT, _SOURCE_FIDELITY_RULES, _LOGICAL_ORGANIZATION_SYNTHESIS
 from arknights_wiki.config import DATA_DIR, PROJECT_ROOT
-from arknights_wiki.extraction.llm_client import create_client
+from arknights_wiki.extraction.llm_client import _get_model_config, create_client
 
 
 def _get_data_dir():
@@ -359,7 +359,7 @@ def simple_search(question: str, route: dict, progress_callback=None) -> dict:
 
     client = create_client()
     response = client.chat.completions.create(
-        model="deepseek-chat",
+        model=_get_model_config()["model"],  # 统一模型层（火山/DeepSeek，勿硬编码）
         messages=[
             {"role": "system", "content": QA_SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt},

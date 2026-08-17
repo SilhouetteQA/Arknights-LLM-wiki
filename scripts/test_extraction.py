@@ -13,7 +13,7 @@ MODELS = [
     {
         "name": "deepseek-v4-flash (非思考)",
         "client": OpenAI(api_key=DS_KEY, base_url="https://api.deepseek.com/v1"),
-        "model": "deepseek-chat",
+        "model": "deepseek-4-flash",  # deepseek-chat 已下线（2026-08-17）
         "extra_body": {},
     },
     {

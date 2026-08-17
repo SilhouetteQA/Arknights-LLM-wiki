@@ -76,7 +76,7 @@ for label, template in PROMPTS.items():
     t0 = time.time()
     try:
         resp = client.chat.completions.create(
-            model="deepseek-chat",
+            model="deepseek-4-flash",  # deepseek-chat 已下线（2026-08-17）
             messages=[{"role":"system","content":SYSTEM},{"role":"user","content":prompt}],
             temperature=0.1, max_tokens=8192
         )

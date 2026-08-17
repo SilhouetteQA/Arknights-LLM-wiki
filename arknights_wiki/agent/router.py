@@ -313,13 +313,13 @@ def _llm_intent_rewrite(question: str) -> dict | None:
     降级为 expansion_hints 而非 canonical_entities。
     """
     try:
-        from arknights_wiki.extraction.llm_client import create_client
+        from arknights_wiki.extraction.llm_client import _get_model_config, create_client
         from arknights_wiki.agent.prompts import INTENT_REWRITE_PROMPT
         from arknights_wiki.agent import wrap_user_input
 
         client = create_client()
         response = client.chat.completions.create(
-            model="deepseek-chat",
+            model=_get_model_config()["model"],  # 统一模型层（火山/DeepSeek，勿硬编码）
             messages=[
                 {"role": "system", "content": INTENT_REWRITE_PROMPT},
                 {"role": "user", "content": wrap_user_input(question)},

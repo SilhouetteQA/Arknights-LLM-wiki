@@ -54,27 +54,71 @@ def parse_llm_response(raw: str) -> dict | None:
     return None
 
 
+def _volc_config() -> dict:
+    """火山引擎 Ark（coding 端点，2026-08-15 实测 deepseek-v4-flash-ga-260731 可用）"""
+    key = os.environ.get("arkcode_api", "")
+    if not key:
+        raise RuntimeError("未设置 arkcode_api 环境变量")
+    return {
+        "api_key": key,
+        "base_url": os.environ.get(
+            "ark_api_base", "https://ark.cn-beijing.volces.com/api/coding/v3"
+        ),
+        "model": os.environ.get("ark_agent_model", "deepseek-v4-flash-ga-260731"),
+        "max_tokens": 8192,
+    }
+
+
+def _deepseek_config() -> dict:
+    """DeepSeek 官方 API（deepseek-chat 已下线，非思考模式 = deepseek-4-flash）"""
+    key = os.environ.get("deepseek_api", "")
+    if not key:
+        raise RuntimeError("未设置 deepseek_api 环境变量")
+    return {
+        "api_key": key,
+        "base_url": "https://api.deepseek.com/v1",
+        "model": "deepseek-4-flash",
+        "max_tokens": 8192,  # DeepSeek v4-flash 硬上限
+    }
+
+
+def _minimax_config() -> dict:
+    key = os.environ.get("minimax_api", "")
+    if not key:
+        raise RuntimeError("未设置 minimax_api 环境变量")
+    return {
+        "api_key": key,
+        "base_url": "https://api.minimaxi.com/v1",
+        "model": "MiniMax-M3",
+        "max_tokens": 32768,
+    }
+
+
 def _get_model_config() -> dict:
-    """从环境变量读取模型配置，返回 {api_key, base_url, model, max_tokens}"""
-    # 优先 DeepSeek
-    deepseek_key = os.environ.get("deepseek_api", "")
-    if deepseek_key:
-        return {
-            "api_key": deepseek_key,
-            "base_url": "https://api.deepseek.com/v1",
-            "model": "deepseek-chat",
-            "max_tokens": 8192,  # DeepSeek v4-flash 硬上限
-        }
-    # 回退 MiniMax
-    minimax_key = os.environ.get("minimax_api", "")
-    if minimax_key:
-        return {
-            "api_key": minimax_key,
-            "base_url": "https://api.minimaxi.com/v1",
-            "model": "MiniMax-M3",
-            "max_tokens": 32768,
-        }
-    raise RuntimeError("未设置 deepseek_api 或 minimax_api 环境变量")
+    """从环境变量读取模型配置，返回 {api_key, base_url, model, max_tokens}
+
+    2026-08-17 统一模型层（agent 回答 + 意图改写 + 提取共用）:
+      - 显式指定: arknights_llm_provider = volcengine | deepseek | minimax
+      - 默认优先级: 火山引擎(arkcode_api) > DeepSeek官方(deepseek_api) > MiniMax(minimax_api)
+    模型名:
+      - 火山: deepseek-v4-flash-ga-260731（ark_agent_model 可覆盖; ark_api_base 可覆盖端点）
+      - DeepSeek 官方: deepseek-4-flash（非思考模式; deepseek-chat 已下线）
+    """
+    provider = os.environ.get("arknights_llm_provider", "").strip().lower()
+    if provider in ("volcengine", "volc", "ark"):
+        return _volc_config()
+    if provider == "deepseek":
+        return _deepseek_config()
+    if provider == "minimax":
+        return _minimax_config()
+
+    if os.environ.get("arkcode_api"):
+        return _volc_config()
+    if os.environ.get("deepseek_api"):
+        return _deepseek_config()
+    if os.environ.get("minimax_api"):
+        return _minimax_config()
+    raise RuntimeError("未设置 arkcode_api / deepseek_api / minimax_api 环境变量")
 
 
 def create_client() -> OpenAI:

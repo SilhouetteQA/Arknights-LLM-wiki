@@ -318,7 +318,7 @@ def _chapter_already_extracted(category: str, chapter: str, output_base: str = "
 
 
 def _estimate_cost(tokens_in: int, tokens_out: int) -> float:
-    """估算 DeepSeek API 成本 (USD)，deepseek-chat 定价"""
+    """估算 DeepSeek API 成本 (USD)，deepseek-4-flash 定价（deepseek-chat 已下线）"""
     cost_in = tokens_in / 1_000_000 * 0.27
     cost_out = tokens_out / 1_000_000 * 1.10
     return cost_in + cost_out
