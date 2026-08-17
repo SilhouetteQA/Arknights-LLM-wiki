@@ -1,0 +1,11 @@
+{
+  "_note": "模型单价表（人民币/百万 tokens）。estimate=true 表示按公开价估算，正式跑批前核对；tbd 表示未知单价，成本记 0 并在报告中标注。",
+  "doubao-seed-1-6-flash-250828": { "in": 0.3, "out": 0.6, "estimate": true, "note": "火山方舟 Seed 1.6 Flash 公开价估算" },
+  "doubao-seed-2-0-mini-260428": { "in": 0.3, "out": 0.6, "estimate": true, "note": "火山方舟 Seed 2.0 Mini 公开价估算" },
+  "deepseek-v4-flash-ga-260731": { "in": 2.0, "out": 8.0, "estimate": true, "note": "火山 Ark deepseek-v4-flash-ga-260731（agent 统一模型层，2026-08-17）" },
+  "mimo-v2.5": { "in": 2.0, "out": 8.0, "estimate": true, "note": "opencode zen/go 网关 mimo-v2.5（judge 默认，2026-08-17，单价待核对）" },
+  "deepseek-4-flash": { "in": 2.0, "out": 8.0, "estimate": true, "note": "DeepSeek 官方非思考模式（deepseek-chat 已下线，2026-08-17）" },
+  "deepseek-chat": { "in": 2.0, "out": 8.0, "estimate": true, "note": "旧模型名，保留兼容历史 cost_log" },
+  "MiniMax-M3": { "in": 2.0, "out": 8.0, "estimate": true, "note": "MiniMax M3 档位估算" },
+  "firecrawl_search": { "in": null, "out": null, "per_call": "tbd", "note": "Firecrawl 按套餐计次，免费额度内为 0；超出按套餐价录入" }
+}

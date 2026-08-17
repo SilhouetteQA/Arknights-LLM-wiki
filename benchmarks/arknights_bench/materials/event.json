@@ -1,0 +1,448 @@
+{
+  "angle": "event",
+  "generated_at": "2026-08-15",
+  "source_basis": "data/extractions/v3_wiki/timeline.md（泰拉历史时间线，49 个历史事件）。注：任务指定探索的 v1_events/ 逐章事件抽取目录在本工作区不存在，故以任务显式允许的时间线文件作为事件材料来源；excerpt 均为 timeline.md 原文字段逐行原样拼接。",
+  "items": [
+    {
+      "name": "第一台轮式源石外燃机发明（及小乔治车祸）",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "759\n**维多利亚工程师发明了第一台轮式源石外燃机，但仅运行四秒便散架，其飞轮击中稻草人小乔治，成为第一个车祸受害者。**\n涉及国家/阵营: 维多利亚\n涉及地点: 维多利亚\n标志着源石动力车辆的开端，为移动城市技术奠定基础。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 759年",
+        "类型": "技术发明/起源事件"
+      }
+    },
+    {
+      "name": "第一座现代移动城市建成",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "797\n**七城联邦建成泰拉历史上第一座现代移动城市**\n涉及国家/阵营: 七城联邦\n标志着泰拉进入移动城市时代\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 797年",
+        "类型": "文明/城市时代转折"
+      }
+    },
+    {
+      "name": "炎国首次外交通信",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "845\n**炎国首次向泰拉各国派出信使进行外交活动，开启了泰拉诸国交往的新局面**\n涉及国家/阵营: 炎国\n开启了泰拉诸国外交交往的新局面\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 845年",
+        "类型": "外交/国际关系"
+      }
+    },
+    {
+      "name": "玻利瓦尔主导权自伊比利亚转移",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "885\n**玻利瓦尔主导权开始从伊比利亚向外转移**\n涉及国家/阵营: 玻利瓦尔, 伊比利亚\n玻利瓦尔权力格局开始变化\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 885年",
+        "类型": "地缘政治变动"
+      }
+    },
+    {
+      "name": "莱塔尼亚控制的玻利瓦尔王国成立",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "897\n**莱塔尼亚控制的玻利瓦尔王国成立**\n涉及国家/阵营: 莱塔尼亚, 玻利瓦尔\n莱塔尼亚在玻利瓦尔建立傀儡政权\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 897年",
+        "类型": "政权更迭/傀儡政权"
+      }
+    },
+    {
+      "name": "三国联军进攻卡兹戴尔失败 / 卡兹戴尔战争议会成立",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "898\n**三国联军进攻卡兹戴尔失败，卡兹戴尔战争议会成立**\n涉及国家/阵营: 卡兹戴尔\n涉及地点: 卡兹戴尔\n卡兹戴尔战争议会成立，加强军事领导\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 898年",
+        "类型": "战争/军事机构改组"
+      }
+    },
+    {
+      "name": "伊比利亚人与「岛民」相遇",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "913\n**伊比利亚人与「岛民」相遇**\n涉及国家/阵营: 伊比利亚\n伊比利亚与岛民建立联系\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 913年",
+        "类型": "初次接触/相遇"
+      }
+    },
+    {
+      "name": "伊比利亚黄金时代",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "930\n**伊比利亚走向黄金时代**\n涉及国家/阵营: 伊比利亚\n伊比利亚进入繁荣时期\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 930年",
+        "类型": "文明繁荣期"
+      }
+    },
+    {
+      "name": "巫王赫尔昏佐伦即位",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "969\n**莱塔尼亚巫王赫尔昏佐伦即位**\n涉及国家/阵营: 莱塔尼亚\n巫王开始统治莱塔尼亚\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 969年",
+        "类型": "政权更迭/君主即位"
+      }
+    },
+    {
+      "name": "叙拉古脱离莱塔尼亚",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "969\n**叙拉古正式脱离莱塔尼亚**\n涉及国家/阵营: 叙拉古, 莱塔尼亚\n叙拉古获得独立\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 969年",
+        "类型": "独立/分裂"
+      }
+    },
+    {
+      "name": "哥伦比亚地区被发现并命名",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "990\n**一个全新的地区由维多利亚首次发现，并定命名为「哥伦比亚」**\n涉及国家/阵营: 维多利亚, 哥伦比亚\n涉及地点: 哥伦比亚\n哥伦比亚地区被发现并命名\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 990年",
+        "类型": "地理发现/命名"
+      }
+    },
+    {
+      "name": "哥伦比亚独立战争",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1016-1019\n**哥伦比亚独立战争**\n涉及国家/阵营: 哥伦比亚\n涉及地点: 哥伦比亚\n哥伦比亚通过战争获得独立\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1016-1019年",
+        "类型": "独立战争"
+      }
+    },
+    {
+      "name": "高卢-莱塔尼亚战争与四国战争",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1029-1031\n**高卢-莱塔尼亚战争与四国战争**\n涉及国家/阵营: 高卢, 莱塔尼亚\n高卢与莱塔尼亚之间的大规模战争\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1029-1031年",
+        "类型": "大规模战争"
+      }
+    },
+    {
+      "name": "卡兹戴尔战争议会改组为军事委员会",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1031\n**卡兹戴尔战争议会改组为卡兹戴尔军事委员会**\n涉及国家/阵营: 卡兹戴尔\n涉及地点: 卡兹戴尔\n卡兹戴尔军事领导机构改组\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1031年",
+        "类型": "军事机构改组"
+      }
+    },
+    {
+      "name": "大静谧爆发，伊比利亚王国崩溃（时间线附录）",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1038\n**大静谧爆发，伊比利亚王国崩溃**\n涉及国家/阵营: 伊比利亚\n伊比利亚黄金时代终结，王国崩溃\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1038年",
+        "类型": "天灾/文明崩溃"
+      }
+    },
+    {
+      "name": "大静谧降临伊比利亚（影像版）",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1038\n**大静谧降临伊比利亚，导致国土沉没、文明倒退。**\n涉及国家/阵营: 伊比利亚\n涉及地点: 伊比利亚\n伊比利亚黄金时代终结，审判庭建立，国家陷入沉寂。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1038年",
+        "类型": "天灾/文明崩溃"
+      }
+    },
+    {
+      "name": "叙拉古城邦联合议事会成立",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1039\n**叙拉古城邦联合议事会成立**\n涉及国家/阵营: 叙拉古\n叙拉古城邦联合议事会成立\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1039年",
+        "类型": "政治体制建立"
+      }
+    },
+    {
+      "name": "哥伦比亚对玻利瓦尔介入达顶峰",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1047\n**哥伦比亚对玻利瓦尔的介入达到顶峰，后组建玻利瓦尔联合政府**\n涉及国家/阵营: 哥伦比亚, 玻利瓦尔\n哥伦比亚深度介入玻利瓦尔政局\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1047年",
+        "类型": "大国介入/政局"
+      }
+    },
+    {
+      "name": "玻利瓦尔自治运动",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1050\n**玻利瓦尔爆发了自治运动**\n涉及国家/阵营: 玻利瓦尔\n玻利瓦尔争取自治的运动\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1050年",
+        "类型": "民族自治/运动"
+      }
+    },
+    {
+      "name": "第十次乌萨斯—卡西米尔战争结束",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1062\n**第十次乌萨斯——卡西米尔战争结束，代表着延绵了近百年的乌卡纷争到此结束**\n涉及国家/阵营: 乌萨斯, 卡西米尔\n乌萨斯与卡西米尔百年纷争终结\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1062年",
+        "类型": "战争结束/和平"
+      }
+    },
+    {
+      "name": "伊万杰利斯塔十一世就任拉特兰教宗",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1063\n**拉特兰的伊万杰利斯塔十一世成为新一代拉特兰教宗**\n涉及国家/阵营: 拉特兰\n拉特兰教宗更替\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1063年",
+        "类型": "宗教/教宗更替"
+      }
+    },
+    {
+      "name": "维多利亚皇帝阿利斯泰尔被处决",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1072\n**维多利亚皇帝阿利斯泰尔被执行绞刑**\n涉及国家/阵营: 维多利亚\n维多利亚皇帝被处决\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1072年",
+        "类型": "政治处决/权力变更"
+      }
+    },
+    {
+      "name": "乌萨斯皇帝弗拉基米尔·伊凡诺维奇驾崩",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1073\n**乌萨斯皇帝弗拉基米尔·伊凡诺维奇驾崩**\n涉及国家/阵营: 乌萨斯\n乌萨斯皇帝去世\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1073年",
+        "类型": "君主驾崩"
+      }
+    },
+    {
+      "name": "乌萨斯「大叛乱」",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1074-1076\n**乌萨斯「大叛乱」**\n涉及国家/阵营: 乌萨斯\n乌萨斯内部大规模叛乱\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1074-1076年",
+        "类型": "内战/叛乱"
+      }
+    },
+    {
+      "name": "巫王被推翻，双子女皇时代开始",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1077\n**巫王被推翻，莱塔尼亚进入双子女皇的时代**\n涉及国家/阵营: 莱塔尼亚\n巫王统治结束，双子女皇时代开始\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1077年",
+        "类型": "政权更迭/革命"
+      }
+    },
+    {
+      "name": "阿米娅出生",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1083\n**阿米娅出生**\n罗德岛领袖阿米娅出生\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1083年",
+        "类型": "人物诞生"
+      }
+    },
+    {
+      "name": "卡兹戴尔内战",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1086-1094\n**卡兹戴尔内战**\n涉及国家/阵营: 卡兹戴尔\n涉及地点: 卡兹戴尔\n卡兹戴尔内部战争\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1086-1094年",
+        "类型": "内战"
+      }
+    },
+    {
+      "name": "「罗德岛」号主体修缮完成",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1089\n**「罗德岛」号主体修缮工作完成**\n涉及地点: 罗德岛\n罗德岛号修缮完成\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1089年",
+        "类型": "组织/设施建成"
+      }
+    },
+    {
+      "name": "「博士」在罗德岛号苏醒（初次）",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1090\n**「博士」在「罗德岛」号苏醒**\n涉及地点: 罗德岛\n博士苏醒\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1090年",
+        "类型": "人物苏醒"
+      }
+    },
+    {
+      "name": "阿米娅与博士共同启程",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1090\n**阿米娅与「博士」一起踏上旅程**\n阿米娅与博士开始共同行动\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1090年",
+        "类型": "剧情开端/同行"
+      }
+    },
+    {
+      "name": "谢拉格对外开放",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1091\n**谢拉格对外开放**\n涉及国家/阵营: 谢拉格\n谢拉格结束封闭状态\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1091年",
+        "类型": "对外开放/政策"
+      }
+    },
+    {
+      "name": "博士被放入「石棺」",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1094\n**「博士」被放入「石棺」**\n博士被放入石棺\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1094年",
+        "类型": "人物事件/沉睡"
+      }
+    },
+    {
+      "name": "博士第二次苏醒",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1096\n**「博士」第二次「苏醒」**\n博士第二次苏醒\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1096年",
+        "类型": "人物苏醒"
+      }
+    },
+    {
+      "name": "切尔诺伯格—龙门事件",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1096-1097\n**切尔诺伯格——龙门事件**\n涉及国家/阵营: 乌萨斯, 龙门\n涉及地点: 切尔诺伯格, 龙门\n重大事件，涉及切尔诺伯格与龙门\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1096-1097年（对应主线 黑暗时代·上/下）",
+        "类型": "重大主线事件"
+      }
+    },
+    {
+      "name": "维多利亚事件",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1098\n**维多利亚事件**\n涉及国家/阵营: 维多利亚\n维多利亚发生重大事件\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1098年",
+        "类型": "重大主线事件"
+      }
+    },
+    {
+      "name": "第一届拉特兰万国峰会",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "1099\n**第一届拉特兰万国峰会**\n涉及国家/阵营: 拉特兰\n拉特兰举办首届万国峰会\n*来源: timeline_appendix*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 1099年",
+        "类型": "国际峰会/外交"
+      }
+    },
+    {
+      "name": "巫王当选并被赋予统治（约三百年前）",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (约三百年前)\n**莱塔尼亚选帝侯选择了巫王，巫王成为莱塔尼亚最伟大的术师，统治了六十年。**\n涉及国家/阵营: 莱塔尼亚\n涉及地点: 莱塔尼亚\n巫王统治时期是莱塔尼亚历史上的重要阶段，其统治以恐怖和强大的源石技艺著称。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 约三百年前",
+        "类型": "政权建立/君主即位"
+      }
+    },
+    {
+      "name": "巫王独挡高卢入侵（约六十年前）",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (约六十年前)\n**高卢帝国入侵莱塔尼亚，巫王以强大的源石技艺独自阻挡了高卢军队。**\n涉及国家/阵营: 莱塔尼亚, 高卢\n涉及地点: 莱塔尼亚\n四国战争的导火索，巫王的力量达到顶峰。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 约六十年前",
+        "类型": "战争/抵御入侵"
+      }
+    },
+    {
+      "name": "四皇会战，高卢帝国灭亡",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (四国战争期间)\n**乌萨斯和维多利亚趁高卢与莱塔尼亚交战之际进攻高卢，史称四皇会战。高卢战败被瓜分。**\n涉及国家/阵营: 莱塔尼亚, 高卢, 乌萨斯, 维多利亚\n涉及地点: 高卢\n高卢帝国灭亡，泰拉格局重塑。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 四国战争期间",
+        "类型": "大规模战争/亡国"
+      }
+    },
+    {
+      "name": "双子女皇推翻巫王（四国战争后）",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (四国战争后)\n**双子女皇通过未知的异端手段推翻了巫王，夺取了莱塔尼亚的统治权。**\n涉及国家/阵营: 莱塔尼亚\n涉及地点: 莱塔尼亚\n巫王时代终结，莱塔尼亚进入双子女皇统治时期。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 四国战争后",
+        "类型": "政变/政权更迭"
+      }
+    },
+    {
+      "name": "伊比利亚审判庭建立（大静谧后）",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (大静谧后)\n**伊比利亚审判庭建立，成为实际统治机构，将海洋视为诅咒。**\n涉及国家/阵营: 伊比利亚\n涉及地点: 伊比利亚\n伊比利亚政治体制彻底改变，进入审判庭统治时期。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 大静谧后",
+        "类型": "政治体制变革"
+      }
+    },
+    {
+      "name": "克罗萨主矿脉枯竭危机",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (近期)\n**乌萨斯境内克罗萨主矿脉北端发生枯竭，源石储量锐减至原有的50%，引发深刻的经济与政治问题。**\n涉及国家/阵营: 乌萨斯\n涉及地点: 乌萨斯\n源石短缺危机开始显现，可能引发全球性影响。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 近期",
+        "类型": "资源/天灾危机"
+      }
+    },
+    {
+      "name": "萨米自然环境剧变",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (近期)\n**萨米整体抬升，半数沼泽消失，河流改道，出现巨大断层和大量洞窟，非人为巨型符号出现在山岩与泥土间。**\n涉及国家/阵营: 萨米\n涉及地点: 萨米\n萨米自然环境发生剧变，可能预示邪魔或巨兽活动加剧。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 近期",
+        "类型": "天灾/环境异变"
+      }
+    },
+    {
+      "name": "黑流树海异常移动",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (近期)\n**黑流树海突破历年活动范围，加速向北行进，哥伦比亚科考队多人失踪。**\n涉及国家/阵营: 玻利瓦尔, 哥伦比亚\n涉及地点: 黑流树海\n神秘丛林异常移动，可能预示重大事件。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 近期",
+        "类型": "异常现象/失踪"
+      }
+    },
+    {
+      "name": "「终老·世界之渡」幻影天象",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (近期)\n**维多利亚和莱塔尼亚上空出现清晰的幻影「终老·世界之渡」。**\n涉及国家/阵营: 维多利亚, 莱塔尼亚\n涉及地点: 维多利亚, 莱塔尼亚\n异常天象出现，可能预示巨兽或邪魔活动。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 近期",
+        "类型": "异常天象/预兆"
+      }
+    },
+    {
+      "name": "东国长岸裂谷源石增生与封锁",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (近期)\n**东国长岸裂谷发生多起可观测的源石增生，人员失踪激增，南北两院全面封锁长岸。**\n涉及国家/阵营: 东国\n涉及地点: 长岸\n东国内部局势紧张，源石异常活动加剧。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 近期",
+        "类型": "源石异常/封锁"
+      }
+    },
+    {
+      "name": "矿石病出现A类变体",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (近期)\n**矿石病出现A类变体，患者器官被源石取代，临终前发出指向「内化与终」的呓语。**\n涉及地点: 泰拉\n矿石病发生异变，可能预示源石造物主的最终目的。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 近期",
+        "类型": "疾病异变/预兆"
+      }
+    },
+    {
+      "name": "塔尔干主矿脉异常活跃",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (近期)\n**塔尔干主矿脉异常活跃，向卡兹戴尔方向快速延伸。**\n涉及国家/阵营: 雷姆必拓, 卡兹戴尔\n涉及地点: 塔尔干主矿脉\n可能引发卡特斯与萨卡兹之间的冲突。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 近期",
+        "类型": "源石异常/冲突预兆"
+      }
+    },
+    {
+      "name": "克罗萨主矿脉观测站遭毁、主源石端口失踪",
+      "source_file": "data/extractions/v3_wiki/timeline.md",
+      "excerpt": "None (近期)\n**乌萨斯与哥伦比亚在克罗萨主矿脉的观测站皆遭损毁，对应的主源石端口去向不明。**\n涉及国家/阵营: 乌萨斯, 哥伦比亚\n涉及地点: 克罗萨主矿脉\n主源石端口失踪，可能被第三方获取。\n*来源: video*",
+      "meta": {
+        "章节或活动": "泰拉历史时间线 · 近期",
+        "类型": "机密/异常事件"
+      }
+    }
+  ]
+}

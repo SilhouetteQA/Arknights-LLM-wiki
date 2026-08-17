@@ -43,3 +43,9 @@ venv/
 
 # Git worktrees
 .claude/worktrees/
+
+# W0 评估临时产物
+output/_w0_v2_archive/
+output/_tmp_tests/
+output/_diag_*
+output/frontend-comparison.html

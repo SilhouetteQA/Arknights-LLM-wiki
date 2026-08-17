@@ -15,6 +15,7 @@
 - **LangGraph ReAct Agent**：多步推理 + 8 工具调用 + 证据综合，支持对比/枚举/因果推理
 - **实体双向索引**：5,213 实体的 25,300 条引用，支持精确匹配和别名解析
 - **PRTS 终端前端**：SSE 流式聊天、检索步骤可视化、来源引用展开
+- **W0 评测体系**（升级阶段）：`arknights_wiki/eval/` Benchmark 建库——100 题八类覆盖、DeepEval 打分、mimo-v2.5 统一 judge（`report_v1_mimo.md` overall 0.857）、路由/打分层 bug 修复与测试补全
 
 ---
 
@@ -61,11 +62,12 @@ python scripts/build_entity_index.py     # 实体双向索引
 | 语言 | Python 3.12+ |
 | 数据存储 | SQLite（实体注册表 + 源索引 + Wiki 页面） |
 | 向量检索 | FAISS (IndexFlatIP) + BGE-small-zh-v1.5 (512-dim) |
-| LLM API | DeepSeek（OpenAI SDK 兼容） |
+| LLM API | DeepSeek（OpenAI SDK 兼容）· 火山 Ark / opencode zen-go 网关（评测 judge） |
 | Agent | LangGraph ReAct Agent |
 | Web | FastAPI + SSE 流式 |
 | 前端 | 原生 HTML/CSS/JS（PRTS 终端风格） |
-| 测试 | pytest（76 agent tests） |
+| 评测 | DeepEval 4.1.8（Docker）+ Benchmark 100 题 + mimo-v2.5 judge |
+| 测试 | pytest（424 tests，含 70 eval tests） |
 
 ---
 

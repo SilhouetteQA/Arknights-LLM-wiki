@@ -1385,6 +1385,257 @@ tests/agent/
 
 ---
 
+### opcode 网关并发并发实验
+
+| workers | 现象 |
+|---------|------|
+| 4 | ~82s/条 稳定（4 指标串行 judge） |
+| 8 | 无提速（~80s/条）——opencode 网关同火山有并发限制（约 4） |
+
+### mimo-v2.5 judge 适配（关键）
+
+- **推理模型 JSON 不稳定**：mimo-v2.5 带思考过程，DeepEval 指标内部要求 judge 输出 JSON，偶发 `invalid JSON`（8/13 条失败率）→ **VolcEngineLLM.generate 加 `json_mode=True`**（chat() 的 response_format=json_object）→ 单条冒烟 4 指标全过
+- 8 workers 无提速 → 固定 4 workers
+- 全量重打分（mimo-v2.5，json_mode，4 workers，4 指标统一 judge）进行中
+
+### 待办
+
+- 重打分完成 → 生成 mimo 版 report（统一 judge 基线），与火山版（results_scored_final_volc.jsonl）对比
+- 题目修复 + 26 人工题接入（八类覆盖）
+
+---
+
+## W0 全量基线完成（2026-08-17，火山 judge 版 report_v1.md）
+
+### 产出
+
+`output/eval/report_v1.md` — Agent V1 全量 100 题基线（direct 模式，火山 judge 修复后）
+
+| 指标 | 值 | 备注 |
+|------|-----|------|
+| overall | 0.784 | |
+| answer_correctness | 0.748 | |
+| faithfulness | 0.540 | 96/100（GEval 单次版；4 缺失） |
+| citation_accuracy | 0.539 | 99/100 |
+| tool_selection_accuracy | 0.990 | 规则修复后 |
+| hallucination（无幻觉率） | 0.899 | **幻觉率 10.1%**（89/100，11 缺失） |
+| task_completion | 0.990 | 100/100 |
+
+- **最弱类别：事件**（correctness 0.433 / faithfulness 0.341 / 无幻觉率 0.667 / task 0.944）——与 pilot 发现的"事件题多事件综合弱"一致，Agent 层面待 W4 Planner 等改进
+- 成本：judge 1887 次 ¥20.05（含多轮 buggy 重打分叠加），总计 ¥21.23
+- 缺陷题：8 条 review/reject 未处置（用户决策保留）+ event_complex_003 空回答
+- 11 条 hallucination / 4 条 faithfulness 缺失（火山并发断开 + 空回答），后续用 mimo-v2.5 补齐
+
+### opencode 切换验证完成
+
+- 宿主 `get_opencode_go_key()` 读 HKCU 注册表（用户指定来源）；Linux 容器无注册表 → 回退 `-e opencode_go_api=<注册表值>`（同一 key）
+- 容器冒烟：mimo-v2.5 调用成功（16s/次含推理，252 in / 111 out）
+- 155 tests passed（agent + eval）
+
+---
+
+## 评估器测试补全 + rule_metrics 单一数据源统一（2026-08-17）
+
+### 背景
+
+用户要求审视评估器测试缺口。审计发现：
+- **scoring.py 零测试**——DeepEvalScorer（faithfulness GEval/hallucination 转换/tool_selection 规则）所有改动无测试保护，全靠真实跑批暴露 bug
+- **两份 rule_metrics 漂移**：scoring.py（score_runner 用）已改交集逻辑，judge.py（runner 用）仍是旧 strict 逻辑（`actual<=expected`，62/100 误伤）+ 无用 judged 参数——违反单一数据源
+- scoring.py 内不一致：correctness 失败置 0.0，其它指标失败置 None（失败≠错误）
+
+### 重构
+
+- **rule_metrics 统一到 metrics.py**（纯函数单一数据源，交集语义，去 judged 参数）：judge.py/scoring.py 均从 metrics import；runner.py 调用去 judged 参数
+- **hallucination_rate(raw_score)** 抽纯函数到 metrics.py（deepeval 原始分→幻觉率 0/1）
+- scoring.py correctness 失败统一置 None（与其它指标一致）
+- **tests/eval/test_scoring.py 新建**（fake deepeval 模块注入，宿主可测）：VolcEngineLLM.generate json_mode/max_retries/timeout 传递、score_answer metric_set 过滤、hallucination 转换、faithfulness 走 GEval(RETRIEVAL_CONTEXT)
+- test_metrics.py +rule_metrics 全分支 + hallucination_rate + None 回归
+
+### 验证
+
+- eval 58→70 tests，全量 424 passed（3 个 stats 预存失败除外）
+- 事件类重构生成器留档：scripts/generate_event_questions.py（题材约束，minimax-m3 思考块问题待解决——qwen 503、minimax 思考无闭合标记、deepseek-v4-flash 可用）
+
+---
+
+## mimo-v2.5 统一 judge 基线完成（2026-08-17，report_v1_mimo.md）
+
+全量 100 题用 mimo-v2.5（opencode zen/go 网关）重新打分（4 指标统一 judge，json_mode 修复后 4 workers，~1h）。缺失极少（仅 event_complex_003 空回答 + 2 条 halluc judge 失败）。
+
+### 两版 judge 基线对比
+
+| 指标 | 火山版（report_v1） | mimo 版（report_v1_mimo） | 变化 |
+|------|--------------------|--------------------------|------|
+| overall | 0.784 | **0.857** | +0.073 |
+| answer_correctness | 0.748 | 0.765 | +0.017 |
+| faithfulness | 0.540 | **0.779** | +0.239 |
+| citation_accuracy | 0.539 | **0.733** | +0.194 |
+| 无幻觉率 | 0.899 | 0.887 | -0.012 |
+| tool_selection | 0.990 | 0.990 | = |
+| task_completion | 0.990 | 0.990 | = |
+
+分析：faithfulness/citation 提升主因 (a) 火山版有 15 条缺失/失败拉低 (b) mimo 判分标准更稳。事件类仍最弱（correctness 0.417）。
+
+### 关键经验
+
+- **mimo-v2.5 推理模型 judge JSON 不稳定** → `json_mode=True`（response_format）根治
+- **opencode 网关并发限制 ~4**（8 workers 无提速），固定 4 workers
+- judge 调用 ~16-20s/次（含思考），落后于火山 50-60s
+- 成本：judge 2817 次 ¥25.28（含多轮重打分及火山历史，mimo 单价为估算）
+- 产物：`output/eval/results_scored.jsonl`（mimo 版）+ `report_v1_mimo.md`；火山版归档 `results_scored_final_volc.jsonl`
+
+### 会话恢复指南（下会话）
+
+1. 读本文件末尾（本段）+ README.md
+2. 基线：`output/eval/report_v1_mimo.md`（mimo 统一 judge）
+3. 下一步：评估器相关收尾（题目修复 / 26 人工题接入 / W0 提交）
+
+---
+
+## Judge 切换 opencode zen/go + mimo-v2.5（2026-08-17）
+
+### 背景
+
+用户指定：judge 从火山 Ark（deepseek-v4-flash-ga-260731）切换到 opencode zen/go 网关（https://opencode.ai/zen/go/v1）+ mimo-v2.5。Key 从 **HKCU 注册表** `opencode_go_api` 读取（进程环境同名 OPENCODE_GO_API 为另一 key，弃用）。
+
+### mimo-v2.5 能力评估（实测）
+
+| 能力项 | 结果 | 详情 |
+|--------|------|------|
+| JSON 判分 | ✅ | 矛盾识别准确（"源石能治愈矿石病" → score=0），JSON 可解析 |
+| 长上下文 | ✅ | 4470 tokens 输入判分准确 |
+| 延迟 | 8-15s/次 | 比火山（50-60s）快 5-6 倍 |
+| 推理模型 | ⚠️ 注意 | 带 reasoning_content（思考过程），content 为纯回答不影响判分；judge max_tokens 需 ≥4096（思考占预算，短预算 finish=length 截断） |
+| 模型可用 | ✅ | models 列表含 mimo-v2.5（另有 mimo-v2.5-pro / minimax-m3 / deepseek-v4-flash 等 26 个） |
+
+### 代码变更（未提交）
+
+```
+arknights_wiki/eval/config.py   # +get_opencode_go_key(只读注册表)/get_opencode_go_base；judge 默认 mimo-v2.5
+arknights_wiki/eval/llm.py      # chat() 改用 opencode 网关 key/base
+arknights_wiki/eval/pricing.json# +mimo-v2.5 价格条目
+arknights_wiki/eval/runner.py   # key 检查改 opencode_go_api
+tests/eval/test_llm.py          # patch 对象同步 get_opencode_go_key
+```
+
+### 待办
+
+- 当前火山打分（pwsh-22）完成后：合并指标 → report_v1.md（火山版基线）
+- opencode 网关冒烟验证（容器内 judge 调用）
+- 后续评估器工作（题目修复/人工题接入/重打分）走 mimo-v2.5；并发上限待实测（Cloudflare CDN 或高于火山 3-4）
+
+---
+
+## 打分 Bug 修复（2026-08-17，全量打分审计发现 3 处问题）
+
+### 问题
+
+全量 100 题打分完成后审计发现 3 处评测脚本缺陷（**非 Agent 行为问题**）：
+
+| # | 问题 | 位置 | 影响 |
+|---|------|------|------|
+| 1 | **hallucination 转换反转**：deepeval 4.x HallucinationMetric score 0 = 无幻觉（judge reason 实证 "aligns with all provided contexts...no contradictions"），原代码 `0.0 if score>=0.5 else 1.0` 完全反转 | scoring.py:148 | 幻觉率虚高至 92%（真值约 8%） |
+| 2 | **tool_selection 规则过严**：`actual ⊆ expected` 要求 Agent 只用题目标注的固定工具，ReAct 自适应多调探索工具（search_dialogue 等）即判 0 | scoring.py:76 | 62/100 误判 0（修正后 0.990） |
+| 3 | **faithfulness 大量假 0**：65/100 判 0 的根因是 judge LLM 调用失败（火山 "Server disconnected without sending a response"，5 次重试全败），非回答不忠实 | 打分运行期 | faithfulness 0.331 不可信，需重打分 |
+
+### 修复
+
+- scoring.py：hallucination 转换改为 `1.0 if score >= 0.5 else 0.0`，失败时 `None`（不再假 1.0）；tool_selection 改为 `actual ∩ expected 非空`（调了至少一个预期工具即正确）
+- 重打分：`--metrics hallucination,faithfulness --workers 2`（降低并发减少火山断开）
+- 旧打分归档 `results_scored_v1_buggy.jsonl`；合并脚本保留可信的 correctness/citation
+
+### 验证
+
+- tool_selection_accuracy：0.380 → **0.990**（纯规则重算，无需重打分）
+- task_completion：0.990（唯一失败 = event_complex_003 空回答）
+
+### 会话恢复指南（下会话）
+
+1. 读本文件末尾（本段）
+2. 重打分完成 → 合并指标 → 生成 report_v1.md（2 个 LLM 指标重跑中，works 2 workers）
+
+---
+
+## 题目审查诊断（2026-08-17，用户决策：暂不处理）
+
+### 审查现状核对
+
+benchmark 100 题中 **3 review + 5 reject = 8 条缺陷题**未处置，已混入全量打分基线：
+
+| 题 | verdict | 根因 |
+|----|---------|------|
+| region_complex_006 | review | 答案未体现"对比"（仅分别陈述） |
+| worldview_simple_002 | review | 材料末尾截断（不影响作答） |
+| worldview_complex_003 | review | 答案含材料外知识（源石虫发酵体液镇痛剂） |
+| worldview_complex_002/004/005/006/007 | reject | 材料 excerpt 尾部截断 + 答案编造材料外内容 + 多问混杂超范围（005 材料2 无凯尔希内容无法作答） |
+
+**reject 根因一致**：材料 excerpt 截断 → LLM 生成答案时编造材料外知识（"源石虫""驱逐巨兽行动"等）。
+
+### 文件问题
+
+- **manual_draft.jsonl（26 道人工题：no_answer 13 + hallucination_bait 13）主目录丢失**——已从 `output/_w0_v2_archive/benchmarks/arknights_bench/manual_draft.jsonl` 恢复（2026-08-15 归档，内容完整）。W0 验收要求"无答案/易幻觉类必须人工构造"，恢复后待接入跑批/打分流程
+- **categories.md 丢失**（分类文档，次要，可从 review_candidates.md 恢复结构）
+
+### 用户决策（2026-08-17）
+
+1. **缺陷题暂不处理**：保留 8 条在基准中，report_v1 标注为已知缺陷题
+2. **打分跑完再说**：当前 DeepEval 打分（100 题）跑完出第一版 report_v1，修题后下轮重打对比
+
+### 待办（下轮）
+
+- 修复 8 条缺陷题（重提取材料全文 → 重生成 5 reject + 修订 3 review，成本 <¥0.1）
+- 26 道人工题接入评测流程（补"无答案/易幻觉"两类覆盖）
+- **打分性能**：当前 4min/条（16/100 用时 1h+），全量约 6h——下轮优化（judge 指标并行 / 响应缓存）
+
+---
+
+## 模型层统一同步（2026-08-17，DeepSeek 官方 deepseek-chat 下线）
+
+### 背景
+
+DeepSeek 官方 API 模型 `deepseek-chat` 已下线，替换为非思考模式 `deepseek-4-flash`；同时按用户要求给 agent 补充火山引擎模型选择（用火山 deepseek-v4-flash 跑全量 100 题基线）。
+
+### 架构决策
+
+- **统一模型层 `_get_model_config()`**（llm_client.py）：显式 provider 选择 `arknights_llm_provider`（volcengine|deepseek|minimax），默认优先级 **火山(arkcode_api) > DeepSeek官方(deepseek_api) > MiniMax(minimax_api)**
+- **模型名**：火山 = `deepseek-v4-flash-ga-260731`（ark_agent_model/ark_api_base 可 env 覆盖，对齐 eval/config.py 模式）；DeepSeek 官方 = `deepseek-4-flash`（非思考模式）
+- **硬编码清除**：router.py `_llm_intent_rewrite`、simple_search.py 回答生成原硬编码 `model="deepseek-chat"` → 改从 `_get_model_config()` 取（graph.py 走 chat_completion 本就跟随）
+- **eval 侧同步**：runner.py `_estimate_llm_cost` 默认模型改从统一模型层惰性读取；pricing.json 新增 `deepseek-v4-flash-ga-260731` / `deepseek-4-flash` 价格条目（deepseek-chat 保留兼容历史 cost_log）；scripts/ 两个提取测试脚本 mock 模型名同步
+- **runner 并发跑批**：`--workers N` 参数 + `_run_and_score` worker 单元（ThreadPoolExecutor），断点续跑保持（results_v1.jsonl 已存在 id 跳过）；旧 pilot 20 题结果归档为 results_v1_pilot_old.jsonl / results_scored_pilot_old.jsonl（旧路由+旧模型，已过时）
+
+### 验证
+
+- 火山 `deepseek-v4-flash-ga-260731` 真实调用冒烟通过（chat_completion 响应正常）
+- 模型配置层三 provider 选择逻辑验证通过
+- 测试：155 passed（agent + eval）；全量 412 passed（3 个 stats 预存失败除外）
+
+### 全量 100 题跑批（火山 deepseek-v4-flash，6 workers 并发）
+
+- 耗时：~30 min（pilot 20 题旧串行 ~80 min → 提速约 10 倍）
+- **路由准确率 93/100**：52 complex 全对（修复生效）；7 个 simple→complex 保守误判（与诊断一致）
+- **event_complex_003 空回答**：Agent 调 16 次工具无产出——事件时间线类综合检索弱（pilot 已发现的同类问题，真实基线暴露项）
+- character_simple_007 / organization_simple_006 保守误判但回答质量良好（complex 路径多检索答对）
+- 结果：`output/eval/results_v1.jsonl`（100 条 direct）；DeepEval 打分进行中 → `results_scored.jsonl` + report_v1.md
+
+### 代码变更（未提交）
+
+```
+arknights_wiki/extraction/llm_client.py   # _get_model_config 重写（三 provider + 优先级）
+arknights_wiki/agent/router.py            # LLM 兜底 model 从配置取
+arknights_wiki/agent/simple_search.py     # 回答生成 model 从配置取
+arknights_wiki/eval/runner.py             # +--workers 并发跑批 + _run_and_score 抽取
+arknights_wiki/eval/pricing.json          # +2 模型价格条目
+scripts/test_extraction.py / test_granularity.py  # mock 模型名同步
+```
+
+### 会话恢复指南（下会话）
+
+1. 读本文件末尾（本段）+ README.md
+2. 全量 100 题跑批结果：`output/eval/results_v1.jsonl`（火山 deepseek-v4-flash，6 workers 并发）
+3. 下一步：DeepEval 打分（Docker deepeval-local 镜像已就绪）→ report_v1.md
+
+---
+
 ## W0 路由修复（2026-08-17，benchmark 100 题驱动）
 
 ### 背景
