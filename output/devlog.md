@@ -1434,6 +1434,33 @@ tests/agent/
 
 ---
 
+## W0 完成收尾（2026-08-17，git 提交）
+
+### 提交
+
+```
+7e6737b fix(agent): 路由复杂度分类修复（本地 64→92%，真实 93%，pilot 100%）
+e8477ae refactor(agent): 模型层统一（deepseek-chat 下线 → 三 provider）
+06d9293 feat(eval): W0 Evaluation Benchmark 建库（mimo 统一 judge 基线 overall 0.857）
+```
+
+未提交：`data/extractions/v3_seed_db_v2.json`（早期会话遗留，2 行改动，与本会话无关）。
+
+### W0 交付清单
+
+- `arknights_wiki/eval/`（9 模块）+ `tests/eval/`（70 tests）
+- `benchmarks/arknights_bench/`（100 题 + 26 人工题 + 材料 + 审查清单）
+- `output/eval/report_v1_mimo.md`（基线）+ 全部打分中间产物归档
+- `scripts/`（生成/打分/冒烟/Docker）+ `Dockerfile.deepeval`
+- 路线图 W0 标记 ✅
+
+### 下一窗口
+
+**W1 Observability / Tracing（Langfuse + OTel）**：每次 Agent 执行产出完整 Trace。
+进入 W1 前需与用户确认 Langfuse 部署方式（本地 docker / 云端 / 仅本地文件导出）。
+
+---
+
 ## 评估器测试补全 + rule_metrics 单一数据源统一（2026-08-17）
 
 ### 背景
