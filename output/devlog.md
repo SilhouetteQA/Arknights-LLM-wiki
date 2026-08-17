@@ -1293,6 +1293,13 @@ tests/agent/
 | Failure Recovery | 仅 try/except 单层；call_llm 有重试但 agent 用 chat_completion 无 | W2 |
 | Guardrails | 已有注入防御（wrap_user_input）、限流 30/min、长度 2000 | W8 补权限/输出校验 |
 
+### W0 eval 参考探索（旧 worktree 分析）
+
+- 可复用：5 个 worktree（agent-a04b3204261ff60b7 等）含 eval 配置且逐字节一致——registry/evals/wiki_quality.yaml（编排）+ registry/modelgraded/ 4 个 judge 模板（entity/character/source_traceability + wiki_overview_fusion，ABCDE 五档 + cot_classify）+ completion_fns.py（DeepSeekCompletionFn 桥接 deepseek_api）
+- 主分支残留：scripts/run_eval.py（oaieval 入口 + OpenAI SDK monkey-patch）、generate_eval_data.py + 3 个 traceability 生成脚本可直接复用
+- 缺失：eval/registry/data/ 全部 JSONL 不在磁盘（需重新生成）；output/qa_log.jsonl 不存在（真实对话日志需重新采集）；06-25 五维 100 题无文件残留（仅 devlog 指标：综合 2.20/3.0，answer_accuracy 1.36 方法论缺陷——需拆「来源忠实度 + 事实正确性」）
+- W0 决策（用户未回复，按推荐执行）：100 题 · LLM 生成+人工审核（无答案/易幻觉类人工构造）· 自建轻量 runner（arknights_wiki/eval/）· judge MiniMax-M3 · 核心 6 项指标
+
 ### 遗留事项
 
 - output/frontend-comparison.html 未跟踪（临时对比产物，建议清理或归档）
@@ -1307,4 +1314,136 @@ tests/agent/
 2. 读本文件末尾 — 升级启动决策
 3. 读 docs/plans/2026-08-15-upgrade-roadmap.md — 窗口任务清单
 4. 下一步：开新窗口执行 **W0 Evaluation Benchmark 建库**（U-14 P0 首任务），参考旧 worktree 中 eval 配置重建评测体系
+
+---
+
+## W0 v3 实施（2026-08-15/16，全链路验证通过）
+
+### 会话过程（v2 推翻重来 → v3 落地）
+
+1. **v2 失败与回退**：轻量模型凭记忆出题（张冠李戴：第十二章配史尔特尔等）、自研 judge 维护成本高 → 用户决定推翻重来，W0 产物归档至 `output/_w0_v2_archive/`
+2. **v3 方案（用户定义）**：内容层 6 角度（人物/事件/国家地区/组织/战斗力/世界观）× 简单/复杂路由 · grounded 生成（材料注入）· DeepEval 打分层 · 先出题后验证 · 材料三环校验（答案←材料←事实）· 交叉盲区分析（faithfulness×correctness）
+3. **材料探索**：6 子代理并行产出 282 条材料（人物 50/事件 92/国家地区 30/组织 30/战斗力 40/世界观 40），excerpt 全部源文件原文，source_file 逐条核验
+4. **100 题生成**：doubao-seed-2-0-mini + 材料注入，元评估 91 pass/3 review/6 reject；简单题按用户反馈重生成（答案含事实+依据，禁单字词）；并发版提速 10 倍
+5. **DeepEval 落地（Docker）**：宿主 pip 安装受阻（缺编译工具链）→ Docker 方案：宿主交叉下载 Linux wheel（67 个）→ 构建 deepeval-local 镜像（4.1.8）→ 冒烟通过（GEval/Faithfulness 1.0）
+6. **Pilot 20 题**：agent direct 模式跑批 + DeepEval 打分 + 试点报告
+
+### 关键技术结论（下会话直接复用）
+
+| 项 | 结论 |
+|----|------|
+| 模型可用性 | coding 端点仅部分模型可用：doubao-seed-2-0-mini-260428、deepseek-v4-flash-ga-260731 ✅；doubao-seed-1-6-flash 系列 404 UnsupportedModel |
+| judge 模型 | deepseek-v4-flash-ga-260731（火山，经 arkcode_api + https://ark.cn-beijing.volces.com/api/coding/v3） |
+| deepeval 4.x API | GEval（evaluation_params 用 SingleTurnParams 枚举）+ FaithfulnessMetric + HallucinationMetric（需 LLMTestCase.context）；is_successful()；必须禁遥测（`telemetry_opt_out = True`，否则 measure 极慢） |
+| 打分 context | faithfulness/hallucination 的上下文 = **Agent 实际检索上下文**（非出题材料）；simple 路径 sources 仅元数据 → 回退材料（近似） |
+| rule_metrics | simple 路由不调工具是正确行为（tool_selection=1.0）；complex 题预期工具未调用=0 |
+| Docker 环境 | deepeval-local 镜像 + 挂载 /workspace + -e arkcode_api；冒烟 `python scripts/smoke_deepeval.py`；打分 `python scripts/score_runner.py` |
+| 生成管线 | scripts/generate_benchmark_questions.py（并发 4 路、材料注入、章节比对、kb_check、元评估过滤） |
+
+### Agent V1 试点指标（20 题 direct 模式）
+
+| 指标 | 得分 |
+|------|------|
+| answer_correctness | 0.750 |
+| faithfulness | 0.233 |
+| citation_accuracy | 0.540 |
+| hallucination_rate | 20% |
+| task_completion_rate | 100% |
+
+**发现的真实 Agent 问题**：① 路由偏差——character_complex 11 题 8 条被 router 误判 simple（复杂度分类对剧情题不敏感）② 角色题 faithfulness 低+幻觉 20%（回答超出检索内容）③ 事件题正确性 0.608（多事件综合弱）
+
+### 成本
+
+- 生成+元评估：¥0.29（含 v2 重复轮次）；pilot agent + DeepEval 打分另计——全部记入 `output/eval/cost_log.jsonl`
+
+### 文件清单（本次新增，未提交）
+
+- docs/specs/2026-08-15-eval-benchmark.md（v3）、docs/plans/2026-08-15-eval-benchmark.md（v3）
+- arknights_wiki/eval/（config/llm/firecrawl/judge/runner/metrics/report/scoring/pricing）
+- scripts/（generate_benchmark_questions.py、verify_benchmark_questions.py、smoke_deepeval.py、score_runner.py、docker_setup_deepeval.sh）
+- benchmarks/arknights_bench/（materials/ 6 角度、questions_draft.jsonl 100 题、review_candidates.md、categories.md、manual_draft.jsonl 26 道人工题）
+- tests/eval/（58 测试全绿）
+- output/eval/（cost_log.jsonl、results_v1.jsonl、results_scored.jsonl、report_pilot.md）
+- Dockerfile.deepeval、D:wheelhouse_linux（67 wheel）
+
+### 遗留事项（下会话优先）
+
+1. **全量 100 题基线**：agent 跑批（~3-4 小时）+ DeepEval 打分（~6-10 小时）→ report_v1.md；或用自研 judge 全量 + DeepEval 抽样校准
+2. **路由偏差修复**：router 复杂度分类改进（complex 题误判 simple 24%）——W4 Planner 前置
+3. **题目审查**：用户已确认整体质量较高暂不动；9 条 review/reject（世界观类多问混杂题）待处理；人工题 26 道（no_answer/hallucination_bait）待终审
+4. **http 双路径**：pilot 仅 direct；http 路径（POST /chat + SSE）需启动 server 后补跑
+5. **deepeval 镜像复用**：Dockerfile.deepeval + wheelhouse_linux 保留；冒烟/打分命令见上表
+6. **firecrawl 搜索验证**：题目确认后执行（verify_benchmark_questions.py）
+7. 未提交变更量大（见文件清单），下会话 review 后分批 commit
+
+### 会话恢复指南（下会话）
+
+1. 读本文件末尾（本段）+ README.md
+2. 读 docs/specs/2026-08-15-eval-benchmark.md（v3）+ docs/plans/2026-08-15-eval-benchmark.md（v3）
+3. 读 output/eval/report_pilot.md（试点基线）
+4. 下一步：按「遗留事项」优先级推进（全量基线 / 路由修复 / 题目审查）
+
+---
+
+## W0 路由修复（2026-08-17，benchmark 100 题驱动）
+
+### 背景
+
+devlog 遗留事项 #2：pilot 20 题 complex 预期题大量被 router 误判 simple（character_complex 11 题 8 条）。本次以全量 100 题诊断驱动修复。
+
+### 诊断（基准：本地规则 64/100 = 64%）
+
+| 误判类型 | 数量 | 根因 |
+|----------|------|------|
+| A. complex→simple | 12 | 双主体"分别/对比"结构未识别（意图被 chapter_summary/character_profile 抢占）；国家/概念实体提取不到 → 多实体信号失效 |
+| B. simple→complex | 24 | "实体空 + 跨章"无条件兜底 complex（time_scope 默认即 cross_arc）；实体提取只覆盖角色/章节，国家/组织/概念题实体为空被误兜底 |
+
+### 架构决策
+
+- **Step 1（classify 层结构信号）**：
+  - 多主体信号：≥2 实体 +（分别/各自/两者/二者/两人/双方/对比/异同/区别/差异/关系/关联/以及）→ complex
+  - 多时间点：≥2 个不同年份 → complex
+  - 事件枚举：`哪些.{0,12}(事件|事)` → complex（裸"哪些标志性影响"不触发）
+  - 全面综合：≥2 实体 +（全部/所有/综合）→ complex
+  - **兜底修正**："实体空 → complex" 增加 has_deep 前置条件（原无条件，误判 24 题）
+  - deep_keywords 移除 '原因'（"直接原因是什么" 单事实查询实证误判；因果类由 causal_reasoning 意图路径覆盖）
+- **Step 2（实体提取层）**：
+  - **v3_wiki 世界观实体层**：factions(247) + locations(257) + concepts(1252) 文件名并入实体提取
+  - **统一匹配算法 `_match_entities_ordered`**：长度降序（'源石外燃机' 优先于 '源石'）+ 区间占用（已匹配文本禁止子串重复匹配）+ 2 字前边界（仅角色层：'多利' 不匹配 '维多利亚'、'领袖' 不匹配 '的领袖'；世界观层不做边界——'使用源石' 中概念名常作宾语）
+  - **跨层共享占用区间**：世界观层先匹配，角色层'多利'被'维多利亚'占用拦截
+  - `_load_character_names` / `_load_worldbuilding_names` 加 lru_cache（路由层此前无缓存）
+- **不修复项（保守方向误判 7 题，simple→complex）**：多检索不丢答案；根因多为 benchmark grounded 措辞（材料注入前置）或 concepts 库低质词条（'权力'、'游击队'），非路由逻辑缺陷
+- **数据缺失记录**：'坍缩体' 无概念词条 → worldview_complex_010 本地规则 miss，真实路径由 LLM 兜底救回（判 complex）——补词条是数据层工作
+
+### 验证指标（U-03 基线对比）
+
+| 版本 | 本地规则（100 题） | 真实路径 | pilot 20 题（真实路径） |
+|------|-------------------|----------|------------------------|
+| 修复前 | 64% | — | 9/20 (45%) |
+| 修复后 | **92%** | **93%** | **20/20 (100%)** |
+
+- 剩余 8 题误判：1 题数据缺失（坍缩体词条）+ 7 题保守方向（simple→complex）
+- 测试：tests/agent/test_router.py 28→50 tests（+22），全量 419 passed（3 个 test_stats_collector 预存失败，与本次无关，2026-06-17 起存在）
+- 性能：本地路由 ~25ms/次；LLM 兜底路径 1.5-3s（网络主导，既有行为）；实体提取扩展无性能回归
+- 本地命中率提升：实体提取增强后更多题本地直达，LLM 兜底调用显著减少
+
+### 代码变更（未提交）
+
+```
+arknights_wiki/agent/router.py   # +_match_entities_ordered/_load_worldbuilding_names/lru_cache,
+                                 #  classify 4 条新路径 + 兜底修正 + deep_keywords 调整
+tests/agent/test_router.py       # +22 tests（匹配算法 6 + 实体提取 4 + 结构信号 9 + 补充 5）
+```
+
+### 遗留
+
+- 全量 100 题 Agent 跑批基线（遗留事项 #1，3-4h）+ DeepEval 打分 → report_v1.md
+- 题目审查（9 条 review/reject + 26 人工题）
+- W4 Planner 前置后复杂度分类可进一步交给显式规划
+
+### 会话恢复指南（下会话）
+
+1. 读本文件末尾（本段）+ README.md
+2. 下一步：全量 100 题 Agent 跑批基线 → report_v1.md（或先处理题目审查）
+
 

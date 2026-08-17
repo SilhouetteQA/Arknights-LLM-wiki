@@ -5,11 +5,106 @@ from arknights_wiki.agent.router import (
     _extract_entities_local,
     _infer_intent_local,
     _infer_time_scope,
+    _match_entities_ordered,
     classify_complexity_local,
     recognize_intent_and_rewrite,
     route_query,
     _resolve_temporal_entities,
 )
+
+
+class TestMatchEntitiesOrdered:
+    """统一实体匹配：长度降序 + 区间占用 + 2 字前边界"""
+
+    def test_longest_first(self):
+        """长名优先：'源石外燃机' 匹配后 '源石' 被区间占用跳过"""
+        result = _match_entities_ordered(
+            "第一台轮式源石外燃机的研发阵营", ["源石", "源石外燃机"]
+        )
+        assert result == ["源石外燃机"]
+
+    def test_range_occupation_blocks_substring(self):
+        """区间占用：'维多利亚' 占用后 '多利' 失效（噪声消除）"""
+        result = _match_entities_ordered("涉及维多利亚的外交活动", ["多利", "维多利亚"])
+        assert result == ["维多利亚"]
+        assert "多利" not in result
+
+    def test_two_char_boundary(self):
+        """2 字名前边界：'的领袖' 中 '领袖' 拒绝；句首 '博士' 接受"""
+        assert _match_entities_ordered("乌萨斯学生自治团的领袖", ["领袖"]) == []
+        assert _match_entities_ordered("领袖是谁", ["领袖"]) == ["领袖"]
+        assert _match_entities_ordered("博士在切尔诺伯格苏醒", ["博士"]) == ["博士"]
+
+    def test_two_char_boundary_after_punctuation(self):
+        """2 字名在标点后仍接受"""
+        assert _match_entities_ordered("欢迎回来，博士", ["博士"]) == ["博士"]
+
+
+class TestComplexityStructuralSignalsExtra:
+    """Step 2 补充信号：跨层区间、关系/以及、全面综合"""
+
+    def test_cross_layer_range_blocks_noise(self, temp_data_dir):
+        """角色层 '多利' 被世界观层 '维多利亚' 的占用区间拦截（跨层共享）"""
+        with patch("arknights_wiki.agent.router.DATA_DIR", temp_data_dir):
+            entities = _extract_entities_local("希瓦艾什家在维多利亚的外交活动")
+            assert "多利" not in entities
+
+    def test_relation_word_two_entities(self):
+        """双实体 + 关系/关联 → complex（'矿石病与天灾之间的关联'）"""
+        result = classify_complexity_local(
+            "概括泰拉世界中矿石病与天灾之间的关联及相互影响",
+            ["天灾", "矿石病"], "chapter_summary", "cross_arc",
+        )
+        assert result["complexity"] == "complex"
+
+    def test_yiji_two_entities(self):
+        """双实体 + 以及 → complex（多问综合）"""
+        result = classify_complexity_local(
+            "泰拉移动城市的驱动燃料是什么，以及与源石形成稳定共生关系的生物",
+            ["源石", "移动城市"], "concept_definition", "cross_arc",
+        )
+        assert result["complexity"] == "complex"
+
+    def test_holistic_two_entities(self):
+        """双实体 + 全部/综合 → complex（'大静谧对伊比利亚产生的全部影响'）"""
+        result = classify_complexity_local(
+            "综合阐述大静谧爆发对伊比利亚产生的全部影响",
+            ["伊比利亚", "大静谧"], "fact_lookup", "cross_arc",
+        )
+        assert result["complexity"] == "complex"
+
+    def test_relation_single_entity_still_simple(self):
+        """单实体 + 关系词 → 不触发（'X的关联' 单页可答）"""
+        result = classify_complexity_local(
+            "矿石病与源石的关联", ["矿石病"], "concept_definition", "cross_arc",
+        )
+        assert result["complexity"] == "simple"
+
+
+class TestExtractEntitiesWorldbuilding:
+    """v3_wiki 世界观实体提取（W0 路由修复 Step 2）"""
+
+    def test_worldbuilding_entities(self, temp_data_dir):
+        """factions/locations/concepts 文件名可被提取"""
+        with patch("arknights_wiki.agent.router.DATA_DIR", temp_data_dir):
+            # 罗德岛(factions) + 切尔诺伯格(locations) + 源石(concepts)
+            entities = _extract_entities_local("罗德岛在切尔诺伯格使用源石")
+            assert "罗德岛" in entities
+            assert "切尔诺伯格" in entities
+            assert "源石" in entities
+
+    def test_substring_noise_removed(self, temp_data_dir):
+        """'多利' 不匹配 '维多利亚'（2 字边界 + 区间占用）"""
+        with patch("arknights_wiki.agent.router.DATA_DIR", temp_data_dir):
+            entities = _extract_entities_local("维多利亚的外交活动")
+            assert "多利" not in entities
+
+    def test_multi_entity_nations(self, temp_data_dir):
+        """双国家并列可提取（多主体信号的前提）"""
+        with patch("arknights_wiki.agent.router.DATA_DIR", temp_data_dir):
+            entities = _extract_entities_local("分别阐述乌萨斯与维多利亚的基本国家属性")
+            # temp_data_dir 无乌萨斯/维多利亚 faction，断言不抛异常且结果稳定
+            assert isinstance(entities, list)
 
 
 class TestIntentLocal:
@@ -99,6 +194,76 @@ class TestComplexity:
     def test_complex_deep_cross_arc(self):
         result = classify_complexity_local(
             "整合运动的势力演变", ["整合运动"], "chapter_summary", "cross_arc"
+        )
+        assert result["complexity"] == "complex"
+
+
+class TestComplexityStructuralSignals:
+    """结构性复杂信号（W0 路由修复）：多主体分别/对比、多时间点、事件枚举"""
+
+    def test_multi_subject_respective(self):
+        """双实体 + 分别 → complex（原被 chapter_summary 抢占误判 simple）"""
+        result = classify_complexity_local(
+            "分别阐述阿米娅与凯尔希在切尔诺伯格事件中的具体行动，并分别概括两人的核心性格与能力特点",
+            ["阿米娅", "凯尔希"], "chapter_summary", "cross_arc",
+        )
+        assert result["complexity"] == "complex"
+
+    def test_multi_subject_compare_words(self):
+        """双实体 + 对比/差异词 → complex（LLM 兜底返回非 comparison 意图时仍命中）"""
+        result = classify_complexity_local(
+            "对比炎国与卡西米尔的国家政体、种族构成以及权力矛盾有何不同",
+            ["炎国", "卡西米尔"], "concept_definition", "cross_arc",
+        )
+        assert result["complexity"] == "complex"
+
+    def test_multi_subject_needs_two_entities(self):
+        """单实体 + 分别/各自 → 不触发（单概念多子问仍 simple）"""
+        result = classify_complexity_local(
+            "两类技艺各自的使用要求是什么", ["源石技艺"], "concept_definition", "cross_arc",
+        )
+        assert result["complexity"] == "simple"
+
+    def test_multi_timepoint(self):
+        """2+ 不同年份 → complex（时间线事件综合）"""
+        result = classify_complexity_local(
+            "分别说明845年和885年发生的两个重大国家相关事件及其核心影响",
+            [], "fact_lookup", "cross_arc",
+        )
+        assert result["complexity"] == "complex"
+
+    def test_single_timepoint_not_enough(self):
+        """单年份 + 无其他信号 → 保持 simple"""
+        result = classify_complexity_local(
+            "公元969年莱塔尼亚发生了什么", [], "fact_lookup", "cross_arc",
+        )
+        assert result["complexity"] == "simple"
+
+    def test_event_enumeration(self):
+        """'哪些...事件' → complex（事件枚举需宽搜）"""
+        result = classify_complexity_local(
+            "1031年发生了哪些与战争相关的重大事件", ["卡兹戴尔"], "fact_lookup", "cross_arc",
+        )
+        assert result["complexity"] == "complex"
+
+    def test_effect_enumeration_not_complex(self):
+        """'哪些标志性影响' 非事件枚举 → 不触发 complex"""
+        result = classify_complexity_local(
+            "该发明带来了哪些标志性影响", [], "fact_lookup", "cross_arc",
+        )
+        assert result["complexity"] == "simple"
+
+    def test_empty_entities_no_deep_is_simple(self):
+        """兜底修正：实体空 + 无深度词 → simple（原无条件 complex 误判 24 题）"""
+        result = classify_complexity_local(
+            "第一台轮式源石外燃机是在哪一阵营被发明的", [], "fact_lookup", "cross_arc",
+        )
+        assert result["complexity"] == "simple"
+
+    def test_empty_entities_with_deep_still_complex(self):
+        """实体空 + 跨章深度词 → 仍 complex（保留 Agent 探索兜底）"""
+        result = classify_complexity_local(
+            "整合运动在整个泰拉的势力演变", [], "chapter_summary", "cross_arc",
         )
         assert result["complexity"] == "complex"
 

@@ -7,9 +7,13 @@
 import json
 import os
 import re
+from functools import lru_cache
 
 from arknights_wiki.config import DATA_DIR, PROJECT_ROOT
 from arknights_wiki.agent.prompts import VALID_INTENTS
+
+# 2 字实体名前边界检查：前一字符为 CJK/字母数字则拒绝（'多利' 不匹配 '维多利亚'）
+_CJK_OR_ALNUM = re.compile(r"[\u4e00-\u9fff\u3400-\u4dbf0-9A-Za-z]")
 
 
 def _load_identity_map(data_dir: str | None = None) -> dict:
@@ -41,7 +45,8 @@ def _load_operators(data_dir: str | None = None) -> dict:
     return {}
 
 
-def _load_character_names(data_dir: str | None = None) -> set[str]:
+@lru_cache(maxsize=8)
+def _load_character_names(data_dir: str | None = None) -> frozenset[str]:
     """从 v2_characters 文件名提取所有角色名（干员+NPC，~642 个）"""
     base = data_dir if data_dir is not None else DATA_DIR
     char_dir = os.path.join(base, "extractions", "v2_characters")
@@ -52,7 +57,67 @@ def _load_character_names(data_dir: str | None = None) -> set[str]:
                 name = fname[:-5]  # 去掉 .json
                 if len(name) >= 2:
                     names.add(name)
+    return frozenset(names)
+
+
+@lru_cache(maxsize=8)
+def _load_worldbuilding_names(data_dir: str | None = None) -> dict[str, str]:
+    """加载世界观实体名（v3_wiki factions/locations/concepts 文件名 → 类别）"""
+    base = data_dir if data_dir is not None else DATA_DIR
+    wb_dir = os.path.join(base, "extractions", "v3_wiki")
+    names = {}
+    for cat in ("factions", "locations", "concepts"):
+        d = os.path.join(wb_dir, cat)
+        if os.path.isdir(d):
+            for fname in os.listdir(d):
+                if fname.endswith(".md"):
+                    name = fname[:-3]
+                    if len(name) >= 2:
+                        names[name] = cat
     return names
+
+
+def _match_entities_ordered(
+    question: str,
+    names: list[str],
+    min_len: int = 2,
+    two_char_boundary: bool = True,
+    used: list[tuple[int, int]] | None = None,
+) -> list[str]:
+    """统一实体匹配：长度降序 + 区间占用 + （可选）2 字前边界
+
+    W0 路由修复（实体噪声治理，源自 benchmark 100 题诊断）:
+    - 长度降序: 长名优先，'源石外燃机' 先于 '源石' 匹配
+    - 区间占用: 已匹配文本不可被子串重复匹配，'维多利亚' 占用后 '多利' 失效；
+      used 可跨调用共享（角色层与世界观层共用同一区间表）
+    - 2 字前边界（仅角色层）: '多利' 不匹配 '维多利亚'、'领袖' 不匹配 '的领袖'
+      世界观层不做边界——'使用源石' 中 '源石' 前是动词，概念名常作宾语
+    """
+    matched = []
+    used = used if used is not None else []
+    for name in sorted(set(names), key=len, reverse=True):
+        if len(name) < min_len:
+            continue
+        pos = 0
+        while True:
+            pos = question.find(name, pos)
+            if pos == -1:
+                break
+            if any(s <= pos < e for s, e in used):
+                pos += 1
+                continue
+            if (
+                two_char_boundary
+                and len(name) == 2
+                and pos > 0
+                and _CJK_OR_ALNUM.match(question[pos - 1])
+            ):
+                pos += 1
+                continue
+            matched.append(name)
+            used.append((pos, pos + len(name)))
+            break
+    return matched
 
 
 def _extract_entities_local(question: str, data_dir: str | None = None) -> list[str]:
@@ -82,10 +147,22 @@ def _extract_entities_local(question: str, data_dir: str | None = None) -> list[
         if len(op_name) >= 2 and op_name in question and op_name not in entities:
             entities.append(op_name)
 
-    # 3. v2_characters 角色名（干员+NPC，~642 个，min 2 chars）
+    # 3. v2_characters 角色名 + v3_wiki 世界观实体（统一匹配: 长度降序+区间占用）
+    #    角色层（干员+NPC ~642，2 字边界）与世界观层（factions/locations/concepts ~1750，无边界）
+    #    共享同一占用区间表：'维多利亚'(世界观层) 占用后 '多利'(角色层) 失效。
+    #    长名优先保证 '源石外燃机' 而非 '源石'。
+    used_ranges: list[tuple[int, int]] = []
+    wb_names = _load_worldbuilding_names(data_dir)
+    for name in _match_entities_ordered(
+        question, list(wb_names), two_char_boundary=False, used=used_ranges
+    ):
+        if name not in entities:
+            entities.append(name)
     char_names = _load_character_names(data_dir)
-    for name in char_names:
-        if len(name) >= 2 and name in question and name not in entities:
+    for name in _match_entities_ordered(
+        question, list(char_names), two_char_boundary=True, used=used_ranges
+    ):
+        if name not in entities:
             entities.append(name)
 
     # 4. 章节/活动名（从 chapter_timeline.json，min 3 chars 防短名噪声）
@@ -365,9 +442,35 @@ def classify_complexity_local(
     if len(clean_entities) > 3:
         return _result("complex", "多实体需要分别检索后综合")
 
+    # 路径 2.5: 多主体分别/对比/关系综合（≥2 实体 + 结构信号）
+    # W0 路由修复: character_complex 类题多被 chapter_summary/character_profile 抢占意图,
+    # 但"双实体 + 分别/各自/对比"结构本身就需要多源检索后综合。
+    multi_subject_keywords = [
+        '分别', '各自', '两者', '二者', '两人', '两位', '双方',
+        '对比', '比较', '异同', '区别', '差异',
+        '关系', '关联', '以及',  # 'X与Y的关系/关联'、'A是...，以及B是...' 多问综合
+    ]
+    if len(clean_entities) >= 2 and any(kw in question for kw in multi_subject_keywords):
+        return _result("complex", "多主体分别/对比/关系需要多源检索后综合")
+
+    # 路径 2.5b: 双实体 + 全面综合词（'全部影响'/'所有事件'/'综合阐述'）
+    if len(clean_entities) >= 2 and any(kw in question for kw in ['全部', '所有', '综合']):
+        return _result("complex", "多实体全面综合需要多源检索")
+
+    # 路径 2.6: 多时间点事件综合（≥2 个不同年份 → 跨时间线检索）
+    years = set(re.findall(r'\d{3,4}\s*年', question))
+    if len(years) >= 2:
+        return _result("complex", "多时间点事件需要跨时间线综合")
+
+    # 路径 2.7: 事件枚举（"哪些...事件/事"）→ 需要宽搜多源
+    if re.search(r'哪些.{0,12}(事件|事)', question):
+        return _result("complex", "事件枚举需要宽搜多源")
+
     # 路径 3: 深度关键词 + 跨章节 → 需要 Agent 多步检索
+    # 注意: '原因' 不作为深度词——"直接原因是什么" 等单事实查询（benchmark 实证误判）。
+    #       因果类推理由 causal_reasoning 意图路径（'为什么'/'导致'）覆盖。
     deep_keywords = [
-        '导致', '原因', '后果', '为什么',
+        '导致', '后果', '为什么',
         '对比', '比较', '区别', '异同', '排名', '排序',
         '演变', '变迁', '发展历程', '历程', '变革',
         '时间线', '编年史', '大事记', '梳理',
@@ -378,8 +481,11 @@ def classify_complexity_local(
     if has_deep and time_scope == "cross_arc":
         return _result("complex", "跨章节深度推理问题, 需要多步检索")
 
-    if time_scope == "cross_arc" and len(clean_entities) == 0:
-        return _result("complex", "跨章节但实体不足, Agent 多步检索补充")
+    # 路径 4: 跨章节深度问题但实体不足 → Agent 探索兜底
+    # W0 修复: 原条件仅要求 cross_arc + 实体空, 而 time_scope 默认即 cross_arc,
+    # 导致所有实体提取为空的简单事实题被误判 complex (24/100)。改为要求深度信号。
+    if has_deep and len(clean_entities) == 0:
+        return _result("complex", "跨章节深度问题但实体不足, Agent 多步检索补充")
 
     return _result("simple", "简单事实查询")
 

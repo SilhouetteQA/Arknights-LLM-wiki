@@ -24,7 +24,7 @@ User → Intent/Router → Planner → (Knowledge/Research/Timeline Agent) → M
 
 | 窗口 | 任务 | 优先级 | 前置依赖 | 状态 |
 |------|------|--------|----------|------|
-| W0 | Evaluation Benchmark 建库 | P0 | 无 | ⏳ |
+| W0 | Evaluation Benchmark 建库 | P0 | 无 | 🔄 进行中（100 题生成 ✅ · DeepEval 落地 ✅ · 试点指标 ✅ · **路由修复 ✅（本地 64→92%、真实路径 93%、pilot 100%）**；全量 Agent 跑批基线 + 题目审查待续） |
 | W1 | Observability / Tracing（Langfuse + OTel） | P0 | 无（可与 W0 并行） | ⏳ |
 | W2 | Failure Recovery 恢复链 | P0 | W1（可观测才能度量恢复效果） | ⏳ |
 | W3 | MCP Server 包装知识库 | P0 | W1（trace 覆盖 MCP 调用） | ⏳ |
