@@ -3303,3 +3303,29 @@
 {"step": "judge", "model": "mimo-v2.5", "tokens_in": 100, "tokens_out": 50, "cost": 0.001, "timestamp": "2026-08-17T23:58:47"}
 {"step": "judge", "model": "mimo-v2.5", "tokens_in": 0, "tokens_out": 0, "cost": 0.0, "timestamp": "2026-08-17T23:58:47"}
 {"step": "judge", "model": "mimo-v2.5", "tokens_in": 100, "tokens_out": 50, "cost": 0.0, "timestamp": "2026-08-17T23:58:49"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1132, "cost": 0.009056, "estimate": true, "timestamp": "2026-08-18T16:16:43"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 2418, "cost": 0.019344, "estimate": true, "timestamp": "2026-08-18T16:16:48"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 100, "tokens_out": 50, "cost": 0.001, "timestamp": "2026-08-18T16:16:53"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 0, "tokens_out": 0, "cost": 0.0, "timestamp": "2026-08-18T16:16:53"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 1678, "tokens_out": 113, "cost": 0.00426, "timestamp": "2026-08-18T16:16:53"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 100, "tokens_out": 50, "cost": 0.0, "timestamp": "2026-08-18T16:16:56"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 2665, "tokens_out": 118, "cost": 0.006274, "timestamp": "2026-08-18T16:17:01"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1314, "cost": 0.010512, "estimate": true, "timestamp": "2026-08-18T16:18:14"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 2233, "tokens_out": 86, "cost": 0.005154000000000001, "timestamp": "2026-08-18T16:18:22"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1014, "cost": 0.008112, "estimate": true, "timestamp": "2026-08-18T16:18:42"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 1675, "tokens_out": 93, "cost": 0.004094, "timestamp": "2026-08-18T16:18:51"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1737, "cost": 0.013896, "estimate": true, "timestamp": "2026-08-18T16:19:39"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 2888, "tokens_out": 130, "cost": 0.006816, "timestamp": "2026-08-18T16:19:47"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1370, "cost": 0.01096, "estimate": true, "timestamp": "2026-08-18T16:21:02"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 2051, "tokens_out": 104, "cost": 0.004934, "timestamp": "2026-08-18T16:21:10"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1172, "cost": 0.009376, "estimate": true, "timestamp": "2026-08-18T16:21:34"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 1923, "tokens_out": 91, "cost": 0.004574, "timestamp": "2026-08-18T16:21:41"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 388, "cost": 0.003104, "estimate": true, "timestamp": "2026-08-18T16:22:12"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 875, "tokens_out": 78, "cost": 0.0023740000000000002, "timestamp": "2026-08-18T16:22:19"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 940, "cost": 0.00752, "estimate": true, "timestamp": "2026-08-18T16:23:05"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 1583, "tokens_out": 92, "cost": 0.003902, "timestamp": "2026-08-18T16:23:14"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 782, "cost": 0.006256, "estimate": true, "timestamp": "2026-08-18T16:23:20"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 1764, "tokens_out": 118, "cost": 0.004472, "timestamp": "2026-08-18T16:23:29"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 100, "tokens_out": 50, "cost": 0.001, "timestamp": "2026-08-18T16:25:34"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 0, "tokens_out": 0, "cost": 0.0, "timestamp": "2026-08-18T16:25:34"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 100, "tokens_out": 50, "cost": 0.0, "timestamp": "2026-08-18T16:25:37"}

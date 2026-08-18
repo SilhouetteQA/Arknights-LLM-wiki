@@ -26,15 +26,15 @@ User → Intent/Router → Planner → (Knowledge/Research/Timeline Agent) → M
 |------|------|--------|----------|------|
 | W0 | Evaluation Benchmark 建库 | P0 | 无 | ✅ 完成（100 题生成 ✅ · DeepEval 落地 ✅ · 路由修复 ✅ · mimo 统一 judge 基线 ✅ · 打分层 bug 修复+测试补全 ✅；基线 report_v1_mimo.md overall 0.857，事件类最弱待 W4/W5） |
 | W1 | Observability / Tracing（Langfuse + OTel） | P0 | 无（可与 W0 并行） | ✅ 完成（本地 Docker 部署 Langfuse v4 ✅ · observability 包+可开关 traced ✅ · 全链路埋点 ✅ · 真实问答 trace 树验证 ✅ · 成本汇总脚本 ✅） |
-| W2 | Failure Recovery 恢复链 | P0 | W1（可观测才能度量恢复效果） | ⏳ 下一窗口（W1 已交付 trace 可见性：error/status 字段、schema 已预留 NODE_TYPE_RETRY；08-18 会话收尾交接） |
+| W2 | Failure Recovery 恢复链 | P0 | W1（可观测才能度量恢复效果） | ✅ 完成（2026-08-18：resilience 模块（timeout/retry/breaker/fallback）✅ · 工具执行接入 ✅ · LLM chat_completion 重试 ✅ · LangGraph SqliteSaver checkpoint 断点续跑 ✅ · 失败埋点 retries/breaker/fallback 入 trace ✅；验收 15/15 PASS，10 题回归无回落） |
 | W3 | MCP Server 包装知识库 | P0 | W1（trace 覆盖 MCP 调用） | ⏳ |
 | W4 | Planner 显式任务规划 | P0 | W0（先有评测标尺） | ⏳ |
-| W5 | Multi-Agent 架构 | P1 | W4（Planner 是 Manager 的前置） | ⏳ |
-| W6 | Memory 三层记忆 | P1 | W0（评测复用收益） | ⏳ |
-| W7 | Human-in-the-loop | P1 | W2（人工升级是恢复链末端） | ⏳ |
-| W8 | Guardrails / Security | P1 | W0 | ⏳ |
-| W9 | Cost / Latency 优化 | P1 | W1（数据采集）+ W0（效果对比） | ⏳ |
-| W10 | 收尾：简历定位 + 文档 + 演示 | — | 全部完成 | ⏳ |
+| W5 | Multi-Agent 架构 | P1 | W4（Planner 是 Manager 的前置） | ❌ 用户决策跳过（2026-08-18） |
+| W6 | Memory 三层记忆 | P1 | W0（评测复用收益） | ❌ 用户决策跳过（2026-08-18） |
+| W7 | Human-in-the-loop | P1 | W2（人工升级是恢复链末端） | ❌ 用户决策跳过（2026-08-18） |
+| W8 | Guardrails / Security | P1 | W0 | ❌ 用户决策跳过（2026-08-18） |
+| W9 | Cost / Latency 优化 | P1 | W1（数据采集）+ W0（效果对比） | ❌ 用户决策跳过（2026-08-18） |
+| W10 | 收尾：简历定位 + 文档 + 演示 | — | W2–W4 完成（P1 已跳过） | ⏳ |
 
 **依赖关系图**：
 
@@ -184,7 +184,7 @@ graph TD
   - 演示脚本/录屏要点（展示评测、trace、多 Agent、HITL）
   - output/devlog.md 升级全程总结
 - **验收标准**：README 完整反映最终系统；演示可复现
-- **依赖**：W5–W9 完成
+- **依赖**：W2–W4 完成（2026-08-18 用户决策：P1 W5–W9 全部跳过，收尾仅依赖 P0）
 
 ---
 

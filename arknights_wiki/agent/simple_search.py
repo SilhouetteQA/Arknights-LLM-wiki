@@ -18,15 +18,9 @@ from arknights_wiki.agent.retrieval import (
 )
 from arknights_wiki.agent.prompts import QA_SYSTEM_PROMPT, _SOURCE_FIDELITY_RULES, _LOGICAL_ORGANIZATION_SYNTHESIS
 from arknights_wiki.config import DATA_DIR, PROJECT_ROOT
-from arknights_wiki.extraction.llm_client import _get_model_config, create_client
 from arknights_wiki.observability import (
-    GENERATION_ANSWER,
     SPAN_RETRIEVAL,
     SPAN_SIMPLE_SEARCH,
-    compute_cost_rmb,
-    get_client,
-    is_enabled,
-    record_llm_usage,
     traced,
 )
 
@@ -382,12 +376,27 @@ def simple_search(question: str, route: dict, progress_callback=None) -> dict:
 
     user_prompt = build_answer_prompt(question, sources)
 
-    client = create_client()
-    model = _get_model_config()["model"]  # 统一模型层（火山/DeepSeek，勿硬编码）
+    # W2: 回答生成统一走 chat_completion（指数退避重试 + llm_call 埋点，simple 路径不再裸调 client）
+    from arknights_wiki.extraction.llm_client import _get_model_config, chat_completion as llm_chat
+    from arknights_wiki.observability import GENERATION_ANSWER, get_client
 
-    def _do_generate():
-        return client.chat.completions.create(
-            model=model,
+    _obs_client = get_client()
+    _t0 = time_mod.time()
+    if _obs_client is not None:
+        with _obs_client.start_as_current_observation(
+            name=GENERATION_ANSWER, as_type="generation",
+            model=_get_model_config()["model"],
+        ):
+            answer, _ = llm_chat(
+                messages=[
+                    {"role": "system", "content": QA_SYSTEM_PROMPT},
+                    {"role": "user", "content": user_prompt},
+                ],
+                temperature=0.3,
+                max_tokens=8192,
+            )
+    else:
+        answer, _ = llm_chat(
             messages=[
                 {"role": "system", "content": QA_SYSTEM_PROMPT},
                 {"role": "user", "content": user_prompt},
@@ -395,35 +404,6 @@ def simple_search(question: str, route: dict, progress_callback=None) -> dict:
             temperature=0.3,
             max_tokens=8192,
         )
-
-    # W1 Observability: 回答生成包一个 generation span（record_llm_usage 需要处于 generation 内）
-    from arknights_wiki.observability import GENERATION_ANSWER, get_client
-
-    _obs_client = get_client()
-    if _obs_client is not None:
-        with _obs_client.start_as_current_observation(
-            name=GENERATION_ANSWER, as_type="generation", model=model
-        ):
-            _t0 = time_mod.time()
-            response = _do_generate()
-            latency_ms = round((time_mod.time() - _t0) * 1000, 1)
-            answer = response.choices[0].message.content or ""
-            if is_enabled():
-                usage = getattr(response, "usage", None)
-                tokens_in = usage.prompt_tokens if usage else 0
-                tokens_out = usage.completion_tokens if usage else 0
-                record_llm_usage(
-                    model,
-                    tokens_in,
-                    tokens_out,
-                    compute_cost_rmb(model, tokens_in, tokens_out),
-                    extra={"latency_ms": latency_ms, "stage": "answer_generation"},
-                )
-    else:
-        _t0 = time_mod.time()
-        response = _do_generate()
-        latency_ms = round((time_mod.time() - _t0) * 1000, 1)
-        answer = response.choices[0].message.content or ""
 
     source_meta = []
     for i, s in enumerate(sources, 1):

@@ -41,9 +41,17 @@ class TestBuildAnswerPrompt:
 
 
 class TestSimpleSearch:
-    def test_returns_answer_with_mock_llm(self, temp_data_dir, mock_llm_client):
+    def test_returns_answer_with_mock_llm(self, temp_data_dir):
+        """simple_search 回答生成统一走 chat_completion（W2），mock 该入口"""
+        mock_message = MagicMock()
         with patch("arknights_wiki.agent.simple_search._get_data_dir", return_value=temp_data_dir):
-            with patch("arknights_wiki.agent.simple_search.create_client", return_value=mock_llm_client):
+            with patch(
+                "arknights_wiki.extraction.llm_client.chat_completion",
+                return_value=(
+                    "源石是泰拉世界一种蕴含巨大能量的矿物，是最核心的能源来源和工业原料。",
+                    mock_message,
+                ),
+            ):
                 result = simple_search(
                     question="源石是什么",
                     route={

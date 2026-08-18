@@ -24,7 +24,7 @@ def _get_data_dir():
 _tool_registry: list[tuple] = []
 
 
-def tool(description: str, param_descriptions: dict[str, str], required: list[str] | None = None, *, name: str | None = None):
+def tool(description: str, param_descriptions: dict[str, str], required: list[str] | None = None, *, name: str | None = None, fallback: str | None = None):
     """装饰器：注册函数为 Agent 工具，同时记录 LLM function calling 所需的元数据。
 
     参数:
@@ -32,6 +32,7 @@ def tool(description: str, param_descriptions: dict[str, str], required: list[st
         param_descriptions: 参数名 → 参数描述
         required: 必填参数名列表
         name: LLM 可见的工具名（默认使用函数名）。用于函数名与 LLM 名不一致的情况。
+        fallback: 恢复链降级工具名（W2，需为已注册工具名；失败重试耗尽后自动调用）
 
     使用方式:
         @tool("搜索 Wiki 页面", {"query": "搜索关键词"}, required=["query"])
@@ -39,7 +40,7 @@ def tool(description: str, param_descriptions: dict[str, str], required: list[st
             ...
     """
     def decorator(func):
-        _tool_registry.append((func, description, param_descriptions, required or [], name or func.__name__))
+        _tool_registry.append((func, description, param_descriptions, required or [], name or func.__name__, fallback))
         return func
     return decorator
 
@@ -61,7 +62,7 @@ def _build_param_schema(func, param_descriptions: dict[str, str]) -> dict:
 def _build_tool_definitions() -> list[dict]:
     """从注册表自动生成 LangGraph function calling 工具定义"""
     definitions = []
-    for func, description, param_descriptions, required, tool_name in _tool_registry:
+    for func, description, param_descriptions, required, tool_name, _fallback in _tool_registry:
         properties = _build_param_schema(func, param_descriptions)
         definitions.append({
             "type": "function",
@@ -80,7 +81,12 @@ def _build_tool_definitions() -> list[dict]:
 
 def _build_tool_executors() -> dict:
     """从注册表自动生成 tool name → executor 映射"""
-    return {tool_name: func for func, _, _, _, tool_name in _tool_registry}
+    return {tool_name: func for func, _, _, _, tool_name, _ in _tool_registry}
+
+
+def _build_tool_fallbacks() -> dict[str, str]:
+    """从注册表生成 tool name → fallback 工具名映射（W2 恢复链）"""
+    return {tool_name: fb for _, _, _, _, tool_name, fb in _tool_registry if fb}
 
 
 @tool("全文搜索 Wiki 页面。用于查找角色、概念、阵营、地点的名称或相关描述。",
@@ -101,7 +107,8 @@ def search_wiki(query: str, category: str | None = None) -> str:
 
 @tool("获取实体完整 Wiki 页面。当发现关键实体需要深入了解时使用。",
       {"name": "实体名称", "entity_type": "实体类型: concept/faction/location/character"},
-      required=["name", "entity_type"])
+      required=["name", "entity_type"],
+      fallback="search_wiki")
 def get_entity_page(name: str, entity_type: str) -> str:
     """获取实体完整 Wiki 页面。"""
     store = WikiStore(data_dir=_get_data_dir())
@@ -170,7 +177,8 @@ def search_timeline(query: str) -> str:
 
 @tool("获取指定章节的叙事摘要。",
       {"chapter": "章节名称"},
-      required=["chapter"])
+      required=["chapter"],
+      fallback="search_events")
 def get_chapter_summary(chapter: str) -> str:
     """获取指定章节的叙事摘要。"""
     store = EventStore(data_dir=_get_data_dir())
@@ -183,7 +191,8 @@ def get_chapter_summary(chapter: str) -> str:
 @tool("FAISS 语义搜索。处理描述性/模糊查询，也能查到精确实体名匹配不到的相关内容。",
       {"query": "搜索查询", "top_k": "返回结果数，默认10"},
       required=["query"],
-      name="semantic_search")
+      name="semantic_search",
+      fallback="search_wiki")
 def semantic_search_tool(query: str, top_k: int = 10) -> str:
     """FAISS 语义搜索 -- 处理描述性/模糊查询。"""
     index_dir = os.path.join(_get_data_dir(), "index")
@@ -208,7 +217,8 @@ def semantic_search_tool(query: str, top_k: int = 10) -> str:
 
 @tool("查找实体在预构建索引中的关联实体、相关章节。用于确定检索方向和发现相关实体。",
       {"entity_name": "实体名称"},
-      required=["entity_name"])
+      required=["entity_name"],
+      fallback="search_wiki")
 def lookup_entity_index(entity_name: str) -> str:
     """查找实体在预构建索引中的关联实体和相关章节。用于确定检索范围和发现相关实体。"""
     from arknights_wiki.agent.retrieval import EntityIndexStore
@@ -240,6 +250,7 @@ def lookup_entity_index(entity_name: str) -> str:
 
 TOOL_DEFINITIONS = _build_tool_definitions()
 TOOL_EXECUTORS = _build_tool_executors()
+TOOL_FALLBACKS = _build_tool_fallbacks()  # W2: 工具名 → fallback 工具名
 
 
 def build_tool_listing() -> str:
@@ -249,7 +260,7 @@ def build_tool_listing() -> str:
     此函数直接读取 _tool_registry 元数据，确保与 TOOL_DEFINITIONS 保持同步。
     """
     lines = []
-    for i, (func, description, param_descriptions, required, tool_name) in enumerate(_tool_registry, 1):
+    for i, (func, description, param_descriptions, required, tool_name, _fallback) in enumerate(_tool_registry, 1):
         params = []
         for pname, pdesc in param_descriptions.items():
             marker = " (必填)" if pname in required else " (可选)"

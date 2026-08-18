@@ -1847,3 +1847,49 @@ python -m arknights_wiki.observability.dashboard  # 端口 8001
    - Spec 要点：router/simple/graph 关键环节失败埋点（error/retry 字段已有部分）、异常检测与降级链、恢复重试策略
    - 相关文件：arknights_wiki/observability/schema.py（已预留 NODE_TYPE_RETRY）、graph.py 工具异常（已有 error 记录）
    - 建议先读 docs/specs/2026-08-18-w1-observability.md 的 W2 预留设计
+
+---
+
+## W2 Failure Recovery 完成（2026-08-18，恢复链全落地）
+
+### 交付物
+
+| 模块 | 说明 |
+|------|------|
+| `arknights_wiki/agent/resilience.py` | 恢复链核心（新）：OperationTimeoutError/BreakerOpenError/ResilienceError、ResilienceConfig（可环境变量覆盖）、with_timeout（线程池跨平台）、CircuitBreaker（closed/open/half_open 状态机，线程安全）、retry_call（指数退避）、execute_with_resilience（统一入口：主函数重试→fallback 链→ResilienceError） |
+| `tools.py` | @tool 注册表新增 fallback 字段 → TOOL_FALLBACKS；4 个工具声明降级（get_entity_page/lookup_entity_index/semantic_search→search_wiki；get_chapter_summary→search_events） |
+| `graph.py` | 工具执行经恢复链（timeout 30s / max_retries 2 / 退避 1-8s / breaker 阈值 5+60s 可 ARKNIGHTS_TOOL_* 覆盖）；同名工具共享熔断器；失败文本带 `[已降级: X]` 标注；trace metadata 加 retries/breaker_state/fallback_used/error + retry 子 span（NODE_TYPE_RETRY）；fallback 参数适配（_adapt_fallback_args） |
+| `llm_client.py` | chat_completion 对 APIConnectionError/APITimeoutError/RateLimitError/InternalServerError 指数退避重试（默认 2 次，ARKNIGHTS_LLM_* 覆盖；4xx 不重试）；retries 入 llm_call metadata |
+| `simple_search.py` | 回答生成改走 chat_completion 统一入口（顺带获得重试+埋点，删裸调 client） |
+| `router.py` | _llm_intent_rewrite 补重试（网络/限流类，1 次） |
+| `server_checkpoint.py` | checkpoint 工厂（新）：SqliteSaver 持久化 output/checkpoints/agent.sqlite（ARKNIGHTS_CHECKPOINT=0 或异常降级 MemorySaver） |
+| `server.py` | complex 路径 build_agent_graph(checkpointer)，thread_id=sha1(question)[:16]，同问题重试断点续跑 |
+| 测试 | 新增 36 个（resilience 20 + graph_resilience 7 + checkpoint 6 + llm_retry 3）；全量 483 passed / 3 failed（预存 stats，无新增） |
+| 依赖 | pyproject agent extra + langgraph-checkpoint-sqlite>=2.0 |
+
+### 验收（scripts/failure_demo.py，15/15 PASS）
+
+1. **超时→重试→fallback**：timeout 0.05s 的 slow 函数 → retries=2 → fallback 结果，总耗时 0.18s（而非 1.5s）
+2. **报错→重试→fallback**：get_entity_page 抛 ConnectionError → retries=2 → search_wiki 命中，文本 `[已降级: search_wiki]`
+3. **熔断**：连续 3 次失败 → open → 短路（函数不执行）→ 抛 BreakerOpenError
+4. **LLM 重试**：chat_completion 前 2 次 APIConnectionError → 第 3 次成功（调用 3 次）
+5. **trace 可见性**（Langfuse ClickHouse 实证）：tool_call 节点 retries=2 / fallback_used=search_wiki / breaker_state=closed；retry 子 span node_type=retry；根 span benchmark_id=w2-acceptance 可过滤
+
+### 回归（U-03）
+
+- **10 题 character_complex 子集**（direct+mimo judge）：overall 0.936，correctness 0.91 / faithfulness 0.89 / 无幻觉率 0.90 / tool_selection 1.0
+  vs 基线（report_v1_mimo.md 人物类 18 题）：correctness 0.906 / faithfulness 0.85 / 无幻觉率 0.889 → **无回落**
+- 全量 pytest：483 passed（+73 新测试），3 failed 全为预存 stats 测试
+
+### 踩坑记录
+
+1. `update_current_span(name=...)` 在 SDK v4 不可靠 → 重试标记改用嵌套 `retry` 子 span（node_type 元数据）
+2. fallback 工具签名不同 → 需 _adapt_fallback_args 参数映射（name→query 等）
+3. checkpoint serde 不支持 MagicMock（msgpack 序列化失败）→ 测试用真实结构对象
+4. 回归跑批需 --bench 指定 questions_draft.jsonl（默认路径文件名不匹配）+ 独立 --out 目录（results_v1.jsonl 断点续跑会跳过已有 id）
+
+### 后续交接（W3 MCP Server）
+
+- resilience/checkpoint 与 observability 解耦，MCP 工具执行可直接复用 execute_with_resilience
+- checkpoint DB（output/checkpoints/agent.sqlite）已 gitignore 候选；确认后加入
+- Langfuse 容器/Dashboard 运行状态见上一节（未变）

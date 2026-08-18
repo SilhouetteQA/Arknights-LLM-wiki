@@ -5,6 +5,12 @@ import re
 import time as time_mod
 
 from openai import OpenAI
+from openai import (
+    APIConnectionError,
+    APITimeoutError,
+    InternalServerError,
+    RateLimitError,
+)
 
 from arknights_wiki.observability import GENERATION_LLM, traced
 
@@ -148,20 +154,35 @@ def chat_completion(
 
     W1 Observability: 启用 trace 时每次调用产生一个 `llm_call` generation，
     在内部通过 record_llm_usage 记录 model/tokens/cost/latency。
+    W2 Failure Recovery: 对网络/限流/5xx 异常指数退避重试（默认 2 次），
+    retries 写入 llm_call generation metadata；4xx 业务错误不重试。
     """
-    client = create_client()
+    from arknights_wiki.agent.resilience import ResilienceConfig, retry_call
+
     config = _get_model_config()
+    retry_config = ResilienceConfig(
+        timeout_seconds=float(os.environ.get("ARKNIGHTS_LLM_TIMEOUT", "60")),
+        max_retries=int(os.environ.get("ARKNIGHTS_LLM_MAX_RETRIES", "2")),
+        backoff_base=1.0,
+        backoff_max=8.0,
+        retryable_exceptions=(APIConnectionError, APITimeoutError, RateLimitError, InternalServerError),
+        breaker_threshold=0,  # LLM 调用暂不开熔断（避免误伤全局）
+    )
+
+    def _do_create():
+        client = create_client()
+        return client.chat.completions.create(
+            model=config["model"],
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens or config["max_tokens"],
+            tools=tools,
+        )
 
     from arknights_wiki.observability import is_enabled, record_llm_usage
 
     _t0 = time_mod.time()
-    response = client.chat.completions.create(
-        model=config["model"],
-        messages=messages,
-        temperature=temperature,
-        max_tokens=max_tokens or config["max_tokens"],
-        tools=tools,
-    )
+    response, rstats = retry_call(_do_create, (), {}, retry_config)
     latency_ms = round((time_mod.time() - _t0) * 1000, 1)
 
     message = response.choices[0].message
@@ -171,12 +192,15 @@ def chat_completion(
         tokens_out = usage.completion_tokens if usage else 0
         from arknights_wiki.observability import compute_cost_rmb
 
+        extra = {"latency_ms": latency_ms, "n_tools": len(tools) if tools else 0}
+        if rstats.get("retries"):
+            extra["retries"] = rstats["retries"]  # W2: 重试次数入 trace
         record_llm_usage(
             config["model"],
             tokens_in,
             tokens_out,
             compute_cost_rmb(config["model"], tokens_in, tokens_out),
-            extra={"latency_ms": latency_ms, "n_tools": len(tools) if tools else 0},
+            extra=extra,
         )
     return message.content or "", message
 

@@ -14,6 +14,7 @@ agent = [
     "fastapi>=0.115",
     "sse-starlette>=2.0",
     "langgraph>=0.2",
+    "langgraph-checkpoint-sqlite>=2.0",
     "sentence-transformers>=3.0",
     "faiss-cpu>=1.8",
     "numpy>=1.26",

@@ -49,3 +49,6 @@ output/_w0_v2_archive/
 output/_tmp_tests/
 output/_diag_*
 output/frontend-comparison.html
+
+# W2 checkpoint DB
+output/checkpoints/

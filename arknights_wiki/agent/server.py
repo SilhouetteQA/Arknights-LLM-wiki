@@ -1,6 +1,7 @@
 """FastAPI Web 服务 -- SSE 流式对话 API"""
 import asyncio
 import contextlib
+import hashlib
 import json
 import os
 import queue
@@ -139,19 +140,24 @@ async def _agent_search_events(question: str, route: dict):
 
     通过 queue.Queue 让 graph.stream() 在独立线程中执行（避免同步 LLM 调
     用阻塞事件循环），主协程从队列拉取事件实时 yield 到前端。
+
+    W2 Failure Recovery: graph 启用 SqliteSaver checkpoint（output/checkpoints/agent.sqlite），
+    thread_id 由问题哈希派生——同问题重试可从断点续跑，已成功工具不重复执行。
     """
     from arknights_wiki.agent.graph import build_agent_graph
+    from arknights_wiki.agent.server_checkpoint import make_checkpointer
 
     yield {"event": "route", "data": json.dumps(route, ensure_ascii=False)}
     await asyncio.sleep(0)  # 强制刷新
 
     progress_queue: queue.Queue = queue.Queue()
+    thread_id = f"q-{hashlib.sha1(question.encode('utf-8')).hexdigest()[:16]}"
 
     def _run_graph():
         """在独立线程中执行 LangGraph agent，事件推入队列（trace 根在 executor 线程内创建）"""
         try:
             with _trace_root(question, route):
-                graph = build_agent_graph()
+                graph = build_agent_graph(checkpointer=make_checkpointer())
                 initial_state: AgentState = {
                     "messages": [],
                     "question": question,
@@ -159,7 +165,8 @@ async def _agent_search_events(question: str, route: dict):
                     "iteration": 0,
                     "route": route,
                 }
-                for event in graph.stream(initial_state):
+                config = {"configurable": {"thread_id": thread_id}}
+                for event in graph.stream(initial_state, config=config):
                     progress_queue.put(("graph_event", event))
                 progress_queue.put(("graph_done", None))
         except Exception as e:

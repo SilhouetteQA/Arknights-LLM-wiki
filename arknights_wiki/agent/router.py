@@ -321,24 +321,46 @@ def _llm_intent_rewrite(question: str) -> dict | None:
     同时过滤 LLM 返回的章节名幻觉：
     如果 LLM 返回了不在问题原文中的章节名（如 "界园肉鸽" → "探索者的银凇止境"），
     降级为 expansion_hints 而非 canonical_entities。
+
+    W2: 对网络/限流异常指数退避重试 1 次（重试耗尽仍失败则返回 None 走本地兜底）。
     """
     try:
+        from arknights_wiki.agent.resilience import ResilienceConfig, retry_call
         from arknights_wiki.extraction.llm_client import _get_model_config, create_client
         from arknights_wiki.agent.prompts import INTENT_REWRITE_PROMPT
         from arknights_wiki.agent import wrap_user_input
-
-        client = create_client()
-        model = _get_model_config()["model"]  # 统一模型层（火山/DeepSeek，勿硬编码）
-        _t0 = time_mod.time()
-        response = client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": INTENT_REWRITE_PROMPT},
-                {"role": "user", "content": wrap_user_input(question)},
-            ],
-            temperature=0.1,
-            max_tokens=400,
+        from openai import (
+            APIConnectionError,
+            APITimeoutError,
+            InternalServerError,
+            RateLimitError,
         )
+
+        retry_config = ResilienceConfig(
+            timeout_seconds=float(os.environ.get("ARKNIGHTS_LLM_TIMEOUT", "60")),
+            max_retries=int(os.environ.get("ARKNIGHTS_LLM_MAX_RETRIES", "2")),
+            backoff_base=1.0,
+            backoff_max=8.0,
+            retryable_exceptions=(APIConnectionError, APITimeoutError, RateLimitError, InternalServerError),
+            breaker_threshold=0,
+        )
+
+        model = _get_model_config()["model"]  # 统一模型层（火山/DeepSeek，勿硬编码）
+
+        def _do_create():
+            client = create_client()
+            return client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": INTENT_REWRITE_PROMPT},
+                    {"role": "user", "content": wrap_user_input(question)},
+                ],
+                temperature=0.1,
+                max_tokens=400,
+            )
+
+        _t0 = time_mod.time()
+        response, _rstats = retry_call(_do_create, (), {}, retry_config)
         latency_ms = round((time_mod.time() - _t0) * 1000, 1)
 
         # W1 Observability: 记录意图改写 LLM 调用 usage/cost
