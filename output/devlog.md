@@ -1817,3 +1817,33 @@ python -m arknights_wiki.observability.dashboard  # 端口 8001
 - 提示：push 用 `git push -u origin main`（自动重建 origin/main 跟踪）；密钥（docker/langfuse/.env）已被 .gitignore 排除
 
 
+
+## 会话收尾（2026-08-18 15:50）— W1 完成，交接 W2
+
+### 本会话完成
+
+- **W1 Observability/Tracing 全部落地**：Langfuse v4 Docker 部署、observability 包（可开关 traced 埋点 + usage/cost 精确记录）、ECharts Dashboard（8001 独立服务）、真实问答验收（莱茵十杰 ¥0.27 / 维多利亚 ¥0.33，trace 树完整）
+- **前端多轮迭代**（用户反馈驱动）：任务/工具 log 刻度分布、trace 详情改为路由信息卡+节点时间线表
+- **双问题实测**：验证 trace 过程与成本比对，发现 run_direct 成本估算低估 ~100 倍（只算 output）——W1 精确成本的价值
+- **Git 历史找回**：回收站调查发现 11:13 被移走的完整 `.git`（160 条历史，含 W0 6 条本地提交）→ 替换恢复 → W1 提交 `aa6d9e9`（共 161 条）
+- **回收站真相**：3061 项 `.git/objects` 删除 = git fetch/commit 时自动 repack 的正常内部行为（本环境将 unlink 重定向到回收站）；项目源码零删除
+
+### 服务运行状态（下会话直接用）
+
+| 服务 | 地址 | 状态 |
+|------|------|------|
+| Langfuse UI | http://localhost:3000（admin@arknights-wiki.local / ArknightsWiki2026!） | ✅ 6 容器 Up |
+| Observability Dashboard | http://127.0.0.1:8001 | ✅ 运行中 |
+| agent server（PRTS） | http://localhost:8000（未启动） | — |
+
+### 会话恢复指南（下会话）
+
+1. 读本文件末尾（本段）+ README.md
+2. 若容器未运行：`cd docker/langfuse && docker compose up -d`
+3. 开启 trace：设置 LANGFUSE_PUBLIC_KEY/SECRET_KEY/BASE_URL（docker/langfuse/.env）
+4. Dashboard：`python -m arknights_wiki.observability.dashboard`（8001）
+5. **建议先 `git push -u origin main`**（161 条历史尚未同步远程，做异地备份）
+6. **下一步 W2 Failure Recovery 恢复链**（依赖 W1 trace 可见性）：
+   - Spec 要点：router/simple/graph 关键环节失败埋点（error/retry 字段已有部分）、异常检测与降级链、恢复重试策略
+   - 相关文件：arknights_wiki/observability/schema.py（已预留 NODE_TYPE_RETRY）、graph.py 工具异常（已有 error 记录）
+   - 建议先读 docs/specs/2026-08-18-w1-observability.md 的 W2 预留设计
