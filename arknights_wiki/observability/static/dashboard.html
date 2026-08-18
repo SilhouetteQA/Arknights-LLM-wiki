@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arknights Wiki · Observability Dashboard</title>
+<script src="/static/echarts.min.js"></script>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161c28; --panel2:#1b2333; --border:#273046;
+  --text:#e6edf3; --muted:#8b98a9; --accent:#4cc2ff; --accent2:#a78bfa;
+  --green:#4ade80; --red:#f87171; --yellow:#fbbf24; --purple:#c084fc;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;font-size:14px}
+.header{display:flex;align-items:center;gap:16px;padding:14px 24px;background:var(--panel);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.header h1{font-size:18px;font-weight:600;letter-spacing:.5px}
+.header h1 .dot{color:var(--accent);margin-right:8px}
+.header .sub{color:var(--muted);font-size:12px;margin-left:4px}
+.spacer{flex:1}
+.btn{border:1px solid var(--border);background:var(--panel2);color:var(--text);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px;transition:all .15s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.active{background:rgba(76,194,255,.15);border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:linear-gradient(135deg,#2b7fff,#6d5dfc);border:none;font-weight:600}
+.btn.primary:hover{filter:brightness(1.15);color:#fff}
+.status{font-size:12px;color:var(--muted)}
+.status .ok{color:var(--green)}
+.status .err{color:var(--red)}
+.main{padding:20px 24px;display:flex;flex-direction:column;gap:20px}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px 18px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+.card:nth-child(2)::before{background:var(--yellow)}
+.card:nth-child(3)::before{background:var(--purple)}
+.card:nth-child(4)::before{background:var(--red)}
+.card:nth-child(5)::before{background:var(--green)}
+.card .label{color:var(--muted);font-size:12px;margin-bottom:8px}
+.card .value{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
+.card .unit{font-size:13px;color:var(--muted);font-weight:400;margin-left:3px}
+.grid2{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+.grid2b{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.panel h3{font-size:14px;font-weight:600;margin-bottom:10px;color:var(--text)}
+.panel h3 .hint{font-size:11px;color:var(--muted);font-weight:400;margin-left:8px}
+.chart{width:100%;height:280px}
+.table-wrap{max-height:340px;overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{color:var(--muted);font-weight:500;text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--panel)}
+td{padding:8px 10px;border-bottom:1px solid #202837;font-variant-numeric:tabular-nums}
+tr{cursor:pointer}
+tr:hover td{background:rgba(76,194,255,.06)}
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11px;background:rgba(76,194,255,.12);color:var(--accent);margin-right:4px}
+.tag.tool{background:rgba(167,139,250,.15);color:var(--purple)}
+.tag.gen{background:rgba(74,222,128,.12);color:var(--green)}
+.cost-pos{color:var(--yellow)}
+/* modal */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;align-items:center;justify-content:center}
+.modal.show{display:flex}
+.modal-box{background:var(--panel);border:1px solid var(--border);border-radius:12px;width:88%;max-width:1100px;max-height:86vh;display:flex;flex-direction:column;overflow:hidden}
+.modal-head{display:flex;align-items:center;padding:14px 20px;border-bottom:1px solid var(--border)}
+.modal-head h3{font-size:15px}
+.modal-head .meta{color:var(--muted);font-size:12px;margin-left:14px;font-family:ui-monospace,Consolas,monospace}
+.modal-close{margin-left:auto;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1}
+.modal-close:hover{color:var(--text)}
+#traceTree{flex:1;min-height:520px}
+.empty{color:var(--muted);text-align:center;padding:40px;font-size:13px}
+/* trace 详情时间线 */
+.route-card{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin:0 0 12px}
+.rc-row{display:flex;gap:10px;margin-bottom:8px}
+.rc-label{color:var(--muted);font-size:12px;flex-shrink:0}
+.rc-val{color:var(--text);font-size:13px;word-break:break-all}
+.rc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.rc-grid .rc-label{display:block;margin-bottom:2px}
+.tl-table{width:100%;border-collapse:collapse;font-size:13px}
+.tl-table th{color:var(--muted);font-weight:500;text-align:left;padding:6px 10px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--panel)}
+.tl-table td{padding:5px 10px;border-bottom:1px solid #202837;font-variant-numeric:tabular-nums}
+.tl-num{text-align:right}
+.tl-muted{color:var(--muted)}
+.tl-summary{margin-top:10px;padding:8px 12px;background:var(--panel2);border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:12px}
+.tag.gen{background:rgba(74,222,128,.12);color:var(--green)}
+.tag.span{background:rgba(167,139,250,.15);color:var(--purple)}
+.tag.err-tag{background:rgba(248,113,113,.15);color:var(--red)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><span class="dot">◆</span>Observability Dashboard <span class="sub">Langfuse · ClickHouse · W1</span></h1>
+  <span class="status" id="status">连接中…</span>
+  <div class="spacer"></div>
+  <button class="btn" data-hours="6">6h</button>
+  <button class="btn active" data-hours="24">24h</button>
+  <button class="btn" data-hours="168">7d</button>
+  <button class="btn primary" id="refresh">⟳ 刷新</button>
+</div>
+
+<div class="main">
+  <div class="cards" id="cards">
+    <div class="card"><div class="label">Trace 总数</div><div class="value" id="c-traces">-</div></div>
+    <div class="card"><div class="label">总成本</div><div class="value"><span id="c-cost">-</span><span class="unit">¥</span></div></div>
+    <div class="card"><div class="label">平均延迟</div><div class="value"><span id="c-lat">-</span><span class="unit">ms</span></div></div>
+    <div class="card"><div class="label">P95 延迟</div><div class="value"><span id="c-p95">-</span><span class="unit">ms</span></div></div>
+    <div class="card"><div class="label">LLM 调用</div><div class="value"><span id="c-llm">-</span></div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h3>请求量与平均延迟 <span class="hint">按小时（根节点）</span></h3>
+      <div class="chart" id="chartTraffic"></div>
+    </div>
+    <div class="panel">
+      <h3>任务 / 工具调用分布 <span class="hint">log 刻度 · 次数+成本</span></h3>
+      <div class="chart" id="chartType"></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>成本与 Token 趋势 <span class="hint">LLM generation 按小时</span></h3>
+    <div class="chart" id="chartCost" style="height:240px"></div>
+  </div>
+
+  <div class="panel">
+    <h3>Trace 列表 <span class="hint">点击行查看路由过程与节点时间线</span></h3>
+    <div class="table-wrap" id="traceTableWrap"><div class="empty">加载中…</div></div>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="m-title">Trace</h3>
+      <span class="meta" id="m-meta"></span>
+      <button class="modal-close" id="m-close">×</button>
+    </div>
+    <div id="traceTree"></div>
+  </div>
+</div>
+
+<script>
+let hours = 24;
+const $ = id => document.getElementById(id);
+
+const charts = {};
+function initCharts(){
+  charts.traffic = echarts.init($('chartTraffic'));
+  charts.type = echarts.init($('chartType'));
+  charts.cost = echarts.init($('chartCost'));
+}
+window.addEventListener('resize', () => Object.values(charts).forEach(c => c.resize()));
+
+const TYPE_COLOR = {CHAIN:'#4cc2ff', SPAN:'#a78bfa', GENERATION:'#4ade80', TOOL:'#fbbf24', AGENT:'#f87171', EMBEDDING:'#c084fc'};
+
+async function load(){
+  $('status').textContent = '加载中…';
+  $('status').className = 'status';
+  try{
+    const [ov, tr] = await Promise.all([
+      fetch(`/api/overview?hours=${hours}`).then(r => r.json()),
+      fetch(`/api/traces?hours=${hours}&limit=60`).then(r => r.json()),
+    ]);
+    renderCards(ov.totals);
+    renderTraffic(ov.timeseries);
+    renderCost(ov.cost_series);
+    renderType(ov.by_type);
+    renderTable(tr.traces);
+    $('status').innerHTML = '<span class="ok">● 正常</span> · ' + new Date().toLocaleTimeString('zh-CN');
+  }catch(e){
+    $('status').innerHTML = '<span class="err">● 数据加载失败：' + (e.message||e) + '</span>';
+  }
+}
+
+function renderCards(t){
+  $('c-traces').textContent = t.traces;
+  $('c-cost').textContent = t.cost.toFixed(4);
+  $('c-lat').textContent = Math.round(t.latency_avg_ms);
+  $('c-p95').textContent = Math.round(t.latency_p95_ms);
+  $('c-llm').textContent = t.llm_calls + ' / ' + t.tool_calls + ' 工具';
+}
+
+function renderTraffic(ts){
+  if(!ts.length){ $('chartTraffic').innerHTML = '<div class="empty">暂无数据</div>'; return; }
+  charts.traffic.setOption({
+    tooltip:{trigger:'axis', backgroundColor:'#1b2333', borderColor:'#273046', textStyle:{color:'#e6edf3'}},
+    legend:{data:['请求数','平均延迟'], textStyle:{color:'#8b98a9'}, top:0},
+    grid:{left:45,right:50,top:32,bottom:24},
+    xAxis:{type:'category', data:ts.map(x=>x.hour), axisLabel:{color:'#8b98a9', fontSize:11}, axisLine:{lineStyle:{color:'#273046'}}},
+    yAxis:[
+      {type:'value', name:'请求数', nameTextStyle:{color:'#8b98a9'}, axisLabel:{color:'#8b98a9'}, splitLine:{lineStyle:{color:'#202837'}}},
+      {type:'value', name:'ms', nameTextStyle:{color:'#8b98a9'}, axisLabel:{color:'#8b98a9'}, splitLine:{show:false}}
+    ],
+    series:[
+      {name:'请求数', type:'bar', data:ts.map(x=>x.traces), itemStyle:{color:'rgba(76,194,255,.55)', borderRadius:[3,3,0,0]}, barMaxWidth:22},
+      {name:'平均延迟', type:'line', yAxisIndex:1, data:ts.map(x=>x.latency_avg_ms), symbol:'circle', symbolSize:5, lineStyle:{color:'#a78bfa', width:2}, itemStyle:{color:'#a78bfa'}}
+    ]
+  });
+}
+
+function renderCost(cs){
+  if(!cs.length){ $('chartCost').innerHTML = '<div class="empty">暂无数据</div>'; return; }
+  charts.cost.setOption({
+    tooltip:{trigger:'axis', backgroundColor:'#1b2333', borderColor:'#273046', textStyle:{color:'#e6edf3'}},
+    legend:{data:['成本 ¥','tokens in','tokens out'], textStyle:{color:'#8b98a9'}, top:0},
+    grid:{left:50,right:50,top:32,bottom:24},
+    xAxis:{type:'category', data:cs.map(x=>x.hour), axisLabel:{color:'#8b98a9', fontSize:11}, axisLine:{lineStyle:{color:'#273046'}}},
+    yAxis:[
+      {type:'value', name:'¥', nameTextStyle:{color:'#8b98a9'}, axisLabel:{color:'#8b98a9'}, splitLine:{lineStyle:{color:'#202837'}}},
+      {type:'value', name:'tokens', nameTextStyle:{color:'#8b98a9'}, axisLabel:{color:'#8b98a9'}, splitLine:{show:false}}
+    ],
+    series:[
+      {name:'成本 ¥', type:'line', yAxisIndex:0, data:cs.map(x=>x.cost), symbol:'none', lineStyle:{color:'#fbbf24', width:2}, itemStyle:{color:'#fbbf24'}, areaStyle:{color:'rgba(251,191,36,.12)'}},
+      {name:'tokens in', type:'line', yAxisIndex:1, data:cs.map(x=>x.tokens_in), symbol:'circle', symbolSize:4, lineStyle:{color:'#4cc2ff', width:2}, itemStyle:{color:'#4cc2ff'}},
+      {name:'tokens out', type:'line', yAxisIndex:1, data:cs.map(x=>x.tokens_out), symbol:'circle', symbolSize:4, lineStyle:{color:'#4ade80', width:2}, itemStyle:{color:'#4ade80'}}
+    ]
+  });
+}
+
+function renderType(byType){
+  // 按任务/工具 name 聚合；x 轴用 log 刻度，数量差异大时小值也可见
+  const map = {};
+  byType.forEach(t => {
+    if(!map[t.name]) map[t.name] = {count:0, cost:0, type:t.type};
+    map[t.name].count += t.count;
+    map[t.name].cost += t.cost;
+  });
+  const items = Object.entries(map)
+    .map(([name, v]) => ({name, ...v}))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 14);
+  if(!items.length){ $('chartType').innerHTML = '<div class="empty">暂无数据</div>'; return; }
+  charts.type.setOption({
+    tooltip:{trigger:'item', backgroundColor:'#1b2333', borderColor:'#273046', textStyle:{color:'#e6edf3'},
+      formatter:p => `${p.name}<br/>${p.value} 次 · 成本 ¥${(p.data.cost||0).toFixed(4)}`},
+    grid:{left:120, right:46, top:8, bottom:24},
+    xAxis:{type:'log', name:'次数(log)', nameTextStyle:{color:'#8b98a9'}, axisLabel:{color:'#8b98a9'}, splitLine:{lineStyle:{color:'#202837'}}},
+    yAxis:{type:'category', data:items.map(i=>i.name), axisLabel:{color:'#e6edf3', fontSize:12}, axisLine:{lineStyle:{color:'#273046'}}},
+    series:[{
+      type:'bar', barWidth:14,
+      data:items.map(i => ({value:i.count, cost:i.cost, itemStyle:{color:TYPE_COLOR[i.type]||'#4cc2ff', borderRadius:[0,3,3,0]}})),
+      label:{show:true, position:'right', color:'#8b98a9', fontSize:11}
+    }]
+  });
+}
+
+function renderTable(traces){
+  const wrap = $('traceTableWrap');
+  if(!traces.length){ wrap.innerHTML = '<div class="empty">所选时间范围内暂无 trace（先发起一次问答）</div>'; return; }
+  let html = '<table><thead><tr><th>开始时间</th><th>名称</th><th>事件数</th><th>延迟</th><th>Tokens(in/out)</th><th>成本 ¥</th></tr></thead><tbody>';
+  traces.forEach(t => {
+    html += `<tr data-id="${t.trace_id}" data-name="${t.name}">
+      <td>${t.start_time}</td><td>${t.name}</td><td>${t.events}</td>
+      <td>${t.latency_ms!=null?Math.round(t.latency_ms)+' ms':'—'}</td>
+      <td>${t.tokens_in} / ${t.tokens_out}</td>
+      <td class="cost-pos">${t.cost.toFixed(5)}</td></tr>`;
+  });
+  html += '</tbody></table>';
+  wrap.innerHTML = html;
+  wrap.querySelectorAll('tr[data-id]').forEach(tr => tr.addEventListener('click', () => openTrace(tr.dataset.id, tr.dataset.name)));
+}
+
+async function openTrace(id, name){
+  $('modal').classList.add('show');
+  $('m-title').textContent = 'Trace 详情';
+  $('m-meta').textContent = `${name} · ${id}`;
+  $('traceTree').innerHTML = '<div class="empty">加载中…</div>';
+  try{
+    const d = await fetch(`/api/trace/${id}`).then(r => r.json());
+    renderTraceTimeline(d);
+  }catch(e){
+    $('traceTree').innerHTML = '<div class="empty">加载失败：' + (e.message||e) + '</div>';
+  }
+}
+
+function findByName(n, name){
+  if(n.name === name) return n;
+  for(const c of (n.children||[])){ const r = findByName(c, name); if(r) return r; }
+  return null;
+}
+function esc(s){
+  return String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+function fmtEntities(v){
+  if(v == null || v === '') return '—';
+  if(Array.isArray(v)) return v.join('、');
+  if(typeof v === 'string'){
+    // ClickHouse 可能返回 "['a','b']" 或 "a, b" 形式
+    let s = v.trim();
+    if(s.startsWith('[') && s.endsWith(']')) s = s.slice(1, -1);
+    return s.split(',').map(x => x.trim().replace(/^['"]|['"]$/g, '')).filter(Boolean).join('、') || '—';
+  }
+  return String(v);
+}
+
+function renderTraceTimeline(d){
+  const box = $('traceTree');
+  if(!d.roots || !d.roots.length){ box.innerHTML = '<div class="empty">无节点数据</div>'; return; }
+  const root = d.roots[0];
+
+  // 路由信息：优先 router span 的 metadata（complexity/question_type/entities/source）
+  let routeMeta = root.metadata || {};
+  const routerNode = findByName(root, 'router');
+  if(routerNode && routerNode.metadata && routerNode.metadata.complexity) routeMeta = routerNode.metadata;
+  const question = root.input || routeMeta.benchmark_id || '(无问题文本)';
+
+  // 展平节点为时间线（DFS 保持嵌套层级）
+  const rows = [];
+  let seq = 0, totalCost = 0, nLlm = 0, nTool = 0, nErr = 0;
+  (function walk(n, depth){
+    seq++;
+    if(n.type === 'GENERATION') nLlm++;
+    if(n.type === 'TOOL') nTool++;
+    if(n.status) nErr++;
+    totalCost += n.cost || 0;
+    rows.push({seq, depth, n});
+    (n.children||[]).forEach(c => walk(c, depth + 1));
+  })(root, 0);
+
+  let html = '';
+  html += `<div class="route-card">
+    <div class="rc-row"><span class="rc-label">问题</span><span class="rc-val">${esc(question)}</span></div>
+    <div class="rc-grid">
+      <div><span class="rc-label">路由</span><span class="rc-val tag">${esc(routeMeta.complexity||'?')}</span></div>
+      <div><span class="rc-label">意图</span><span class="rc-val">${esc(routeMeta.question_type||'?')}</span></div>
+      <div><span class="rc-label">判定来源</span><span class="rc-val">${esc(routeMeta.source||'?')}</span></div>
+      <div><span class="rc-label">实体</span><span class="rc-val">${esc(fmtEntities(routeMeta.entities))}</span></div>
+    </div>
+  </div>`;
+
+  html += `<table class="tl-table"><thead><tr>
+    <th style="width:38px">#</th><th>节点（缩进 = 嵌套层级）</th><th style="width:86px">耗时</th><th style="width:210px">模型 / 工具</th><th style="width:84px">成本</th><th style="width:104px">tokens in/out</th>
+  </tr></thead><tbody>`;
+  rows.forEach(r => {
+    const n = r.n;
+    const name = n.tool || n.name;
+    const badge = n.type === 'GENERATION' ? 'gen' : (n.type === 'TOOL' ? 'tool' : (n.type === 'CHAIN' ? '' : 'span'));
+    const lat = n.latency_ms != null ? Math.round(n.latency_ms) + 'ms' : '—';
+    const model = n.model || (n.type === 'TOOL' ? '—' : (n.type === 'GENERATION' ? 'LLM' : ''));
+    const cost = n.cost ? '¥' + n.cost.toFixed(4) : '';
+    const tok = n.tokens_in ? n.tokens_in + ' / ' + n.tokens_out : '';
+    html += `<tr>
+      <td class="tl-num tl-muted">${r.seq}</td>
+      <td style="padding-left:${10 + r.depth * 18}px">${badge ? `<span class="tag ${badge}">${badge}</span> ` : ''}${esc(name)}${n.status ? ' <span class="tag err-tag">error</span>' : ''}</td>
+      <td class="tl-num">${lat}</td>
+      <td class="tl-muted">${esc(model)}</td>
+      <td class="tl-num cost-pos">${cost}</td>
+      <td class="tl-num tl-muted">${tok}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+
+  html += `<div class="tl-summary">共 ${seq} 节点 · ${nLlm} 次 LLM 调用 · ${nTool} 次工具调用${nErr ? ' · ' + nErr + ' 个错误节点' : ''} · 总耗时 ${Math.round(root.latency_ms || 0)}ms · 总成本 ¥${totalCost.toFixed(4)}</div>`;
+  box.innerHTML = html;
+}
+
+$('m-close').addEventListener('click', () => $('modal').classList.remove('show'));
+$('modal').addEventListener('click', e => { if(e.target === $('modal')) $('modal').classList.remove('show'); });
+document.querySelectorAll('.btn[data-hours]').forEach(b => b.addEventListener('click', () => {
+  hours = +b.dataset.hours;
+  document.querySelectorAll('.btn[data-hours]').forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  load();
+}));
+$('refresh').addEventListener('click', load);
+
+initCharts();
+load();
+</script>
+</body>
+</html>

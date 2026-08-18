@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 from datetime import datetime
@@ -33,8 +34,14 @@ import httpx
 from arknights_wiki.eval import config as eval_config
 from arknights_wiki.eval.judge import judge_answer, rule_metrics
 from arknights_wiki.eval.llm import compute_cost
+from arknights_wiki.observability import TRACE_ROOT, flush, get_client
 
-COST_LOG = ROOT / "output" / "eval" / "cost_log.jsonl"
+COST_LOG = Path(
+    os.environ.get(
+        "ARKNIGHTS_COST_LOG",
+        str(ROOT / "output" / "eval" / "cost_log.jsonl"),
+    )
+)
 
 
 def _log_cost(entry: dict) -> None:
@@ -220,9 +227,23 @@ def _write_result(results_path: Path, row: dict) -> None:
 
 
 def _run_and_score(item: dict, mode: str, args) -> dict:
-    """跑单题单模式并评分（worker 单元，供串行/并行共用）"""
+    """跑单题单模式并评分（worker 单元，供串行/并行共用）。
+
+    W1 Observability: direct 模式开启 trace 时每题包一个 chat_request 根
+    （metadata.benchmark_id / mode 便于 Langfuse 过滤复盘）；http 模式由 server 侧创建根。
+    """
     if mode == "direct":
-        res = run_direct(item["question"])
+        c = get_client()
+        if c is not None:
+            with c.start_as_current_observation(
+                name=TRACE_ROOT,
+                as_type="chain",
+                input={"question": item["question"]},
+                metadata={"benchmark_id": item["id"], "mode": "direct"},
+            ):
+                res = run_direct(item["question"])
+        else:
+            res = run_direct(item["question"])
     else:
         res = run_http(item["question"], args.server)
     row = {
@@ -346,6 +367,7 @@ def main() -> int:
             print(f"  + {row['id']}:{mode} route={row['route']} len={len(row['answer'])} latency={row['latency_ms']}ms ({done}/{len(tasks)})")
 
     print(f"\n完成。明细: {results_path}")
+    flush()  # W1 Observability: 冲刷未导出的 trace（CLI 短生命周期进程）
     if not args.no_judge:
         try:
             from arknights_wiki.eval.report import generate_report

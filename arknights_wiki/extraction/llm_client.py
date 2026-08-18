@@ -2,8 +2,11 @@
 import json
 import os
 import re
+import time as time_mod
 
 from openai import OpenAI
+
+from arknights_wiki.observability import GENERATION_LLM, traced
 
 
 def strip_think_tags(text: str) -> str:
@@ -131,6 +134,7 @@ def create_client() -> OpenAI:
     )
 
 
+@traced(name=GENERATION_LLM, as_type="generation")
 def chat_completion(
     messages: list[dict],
     temperature: float = 0.1,
@@ -141,9 +145,16 @@ def chat_completion(
 
     自动创建客户端、读取模型配置，返回 (content, message) 元组。
     调用方根据需求使用 content（纯文本回答）或 message（含 tool_calls 等元信息）。
+
+    W1 Observability: 启用 trace 时每次调用产生一个 `llm_call` generation，
+    在内部通过 record_llm_usage 记录 model/tokens/cost/latency。
     """
     client = create_client()
     config = _get_model_config()
+
+    from arknights_wiki.observability import is_enabled, record_llm_usage
+
+    _t0 = time_mod.time()
     response = client.chat.completions.create(
         model=config["model"],
         messages=messages,
@@ -151,7 +162,22 @@ def chat_completion(
         max_tokens=max_tokens or config["max_tokens"],
         tools=tools,
     )
+    latency_ms = round((time_mod.time() - _t0) * 1000, 1)
+
     message = response.choices[0].message
+    if is_enabled():
+        usage = getattr(response, "usage", None)
+        tokens_in = usage.prompt_tokens if usage else 0
+        tokens_out = usage.completion_tokens if usage else 0
+        from arknights_wiki.observability import compute_cost_rmb
+
+        record_llm_usage(
+            config["model"],
+            tokens_in,
+            tokens_out,
+            compute_cost_rmb(config["model"], tokens_in, tokens_out),
+            extra={"latency_ms": latency_ms, "n_tools": len(tools) if tools else 0},
+        )
     return message.content or "", message
 
 

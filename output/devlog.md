@@ -1724,4 +1724,96 @@ tests/agent/test_router.py       # +22 tests（匹配算法 6 + 实体提取 4 +
 1. 读本文件末尾（本段）+ README.md
 2. 下一步：全量 100 题 Agent 跑批基线 → report_v1.md（或先处理题目审查）
 
+---
+
+## W1 Observability / Tracing 完成（2026-08-18，Langfuse v4 本地 Docker + SDK 4.14）
+
+### 用户决策
+
+- **部署方式**：本地 Docker 部署 Langfuse v4（`docker/langfuse/docker-compose.yml`，6 容器：web+worker+postgres17+clickhouse25.12+redis7+minio）
+- **埋点技术**：Langfuse Python SDK 4.14.4（`@observe` 装饰器 + `get_client()`，OTel 基础）
+- headless 初始化：`LANGFUSE_INIT_*` 自动建组织/项目（arknights-wiki-main），免手动注册
+
+### 架构决策
+
+- **新包 `arknights_wiki/observability/`**：`client.py`（is_enabled 三键开关 + 懒加载 get_client + record_llm_usage）/ `decorators.py`（traced 可开关装饰器，关闭态原函数直通零开销）/ `schema.py`（节点名常量 + cost 复用 eval/pricing.json RMB 口径，预留 W2 retry/W4 planner/W5 critic 节点）
+- **开关**：`LANGFUSE_PUBLIC_KEY/SECRET_KEY/BASE_URL` 齐备且 `ARKNIGHTS_TRACING != "0"` 时启用；装饰时判断，关闭态返回原函数（保持身份、零侵入）
+- **LLM 统一埋点**：`chat_completion` 加 `@traced(as_type="generation")`（llm_call 节点），函数内 `record_llm_usage` → `update_current_generation`（SDK v4 只有该 API 接受 usage/cost；`update_current_span` 无此参数——**踩坑**）
+- **trace 根**：server.py executor 线程内 `start_as_current_observation`（OTel context 同线程传播，graph/simple_search 的 traced span 自然嵌套）；eval runner direct 模式每题一个根（metadata.benchmark_id）
+- **v4 events_only 模式**：observations 存 ClickHouse events（非 postgres）；v2 observations 列表 API 为 lightweight view（不含 usage/cost/metadata），详情需查 ClickHouse `events_full.provided_*` 字段
+- **成本日志路径可配置**：`ARKNIGHTS_COST_LOG` 环境变量覆盖（因 cost_log.jsonl 被进程锁，见遗留）
+
+### 埋点清单（验收 trace 树实测）
+
+```
+simple:  chat_request → router → simple_search → retrieval → answer_generation
+complex: chat_request → router → agent_call_model×N → (llm_call + tool_call×k) → synthesize → llm_call
+```
+
+### 冒烟与验收
+
+- `scripts/trace_smoke.py`：最小链路冒烟（fake LLM，验证结构+usage/cost 写入）
+- 真实问答（eval run_direct）：simple 42.9s / complex 131.4s（Agent 7 轮 28 次工具调用）；ClickHouse 确认 llm_call/answer_generation 的 model=deepseek-v4-flash-ga-260731、usage（如 {input:4755,output:813}）、cost（¥0.016）完整记录
+- `scripts/trace_cost_summary.py`：ClickHouse 聚合成本 → `output/observability/cost_summary.md`（冒烟 4 traces ¥0.003120）
+- 测试：tests/observability/ 16 tests（开关三态/traced no-op/cost 计算/LLM 埋点）；agent 核心 78 tests 无回归
+
+### 部署踩坑（可复用）
+
+1. **Docker Hub 直连不通** → daemon.json 配 registry-mirrors（docker.1ms.run / daocloud / dockerproxy.net）实测可用；Docker Desktop 需重启
+2. **DATABASE_URL 默认硬编码 postgres:postgres**，改 POSTGRES_PASSWORD 后必须同步 DATABASE_URL
+3. **S3 凭据必须与 MINIO_ROOT_USER/PASSWORD 一致**（默认 miniosecret 与自定义 root 密码不符 → "Failed to upload JSON to S3"）
+4. **SDK v4 `update_current_span` 无 usage/cost 参数**，必须用 `update_current_generation`
+5. **v2 observations 列表 API 无 usage/cost**，验证用 ClickHouse `events_full`
+
+### 遗留
+
+- **cost_log.jsonl 被进程锁**（WinError 5，psutil 无法定位持有者，疑似沙箱/杀软）：已用 ARKNIGHTS_COST_LOG 绕过，用户重启后需清理锁或删除文件
+- `data/extractions/v3_seed_db_v2.json` 被某测试写入（git 显示 M，非 W1 改动，需确认是否合法）
+- worker 每分钟任务日志偶发停顿（v4 dual write 正常，观察即可）
+
+### 会话恢复指南（下会话）
+
+1. 读本文件末尾（本段）+ README.md
+2. Langfuse UI：http://localhost:3000（admin@arknights-wiki.local / ArknightsWiki2026!，或 headless key）
+3. 启动 Langfuse：`cd docker/langfuse && docker compose up -d`
+4. 开启 trace：设置 LANGFUSE_PUBLIC_KEY/SECRET_KEY/BASE_URL（见 docker/langfuse/.env）
+5. 下一步：W2 Failure Recovery 恢复链（依赖 W1 trace 可见性）
+
+---
+
+## Observability Dashboard 可视化页面（2026-08-18，ECharts）
+
+### 功能
+
+独立可视化服务（端口 8001，区别于 agent server 8000），数据直连 Langfuse ClickHouse（events_full 事件表）：
+- **`arknights_wiki/observability/dashboard.py`**：FastAPI + clickhouse-connect（127.0.0.1:8123，凭据读 docker/langfuse/.env）
+  - `GET /` dashboard.html；`/api/overview`（指标卡+按小时时间序列+节点类型分布+延迟直方图）；`/api/traces`（列表）；`/api/trace/{id}`（span_id/parent_span_id 建树）
+- **`arknights_wiki/observability/static/dashboard.html`**：ECharts 5.5.1（本地 static/，免 CDN），深色监控面板风
+  - 5 张指标卡（trace 数/总成本/平均延迟/P95/LLM 调用）；请求量&延迟时间序列；成本&Toke 趋势；节点类型饼图；延迟直方图；trace 列表表格（点击弹 ECharts 树图看完整 trace 树）
+- 时间范围切换 6h/24h/7d + 手动刷新
+
+### 启动
+
+```bash
+cd docker/langfuse && docker compose up -d        # 先起 Langfuse
+python -m arknights_wiki.observability.dashboard  # 端口 8001
+# 浏览器 http://127.0.0.1:8001
+```
+
+### 踩坑
+
+- ClickHouse `toFloat64OrZero` 只接受 String 参数（数值用 `ifNull(avgOrNull(...), 0)`）
+- dashboard.py 读 .env 的 parents[2]（项目根），写成 parents[3] 会读不到凭据（认证失败 516）
+- 总成本需从 GENERATION 聚合（根节点无 provided_cost_details）
+
+---
+
+## Git 历史恢复 + W0/W1 首次提交（2026-08-18 收尾）
+
+- **背景**：本地 `.git` 目录消失（对象库先损坏后目录丢失，疑似杀软/同步工具，未定位到确切原因）；工作区文件完整
+- **远程仓库**：github.com/SilhouetteQA/Arknights-LLM-wiki（154 条提交，最后推送 2026-07-04，main + feature/langgraph-agent）
+- **恢复**（零删除，用户否决 rm -rf 后采用）：`git remote add origin` + `git fetch origin` + 手动 `git update-ref refs/heads/main <sha>`（此环境 refs 写入不稳定，refs/remotes 不持久）+ `git reset --mixed`
+- **提交**：`a5478a6` feat: W0 评测体系 + W1 Observability（覆盖 7-04 后全部本地工作，工作区干净）
+- 提示：push 用 `git push -u origin main`（自动重建 origin/main 跟踪）；密钥（docker/langfuse/.env）已被 .gitignore 排除
+
 

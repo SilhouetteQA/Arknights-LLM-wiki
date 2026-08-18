@@ -18,6 +18,7 @@ agent = [
     "faiss-cpu>=1.8",
     "numpy>=1.26",
     "openai>=1.0",
+    "langfuse>=4.0",
 ]
 
 [tool.setuptools.packages.find]

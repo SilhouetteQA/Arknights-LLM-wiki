@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[user]
+	name = Silhouette
+	email = silhouette@local
+[remote "origin"]
+	url = https://github.com/SilhouetteQA/Arknights-LLM-wiki.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

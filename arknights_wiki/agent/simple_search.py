@@ -7,6 +7,7 @@ Layer 3: Dialogue 兜底
 """
 import json
 import os
+import time as time_mod
 
 from arknights_wiki.agent import wrap_user_input
 from arknights_wiki.agent.retrieval import (
@@ -18,6 +19,16 @@ from arknights_wiki.agent.retrieval import (
 from arknights_wiki.agent.prompts import QA_SYSTEM_PROMPT, _SOURCE_FIDELITY_RULES, _LOGICAL_ORGANIZATION_SYNTHESIS
 from arknights_wiki.config import DATA_DIR, PROJECT_ROOT
 from arknights_wiki.extraction.llm_client import _get_model_config, create_client
+from arknights_wiki.observability import (
+    GENERATION_ANSWER,
+    SPAN_RETRIEVAL,
+    SPAN_SIMPLE_SEARCH,
+    compute_cost_rmb,
+    get_client,
+    is_enabled,
+    record_llm_usage,
+    traced,
+)
 
 
 def _get_data_dir():
@@ -231,6 +242,12 @@ def _collect_semantic_fallback(
             add(result)
 
 
+def _retrieval_metadata(args, kwargs, result: list[dict]) -> dict:
+    """search_and_collect 结果的 trace metadata（来源数）"""
+    return {"n_sources": len(result) if isinstance(result, list) else 0}
+
+
+@traced(name=SPAN_RETRIEVAL, metadata_fn=_retrieval_metadata)
 def search_and_collect(
     entities: list[str],
     question: str,
@@ -332,6 +349,14 @@ def build_answer_prompt(question: str, sources: list[dict]) -> str:
 - 说清楚为止，不限制字数"""
 
 
+def _search_metadata(args, kwargs, result: dict) -> dict:
+    """simple_search 结果的 trace metadata（来源数/回答长度）"""
+    if not isinstance(result, dict):
+        return {}
+    return {"n_sources": len(result.get("sources", [])), "answer_len": len(result.get("answer", ""))}
+
+
+@traced(name=SPAN_SIMPLE_SEARCH, metadata_fn=_search_metadata)
 def simple_search(question: str, route: dict, progress_callback=None) -> dict:
     """简单检索路径主函数"""
     entities = route.get("entities", [])
@@ -358,16 +383,47 @@ def simple_search(question: str, route: dict, progress_callback=None) -> dict:
     user_prompt = build_answer_prompt(question, sources)
 
     client = create_client()
-    response = client.chat.completions.create(
-        model=_get_model_config()["model"],  # 统一模型层（火山/DeepSeek，勿硬编码）
-        messages=[
-            {"role": "system", "content": QA_SYSTEM_PROMPT},
-            {"role": "user", "content": user_prompt},
-        ],
-        temperature=0.3,
-        max_tokens=8192,
-    )
-    answer = response.choices[0].message.content or ""
+    model = _get_model_config()["model"]  # 统一模型层（火山/DeepSeek，勿硬编码）
+
+    def _do_generate():
+        return client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": QA_SYSTEM_PROMPT},
+                {"role": "user", "content": user_prompt},
+            ],
+            temperature=0.3,
+            max_tokens=8192,
+        )
+
+    # W1 Observability: 回答生成包一个 generation span（record_llm_usage 需要处于 generation 内）
+    from arknights_wiki.observability import GENERATION_ANSWER, get_client
+
+    _obs_client = get_client()
+    if _obs_client is not None:
+        with _obs_client.start_as_current_observation(
+            name=GENERATION_ANSWER, as_type="generation", model=model
+        ):
+            _t0 = time_mod.time()
+            response = _do_generate()
+            latency_ms = round((time_mod.time() - _t0) * 1000, 1)
+            answer = response.choices[0].message.content or ""
+            if is_enabled():
+                usage = getattr(response, "usage", None)
+                tokens_in = usage.prompt_tokens if usage else 0
+                tokens_out = usage.completion_tokens if usage else 0
+                record_llm_usage(
+                    model,
+                    tokens_in,
+                    tokens_out,
+                    compute_cost_rmb(model, tokens_in, tokens_out),
+                    extra={"latency_ms": latency_ms, "stage": "answer_generation"},
+                )
+    else:
+        _t0 = time_mod.time()
+        response = _do_generate()
+        latency_ms = round((time_mod.time() - _t0) * 1000, 1)
+        answer = response.choices[0].message.content or ""
 
     source_meta = []
     for i, s in enumerate(sources, 1):

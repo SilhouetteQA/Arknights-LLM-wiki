@@ -1,5 +1,6 @@
 """FastAPI Web 服务 -- SSE 流式对话 API"""
 import asyncio
+import contextlib
 import json
 import os
 import queue
@@ -16,6 +17,7 @@ from arknights_wiki.config import DATA_DIR
 from arknights_wiki.agent.router import route_query
 from arknights_wiki.agent.simple_search import simple_search
 from arknights_wiki.agent.state import AgentState
+from arknights_wiki.observability import TRACE_ROOT, get_client
 
 
 class ChatRequest(BaseModel):
@@ -50,6 +52,26 @@ static_dir = os.path.join(os.path.dirname(__file__), "static")
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 
+def _trace_root(question: str, route: dict):
+    """创建 chat_request 根观察（trace 根）。
+
+    在 executor 线程内使用：graph/simple_search 的 traced span 会自然嵌套在其下
+    （OTel context 在同线程内传播）。未启用 trace 时返回 nullcontext。
+    """
+    c = get_client()
+    if c is None:
+        return contextlib.nullcontext()
+    return c.start_as_current_observation(
+        name=TRACE_ROOT,
+        as_type="chain",
+        input={"question": question},
+        metadata={
+            "complexity": route.get("complexity", ""),
+            "question_type": route.get("question_type", ""),
+        },
+    )
+
+
 @app.get("/health")
 async def health():
     return {"status": "ok"}
@@ -68,11 +90,13 @@ async def _simple_search_events(question: str, route: dict):
     def on_progress(tool: str, summary: str):
         progress_queue.put({"tool": tool, "summary": summary})
 
-    # 在独立线程中执行同步阻塞的检索+LLM调用
+    # 在独立线程中执行同步阻塞的检索+LLM调用（trace 根在 executor 线程内创建）
+    def _run_simple_search():
+        with _trace_root(question, route):
+            return simple_search(question, route, on_progress)
+
     loop = asyncio.get_event_loop()
-    search_future = loop.run_in_executor(
-        None, simple_search, question, route, on_progress
-    )
+    search_future = loop.run_in_executor(None, _run_simple_search)
 
     # 检索进行中持续从队列取进度事件发送到前端
     while not search_future.done():
@@ -124,19 +148,20 @@ async def _agent_search_events(question: str, route: dict):
     progress_queue: queue.Queue = queue.Queue()
 
     def _run_graph():
-        """在独立线程中执行 LangGraph agent，事件推入队列"""
+        """在独立线程中执行 LangGraph agent，事件推入队列（trace 根在 executor 线程内创建）"""
         try:
-            graph = build_agent_graph()
-            initial_state: AgentState = {
-                "messages": [],
-                "question": question,
-                "collected_docs": [],
-                "iteration": 0,
-                "route": route,
-            }
-            for event in graph.stream(initial_state):
-                progress_queue.put(("graph_event", event))
-            progress_queue.put(("graph_done", None))
+            with _trace_root(question, route):
+                graph = build_agent_graph()
+                initial_state: AgentState = {
+                    "messages": [],
+                    "question": question,
+                    "collected_docs": [],
+                    "iteration": 0,
+                    "route": route,
+                }
+                for event in graph.stream(initial_state):
+                    progress_queue.put(("graph_event", event))
+                progress_queue.put(("graph_done", None))
         except Exception as e:
             progress_queue.put(("graph_error", str(e)))
 

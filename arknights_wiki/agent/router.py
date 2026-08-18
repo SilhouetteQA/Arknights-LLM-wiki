@@ -7,10 +7,19 @@
 import json
 import os
 import re
+import time as time_mod
 from functools import lru_cache
 
 from arknights_wiki.config import DATA_DIR, PROJECT_ROOT
 from arknights_wiki.agent.prompts import VALID_INTENTS
+from arknights_wiki.observability import (
+    GENERATION_INTENT_REWRITE,
+    SPAN_ROUTER,
+    compute_cost_rmb,
+    is_enabled,
+    record_llm_usage,
+    traced,
+)
 
 # 2 字实体名前边界检查：前一字符为 CJK/字母数字则拒绝（'多利' 不匹配 '维多利亚'）
 _CJK_OR_ALNUM = re.compile(r"[\u4e00-\u9fff\u3400-\u4dbf0-9A-Za-z]")
@@ -305,6 +314,7 @@ def _resolve_temporal_entities(question: str, entities: list[str]) -> tuple[list
     return resolved, "; ".join(notes) if notes else ""
 
 
+@traced(name=GENERATION_INTENT_REWRITE, as_type="generation")
 def _llm_intent_rewrite(question: str) -> dict | None:
     """LLM 兜底意图识别+问题改写，失败返回 None。
 
@@ -318,8 +328,10 @@ def _llm_intent_rewrite(question: str) -> dict | None:
         from arknights_wiki.agent import wrap_user_input
 
         client = create_client()
+        model = _get_model_config()["model"]  # 统一模型层（火山/DeepSeek，勿硬编码）
+        _t0 = time_mod.time()
         response = client.chat.completions.create(
-            model=_get_model_config()["model"],  # 统一模型层（火山/DeepSeek，勿硬编码）
+            model=model,
             messages=[
                 {"role": "system", "content": INTENT_REWRITE_PROMPT},
                 {"role": "user", "content": wrap_user_input(question)},
@@ -327,6 +339,21 @@ def _llm_intent_rewrite(question: str) -> dict | None:
             temperature=0.1,
             max_tokens=400,
         )
+        latency_ms = round((time_mod.time() - _t0) * 1000, 1)
+
+        # W1 Observability: 记录意图改写 LLM 调用 usage/cost
+        if is_enabled():
+            usage = getattr(response, "usage", None)
+            tokens_in = usage.prompt_tokens if usage else 0
+            tokens_out = usage.completion_tokens if usage else 0
+            record_llm_usage(
+                model,
+                tokens_in,
+                tokens_out,
+                compute_cost_rmb(model, tokens_in, tokens_out),
+                extra={"latency_ms": latency_ms},
+            )
+
         text = response.choices[0].message.content or ""
         text = text.strip().strip("`").removeprefix("json")
         result = json.loads(text)
@@ -490,6 +517,20 @@ def classify_complexity_local(
     return _result("simple", "简单事实查询")
 
 
+def _route_metadata(args, kwargs, result: dict) -> dict:
+    """route_query 结果的 trace metadata（source/复杂度/意图/实体/时间范围）"""
+    if not isinstance(result, dict):
+        return {}
+    return {
+        "source": result.get("source", ""),
+        "complexity": result.get("complexity", ""),
+        "question_type": result.get("question_type", ""),
+        "time_scope": result.get("time_scope", ""),
+        "entities": result.get("entities", [])[:10],
+    }
+
+
+@traced(name=SPAN_ROUTER, metadata_fn=_route_metadata)
 def route_query(question: str, history=None) -> dict:
     """查询路由主函数：意图识别+改写 → 时序消歧 → 复杂度分类"""
     intent_result = recognize_intent_and_rewrite(question)

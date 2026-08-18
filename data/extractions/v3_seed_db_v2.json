@@ -17,8 +17,8 @@
   "timeline_events": [],
   "_meta": {
     "phase": 2,
-    "model": "deepseek-chat",
-    "generated_at": "2026-07-04T03:36:23.734501+00:00",
+    "model": "deepseek-v4-flash-ga-260731",
+    "generated_at": "2026-08-17T15:58:53.054380+00:00",
     "source": "大地巡旅 + 视频",
     "stats": {
       "tokens_in": 5000,

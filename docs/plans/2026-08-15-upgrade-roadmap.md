@@ -25,7 +25,7 @@ User → Intent/Router → Planner → (Knowledge/Research/Timeline Agent) → M
 | 窗口 | 任务 | 优先级 | 前置依赖 | 状态 |
 |------|------|--------|----------|------|
 | W0 | Evaluation Benchmark 建库 | P0 | 无 | ✅ 完成（100 题生成 ✅ · DeepEval 落地 ✅ · 路由修复 ✅ · mimo 统一 judge 基线 ✅ · 打分层 bug 修复+测试补全 ✅；基线 report_v1_mimo.md overall 0.857，事件类最弱待 W4/W5） |
-| W1 | Observability / Tracing（Langfuse + OTel） | P0 | 无（可与 W0 并行） | ⏳ |
+| W1 | Observability / Tracing（Langfuse + OTel） | P0 | 无（可与 W0 并行） | ✅ 完成（本地 Docker 部署 Langfuse v4 ✅ · observability 包+可开关 traced ✅ · 全链路埋点 ✅ · 真实问答 trace 树验证 ✅ · 成本汇总脚本 ✅） |
 | W2 | Failure Recovery 恢复链 | P0 | W1（可观测才能度量恢复效果） | ⏳ |
 | W3 | MCP Server 包装知识库 | P0 | W1（trace 覆盖 MCP 调用） | ⏳ |
 | W4 | Planner 显式任务规划 | P0 | W0（先有评测标尺） | ⏳ |

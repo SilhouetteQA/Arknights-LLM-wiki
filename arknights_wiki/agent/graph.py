@@ -4,6 +4,9 @@ Graph 结构:
   START -> call_model (agent_node)
              |- tool_calls -> tool_node -> call_model
              |- no_tool_calls -> synthesize_node -> END
+
+W1 Observability: call_model/synthesize 用 traced 装饰（span + 内部 LLM generation 自动嵌套），
+tool_node 内每个工具执行包一个 tool span（tool_call）。
 """
 import json
 
@@ -12,10 +15,29 @@ from langgraph.graph import StateGraph, END
 from arknights_wiki.agent.state import AgentState
 from arknights_wiki.agent.prompts import AGENT_SYSTEM_PROMPT, SYNTHESIS_PROMPT
 from arknights_wiki.agent.tools import TOOL_DEFINITIONS, TOOL_EXECUTORS
+from arknights_wiki.observability import (
+    SPAN_AGENT_CALL,
+    SPAN_SYNTHESIZE,
+    SPAN_TOOL,
+    get_client,
+    traced,
+)
 
 MAX_ITERATIONS = 8
 
 
+def _agent_metadata(args, kwargs, state: AgentState) -> dict:
+    """call_model 结果的 trace metadata（迭代数/工具调用数）"""
+    if not isinstance(state, dict):
+        return {}
+    last = state.get("messages", [])[-1] if state.get("messages") else {}
+    return {
+        "iteration": state.get("iteration", 0),
+        "n_tool_calls": len(last.get("tool_calls", [])) if isinstance(last, dict) else 0,
+    }
+
+
+@traced(name=SPAN_AGENT_CALL, metadata_fn=_agent_metadata)
 def call_model(state: AgentState) -> AgentState:
     """调用 LLM（带 tool 定义），决定下一步: tool_call 或 final answer"""
     from arknights_wiki.extraction.llm_client import chat_completion
@@ -61,6 +83,44 @@ def call_model(state: AgentState) -> AgentState:
     return state
 
 
+def _execute_tool_traced(func_name: str, func_args: dict, executor) -> str:
+    """执行单个工具；启用 trace 时包一个 tool_call span（记录 tool/args/error/耗时）"""
+    c = get_client()
+    if c is None:
+        try:
+            return executor(**func_args)
+        except Exception as e:  # noqa: BLE001
+            return f"工具执行失败: {str(e)}"
+
+    import time as time_mod
+
+    with c.start_as_current_observation(
+        name=SPAN_TOOL,
+        as_type="tool",
+        metadata={"tool": func_name, "args": func_args},
+    ) as _obs:
+        _t0 = time_mod.time()
+        try:
+            result_text = executor(**func_args)
+        except Exception as e:  # noqa: BLE001
+            result_text = f"工具执行失败: {str(e)}"
+            try:
+                c.update_current_span(level="ERROR", status_message=str(e)[:500])
+            except Exception:  # noqa: BLE001
+                pass
+        try:
+            c.update_current_span(
+                metadata={
+                    "tool": func_name,
+                    "latency_ms": round((time_mod.time() - _t0) * 1000, 1),
+                    "result_len": len(result_text),
+                }
+            )
+        except Exception:  # noqa: BLE001
+            pass
+        return result_text
+
+
 def tool_node(state: AgentState) -> AgentState:
     """执行 tool_calls，将结果追加到 messages 和 collected_docs"""
     last_message = state["messages"][-1]
@@ -73,10 +133,7 @@ def tool_node(state: AgentState) -> AgentState:
 
         executor = TOOL_EXECUTORS.get(func_name)
         if executor:
-            try:
-                result_text = executor(**func_args)
-            except Exception as e:
-                result_text = f"工具执行失败: {str(e)}"
+            result_text = _execute_tool_traced(func_name, func_args, executor)
         else:
             result_text = f"未知工具: {func_name}"
 
@@ -99,6 +156,7 @@ def tool_node(state: AgentState) -> AgentState:
     return state
 
 
+@traced(name=SPAN_SYNTHESIZE)
 def synthesize_node(state: AgentState) -> AgentState:
     """综合所有证据，生成最终回答"""
     from arknights_wiki.extraction.llm_client import chat_completion
