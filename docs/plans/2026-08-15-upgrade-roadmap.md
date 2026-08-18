@@ -27,7 +27,7 @@ User → Intent/Router → Planner → (Knowledge/Research/Timeline Agent) → M
 | W0 | Evaluation Benchmark 建库 | P0 | 无 | ✅ 完成（100 题生成 ✅ · DeepEval 落地 ✅ · 路由修复 ✅ · mimo 统一 judge 基线 ✅ · 打分层 bug 修复+测试补全 ✅；基线 report_v1_mimo.md overall 0.857，事件类最弱待 W4/W5） |
 | W1 | Observability / Tracing（Langfuse + OTel） | P0 | 无（可与 W0 并行） | ✅ 完成（本地 Docker 部署 Langfuse v4 ✅ · observability 包+可开关 traced ✅ · 全链路埋点 ✅ · 真实问答 trace 树验证 ✅ · 成本汇总脚本 ✅） |
 | W2 | Failure Recovery 恢复链 | P0 | W1（可观测才能度量恢复效果） | ✅ 完成（2026-08-18：resilience 模块（timeout/retry/breaker/fallback）✅ · 工具执行接入 ✅ · LLM chat_completion 重试 ✅ · LangGraph SqliteSaver checkpoint 断点续跑 ✅ · 失败埋点 retries/breaker/fallback 入 trace ✅；验收 15/15 PASS，10 题回归无回落） |
-| W3 | MCP Server 包装知识库 | P0 | W1（trace 覆盖 MCP 调用） | ⏳ |
+| W3 | MCP Server 包装知识库 | P0 | W1（trace 覆盖 MCP 调用） | ✅ 完成（2026-08-18：MCPServer 5 工具（search_entities/search_events/query_relationship/query_timeline/search_story）✅ · client 同步封装+resilience ✅ · Agent 双轨切换（ARKNIGHTS_USE_MCP=1，失败回退内部函数）✅ · trace tool_call→mcp_call 层级 ✅；真实问答 14-19 工具调用 ✅；10 题 A/B MCP 0.967 vs 内部 0.936 不降反升 ✅） |
 | W4 | Planner 显式任务规划 | P0 | W0（先有评测标尺） | ⏳ |
 | W5 | Multi-Agent 架构 | P1 | W4（Planner 是 Manager 的前置） | ❌ 用户决策跳过（2026-08-18） |
 | W6 | Memory 三层记忆 | P1 | W0（评测复用收益） | ❌ 用户决策跳过（2026-08-18） |

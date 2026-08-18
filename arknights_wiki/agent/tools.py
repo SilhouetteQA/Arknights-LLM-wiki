@@ -80,8 +80,61 @@ def _build_tool_definitions() -> list[dict]:
 
 
 def _build_tool_executors() -> dict:
-    """从注册表自动生成 tool name → executor 映射"""
-    return {tool_name: func for func, _, _, _, tool_name, _ in _tool_registry}
+    """从注册表自动生成 tool name → executor 映射
+
+    W3 MCP 双轨: ARKNIGHTS_USE_MCP=1 时切换到 MCP client 调用（工具名/签名不变，
+    LLM 无感知）；MCP 调用失败自动回退内部函数（双保险）。
+    """
+    base = {tool_name: func for func, _, _, _, tool_name, _ in _tool_registry}
+    if os.environ.get("ARKNIGHTS_USE_MCP") != "1":
+        return base
+    return {name: _make_mcp_executor(name, fn) for name, fn in base.items()}
+
+
+# W3: Agent 工具 → (MCP 工具, 参数适配函数)
+def _mcp_tool_map() -> dict[str, tuple[str, callable]]:
+    def _identity(args):
+        return args
+
+    def _to_entities_from_page(args):
+        return {"query": args.get("name", ""), "category": args.get("entity_type")}
+
+    def _to_events_from_chapter(args):
+        return {"chapter": args.get("chapter", ""), "limit": 15}
+
+    def _to_entities_from_semantic(args):
+        return {"query": args.get("query", "")}
+
+    return {
+        "search_wiki": ("search_entities", _identity),
+        "get_entity_page": ("search_entities", _to_entities_from_page),
+        "search_events": ("search_events", _identity),
+        "search_dialogue": ("search_story", _identity),
+        "search_timeline": ("query_timeline", _identity),
+        "get_chapter_summary": ("search_events", _to_events_from_chapter),
+        "semantic_search": ("search_entities", _to_entities_from_semantic),
+        "lookup_entity_index": ("query_relationship", _identity),
+    }
+
+
+def _make_mcp_executor(tool_name: str, fallback_fn):
+    """生成走 MCP 的 executor；MCP 未初始化/调用失败时回退内部函数"""
+    mapping = _mcp_tool_map()
+    mcp_tool, adapt = mapping[tool_name]
+
+    def executor(**kwargs):
+        from arknights_wiki.mcp_server.client import get_mcp_client
+
+        client = get_mcp_client()
+        if client is None:
+            return fallback_fn(**kwargs)
+        try:
+            mcp_args = adapt(dict(kwargs))
+            return client.call_tool_traced(mcp_tool, mcp_args)
+        except Exception as e:  # noqa: BLE001 — MCP 路径失败回退内部函数
+            return f"[MCP 调用失败，回退内部函数: {str(e)[:200]}]\n{fallback_fn(**kwargs)}"
+
+    return executor
 
 
 def _build_tool_fallbacks() -> dict[str, str]:

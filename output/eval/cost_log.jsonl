@@ -3329,3 +3329,26 @@
 {"step": "judge", "model": "mimo-v2.5", "tokens_in": 100, "tokens_out": 50, "cost": 0.001, "timestamp": "2026-08-18T16:25:34"}
 {"step": "judge", "model": "mimo-v2.5", "tokens_in": 0, "tokens_out": 0, "cost": 0.0, "timestamp": "2026-08-18T16:25:34"}
 {"step": "judge", "model": "mimo-v2.5", "tokens_in": 100, "tokens_out": 50, "cost": 0.0, "timestamp": "2026-08-18T16:25:37"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 100, "tokens_out": 50, "cost": 0.001, "timestamp": "2026-08-18T17:08:54"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 0, "tokens_out": 0, "cost": 0.0, "timestamp": "2026-08-18T17:08:54"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 100, "tokens_out": 50, "cost": 0.0, "timestamp": "2026-08-18T17:08:56"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1219, "cost": 0.009752, "estimate": true, "timestamp": "2026-08-18T17:09:40"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1762, "cost": 0.014096, "estimate": true, "timestamp": "2026-08-18T17:09:47"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 2445, "tokens_out": 94, "cost": 0.005642, "timestamp": "2026-08-18T17:09:57"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 1835, "tokens_out": 105, "cost": 0.00451, "timestamp": "2026-08-18T17:09:58"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 970, "cost": 0.00776, "estimate": true, "timestamp": "2026-08-18T17:12:03"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1222, "cost": 0.009776, "estimate": true, "timestamp": "2026-08-18T17:12:11"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 1809, "tokens_out": 105, "cost": 0.004458, "timestamp": "2026-08-18T17:12:18"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 1855, "tokens_out": 88, "cost": 0.004414, "timestamp": "2026-08-18T17:12:28"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1148, "cost": 0.009184, "estimate": true, "timestamp": "2026-08-18T17:14:23"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 2214, "tokens_out": 91, "cost": 0.005156, "timestamp": "2026-08-18T17:14:31"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 896, "cost": 0.007168, "estimate": true, "timestamp": "2026-08-18T17:15:16"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 1628, "tokens_out": 94, "cost": 0.004008, "timestamp": "2026-08-18T17:15:26"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 662, "cost": 0.005296, "estimate": true, "timestamp": "2026-08-18T17:17:16"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 1165, "tokens_out": 88, "cost": 0.0030340000000000002, "timestamp": "2026-08-18T17:17:24"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1395, "cost": 0.01116, "estimate": true, "timestamp": "2026-08-18T17:17:27"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 2105, "tokens_out": 97, "cost": 0.004986, "timestamp": "2026-08-18T17:17:41"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 885, "cost": 0.00708, "estimate": true, "timestamp": "2026-08-18T17:19:16"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 1526, "tokens_out": 87, "cost": 0.003748, "timestamp": "2026-08-18T17:19:29"}
+{"step": "agent_direct:complex", "model": "deepseek-v4-flash-ga-260731", "tokens_in": 0, "tokens_out": 1057, "cost": 0.008456, "estimate": true, "timestamp": "2026-08-18T17:19:47"}
+{"step": "judge", "model": "mimo-v2.5", "tokens_in": 2048, "tokens_out": 83, "cost": 0.0047599999999999995, "timestamp": "2026-08-18T17:19:55"}

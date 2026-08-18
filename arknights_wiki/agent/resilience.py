@@ -13,6 +13,7 @@
 from __future__ import annotations
 
 import concurrent.futures
+import contextvars
 import dataclasses
 import threading
 import time as time_mod
@@ -75,10 +76,16 @@ def _get_executor() -> concurrent.futures.ThreadPoolExecutor:
 
 def with_timeout(fn: Callable, args: Sequence = (), kwargs: dict | None = None,
                  seconds: float = 30.0):
-    """在线程中执行 fn，超过 seconds 抛 OperationTimeoutError（0 = 不启用）"""
+    """在线程中执行 fn，超过 seconds 抛 OperationTimeoutError（0 = 不启用）
+
+    注意: 线程池执行会脱离调用线程的 contextvars（含 OTel trace context），
+    因此用 copy_context() 传播——保证子线程内创建的 span 仍挂在调用方 trace 下
+    （W3 实测: 不传播则 mcp_call 等子线程 span 丢失父 context）。
+    """
     if seconds <= 0:
         return fn(*args, **(kwargs or {}))
-    future = _get_executor().submit(fn, *args, **(kwargs or {}))
+    ctx = contextvars.copy_context()
+    future = _get_executor().submit(ctx.run, fn, *args, **(kwargs or {}))
     try:
         return future.result(timeout=seconds)
     except concurrent.futures.TimeoutError as e:

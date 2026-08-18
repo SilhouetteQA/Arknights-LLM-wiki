@@ -20,6 +20,7 @@ agent = [
     "numpy>=1.26",
     "openai>=1.0",
     "langfuse>=4.0",
+    "mcp>=2.0",
 ]
 
 [tool.setuptools.packages.find]

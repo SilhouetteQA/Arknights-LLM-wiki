@@ -1893,3 +1893,41 @@ python -m arknights_wiki.observability.dashboard  # 端口 8001
 - resilience/checkpoint 与 observability 解耦，MCP 工具执行可直接复用 execute_with_resilience
 - checkpoint DB（output/checkpoints/agent.sqlite）已 gitignore 候选；确认后加入
 - Langfuse 容器/Dashboard 运行状态见上一节（未变）
+
+---
+
+## W3 MCP Server 完成（2026-08-18，知识库标准协议化）
+
+### 交付物
+
+| 模块 | 说明 |
+|------|------|
+| `arknights_wiki/mcp_server/server.py` | MCPServer（mcp 2.0 SDK）5 个只读工具：search_entities / search_events / query_relationship / query_timeline / search_story；复用 retrieval.py Store；`python -m arknights_wiki.mcp_server.server` stdio 启动 |
+| `arknights_wiki/mcp_server/client.py` | 同步封装（asyncio.run 每次调用生命周期）；W2 resilience 重试（ARKNIGHTS_MCP_TIMEOUT/MAX_RETRIES）；call_tool_traced 包 mcp_call span（mcp_tool/args/retries）；get_mcp_client 懒加载单例 |
+| `tools.py` 双轨 | ARKNIGHTS_USE_MCP=1 时 TOOL_EXECUTORS 切 MCP 包装（工具名/签名不变，LLM 无感知）；映射表 8 工具→5 MCP 工具（semantic_search/get_chapter_summary 为近似映射）；MCP 失败回退内部函数并标注 |
+| 测试 | 新增 23 个（server 单测 11 + client stdio 集成 6 + 双轨 6）；全量 506 passed（3 failed 预存 stats） |
+| 依赖 | pyproject agent extra + mcp>=2.0 |
+
+### 验收（全过）
+
+1. **独立启动**：client list_tools 返回 5 工具，schema 完整
+2. **真实问答**（ARKNIGHTS_USE_MCP=1）：complex 路径 14-19 次工具调用，回答正常产出
+3. **trace 层级**：ClickHouse 实证 tool_call→mcp_call 父子完整（mcp_call=14/tool_call=14，parent 精确匹配）
+4. **评测 A/B**（同 10 题 character_complex）：**MCP 路径 overall 0.967 vs 内部函数路径 0.936**（correctness 0.94/0.91，faithfulness 0.92/0.89，hallucination 1.0/0.9）→ 不降反升
+5. **可开关**：未设 ARKNIGHTS_USE_MCP 行为与现状一致
+
+### ⚠️ 重要修复（W2 遗留）
+
+- **`resilience.with_timeout` 线程池不传播 OTel context**：工具经 with_timeout 在子线程执行时，子线程创建的 span（mcp_call）丢失父 context → 不落库。修复：`contextvars.copy_context()` + `ctx.run(fn, ...)` 传播 context（resilience.py）。修复后子线程 span 正确挂到调用方 trace
+- 影响面：W2 的 tool_call 内 retry 子 span 在主线程创建不受影响；但所有经 with_timeout 的嵌套 span 均受益
+
+### 性能观察
+
+- MCP 路径每题延迟 ~110-180s（stdio 子进程每次调用启动 + 数据加载），vs 内部函数路径 ~120-180s（量级相近，MCP 略优/持平）
+- 单次 MCP 工具调用 ~1-5s（子进程启动 + 检索）；若需提速可后续改长驻 session（范围外）
+
+### 后续交接（W4 Planner）
+
+- MCP server/client 为独立可复用层，W4 Planner 的任务执行器可直接调用 MCP 工具
+- `ARKNIGHTS_USE_MCP=1` 已可作为默认部署开关（A/B 证明无质量损失）
+- 遗留：`output/eval/w3_mcp/` 结果已提交；`data/extractions/v3_seed_db_v2.json` 若再被测试改写需还原
