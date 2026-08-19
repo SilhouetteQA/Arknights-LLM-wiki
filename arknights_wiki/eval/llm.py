@@ -104,7 +104,13 @@ def chat(
     for attempt in range(max_retries + 1):
         t0 = time.monotonic()
         try:
-            resp = httpx.post(url, json=payload, headers=headers, timeout=timeout)
+            # W4 修复: 默认直连（trust_env=False），本机失效系统代理会导致 10061；
+            # 需要代理时设 ARKNIGHTS_HTTP_PROXY
+            proxy = os.environ.get("ARKNIGHTS_HTTP_PROXY", "").strip()
+            if proxy:
+                resp = httpx.post(url, json=payload, headers=headers, timeout=timeout, proxy=proxy)
+            else:
+                resp = httpx.post(url, json=payload, headers=headers, timeout=timeout, trust_env=False)
             resp.raise_for_status()
             data = resp.json()
             content = (data.get("choices") or [{}])[0].get("message", {}).get("content") or ""

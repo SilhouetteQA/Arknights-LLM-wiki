@@ -17,6 +17,7 @@ class TestRunDirect:
 
     @patch("arknights_wiki.eval.runner._log_cost")
     def test_complex_path(self, _log):
+        """默认 react 模式：runner 用 build_agent_graph（2026-08-19 用户决策质量优先）"""
         fake_graph = MagicMock()
         fake_graph.stream.return_value = [
             {"tools": {"collected_docs": [{"tool": "search_events", "args": {"query": "x"}, "result": "r"}]}},
@@ -29,6 +30,21 @@ class TestRunDirect:
         assert res["route"] == "complex"
         assert "复杂答案" in res["answer"]
         assert res["tools_called"] == ["search_events"]
+
+    @patch("arknights_wiki.eval.runner._log_cost")
+    def test_complex_path_planner_mode(self, _log, monkeypatch):
+        """ARKNIGHTS_AGENT_MODE=planner 时用 build_planner_graph（可选）"""
+        monkeypatch.setenv("ARKNIGHTS_AGENT_MODE", "planner")
+        fake_graph = MagicMock()
+        fake_graph.stream.return_value = [
+            {"execute": {"collected_docs": [{"tool": "search_events", "args": {"query": "x"}, "result": "r"}]}},
+            {"synthesize": {"messages": [{"role": "assistant", "content": "Planner 答案"}]}},
+        ]
+        with patch("arknights_wiki.agent.router.route_query", return_value={"complexity": "complex"}), patch(
+            "arknights_wiki.agent.graph.build_planner_graph", return_value=fake_graph
+        ):
+            res = runner.run_direct("凯尔希与阿米娅的关系？")
+        assert "Planner 答案" in res["answer"]
 
 
 def _sse(event: str, data) -> str:

@@ -89,9 +89,11 @@ def run_direct(question: str) -> dict:
         # simple 路径 sources 仅元数据（name/file_path），无正文——
         # retrieval_context 留空，打分时回退到出题材料（题目由材料生成，agent 检索同一知识库，近似一致）
     else:
-        from arknights_wiki.agent.graph import build_agent_graph
+        from arknights_wiki.agent.graph import build_agent_graph, build_planner_graph
 
-        graph = build_agent_graph()
+        # W4: 支持 ARKNIGHTS_AGENT_MODE=react|planner（默认 react，2026-08-19 用户决策质量优先）
+        agent_mode = os.environ.get("ARKNIGHTS_AGENT_MODE", "react")
+        graph = build_planner_graph() if agent_mode == "planner" else build_agent_graph()
         initial_state = {
             "messages": [],
             "question": question,

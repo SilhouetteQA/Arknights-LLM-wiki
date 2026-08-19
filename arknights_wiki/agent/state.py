@@ -8,3 +8,5 @@ class AgentState(TypedDict):
     collected_docs: list    # 已收集的检索结果
     iteration: int          # 当前 ReAct 迭代次数
     route: dict             # Router 分类结果: {complexity, question_type, entities, time_scope, reason}
+    tasks: list             # W4 Planner: 任务图 [TaskNode]
+    planner_source: str     # W4 Planner: 规划来源 llm/rule

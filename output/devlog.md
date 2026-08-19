@@ -1931,3 +1931,63 @@ python -m arknights_wiki.observability.dashboard  # 端口 8001
 - MCP server/client 为独立可复用层，W4 Planner 的任务执行器可直接调用 MCP 工具
 - `ARKNIGHTS_USE_MCP=1` 已可作为默认部署开关（A/B 证明无质量损失）
 - 遗留：`output/eval/w3_mcp/` 结果已提交；`data/extractions/v3_seed_db_v2.json` 若再被测试改写需还原
+
+---
+
+## W4 增强：任务级 ReAct 混合 + Planner 崩溃兜底（2026-08-19）
+
+### 背景（用户自测暴露局限）
+
+用户 5 问自测（scripts/w4_user_test.py，报告 output/eval/w4_user_test_report.md）显示：
+- Planner 在开放综述/多跳探索题（Q2 各国政权 / Q4 莱茵十杰 / Q5 三大矿脉）弱于 ReAct
+  （coverage 0.4-0.5 vs 0.8-0.95），Q5 直接崩溃（"让我继续检索"空答）
+- 根因：任务图一次拆解固定执行，无反馈回路；LLM 规划波动大（同 Q5 重跑任务图质量差异显著）
+- benchmark 10 题 character_complex 仍 Planner 优（0.915 vs 0.895）——结构明确题 Planner 擅长
+
+### 两项增强（用户决策）
+
+1. **任务级 ReAct 混合**（`ARKNIGHTS_PLANNER_TASK_REACT=1`）：
+   - `graph.py` 新增 `_execute_task_react`（子 ReAct 循环：任务描述→LLM 自主多步检索，≤3 步，复用 chat_completion + _execute_tool_traced）+ `execute_task_react_graph`
+   - 任务图的任务从"固定工具调用"升级为"检索子目标"，保留显式拆解 + 子任务探索灵活性
+
+2. **Planner 崩溃兜底**（`ARKNIGHTS_PLANNER_FALLBACK=1` 默认开）：
+   - `should_fallback_to_react(state)`：collected_docs 为空 或 弱证据（"未找到/无法/不足以"等信号）占比 ≥60% → 切 ReAct
+   - `build_planner_graph` 加条件边：execute → (fallback → agent ⇄ tools 循环 → synthesize | continue → synthesize)
+   - 保证开放题/知识库覆盖不足时仍有回答（Q5 类不再空答）
+
+### 测试
+
+- 新增 tests/agent/test_planner_fallback.py（6 个：空证据/弱证据/开关/图级 fallback 与跳过）；planner 系测试 32 passed
+- 全量 pytest 待确认
+
+### 自测重测（Q5，带 fallback）
+
+- LLM 规划任务图质量好时（27 工具调用）fallback 不触发（continue），回答完整覆盖三大矿脉/乌萨斯枯竭/岁兽
+- 弱证据场景由单测覆盖（图级验证 fallback → agent → synthesize 全链路）
+
+---
+
+## W4 收尾：三路对比结论 + 最终路由决策（2026-08-19 14:40）
+
+### 三路对比（同环境，scripts/w4_three_mode_compare.py）
+
+**Benchmark 10 题（六指标 judge）**：
+| 模式 | overall | correctness | faithfulness | 工具选择 | 工具数 | 延迟 |
+|---|---|---|---|---|---|---|
+| **ReAct（默认）** | **0.942** | 0.92 | 0.91 | 1.0 | 18.8 | 80s |
+| Planner | 0.903 | 0.84 | 0.85 | 1.0 | 8.0 | 68s |
+| Planner+任务级ReAct | 0.758 | 0.82 | 0.81 | **0.2** | 9.4 | 159s |
+
+**用户自测 5 问（质量评估，complex 题 Q2/Q4/Q5）**：Planner Q5 最优（fth 0.9/54s）、Q2 覆盖弱（0.75 但有 fallback）；任务级 ReAct Q2 覆盖好但延迟爆炸（452s/31 工具）、Q4 反而最差（0.4）。
+
+### 最终决策（用户，质量优先）
+
+1. **默认路由 = ReAct**（`ARKNIGHTS_AGENT_MODE` 默认 "react"）：server.py / runner.py 默认值已改
+2. **Planner 保留为选项**（`ARKNIGHTS_AGENT_MODE=planner`：Plan→Execute→Synthesize + 崩溃自动切 ReAct）
+3. **任务级 ReAct**（`ARKNIGHTS_PLANNER_TASK_REACT=1`）保留实验开关，默认关（tool_selection 0.2 结构性缺陷）
+4. **ReAct 步数限制维持 8**（Q2 证明探索充分有价值）
+
+### 其他收尾
+
+- execute_task_graph / execute_task_react_graph 升级为**分层并行**（无依赖任务并行 ≤4 并发，contextvars 传播），测试 +3
+- 产出：output/eval/w4_cmp_{react,planner,planner_task_react}/report_v1.md + w4_three_mode_report.md（已提交）

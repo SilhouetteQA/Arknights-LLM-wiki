@@ -131,12 +131,25 @@ def _get_model_config() -> dict:
 
 
 def create_client() -> OpenAI:
-    """创建 LLM API 客户端（自动检测 DeepSeek / MiniMax）"""
+    """创建 LLM API 客户端（自动检测 DeepSeek / MiniMax）
+
+    网络策略（2026-08-18 W4 修复）: 默认直连（trust_env=False）——本机系统代理
+    HTTPS_PROXY 常指向未运行的代理端口导致全部请求 10061 失败；
+    需要代理时设置 ARKNIGHTS_HTTP_PROXY=http://host:port 显式启用。
+    """
     config = _get_model_config()
+    import httpx
+
+    proxy = os.environ.get("ARKNIGHTS_HTTP_PROXY", "").strip()
+    if proxy:
+        http_client = httpx.Client(proxy=proxy, timeout=300.0)
+    else:
+        http_client = httpx.Client(trust_env=False, timeout=300.0)
     return OpenAI(
         api_key=config["api_key"],
         base_url=config["base_url"],
         timeout=300.0,
+        http_client=http_client,
     )
 
 

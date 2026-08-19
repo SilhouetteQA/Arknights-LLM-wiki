@@ -143,8 +143,10 @@ async def _agent_search_events(question: str, route: dict):
 
     W2 Failure Recovery: graph 启用 SqliteSaver checkpoint（output/checkpoints/agent.sqlite），
     thread_id 由问题哈希派生——同问题重试可从断点续跑，已成功工具不重复执行。
+    W4 Planner: complex 路径默认走 Planner 图（plan→execute→synthesize）；
+    ARKNIGHTS_AGENT_MODE=react 回退 ReAct。
     """
-    from arknights_wiki.agent.graph import build_agent_graph
+    from arknights_wiki.agent.graph import build_agent_graph, build_planner_graph
     from arknights_wiki.agent.server_checkpoint import make_checkpointer
 
     yield {"event": "route", "data": json.dumps(route, ensure_ascii=False)}
@@ -152,12 +154,18 @@ async def _agent_search_events(question: str, route: dict):
 
     progress_queue: queue.Queue = queue.Queue()
     thread_id = f"q-{hashlib.sha1(question.encode('utf-8')).hexdigest()[:16]}"
+    # 2026-08-19 三路对比后用户决策：默认 react（质量优先）；ARKNIGHTS_AGENT_MODE=planner 可选
+    agent_mode = os.environ.get("ARKNIGHTS_AGENT_MODE", "react")
 
     def _run_graph():
         """在独立线程中执行 LangGraph agent，事件推入队列（trace 根在 executor 线程内创建）"""
         try:
             with _trace_root(question, route):
-                graph = build_agent_graph(checkpointer=make_checkpointer())
+                checkpointer = make_checkpointer()
+                if agent_mode == "react":
+                    graph = build_agent_graph(checkpointer=checkpointer)
+                else:
+                    graph = build_planner_graph(checkpointer=checkpointer)
                 initial_state: AgentState = {
                     "messages": [],
                     "question": question,
@@ -204,7 +212,21 @@ async def _agent_search_events(question: str, route: dict):
             node_state = evt_data[node_name]
             final_state = node_state
 
-            if node_name == "tools":
+            if node_name == "plan":
+                # W4 Planner: 规划完成，推送任务图摘要
+                tasks = node_state.get("tasks", [])
+                source = node_state.get("planner_source", "")
+                yield {
+                    "event": "step",
+                    "data": json.dumps({
+                        "step": 0,
+                        "tool": "规划",
+                        "summary": f"已拆解 {len(tasks)} 个检索任务（来源: {source}）",
+                    }, ensure_ascii=False),
+                }
+                await asyncio.sleep(0)
+            elif node_name in ("tools", "execute"):
+                # ReAct tools 节点 / Planner execute 节点共用工具进度推送
                 docs = node_state.get("collected_docs", [])
                 if docs:
                     last_doc = docs[-1]
