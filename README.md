@@ -45,6 +45,7 @@ python scripts/build_entity_index.py     # 实体双向索引
 用户问题 → [router.py] 意图识别 + 实体提取 + 复杂度分类
               ├── simple → 多层检索管线 → LLM 合成
               └── complex → LangGraph ReAct Agent (8 tools, ≤8 轮) → LLM 合成
+                             （可切换 Planner 显式规划: ARKNIGHTS_AGENT_MODE=planner）
 ```
 
 架构图详见 **[docs/diagrams/architecture.md](docs/diagrams/architecture.md)**，或用浏览器打开 **[docs/diagrams/architecture.html](docs/diagrams/architecture.html)** 查看交互式预览。
@@ -52,6 +53,20 @@ python scripts/build_entity_index.py     # 实体双向索引
 ### Agent 工具
 
 `search_wiki` / `get_entity_page` / `search_events` / `search_dialogue` / `search_timeline` / `get_chapter_summary` / `semantic_search` / `lookup_entity_index`
+
+---
+
+## 工程化能力（2026-08 升级阶段 W1–W4，P0 全部完成）
+
+| 阶段 | 能力 | 说明 |
+|------|------|------|
+| **W1 Observability** | Langfuse 全链路 Trace | `@observe` 埋点（router/simple/graph 各节点）、Docker 本地部署、ClickHouse 直查、ECharts Dashboard（`python -m arknights_wiki.observability.dashboard` :8001） |
+| **W2 Failure Recovery** | 六层恢复链 | timeout(线程池) → 指数退避重试 → circuit breaker(按工具隔离) → fallback(4 工具降级) → checkpoint(SqliteSaver 断点续跑) → escalation；LLM 网络/限流/5xx 重试（4xx 不重试）；恢复统计入 trace |
+| **W3 MCP Server** | 知识库标准协议化 | `arknights_wiki/mcp_server/`：5 个只读 MCP 工具（search_entities/events/relationship/timeline/story），stdio transport；Agent 双轨切换 `ARKNIGHTS_USE_MCP=1`（工具名不变，LLM 无感知，失败回退内部函数） |
+| **W4 Planner** | 显式任务规划 | LLM 拆解任务图（规则兜底 + 白名单校验 + entity_type 归一化）→ 分层并行执行 → 综合；崩溃检测自动切 ReAct 兜底；`ARKNIGHTS_AGENT_MODE=react\|planner` 双轨 |
+| **W0 评测体系** | Benchmark 100 题 | 六类八类覆盖、mimo-v2.5 统一 judge（基线 `report_v1_mimo.md` overall 0.857）；三路由 A/B 同环境对比（ReAct 0.942 / Planner 0.903 / 任务级ReAct 0.758，`output/eval/w4_cmp_*`） |
+
+**关键开关**：`ARKNIGHTS_AGENT_MODE`（react 默认/planner 可选）、`ARKNIGHTS_USE_MCP`（MCP 双轨）、`ARKNIGHTS_PLANNER_TASK_REACT`（实验）、`ARKNIGHTS_PLANNER_FALLBACK`（崩溃兜底，默认开）、`ARKNIGHTS_TOOL_*`/`ARKNIGHTS_LLM_*`（恢复链参数）、`ARKNIGHTS_HTTP_PROXY`（显式代理）。
 
 ---
 

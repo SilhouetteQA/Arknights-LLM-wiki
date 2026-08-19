@@ -34,7 +34,7 @@ User → Intent/Router → Planner → (Knowledge/Research/Timeline Agent) → M
 | W7 | Human-in-the-loop | P1 | W2（人工升级是恢复链末端） | ❌ 用户决策跳过（2026-08-18） |
 | W8 | Guardrails / Security | P1 | W0 | ❌ 用户决策跳过（2026-08-18） |
 | W9 | Cost / Latency 优化 | P1 | W1（数据采集）+ W0（效果对比） | ❌ 用户决策跳过（2026-08-18） |
-| W10 | 收尾：简历定位 + 文档 + 演示 | — | W2–W4 完成（P1 已跳过） | ⏳ |
+| W10 | 收尾：简历定位 + 文档 + 演示 | — | W2–W4 完成（P1 已跳过） | ✅ 进行中（2026-08-19：README 工程化能力总结 ✅ · devlog 全阶段记录 ✅ · 三路对比产物 ✅；待用户确认 push 清单后推送远程） |
 
 **依赖关系图**：
 

@@ -1991,3 +1991,26 @@ python -m arknights_wiki.observability.dashboard  # 端口 8001
 
 - execute_task_graph / execute_task_react_graph 升级为**分层并行**（无依赖任务并行 ≤4 并发，contextvars 传播），测试 +3
 - 产出：output/eval/w4_cmp_{react,planner,planner_task_react}/report_v1.md + w4_three_mode_report.md（已提交）
+
+---
+
+## W10 收尾：工程化总结 + 远程推送准备（2026-08-19 15:00-）
+
+### 本次升级工程化总结（P0 全部完成）
+
+| 阶段 | 交付 | 关键数据 |
+|------|------|----------|
+| W0 Evaluation | Benchmark 100 题 + mimo 统一 judge | 基线 overall 0.857 |
+| W1 Observability | Langfuse trace + ECharts Dashboard | 全链路埋点，ClickHouse 直查 |
+| W2 Failure Recovery | 六层恢复链 + checkpoint | 验收 15/15，10 题回归无回落 |
+| W3 MCP Server | 5 只读工具标准协议化 + 双轨 | A/B：MCP 0.967 vs 内部 0.936 |
+| W4 Planner | 显式规划 + 崩溃兜底 + 并行执行 | 三路对比：ReAct 0.942 / Planner 0.903 / task_react 0.758 |
+
+最终路由决策（用户，质量优先）：默认 ReAct（ARKNIGHTS_AGENT_MODE=react），Planner 保留选项。
+
+### 远程推送准备
+
+- 本地 11 个未推送提交（W0-W4 全部工作，从 b6704a8 文档恢复历史后）
+- 远程 origin/main 最新 9ec03d2（2026-07-04 历史），无远程独有提交，可快进 push
+- 安全核对：无密钥被跟踪（.env 已 gitignore）、无 >5MB 大文件、checkpoints 已忽略
+- 待用户确认 push 清单后 `git push -u origin main`
