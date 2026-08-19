@@ -58,3 +58,12 @@ output/checkpoints/
 
 # 内部评估/求职资料（不进远程）
 01_现有明日方舟LLM_Wiki项目评估与升级方案.md
+
+# Claude Code skills（本地技能库，不进远程）
+.claude/
+
+# Git 仓库备份（历史恢复副本，15MB）
+.git.current_bak/
+
+# DeepEval 缓存
+.deepeval/
