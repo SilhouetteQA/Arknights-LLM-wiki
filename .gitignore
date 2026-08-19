@@ -52,3 +52,9 @@ output/frontend-comparison.html
 
 # W2 checkpoint DB
 output/checkpoints/
+
+# 本地工作记忆（不进远程）
+.workbuddy/memory/
+
+# 内部评估/求职资料（不进远程）
+01_现有明日方舟LLM_Wiki项目评估与升级方案.md

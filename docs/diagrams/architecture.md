@@ -57,7 +57,7 @@ graph TB
     subgraph "Agent Pipeline"
         Router[router.py<br/>意图识别 + 实体提取 + 复杂度分类]
         Simple[simple_search.py<br/>4 层检索 → LLM 直接回答]
-        Complex[graph.py<br/>LangGraph ReAct Agent<br/>多步检索 max 8 轮]
+        Complex[graph.py<br/>LangGraph ReAct Agent<br/>多步检索 max 8 轮<br/>或 Planner 显式规划<br/>ARKNIGHTS_AGENT_MODE]
         Prompts[prompts.py<br/>百科编纂者风格<br/>来源忠实度约束]
         State[state.py<br/>AgentState TypedDict]
     end
@@ -333,3 +333,72 @@ graph LR
 | `store/` | SQLite 种子数据库 (实体/索引/页面) | sqlite3 |
 | `stats/` | 提取过程统计 (耗时/token/费用) | sqlite3 |
 | `config/` | 静态配置文件 | 无 |
+
+---
+
+## 5. 升级阶段架构（W1–W4，2026-08）
+
+> 生成日期: 2026-08-19 | 工具: Mermaid | 规则: architecture-diagrams skill
+
+### 5.1 运行链路与工程化能力
+
+```mermaid
+graph TB
+    subgraph "运行链路（complex 路径）"
+        SRV[server.py<br/>SSE + checkpoint 工厂] --> SEL{选择图<br/>ARKNIGHTS_AGENT_MODE}
+        SEL -->|"react（默认）"| REACT[build_agent_graph<br/>call_model ⇄ tool_node ≤8 轮]
+        SEL -->|"planner（可选）"| PLAN[build_planner_graph<br/>plan → execute → synthesize<br/>崩溃检测 → 自动切 ReAct]
+    end
+
+    subgraph "W2 恢复链（工具/LLM 执行层）"
+        EX[execute_with_resilience<br/>timeout → retry → breaker → fallback]
+        LLMR[chat_completion 重试<br/>网络/限流/5xx，4xx 不重试]
+        CK[SqliteSaver checkpoint<br/>thread_id=sha1(问题)，断点续跑]
+    end
+
+    subgraph "W3 MCP Server（工具双轨）"
+        MCP[server.py<br/>5 只读工具<br/>search_entities/events/relationship/timeline/story]
+        MC[client.py 同步桥<br/>ARKNIGHTS_USE_MCP=1<br/>失败回退内部函数]
+    end
+
+    subgraph "W1 Observability"
+        LF[Langfuse trace<br/>@observe 全链路埋点]
+        DASH[ECharts Dashboard :8001<br/>ClickHouse 直查]
+    end
+
+    REACT --> EX
+    PLAN --> EX
+    EX --> LLMR
+    EX --> CK
+    EX --> MC --> MCP
+    REACT --> LF
+    PLAN --> LF
+    LF --> DASH
+
+    style SEL fill:#f39c12,color:#fff
+    style REACT fill:#3498db,color:#fff
+    style PLAN fill:#3498db,color:#fff
+    style EX fill:#e74c3c,color:#fff
+    style MCP fill:#8e44ad,color:#fff
+    style LF fill:#16a085,color:#fff
+```
+
+### 5.2 关键开关与环境变量
+
+| 开关 | 默认 | 说明 |
+|------|------|------|
+| `ARKNIGHTS_AGENT_MODE` | `react` | `planner` 启用显式规划（2026-08-19 用户决策质量优先） |
+| `ARKNIGHTS_USE_MCP` | 关 | 工具切换 MCP 后端（LLM 无感知） |
+| `ARKNIGHTS_PLANNER_FALLBACK` | 开 | Planner 证据不足自动切 ReAct 兜底 |
+| `ARKNIGHTS_PLANNER_TASK_REACT` | 关 | 任务级 ReAct 混合（实验，工具选择精度低） |
+| `ARKNIGHTS_TOOL_TIMEOUT/MAX_RETRIES/BREAKER_*` | 30s/2/5×60s | 工具恢复链参数 |
+| `ARKNIGHTS_LLM_TIMEOUT/MAX_RETRIES` | 60s/2 | LLM 重试参数 |
+| `ARKNIGHTS_HTTP_PROXY` | 空（直连） | 显式代理（失效系统代理会致 10061） |
+
+### 5.3 评测基线（output/eval/）
+
+| 报告 | 内容 |
+|------|------|
+| `report_v1_mimo.md` | W0 基线：100 题 overall **0.857** |
+| `w4_cmp_react / w4_cmp_planner / w4_cmp_planner_task_react` | 三路由同环境对比：**0.942 / 0.903 / 0.758**（工具选择 0.2 弃用任务级 ReAct） |
+| `w4_three_mode_report.md` | 用户 5 问质量评估（coverage/accuracy/faithfulness/structure） |
