@@ -148,7 +148,7 @@
 
 <div class="container">
   <h1 class="page-title">明日方舟 LLM Wiki</h1>
-  <p class="page-meta">架构图 &middot; 2026-07-04 &middot; Mermaid</p>
+  <p class="page-meta">架构图 &middot; 2026-08-19 更新（W1-W4 升级阶段） &middot; Mermaid</p>
 
   <!-- 图 1: C4 Context -->
   <div class="diagram-card">
@@ -476,6 +476,59 @@ graph LR
     style Config fill:#95a5a6,color:#fff
       </pre>
     </div>
+  </div>
+
+  <!-- 图 5: 升级阶段架构 W1-W4 -->
+  <div class="diagram-card">
+    <div class="card-header">
+      <span class="card-number">[ 05 ]</span>
+      <h2 class="card-title">升级阶段架构 -- W1-W4 运行链路与工程化能力</h2>
+    </div>
+    <p class="card-desc">2026-08 升级 P0 全部完成：Observability / Failure Recovery / MCP Server / Planner。默认路由 ReAct（ARKNIGHTS_AGENT_MODE），Planner 可选；工具经恢复链执行，可切换 MCP 后端；全链路 Langfuse trace。</p>
+    <div class="mermaid-wrap">
+      <pre class="mermaid">
+graph TB
+    subgraph "运行链路（complex 路径）"
+        SRV["server.py\nSSE + checkpoint 工厂"] --> SEL{选择图\nARKNIGHTS_AGENT_MODE}
+        SEL -->|"react（默认）"| REACT["build_agent_graph\ncall_model ⇄ tool_node ≤8 轮"]
+        SEL -->|"planner（可选）"| PLAN["build_planner_graph\nplan → execute → synthesize\n崩溃检测 → 自动切 ReAct"]
+    end
+
+    subgraph "W2 恢复链（工具/LLM 执行层）"
+        EX["execute_with_resilience\ntimeout → retry → breaker → fallback"]
+        LLMR["chat_completion 重试\n网络/限流/5xx，4xx 不重试"]
+        CK["SqliteSaver checkpoint\nthread_id=sha1(问题)，断点续跑"]
+    end
+
+    subgraph "W3 MCP Server（工具双轨）"
+        MCP["server.py\n5 只读工具\nsearch_entities/events/relationship/timeline/story"]
+        MC["client.py 同步桥\nARKNIGHTS_USE_MCP=1\n失败回退内部函数"]
+    end
+
+    subgraph "W1 Observability"
+        LF["Langfuse trace\n@observe 全链路埋点"]
+        DASH["ECharts Dashboard :8001\nClickHouse 直查"]
+    end
+
+    REACT --> EX
+    PLAN --> EX
+    EX --> LLMR
+    EX --> CK
+    EX --> MC --> MCP
+    REACT --> LF
+    PLAN --> LF
+    LF --> DASH
+
+    style SEL fill:#f39c12,color:#fff
+    style REACT fill:#3498db,color:#fff
+    style PLAN fill:#3498db,color:#fff
+    style EX fill:#e74c3c,color:#fff
+    style MCP fill:#8e44ad,color:#fff
+    style LF fill:#16a085,color:#fff
+      </pre>
+    </div>
+    <p class="card-desc"><b>关键开关</b>：ARKNIGHTS_AGENT_MODE（react默认/planner可选）· ARKNIGHTS_USE_MCP（工具双轨）· ARKNIGHTS_PLANNER_FALLBACK（崩溃兜底，默认开）· ARKNIGHTS_PLANNER_TASK_REACT（实验，工具选择精度低）· ARKNIGHTS_HTTP_PROXY（显式代理，失效系统代理会致 10061）</p>
+    <p class="card-desc"><b>评测基线</b>：W0 100 题 overall 0.857 · 三路由同环境对比 ReAct 0.942 / Planner 0.903 / 任务级ReAct 0.758</p>
   </div>
 
   <div class="footer">
