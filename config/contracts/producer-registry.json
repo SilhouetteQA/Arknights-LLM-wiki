@@ -1,0 +1,132 @@
+{
+  "registry_version": "1",
+  "contract_version": "0.1.0",
+  "repository": "wiki",
+  "producers": [
+    {
+      "producer_id": "wiki.agent.llm_usage",
+      "mapping_stages": ["chat_completion", "intent_rewrite"],
+      "status": "IN_SCOPE",
+      "source_locations": [
+        "arknights_wiki/extraction/llm_client.py::chat_completion",
+        "arknights_wiki/agent/router.py::_llm_intent_rewrite"
+      ],
+      "legacy_fields": ["usage", "prompt_tokens", "completion_tokens", "total_tokens", "model"],
+      "foundation_objects": ["Usage", "Cost"],
+      "evidence_requirement": "ALL_STAGES",
+      "notes": "统一 Agent LLM 调用与意图改写；原 Langfuse 启用条件、record_llm_usage 参数与返回值保持不变"
+    },
+    {
+      "producer_id": "wiki.eval.cost_log",
+      "mapping_stages": ["runner", "judge", "scoring"],
+      "status": "IN_SCOPE",
+      "source_locations": [
+        "arknights_wiki/eval/runner.py::_log_cost",
+        "arknights_wiki/eval/judge.py::_log_cost",
+        "arknights_wiki/eval/scoring.py::_log_cost"
+      ],
+      "legacy_fields": ["input_tokens", "output_tokens", "cost_cny", "model", "step"],
+      "foundation_objects": ["Usage", "Cost"],
+      "evidence_requirement": "ALL_STAGES",
+      "notes": "三个 _log_cost 各自独立存在，只复用同一窄 helper；原 entry、路径、JSON 序列化与 append 行为不变"
+    },
+    {
+      "producer_id": "wiki.eval.cost_summary",
+      "mapping_stages": ["cost_log_summary"],
+      "status": "IN_SCOPE",
+      "source_locations": ["arknights_wiki/eval/metrics.py::summarize_cost"],
+      "legacy_fields": ["total", "steps", "cost_cny"],
+      "foundation_objects": ["CostSummary"],
+      "evidence_requirement": "ALL_STAGES",
+      "notes": "旧 total/steps 继续使用原 float、rounding 与 malformed skip；Foundation 旁路必须记录不完整而非宣称 complete"
+    },
+    {
+      "producer_id": "wiki.trace.summary",
+      "mapping_stages": [],
+      "status": "DEFERRED",
+      "source_locations": [],
+      "legacy_fields": [],
+      "foundation_objects": [],
+      "evidence_requirement": "NOT_APPLICABLE",
+      "reason": "no_stable_online_summary_boundary",
+      "notes": "不存在稳定的在线 TraceSummary DTO；Dashboard 聚合不属于 v0.1"
+    },
+    {
+      "producer_id": "wiki.extraction.pass1",
+      "mapping_stages": [],
+      "status": "DEFERRED",
+      "source_locations": [
+        "arknights_wiki/extraction/orchestrator.py::extract_chapter",
+        "arknights_wiki/extraction/orchestrator.py::run_all"
+      ],
+      "legacy_fields": [],
+      "foundation_objects": ["Usage", "Cost"],
+      "evidence_requirement": "NOT_APPLICABLE",
+      "reason": "offline_batch_lifecycle_out_of_v0.1_scope",
+      "notes": "历史样本可参加 L2 semantic replay，须标记 historical_replay_only 与 runtime_adapter_status=DEFERRED"
+    },
+    {
+      "producer_id": "wiki.extraction.pass2",
+      "mapping_stages": [],
+      "status": "DEFERRED",
+      "source_locations": [
+        "arknights_wiki/extraction/orchestrator.py::run_character_extraction",
+        "arknights_wiki/extraction/character_aggregator.py"
+      ],
+      "legacy_fields": [],
+      "foundation_objects": ["Usage", "Cost"],
+      "evidence_requirement": "NOT_APPLICABLE",
+      "reason": "offline_batch_lifecycle_out_of_v0.1_scope",
+      "notes": "同 pass1，仅可用于 L2 replay"
+    },
+    {
+      "producer_id": "wiki.extraction.pass3",
+      "mapping_stages": [],
+      "status": "DEFERRED",
+      "source_locations": [
+        "arknights_wiki/extraction/worldbuilding_orchestrator.py"
+      ],
+      "legacy_fields": [],
+      "foundation_objects": ["Usage", "Cost"],
+      "evidence_requirement": "NOT_APPLICABLE",
+      "reason": "offline_batch_lifecycle_out_of_v0.1_scope",
+      "notes": "同 pass1，仅可用于 L2 replay"
+    },
+    {
+      "producer_id": "wiki.worldbuilding_extraction",
+      "mapping_stages": [],
+      "status": "DEFERRED",
+      "source_locations": [
+        "arknights_wiki/extraction/worldbuilding_orchestrator.py",
+        "arknights_wiki/extraction/worldbuilding_processor.py"
+      ],
+      "legacy_fields": [],
+      "foundation_objects": ["Usage", "Cost"],
+      "evidence_requirement": "NOT_APPLICABLE",
+      "reason": "offline_batch_lifecycle_out_of_v0.1_scope",
+      "notes": "与 pass3 共享 orchestrator，生命周期独立于 Agent/Eval 在线路径"
+    },
+    {
+      "producer_id": "wiki.stats_collector",
+      "mapping_stages": [],
+      "status": "DEFERRED",
+      "source_locations": ["arknights_wiki/stats/collector.py"],
+      "legacy_fields": [],
+      "foundation_objects": ["Usage", "Cost"],
+      "evidence_requirement": "NOT_APPLICABLE",
+      "reason": "separate_offline_lifecycle_and_known_baseline_failures",
+      "notes": "该模块存在三个已知基线失败，属 DEFERRED 范围，本 Cycle 不修改"
+    },
+    {
+      "producer_id": "wiki.dashboard_cost_aggregation",
+      "mapping_stages": [],
+      "status": "DEFERRED",
+      "source_locations": ["arknights_wiki/observability/dashboard.py"],
+      "legacy_fields": [],
+      "foundation_objects": ["CostSummary"],
+      "evidence_requirement": "NOT_APPLICABLE",
+      "reason": "would_expand_scope_into_existing_observability_system",
+      "notes": "现有 Langfuse/Dashboard/cost log 仍是业务真相源，v0.1 不改动"
+    }
+  ]
+}
