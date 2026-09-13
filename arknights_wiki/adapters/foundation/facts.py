@@ -46,13 +46,27 @@ PRICING_NOTE_KEY: Final[str] = "_note"
 #: 价格表里表示"未知单价"的字面量。
 PRICING_UNKNOWN_VALUES: Final[frozenset[object]] = frozenset({"tbd"})
 
-#: 参与占位统计的 provider usage 字段。
+#: 参与占位统计的 Foundation 字段名（内部命名）。
 USAGE_FIELDS: Final[tuple[str, ...]] = (
     "input_tokens",
     "output_tokens",
     "total_tokens",
     "cache_read_tokens",
     "cache_write_tokens",
+)
+
+#: Foundation 字段 → **provider usage 上的候选属性名**（按序取第一个存在且非 None 的）。
+#:
+#: 为什么需要候选表：OpenAI 经典 Chat Completions 端点在 ``usage`` 上给的是
+#: ``prompt_tokens`` / ``completion_tokens``，而 OpenAI 新的 Responses 形态与部分
+#: 兼容网关给的是 ``input_tokens`` / ``output_tokens``。只认一种名字会让提取器在
+#: 真实响应上永远读不到值（把"已报告"错判成"未知"），因此两种都接受。
+USAGE_FIELD_SOURCES: Final[tuple[tuple[str, tuple[str, ...]], ...]] = (
+    ("input_tokens", ("prompt_tokens", "input_tokens")),
+    ("output_tokens", ("completion_tokens", "output_tokens")),
+    ("total_tokens", ("total_tokens",)),
+    ("cache_read_tokens", ("cache_read_input_tokens", "cache_read_tokens")),
+    ("cache_write_tokens", ("cache_creation_input_tokens", "cache_write_tokens")),
 )
 
 #: 价格表条目中的结构化键。
@@ -227,8 +241,13 @@ def extract_usage_from_response(
 
     presence: dict[str, bool] = {}
     values: dict[str, int | None] = {}
-    for field_name in USAGE_FIELDS:
-        raw = getattr(usage, field_name, None)
+    for field_name, candidates in USAGE_FIELD_SOURCES:
+        raw = None
+        for candidate in candidates:
+            candidate_value = getattr(usage, candidate, None)
+            if candidate_value is not None:
+                raw = candidate_value
+                break
         values[field_name] = _as_int(raw)
         presence[field_name] = raw is not None
 
@@ -441,6 +460,7 @@ __all__ = [
     "PRICING_NOTE_KEY",
     "PRICING_UNKNOWN_VALUES",
     "USAGE_FIELDS",
+    "USAGE_FIELD_SOURCES",
     "WikiPricingSnapshot",
     "WikiLegacyUsageFacts",
     "WikiLegacyCostFacts",

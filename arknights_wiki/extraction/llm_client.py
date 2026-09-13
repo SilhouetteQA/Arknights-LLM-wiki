@@ -153,6 +153,40 @@ def create_client() -> OpenAI:
     )
 
 
+def _observe_chat_completion(response: object, model: str) -> None:
+    """把一次成功的模型响应旁路交给 Foundation runtime（Spec 07 seam）。
+
+    行为保持：不返回值、不改业务状态、不改下面的 Langfuse 分支。
+
+    - ``off``：最外层短路，连 facts 提取都不发生（也不触发 pricing 加载）
+    - ``observe``：映射/落盘失败都被 runtime 吞掉，业务返回不变
+    - ``strict``：契约失败按设计冒泡，令验证命令失败
+
+    cost 只在 provider **明确报告 usage** 时按既有 ``compute_cost_rmb`` 取同一个数值；
+    usage 缺失时传 ``None``（unknown），而不是沿用 ``usage else 0`` 产生的 ambiguous zero。
+    """
+    from arknights_wiki.adapters.foundation.runtime import get_foundation_runtime
+
+    runtime = get_foundation_runtime()
+    if not runtime.accepts_observation:
+        return
+
+    cost_amount: float | None = None
+    usage = getattr(response, "usage", None)
+    if usage is not None:
+        from arknights_wiki.observability import compute_cost_rmb
+
+        cost_amount = compute_cost_rmb(
+            model,
+            usage.prompt_tokens if usage else 0,
+            usage.completion_tokens if usage else 0,
+        )
+
+    runtime.observe_chat_completion(
+        response, model=model, stage="chat_completion", cost_amount=cost_amount
+    )
+
+
 @traced(name=GENERATION_LLM, as_type="generation")
 def chat_completion(
     messages: list[dict],
@@ -199,6 +233,11 @@ def chat_completion(
     latency_ms = round((time_mod.time() - _t0) * 1000, 1)
 
     message = response.choices[0].message
+
+    # Spec 07 旁路观察：成功响应后、Legacy coercion / Trace 之前提取 presence facts。
+    # 刻意放在 is_enabled() 之前 —— Foundation 观察不以 Langfuse 开启为前提。
+    _observe_chat_completion(response, config["model"])
+
     if is_enabled():
         usage = getattr(response, "usage", None)
         tokens_in = usage.prompt_tokens if usage else 0

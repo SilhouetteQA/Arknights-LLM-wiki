@@ -144,25 +144,45 @@ def aggregate(results: list[dict]) -> dict:
 
 def summarize_cost(cost_log_path: Path) -> dict:
     """汇总 cost_log.jsonl → 分步骤/总计"""
+    # Spec 07：在**同一次**逐行读取中并行收集 Foundation component facts。
+    # 下面的 Legacy 累加逻辑与缺文件早退语义一个字符都没有改。
+    observed_entries: list[dict] = []
+    malformed_lines: list[str] = []
+
     if not cost_log_path.exists():
-        return {"total": 0.0, "steps": {}}
-    total = 0.0
-    steps: dict[str, dict] = {}
-    for line in cost_log_path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        try:
-            e = json.loads(line)
-        except json.JSONDecodeError:
-            continue
-        cost = float(e.get("cost", 0) or 0)
-        total += cost
-        step = e.get("step", "unknown")
-        s = steps.setdefault(step, {"count": 0, "cost": 0.0})
-        s["count"] += 1
-        s["cost"] = round(s["cost"] + cost, 6)
-    return {"total": round(total, 4), "steps": steps}
+        result = {"total": 0.0, "steps": {}}
+    else:
+        total = 0.0
+        steps: dict[str, dict] = {}
+        for index, line in enumerate(
+            cost_log_path.read_text(encoding="utf-8").splitlines(), start=1
+        ):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                e = json.loads(line)
+            except json.JSONDecodeError:
+                malformed_lines.append(f"line:{index}")
+                continue
+            observed_entries.append(e)
+            cost = float(e.get("cost", 0) or 0)
+            total += cost
+            step = e.get("step", "unknown")
+            s = steps.setdefault(step, {"count": 0, "cost": 0.0})
+            s["count"] += 1
+            s["cost"] = round(s["cost"] + cost, 6)
+        result = {"total": round(total, 4), "steps": steps}
+
+    # Spec 07 旁路观察：旧 result **完全形成之后**才产生 CostSummary Evidence
+    # （缺文件路径同样观察，以便 Smoke 能看到 summary producer 确实跑过）。
+    # 不改变返回：malformed 行对 Legacy 继续跳过，只在证据侧记为 FAIL / 不完整。
+    from arknights_wiki.adapters.foundation.runtime import observe_summary_entries
+
+    observe_summary_entries(
+        observed_entries, malformed_lines, legacy_total=result["total"]
+    )
+    return result
 
 def get_category_zh() -> dict:
     return dict(CATEGORY_ZH)

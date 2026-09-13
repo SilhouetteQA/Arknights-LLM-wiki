@@ -31,8 +31,9 @@ from __future__ import annotations
 import datetime as dt
 import logging
 import os
+import subprocess
 import uuid
-from collections.abc import Callable, Mapping
+from collections.abc import Callable, Mapping, Sequence
 from pathlib import Path
 from typing import Final
 
@@ -140,6 +141,59 @@ def resolve_repository_commit(
     return text
 
 
+def _repo_root() -> Path:
+    """返回 Wiki 仓库根（`arknights_wiki` 的父目录）。"""
+    import arknights_wiki
+
+    return Path(arknights_wiki.__file__).resolve().parent.parent
+
+
+_commit_probed: bool = False
+_detected_commit: str | None = None
+
+
+def detect_repository_commit() -> str | None:
+    """**只读**地探测当前工作区的 HEAD 提交号；失败返回 ``None``。
+
+    只在显式参数与 ``AGENT_CONTRACT_COMMIT`` 都不可用时才作为兜底调用；
+    结果在进程内缓存，因此最多执行一次。绝不写仓库、绝不抛错 ——
+    探测失败只会让该 run 无法产出证据（observe 记日志，strict 失败）。
+    """
+    global _commit_probed, _detected_commit
+    if _commit_probed:
+        return _detected_commit
+    _commit_probed = True
+
+    try:
+        completed = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=_repo_root(),
+            capture_output=True,
+            text=True,
+            timeout=5,
+            check=False,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        logger.warning("无法探测 repository commit：%s", type(exc).__name__)
+        return None
+
+    candidate = completed.stdout.strip()
+    if completed.returncode == 0 and REPOSITORY_COMMIT_PATTERN.match(candidate):
+        _detected_commit = candidate
+    else:
+        logger.warning(
+            "git rev-parse HEAD 未返回合法提交号（rc=%s）", completed.returncode
+        )
+    return _detected_commit
+
+
+def reset_repository_commit_probe() -> None:
+    """清空提交号探测缓存；仅供测试使用。"""
+    global _commit_probed, _detected_commit
+    _commit_probed = False
+    _detected_commit = None
+
+
 class WikiFoundationRuntime:
     """Wiki 侧的统一旁路入口。
 
@@ -180,6 +234,15 @@ class WikiFoundationRuntime:
     @property
     def mode(self) -> ContractMode:
         return self._mode
+
+    @property
+    def accepts_observation(self) -> bool:
+        """是否处于会真正观察的模式（非 ``off``）。
+
+        producer seam 用它做**最外层**短路：``off`` 下连 facts 提取都不发生
+        （包括不去触发 pricing 加载这类惰性副作用）。
+        """
+        return self._mode is not ContractMode.OFF
 
     @property
     def run_id(self) -> str:
@@ -284,42 +347,66 @@ class WikiFoundationRuntime:
     def observe_summary(
         self, cost_log_path: Path, *, producer_id: str | None = None
     ) -> None:
-        """观察一次 Legacy cost 汇总。
+        """观察一次 Legacy cost 汇总（自行读取 cost log）。
+
+        便捷入口；接线路径应优先使用 :meth:`observe_summary_entries`，
+        以便与 Legacy 共用**同一次**逐行读取（Master §8.5）。
+        """
+        entries, malformed, _ = facts_mod.parse_cost_log(cost_log_path)
+        self.observe_summary_entries(entries, malformed, producer_id=producer_id)
+
+    def observe_summary_entries(
+        self,
+        entries: Sequence[Mapping[str, object]],
+        malformed_records: Sequence[str] = (),
+        *,
+        stage: str = "cost_log_summary",
+        legacy_total: float | None = None,
+        producer_id: str | None = None,
+    ) -> None:
+        """用**已解析**的 cost-log 条目观察一次 Legacy 汇总。
 
         Legacy 继续按旧逻辑跳过 malformed 行；本方法在存在 malformed 记录时产出
-        **FAIL** 证据（母 Spec §6.3 / Spec 05 step 8）。
+        **FAIL** 证据（母 Spec §6.3 / Spec 05 step 8），且绝不改变 Legacy 返回值。
+        ``legacy_total`` 只被记录，**不参与**组成项推导（FND-CSUM-011）。
         """
-        stage = "cost_log_summary"
         if not self._guard():
             return
 
-        entries, malformed, _ = facts_mod.parse_cost_log(cost_log_path)
-        summary_facts = facts_mod.extract_summary_facts(entries, self.pricing_snapshot, malformed_records=malformed)
-        payload: dict[str, JsonValue] = {
-            "wiki.legacy.component_count": len(summary_facts.components),
-            "wiki.legacy.malformed_record_count": summary_facts.malformed_count,
-            "wiki.currency.context": facts_mod.CURRENCY_CONTEXT,
-        }
+        malformed_count = len(tuple(malformed_records))
+        resolved_producer = producer_id or producer_for_stage(stage)
 
-        if summary_facts.malformed_count:
+        if malformed_count:
+            # 先判 malformed：Legacy 继续跳过，证据侧必须是 FAIL，且**不改** Legacy 返回值。
             failure = mapping_mod.map_malformed_summary()
             self._emit_failure(
-                producer_id=producer_id or producer_for_stage(stage),
+                producer_id=resolved_producer,
                 stage=stage,
                 envelope=failure.envelope,
-                fact_payload=payload,
+                fact_payload={
+                    "wiki.legacy.component_count": len(tuple(entries)),
+                    "wiki.legacy.malformed_record_count": malformed_count,
+                    "wiki.currency.context": facts_mod.CURRENCY_CONTEXT,
+                },
             )
             return
 
         def produce() -> tuple[FoundationObservation, Mapping[str, JsonValue]]:
-            observation = mapping_mod.map_observation(summary_facts=summary_facts)
-            return observation, payload
+            # 提取放在 produce 内：任何失败都会变成 FAIL 证据，绝不冒出到业务函数。
+            summary_facts = facts_mod.extract_summary_facts(
+                entries,
+                self.pricing_snapshot,
+                malformed_records=malformed_records,
+                legacy_total=legacy_total,
+            )
+            payload: dict[str, JsonValue] = {
+                "wiki.legacy.component_count": len(summary_facts.components),
+                "wiki.legacy.malformed_record_count": summary_facts.malformed_count,
+                "wiki.currency.context": facts_mod.CURRENCY_CONTEXT,
+            }
+            return mapping_mod.map_observation(summary_facts=summary_facts), payload
 
-        self._run(
-            producer_id=producer_id or producer_for_stage(stage),
-            stage=stage,
-            produce=produce,
-        )
+        self._run(producer_id=resolved_producer, stage=stage, produce=produce)
 
     # -- 内部 ------------------------------------------------------------- #
 
@@ -403,15 +490,13 @@ class WikiFoundationRuntime:
             )
             return
 
-        self._deliver(
-            self._build_record(
-                producer_id=producer_id,
-                stage=stage,
-                status=ValidationStatus.PASS,
-                observation=observation,
-                envelope=None,
-                fact_payload=dict(fact_payload),
-            )
+        self._emit(
+            producer_id=producer_id,
+            stage=stage,
+            status=ValidationStatus.PASS,
+            observation=observation,
+            envelope=None,
+            fact_payload=fact_payload,
         )
 
     def _emit_failure(
@@ -423,18 +508,46 @@ class WikiFoundationRuntime:
         fact_payload: Mapping[str, JsonValue],
     ) -> None:
         """产出 FAIL 证据；observe 下静默（业务返回不变），strict 下再抛。"""
-        self._deliver(
-            self._build_record(
-                producer_id=producer_id,
-                stage=stage,
-                status=ValidationStatus.FAIL,
-                observation=None,
-                envelope=envelope,
-                fact_payload=dict(fact_payload),
-            )
+        self._emit(
+            producer_id=producer_id,
+            stage=stage,
+            status=ValidationStatus.FAIL,
+            observation=None,
+            envelope=envelope,
+            fact_payload=fact_payload,
         )
         if self._mode is ContractMode.STRICT:
             raise ContractValidationError(f"{envelope.code}: {envelope.message}")
+
+    def _emit(
+        self,
+        *,
+        producer_id: str,
+        stage: str,
+        status: ValidationStatus,
+        observation: FoundationObservation | None,
+        envelope: ErrorEnvelope | None,
+        fact_payload: Mapping[str, JsonValue],
+    ) -> None:
+        """构造并投递一条记录。
+
+        证据**构造**本身也可能失败（容量、字段形状等），而 seam 位于业务函数内部 ——
+        因此这里必须兜住，让 observe 的承诺（业务返回不变）成立：
+        构造失败只令该 run 失效（strict 下仍会明确失败）。
+        """
+        try:
+            record = self._build_record(
+                producer_id=producer_id,
+                stage=stage,
+                status=status,
+                observation=observation,
+                envelope=envelope,
+                fact_payload=dict(fact_payload),
+            )
+        except Exception as exc:  # noqa: BLE001 - 构造失败不得冒出到业务
+            self._invalidate_run(f"无法构造证据记录：{type(exc).__name__}")
+            return
+        self._deliver(record)
 
     def _deliver(self, record: EvidenceRecord) -> None:
         """交给 sink。失败只计数，绝不递归、绝不再调 sink。"""
@@ -537,13 +650,120 @@ def _cost_payload(facts: WikiLegacyCostFacts) -> dict[str, JsonValue]:
     }
 
 
+# --------------------------------------------------------------------------- #
+# 进程级 runtime 访问器（producer seam 的唯一入口）
+# --------------------------------------------------------------------------- #
+
+#: run_id 的环境变量（受控 smoke / replay / strict 必须显式提供）。
+CONTRACT_RUN_ID_ENV: Final[str] = "AGENT_CONTRACT_RUN_ID"
+
+_active_runtime: WikiFoundationRuntime | None = None
+
+
+def _build_runtime_from_env() -> WikiFoundationRuntime:
+    """按环境构造进程级 runtime。
+
+    任何环境配置问题都**不得**影响业务：非法 commit / run_id 只降级为"该 run 不可用"
+    （observe 记日志并继续，strict 由 runtime 自身明确失败）。
+    """
+    from arknights_wiki.adapters.foundation.evidence_sink import FileEvidenceSink
+
+    mode = resolve_contract_mode()
+    if mode is ContractMode.OFF:
+        # off：不构造 sink、不读 payload/pricing，六个 producer 的调用都会立即返回。
+        return WikiFoundationRuntime(mode=ContractMode.OFF)
+
+    try:
+        commit = resolve_repository_commit(None, env=os.environ)
+    except ContractConfigurationError as exc:
+        logger.error(
+            "忽略非法的 %s：%s", CONTRACT_COMMIT_ENV, exc,
+            extra={"evidence_code": EVIDENCE_ARTIFACT_UNAVAILABLE},
+        )
+        commit = None
+    if commit is None:
+        commit = detect_repository_commit()
+
+    raw_run_id = os.environ.get(CONTRACT_RUN_ID_ENV, "").strip()
+    run_id = raw_run_id if raw_run_id and is_safe_run_id(raw_run_id) else None
+    if raw_run_id and run_id is None:
+        logger.error(
+            "忽略不安全的 %s：%r", CONTRACT_RUN_ID_ENV, raw_run_id,
+            extra={"evidence_code": "evidence.invalid_run_id"},
+        )
+
+    return WikiFoundationRuntime(
+        sink=FileEvidenceSink(),
+        mode=mode,
+        run_id=run_id,
+        repository_commit=commit,
+    )
+
+
+def get_foundation_runtime() -> WikiFoundationRuntime:
+    """返回进程级 runtime（首次调用时按环境构造并缓存）。
+
+    这是六个 producer seam 的唯一入口。``off`` 下只构造一个无 sink 的轻量对象，
+    之后每次调用都只是一次属性访问。
+    """
+    global _active_runtime
+    if _active_runtime is None:
+        _active_runtime = _build_runtime_from_env()
+    return _active_runtime
+
+
+def observe_eval_cost_entry(entry: Mapping[str, object], *, stage: str) -> None:
+    """producer seam 的窄 helper：观察一次 Eval cost-log 写入（Master §8.4）。
+
+    runner / judge / scoring 三个 `_log_cost` 共用它。只做
+    「白名单 entry → facts → mapping → emit」，不写文件、不改 entry。
+    """
+    get_foundation_runtime().observe_eval_cost_entry(entry, stage=stage)
+
+
+def observe_summary_entries(
+    entries: Sequence[Mapping[str, object]],
+    malformed_records: Sequence[str] = (),
+    *,
+    stage: str = "cost_log_summary",
+    legacy_total: float | None = None,
+) -> None:
+    """producer seam 的窄 helper：用**已解析**条目观察一次 Legacy 汇总（Master §8.5）。
+
+    与 Legacy 共用同一次逐行读取；只读取入参，不重新读文件。
+    """
+    get_foundation_runtime().observe_summary_entries(
+        entries, malformed_records, stage=stage, legacy_total=legacy_total
+    )
+
+
+def set_foundation_runtime(runtime: WikiFoundationRuntime) -> None:
+    """注入自定义 runtime；供测试与受控运行（如 Spec 13 的 smoke harness）使用。"""
+    global _active_runtime
+    _active_runtime = runtime
+
+
+def reset_foundation_runtime() -> None:
+    """清空进程级 runtime 缓存；仅供测试使用。"""
+    global _active_runtime
+    _active_runtime = None
+
+
 __all__ = [
     "CONTRACT_COMMIT_ENV",
+    "CONTRACT_RUN_ID_ENV",
     "STAGE_PRODUCER",
     "ContractConfigurationError",
     "ContractValidationError",
     "WikiFoundationRuntime",
+    "detect_repository_commit",
+    "get_foundation_runtime",
+    "observe_eval_cost_entry",
+    "observe_summary_entries",
     "producer_for_stage",
+    "reset_foundation_runtime",
+    "reset_repository_commit_probe",
     "resolve_payload_hash",
     "resolve_repository_commit",
+    "set_foundation_runtime",
 ]

@@ -314,6 +314,37 @@ def _resolve_temporal_entities(question: str, entities: list[str]) -> tuple[list
     return resolved, "; ".join(notes) if notes else ""
 
 
+def _observe_intent_rewrite(response: object, model: str) -> None:
+    """把一次成功的意图改写响应旁路交给 Foundation runtime（Spec 07 seam）。
+
+    行为保持：不返回值、不改业务状态、不改下面的 Langfuse 分支与 fallback 控制流。
+
+    - ``off``：最外层短路，连 facts 提取都不发生
+    - ``observe``：映射/落盘失败都被 runtime 吞掉
+    - ``strict``：契约失败按设计冒泡，令验证命令失败
+
+    cost 只在 provider 明确报告 usage 时按既有 ``compute_cost_rmb`` 取同一个数值。
+    """
+    from arknights_wiki.adapters.foundation.runtime import get_foundation_runtime
+
+    runtime = get_foundation_runtime()
+    if not runtime.accepts_observation:
+        return
+
+    cost_amount: float | None = None
+    usage = getattr(response, "usage", None)
+    if usage is not None:
+        cost_amount = compute_cost_rmb(
+            model,
+            usage.prompt_tokens if usage else 0,
+            usage.completion_tokens if usage else 0,
+        )
+
+    runtime.observe_chat_completion(
+        response, model=model, stage="intent_rewrite", cost_amount=cost_amount
+    )
+
+
 @traced(name=GENERATION_INTENT_REWRITE, as_type="generation")
 def _llm_intent_rewrite(question: str) -> dict | None:
     """LLM 兜底意图识别+问题改写，失败返回 None。
@@ -362,6 +393,10 @@ def _llm_intent_rewrite(question: str) -> dict | None:
         _t0 = time_mod.time()
         response, _rstats = retry_call(_do_create, (), {}, retry_config)
         latency_ms = round((time_mod.time() - _t0) * 1000, 1)
+
+        # Spec 07 旁路观察：成功响应后、Legacy coercion / Trace 之前提取 presence facts。
+        # 放在 is_enabled() 之前 —— Foundation 观察不以 Langfuse 开启为前提。
+        _observe_intent_rewrite(response, model)
 
         # W1 Observability: 记录意图改写 LLM 调用 usage/cost
         if is_enabled():

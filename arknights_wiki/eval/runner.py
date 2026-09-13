@@ -47,6 +47,11 @@ COST_LOG = Path(
 def _log_cost(entry: dict) -> None:
     COST_LOG.parent.mkdir(parents=True, exist_ok=True)
     entry["timestamp"] = datetime.now().isoformat(timespec="seconds")
+    # Spec 07 旁路观察：entry 形成后、实际写入前观察（stage=runner）。
+    # 不改 entry、不改路径/编码/append 次数，也不改变任何返回。
+    from arknights_wiki.adapters.foundation.runtime import observe_eval_cost_entry
+
+    observe_eval_cost_entry(entry, stage="runner")
     with COST_LOG.open("a", encoding="utf-8") as f:
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
