@@ -12,87 +12,76 @@ Langfuse 遥测          → record_llm_usage 的调用参数（除 latency_ms�
 
 以及"失败也不变"：observe 下注入 mapping failure / sink failure 时，
 以上输出与副作用仍然不变，且不会冒出异常。
+
+deepeval 处理方式与 `test_producer_wiring.py` 一致：scoring.py 顶层 import deepeval，
+而项目只在 `deepeval-local` 容器内跑 deepeval，因此**不注入假模块**；
+真实 deepeval 不可用时该 stage 明确 skip，容器内则真正执行。
 """
 from __future__ import annotations
 
+import importlib.util
 import json
 import sys
-import types
 from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
 
-# ---- 注入 fake deepeval（同 test_producer_wiring.py，宿主未安装 deepeval）----
-if "deepeval" not in sys.modules:
-    _fake_metrics = types.ModuleType("deepeval.metrics")
+from agent_core.contracts.enums.modes import ContractMode
+from agent_core.contracts.models.evidence import EvidenceRecord
+from agent_core.contracts.protocols.evidence_sink import SinkFailure
 
-    class _FakeMetric:
-        def __init__(self, **kwargs):
-            self.__dict__.update(kwargs)
-            self.score = 0.7
-            self.reason = "fake reason"
-
-        def measure(self, tc):
-            pass
-
-    _fake_metrics.FaithfulnessMetric = _FakeMetric
-    _fake_metrics.GEval = _FakeMetric
-    _fake_metrics.HallucinationMetric = _FakeMetric
-    _fake_g_eval = types.ModuleType("deepeval.metrics.g_eval.utils")
-    # 值必须与真实 SingleTurnParams 一致：其它测试（tests/eval/test_scoring.py）会断言这些值。
-    _fake_g_eval.SingleTurnParams = SimpleNamespace(
-        ACTUAL_OUTPUT="actual_output",
-        EXPECTED_OUTPUT="expected_output",
-        RETRIEVAL_CONTEXT="retrieval_context",
-    )
-    _fake_models = types.ModuleType("deepeval.models")
-    _fake_models.DeepEvalBaseLLM = object
-    _fake_test_case = types.ModuleType("deepeval.test_case")
-
-    class _FakeLLMTestCase:
-        def __init__(self, **kwargs):
-            self.__dict__.update(kwargs)
-
-    _fake_test_case.LLMTestCase = _FakeLLMTestCase
-    _fake_telemetry = types.ModuleType("deepeval.telemetry")
-    _fake_telemetry.telemetry_opt_out = True
-
-    _fake_deepeval = types.ModuleType("deepeval")
-    _fake_deepeval.metrics = _fake_metrics
-    _fake_deepeval.models = _fake_models
-    _fake_deepeval.test_case = _fake_test_case
-
-    sys.modules.setdefault("deepeval", _fake_deepeval)
-    sys.modules.setdefault("deepeval.metrics", _fake_metrics)
-    sys.modules.setdefault("deepeval.metrics.g_eval.utils", _fake_g_eval)
-    sys.modules.setdefault("deepeval.models", _fake_models)
-    sys.modules.setdefault("deepeval.test_case", _fake_test_case)
-    sys.modules.setdefault("deepeval.telemetry", _fake_telemetry)
-
-from agent_core.contracts.enums.modes import ContractMode  # noqa: E402
-from agent_core.contracts.models.evidence import EvidenceRecord  # noqa: E402
-from agent_core.contracts.protocols.evidence_sink import SinkFailure  # noqa: E402
-
-from arknights_wiki import observability  # noqa: E402
-from arknights_wiki.adapters.foundation import mapping as mapping_mod  # noqa: E402
-from arknights_wiki.adapters.foundation.runtime import (  # noqa: E402
+from arknights_wiki import observability
+from arknights_wiki.adapters.foundation import mapping as mapping_mod
+from arknights_wiki.adapters.foundation.runtime import (
     WikiFoundationRuntime,
     reset_foundation_runtime,
     set_foundation_runtime,
 )
-from arknights_wiki.agent import router as router_mod  # noqa: E402
-from arknights_wiki.eval import judge as judge_mod  # noqa: E402
-from arknights_wiki.eval import metrics as metrics_mod  # noqa: E402
-from arknights_wiki.eval import runner as runner_mod  # noqa: E402
-from arknights_wiki.eval import scoring as scoring_mod  # noqa: E402
-from arknights_wiki.extraction import llm_client  # noqa: E402
+from arknights_wiki.agent import router as router_mod
+from arknights_wiki.eval import judge as judge_mod
+from arknights_wiki.eval import metrics as metrics_mod
+from arknights_wiki.eval import runner as runner_mod
+from arknights_wiki.extraction import llm_client
 
 COMMIT = "d" * 40
 PAYLOAD_HASH = "sha256:" + "a" * 64
 RUN_ID = "run-spec07-invariance"
 MODEL = "deepseek-4-flash"
 MESSAGES = [{"role": "user", "content": "hi"}]
+
+
+def real_deepeval_available() -> bool:
+    """是否存在**真实安装**的 deepeval（假模块没有 ``__file__``）。
+
+    与 `test_producer_wiring.py` 的同名helper 保持一致的语义：项目在宿主上没有
+    deepeval，打分只在 `deepeval-local` 容器内跑（见 `Dockerfile.deepeval`）。
+    """
+    module = sys.modules.get("deepeval")
+    if module is not None:
+        return getattr(module, "__file__", None) is not None
+    try:
+        return importlib.util.find_spec("deepeval") is not None
+    except (ImportError, ValueError):  # pragma: no cover - 极端 sys.modules 状态
+        return False
+
+
+def eval_module_for(stage: str):
+    """返回 stage 对应的 eval 模块；scoring 需要真实 deepeval，否则 skip。"""
+    if stage == "runner":
+        return runner_mod
+    if stage == "judge":
+        return judge_mod
+    if stage == "scoring":
+        if not real_deepeval_available():
+            pytest.skip(
+                "scoring.py 顶层 import deepeval，宿主未安装该包；项目只在 deepeval-local "
+                "容器内跑打分（见 Dockerfile.deepeval）。"
+            )
+        from arknights_wiki.eval import scoring
+
+        return scoring
+    raise AssertionError(f"未知 stage：{stage}")
 
 
 class RecordingSink:
@@ -132,9 +121,7 @@ def use_runtime(mode: ContractMode, sink: object | None = None) -> WikiFoundatio
 
 
 def make_response(*, content: str = "hello", with_usage: bool = True) -> SimpleNamespace:
-    usage = (
-        SimpleNamespace(prompt_tokens=7, completion_tokens=5) if with_usage else None
-    )
+    usage = SimpleNamespace(prompt_tokens=7, completion_tokens=5) if with_usage else None
     return SimpleNamespace(
         choices=[SimpleNamespace(message=SimpleNamespace(content=content, tool_calls=None))],
         usage=usage,
@@ -185,10 +172,21 @@ def _strip_latency(recorded: list[tuple[tuple, dict]]) -> list[tuple[tuple, dict
 
 def _log_lines(path: Path) -> list[dict]:
     """读取 JSONL 并去掉每次运行都会变化的 timestamp。"""
-    entries = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
+    entries = [
+        json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line
+    ]
     for entry in entries:
         entry.pop("timestamp", None)
     return entries
+
+
+def _injected_mapping_failure(code: str = "foundation.invalid_usage"):
+    """构造一个会抛 MappingFailure 的替身，用于"失败也不变"的用例。"""
+
+    def boom(*args: object, **kwargs: object) -> None:
+        raise mapping_mod.MappingFailure(mapping_mod.make_envelope(code, "injected"))
+
+    return boom
 
 
 # --------------------------------------------------------------------------- #
@@ -240,13 +238,7 @@ def test_chat_completion_mapping_failure_keeps_output(monkeypatch: pytest.Monkey
     off_content, _ = llm_client.chat_completion(list(MESSAGES))
 
     use_runtime(ContractMode.OBSERVE)
-
-    def boom(*args: object, **kwargs: object) -> None:
-        raise mapping_mod.MappingFailure(
-            mapping_mod.make_envelope("foundation.invalid_usage", "injected")
-        )
-
-    monkeypatch.setattr(mapping_mod, "map_observation", boom)
+    monkeypatch.setattr(mapping_mod, "map_observation", _injected_mapping_failure())
     client = patch_llm_client(monkeypatch, make_response(content="答案"))
     obs_content, _ = llm_client.chat_completion(list(MESSAGES))
 
@@ -295,13 +287,7 @@ def test_intent_rewrite_mapping_failure_keeps_return(monkeypatch: pytest.MonkeyP
     off_result = router_mod._llm_intent_rewrite("问题")
 
     use_runtime(ContractMode.OBSERVE)
-
-    def boom(*args: object, **kwargs: object) -> None:
-        raise mapping_mod.MappingFailure(
-            mapping_mod.make_envelope("foundation.invalid_usage", "injected")
-        )
-
-    monkeypatch.setattr(mapping_mod, "map_observation", boom)
+    monkeypatch.setattr(mapping_mod, "map_observation", _injected_mapping_failure())
     patch_llm_client(monkeypatch, make_response(content="不是 JSON"))
     assert router_mod._llm_intent_rewrite("问题") == off_result
 
@@ -311,25 +297,23 @@ def test_intent_rewrite_mapping_failure_keeps_return(monkeypatch: pytest.MonkeyP
 # --------------------------------------------------------------------------- #
 
 
-@pytest.mark.parametrize(
-    "module,stage",
-    [(runner_mod, "runner"), (judge_mod, "judge"), (scoring_mod, "scoring")],
-)
+@pytest.mark.parametrize("stage", ["runner", "judge", "scoring"])
 def test_log_cost_written_bytes_invariant(
-    module: object, stage: str, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    stage: str, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     """off / observe 写出的 cost-log 行除 timestamp 外逐字段相同。"""
+    module = eval_module_for(stage)
     entry = {"step": stage, "model": MODEL, "tokens_in": 11, "tokens_out": 22, "cost": 0.003}
 
     use_runtime(ContractMode.OFF)
     off_path = tmp_path / "off.jsonl"
-    monkeypatch.setattr(module, "COST_LOG", off_path)  # type: ignore[attr-defined]
-    module._log_cost(dict(entry))  # type: ignore[attr-defined]
+    monkeypatch.setattr(module, "COST_LOG", off_path)
+    module._log_cost(dict(entry))
 
     use_runtime(ContractMode.OBSERVE)
     obs_path = tmp_path / "obs.jsonl"
-    monkeypatch.setattr(module, "COST_LOG", obs_path)  # type: ignore[attr-defined]
-    module._log_cost(dict(entry))  # type: ignore[attr-defined]
+    monkeypatch.setattr(module, "COST_LOG", obs_path)
+    module._log_cost(dict(entry))
 
     assert _log_lines(off_path) == _log_lines(obs_path)
     assert len(_log_lines(obs_path)) == 1  # append 次数不变
@@ -340,13 +324,7 @@ def test_log_cost_mapping_failure_still_writes(
 ) -> None:
     """observe 下 mapping 失败：Legacy 仍然照常写盘。"""
     use_runtime(ContractMode.OBSERVE)
-
-    def boom(*args: object, **kwargs: object) -> None:
-        raise mapping_mod.MappingFailure(
-            mapping_mod.make_envelope("foundation.invalid_usage", "injected")
-        )
-
-    monkeypatch.setattr(mapping_mod, "map_observation", boom)
+    monkeypatch.setattr(mapping_mod, "map_observation", _injected_mapping_failure())
     target = tmp_path / "cost_log.jsonl"
     monkeypatch.setattr(runner_mod, "COST_LOG", target)
 
@@ -379,11 +357,11 @@ def test_summarize_cost_return_invariant(tmp_path: Path) -> None:
     """off / observe 返回 dict 完全相等（含 malformed 与未知模型路径）。"""
     log = tmp_path / "cost_log.jsonl"
     log.write_text(
-        '{"step": "judge", "model": "deepseek-4-flash", "cost": 0.01}\n'
+        f'{{"step": "judge", "model": "{MODEL}", "cost": 0.01}}\n'
         '{"step": "runner", "model": "no-such-model", "cost": 0.0}\n'
         "{ 坏行\n"
         "\n"
-        '{"step": "judge", "model": "deepseek-4-flash", "cost": 0.02}\n',
+        f'{{"step": "judge", "model": "{MODEL}", "cost": 0.02}}\n',
         encoding="utf-8",
     )
 
@@ -421,11 +399,7 @@ def test_summarize_cost_mapping_failure_keeps_return(
     off_result = metrics_mod.summarize_cost(log)
 
     use_runtime(ContractMode.OBSERVE)
-
-    def boom(*args: object, **kwargs: object) -> None:
-        raise mapping_mod.MappingFailure(
-            mapping_mod.make_envelope("foundation.invalid_cost_summary", "injected")
-        )
-
-    monkeypatch.setattr(mapping_mod, "map_observation", boom)
+    monkeypatch.setattr(
+        mapping_mod, "map_observation", _injected_mapping_failure("foundation.invalid_cost_summary")
+    )
     assert metrics_mod.summarize_cost(log) == off_result

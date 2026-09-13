@@ -11,82 +11,43 @@ wiki.eval.cost_summary / cost_log_summary
 
 测试只 monkeypatch **模块边界**（`create_client` / `_get_model_config` / `COST_LOG`），
 不 monkeypatch 业务内部私有函数。`wiki.trace.summary` 必须仍为 DEFERRED 且无虚构事件。
+
+关于 deepeval：`arknights_wiki/eval/scoring.py` 顶层 import deepeval，而项目**只在
+`deepeval-local` 容器内跑 deepeval**（宿主 pip 装不上，见 `Dockerfile.deepeval` 与
+`scripts/docker_setup_deepeval.sh`）。因此这里**不注入假模块顶替**：真实 deepeval 不可用时
+该 stage 的用例明确 skip，容器内则真正执行：
+
+```bash
+MSYS_NO_PATHCONV=1 docker run --rm -v "<wiki worktree>:/work" -w /work \
+  --entrypoint sh deepeval-local:latest -c \
+  'pip install -q pytest -i https://pypi.tuna.tsinghua.edu.cn/simple; python3 -m pytest tests/contracts -q'
+```
 """
 from __future__ import annotations
 
+import importlib.util
 import json
 import sys
-import types
 from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
 
-# ---- 注入 fake deepeval：宿主未安装 deepeval 时 scoring.py 仍可导入 ----
-# 与 tests/eval/test_scoring.py 同一手法，只保留 scoring 顶层 import 需要的符号。
-if "deepeval" not in sys.modules:
-    _fake_metrics = types.ModuleType("deepeval.metrics")
+from agent_core.contracts.enums.evidence import ValidationStatus
+from agent_core.contracts.enums.modes import ContractMode
+from agent_core.contracts.models.evidence import EvidenceRecord
 
-    class _FakeMetric:
-        def __init__(self, **kwargs):
-            self.__dict__.update(kwargs)
-            self.score = 0.7
-            self.reason = "fake reason"
-
-        def measure(self, tc):
-            pass
-
-    _fake_metrics.FaithfulnessMetric = _FakeMetric
-    _fake_metrics.GEval = _FakeMetric
-    _fake_metrics.HallucinationMetric = _FakeMetric
-
-    _fake_g_eval = types.ModuleType("deepeval.metrics.g_eval.utils")
-    _fake_g_eval.SingleTurnParams = SimpleNamespace(
-        ACTUAL_OUTPUT="actual_output",
-        EXPECTED_OUTPUT="expected_output",
-        RETRIEVAL_CONTEXT="retrieval_context",
-    )
-    _fake_models = types.ModuleType("deepeval.models")
-    _fake_models.DeepEvalBaseLLM = object
-    _fake_test_case = types.ModuleType("deepeval.test_case")
-
-    class _FakeLLMTestCase:
-        def __init__(self, **kwargs):
-            self.__dict__.update(kwargs)
-
-    _fake_test_case.LLMTestCase = _FakeLLMTestCase
-    _fake_telemetry = types.ModuleType("deepeval.telemetry")
-    _fake_telemetry.telemetry_opt_out = True
-
-    _fake_deepeval = types.ModuleType("deepeval")
-    _fake_deepeval.metrics = _fake_metrics
-    _fake_deepeval.models = _fake_models
-    _fake_deepeval.test_case = _fake_test_case
-
-    sys.modules.setdefault("deepeval", _fake_deepeval)
-    sys.modules.setdefault("deepeval.metrics", _fake_metrics)
-    sys.modules.setdefault("deepeval.metrics.g_eval.utils", _fake_g_eval)
-    sys.modules.setdefault("deepeval.models", _fake_models)
-    sys.modules.setdefault("deepeval.test_case", _fake_test_case)
-    sys.modules.setdefault("deepeval.telemetry", _fake_telemetry)
-
-from agent_core.contracts.enums.evidence import ValidationStatus  # noqa: E402
-from agent_core.contracts.enums.modes import ContractMode  # noqa: E402
-from agent_core.contracts.models.evidence import EvidenceRecord  # noqa: E402
-
-from arknights_wiki.adapters.foundation.runtime import (  # noqa: E402
+from arknights_wiki import observability
+from arknights_wiki.adapters.foundation.runtime import (
     WikiFoundationRuntime,
     reset_foundation_runtime,
     set_foundation_runtime,
 )
-from arknights_wiki.extraction import llm_client  # noqa: E402
-
-from arknights_wiki import observability  # noqa: E402
-from arknights_wiki.eval import judge as judge_mod  # noqa: E402
-from arknights_wiki.eval import metrics as metrics_mod  # noqa: E402
-from arknights_wiki.eval import runner as runner_mod  # noqa: E402
-from arknights_wiki.eval import scoring as scoring_mod  # noqa: E402
-from arknights_wiki.agent import router as router_mod  # noqa: E402
+from arknights_wiki.agent import router as router_mod
+from arknights_wiki.eval import judge as judge_mod
+from arknights_wiki.eval import metrics as metrics_mod
+from arknights_wiki.eval import runner as runner_mod
+from arknights_wiki.extraction import llm_client
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 REGISTRY_PATH = REPO_ROOT / "config" / "contracts" / "producer-registry.json"
@@ -94,6 +55,7 @@ REGISTRY_PATH = REPO_ROOT / "config" / "contracts" / "producer-registry.json"
 COMMIT = "c" * 40
 PAYLOAD_HASH = "sha256:" + "f" * 64
 RUN_ID = "run-spec07"
+MODEL = "deepseek-4-flash"
 
 #: Spec 07 负责的六个 mapping stage 与其应归属的 producer。
 WIRED_STAGES = {
@@ -104,6 +66,40 @@ WIRED_STAGES = {
     "scoring": "wiki.eval.cost_log",
     "cost_log_summary": "wiki.eval.cost_summary",
 }
+
+
+def real_deepeval_available() -> bool:
+    """是否存在**真实安装**的 deepeval。
+
+    刻意区分"真实安装"与"测试注入的假模块"：手工构造的 ``types.ModuleType`` 没有
+    ``__file__``，而真装的包一定有。项目在宿主上没有 deepeval，打分只在
+    ``deepeval-local`` 容器内跑。
+    """
+    module = sys.modules.get("deepeval")
+    if module is not None:
+        return getattr(module, "__file__", None) is not None
+    try:
+        return importlib.util.find_spec("deepeval") is not None
+    except (ImportError, ValueError):  # pragma: no cover - 极端 sys.modules 状态
+        return False
+
+
+def eval_module_for(stage: str):
+    """返回 stage 对应的 eval 模块；scoring 需要真实 deepeval，否则 skip。"""
+    if stage == "runner":
+        return runner_mod
+    if stage == "judge":
+        return judge_mod
+    if stage == "scoring":
+        if not real_deepeval_available():
+            pytest.skip(
+                "scoring.py 顶层 import deepeval，宿主未安装该包；项目只在 deepeval-local "
+                "容器内跑打分（见 Dockerfile.deepeval）。容器内命令见本文件模块 docstring。"
+            )
+        from arknights_wiki.eval import scoring
+
+        return scoring
+    raise AssertionError(f"未知 stage：{stage}")
 
 
 class RecordingSink:
@@ -124,7 +120,9 @@ def _clean_runtime():
     reset_foundation_runtime()
 
 
-def use_runtime(mode: ContractMode | str = ContractMode.OBSERVE) -> tuple[WikiFoundationRuntime, RecordingSink]:
+def use_runtime(
+    mode: ContractMode | str = ContractMode.OBSERVE,
+) -> tuple[WikiFoundationRuntime, RecordingSink]:
     """注入一个指向口袋 sink 的 runtime，并返回它。"""
     sink = RecordingSink()
     runtime = WikiFoundationRuntime(
@@ -138,15 +136,14 @@ def use_runtime(mode: ContractMode | str = ContractMode.OBSERVE) -> tuple[WikiFo
     return runtime, sink
 
 
-# --------------------------------------------------------------------------- #
-# 固定响应与假 client
-# --------------------------------------------------------------------------- #
-
-
 def make_response(
-    *, content: str = "ok", prompt_tokens: int = 7, completion_tokens: int = 5,
+    *,
+    content: str = "ok",
+    prompt_tokens: int = 7,
+    completion_tokens: int = 5,
     with_usage: bool = True,
 ) -> SimpleNamespace:
+    """构造固定 provider 响应；字段名用真实的 prompt_tokens / completion_tokens。"""
     usage = (
         SimpleNamespace(prompt_tokens=prompt_tokens, completion_tokens=completion_tokens)
         if with_usage
@@ -179,7 +176,7 @@ def patch_llm_client(monkeypatch: pytest.MonkeyPatch, response: SimpleNamespace)
     monkeypatch.setattr(
         llm_client,
         "_get_model_config",
-        lambda: {"model": "deepseek-4-flash", "max_tokens": 4096, "api_key": "k", "base_url": "http://x"},
+        lambda: {"model": MODEL, "max_tokens": 4096, "api_key": "k", "base_url": "http://x"},
     )
     # llm_client 在函数内 import is_enabled，因此打在 observability 模块上。
     monkeypatch.setattr(observability, "is_enabled", lambda: False)
@@ -188,7 +185,7 @@ def patch_llm_client(monkeypatch: pytest.MonkeyPatch, response: SimpleNamespace)
 
 
 # --------------------------------------------------------------------------- #
-# 六个 stage 的接线
+# agent 侧两个 stage
 # --------------------------------------------------------------------------- #
 
 
@@ -205,8 +202,9 @@ def test_chat_completion_seam(monkeypatch: pytest.MonkeyPatch) -> None:
     assert record.producer_id == "wiki.agent.llm_usage"
     assert record.mapping_stage == "chat_completion"
     assert record.validation_status is ValidationStatus.PASS
-    assert record.foundation_output.usage.input_tokens == 7  # type: ignore[union-attr]
-    assert record.foundation_output.usage.source == "provider_reported"  # type: ignore[union-attr]
+    usage = record.foundation_output.usage  # type: ignore[union-attr]
+    assert usage.input_tokens == 7
+    assert usage.source == "provider_reported"
 
 
 def test_chat_completion_seam_without_usage_is_unknown(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -238,22 +236,25 @@ def test_intent_rewrite_seam(monkeypatch: pytest.MonkeyPatch) -> None:
     assert record.mapping_stage == "intent_rewrite"
 
 
-@pytest.mark.parametrize(
-    "module,stage",
-    [(runner_mod, "runner"), (judge_mod, "judge"), (scoring_mod, "scoring")],
-)
+# --------------------------------------------------------------------------- #
+# eval 侧四个 stage
+# --------------------------------------------------------------------------- #
+
+
+@pytest.mark.parametrize("stage", ["runner", "judge", "scoring"])
 def test_log_cost_seams(
-    module: object, stage: str, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    stage: str, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     """三个 _log_cost 各自旁路观察，并保持原写入行为。"""
+    module = eval_module_for(stage)
     _, sink = use_runtime()
     target = tmp_path / "cost_log.jsonl"
-    monkeypatch.setattr(module, "COST_LOG", target)  # type: ignore[attr-defined]
+    monkeypatch.setattr(module, "COST_LOG", target)
 
-    module._log_cost(  # type: ignore[attr-defined]
+    module._log_cost(
         {
             "step": stage,
-            "model": "deepseek-4-flash",
+            "model": MODEL,
             "tokens_in": 11,
             "tokens_out": 22,
             "cost": 0.003,
@@ -270,7 +271,9 @@ def test_log_cost_seams(
     assert record.foundation_output.cost.source == "estimated"  # type: ignore[union-attr]
 
 
-def test_runner_estimate_seam_marks_input_as_not_measured(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+def test_runner_estimate_seam_marks_input_as_not_measured(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
     """runner 的字符估算路径：input 记为未测量（null），output 为估算值。"""
     _, sink = use_runtime()
     monkeypatch.setattr(runner_mod, "COST_LOG", tmp_path / "cost_log.jsonl")
@@ -278,7 +281,7 @@ def test_runner_estimate_seam_marks_input_as_not_measured(tmp_path: Path, monkey
     runner_mod._log_cost(
         {
             "step": "agent_direct:complex",
-            "model": "deepseek-4-flash",
+            "model": MODEL,
             "tokens_in": 0,  # 调用点硬编码的占位
             "tokens_out": 600,
             "cost": 0.0012,
@@ -298,7 +301,7 @@ def test_summary_seam(tmp_path: Path) -> None:
     _, sink = use_runtime()
     log = tmp_path / "cost_log.jsonl"
     log.write_text(
-        '{"step": "judge", "model": "deepseek-4-flash", "cost": 0.01}\n'
+        f'{{"step": "judge", "model": "{MODEL}", "cost": 0.01}}\n'
         '{"step": "judge", "model": "no-such-model", "cost": 0.0}\n',
         encoding="utf-8",
     )
@@ -348,33 +351,49 @@ def test_summary_seam_on_missing_file(tmp_path: Path) -> None:
 
 
 # --------------------------------------------------------------------------- #
-# off 模式与 Registry 一致性
+# off 模式
 # --------------------------------------------------------------------------- #
 
 
 def test_off_mode_runs_no_seam(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
-    """off 模式下六个 seam 全部不产出证据、不写 staging。"""
-    _, sink = use_runtime(ContractMode.OFF)
+    """off 模式下五个不依赖 deepeval 的 seam 都不产出证据。"""
+    runtime, sink = use_runtime(ContractMode.OFF)
     patch_llm_client(monkeypatch, make_response())
-    for module in (runner_mod, judge_mod, scoring_mod):
-        monkeypatch.setattr(module, "COST_LOG", tmp_path / f"{module.__name__}.jsonl")
+    monkeypatch.setattr(runner_mod, "COST_LOG", tmp_path / "runner.jsonl")
+    monkeypatch.setattr(judge_mod, "COST_LOG", tmp_path / "judge.jsonl")
 
     llm_client.chat_completion([{"role": "user", "content": "hi"}])
     router_mod._llm_intent_rewrite("问题")
-    runner_mod._log_cost({"step": "runner", "model": "m", "cost": 0.1})
-    judge_mod._log_cost({"step": "judge", "model": "m", "cost": 0.1})
-    scoring_mod._log_cost({"step": "scoring", "model": "m", "cost": 0.1})
+    runner_mod._log_cost({"step": "runner", "model": MODEL, "cost": 0.1})
+    judge_mod._log_cost({"step": "judge", "model": MODEL, "cost": 0.1})
     metrics_mod.summarize_cost(tmp_path / "missing.jsonl")
 
     assert sink.records == []
+    assert runtime.sink_failure_count == 0
+    assert runtime.run_is_valid is True
+
+
+def test_off_mode_runs_no_seam_for_scoring(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """off 模式下 scoring seam 同样不产出证据（需真实 deepeval 才会执行）。"""
+    module = eval_module_for("scoring")
+    _, sink = use_runtime(ContractMode.OFF)
+    monkeypatch.setattr(module, "COST_LOG", tmp_path / "scoring.jsonl")
+
+    module._log_cost({"step": "scoring", "model": MODEL, "cost": 0.1})
+
+    assert sink.records == []
+    assert (tmp_path / "scoring.jsonl").exists()  # Legacy 写入照旧
+
+
+# --------------------------------------------------------------------------- #
+# Registry 一致性
+# --------------------------------------------------------------------------- #
 
 
 def test_registry_stages_match_wired_stages() -> None:
     """接线用的 stage 必须与 producer-registry.json 登记的一致。"""
     registry = json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
-    by_producer = {
-        producer["producer_id"]: producer for producer in registry["producers"]
-    }
+    by_producer = {producer["producer_id"]: producer for producer in registry["producers"]}
     for stage, producer_id in WIRED_STAGES.items():
         assert producer_id in by_producer, f"未登记的 producer：{producer_id}"
         producer = by_producer[producer_id]
@@ -391,9 +410,7 @@ def test_trace_summary_stays_deferred_and_unwired() -> None:
 
     for stage in trace["mapping_stages"]:
         assert stage not in WIRED_STAGES
-    source = (REPO_ROOT / "arknights_wiki").rglob("*.py")
-    assert not any(
-        "wiki.trace.summary" in path.read_text(encoding="utf-8")
-        for path in source
-        if "adapters" not in path.parts
-    )
+    for path in (REPO_ROOT / "arknights_wiki").rglob("*.py"):
+        if "adapters" in path.parts:
+            continue
+        assert "wiki.trace.summary" not in path.read_text(encoding="utf-8")

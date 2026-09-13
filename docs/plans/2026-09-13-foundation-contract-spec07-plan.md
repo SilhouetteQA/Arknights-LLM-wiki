@@ -156,6 +156,30 @@ malformed 存在时 `observe_summary_entries` 产 FAIL 证据（不改变 Legacy
 
 ### 3.4 测试策略
 
+**deepeval 的处理方式**（本步骤第一次实现时走了弯路，已修正）：
+
+`arknights_wiki/eval/scoring.py` 顶层 `import deepeval`，而本机**宿主未安装 deepeval** ——
+项目只在 **`deepeval-local` 容器**里跑打分（`Dockerfile.deepeval` 用 Linux wheelhouse 构建，
+宿主 pip 装不上，见 `output/devlog.md`）。最初我在测试里用 `sys.modules.setdefault` 注入假
+deepeval，结果**污染了 `tests/eval/test_scoring.py`**（它的断言依赖假模块的具体字段值，
+而 `setdefault` 让先导入者的假模块全局生效）。
+
+现在的做法：**不注入任何假模块**。
+
+```python
+def real_deepeval_available() -> bool:
+    """区分"真实安装"（有 __file__）与"测试注入的假模块"（没有 __file__）。"""
+```
+
+- 宿主：`scoring` 相关的 3 个用例**明确 skip**，skip 理由写明原因与容器命令
+- 容器：真实 deepeval 4.1.8 下**全部执行**，不打折
+
+```bash
+MSYS_NO_PATHCONV=1 docker run --rm -v "<wiki worktree>:/work:ro" -w /work \
+  --entrypoint sh deepeval-local:latest -c \
+  'python3 -m pytest tests/contracts -q -p no:cacheprovider'
+```
+
 **`test_producer_wiring.py`**（每个 stage 至少一个固定响应测试）：
 
 - monkeypatch `create_client`（模块边界）返回假的 chat client，其 `chat.completions.create`
@@ -163,19 +187,19 @@ malformed 存在时 `observe_summary_entries` 产 FAIL 证据（不改变 Legacy
 - 三个 `_log_cost`：monkeypatch 模块级 `COST_LOG` 到 `tmp_path`，直接调用并断言
   evidence 的 `producer_id` / `mapping_stage` / `foundation_output`
 - `summarize_cost`：造一个含 normal + malformed 行的临时 cost log
-- 每个测试前 `set_foundation_runtime(<注入的运行期>)` + `AGENT_CONTRACT_EVIDENCE_DIR` 指向 `tmp_path`
+- 每个测试前 `set_foundation_runtime(<注入的运行期>)` + 固定 `payload_hash`
 
 **`test_business_invariance.py`**（Wiki cases）：
 
 ```text
 同一组固定响应下，分别以 off / observe 跑同一条路径，断言：
-  - chat_completion 的 (content, message) 逐字段相等
+  - chat_completion 的 (content, message) 与 provider 请求参数逐字段相等
   - _llm_intent_rewrite 的返回值（含 None 兜底路径）相等
-  - 三个 _log_cost 写出的 JSONL 行**逐字节相等**（除 timestamp 用 freezegun 或字符串比较时排除）
+  - 三个 _log_cost 写出的 JSONL 行逐字段相等（timestamp 归一后）
   - summarize_cost 返回 dict 完全相等（含缺文件 → {"total": 0.0, "steps": {}}）
-  - Langfuse 遥测一致：monkeypatch is_enabled→True 与 record_llm_usage 为 spy，
-    断言 off/observe 下 record_llm_usage 的调用参数完全相同（含 extra）
-  - observe 下注入 mapping/sink 失败时，以上输出与副作用仍然不变
+  - Langfuse 遥测一致：is_enabled→True 且 record_llm_usage 为 spy，
+    断言 off/observe 下调用参数完全相同（latency_ms 归一）
+  - observe 下注入 mapping / sink 失败时，以上输出与副作用仍然不变
 ```
 
 ### 3.5 明确不做
@@ -237,8 +261,36 @@ Master §8.5 第 3 步是"旧 result 完成后旁路生成 CostSummary Evidence"
 现改为两条路径都在 result 形成后观察 —— 返回值逐字节不变，但 Smoke 能看到
 summary producer 确实跑过（`component_count=0`、`complete=true`，即"没有组成项"而非"成本为零"）。
 
-## 9. 待办（提交前）
+## 9. 执行结果
 
-- 全量 Wiki 测试回归（目标：基线 602 + 新增 27 = 629 收集，0 failed）
-- 复核 `git diff`：Langfuse 分支、JSONL 格式、rounding、append 次数零改动
-- 账本追加 Spec 07 的 4 条事件并提交
+**宿主（Windows，无 deepeval）**
+
+| 项目 | 结果 |
+|---|---|
+| `tests/contracts/test_producer_wiring.py` | 11 passed + 2 skipped（scoring 相关） |
+| `tests/contracts/test_business_invariance.py` | 13 passed + 1 skipped（scoring 相关） |
+| `tests/contracts` 全量 | 75 passed + 3 skipped |
+| Wiki 全量 | **620 passed / 10 skipped / 0 failed**（= worktree 基线 595+7 加新增 25 通过 + 3 skip） |
+
+**容器（`deepeval-local`，真实 deepeval 4.1.8 + pytest 9.1.1）**
+
+```bash
+MSYS_NO_PATHCONV=1 docker run --rm -v "<wiki worktree>:/work:ro" -w /work \
+  --entrypoint sh deepeval-local:latest -c \
+  'python3 -m pytest tests/contracts -q -p no:cacheprovider'
+```
+
+结果 **78 passed / 0 skipped** —— 宿主上因缺 deepeval 而 skip 的 3 个 `scoring` 用例
+在真实 deepeval 下全部真正执行。
+
+**复核结论**
+
+- `git diff` 复核：`is_enabled()` 分支、`record_llm_usage` 参数、JSONL 序列化、rounding、
+  缺文件早退返回值、append 次数全部零改动；六个 seam 只增观察调用
+- 契约身份未变（本步骤不进 payload）：payload `sha256:45da9d66…c3d854` / 39 文件
+- 账本追加 Spec 07 的 4 条事件（27 条，Spec 01–07 全部 COMPLETE）
+
+**说明**：账本 `VALIDATED` 事件记录的是当时的验证结论（当时测试用的是假 deepeval）。
+本步骤去掉假模块、改为容器内真实执行属于**测试实现方式**的修正，不改变 spec 状态，
+因此**不追加账本事件**（账本是状态迁移的 append-only 记录，没有"重新验证"这一迁移），
+改动只在本文档、提交信息与项目记忆中留痕。
