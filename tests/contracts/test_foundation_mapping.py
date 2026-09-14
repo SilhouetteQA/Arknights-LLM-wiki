@@ -30,6 +30,7 @@ from pathlib import Path
 
 import pytest
 
+from agent_core.contracts.conformance.rules import contract_rule
 from agent_core.contracts.enums.evidence import ValidationStatus
 from agent_core.contracts.enums.modes import ContractMode, ContractModeConfigError
 from agent_core.contracts.enums.sources import CostSource, UsageSource
@@ -150,6 +151,7 @@ def make_runtime(
 # --------------------------------------------------------------------------- #
 
 
+@contract_rule("FND-MAP-002")
 def test_usage_absent_maps_to_all_null_unknown() -> None:
     """usage object absent → 全部 null、source=unknown。"""
     usage_facts = facts_mod.extract_usage_from_response(None)
@@ -290,6 +292,7 @@ def test_missing_or_tbd_price_maps_to_unknown_and_keeps_currency(model: str) -> 
     assert cost.currency == "CNY"
 
 
+@contract_rule("FND-MAP-001")
 def test_legacy_zero_alone_is_not_evidence_of_true_zero() -> None:
     """只有 legacy amount 0.0（无可用价格项）不足以证明真实零。"""
     facts = facts_mod.extract_cost_facts({"model": "model-absent", "cost": 0.0}, SNAPSHOT)
@@ -540,6 +543,7 @@ def test_clean_summary_emits_pass_with_components(tmp_path: Path) -> None:
     assert summary.unknown_component_count == 1
 
 
+@contract_rule("FND-MODE-004")
 def test_mapping_failure_in_observe_emits_fail_and_leaves_business_result_unchanged(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -600,6 +604,7 @@ def test_unexpected_extraction_error_becomes_fail_evidence() -> None:
 # --------------------------------------------------------------------------- #
 
 
+@contract_rule("EVD-SINK-002")
 def test_observe_sink_failure_does_not_change_business_result() -> None:
     """observe 下 sink 失败不改变业务返回；该 run 明确失效。"""
     sink = ExplodingSink()
@@ -624,6 +629,7 @@ def test_strict_sink_failure_raises() -> None:
     assert sink.calls == 1
 
 
+@contract_rule("EVD-SINK-003")
 def test_missing_sink_marks_run_invalid_without_raising_in_observe() -> None:
     """没有注入 sink 时证据无接收方：observe 标记 run 失效，业务不受影响。"""
     runtime = make_runtime(None)

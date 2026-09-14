@@ -70,13 +70,16 @@ def default_evidence_root() -> Path:
 
 
 def _within(root: Path, candidate: Path) -> bool:
-    """判断 ``candidate`` 是否落在 ``root`` 之下（防目录穿越的最后一道闸）。"""
-    try:
-        root_resolved = root.resolve()
-        candidate_resolved = candidate.resolve()
-    except OSError:  # pragma: no cover - 仅极端文件系统状态下触发
-        return False
-    return root_resolved == candidate_resolved or root_resolved in candidate_resolved.parents
+    """判断 ``candidate`` 是否落在 ``root`` 之下（防目录穿越的最后一道闸）。
+
+    用 ``os.path.abspath`` 做纯词法规范化，**不解析 symlink、不访问文件系统**，
+    避免 ``Path.resolve`` 对尚未 mkdir 的目录在并发下偶发返回不一致结果——
+    那会让合法的并发写入被误判为「逃出 staging 根」（Spec 09 并发测试暴露）。
+    run_id / event_id 已通过形状校验排除 ``..`` / ``/`` / ``:``，词法检查已足够。
+    """
+    root_abs = Path(os.path.abspath(root))
+    cand_abs = Path(os.path.abspath(candidate))
+    return root_abs == cand_abs or root_abs in cand_abs.parents
 
 
 class FileEvidenceSink:
