@@ -1,0 +1,62 @@
+{
+  "manifest_version": "1",
+  "run_id": "foundation-0_1_0-c1-wiki-smoke",
+  "contract_mode": "observe",
+  "contract_version": "0.1.0",
+  "payload_hash": "sha256:64049830ba0d1ca2969bb04620ede2d54852e0171f2397d71bc646b2339a4576",
+  "candidate_commit": null,
+  "repository_commit": null,
+  "evidence_root": "output/contract-validation/staging",
+  "coverage_policy": "ALL_STAGES",
+  "required_producer_stages": [
+    {
+      "producer_id": "wiki.agent.llm_usage",
+      "mapping_stage": "chat_completion",
+      "evidence_requirement": "ALL_STAGES"
+    },
+    {
+      "producer_id": "wiki.agent.llm_usage",
+      "mapping_stage": "intent_rewrite",
+      "evidence_requirement": "ALL_STAGES"
+    },
+    {
+      "producer_id": "wiki.eval.cost_log",
+      "mapping_stage": "runner",
+      "evidence_requirement": "ALL_STAGES"
+    },
+    {
+      "producer_id": "wiki.eval.cost_log",
+      "mapping_stage": "judge",
+      "evidence_requirement": "ALL_STAGES"
+    },
+    {
+      "producer_id": "wiki.eval.cost_log",
+      "mapping_stage": "scoring",
+      "evidence_requirement": "ALL_STAGES"
+    },
+    {
+      "producer_id": "wiki.eval.cost_summary",
+      "mapping_stage": "cost_log_summary",
+      "evidence_requirement": "ALL_STAGES"
+    }
+  ],
+  "model": "deepseek-v4-flash-ga-260731",
+  "provider": "volcengine",
+  "case_ids": [
+    "character_complex_002"
+  ],
+  "expected_calls": {
+    "wiki.agent.llm_usage": 2,
+    "wiki.eval.cost_log": 3,
+    "wiki.eval.cost_summary": 1
+  },
+  "max_calls": 12,
+  "estimated_cost_cap": {
+    "amount": "5",
+    "currency": "CNY"
+  },
+  "network_requirement": "provider",
+  "side_effect_policy": "read_only",
+  "timeout_seconds": 600,
+  "duration_cap_seconds": 1800
+}
