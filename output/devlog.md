@@ -2655,6 +2655,41 @@ SPEC_STATUS_CONFLICT / GATE FAILED: 业务路径退出码 1 != 0；拒绝为一�
 
 ---
 
+## Spec 13 完成：L3 fresh smoke 在 A4 上闭合（2026-09-16，第 39 轮）
+
+**A4 = Wiki `554bce2f2ebd00f5f4e6ac722680a8a57ab8cc66` / Coding `339768dd2f9e3b26c8820408ec93bf30e378e50e`**
+
+A4_wiki 干净 checkout 全量验证：L1 六条命令全 exit 0、conformance 224 passed、`tests/contracts` 368 passed / 3 skipped、`--gate pr` 8/8、`python -m build` exit 0、**全量回归 913 passed / 10 skipped / 0 failed**。
+
+**真实 L3（`run_l3_smoke.py`，`AGENT_CONTRACT_COMMIT=554bce2f…`）8/8 通过**：
+
+```text
+[1] OK  run_id 与 manifest 一致 + mode=observe
+[2] OK  无 .tmp 残留
+[3] OK  EvidenceRecord 模式校验 — 12 条全部通过
+[4] OK  event_id 唯一 — 12 唯一
+[5] OK  repository / commit / version / payload hash 一致   ← 真正绑定 A4
+[6] OK  全部事件 contract_mode=observe — 12 条
+[7] OK  ALL_STAGES 5/5；NOT_OBSERVED_ALLOWED 0/1
+        未观测（豁免登记，不计为通过/覆盖）：wiki.eval.cost_log/scoring
+[8] OK  run-summary 闭合（sink=0 / 无拒绝 / 时长在预算内）
+L3 fresh smoke PASSED   （业务 exit 0，51.2s，12 事件）
+```
+
+**关键区分**：`[5]` 证明证据**真正绑定 A4**（A3 那次是用未提交改动跑却绑定旧 SHA，绑定不成立，故作废重做）；`[7]` 证明已豁免的 `scoring` 被**显式列为"未观测、不计入覆盖"** —— B7 的反放水要求在真实运行中生效；业务成功与 evidence 成功**分开报告**（Spec 13 step 4）。
+
+失败 run 历史保留 4 份于 `staging/failed-runs/`（provider 订阅过期 / judge 429 / judge 缺失），符合 Spec 13 "必须保留失败 run 历史"。
+
+账本：`candidate_a` suffix 13 事件、hash `a4ff9899…`、绑定 `554bce2f…`；**Spec 10/11/12/13 `COMPLETE`**，**Spec 14/15 已解锁**。A 与 A2 两代被作废的边界证据已归档 `void/`。
+
+### 下一步（Spec 14 → 15）
+
+1. **Coding 侧 L3 先实测**：其 smoke manifest 预登记 `provider=opencode_go` / `model=mimo-v2.5`，而 opencode 推理 **429** ⇒ 很可能需要把同一套 provider 整合应用到 Coding（可能要 **A5_coding**）。不要凭猜测做候选。
+2. **Spec 14**：`python scripts/contracts/publish_evidence.py --candidate <A4> --release-version 0.1.0`（Coding 侧需 `AGENT_CONTRACT_CANONICAL_PAYLOAD_COMMIT=<A_wiki>`）→ 形成 B_wiki / B_coding。allowlist 已含 Wiki 账本。
+3. **Spec 15**：构造 **A/B tree 之外**的闭合 cycle plan → `coordinate_cycle.py --plan <plan> --output <out>` → `finalize_cycle.py --coordination <out> --release docs/contracts/releases/0.1.0` → C_wiki → 合并 canonical branch 后复验 → Cycle COMPLETE。需 `ALLOW_REAL_COORDINATION` / `ALLOW_REAL_LEDGER` / `ALLOW_REAL_RELEASE` 守卫。
+
+---
+
 ## 会话恢复指南（供上下文压缩后接手）
 
 **当前状态一句话**：Foundation Contract **Spec 01–12 已 `COMPLETE`，但 A 因 Spec 13 的 B1/B2/B3 缺陷被 `SUPERSEDED`**（用户按 N-04 批准规范路径）；正在实施 **A2**（纯工具级修复，payload hash 不变）。A2 完成后须重跑 L1/回归（2 仓）、重做 L2、跑真实 L3，再进 Spec 14/15。Spec 14/15 未解锁。
