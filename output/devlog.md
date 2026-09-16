@@ -2500,6 +2500,53 @@ A2 的驱动部分完成后，L3 仍跑不通。经母 Spec §7.3（分层覆盖
 
 ---
 
+## A2 实施状态快照（2026-09-16，第 8 轮）
+
+**一句话**：A2 的 L3 驱动与 gate 逐对判定已完成（本地未提交），phase 2（覆盖策略收敛）正在实施。A2 **尚未提交**，A 仍是当前候选。
+
+### 已完成（工作区未提交，两仓 cycle worktree）
+
+| 文件 | 内容 | 状态 |
+|---|---|---|
+| `scripts/contracts/run_l3_smoke.py` | 新增 L3 驱动：强制 mode/run_id、强制预登记 `case_ids`、子进程驱动真实业务路径、按 `RUN_SUMMARY_KEYS` 聚合出 `run-summary.json`、收尾调用冻结的 `gate_smoke` | ✅ 两仓 |
+| `tests/contracts/test_run_l3_smoke.py` | 驱动测试（Wiki +29、Coding +22），含 fixture seam 的离线 e2e 与扰动负例 | ✅ 两仓 |
+| `*/adapters/foundation/evidence_sink.py` | sink 失败落盘 `<evidence_root>/<run_id>/sink-failures.jsonl`（append-only，缺文件=0 次失败）—— 修复"业务跑在子进程、进程内计数读不到" | ✅ 两仓 |
+| `.github/workflows/contract-local.yml` | 末尾注释块记录受控 L3 驱动命令（G-06；不新增 workflow、不改 job） | ✅ 两仓 |
+| `scripts/contracts/validate_local.py` | gate 第 7 步改为**逐对**判定：`ALL_STAGES` 逐对必观测；`ONE_OF` 按 `producer_id` 分组成组，组内至少一条；无 per-pair 要求回退顶层 `coverage_policy`（修复 B7） | ✅ 两仓，**逐字节相同** `4ef4c27e…` |
+| `tests/contracts/test_validate_local_tools.py` | 逐对判定测试 | ✅ 两仓 |
+
+已在早前验证通过：Wiki `tests/contracts` **348 passed / 3 skipped**、`--gate pr` **8/8**；Coding **218 passed**、`--gate pr` **8/8**；两仓 `verify_payload` payload hash 仍为 `64049830…`（40 文件）。
+
+### 进行中
+
+**phase 2（覆盖策略收敛）** —— 施工单 `C:\Users\Public\dsh-tmp\phase2_brief.md`。要点：
+1. 新增 per-pair 词表值 **`NOT_OBSERVED_ALLOWED`**（引用 §7.3:896 原话），gate 接受它；未观测不判失败，但必须在 step 7 摘要**显式点名**（未观测 ≠ 通过）；**不得**作为顶层 `coverage_policy`。
+2. **manifest 与 registry 必须成对改**（`publish_evidence.py` 会交叉核对，不一致即报错）：
+   - **回归规范（A 类）**：Coding `case_cost/environment_error`、`case_cost/error` → `NOT_OBSERVED_ALLOWED`（§7.3 原本就写"错误 stage 可 `NOT_OBSERVED`"，是冻结的 manifest 写错了）
+   - **授权偏离（B 类）**：Wiki `wiki.eval.cost_log/scoring`、Coding `coding.trace.summary/{sdk,clickhouse}` → `NOT_OBSERVED_ALLOWED`
+3. `publish_evidence.py` 的 run-manifest 投影与覆盖表必须如实显示新值与 `covered: false`。
+4. 更新冻结面守卫测试（`TestFrozenSurface::test_manifest_key_sets_are_frozen` + Coding 侧 manifest 守卫）：继续钉住**键集与嵌套**，并说明哪些值是规范必需、哪些是授权偏离。
+5. 校准记录追加偏离章节（§7.3 原文 + 不可观测的确切文件行号证据 + 恢复条件 + 用户按 N-04 授权的声明），并明确区分 A 类回归与 B 类偏离，留待 **Spec 16（Cycle 2）校准**。
+
+### A2 提交前必须做的事
+
+1. 两仓合并验证：`tests/contracts` + `--gate pr`（覆盖 B7 + phase 2 全部改动）。
+2. **还原 `output/eval/cost_log.jsonl`**（测试会追加写这个被跟踪文件；A2 提交绝不能含它，否则 B 阶段 `diff(A2,B) ⊆ allowlist` 门禁直接失败）。
+3. 跑 `C:\Users\Public\dsh-tmp\a2_supersede_canonical.py`：向 **A2 自身的 canonical 账本**追加 `11 IN_PROGRESS→SUPERSEDED`、`10 COMPLETE→SUPERSEDED`、`10 SUPERSEDED→IN_PROGRESS`（`CANDIDATE_SUPERSEDED`，`candidate_commit=A_wiki`）；脚本会同时验证旧 `candidate_a` suffix 被 `PENDING_3_CANDIDATE_SUPERSEDED` 正确拒绝。
+4. 形成 **A2 提交**（两仓 cycle 分支）；cycle 分支**不在** CI 推送触发集合内 ⇒ 必须用已冻结的 `workflow_dispatch` 手动触发两条 workflow 才能拿到 A2 的 GitHub CI 证据。
+5. 在 A2 的干净 checkout 重跑 L1 + 全量回归（复用 `%TEMP%\run_l1.ps1`）。
+6. 用 `C:\Users\Public\dsh-tmp\suffix_tool.py create --candidate <A2_SHA>` 建**绑定 A2 的新 suffix**（旧 9 条已归档在 `docs/specs/foundation-contract/void/`），再 `append` 各 spec 事件。
+7. 重做 L2（`replay_history.py`）→ 跑**真实 L3**（`run_l3_smoke.py`；Wiki 约 4 次 LLM 调用、上限 12 次 / ≤5 CNY；跑完记得还原 `cost_log.jsonl`）。
+8. Spec 14：`publish_evidence.py --candidate <A2> --release-version 0.1.0`（Coding 侧需 `AGENT_CONTRACT_CANONICAL_PAYLOAD_COMMIT=A_wiki`）→ 形成 B。
+9. Spec 15：构造 **A/B tree 之外**的闭合 cycle plan → `coordinate_cycle.py` → `finalize_cycle.py` → C_wiki（需 `AGENT_CONTRACT_ALLOW_REAL_COORDINATION` / `ALLOW_REAL_LEDGER` / `ALLOW_REAL_RELEASE` 守卫）→ 合并 canonical branch 后复验 → Cycle COMPLETE。
+
+### 已核查、**不需要**修的两项（省掉重复排查）
+
+- `coordinate_cycle.evidence_publication_allowlist` **已包含** Wiki 账本（L322-323），`check_ledger_append_only` 存在 ⇒ B 阶段允许账本 append。
+- `coordinate_cycle` 对 Wiki 回归接受 `PASS` **或** `PASS_WITH_KNOWN_BASELINE_FAILURES`（L171）；`gate_candidate` 已按裁定实现 G-07（`RESOLVED_UNEXPECTEDLY` = 允许 + `needs_review`）。`publish_evidence` 的 `full_regression` 硬编码为 Spec 14 字面要求值，属**已记残余**，不阻塞。
+
+---
+
 ## 会话恢复指南（供上下文压缩后接手）
 
 **当前状态一句话**：Foundation Contract **Spec 01–12 已 `COMPLETE`，但 A 因 Spec 13 的 B1/B2/B3 缺陷被 `SUPERSEDED`**（用户按 N-04 批准规范路径）；正在实施 **A2**（纯工具级修复，payload hash 不变）。A2 完成后须重跑 L1/回归（2 仓）、重做 L2、跑真实 L3，再进 Spec 14/15。Spec 14/15 未解锁。
