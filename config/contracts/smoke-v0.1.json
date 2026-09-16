@@ -32,7 +32,7 @@
     {
       "producer_id": "wiki.eval.cost_log",
       "mapping_stage": "scoring",
-      "evidence_requirement": "ALL_STAGES"
+      "evidence_requirement": "NOT_OBSERVED_ALLOWED"
     },
     {
       "producer_id": "wiki.eval.cost_summary",

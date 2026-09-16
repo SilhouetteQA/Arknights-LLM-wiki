@@ -158,11 +158,21 @@ jobs:
 #   $env:AGENT_CONTRACT_MODE='strict'; $env:AGENT_CONTRACT_RUN_ID='<run_id>'; python scripts/contracts/replay_history.py --run-manifest config/contracts/replay-v0.1.json
 #
 # L3 —— Fresh smoke（Master §11.2/§13.3 / Appendix C.1:2382-2384；Spec13）：
+#   L3a 驱动真实业务路径 + 写运行后汇总（A2 新增的受控驱动器；`--gate smoke` 本身只校验）：
+#   $env:AGENT_CONTRACT_MODE='observe'; $env:AGENT_CONTRACT_RUN_ID='<run_id>'; $env:AGENT_CONTRACT_COMMIT='<运行 commit>'; python scripts/contracts/run_l3_smoke.py --run-manifest config/contracts/smoke-v0.1.json
+#       它按 manifest 预登记的 case_ids 从 benchmarks/arknights_bench/questions_draft.jsonl 投影一 case 一条的 bench
+#       （可加 `--case-source <bench.jsonl>` 显式指定；预登记 id 不在 source 中即 exit 2 / SPEC_INCOMPLETE），
+#       在 observe 下跑 `python -m arknights_wiki.eval.runner --mode direct --workers 1`，
+#       测量墙钟时长、把 8 键 run-summary.json 写进 <evidence_root>/<run_id>/，最后调用下面的冻结 gate 收尾。
+#   L3b 只校验已完成的 run（同一驱动器成功时已自动执行；也可单独复核）：
 #   $env:AGENT_CONTRACT_MODE='observe'; $env:AGENT_CONTRACT_RUN_ID='<run_id>'; python scripts/contracts/validate_local.py --gate smoke --run-manifest config/contracts/smoke-v0.1.json
 #
 # Appendix C.1:2379/2383 给出的示例 run_id：'foundation-0_1_0-c1-wiki-replay' /
 # 'foundation-0_1_0-c1-wiki-smoke'。`<run_id>` 必须显式给出、与 run manifest 一致，
-# 且满足 `^[A-Za-z0-9_-]+$`（EVD-RUN-001）。
+# 且满足 `^[A-Za-z0-9_-]+$`（EVD-RUN-001）。L3a/L3b 还要求仓库就是运行 commit 的
+# checkout（manifest 的 repository_commit 为 null 时由 AGENT_CONTRACT_COMMIT 解析，
+# 不自动推断 HEAD）；任一前置不满足时 exit 2 且 stderr 打 SPEC_INCOMPLETE，
+# run 未闭合时 exit 1 且 stderr 打 SPEC_STATUS_CONFLICT（G-18）。
 #
 # 另一条受控手动命令（同样不是 workflow）——Cycle Candidate Gate（§15.1:1576）：
 #   python scripts/contracts/validate_local.py --gate candidate

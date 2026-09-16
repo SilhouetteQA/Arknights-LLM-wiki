@@ -255,3 +255,161 @@ Coding：工作树**完全干净**，无未跟踪文件。
 ### 9.5 正式验证
 
 L1（6 条命令）与全量回归在 **A 的干净 checkout**上重跑，不引用 Spec 09/10 开发期 PASS；`python -m build` 一并重跑。结果与 `BASELINE_COMPARISON` 写入 `candidate_a` pending suffix 的 `evidence_refs`。
+
+---
+
+## 10. L3 覆盖向"本机可观测范围"收敛（(A) 规范回归 + (B) 用户授权偏离）
+
+> 记录时点：Phase 2（Spec 13 L3 驱动就位之后）、A 冻结之前。
+> **用户裁定**：授权把 L3 覆盖要求收敛到**本机确实能观测的范围**，并把两类改动分别登记。
+> 依据：全局规则 **N-04**（重构过程中的架构/语义变更须经用户同意后执行）—— **用户已依 N-04 授权本节 (B) 的偏离**；本节即该授权的落账，不需要再次确认。
+> 校准归属：**Spec 16（Cycle 2）** 复核 (B) 的恢复条件；若届时仍不满足，需**重新取得用户授权**，不得默认延续。
+> 术语定义与跨仓不变量见 §10.3。
+
+**本节的硬要求：(A) 与 (B) 性质不同，禁止混同。**
+(A) 是**规范回归**（实现偏离规范，改回来，**不是**偏离）；(B) 是**授权偏离**（规范硬要求，本机无法满足，用户批准豁免并留恢复条件）。
+代码、注释、测试、文档一律按此二分表述。
+
+### 10.1 (A) 规范回归 —— Coding `coding.benchmark.case_cost` 的错误 stage【不是偏离】
+
+**§7.3 逐字要求**（母 Spec [`2026-09-10-dual-agent-foundation-contract-master-spec.md`](../specs/2026-09-10-dual-agent-foundation-contract-master-spec.md) 第 896 行，L3 列）:
+
+```text
+| Coding benchmark case | normal/environment/error 全部 | 可用历史 case | `normal` required；错误 stage 可 `NOT_OBSERVED` |
+```
+
+**冻结形态的缺陷**：`config/contracts/smoke-v0.1.json` 曾把 `normal` / `environment_error` / `error`
+**三条都**登记为 `ALL_STAGES`；registry 的 `coding.benchmark.case_cost.evidence_requirement`
+同样是 `ALL_STAGES`。这与 §7.3 的 L3 列（只有 `normal` required，错误 stage **可** `NOT_OBSERVED`）**直接矛盾**。
+
+**为什么这是一次回归、而不是一次偏离**（双重证据，均可复核）：
+
+1. 规范本身就允许错误 stage 不被观测（§7.3:896 的"可 `NOT_OBSERVED`"，以及 §7.3:887 的总原则
+   "**'未观察到'不等于失败**"）。把三条都标成 `ALL_STAGES` 是**实现把要求写严了**的缺陷。
+2. 物理上不可能同时满足：`benchmark/runner.py` 的三个分支互斥 ——
+   `_run_one_case`（`:264`）在基线预检失败时走 `_environment_error_result`（`:182`）并
+   `observe_case_cost_entry(mark, stage="environment_error")`（`:296`），其余失败走
+   `stage="error"`（`:320`），正常路径走 `normal`；**每个 case 恰好产出一个 stage**。
+   而 manifest 的 `case_ids` 冻结为**单一 case**（`schedule-99`），所以一次 run 内三个 stage
+   **不可能同时出现** —— `ALL_STAGES` 在该 manifest 下是无法达成的自我矛盾要求。
+
+**修正（回归 §7.3）**：`case_cost` 仅 `normal` 保持 `ALL_STAGES`；`environment_error` 与 `error`
+改为 `NOT_OBSERVED_ALLOWED`（= §7.3:896「可 `NOT_OBSERVED`」的逐对机械形态）。
+registry 的 producer 级值同步改为授权下限 `NOT_OBSERVED_ALLOWED`（manifest 的 `normal`
+仍更严，见 §10.3 的下限语义）。**无恢复条件** —— 它已经是规范要求的正确形态。
+
+### 10.2 (B) 用户授权偏离 —— 两条 §7.3 硬要求，本机无法观测
+
+以下两项是 §7.3 的**硬要求**，本机（Windows 宿主，无 `deepeval`、无 Langfuse 凭据、
+无 ClickHouse 实例）**无法**观测。**用户已依 N-04 授权**把它们登记为
+`NOT_OBSERVED_ALLOWED`，并接受"未观测即未观测"的诚实记录。
+
+#### (B1) Wiki `wiki.eval.cost_log` / `scoring`
+
+- **§7.3 逐字要求**（母 Spec:892，L3 列）：
+
+  ```text
+  | Wiki eval cost log | runner/judge/scoring 全部 | 所有可用历史 stage | runner/judge/scoring 全部 |
+  ```
+
+- **本机为何无法观测**（file/line 证据）：
+  - 该 stage 的唯一 producer 是 `arknights_wiki/eval/scoring.py::_log_cost`（registry 的
+    `source_locations`）。
+  - `arknights_wiki/eval/scoring.py` 顶层依赖 `deepeval`：`:17`
+    `from deepeval.telemetry import telemetry_opt_out`、`:21`
+    `from deepeval.metrics import FaithfulnessMetric, GEval, HallucinationMetric`、
+    `:23` `from deepeval.models import DeepEvalBaseLLM`、`:24`
+    `from deepeval.test_case import LLMTestCase` —— **import 期即失败**。
+  - `deepeval` **未**在 `pyproject.toml` 中声明（全仓 `grep deepeval pyproject.toml` 无命中），
+    宿主环境也**未**安装（项目只在 `deepeval-local` 容器里跑打分）。
+  - 宿主可达的 L3 业务路径是 `arknights_wiki/eval/runner.py`（`run_l3_smoke.py` 驱动），
+    它**不经过** `scoring.py`；`scoring.py` 只能由 `scripts/score_runner.py`（`:24`
+    `from arknights_wiki.eval.scoring import DeepEvalScorer, rule_metrics`）触发。
+- **恢复条件**：在 `pyproject.toml` 声明 `deepeval` 并在宿主（或 CI）安装，使
+  `scripts/score_runner.py` 能在 `observe` 模式下跑通并落 `scoring` 事件；随后按 §7.3
+  把 `scoring` 恢复为 `ALL_STAGES` 并同步 registry。
+- **授权**：用户依 **N-04** 授权把 `wiki.eval.cost_log/scoring` 登记为
+  `NOT_OBSERVED_ALLOWED`。
+- **不掩盖**：`validate_local.py --gate smoke` 第 7 步会把
+  `wiki.eval.cost_log/scoring` **逐对具名**报为"未观测（豁免登记，不计为通过/覆盖）"；
+  `publish_evidence.py` 的 `producer_coverage` 记 `covered=false`，validation report 单列该对。
+  **"未观测 ≠ 通过"**（§7.3:887）。
+
+#### (B2) Coding `coding.trace.summary` / `sdk` + `clickhouse`
+
+- **§7.3 逐字要求**（母 Spec:897，L3 列）：
+
+  ```text
+  | Coding trace summary | sdk/clickhouse 全部 | 可用历史 trace | `ONE_OF(sdk, clickhouse)` |
+  ```
+
+- **本机为何无法观测**（file/line 证据）：
+  - registry 登记的唯一 producer 是 `tools/report_trace.py::_summarize_trace`
+    （`:91`，`sdk` 分支的旁路 emit 在 `:139`）与 `_summarize_events`（`:169`，
+    `clickhouse` 分支的旁路 emit 在 `:235`）。
+  - 这两个函数**只能**经 `main.py --trace-report`（`main.py:59` 定义参数、`:217` 分派、
+    `:66 _run_trace_report_mode`）触达；`--benchmark` 路径（`benchmark/runner.py`）上
+    **没有任何** `trace.summary` producer。
+  - 该路径需要 Langfuse 凭据（`tools/report_trace.py:52` `from langfuse import get_client`）
+    或 `127.0.0.1:8123` 的 ClickHouse 实例（`tools/report_trace.py:31`
+    `_clickhouse_env`，`:39-45` 读 `CLICKHOUSE_PASSWORD`，缺省仅为本地 compose 值）；
+    且一次 fetch 只走其中一条（SDK 优先、CH 回退），故 `sdk` 与 `clickhouse`
+    **天然互斥**，`ONE_OF` 的"至少一个"在本机无任何一支可达。
+- **恢复条件**：提供 Langfuse 凭据，**或**在本机（或 CI service container）提供
+  ClickHouse 实例；随后按 §7.3 把 `sdk` + `clickhouse` 恢复为 `ONE_OF` 并同步 registry。
+- **授权**：用户依 **N-04** 授权把 `sdk` 与 `clickhouse` **both** 登记为
+  `NOT_OBSERVED_ALLOWED`（`ONE_OF` 在本机两支皆不可达，故不能保留 `ONE_OF` 形态而假装可闭合）。
+- **不掩盖**：`scripts/contracts/run_l3_smoke.py`（Coding）把未观测的这两对写进
+  `authorized_unobserved` 与人读报告的"未观测（§7.3:896 授权豁免）"段，**不进** violation、
+  **不进** `producer_coverage`；`validate_local.py --gate smoke` 第 7 步同样逐对具名。
+  在 `--benchmark` 路径下 `trace.summary` 仍是**未覆盖**，不得读成"通过"。
+
+### 10.3 新术语 `NOT_OBSERVED_ALLOWED`（不是 `OPTIONAL`）
+
+名字直接引用 §7.3:896 的「可 `NOT_OBSERVED`」措辞，使偏离在 `grep` 下一眼可审计，
+并**刻意避开 `OPTIONAL`** —— 后者会暗示"无要求/无所谓"，正是本条要防的白洗。
+
+跨仓不变量（两仓逐字相同的实现）：
+
+1. **只能逐对声明**：出现在 `required_producer_stages[].evidence_requirement`。
+   顶层 `coverage_policy` 仍然是 `{ALL_STAGES, ONE_OF}` —— 整仓放宽会把未观测淹没在策略里
+   而不被点名，一律 exit 2（用法错误）。
+2. **未观测 ≠ 通过**（§7.3:887）：未观测的 `NOT_OBSERVED_ALLOWED` 对**不使 gate 失败**，
+   但必须出现在 gate 第 7 步文本里（`producer_id/mapping_stage` **具名**），
+   并在 `publish_evidence` 的 `producer_coverage` 中记 `covered=false`、在 validation report
+   中单列。任何"当作已覆盖/已通过"的表述都违规。
+3. **registry 是授权下限**：`publish_evidence.validate_required_stages` 只接受
+   "manifest 逐对声明 **不弱于** registry 声明"，严格度偏序为
+   `NOT_OBSERVED_ALLOWED < ONE_OF < ALL_STAGES`。任何**弱于** registry 的声明都是 exit 2；
+   放宽必须**同时**改 registry 与 manifest（两份文件同步变更才可审计）。
+4. **缺失即拒绝**：entry 缺 `evidence_requirement` 一律 exit 2，**不得**为缺失项默认一个
+   required 值（也**不得**默认成 `NOT_OBSERVED_ALLOWED`）。
+5. **键名与嵌套不变**：只改 `evidence_requirement` 的**值**；`smoke-v0.1.json` 的 20 键、
+   `required_producer_stages[]` 的 3 键、`producer-registry.json` 的 producer 键集
+   全部保持不变（守卫见 §10.4 最后一行）。
+
+### 10.4 本轮改动清单（两仓）与守卫
+
+| 文件 | 改动 | 性质 |
+|---|---|---|
+| `config/contracts/smoke-v0.1.json`（两仓） | 受影响逐对 `evidence_requirement` 值 | (A) Coding 两对；(B) Wiki 一对、Coding 两对 |
+| `config/contracts/producer-registry.json`（两仓） | 受影响 producer 的授权下限值 | 同上（与 manifest 同步） |
+| `scripts/contracts/validate_local.py`（两仓**逐字相同**） | 第 7 步接受 `NOT_OBSERVED_ALLOWED`、具名未观测项、拒绝其作顶层 policy；新增 `PER_PAIR_EVIDENCE_REQUIREMENTS` / `COVERAGE_POLICIES` 闭集 | (A)+(B) 共用机制 |
+| `scripts/contracts/publish_evidence.py`（两仓**逐字相同**） | 严格度偏序 + 下限校验 + 缺失拒绝；报告单列未观测的授权对 | 同上 |
+| `scripts/contracts/run_l3_smoke.py`（Coding） | 驱动接受新值；`authorized_unobserved` 具名报告（wiki 侧驱动经 gate 取同一语义） | 同上 |
+| `tests/contracts/test_status_ledger.py`（Wiki）/ `tests/contracts/test_replay_publish_tools.py`（Coding） | 冻结守卫：键集+嵌套不变，**值**按本轮冻结，并在 docstring 标明 §7.3-required / (A) / (B) | 守卫 |
+| `tests/contracts/test_validate_local_tools.py`（两仓**逐字相同**） | 合成 fixture：豁免对未观测→PASS 且具名；ALL_STAGES 缺失→FAIL；ONE_OF 组全缺→FAIL；顶层 policy 拒绝 | 守卫 |
+| `tests/contracts/test_replay_publish_tools.py` / `test_run_l3_smoke.py` | 下限语义（可收紧/不可放宽/缺失拒绝）与 `covered=false` 诚实报告 | 守卫 |
+
+**本轮显式改动的既有期望**（旧值 → 新值，其余期望未动）：
+
+- `test_status_ledger.py::TestFrozenSurface::test_manifest_key_sets_are_frozen` 由"只钉键集"
+  扩展为"键集 + 嵌套 + 逐对值 + registry 下限值"；
+- `test_replay_publish_tools.py::test_manifest_key_sets_are_frozen`（Coding）同上；
+- `publish_evidence.validate_required_stages` 的**严格相等**改为**下限**关系（这是唯一被放宽的
+  检查，且只朝"更严才通过"的方向放宽：manifest 不得低于 registry）。
+
+**Spec 16（Cycle 2）校准要求**：(B1)/(B2) 的恢复条件一旦满足，必须把对应逐对值恢复为 §7.3 的
+硬要求（Wiki `scoring` → `ALL_STAGES`；Coding `trace.summary` → `ONE_OF(sdk, clickhouse)`），
+registry 一并改回，并删除本节对它们的豁免。**若恢复条件仍不满足，Spec 16 必须重新取得用户授权**，
+不得把本轮的临时豁免当作默认延续。**（A) 不需要校准** —— 它是回归规范后的正确形态，不是偏离。

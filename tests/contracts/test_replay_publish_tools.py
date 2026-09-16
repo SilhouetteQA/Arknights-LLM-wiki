@@ -764,6 +764,153 @@ def test_require_stages_must_match_registry(tmp_path):
         pe.validate_required_stages(smoke, repo["registry"])
 
 
+# --------------------------------------------------------------------------- #
+# 4b) `evidence_requirement` 的下限语义（母 Spec §7.3:887 / §7.3:896 / §7.3:897）
+# --------------------------------------------------------------------------- #
+# registry 的 producer 级值是**授权下限**：`NOT_OBSERVED_ALLOWED` 是 §7.3:896
+# 「错误 stage 可 `NOT_OBSERVED`」的逐对形态，或用户依 N-04 授权的偏离（Wiki `scoring`、
+# Coding `trace.summary`）。manifest 的逐对声明可以更严（同 producer 的 `normal`/`runner`
+# 仍为 `ALL_STAGES`），但**不得更松** —— 放宽必须同时改 registry。
+# 缺失该字段一律拒绝：不得为缺失项默认一个 required 值。
+
+
+def _shipped_smoke(tmp_path: Path) -> dict:
+    return json.loads(
+        (tmp_path / "config" / "contracts" / "smoke-v0.1.json").read_text(encoding="utf-8")
+    )
+
+
+def _registry_with_floor(repo: dict, floor: str) -> dict:
+    registry = json.loads(json.dumps(repo["registry"]))
+    for producer in registry["producers"]:
+        if producer["status"] == "IN_SCOPE":
+            producer["evidence_requirement"] = floor
+    return registry
+
+
+def test_evidence_requirement_may_be_tightened_above_registry_floor(tmp_path):
+    """逐对声明比 registry 下限更严 → 接受，并按**逐对声明**投影进 run-manifest。"""
+    repo = _build_repo(tmp_path)
+    smoke = _shipped_smoke(tmp_path)
+
+    normalized = pe.validate_required_stages(
+        smoke, _registry_with_floor(repo, "NOT_OBSERVED_ALLOWED")
+    )
+
+    assert [item["evidence_requirement"] for item in normalized] == ["ALL_STAGES"]
+    projection = pe.construct_run_manifest(
+        smoke,
+        repository=repo["registry"]["repository"],
+        candidate=COMMIT,
+        required_stages=normalized,
+    )
+    assert projection["required_producer_stages"][0]["evidence_requirement"] == "ALL_STAGES"
+
+
+def test_evidence_requirement_equal_to_registry_floor_is_projected_verbatim(tmp_path):
+    """与 registry 下限同值的逐对声明（本轮锁定的偏离形态）原样进入 run-manifest 投影。"""
+    repo = _build_repo(tmp_path)
+    smoke = _shipped_smoke(tmp_path)
+    smoke["required_producer_stages"][0]["evidence_requirement"] = "NOT_OBSERVED_ALLOWED"
+
+    normalized = pe.validate_required_stages(
+        smoke, _registry_with_floor(repo, "NOT_OBSERVED_ALLOWED")
+    )
+
+    assert [item["evidence_requirement"] for item in normalized] == ["NOT_OBSERVED_ALLOWED"]
+    projection = pe.construct_run_manifest(
+        smoke,
+        repository=repo["registry"]["repository"],
+        candidate=COMMIT,
+        required_stages=normalized,
+    )
+    assert (
+        projection["required_producer_stages"][0]["evidence_requirement"]
+        == "NOT_OBSERVED_ALLOWED"
+    )
+
+
+def test_evidence_requirement_may_not_be_relaxed_below_registry(tmp_path):
+    """逐对声明弱于 registry（registry 仍是 ALL_STAGES）→ exit 2，不得单方面放宽。"""
+    repo = _build_repo(tmp_path)
+    smoke = _shipped_smoke(tmp_path)
+    smoke["required_producer_stages"][0]["evidence_requirement"] = "NOT_OBSERVED_ALLOWED"
+
+    with pytest.raises(pe.ToolError) as excinfo:
+        pe.validate_required_stages(smoke, repo["registry"])
+
+    assert excinfo.value.exit_code == pe.EXIT_USAGE
+    assert "registry" in excinfo.value.message
+
+
+def test_missing_evidence_requirement_is_not_defaulted_to_required(tmp_path):
+    """缺失该字段 → exit 2（绝不为缺失项默认一个 required 值）。"""
+    repo = _build_repo(tmp_path)
+    smoke = _shipped_smoke(tmp_path)
+    smoke["required_producer_stages"][0].pop("evidence_requirement")
+
+    with pytest.raises(pe.ToolError) as excinfo:
+        pe.validate_required_stages(smoke, repo["registry"])
+
+    assert excinfo.value.exit_code == pe.EXIT_USAGE
+    assert "缺少 evidence_requirement" in excinfo.value.message
+
+
+def test_unknown_evidence_requirement_is_rejected(tmp_path):
+    """闭集之外的取值（`OPTIONAL` 之类的温和命名）不得静默通过。"""
+    repo = _build_repo(tmp_path)
+    smoke = _shipped_smoke(tmp_path)
+    smoke["required_producer_stages"][0]["evidence_requirement"] = "OPTIONAL"
+
+    with pytest.raises(pe.ToolError) as excinfo:
+        pe.validate_required_stages(smoke, repo["registry"])
+
+    assert excinfo.value.exit_code == pe.EXIT_USAGE
+    assert "OPTIONAL" in excinfo.value.message
+
+
+def test_not_observed_allowed_pair_is_reported_uncovered(tmp_path, monkeypatch):
+    """(B) 诚实报告：未观测的授权对记 `covered=false` 并在报告里单列，绝不伪报覆盖。"""
+    repo = _build_repo(tmp_path)
+    config_dir = tmp_path / "config" / "contracts"
+    (config_dir / "producer-registry.json").write_text(
+        json.dumps(_registry_with_floor(repo, "NOT_OBSERVED_ALLOWED")), encoding="utf-8"
+    )
+    smoke = _shipped_smoke(tmp_path)
+    smoke["required_producer_stages"][0]["evidence_requirement"] = "NOT_OBSERVED_ALLOWED"
+    (config_dir / "smoke-v0.1.json").write_text(json.dumps(smoke), encoding="utf-8")
+
+    run = _run(tmp_path, repo)
+    assert run.exit_code == rh.EXIT_OK
+    repository = repo["registry"]["repository"]
+    monkeypatch.setattr(pe, "require_candidate_ancestor", lambda cand, root: HEAD)
+    outcome = pe.publish(
+        candidate=COMMIT,
+        release_version="0.1.0",
+        repository=repository,
+        repo_root=tmp_path,
+        env={},
+        root=repo["staging"],
+    )
+
+    coverage = outcome.evidence["producer_coverage"]
+    assert coverage
+    assert all(item["evidence_requirement"] == "NOT_OBSERVED_ALLOWED" for item in coverage)
+    assert all(item["covered"] is False for item in coverage), "未观测不得伪报为 covered"
+    report = (
+        tmp_path
+        / "docs"
+        / "contracts"
+        / "releases"
+        / "0.1.0"
+        / "validation"
+        / repository
+        / "validation-report.md"
+    ).read_text(encoding="utf-8")
+    assert "NOT_OBSERVED_ALLOWED | false" in report
+    assert "Authorized `NOT_OBSERVED_ALLOWED` pairs" in report
+
+
 def test_canonical_payload_commit_env_override(tmp_path):
     assert pe._canonical_payload_commit({}, COMMIT) == COMMIT
     assert pe._canonical_payload_commit({pe.CANONICAL_COMMIT_ENV: HEAD}, COMMIT) == HEAD

@@ -25,6 +25,19 @@ canonical serialize
 失败语义：任何持久化失败都会递增进程内 failure counter、写结构化应用日志，
 并抛出 :class:`SinkFailure`（``evidence.*`` 基础设施码）。本模块**不会**在失败时
 再次调用自己，也不会吞掉异常：静默丢弃合法记录是明确禁止的。
+
+durable failure marker（A2，G-04）：
+
+```text
+<root>/<run_id>/sink-failures.jsonl   每失败一行（append-only）
+{"code": "...", "event_id": "<canonical id|null>", "run_id": "..."}
+```
+
+上面那个 counter 只活在进程内存里，而 L3 的业务路径跑在子进程 —— 父进程无法读到它。
+因此每次失败**额外**追加一行 run 级标记，让 run 结束后仍能如实重算
+``sink_failure_count``（``scripts/contracts/run_l3_smoke.py`` 读取它）。
+标记写入是 best-effort：它自身失败不得改变"失败即抛 ``SinkFailure``"的既有语义，
+也绝不递归调用 sink。标记不存在 = 零失败。
 """
 from __future__ import annotations
 
@@ -59,6 +72,10 @@ FORMAL_SUFFIX: str = ".json"
 
 #: 过程态临时文件后缀；永不被读取为证据。
 TEMP_SUFFIX: str = ".json.tmp"
+
+#: run 级 sink 失败标记（A2，G-04）：与 ``events/`` 同级，append-only。
+#: 缺少该文件即表示该 run 零 sink 失败（不是"无法验证"）。
+SINK_FAILURES_FILENAME: str = "sink-failures.jsonl"
 
 logger = logging.getLogger(__name__)
 
@@ -111,6 +128,10 @@ class FileEvidenceSink:
     def run_events_dir(self, run_id: str) -> Path:
         """返回某个 run 的事件目录（不创建）。"""
         return self._root / run_id / EVENTS_DIRNAME
+
+    def run_failures_path(self, run_id: str) -> Path:
+        """返回某个 run 的 sink 失败标记路径（不创建、不校验形状）。"""
+        return self._root / run_id / SINK_FAILURES_FILENAME
 
     # -- 写入 ------------------------------------------------------------- #
 
@@ -191,7 +212,38 @@ class FileEvidenceSink:
                 "evidence_detail": message,
             },
         )
+        self._record_failure(code, event_id=event_id, run_id=run_id)
         raise SinkFailure(code, message, event_id=event_id)
+
+    def _record_failure(
+        self, code: str, *, event_id: str | None, run_id: str | None
+    ) -> None:
+        """把失败追加为 run 级标记（A2 / G-04）；**只计数、绝不改变失败语义**。
+
+        - ``run_id`` 不安全或路径逃出 staging 根 → 不写（写不进去本身就是这个失败）
+        - 标记自身 I/O 失败 → 只写警告日志，不覆盖原来的 ``SinkFailure``
+        - ``event_id`` 不是 canonical id 时记 ``null``：拒绝的标识可能是任意字符串，
+          不得把它原样塞进受扫描的 artifact
+        """
+        if not isinstance(run_id, str) or not is_safe_run_id(run_id):
+            return
+        target = self.run_failures_path(run_id)
+        if not _within(self._root, target):
+            return
+        safe_event_id = event_id if is_canonical_event_id(event_id) else None
+        line = canonical_json_dumps(
+            {"code": code, "event_id": safe_event_id, "run_id": run_id}
+        )
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with open(target, "a", encoding="utf-8") as handle:
+                handle.write(line + "\n")
+                handle.flush()
+                os.fsync(handle.fileno())
+        except OSError as exc:  # pragma: no cover - 标记自身失败不得升级
+            self._logger.warning(
+                "无法写入 sink 失败标记 %s：%s: %s", target, type(exc).__name__, exc
+            )
 
 
 def _remove_quietly(path: Path) -> None:
@@ -227,6 +279,7 @@ __all__ = [
     "DEFAULT_EVIDENCE_ROOT",
     "EVENTS_DIRNAME",
     "FORMAL_SUFFIX",
+    "SINK_FAILURES_FILENAME",
     "TEMP_SUFFIX",
     "FileEvidenceSink",
     "default_evidence_root",

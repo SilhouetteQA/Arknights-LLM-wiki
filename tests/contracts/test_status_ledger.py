@@ -1323,6 +1323,19 @@ class TestFrozenSurface:
         """G-01 / G-02 冻结：两个 run manifest 的键集与嵌套结构。
 
         Spec 13/14 禁止修改 ``config/``，所以键名必须在 A 冻结前定死；这里用字面量钉住。
+
+        逐对 ``evidence_requirement`` 的值同样钉住，但**性质必须逐条分清**（不得混同）：
+
+        * **§7.3 规范硬要求**（L3 列逐字）→ ``ALL_STAGES``。
+        * **(A) 规范回归**：母 Spec §7.3:896 写明"错误 stage 可 ``NOT_OBSERVED``"。
+          Coding ``case_cost`` 的冻结 manifest 曾把 ``environment_error`` / ``error``
+          错标 ``ALL_STAGES``，本轮回归为 ``NOT_OBSERVED_ALLOWED`` —— 这是**修缺陷**，
+          不是偏离。
+        * **(B) 用户授权偏离**（依 N-04）：Wiki ``wiki.eval.cost_log`` / ``scoring``
+          被 §7.3:892 硬要求，但 ``arknights_wiki/eval/scoring.py`` 顶层 ``import deepeval``
+          而宿主**未声明也未安装**该包（只能由 ``scripts/score_runner.py`` 触发），
+          因此记 ``NOT_OBSERVED_ALLOWED``。记录见
+          ``docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md`` §10 (B1)。
         """
         expected_smoke_keys = {
             "manifest_version",
@@ -1359,6 +1372,22 @@ class TestFrozenSurface:
             "reproduction_restriction",
         }
         expected_stage_keys = {"producer_id", "mapping_stage", "evidence_requirement"}
+        #: 冻结的逐对覆盖要求（键名/嵌套不变；值 = §7.3 硬要求 + (B) 授权偏离）。
+        expected_stage_requirements = {
+            ("wiki.agent.llm_usage", "chat_completion"): "ALL_STAGES",
+            ("wiki.agent.llm_usage", "intent_rewrite"): "ALL_STAGES",
+            ("wiki.eval.cost_log", "runner"): "ALL_STAGES",
+            ("wiki.eval.cost_log", "judge"): "ALL_STAGES",
+            # (B) N-04 授权偏离：deepeval 未声明未安装，宿主无法观测 scoring
+            ("wiki.eval.cost_log", "scoring"): "NOT_OBSERVED_ALLOWED",
+            ("wiki.eval.cost_summary", "cost_log_summary"): "ALL_STAGES",
+        }
+        #: registry 的 producer 级值是**授权下限**（manifest 逐对可更严，不可更松）。
+        expected_registry_requirements = {
+            "wiki.agent.llm_usage": "ALL_STAGES",
+            "wiki.eval.cost_log": "NOT_OBSERVED_ALLOWED",  # (B) 授权下限
+            "wiki.eval.cost_summary": "ALL_STAGES",
+        }
         expected_source_keys = {
             "source_id",
             "source_class",
@@ -1371,9 +1400,21 @@ class TestFrozenSurface:
         config_dir = REPO_ROOT / "config" / "contracts"
         smoke = json.loads((config_dir / "smoke-v0.1.json").read_text(encoding="utf-8"))
         replay = json.loads((config_dir / "replay-v0.1.json").read_text(encoding="utf-8"))
+        registry = json.loads((config_dir / "producer-registry.json").read_text(encoding="utf-8"))
         assert set(smoke) == expected_smoke_keys, sorted(set(smoke) ^ expected_smoke_keys)
         assert set(replay) == expected_replay_keys, sorted(set(replay) ^ expected_replay_keys)
+        actual_stage_requirements = {}
         for item in smoke["required_producer_stages"]:
             assert set(item) == expected_stage_keys
+            actual_stage_requirements[(item["producer_id"], item["mapping_stage"])] = item[
+                "evidence_requirement"
+            ]
+        assert actual_stage_requirements == expected_stage_requirements
+        actual_registry_requirements = {
+            producer["producer_id"]: producer["evidence_requirement"]
+            for producer in registry["producers"]
+            if producer["status"] == "IN_SCOPE"
+        }
+        assert actual_registry_requirements == expected_registry_requirements
         for source in replay["sources"]:
             assert set(source) == expected_source_keys
