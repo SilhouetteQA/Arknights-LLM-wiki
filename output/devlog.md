@@ -2360,9 +2360,66 @@ Wiki 的 2 个长期 `M` 文件明确归属为运行期/数据改动、**不纳�
 
 ---
 
+## Spec 12 完成 / Spec 13 阻断（2026-09-16）
+
+### 先做了结构修正：cycle worktree
+
+Spec 12 必须绑定 **A 的已提交 blob** 的 sha256，而被长期改写的 `output/eval/cost_log.jsonl` 在工作区里与提交内容不同（`9f4bd645…` 3479 行 vs `88108f88…` 3521 行）。因此在 `_worktrees/foundation-contract/cycle/{wiki,coding}` 新建了**检出在 cycle 分支上的 pristine worktree**（`git status` 0 改动）：
+- Spec 12/13 从这里跑（Candidate-bound、可复现）；
+- Spec 14 也将在这里形成 B；
+- `candidate_a` pending suffix 一并**移到 cycle worktree**（与 canonical ledger 同目录，G-03），feature worktree 的副本已删除以避免两份 staging 歧义。
+
+### Spec 12（L2 Historical Replay）= `COMPLETE`
+
+命令（受控手动，非 workflow，G-06）：`AGENT_CONTRACT_MODE=strict` + `AGENT_CONTRACT_RUN_ID=<manifest run_id>` + `AGENT_CONTRACT_COMMIT=<A SHA>` + `python scripts/contracts/replay_history.py --run-manifest config/contracts/replay-v0.1.json`。
+
+| | Wiki | Coding |
+|---|---|---|
+| result | `PASS` | `PASS` |
+| 记录 / 来源 | 220 / 2 | 3 / 3 |
+| status | `REPRODUCTION_RESTRICTED` ×220 | `LEGACY_DATA_INSUFFICIENT` ×3 |
+| mapping_outcome | `OBSERVED` ×220 | `LEGACY_DATA_INSUFFICIENT` ×3 |
+| difference_class | `NONE` ×120 + `expected semantic correction` ×100 | `legacy insufficiency` ×3 |
+| adapter_defects | 0 | 0 |
+| scan.failed / findings | 0 / `[]` | 0 / `[]` |
+| raw retention | `…RETAINED_IN_CONTROLLED_SOURCE_LOCATION`，未进 contract staging、未进 Git | 同 |
+
+绑定核验：`repository_commit` = A 且 `repository_commit_matches_head=True`（`repository_commit_source=AGENT_CONTRACT_COMMIT`）、`contract_payload_hash` = `64049830…` 且 `payload_hash_verified=True`。语料 record 形状稳定（8 键），只有 presence-aware 最小事实——**无 raw prompt / response / code / diff / path / credential**。
+
+这也**顺带结清了校准记录 §5 的悬置问题**：真实执行确认 Wiki 220 条全 `REPRODUCTION_RESTRICTED`、Coding 3 条 `LEGACY_DATA_INSUFFICIENT`，因此"管线跑通但数据不足"作为 Cycle 1 的 L2 结论被接受（补造语料会超出 v0.1 范围且需改冻结的 config）。
+
+**PR gate 第 [7] 步不再空转**：两仓 cycle worktree 上 `--gate pr` 均 exit 0（8/8），且 `evidence publication safety scan — 2 文件无命中`（此前 staging 为空时是 vacuous）。
+
+### Spec 13（L3 Fresh Smoke）= `BLOCKED`
+
+准备阶段即发现**三个独立、可复现的 Candidate A 缺陷**，Spec 13 无法闭合：
+
+| 编号 | 缺陷 | 决定性证据 |
+|---|---|---|
+| **B1** | gate 第 [8] 步要求 `<evidence_root>/<run_id>/run-summary.json`（G-04 冻结 8 键），**两仓无任何组件写它** | 全仓扫描：Wiki 命中 5 文件、Coding 1 文件，**全部是文档 + 要求它的 gate 本身**；A 的 runtime 8 键中只原生暴露 `sink_failure_count`，`rejected_records`/`actual_calls`/`actual_tokens`/`duration_seconds`/`producer_coverage`/`known_cost_components`/`unknown_cost_components` 均无 accessor。→ 无论业务运行多成功，gate 永远无法通过 |
+| **B2** | G-13（Spec 11 Stage 0 冻结）把 `--gate smoke` 定为"只校验已完成的 run"，业务运行交给"受控手动命令"——**该命令在 A 中不存在** | `contract-local.yml` 末尾记录的 L2/L3 命令只有 validate-only 的 smoke 调用自身；`gate_smoke()` 只读 `events/` + `run-summary.json`，不驱动任何业务路径 |
+| **B3** | smoke manifest 预登记 `case_ids=[character_complex_002]` 却**无法被选中** | `eval/runner.py` 只有 `--bench/--out/--mode/--limit/--category/--server/--dry-run/--no-judge/--workers`；默认 bench `benchmarks/arknights_bench/questions.jsonl` **不存在**；草稿 bench 里该 case 在第 2 位，`--limit 1` 会跑成 `character_complex_001` |
+
+Spec 13 的 No-implementation Boundary 禁止热修 smoke harness / Adapter / sink / config / tests / 业务代码 / workflow，其 Stop Conditions（"需要修改工具、接线或 tests"、"Evidence 无法落盘或 run 不闭合"）已触发；Spec 11 的 Stop Conditions 也早已列明"任一 post-freeze 工具缺失"。
+
+**处置（严格按规范，不自行发明）**：按 Index §5 与 `GOV-FRZ-002`，post-freeze 工具缺失/错误 ⇒ **A `SUPERSEDED`，回到拥有该文件的 pre-freeze Spec（Spec 10 —— 它拥有 post-freeze 工具集与 smoke harness，且其验收证据曾声称"Spec 12–15 零剩余工具工作"）形成 A2**。
+
+**本轮未越界**：没有修改任何实现文件、没有执行业务运行、没有改 config/tests/workflow ⇒ 无需回退。Spec 12 的 L2 staging 与本结论无关，仍然有效。
+
+**待批准**：A2 需要写新工具（L3 驱动 + `run-summary` 生产者 + case 选择），属项目规则 **N-04（迁移/架构变更需用户同意）** 范畴，因此停在这里等用户裁定，未自行开工。
+
+### 账本与分支状态
+
+- canonical 账本仍 **43 条**（A 内的 canonical prefix 未动）。
+- `candidate_a` pending suffix 现为 **9 条**：Spec 11 ×2、Spec 12 ×4、Spec 13 ×3（`NOT_STARTED→READY→IN_PROGRESS→BLOCKED(SPEC_INCOMPLETE)`）；`suffix_hash` = `sha256:67f60a19…`。
+- 归约结果：Spec 01–12 `COMPLETE`、**Spec 13 `BLOCKED`**、14–18 `NOT_STARTED`（14 正确地**未**解锁）。
+- 已推送：Wiki `contract-cycle/foundation-0.1.0-cycle-1`（`b726c09`）、Wiki `feature/foundation-contract-spec10`（`9847101`）、Coding `contract-cycle/foundation-0.1.0-cycle-1`（`c8e06e5`）。
+
+---
+
 ## 会话恢复指南（供上下文压缩后接手）
 
-**当前状态一句话**：Foundation Contract **Spec 01–11 全部 `COMPLETE`**；**Candidate A 已冻结**（A_wiki `b726c09` / A_coding `c8e06e5`），正式 L1 与全量回归在两个 A 的干净 checkout 上全绿；Spec 12(L2) / 13(L3) 已由 `candidate_a` pending suffix 解锁，下一个持久化边界是 Spec 14 的 B_wiki / B_coding。
+**当前状态一句话**：Foundation Contract **Spec 01–12 `COMPLETE`**；**Spec 13 `BLOCKED`（`SPEC_INCOMPLETE`）** —— Candidate A 缺 L3 驱动与 `run-summary.json` 生产者（三个缺陷 B1/B2/B3，见上一节），按 `GOV-FRZ-002` 须形成 A2；**A2 的代码变更待用户按 N-04 批准**。Spec 14/15 因此未解锁。Spec 12 的 L2 证据（绑定 A）有效。
 
 ### 第一步：读三份文件（按序）
 
@@ -2388,16 +2445,19 @@ D:\CodexPython312\python.exe scripts/contracts/validate_local.py --gate pr
 - 动态状态**只看** `docs/specs/foundation-contract/execution-status-events.jsonl`（canonical 43 条事件；子 Spec 里的状态是 genesis，不反映进度）。加上 `candidate_a` pending suffix 后 Spec 11 = `COMPLETE (pending=True)`。
 - 契约身份：`contract_version=0.1.0`、payload `sha256:64049830…`（40 文件，两仓一致）、rule coverage `68 = 56 conformance + 7 项目 + 5 deferral`。
 
-### 第三步：下一步是 Spec 12 / 13（Spec 11 已完成）
+### 第三步：下一步是等 N-04 批准后做 A2（Spec 13 被阻断）
 
-Spec 12（历史回放 + 净化语料，L2）与 Spec 13（新鲜冒烟 + coverage + 业务不变性，L3）都由 `11 COMPLETE` 解锁、彼此独立，**可在同一轮并行**：
+Spec 13 无法在 A 上闭合，三个缺陷 B1/B2/B3 见上一节。**规范给出的唯一合法路径**是 A `SUPERSEDED` → 回到 **Spec 10**（拥有 post-freeze 工具集与 smoke harness）修工具 → 形成 **A2** → 从 A2 重跑 L1 + 全量回归 + 重做 L2（Spec 12）/ L3（Spec 13）→ 再进 Spec 14/15。
 
-1. 两者都**只能使用 A 已有的工具**（`replay_history.py` / `validate_local.py --gate candidate|smoke` / `publish_evidence.py`），**不得新增或修改任何实现文件**。
-2. 两者都必须在自己的事件里绑定**非空 `candidate_commit`**（G-23；边界/发布类理由码一律非空）。
-3. L2 语料口径见校准记录 §5（Wiki 220 条全 `REPRODUCTION_RESTRICTED`；Coding 3 条 `LEGACY_DATA_INSUFFICIENT`）—— Spec 12 必须先**确认接受**该结论。
-4. 完成后把 Spec 12/13 的 `VALIDATED` / `COMPLETE` 事件**追加到同一个 `candidate_a` pending suffix**（在既有 2 条之后追加，并同步更新 envelope 的 `event_count` 与 `suffix_hash`）。
-5. 然后 Spec 14 才把整个 suffix 逐字节 append 到 B_wiki 账本并形成 B。
-6. **冻结后任何语义改动 = `SUPERSEDED` 当前 A 回到所属 pre-freeze Spec 形成 A2**（`GOV-FRZ-002`）；即使只改一个字节也算。
+A2 需要新增的代码（都属 N-04 范畴，须先获批准）：
+
+1. **L3 driver**：一条受控手动命令，以 `observe` 驱动真实业务路径并让 runtime 在进程内累计 counters（B2）。
+2. **`run-summary` 生产者**：在 run 结束时把 8 个冻结键写入 `<evidence_root>/<run_id>/run-summary.json`（B1）。其中 7 键需要 runtime 暴露 accessor，或由 sark 侧聚合 —— 两者都是 A 内实现变更。
+3. **case 选择**：让预登记 `case_ids` 可被选中（runner 增加 `--case-id`，或由 driver 从草稿 bench 投影出预登记的 case，且不改动已冻结的 `config/`）（B3）。
+
+**A2 之后的重跑成本**（估）：两仓 L1（6 条命令 × 2）+ 全量回归（Wiki 864 / Coding 577）+ L2 重放 + 真实 L3 运行（Wiki 约 4 次 LLM 调用、上限 12 次 / ≤5 CNY；Coding ≤1 USD）。这一轮的成本决策必须由用户拍板。
+
+**若用户选择"不修"**：Spec 14 依赖 `11 + 12 + 13 COMPLETE`，Cycle 1 将停在此处无法 COMPLETE（`publish_evidence` 把 `fresh_smoke` 记为 `NOT_OBSERVED` 只是 §11.5 的合法状态，并不能替代 Spec 13 的 COMPLETE 依赖）。
 
 ### 远程与分支（2026-09-16 Spec 11 收盘）
 

@@ -131,7 +131,7 @@ v0.1 契约内容：`Usage` / `Cost` / `CostSummary` / `ErrorEnvelope` / `Founda
 
 | 范围 | 授权 | 进度 |
 |---|---|---|
-| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–11 `COMPLETE`**（2026-09-10 → 09-16）；**Candidate A 已冻结**，L1 与全量回归在两个 A 的干净 checkout 上全绿；Spec 12(L2) / 13(L3) 已由 `candidate_a` pending suffix 解锁 |
+| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–12 `COMPLETE`**；**Spec 13 `BLOCKED`（`SPEC_INCOMPLETE`）**—— A 缺 L3 驱动与 `run-summary.json` 生产者，按 `GOV-FRZ-002` 须形成 A2（**待用户批准**）；Spec 14/15 因此未解锁 |
 | Part II — Cycle 2 / v0.2（Spec 16） | `FEEDBACK-BOUND` | 需真实 L2/L3 问题驱动才可启动 |
 | Part III — 抽取门禁（Spec 17–18） | `GATE-DEFINED` | 只评估门禁，不得实现 |
 
@@ -151,6 +151,31 @@ Spec 10 已交付**全部 pre-freeze 工具与 5 个 CI workflow**（两仓 `scr
 | 基线口径（G-07） | Wiki 规范基线登记 3 条 known failure，实测**全部 PASS** → 按 `KNOWN_BASELINE_FAILURE_RESOLVED_UNEXPECTEDLY` 处理：**不算 gate 失败**、标记需 review、基线不改写 |
 | 受控 staging（**故意不提交**） | `docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}`，`target_boundary=candidate_a`、`candidate_commit=A_wiki`、`suffix_hash=sha256:bd5e2dcf…`。Spec 14 必须把它**逐字节** append 到 B_wiki 账本，否则 Spec 12/13 的证据无效 |
 | 预期输出（Spec 11） | 固定 A SHA、Candidate inventory 与 Payload identity、Candidate-bound L1、Candidate-bound 回归与基线比较 —— 全部记录在 `docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md` §9 与上述 pending suffix 的 `evidence_refs` |
+
+### L2 结果（Spec 12 `COMPLETE`）与 L3 阻断（Spec 13 `BLOCKED`）
+
+Spec 12 在两个 **pristine cycle worktree**（checked out at A，`git status` 0 改动）上跑通了真实历史回放，L2 = `PASS`：
+
+| | Wiki | Coding |
+|---|---|---|
+| 记录数 / 来源数 | 220 / 2 | 3 / 3 |
+| status | `REPRODUCTION_RESTRICTED` ×220 | `LEGACY_DATA_INSUFFICIENT` ×3 |
+| difference_class | `NONE` ×120（cost_log/runner）+ `expected semantic correction` ×100（results_scored/scoring） | `legacy insufficiency` ×3 |
+| adapter_defects | 0 | 0 |
+| scan（secret/path/forbidden/size/schema） | failed=0 | failed=0 |
+| raw 业务证据 | 未进入 contract staging、未进 Git | 同 |
+
+来源 sha256 绑定 **A 的已提交 blob**（Wiki `cost_log` `9f4bd645…`、`results_scored` `aa6f633d…`），因此语料可复现 —— 这也是必须在干净 checkout 而非被改写的工作区跑 L2 的原因。PR gate 第 [7] 步"publication safety scan"现在**不再空转**（两仓各 2 文件、无命中）。
+
+**Spec 13 阻断（三个独立、可复现的 A 缺陷）**：
+
+| 编号 | 缺陷 | 证据 |
+|---|---|---|
+| **B1** | smoke gate 第 [8] 步要求 `<evidence_root>/<run_id>/run-summary.json`（G-04 冻结的 8 键），但**两仓没有任何组件写它** | 全仓扫描仅命中"要求它的 gate 自己"+ 计划/devlog；A 的 runtime 8 键里只原生暴露 `sink_failure_count`，其余 7 键无 accessor |
+| **B2** | G-13 把 `--gate smoke` 冻结为"只校验已完成的 run"，却把业务运行留给"受控手动命令"——而**该命令在 A 中未定义** | `contract-local.yml` 末尾只记录了 validate-only 的 smoke 调用自身 |
+| **B3** | smoke manifest 预登记 `case_ids=[character_complex_002]`，但**无法选择**该 case | `eval/runner.py` 只有 `--bench/--limit/--category/...`；默认 bench `questions.jsonl` 不存在，草稿 bench 里该 case 在第 2 位，`--limit 1` 会跑成 `character_complex_001` |
+
+Spec 13 的 No-implementation Boundary 禁止热修 harness/wiring/config/tests，其 Stop Conditions（"需要修改工具/接线/tests"、"Evidence 无法闭合"）已触发。按 Index §5 与 `GOV-FRZ-002`，post-freeze 工具缺失必须让 **A `SUPERSEDED` 并回到拥有该工具的 pre-freeze Spec（Spec 10：post-freeze 工具集与 smoke harness）形成 A2**。**本轮未修改任何实现文件、未执行业务运行，无需回退**；A2 需要的代码变更属项目规则 N-04 范畴，须经用户批准后执行。
 
 ### 全程红线
 
