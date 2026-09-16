@@ -2233,3 +2233,18 @@ Spec 09 `COMPLETE` 后，DAG 上唯一解锁的 `IMPLEMENTATION-READY` 单元是
 3. 动态状态只看 `docs/specs/foundation-contract/execution-status-events.jsonl`
 4. **下一步 = Spec 11（Candidate A Freeze / L1 / 全量回归）**，但 Stage 0 必须先完成 handoff §5 的 **P0 两项校准**（pending suffix 载体、两个 run manifest 的键名与 `repository_commit` 约定）与 **G-22 / G-26 的固化**，再冻结 A
 5. Candidate A 的起点必须是两个 worktree 分支的 HEAD，**不是两仓 `main`**（两仓 main 都没有任何 Foundation 产物）
+
+### 提交与推送（2026-09-16 收尾）
+
+| 仓 | 分支 | 本地/远程 HEAD | 本次提交 |
+|---|---|---|---|
+| Wiki | `feature/foundation-contract-spec10` | `7372bbd`（已推送） | `72beba2` packaging + FND-PKG-003 落点 / `14cb22a` 本地契约工具与 run manifest / `be4cad2` CI workflows / `7372bbd` 文档+账本 |
+| Wiki | `feature/foundation-contract` | `102de4c`（已推送，含 Spec 09 收尾） | — |
+| Coding | `feature/foundation-contract-spec10` | `210be5f`（已推送） | `fbd79d9` packaging+镜像同步 / `e4df1b9` 工具与 manifest / `210be5f` CI workflows |
+| Coding | `feature/foundation-contract` | `1798859`（已推送） | — |
+
+**基线偏离登记（必须记录，不得静默复用）**：本次提交**排除了两个与本 Spec 无关的既有改动**——`data/extractions/v3_seed_db_v2.json`（早前会话遗留）与 `output/eval/cost_log.jsonl`（项目测试会追加写入，本会话中又被追加 12 行）。两者仍为 `M` 状态留在工作区。
+
+**Wiki `main` 未推送（分叉，需决策）**：push 前 fetch 发现远程 `main` 已前进到 `f51f7c4`（含 `889747a fix: 修复 #2【知识纠错】试点二…` + 合并 PR #3），而本地 `main` 停在 `bc954d3`（Foundation 母 Spec 文档）。merge-base 为 `838ba4c`：**本地领先 1 个提交，远程领先 2 个提交**。按 G-04 禁止强制推送，推进 main 需要一次 merge，且会改动主工作区（`D:\AI project\Arknights LLM Wiki`，当前仍有上述 2 个未提交文件）并混入另一条 fix/issue-2 工作线 —— 属需用户裁定的仓库状态变更，故本轮**只推分支、不动 main**。
+
+> 风险已排除：`bc954d3`（Foundation 母 Spec + 18 子 Spec + 2 ADR）已随两个 feature 分支进入远程（`git branch -r --contains bc954d3` 命中 `origin/feature/foundation-contract` 与 `...-spec10`），**没有任何工作只存在于本地**。
