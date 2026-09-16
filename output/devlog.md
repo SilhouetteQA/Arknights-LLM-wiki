@@ -2417,9 +2417,62 @@ Spec 13 的 No-implementation Boundary 禁止热修 smoke harness / Adapter / si
 
 ---
 
+## A2 决策与实施（2026-09-16）
+
+### 决策
+
+用户按 **N-04** 批准走规范路径：**A `SUPERSEDED` → 回到拥有缺陷的 pre-freeze Spec（Spec 10）修工具 → 形成 A2**。理由链：Spec 13 的 Stop Conditions 已触发（需改工具/Evidence 无法闭合），Index §5 与 `GOV-FRZ-002` 规定 post-freeze 工具缺失/错误必须 SUPERSEDED，Spec 13 自身禁止热修。用户同时否决了"最小可行 + provisional 覆盖冻结规则"与"停在 BLOCKED"两个选项。
+
+### A2 的关键有利事实：payload 不变
+
+`scripts/contracts/**` 与两仓业务代码（`arknights_wiki/**`、`adapters/**`、`benchmark/**`、`tools/**`）**都不在 40 文件 Contract Payload 内**（payload 只含 `agent_core/__init__.py` + `agent_core/contracts/**`）。因此 A2 是**纯工具级修复**：
+
+```text
+contract_version       0.1.0        （不变）
+contract_payload_hash  sha256:64049830…  （不变）
+descriptor / schema_set hash              （不变）
+```
+
+⇒ Spec 09/10 的契约身份与 rule coverage 证据**继续有效**，不需要版本升级，`agent_core.contracts` 两仓镜像也不动。
+
+### A2 变更范围（非 payload）
+
+1. **新增 `scripts/contracts/run_l3_smoke.py`**（两仓各一份）：受控 L3 驱动 —— 校验 manifest（与 `gate_smoke` 同键集）、强制 `mode=observe` 与 `run_id` 一致、从 `--case-source` 解析并**强制**满足预登记 `case_ids`（缺失即 exit 2 + `SPEC_INCOMPLETE`）、子进程驱动真实业务路径、测量时长、按 `RUN_SUMMARY_KEYS` 从**durable evidence** 聚合出 `<evidence_root>/<run_id>/run-summary.json`。
+2. **sink 失败落盘**（`*/adapters/foundation/evidence_sink.py`）：业务路径跑在子进程里，进程内 `sink_failure_count` 读不到 ⇒ 让 sink 在 emit 失败时追加 run 级失败标记文件；缺失即 0 次失败。`run-summary` 的 `sink_failure_count` / `rejected_records` 由此可证据化。
+3. **case 选择（B3）**：由 driver 强制预登记 `case_ids`，并把投影出的单 case bench 放进受控 staging —— **不需要改动 runner 的业务代码或已冻结的 `config/`**。
+4. **workflow 注释**：按 G-06 把新的受控 L3 驱动命令写进两仓 `contract-local.yml` 末尾注释块（不新增 workflow 文件、不改 job 步骤）。
+5. **G-13 校正**：Spec 11 Stage 0 冻结的"业务运行由受控手动命令完成"原本**没有定义那条命令**，A2 必须把它定义为上面的 driver。
+
+### A2 的账本建模
+
+写入 **A2 自身的 canonical 账本**（这是 pre-A2 边界事实，与 Spec 11 的 pre-A 事件同期同理），三条事件：
+
+```text
+11  IN_PROGRESS → SUPERSEDED    CANDIDATE_SUPERSEDED  candidate_commit=A_wiki
+10  COMPLETE    → SUPERSEDED    CANDIDATE_SUPERSEDED  candidate_commit=A_wiki  references=[Spec10 COMPLETE event]
+10  SUPERSEDED  → IN_PROGRESS   CANDIDATE_SUPERSEDED  candidate_commit=A_wiki  （A2 重启）
+```
+
+**旧 `candidate_a` pending suffix 必须被 reducer 拒绝**（`PENDING_3_CANDIDATE_SUPERSEDED`："a pending suffix cannot be reused across candidates"）—— 这是设计使然，也验证了 supersede 生效。旧 suffix 已作为审计材料归档到 `docs/specs/foundation-contract/void/candidate-a.*`（**不覆盖、不删除历史**），并在新边界改用绑定 **A2** 的 suffix。
+
+Spec 11/12 在旧 suffix 里的 `COMPLETE`、Spec 13 的 `BLOCKED` 随 A 一起作废（canonical 里 Spec 11 是 `IN_PROGRESS`、Spec 12/13 是 `NOT_STARTED`），所以三者在 A2 上从各自合法起点重做。
+
+### CI 触发的一个既知约束
+
+`contract-cycle/**` **不在** G-06 冻结的推送触发集合内（只含 `main` / `feature/**`）。所以 A2 提交到 cycle 分支后默认**不会**跑 CI —— 必须用已冻结的 `workflow_dispatch` 手动触发两条 workflow，才能拿到 A2 的 GitHub CI 证据。
+
+### 本轮已验证的 CI（A 及记账提交）
+
+| 仓 / 分支 | SHA | 结果 |
+|---|---|---|
+| Wiki `feature/foundation-contract-spec10` | `9223916` | Contract Local Gate ✅ + Linux canonical hash ✅ |
+| Coding `feature/foundation-contract-spec10`（= A_coding） | `c8e06e5` | Contract Local Gate ✅ + Linux canonical hash ✅ |
+
+---
+
 ## 会话恢复指南（供上下文压缩后接手）
 
-**当前状态一句话**：Foundation Contract **Spec 01–12 `COMPLETE`**；**Spec 13 `BLOCKED`（`SPEC_INCOMPLETE`）** —— Candidate A 缺 L3 驱动与 `run-summary.json` 生产者（三个缺陷 B1/B2/B3，见上一节），按 `GOV-FRZ-002` 须形成 A2；**A2 的代码变更待用户按 N-04 批准**。Spec 14/15 因此未解锁。Spec 12 的 L2 证据（绑定 A）有效。
+**当前状态一句话**：Foundation Contract **Spec 01–12 已 `COMPLETE`，但 A 因 Spec 13 的 B1/B2/B3 缺陷被 `SUPERSEDED`**（用户按 N-04 批准规范路径）；正在实施 **A2**（纯工具级修复，payload hash 不变）。A2 完成后须重跑 L1/回归（2 仓）、重做 L2、跑真实 L3，再进 Spec 14/15。Spec 14/15 未解锁。
 
 ### 第一步：读三份文件（按序）
 
