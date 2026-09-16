@@ -2248,3 +2248,33 @@ Spec 09 `COMPLETE` 后，DAG 上唯一解锁的 `IMPLEMENTATION-READY` 单元是
 **Wiki `main` 未推送（分叉，需决策）**：push 前 fetch 发现远程 `main` 已前进到 `f51f7c4`（含 `889747a fix: 修复 #2【知识纠错】试点二…` + 合并 PR #3），而本地 `main` 停在 `bc954d3`（Foundation 母 Spec 文档）。merge-base 为 `838ba4c`：**本地领先 1 个提交，远程领先 2 个提交**。按 G-04 禁止强制推送，推进 main 需要一次 merge，且会改动主工作区（`D:\AI project\Arknights LLM Wiki`，当前仍有上述 2 个未提交文件）并混入另一条 fix/issue-2 工作线 —— 属需用户裁定的仓库状态变更，故本轮**只推分支、不动 main**。
 
 > 风险已排除：`bc954d3`（Foundation 母 Spec + 18 子 Spec + 2 ADR）已随两个 feature 分支进入远程（`git branch -r --contains bc954d3` 命中 `origin/feature/foundation-contract` 与 `...-spec10`），**没有任何工作只存在于本地**。
+
+### 首次真实 CI 运行：3 个只在 runner 上暴露的缺陷（2026-09-16）
+
+push 触发 workflow 后收到失败通知。**这批失败极有价值**：本地全绿，因为本机恰好具备 runner 上不存在的前提条件。三个缺陷逐个查明并修复，最终两仓 4 个 job 全部转绿。
+
+| # | 现象 | 根因 | 修复 |
+|---|---|---|---|
+| 1 | Wiki gate 在 `[4/6] Project contract tests` 失败：`assert 'COMPLETE' in {'IN_PROGRESS','NOT_STARTED'}` | `test_status_ledger.py::TestRealLedger::test_real_ledger_reduces_cleanly` **写死了 Spec 10 的允许状态集**。我在跑完验收**之后**才追加 Spec 10 完成事件 → 本地测试看到的是旧账本 | 改为不硬编码进度：断言归约不冲突、每个 spec 状态在 `STATUSES` 闭集内、早期已 `COMPLETE` 的 Spec 01–09 仍为 COMPLETE、事件数与行数自洽。**教训：追加账本事件后必须重跑验收** |
+| 2 | Coding gate 在 `[5/6]` 失败：`tools.approval.ApprovalError: git commit … Author identity unknown` | `tests/test_issue_agent.py::test_auto_approve_eligible_pushes` 会创建真实提交，而 GitHub runner **没有 git 身份**；本地已配置全局身份故通过 | workflow 内 `git config --global user.email/user.name`（环境前置条件，不引入凭据） |
+| 3 | 修复 #2 后两仓 gate 在 `[5/6]` 失败：`UnicodeEncodeError: 'charmap' codec can't encode '\uff08'` | GitHub Actions **Windows runner 的 stdout 默认是 cp1252**，而 `validate_local.py` 的步骤名含全角括号（`payload allowlist（FND-PKG-001/002）`） | `validate_local.py` 与 `status_ledger.py` 入口 `reconfigure(encoding="utf-8")`（`replay_history` / `publish_evidence` / `coordinate_cycle` / `finalize_cycle` 早已有该保护） |
+| 4 | 修复 #3 后 Wiki gate 仍在 `[5/6]` 失败：3 个测试报 `RuntimeError: 未设置 arkcode_api / deepseek_api / minimax_api` | `tests/agent/test_graph.py`（2 个）与 `test_router.py`（1 个）要求 provider 配置**存在**；本机有真实 key，CI 按规范**无密钥** | job 级提供**占位环境值**（非凭据）。对照实验：env 清空 → 恰好这 3 个失败（3 failed / 136 passed）；占位值 → 139 passed / 13.5s 无网络往返。若真有网络请求只会 401 失败，故占位值不可能掩盖真实网络依赖 |
+
+同时发现并修复：Wiki gate 只装 `[dev]` 不足以覆盖 `--gate pr` 第 6 步的**契约相关回归子集**（`tests/agent/test_graph.py`、`test_checkpoint.py` 顶层 import `langgraph`，`numpy` 是 `vector_index.py` 顶层依赖）→ 按 Appendix C.4「本仓完整/测试依赖」改为 `[dev,agent]`（`faiss`/`sentence-transformers` 在 `vector_index.py` 内懒加载、`deepeval` 由测试注入 fake 模块，均不需要）。
+
+### 最终 CI 状态（两仓全绿）
+
+| 仓 | job | 结果 | 耗时 |
+|---|---|---|---|
+| Wiki | Contract Local Gate (windows-latest, py3.12) | **success** | 5m40s |
+| Wiki | Contract Canonical Payload Hash (ubuntu-latest) | **success** | 21s |
+| Coding | Contract Local Gate (windows-latest, py3.12) | **success** | 2m35s |
+| Coding | Contract Canonical Payload Hash (ubuntu-latest) | **success** | 19s |
+
+**因此 Spec 10 交接文档 §7 的残余缺口 #1（Linux 跨平台 payload hash 未复跑）与 #2（workflow 未在真实 runner 执行过）已经关闭**：Linux job 用同一共享实现在 `ubuntu-latest` 上重算并比较通过，两仓 payload 均为 `sha256:64049830…`。
+
+### Wiki `main` 已按用户裁定 (a) 合并推送
+
+`git merge --no-ff origin/main` → `c2d39c5`（合入远程 `889747a fix/issue-2` + 合并 PR #3 与本仓 `bc954d3` Foundation 母 Spec 文档）。远端那 2 个提交只动 `data/extractions/**`，与主工作区两个脏文件不重叠，merge 无冲突。已 push，本地=远程=`c2d39c5`。
+
+> 推送期间遇到 `github.com`（20.205.243.166）边缘 IP 不可达（`api.github.com` 正常、SSH-over-443 可连通但本机无授权密钥），多次重试后网络自行恢复。本地提交全程安全。

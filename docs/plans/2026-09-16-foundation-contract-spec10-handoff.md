@@ -201,8 +201,12 @@ Coding 仓**没有任何在仓的运行时证据**（无 `output/`，`.gitignore
 
 ## 7. 残余验证缺口（如实声明，不得冒充通过）
 
-1. **Linux 跨平台 payload hash 未在本环境复跑**：Docker 守护进程未运行；WSL Ubuntu 的 Python 是 3.14.4 且无 pip/venv（与规范要求的 py3.12 + pydantic 2.13.4 不符）。Spec 03 已为**当时**的 payload（`df479f0c`）证明过 Windows≡Linux；本次 payload 变更只涉及两个纯 Python 源文件（内容在两平台经同一 git blob 取出一致），且 hash 输入只含文件内容（无 mtime / 绝对路径）。真正的复核由本 Spec 新建的 `contract-payload-linux.yml` 在 CI 完成，也是 Spec 11 L1 的一部分。
-2. **5 个 workflow 未在真实 GitHub runner 上执行过**：本环境无法运行 Actions。已完成的是 YAML 解析、结构性断言（单 job、`permissions: contents: read`、`timeout-minutes`、step 的 `uses` xor `run`、无 `secrets`、无跨仓 `repository`）与命令一致性核对。action 未 pin 到 commit SHA（仓库无既有 pin 约定，亦未被授权新建）。
+1. ~~**Linux 跨平台 payload hash 未在本环境复跑**~~ → **已关闭**。本机 Docker 守护进程未运行、WSL Ubuntu 是 Python 3.14.4 且无 pip/venv，故本地无法复跑；但 push 触发 workflow 后，**`Contract Canonical Payload Hash (Wiki, Linux)` 与 `(Coding, Linux)` 在 `ubuntu-latest`（Python 3.12 + 最小契约依赖）上重算并比较通过**（21s / 19s），两仓 payload 均为 `sha256:64049830…`。这正是本 Spec 新建该 job 的目的。
+2. ~~**5 个 workflow 未在真实 GitHub runner 上执行过**~~ → **已关闭**。首轮 push 后两仓 local gate 均失败，逐条查明并修复了 **4 个只在 runner 上暴露的缺陷**（stale 账本断言、缺 git 身份、cp1252 stdout 崩溃、无密钥下的 provider 配置存在性检查）+ 1 个依赖档位不足（`[dev]` → `[dev,agent]`），随后**两仓 4 个 job 全部 success**：Wiki local gate 5m40s / Coding 2m35s / 两个 Linux job 21s、19s。完整记录见 `output/devlog.md` 的「首次真实 CI 运行」一节。
+   - 仍存在的可选项：action 未 pin 到 commit SHA（仓库无既有 pin 约定，亦未被授权新建）。
+3. **`--gate candidate` 与 `--gate smoke` 当前预期失败**：Candidate-bound 的 Evidence Manifest（Spec 12–14）与 L3 的 `run-summary.json`（Spec 13）尚不存在。这是**预期行为**，不是缺陷；两者的失败路径已被验证为"干净失败"（明确 stderr + 退出码 1/2，无 traceback）。
+4. **Wiki `KNOWN_BASELINE_FAILURE_RESOLVED_UNEXPECTEDLY`**：三条登记 known failure 现已全部 PASS（G-07）。本 Spec 不刷新 baseline，该事实需 Spec 11 Stage 0 显式处理。
+5. **CI 只覆盖 L1**：`contract-local.yml` 与 `contract-payload-linux.yml` 已在真实 runner 验证；`contract-coordinate.yml` 需要闭合的 cycle plan 与 Coding 只读 token，尚未真实执行（留待 Spec 15）。L2/L3 按 Spec10:29/41 本就不建 workflow，是受控手动运行。
 3. **`--gate candidate` 与 `--gate smoke` 当前预期失败**：Candidate-bound 的 Evidence Manifest（Spec 12–14）与 L3 的 `run-summary.json`（Spec 13）尚不存在。这是**预期行为**，不是缺陷；两者的失败路径已被验证为"干净失败"（明确 stderr + 退出码 1/2，无 traceback）。
 4. **Wiki `KNOWN_BASELINE_FAILURE_RESOLVED_UNEXPECTEDLY`**：三条登记 known failure 现已全部 PASS（G-07）。本 Spec 不刷新 baseline，该事实需 Spec 11 Stage 0 显式处理。
 
