@@ -131,7 +131,7 @@ v0.1 契约内容：`Usage` / `Cost` / `CostSummary` / `ErrorEnvelope` / `Founda
 
 | 范围 | 授权 | 进度 |
 |---|---|---|
-| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–12 `COMPLETE`**；**Spec 13 `BLOCKED`（`SPEC_INCOMPLETE`）**—— A 缺 L3 驱动与 `run-summary.json` 生产者，按 `GOV-FRZ-002` 须形成 A2（**待用户批准**）；Spec 14/15 因此未解锁 |
+| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–13 `COMPLETE`** —— 候选经 **A→A2→A3→A4** 固化（**A4_wiki `554bce2f`** / A4_coding `339768dd`）；真实 L3 fresh smoke 在 A4 上 gate **8/8** 闭合；**Spec 14/15 已解锁**（待做：Evidence B → 协调 → C_wiki） |
 | Part II — Cycle 2 / v0.2（Spec 16） | `FEEDBACK-BOUND` | 需真实 L2/L3 问题驱动才可启动 |
 | Part III — 抽取门禁（Spec 17–18） | `GATE-DEFINED` | 只评估门禁，不得实现 |
 
