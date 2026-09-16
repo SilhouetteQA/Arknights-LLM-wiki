@@ -2123,3 +2123,113 @@ off == observe 四类不变性（Output / Decision / Side Effects / Legacy Telem
 3. 当前动态状态**只看** `docs/specs/foundation-contract/execution-status-events.jsonl`（不要看子 Spec 里的 genesis 状态）
 4. 下一步：**Spec 10 Packaging and Local Contract CI**（唯一解锁的 `IMPLEMENTATION-READY` 单元，DAG 上 09 → 10 → 11）
 5. Spec 16（Cycle 2）需真实 L2/L3 反馈；Spec 17/18 是门禁，只评估不实现
+
+---
+
+## Foundation Contract Spec 10：Packaging and Local Contract CI（2026-09-16）
+
+### 背景与授权
+
+Spec 09 `COMPLETE` 后，DAG 上唯一解锁的 `IMPLEMENTATION-READY` 单元是 Spec 10 —— **Candidate A 冻结前最后一个实施单元**。它必须在 A 冻结前把 Spec 12–15 需要的**全部**工具交付并开发验证（`GOV-FRZ-001`）；冻结后再缺工具只能把 A 标 `SUPERSEDED` 回所属 Spec 形成 A2（`GOV-FRZ-002`）。
+
+分支：Wiki / Coding 各 `feature/foundation-contract-spec10`（自 `feature/foundation-contract` 分出）。
+
+### 规范提取发现阻断 → 用户裁定
+
+实施前用子代理对母 Spec §11–§17 + Appendix A–I + 子 Spec 10–15 做了规范性提取（产出 `output/spec10-normative-extraction-report.md`，418 行），识别出 **21 条冲突/缺口**，其中 3 条为 `SPEC_INCOMPLETE`（规范完全未定义必要语义），而母 Spec 明文规定这种情况**不得自行设计**：
+
+| 缺口 | 内容 |
+|---|---|
+| G-02 | `replay-v0.1.json` 全文没有任何字段规范 |
+| G-01 | `smoke-v0.1.json` 只有 YAML 伪字段，无 JSON 键名/必填性 |
+| G-03 | pending suffix 要求"有 canonical hash + 记录目标持久化边界"，但 Event Schema 无对应字段、无路径格式 |
+
+**用户裁定**（本次会话）：按**最小可行语义**实现 + 显式标注 provisional + 入账本 `SPEC_INCOMPLETE` 事件 + 留 Spec 11 Stage 0 校准。同时裁定 G-07（Wiki 三条登记 known failure 现已全 PASS，与规范硬写的 `542/7/3` 冲突）按规范自身的 `KNOWN_BASELINE_FAILURE_RESOLVED_UNEXPECTEDLY` 分支处理：**不使 gate 失败、标记需 review、不静默改基线**。
+
+### 交付
+
+| 产物 | Wiki | Coding | 说明 |
+|---|---|---|---|
+| `pyproject.toml` | ✅ | ✅ | 显式 `[build-system]`、`pydantic==2.13.4` 精确固定、显式 package discovery（含 `agent_core*`）、payload 非 Python 文件注册为 package data、`dev` extra 加 `build>=1.2` |
+| `scripts/contracts/validate_local.py` | ✅ | ✅ | `--gate pr`（8 步）/ `candidate`（+全量回归+nodeid/指纹门+L1/L2/L3 证据闭合）/ `smoke`（§11.2 八项） |
+| `scripts/contracts/replay_history.py` | ✅ | ✅ | allowlist 历史来源 + strict mapping + 四态分类 + sanitized corpus + 六类扫描 |
+| `scripts/contracts/publish_evidence.py` | ✅ | ✅ | 冻结 CLI `--candidate <A_SHA> --release-version 0.1.0`；allowlist 构造（非 denylist）；Evidence Manifest 不含自身 hash 与 B SHA |
+| `scripts/contracts/status_ledger.py` | ✅ | — | Event Schema / genesis / DAG+Authority / 8 条 reducer 规则 / append-only / pending suffix |
+| `scripts/contracts/coordinate_cycle.py` | ✅ | — | 9 项校验；17 字段输出；**绝不**输出 `COMPLETE` |
+| `scripts/contracts/finalize_cycle.py` | ✅ | — | hash 精确复制；`current.json` 仅 4 字段；不记 C 自身 SHA；**拒绝写真实账本** |
+| `config/contracts/{smoke,replay}-v0.1.json` | ✅ | ✅ | L2/L3 run 预登记（provisional 键名） |
+| `tests/contracts/test_packaging.py` | ✅ | ✅ | `FND-PKG-003` 落点：wheel / package-data / clean-env import |
+| `tests/contracts/test_validate_local_tools.py` | ✅ | ✅ | 工具自测（扫描/junit/指纹/判定/子集/用法门） |
+| `tests/contracts/test_status_ledger.py` | ✅ | — | 64 tests：Spec10:79 的 8 类用例正反双向 + genesis + 真实账本 + index 一致性 |
+| `tests/contracts/test_cycle_tools.py` | ✅ | — | 57 tests：coordinator/finalizer 真实 git fixture + **真实 reducer** 集成 |
+| `tests/contracts/test_replay_publish_tools.py` | ✅ | ✅ | 47 tests：manifest 校验 / 扫描器 / sanitize 不调 adapter / corpus 白名单 / publish 不变量 |
+| `.github/workflows/contract-local.yml` | ✅ | ✅ | Windows L1 gate，无密钥、不跨仓、每条命令独立 step |
+| `.github/workflows/contract-payload-linux.yml` | ✅ | ✅ | Linux 最小依赖 canonical hash job |
+| `.github/workflows/contract-coordinate.yml` | ✅ | — | 仅 `workflow_dispatch`；固定 A/B SHA（机器校验 `^[0-9a-f]{40}$`）；只读 token |
+
+### 关键实现决策
+
+1. **脚本自举**：`python scripts/contracts/x.py` 的 `sys.path[0]` 是脚本目录，仓库根不在其中（只有 `python -m` 才加 CWD）→ 所有脚本顶部自行插入仓库根。**不得**依赖 editable install：两仓都提供顶层 `agent_core`，同一解释器无法同时可编辑安装两者。
+2. **64 KiB 上限的语义**：它是**单条 Evidence 记录**的约束（`EVD-DATA-001` / D.4），不是整个 artifact 文件 → `.jsonl` 逐行判定、`events/*.json` 整文件判定、报告类文件不设尺寸门。首轮验收曾因把它当"单文件上限"而误报 214 KB 的 220 条语料文件。
+3. **run manifest 的 `repository_commit: null` 约定**：该字段不在 §13.3 的预登记清单内，而 Candidate A 的 SHA 在 Spec 11 冻结前不可知、Spec 13/14 又禁止改 config → 约定 `null` = 运行期由 `AGENT_CONTRACT_COMMIT` 解析，**不自动推断 HEAD**。
+4. **PR gate 的 package smoke 用 `pip install --target`** 而非新建 venv：装进临时 target、`sys.path` 前置、并断言 `agent_core.__file__` 确实位于 target 内（否则说明落回 editable 安装），再经 `importlib.resources` 读 descriptor 与 6 个 schema。
+5. **`--gate candidate` / `--gate smoke` 设计为 fail-closed**：缺 Evidence Manifest / 缺 run-summary.json → 明确失败，不静默通过（无法验证 ≠ 通过）。
+
+### Contract Payload 变更与双仓重新收敛
+
+`FND-PKG-003` 原在 `DEFERRED_PAYLOAD_RULES`（defer 给 Spec 10）。本 Spec 交付 clean wheel smoke 后，它移出 deferral、登记进 `test_traceability.PROJECT_SCOPED_RULES`，落点在两仓 `tests/contracts/test_packaging.py`。Rule coverage 仍闭环：`68 = 56 conformance + 7 project + 5 deferred`。
+
+两个 payload 文件（`conformance/rules.py`、`conformance/test_traceability.py`）变更 → 按 §12.7 重新生成确定性 bundle 并原子提升 Coding 镜像，两仓 payload 身份重新收敛为 `sha256:64049830…`（40 文件）。
+
+### 验证基线（实测）
+
+| 命令 | Wiki | Coding |
+|---|---|---|
+| `generate_schemas --check` | exit 0（6 schemas / 68 rules / `d785d52d`） | 同 |
+| `verify_payload` | exit 0（40 files / `64049830`） | 同 |
+| `pytest agent_core/contracts/conformance -q` | **224 passed** | **224 passed** |
+| `pytest tests/contracts -q` | **311 passed / 3 skipped**（Spec 09 末为 102/3） | **195 passed**（Spec 09 末为 107） |
+| `validate_local.py --gate pr` | **exit 0，8/8 步** | **exit 0，8/8 步** |
+| `python -m build`（sdist→wheel） | exit 0，payload 完整 | exit 0 |
+| `pytest tests/ -q`（全量） | **854 passed / 10 skipped / 0 failed**（Spec 09 末 637/10/0） | **527 passed / 13 skipped / 0 failed**（Spec 09 末 470/13/8 沙箱伪失败） |
+| Wiki fixture 三条 | `status_ledger validate` 真实账本 exit 0（01–09 COMPLETE、10 NOT_STARTED、35 事件）；`coordinate_cycle` + `finalize_cycle` synthetic 全链路 exit 0，coordination `PASS / READY_FOR_FINALIZATION`，B→C diff 恰好 4 项 | — |
+
+**独立复核**（不只依赖子代理自测）：空账本归约到正确 genesis（01 READY / 02–18 NOT_STARTED）；7 类非法事件（跳跃 / 重复 event_id / 缺前置 / VALIDATED 无 evidence / correction 缺 references / 非 canonical JSON / pending suffix hash 不符）全部 exit 1 + `SPEC_STATUS_CONFLICT`；5 个 workflow 的 YAML 结构与禁止事项（单 job、`contents: read`、timeout、无 `secrets`、无跨仓）全部通过；两仓 run manifest 与本仓 registry/币种自洽。
+
+真实 L2 试跑（未绑定 Candidate，仅验证管线）：Wiki 220 条记录全部 `REPRODUCTION_RESTRICTED`（其中 120 条 mapping OBSERVED、100 条 `expected semantic correction`）；Coding 3 条全部 `LEGACY_DATA_INSUFFICIENT`（本仓盘上无 cost log/trace，只有 benchmark 用例定义）。`publish_evidence --dry-run` 两仓各 7 个产物、未写盘。
+
+### 实施期新发现的规范缺口（G-22 – G-27）
+
+| 编号 | 缺口 | 是否必须在 A 冻结前处理 |
+|---|---|---|
+| **G-22** | rule 4/8 的"互斥后继"无操作性定义；14 个 `reason_code` 从未映射到状态转换，5 个边界码（`FREEZE_BOUNDARY_REACHED`/`CANDIDATE_FROZEN`/`EVIDENCE_PUBLISHED`/`COORDINATION_PASSED`/`FINALIZATION_COMPLETE`）完全没有定义对应转换 | **是** |
+| **G-26** | Spec10:109 冻结的 CLI 只有 `validate --ledger <path>`，但 coordinator 的 check 8 依赖扩展参数 `--spec-dir` / `--index`（并要求脚本存在于候选 A 树内） | **是** |
+| G-23 | rule 7 只写"01–11 pre-freeze 允许 null"，从未写"12–18 必须非空" | 建议 |
+| G-24 | A 被 `SUPERSEDED` 后已 `COMPLETE` 的 spec 如何回到工作态未定义 | 建议 |
+| G-25 | 未定义 reducer 如何定位 genesis 来源（子 Spec 目录） | 建议 |
+| G-27 | I.4 边界表与 rule 7 的"01–11 pre-freeze"只有隐式一致 | 建议 |
+
+### Deviation 记录
+
+| # | 位置 | 内容 | 理由 |
+|---|---|---|---|
+| 1 | `agent_core/contracts/conformance/{rules.py,test_traceability.py}`（两仓，经 bundle） | `FND-PKG-003` 移出 deferral → `PROJECT_SCOPED_RULES` | 该规则本就 defer 给 Spec 10 |
+| 2 | `tests/contracts/test_test_baseline.py`（两仓） | 新增 `test_project_scoped_rules_have_real_landings` | `test_traceability` docstring 声称由它反向核验真实落点，Spec 09 未实现 |
+| 3 | `.gitignore`（两仓） | 新增 `build/`、`dist/` | Spec 10 自身的 `python -m build` 与 `test_packaging.py` 会在源树产生它们 |
+| 4 | `pyproject.toml`（两仓） | `dev` extra 增加 `build>=1.2` | G-19：`python -m build` 的前置模块未声明 |
+| 5 | `scripts/contracts/*.py`（两仓全部脚本） | 顶部把仓库根插入 `sys.path` | 权威命令以脚本方式直跑，`sys.path[0]` 是脚本目录 |
+
+### 残余验证缺口（不得冒充通过）
+
+1. **Linux 跨平台 payload hash 未在本环境复跑**：Docker 守护进程未运行；WSL Ubuntu 是 Python 3.14.4 且无 pip/venv（与规范要求的 py3.12 + pydantic 2.13.4 不符）。Spec 03 已为**当时**的 payload 证明过 Windows≡Linux；本次变更只涉及两个纯 Python 源文件，hash 输入只含文件内容。复核由本 Spec 新建的 `contract-payload-linux.yml` 在 CI 完成。
+2. **5 个 workflow 未在真实 GitHub runner 执行过**：只完成 YAML 解析、结构断言与命令一致性核对；action 未 pin SHA（仓库无既有约定）。
+3. **`--gate candidate` / `--gate smoke` 当前预期失败**：Candidate-bound 证据（Spec 12–14）与 L3 `run-summary.json`（Spec 13）尚不存在；失败路径已验证为干净失败（明确 stderr + 退出码，无 traceback）。
+4. **Wiki `output/eval/cost_log.jsonl` 是 tracked 且会被测试追加**（本会话中被追加 12 行）→ 即使同一 commit，L2 语料也非逐字节稳定。已用 per-source sha256 + `REPRODUCTION_RESTRICTED` 缓解；Spec 11/12 需决定是否在 A 前冻结来源快照。该文件的改动**不随本次提交**。
+
+### 会话恢复指南
+
+1. 进入 worktree：`cd "D:\AI project\_worktrees\foundation-contract\wiki"`（Coding 同理）
+2. 读 `docs/plans/2026-09-16-foundation-contract-spec10-plan.md`（执行计划 + provisional 决策表）+ `...-spec10-handoff.md`（交接 + P0 校准清单）
+3. 动态状态只看 `docs/specs/foundation-contract/execution-status-events.jsonl`
+4. **下一步 = Spec 11（Candidate A Freeze / L1 / 全量回归）**，但 Stage 0 必须先完成 handoff §5 的 **P0 两项校准**（pending suffix 载体、两个 run manifest 的键名与 `repository_commit` 约定）与 **G-22 / G-26 的固化**，再冻结 A
+5. Candidate A 的起点必须是两个 worktree 分支的 HEAD，**不是两仓 `main`**（两仓 main 都没有任何 Foundation 产物）

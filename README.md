@@ -16,7 +16,7 @@
 - **实体双向索引**：5,213 实体的 25,300 条引用，支持精确匹配和别名解析
 - **PRTS 终端前端**：SSE 流式聊天、检索步骤可视化、来源引用展开
 - **W0 评测体系**（升级阶段）：`arknights_wiki/eval/` Benchmark 建库——100 题八类覆盖、DeepEval 打分、mimo-v2.5 统一 judge（`report_v1_mimo.md` overall 0.857）、路由/打分层 bug 修复与测试补全
-- **Foundation Contract 公共工程层**（2026-09 起）：与 Knowledge-Augmented Autonomous Coding Agent 共享 `agent_core.contracts` 契约镜像——presence-aware 事实语义（Unknown ≠ Zero / Estimated ≠ Reported / USD ≠ CNY）、非侵入旁路治理、append-only 状态账本与双仓 L1/L2/L3 证据门禁
+- **Foundation Contract 公共工程层**（2026-09 起）：与 Knowledge-Augmented Autonomous Coding Agent 共享 `agent_core.contracts` 契约镜像——presence-aware 事实语义（Unknown ≠ Zero / Estimated ≠ Reported / USD ≠ CNY）、非侵入旁路治理、append-only 状态账本与双仓 L1/L2/L3 证据门禁。Cycle 1 Spec 01–10 已完成（packaging + 6 个本地契约工具 + 5 个 CI workflow）
 
 ---
 
@@ -47,12 +47,18 @@ D:\CodexPython312\python.exe -m agent_core.contracts.tooling.generate_schemas --
 D:\CodexPython312\python.exe -m agent_core.contracts.tooling.verify_payload
 D:\CodexPython312\python.exe -m pytest agent_core/contracts/conformance -q
 D:\CodexPython312\python.exe -m pytest tests/contracts -q
+D:\CodexPython312\python.exe scripts/contracts/validate_local.py --gate pr   # 8 步本地门禁
+D:\CodexPython312\python.exe -m build                                        # sdist + wheel（package smoke）
 D:\CodexPython312\python.exe -m pytest tests/            # 权威完整测试口径（禁止仓库根裸 pytest）
 ```
 
 契约运行开关：`AGENT_CONTRACT_MODE=off|observe|strict`（默认 `off`）。
 
-> 本改造在独立 worktree / 分支上进行：`feature/foundation-contract`（见 `docs/plans/2026-09-10-foundation-contract-cycle1-kickoff.md`）。
+自 Spec 10 起另有：`--gate candidate`（全量回归 + nodeid/指纹门 + L1/L2/L3 证据闭合）与 `--gate smoke`（§11.2 八项闭合）——两者在 Spec 12–14 产出 Candidate-bound 证据前**预期失败**（fail-closed）。Wiki 侧治理工具：`scripts/contracts/status_ledger.py`（状态账本 reducer）、`coordinate_cycle.py`、`finalize_cycle.py`。
+
+CI：`.github/workflows/contract-local.yml`（Windows L1，无密钥、不跨仓）、`contract-payload-linux.yml`（Linux 最小依赖 canonical hash）、`contract-coordinate.yml`（仅手动触发，Wiki）。
+
+> 本改造在独立 worktree / 分支上进行：`feature/foundation-contract` → `feature/foundation-contract-spec10`（见 `docs/plans/2026-09-10-foundation-contract-cycle1-kickoff.md`）。
 
 ---
 
@@ -114,9 +120,9 @@ v0.1 契约内容：`Usage` / `Cost` / `CostSummary` / `ErrorEnvelope` / `Founda
 | contract_version | `0.1.0`（lockstep 单一 Contract Set，不为每个 family 建独立 SemVer） |
 | canonicalization_version | `1` |
 | pydantic | `2.13.4` |
-| Payload | 40 文件 / `sha256:df479f0c…`（两仓一致） |
+| Payload | 40 文件 / `sha256:64049830…`（两仓一致） |
 | Schema 清单 | Usage / Cost / CostSummary / ErrorEnvelope / FoundationObservation / EvidenceRecord |
-| 规范规则 | 68 条（56 conformance 落地 + 6 项目落地 + 6 显式 deferral） |
+| 规范规则 | 68 条（56 conformance 落地 + 7 项目落地 + 5 显式 deferral） |
 | 状态账本 | `docs/specs/foundation-contract/execution-status-events.jsonl`（append-only，唯一动态状态源） |
 
 ### 执行进度
@@ -125,11 +131,13 @@ v0.1 契约内容：`Usage` / `Cost` / `CostSummary` / `ErrorEnvelope` / `Founda
 
 | 范围 | 授权 | 进度 |
 |---|---|---|
-| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–09 `COMPLETE`**（2026-09-10 → 09-14）；Spec 10 进行中 |
+| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–10 `COMPLETE`**（2026-09-10 → 09-16）；Spec 11（Candidate A 冻结）待启动 |
 | Part II — Cycle 2 / v0.2（Spec 16） | `FEEDBACK-BOUND` | 需真实 L2/L3 问题驱动才可启动 |
 | Part III — 抽取门禁（Spec 17–18） | `GATE-DEFINED` | 只评估门禁，不得实现 |
 
 DAG：`01 → 02 → 03 → 04 →（05 → 07 / 06 → 08）→ 09 → 10 → 11`（**Candidate A 冻结边界**）`→ 12(L2) / 13(L3) → 14(Evidence B) → 15(协调 + Finalization C → Cycle COMPLETE)`。
+
+Spec 10 已交付**全部 pre-freeze 工具与 5 个 CI workflow**（两仓 `scripts/contracts/`、`.github/workflows/`）；Spec 11 之后这些实现不得再改——缺工具只能把 Candidate A 标 `SUPERSEDED` 并回到所属 Spec 形成 A2（`GOV-FRZ-001/002`）。
 
 ### 全程红线
 
@@ -162,7 +170,7 @@ DAG：`01 → 02 → 03 → 04 →（05 → 07 / 06 → 08）→ 09 → 10 → 1
 | 前端 | 原生 HTML/CSS/JS（PRTS 终端风格） |
 | 评测 | DeepEval 4.1.8（Docker）+ Benchmark 100 题 + mimo-v2.5 judge |
 | 契约层 | `agent_core.contracts` v0.1.0（双仓镜像）+ Pydantic 2.13.4 + 共享 conformance + canonical JSON / payload hash / mirror bundle |
-| 测试 | pytest（`pytest tests/`：637 passed / 10 skipped；含 `tests/contracts/` 契约测试） |
+| 测试 | pytest（`pytest tests/`：854 passed / 10 skipped；含 `tests/contracts/` 311 项契约测试） |
 
 ---
 
@@ -199,7 +207,7 @@ Arknights LLM Wiki/
 │   ├── chapter_timeline.json     # 章节时间线
 │   ├── collab_series.json        # 联动活动映射
 │   ├── identity_map.json         # 角色身份映射
-│   └── contracts/                # producer-registry / known-test-baseline
+│   └── contracts/                # producer-registry / known-test-baseline / smoke-v0.1 / replay-v0.1
 ├── data/
 │   ├── stories/                  # 原始剧情对话 (2,160 JSON)
 │   ├── extractions/
@@ -209,9 +217,15 @@ Arknights LLM Wiki/
 │   ├── lorebook/                 # 大地巡旅描述 (原始数据在仓库外)
 │   ├── entity_source_map.json    # 实体双向索引 (2.3MB)
 │   └── index/                    # FAISS 向量索引
-├── scripts/                      # 构建与运行脚本
-└── tests/
-    └── contracts/                # 契约测试（mapping / sink / wiring / invariance / baseline）
+├── scripts/
+│   ├── build_agent_index.py      # FAISS 向量索引
+│   ├── build_entity_index.py     # 实体双向索引
+│   └── contracts/                # 契约工具：validate_local / status_ledger / replay_history
+│                                 #          publish_evidence / coordinate_cycle / finalize_cycle
+├── tests/
+│   └── contracts/                # 契约测试：mapping / sink / wiring / invariance / baseline
+│                                 #          packaging / 工具自测（311 项）
+└── .github/workflows/            # contract-local / contract-payload-linux / contract-coordinate
 ```
 
 ---
