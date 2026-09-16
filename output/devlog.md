@@ -2547,6 +2547,60 @@ A2 的驱动部分完成后，L3 仍跑不通。经母 Spec §7.3（分层覆盖
 
 ---
 
+## A2 冻结完成 + L3 provider 阻断与 LLM 整合裁定（2026-09-16）
+
+### A2 已形成并通过全量验证
+
+| | A2_wiki | A2_coding |
+|---|---|---|
+| SHA | `ca24a199f3300a2e9e1390f6186acbb5c9dfdaad` | `339768dd2f9e3b26c8820408ec93bf30e378e50e` |
+| L1（6 命令） | 全 exit 0 | 全 exit 0 |
+| conformance | 224 passed | 224 passed |
+| tests/contracts | 368 passed / 3 skipped | 242 passed |
+| `--gate pr` | 8/8 | 8/8 |
+| `python -m build` | exit 0 | exit 0 |
+| 全量回归 | **913 passed / 10 skipped / 0 failed** | **623 passed / 13 skipped / 0 failed** |
+| payload hash | `64049830…` 不变 | `64049830…` 不变 |
+
+CI：cycle 分支不在推送触发集合内（G-06），已用 `workflow_dispatch` 手动触发 4 条（wiki local 35114299175 / hash 35114304298；coding local 35114309620 / hash 35114318323）。
+
+账本：A 的 supersede 已落 canonical（`11 IN_PROGRESS→SUPERSEDED`、`10 COMPLETE→SUPERSEDED→IN_PROGRESS`）；旧 `candidate_a` suffix 被 **`PENDING_3_CANDIDATE_SUPERSEDED`** 正确拒绝（证明 pending 机制真能挡住跨候选复用），已归档 `void/`。新 suffix 绑定 `ca24a199`，9 事件，hash `ce40a77a…`：**Spec 10/11/12 `COMPLETE`**、Spec 13 `NOT_STARTED`。
+
+Spec 12 在 A2 上重跑 L2 **PASS** 且结果与旧候选逐项一致（Wiki 220 `REPRODUCTION_RESTRICTED` / Coding 3 `LEGACY_DATA_INSUFFICIENT`）→ 证明 A2 修复**对 L2 行为保持**。
+
+### 真实 L3 失败：不是 A2 缺陷，但驱动失败路径被验证
+
+volcengine 返回 `InvalidSubscription`（订阅过期）。**驱动行为完全正确**：
+
+```text
+SPEC_STATUS_CONFLICT / GATE FAILED: 业务路径退出码 1 != 0；拒绝为一次未跑完的 run 写 run-summary
+```
+
+即：**拒绝为未完成的 run 伪造 `run-summary.json`**。而且失败前已成功执行 ① 校验 manifest ② **选中预登记 case_ids（B3）** ③ **构造并启动业务命令（B2）**。失败 run 已按 Spec 13 要求归档到 `failed-runs/`。⇒ B1/B2/B3 机制在**真实路径**上均被触发过，比合成测试更有说服力。
+
+### provider 实测（三死一活）
+
+| provider | 实测 |
+|---|---|
+| command_goat（`command_goat_api`，已设置） | ✅ **真实调用成功** |
+| DeepSeek 官方（`deepseek_api`） | ⚠️ 密钥有效；但 `GET /models` **只有** `deepseek-flash`、`deepseek-v4-pro` |
+| volcengine（`arkcode_api`） | ❌ `InvalidSubscription` 订阅过期 |
+| minimax（`minimax_api`） | ❌ 429 配额用完 |
+
+### 用户裁定：全项目 LLM key 整合
+
+用户指令：整理当前项目所有 LLM key，改用 **DeepSeek 官方 + `command_goat_api`**（base `https://api.commandcode.ai/provider/v1`），都路由到 `deepseek-v4.1-flash`，做好测试，**优先使用订阅的模型**。
+
+**两条与实测冲突之处，按"显式标注而非静默处理"处理**：
+1. command_goat 要求**命名空间 ID** `deepseek/deepseek-v4.1-flash`（裸名被拒 `unsupported_model`，已实测）。
+2. DeepSeek 官方**没有** `v4.1-flash`（`/models` 只有两个），故该档用 `deepseek-flash`，实现与文档中明确写为**替代**，不得假装等价。
+
+优先级：**`command_goat_api`（订阅）→ `deepseek_api`**；volcengine/minimax **不再作为静默 fallback**（否则会掩盖真实故障）。价格未知必须报**未知**而非 0（presence-aware 契约要求）。
+
+施工单：`C:\Users\Public\dsh-tmp\llm_consolidation_brief.md`。**范围只含 Wiki**；Coding 的 LLM 入口与 `opencode_go_api` 可用性由同一交付**报告**但**不许改动**，待报告后再决定是否同步。
+
+---
+
 ## 会话恢复指南（供上下文压缩后接手）
 
 **当前状态一句话**：Foundation Contract **Spec 01–12 已 `COMPLETE`，但 A 因 Spec 13 的 B1/B2/B3 缺陷被 `SUPERSEDED`**（用户按 N-04 批准规范路径）；正在实施 **A2**（纯工具级修复，payload hash 不变）。A2 完成后须重跑 L1/回归（2 仓）、重做 L2、跑真实 L3，再进 Spec 14/15。Spec 14/15 未解锁。
