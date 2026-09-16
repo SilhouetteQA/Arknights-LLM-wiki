@@ -16,6 +16,7 @@
 - **实体双向索引**：5,213 实体的 25,300 条引用，支持精确匹配和别名解析
 - **PRTS 终端前端**：SSE 流式聊天、检索步骤可视化、来源引用展开
 - **W0 评测体系**（升级阶段）：`arknights_wiki/eval/` Benchmark 建库——100 题八类覆盖、DeepEval 打分、mimo-v2.5 统一 judge（`report_v1_mimo.md` overall 0.857）、路由/打分层 bug 修复与测试补全
+- **Foundation Contract 公共工程层**（2026-09 起）：与 Knowledge-Augmented Autonomous Coding Agent 共享 `agent_core.contracts` 契约镜像——presence-aware 事实语义（Unknown ≠ Zero / Estimated ≠ Reported / USD ≠ CNY）、非侵入旁路治理、append-only 状态账本与双仓 L1/L2/L3 证据门禁
 
 ---
 
@@ -36,6 +37,22 @@ python -m arknights_wiki.agent.server
 python scripts/build_agent_index.py      # FAISS 向量索引
 python scripts/build_entity_index.py     # 实体双向索引
 ```
+
+### Foundation Contract 验证（权威环境）
+
+契约相关命令必须使用权威解释器（PATH 里的默认 `python` 未安装项目依赖）：
+
+```powershell
+D:\CodexPython312\python.exe -m agent_core.contracts.tooling.generate_schemas --check
+D:\CodexPython312\python.exe -m agent_core.contracts.tooling.verify_payload
+D:\CodexPython312\python.exe -m pytest agent_core/contracts/conformance -q
+D:\CodexPython312\python.exe -m pytest tests/contracts -q
+D:\CodexPython312\python.exe -m pytest tests/            # 权威完整测试口径（禁止仓库根裸 pytest）
+```
+
+契约运行开关：`AGENT_CONTRACT_MODE=off|observe|strict`（默认 `off`）。
+
+> 本改造在独立 worktree / 分支上进行：`feature/foundation-contract`（见 `docs/plans/2026-09-10-foundation-contract-cycle1-kickoff.md`）。
 
 ---
 
@@ -70,6 +87,68 @@ python scripts/build_entity_index.py     # 实体双向索引
 
 ---
 
+## 双旗舰公共工程层：Foundation Contract（2026-09 起）
+
+与本项目配对的旗舰项目 **Knowledge-Augmented Autonomous Coding Agent** 共享一层"公共工程契约"。定位是**契约统一，不是 agent 实现合并**：两个项目各自保留领域实现（retrieval / memory / KG / LangGraph state ↔ sandbox / GitHub / approval / durable execution），只统一跨边界的事实语义。
+
+它要解决的真实问题：两仓都把"没有用量 / 单价 / 成本信息"归一为 `0`，于是**真实零成本、未知成本、估算成本无法区分**——结构再统一，Trace / Evaluation / Dashboard 的结论也不可信。
+
+```text
+                 ┌→ Legacy 业务路径 → 现有结果（唯一真相源，不受影响）
+Input ───────────┤
+                 └→ Foundation Adapter → Validation Evidence
+```
+
+| 层 | 归属 | 说明 |
+|---|---|---|
+| `agent_core/contracts/**` | **双仓逐字节相同的镜像** | 唯一 canonical author 是本项目；Coding 侧只能由 bundle 原子提升，禁止手工修补 |
+| 项目本地 Adapter | 各仓自持 | `arknights_wiki/adapters/foundation/` —— 差异由 Adapter 表达，不污染公共 DTO |
+| 证据与门禁 | 本项目协调 | append-only 状态账本、L1/L2/L3 验证、Candidate A 冻结 → Evidence B → Finalization C |
+
+v0.1 契约内容：`Usage` / `Cost` / `CostSummary` / `ErrorEnvelope` / `FoundationObservation` / `EvidenceRecord` + `ContractMode` + `EvidenceSink Protocol` + 共享 conformance 测试 + canonicalization / payload hash / mirror bundle 工具。
+
+### 契约身份（v0.1 / Cycle 1）
+
+| 项 | 值 |
+|---|---|
+| contract_version | `0.1.0`（lockstep 单一 Contract Set，不为每个 family 建独立 SemVer） |
+| canonicalization_version | `1` |
+| pydantic | `2.13.4` |
+| Payload | 40 文件 / `sha256:df479f0c…`（两仓一致） |
+| Schema 清单 | Usage / Cost / CostSummary / ErrorEnvelope / FoundationObservation / EvidenceRecord |
+| 规范规则 | 68 条（56 conformance 落地 + 6 项目落地 + 6 显式 deferral） |
+| 状态账本 | `docs/specs/foundation-contract/execution-status-events.jsonl`（append-only，唯一动态状态源） |
+
+### 执行进度
+
+母 Spec 按证据成熟度分三层授权，当前**只有 Part I 可执行**：
+
+| 范围 | 授权 | 进度 |
+|---|---|---|
+| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–09 `COMPLETE`**（2026-09-10 → 09-14）；Spec 10 进行中 |
+| Part II — Cycle 2 / v0.2（Spec 16） | `FEEDBACK-BOUND` | 需真实 L2/L3 问题驱动才可启动 |
+| Part III — 抽取门禁（Spec 17–18） | `GATE-DEFINED` | 只评估门禁，不得实现 |
+
+DAG：`01 → 02 → 03 → 04 →（05 → 07 / 06 → 08）→ 09 → 10 → 11`（**Candidate A 冻结边界**）`→ 12(L2) / 13(L3) → 14(Evidence B) → 15(协调 + Finalization C → Cycle COMPLETE)`。
+
+### 全程红线
+
+- Legacy 主路径**永不消费** Foundation 对象；Foundation 不参与模型选择、路由、评分、成本报告、Dashboard、恢复、审批与副作用。
+- presence-aware：facts extractor 禁止 `get(..., 0)` / `or 0` / 由 legacy total 反推组成项。
+- `off == observe` 四类不变性：Output / Decision / Side Effects / Legacy Telemetry。
+- `agent_core/` 白名单只有 `__init__.py` + `contracts/**`。
+- 证据发布只允许 allowlist 重建，禁止"先全量序列化再删敏感字段"。
+- Spec 11 冻结 Candidate A 后，**不得再新增/修改任何 post-freeze 工具**；缺工具只能 `SUPERSEDED` 回所属 Spec 形成 A2。
+
+### 相关文档
+
+- 母 Spec：`docs/specs/2026-09-10-dual-agent-foundation-contract-master-spec.md`
+- 执行索引与 18 个子 Spec：`docs/specs/foundation-contract/`
+- 决策记录：`docs/adr/0001-progressive-contract-family-extraction.md`、`docs/adr/0002-foundation-fact-semantics-and-shadow-governance.md`
+- 开工准备（环境 / 基线 / worktree / 红线 / 风险）：`docs/plans/2026-09-10-foundation-contract-cycle1-kickoff.md`
+
+---
+
 ## 技术栈
 
 | 层级 | 方案 |
@@ -82,7 +161,8 @@ python scripts/build_entity_index.py     # 实体双向索引
 | Web | FastAPI + SSE 流式 |
 | 前端 | 原生 HTML/CSS/JS（PRTS 终端风格） |
 | 评测 | DeepEval 4.1.8（Docker）+ Benchmark 100 题 + mimo-v2.5 judge |
-| 测试 | pytest（424 tests，含 70 eval tests） |
+| 契约层 | `agent_core.contracts` v0.1.0（双仓镜像）+ Pydantic 2.13.4 + 共享 conformance + canonical JSON / payload hash / mirror bundle |
+| 测试 | pytest（`pytest tests/`：637 passed / 10 skipped；含 `tests/contracts/` 契约测试） |
 
 ---
 
@@ -90,8 +170,15 @@ python scripts/build_entity_index.py     # 实体双向索引
 
 ```
 Arknights LLM Wiki/
+├── agent_core/                   # 契约镜像（Phase 1 白名单：仅 __init__.py + contracts/**）
+│   └── contracts/                # version / contract.md / payload-descriptor.json
+│       ├── enums/ models/ protocols/
+│       ├── conformance/          # 共享契约测试（两仓逐字节一致）
+│       ├── schemas/              # 6 个 JSON Schema
+│       └── tooling/              # canonical_json / generate_schemas / verify_payload / bundle
 ├── docs/
 │   ├── specs/                    # 设计规格
+│   │   └── foundation-contract/  # 执行索引 00 + 子 Spec 01–18 + execution-status-events.jsonl
 │   ├── plans/                    # 实施计划
 │   ├── diagrams/                 # 架构图 (Mermaid + HTML)
 │   └── adr/                      # 架构决策记录
@@ -106,11 +193,13 @@ Arknights LLM Wiki/
 │   │   ├── tools.py              # 8 个检索工具
 │   │   ├── retrieval.py          # Wiki/Event/Dialogue/Timeline 数据层
 │   │   └── prompts.py            # LLM 提示词模板
+│   ├── adapters/foundation/      # 项目本地 Adapter（facts / mapping / runtime / evidence_sink）
 │   └── store/                    # SQLite 数据层
 ├── config/
 │   ├── chapter_timeline.json     # 章节时间线
 │   ├── collab_series.json        # 联动活动映射
-│   └── identity_map.json         # 角色身份映射
+│   ├── identity_map.json         # 角色身份映射
+│   └── contracts/                # producer-registry / known-test-baseline
 ├── data/
 │   ├── stories/                  # 原始剧情对话 (2,160 JSON)
 │   ├── extractions/
@@ -121,7 +210,8 @@ Arknights LLM Wiki/
 │   ├── entity_source_map.json    # 实体双向索引 (2.3MB)
 │   └── index/                    # FAISS 向量索引
 ├── scripts/                      # 构建与运行脚本
-└── tests/                        # 测试套件
+└── tests/
+    └── contracts/                # 契约测试（mapping / sink / wiring / invariance / baseline）
 ```
 
 ---
