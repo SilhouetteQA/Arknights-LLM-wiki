@@ -73,6 +73,17 @@ jobs:
     defaults:
       run:
         shell: pwsh
+    # 三个项目测试（tests/agent/test_graph.py 的 2 个 + tests/agent/test_router.py 的 1 个）要求
+    # provider 配置**存在**：`arknights_wiki.extraction.llm_client._get_model_config()` 会在三个 key
+    # 都缺失时抛 RuntimeError。但本 gate 必须"无密钥且不调用真实模型"（Master §15.1:1550、
+    # Appendix C.4:2431）。下面的值是**占位符——不是凭据，也不授予任何访问权限**：
+    #   - 测试中的 LLM 调用均被 mock（本地实测该子集 2.4s 跑完，无网络往返）；
+    #   - 若某个测试真的发起网络请求，它只会拿到 401 并失败 —— 因此占位值**不可能掩盖**
+    #     真实的网络依赖，只会让"配置存在性检查"这一个前置条件成立。
+    # 依据（本地对照实验）：env 清空 → 恰好这 3 个测试失败；填入占位值 → 全部通过。
+    env:
+      arkcode_api: "ci-placeholder-not-a-credential"
+      deepseek_api: "ci-placeholder-not-a-credential"
     steps:
       # fetch-depth: 0 —— 末档 gate 与历史相关的判定需要完整历史（此处保留全历史）。
       - name: Checkout repository (full history)
