@@ -991,20 +991,30 @@ class TestRealLedger:
     """真实账本 ``docs/specs/foundation-contract/execution-status-events.jsonl`` 必须通过。"""
 
     def test_real_ledger_reduces_cleanly(self) -> None:
-        """GOV-STAT-001：真实账本（35 事件）必须合法归约。
+        """GOV-STAT-001：真实账本必须合法归约，且状态只取合法闭集。
 
-        期望以**文件实际内容**为准：最后一条事件是 Spec 09 ACCEPTANCE_COMPLETE，
-        因此 Spec 10 = NOT_STARTED；若 Spec 10 事件已被追加，允许 IN_PROGRESS。
+        期望以**文件实际内容**为准，**不硬编码"当前进度"**：账本会随每个 Spec 推进而增长，
+        任何写死的中间状态都会在下一个 Spec 完成时变成假失败（本测试确实在 Spec 10 完成、
+        事件追加进账本时于 CI 上挂掉过）。真正要断言的是：
+          - 归约本身不抛 ``SPEC_STATUS_CONFLICT``；
+          - 每个 spec 的状态都在 ``STATUSES`` 闭集内；
+          - 早期已完成的 Spec 不会被静默回退（回退只能经 ``STATUS_CORRECTION`` 事件，而那种
+            事件会被归约校验捕获）；
+          - canonical 事件数与文件行数自洽。
         """
         raw = REAL_LEDGER.read_bytes()
         report = sl.reduce_ledger_files(
             ledger_path=REAL_LEDGER, spec_dir=SPEC_DIR, index_path=INDEX_PATH
         )
+        assert set(report.statuses) == set(sl.SPEC_IDS)
+        illegal = {
+            spec_id: status
+            for spec_id, status in report.statuses.items()
+            if status not in set(sl.STATUSES)
+        }
+        assert not illegal, f"非法状态取值：{illegal}"
         for spec_id in [f"{index:02d}" for index in range(1, 10)]:
             assert report.statuses[spec_id] == "COMPLETE", spec_id
-        assert report.statuses["10"] in {"NOT_STARTED", "IN_PROGRESS"}
-        for spec_id in [f"{index:02d}" for index in range(11, 19)]:
-            assert report.statuses[spec_id] == "NOT_STARTED", spec_id
         assert report.used_pending_suffix is False
         assert report.suffix_hash is None
         assert report.canonical_event_count == sl.count_nonempty_lines(raw, "ledger")

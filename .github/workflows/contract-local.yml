@@ -86,14 +86,15 @@ jobs:
         with:
           python-version: '3.12'
 
-      # Wiki 的 `dev` extra 只有 pytest/pytest-asyncio；`tests/contracts/test_producer_wiring.py`
-      # 经 `arknights_wiki.extraction.llm_client` 顶层 `from openai import OpenAI` 需要
-      # openai。L1 导入图不触及 `agent` extra 的 langgraph / sentence-transformers /
-      # faiss-cpu / numpy / langfuse / mcp（vector_index、mcp_server、agent.server 不在
-      # 该图内），因此这里只补 openai 这一个已声明依赖，不整套安装 agent extra。
-      # （CI 契约测试依赖档位在 `pyproject.toml` 中没有独立声明，这是本次的显式选择。）
+      # Appendix C.4：Local PR Contract Gate 使用"本仓完整/测试依赖"。首次真实运行证明
+      # 只装 `[dev]` 是不够的：`validate_local.py --gate pr` 的第 6 步会跑**契约相关回归
+      # 子集**（IN_SCOPE producer 源码模块 → 引用它们的项目测试），其中
+      # `tests/agent/test_graph.py` / `test_checkpoint.py` 顶层 import langgraph，
+      # `numpy` 也是 `vector_index.py` 的顶层依赖 → 必须装 `agent` extra。
+      # （`faiss`/`sentence-transformers` 在 `vector_index.py` 内是函数内懒加载，
+      #  `deepeval` 由 `tests/eval/test_scoring.py` 注入 fake 模块，故都不需要。）
       - name: Install project and test dependencies
-        run: python -m pip install -e ".[dev]" openai
+        run: python -m pip install -e ".[dev,agent]"
 
       # G-19：`python -m build` 需要 `build` 模块；`tests/contracts/test_packaging.py`
       # 以 `python -m build --wheel --no-isolation` 构建 wheel，其 setuptools backend
@@ -101,6 +102,14 @@ jobs:
       # 故显式安装两者。
       - name: Install build tooling (G-19)
         run: python -m pip install build "setuptools>=68"
+
+      # 某些项目测试会创建真实提交（如 Coding 的 tests/test_issue_agent.py）。
+      # GitHub runner 默认没有 git 身份 → `git commit` 报 "Author identity unknown"。
+      # 这是环境前置条件（不是契约语义、也不引入任何凭据），故在 job 内显式配置。
+      - name: Configure git identity for commit-creating tests
+        run: |
+          git config --global user.email "contract-gate@users.noreply.github.com"
+          git config --global user.name "Contract Local Gate"
 
       # §15.1:1570 —— schema regeneration diff：快照必须与 Pydantic 重生成一致，且无工作区写入。
       - name: '[1/6] Generate schemas --check'
