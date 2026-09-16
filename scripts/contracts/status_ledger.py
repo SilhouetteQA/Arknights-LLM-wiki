@@ -105,6 +105,24 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 REPO_ROOT = _REPO_ROOT
 
+
+def _force_utf8_streams() -> None:
+    """把 stdout/stderr 强制为 UTF-8。
+
+    GitHub Actions 的 Windows runner 默认 stdout 编码是 cp1252；本 reducer 的冲突信息与
+    状态表含中文，直接 ``print`` 会 ``UnicodeEncodeError`` 并掩盖真正的 ``SPEC_STATUS_CONFLICT``
+    判定。coordinate workflow 会在 Windows runner 上调用本脚本，故入口处统一处理。
+    """
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is None:
+            continue
+        try:
+            reconfigure(encoding="utf-8", errors="replace")
+        except (ValueError, OSError):
+            pass
+
+
 from agent_core.contracts.models.evidence import (  # noqa: E402  (自举之后才能 import)
     REPOSITORY_COMMIT_PATTERN,
     TIMESTAMP_PATTERN,
@@ -1718,6 +1736,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
+    _force_utf8_streams()
     parser = build_parser()
     args = parser.parse_args(argv)
     if args.command != "validate":  # pragma: no cover - argparse 已限制
