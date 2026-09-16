@@ -115,7 +115,35 @@ Spec 13/14 禁止修改 `config/`，因此两个 manifest 的键名必须在 A �
 | **G-10** `.gitignore` 无前导 `/` | **保留为低危差异** | 不修（不影响行为）；若未来收窄 `/output/` 规则需一并处理 | — |
 | **G-11** "cycle-report generator" 无文件路径 | **冻结** | cycle report **就是** coordination artifact：coordinator 写 `coordination.json/.md`，finalizer 逐字节复制为 `<release>/cycle-report.json/.md`。不新增 generator 文件 | `test_cycle_tools.py` |
 | **G-14** expected mapping 预登记来源 | **冻结** | 不新增 manifest 键：直接取本仓 registry 的 `producer_id`/`mapping_stage`/`foundation_objects`/`evidence_requirement` 作为预登记 expected，与 adapter 的 actual 比较 | `replay_history` 实现 + 测试 |
-| **G-20** 两仓 descriptor 磁盘字节不同 | **冻结（实现注意项）** | 身份一律比较 **canonical payload hash**，**绝不**比较文件原始 sha256 | 跨平台 job 实测通过 |
+| **G-20** 两仓 JSON 快照磁盘字节不同（**descriptor + 全部 6 个 schema**，不止 descriptor） | **冻结（实现注意项）** | 身份一律比较 **canonical payload hash**，**绝不**比较文件原始 sha256 | 跨平台 job 实测通过 + 本轮 40 文件逐字节复核（见下） |
+
+### 3.1 G-20 复核结果（Spec 11 Stage 0 实测，40 文件逐字节比对）
+
+Spec 10 的提取报告只记录了 descriptor 一处磁盘字节差异；本轮对**全部 40 个 payload 文件**做了逐字节 + canonical 双重比对：
+
+```text
+payload 文件总数            40（两仓无缺失、无多余）
+磁盘字节不同                 7
+   payload-descriptor.json
+   schemas/cost.schema.json
+   schemas/cost-summary.schema.json
+   schemas/error-envelope.schema.json
+   schemas/evidence-record.schema.json
+   schemas/foundation-observation.schema.json
+   schemas/usage.schema.json
+canonical 内容不同           0   → payload_hash / descriptor_hash / schema_set_hash 两仓完全一致
+差异量                       每文件恰 1 字节：Wiki 结尾多一个 LF（1797 vs 1796）
+```
+
+**根因（已定位到行）**：`tooling/generate_schemas.py:182,187` 写快照时用 `canonical_json_dumps(x) + "\n"`，多写一个装饰性 LF；而 `bundle.py:143` 用 `write_bytes(archive.read(info))` 落盘，其内容来自 `canonical_json.file_canonical_content()` —— 该函数对 `.json` **重新序列化为 canonical JSON（无尾随 LF）**，对其它文本只做换行规范化。因此 **Coding 收到的字节就是 canonical 形态，Wiki 自己生成的快照反而多一个字节**。`generate_schemas --check` 比较的是 `canonical_json_dumps(...)`，对这个字节不敏感，所以两仓 `--check` 都通过。
+
+**为什么本 Cycle 不修（判定为已冻结条件，理由须可复核）**：
+
+1. 无任何消费者按原始字节比较两仓 —— `coordinate_cycle.py` 只比较 `payload_hash` / `payload_descriptor_hash` / `schema_set_hash`（L567-586、L654-657），本地 gate（G-06）**不读另一仓**；全仓 grep 无跨仓 `read_bytes()` 比较。
+2. 要同时满足"两仓逐字节相同"与"生成器幂等"，必须改 `tooling/generate_schemas.py` 或 `bundle.py` —— 二者都在 40 文件 payload 内，改动会**变更 `contract_payload_hash`**，从而使账本中 Spec 09/10 已 `COMPLETE` 的事件所引用的 `sha256:64049830…` 变成悬空身份（append-only 账本无法回改）。
+3. 只重写那 7 个 JSON 快照（不带 `+ "\n"`）虽然 hash 不变，但会让**提交状态与生成器输出不一致**：下一次显式 `--write` 即再次分叉，形成"看似逐字节相同、实则随时会漂"的假象。
+
+结论：**按已冻结的 G-20 语义接受该差异**（身份 = canonical payload hash），并把它记为显式残留项（见 §6）。若后续要求字面逐字节相同，应在**下一个 payload 版本**中一并修 `generate_schemas.py` 的装饰性 `+ "\n"`，而不是在 A 冻结边界churn 契约身份。
 
 ---
 
@@ -145,6 +173,7 @@ Spec 13/14 禁止修改 `config/`，因此两个 manifest 的键名必须在 A �
 | action pin 到 commit SHA | 仓库无既有 pin 约定，未新建 | 可选加固 |
 | 母 Spec 中"未定义语义"本身 | 本文档只是**校准记录**，不修改母 Spec；母 Spec 的缺口仍在 | 建议在 Spec 16（Cycle 2）或母 Spec 回修中补全，见 §7 |
 | Wiki 3 个 API-key 依赖测试 | CI 用**占位环境值**（非凭据）绕过"配置存在性检查"；测试本身仍隐含依赖 provider 配置 | 项目测试卫生问题，非本 Cycle 范围 |
+| 7 个 JSON 快照的装饰性尾随 LF（G-20 残留） | `generate_schemas.py:182,187` 的 `+ "\n"` 使 Wiki 快照比 Coding 多 1 字节；canonical 内容与 payload hash 完全一致，无消费者按原始字节比较 | 已冻结为 G-20 条件（见 §3.1）；建议随**下一个 payload 版本**修复，不在 A 边界 churn 身份 |
 
 ---
 
@@ -176,3 +205,53 @@ D:\CodexPython312\python.exe scripts/contracts/validate_local.py --gate pr
 ```
 
 CI：`.github/workflows/contract-local.yml`（Windows L1）+ `contract-payload-linux.yml`（Linux canonical hash）在两仓均已真实跑通（2026-09-16，全绿）。
+
+---
+
+## 9. Pre-freeze inventory（Spec 11 冻结边界实测）
+
+记录时点：两仓 `feature/foundation-contract-spec10` HEAD = Wiki `420d2b1`、Coding `c8e06e5`（**均为 A 之前的状态**；本节的 A 由其后一次提交固定，见 pending suffix envelope）。
+
+### 9.1 契约身份（两仓必须一致，实测一致）
+
+| 项 | 值 | 两仓一致 |
+|---|---|:--:|
+| `contract_version` | `0.1.0` | ✅ |
+| `canonicalization_version` | `1` | ✅ |
+| payload 文件数 | `40`（= `agent_core/__init__.py` + `agent_core/contracts/**` 39 个已跟踪文件） | ✅ |
+| `contract_payload_hash` | `sha256:64049830ba0d1ca2969bb04620ede2d54852e0171f2397d71bc646b2339a4576` | ✅ |
+| `payload_descriptor_hash`（canonical） | `sha256:5780138f1f6a1254010ad1d77ae0b63e3e7cd741415b17884c53babc41fa7fc4` | ✅ |
+| `schema_set_hash` | `sha256:d785d52d0f6ed9fcfcdf4186b506a7e5af882167567a72f17da90d54f33cc596` | ✅ |
+| schema 数 / rule 数 | `6` / `68`（`= 56 conformance + 7 project-scoped + 5 deferred`） | ✅ |
+| 逐字节比对 | 33 个完全相同，7 个仅差 1 字节（§3.1，canonical 内容 0 差异） | ⚠ 见 §3.1 |
+
+### 9.2 仓库本地身份（按设计两仓不同，不作为跨仓身份）
+
+| 项 | Wiki | Coding |
+|---|---|---|
+| `producer-registry.json` sha256 | `d633e4037a8c50d936d5e6aa3dc5c371c5d67393a1027148f2567f5758b57159` | `4e2bec56e2c92622fc662613d52232802c469fb8c7c6673847042ee4d408f459` |
+| `smoke-v0.1.json` sha256 | `7d91499c4642e7ea80cf204e6ac7641a45f06bb9fe4fc6ab4be63984015a58e8` | `04cbaa3014b52752f7df4f3ab34e7b2513c5fe5885f859c3d3d9632e4130e342` |
+| `replay-v0.1.json` sha256 | `579f8bb4a40323feb53043f71a18019701f72d236b41d4f38d7603c9ffc1aaff` | `f0b3051e6ddc9d7efae420ecc2b293dd2fb7cefec44ba7db88b4dcba2d34ad98` |
+| `known-test-baseline.json` sha256 | `03165125e6f412695e89e4ea020dcc0b9a0e84ea35fc1c5eff4a264a97cb1708` | `7e30db80a776122d6f34b0f09dc60178e2aa0a2bb0b07a6145d20c12c7fd6c3a` |
+| `scripts/contracts` 文件数 | `6`（另含 `coordinate_cycle` / `finalize_cycle` / `status_ledger`） | `3`（共享 `replay_history` / `publish_evidence` / `validate_local`） |
+| `tests/contracts` 文件数 | `10` | `8` |
+| workflows | `contract-local` / `contract-payload-linux` / `contract-coordinate` | `contract-local` / `contract-payload-linux` |
+
+### 9.3 工具链（两仓一致）
+
+`python 3.12.10` / `pydantic 2.13.4` / `pytest 9.1.1` / `build 1.6.1` / `setuptools 81.0.0`。
+
+### 9.4 工作树归属（Freeze Procedure 步骤 1）
+
+Wiki 有 2 个已跟踪文件处于 `modified`，**归属为长期存在的运行期/数据改动，明确不纳入 Candidate A**（二者均未提交，因此天然不进 A）：
+
+| 文件 | 差异 | 最后提交 | 归属 |
+|---|---|---|---|
+| `output/eval/cost_log.jsonl` | `+42` | `644c551`（2026-08-19） | 项目运行期成本日志；项目测试会追加写入（§5 已记其非逐字节稳定） |
+| `data/extractions/v3_seed_db_v2.json` | `+1 / −1` | `aa6d9e9`（2026-08-18） | 既有数据产物，自 2026-08-18 起未提交 |
+
+Coding：工作树**完全干净**，无未跟踪文件。
+
+### 9.5 正式验证
+
+L1（6 条命令）与全量回归在 **A 的干净 checkout**上重跑，不引用 Spec 09/10 开发期 PASS；`python -m build` 一并重跑。结果与 `BASELINE_COMPARISON` 写入 `candidate_a` pending suffix 的 `evidence_refs`。
