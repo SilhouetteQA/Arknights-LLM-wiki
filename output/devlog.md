@@ -2470,6 +2470,36 @@ Spec 11/12 在旧 suffix 里的 `COMPLETE`、Spec 13 的 `BLOCKED` 随 A 一起�
 
 ---
 
+## L3 收敛裁定（2026-09-16，用户授权）
+
+A2 的驱动部分完成后，L3 仍跑不通。经母 Spec §7.3（分层覆盖要求）逐条比对，问题分两类：
+
+**A 类 —— gate 缺陷，规范明确要求，直接修（B7）**
+`gate_smoke` 忽略 per-pair `evidence_requirement`，只用顶层 `coverage_policy` 一刀切，导致 Coding `trace.summary`（登记为 `ONE_OF`）被要求 sdk 与 clickhouse **都**出现。母 Spec §7.3 与 Spec 13:51（"`ONE_OF` 按预登记策略判断"）都要求按预登记策略判定，§7.3:887 更明写 **"未观察到"不等于失败**。
+
+**B 类 —— 规范硬要求 vs 本机环境能力（B4 / B5 / B6）**
+
+| # | 项 | §7.3 原文要求 | 实测现实 |
+|---|---|---|---|
+| B4 | Wiki `wiki.eval.cost_log` | L3 需 **runner/judge/scoring 全部** | `scoring.py` 顶层 `import deepeval`；deepeval **未声明在 pyproject 也未安装**（项目只在 `deepeval-local` 容器跑） ⇒ 6 条 pair 只能观测到 5 条 |
+| B5 | Coding `coding.benchmark.case_cost` | L3 **`normal` required；错误 stage 可 `NOT_OBSERVED`** | 冻结 manifest 把三个 stage **全标 `ALL_STAGES`** ⇒ manifest 本身偏离 §7.3；且 `benchmark/runner.py::_run_one_case` 每个 case 只产出一个 stage，而 `case_ids` 冻结为 1 个 case ⇒ 三个全观测在结构上不可能 |
+| B6 | Coding `coding.trace.summary` | L3 **`ONE_OF(sdk, clickhouse)`** | 两个 stage 都无法从 `--benchmark` 路径产生（唯一生产者 `tools/report_trace.py` 只能经 `main.py --trace-report`），且需要 Langfuse 凭据或 127.0.0.1:8123 的 ClickHouse |
+
+**用户裁定**：授权**按环境实际可观测收敛 L3**（选项 b）。具体做法：
+
+1. 为 per-pair `evidence_requirement` 增加一个**自述式**词表值 `NOT_OBSERVED_ALLOWED`（直接引用 §7.3:896 的"可 `NOT_OBSERVED`"用词，便于审计）。
+2. 按 §7.3 修正 Coding manifest：`case_cost/normal` 保持 required；`case_cost/environment_error`、`case_cost/error` 改为 `NOT_OBSERVED_ALLOWED`（这一步是**回归规范**，不是偏离）。
+3. 对 B4/B6 做**显式偏离**：Wiki `wiki.eval.cost_log/scoring`、Coding `coding.trace.summary/{sdk,clickhouse}` 标为 `NOT_OBSERVED_ALLOWED`，并在以下四处留痕，不静默：
+   - 校准记录新增偏离条目（含 §7.3 原文、本机不可观测的确切原因、恢复条件）；
+   - pending suffix 事件里记 `SPEC_INCOMPLETE` 供 **Spec 16（Cycle 2）校准**；
+   - Evidence / validation report 明写"本环境不可观测"，不得写成 PASS 或伪造观测；
+   - 恢复条件写明：装并声明 `deepeval` 后 Wiki `scoring` 可观测；提供 Langfuse 凭据或 ClickHouse 后 Coding `trace.summary` 可观测。
+4. `gate_smoke` 对 `NOT_OBSERVED_ALLOWED` 的 pair：未观测 → 记 `NOT_OBSERVED` 并**不**判失败，但必须在 step 摘要里显式列出（"未观测 ≠ 通过"）。
+
+**为什么这不是"放水"**：§7.3:887 已经确立"未观察到不等于失败"；B5 是把 manifest 修回规范；B4/B6 的偏离被逐条具名、具因、带恢复条件地记录，而不是从要求里删掉。用户明确签字授权该偏离。
+
+---
+
 ## 会话恢复指南（供上下文压缩后接手）
 
 **当前状态一句话**：Foundation Contract **Spec 01–12 已 `COMPLETE`，但 A 因 Spec 13 的 B1/B2/B3 缺陷被 `SUPERSEDED`**（用户按 N-04 批准规范路径）；正在实施 **A2**（纯工具级修复，payload hash 不变）。A2 完成后须重跑 L1/回归（2 仓）、重做 L2、跑真实 L3，再进 Spec 14/15。Spec 14/15 未解锁。
