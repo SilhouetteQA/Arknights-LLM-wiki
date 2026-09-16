@@ -46,30 +46,66 @@ def _get_env(name: str) -> str:
     return ""
 
 
-def get_opencode_go_key() -> str:
-    """读 opencode zen/go 网关 key。
+def _consolidated_endpoint() -> dict:
+    """judge / search 的统一 provider 解析（**订阅优先**）。
 
-    2026-08-17 用户指定：宿主用 **HKCU 注册表**值（进程环境同名 OPENCODE_GO_API
-    是另一 key，弃用）。Linux Docker 容器内无注册表 → 回退进程环境
-    （docker run -e opencode_go_api=<注册表值> 显式传入同一 key）。
+    2026-09-16 实测：原默认端点全部不可用于推理 ——
+      - opencode_go（旧 judge/search 默认）: 鉴权通过但推理返回 **429 Too Many Requests**
+      - volcengine(arkcode_api): 订阅过期 InvalidSubscription
+      - minimax(minimax_api): 配额用尽 429
+    因此统一委托 `llm_client._get_model_config()`（command_goat 优先 → DeepSeek 官方），
+    不再回退到上述任何网关；两者都不可用时该函数会明确抛错，而不是静默换模型。
     """
-    try:
-        import winreg
+    from arknights_wiki.extraction.llm_client import _get_model_config
 
-        key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment")
+    cfg = _get_model_config()
+    return {"api_key": cfg["api_key"], "base_url": cfg["base_url"], "model": cfg["model"]}
+
+
+def _use_legacy_opencode() -> bool:
+    """是否强制使用旧 opencode 网关。
+
+    **不能**仅凭 ``opencode_go_api`` 存在就判定 —— 该变量在本机环境里始终存在，
+    若以它为准会把 opencode 的 key 发给新端点并得到 401（已实测）。必须显式要求：
+    设置 ``opencode_go_base``，或 ``arknights_judge_use_opencode=1``。
+    """
+    if os.environ.get("opencode_go_base", "").strip():
+        return True
+    return os.environ.get("arknights_judge_use_opencode", "").strip().lower() in (
+        "1",
+        "true",
+        "yes",
+    )
+
+
+def get_opencode_go_key() -> str:
+    """judge/search 的 API key。
+
+    2026-09-16 收敛：默认返回**统一 provider** 的 key（订阅优先）。仅当显式要求旧网关
+    （见 :func:`_use_legacy_opencode`）时才回到 HKCU 注册表 / ``opencode_go_api``。
+    """
+    if _use_legacy_opencode():
         try:
-            value, _ = winreg.QueryValueEx(key, "opencode_go_api")
-            if isinstance(value, str) and value:
-                return value
-        finally:
-            key.Close()
-    except Exception:
-        pass
-    return os.environ.get("opencode_go_api", "")
+            import winreg
+
+            key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment")
+            try:
+                value, _ = winreg.QueryValueEx(key, "opencode_go_api")
+                if isinstance(value, str) and value:
+                    return value
+            finally:
+                key.Close()
+        except Exception:
+            pass
+        return os.environ.get("opencode_go_api", "")
+    return _consolidated_endpoint()["api_key"]
 
 
 def get_opencode_go_base() -> str:
-    return os.environ.get("opencode_go_base", OPENCODE_GO_BASE_DEFAULT)
+    """judge/search 的 base URL。仅当显式 ``opencode_go_base`` 时才用旧网关。"""
+    if _use_legacy_opencode():
+        return os.environ.get("opencode_go_base", OPENCODE_GO_BASE_DEFAULT)
+    return _consolidated_endpoint()["base_url"]
 
 
 def get_ark_api_key() -> str:
@@ -85,11 +121,24 @@ def get_ark_base() -> str:
 
 
 def get_judge_model() -> str:
-    return os.environ.get("ark_judge_model", ARK_JUDGE_MODEL_DEFAULT)
+    """judge 模型。
+
+    2026-09-16 收敛：默认取**统一 provider** 的模型（`deepseek/deepseek-v4.1-flash`），
+    因为旧默认 `mimo-v2.5` 只存在于已限流的 opencode 网关上。显式 ``ark_judge_model``
+    可覆盖（例如该网关恢复后要重新启用 agent/judge 模型分离以缓解自评偏差）。
+    """
+    explicit = os.environ.get("ark_judge_model", "")
+    if explicit:
+        return explicit
+    return _consolidated_endpoint()["model"]
 
 
 def get_search_model() -> str:
-    return os.environ.get("ark_search_model", ARK_SEARCH_MODEL_DEFAULT)
+    """search/生成模型。同样收敛到统一 provider；显式 ``ark_search_model`` 可覆盖。"""
+    explicit = os.environ.get("ark_search_model", "")
+    if explicit:
+        return explicit
+    return _consolidated_endpoint()["model"]
 
 
 def get_firecrawl_base() -> str:

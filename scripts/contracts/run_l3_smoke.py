@@ -451,6 +451,10 @@ def run_business(
             env=dict(env),
             capture_output=True,
             text=True,
+            # Windows 下 text=True 默认用本地编码（gbk/cp936）解码，业务路径的 UTF-8 中文
+            # 输出会让读取线程抛 UnicodeDecodeError 并丢掉全部业务输出（已实测）。
+            encoding="utf-8",
+            errors="replace",
             timeout=timeout_seconds,
         )
     except subprocess.TimeoutExpired as exc:

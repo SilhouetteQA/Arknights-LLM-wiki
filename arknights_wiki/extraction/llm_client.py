@@ -63,8 +63,32 @@ def parse_llm_response(raw: str) -> dict | None:
     return None
 
 
+def _command_goat_config() -> dict:
+    """commandcode 网关（订阅制，**默认首选**）。
+
+    2026-09-16 实测：``POST /chat/completions`` 成功。模型 ID **必须**带 ``deepseek/``
+    命名空间前缀 —— 裸名 ``deepseek-v4.1-flash`` 会被该端点以 ``unsupported_model`` 拒绝。
+    """
+    key = os.environ.get("command_goat_api", "")
+    if not key:
+        raise RuntimeError("未设置 command_goat_api 环境变量")
+    return {
+        "api_key": key,
+        "base_url": os.environ.get(
+            "command_goat_base", "https://api.commandcode.ai/provider/v1"
+        ),
+        "model": os.environ.get("command_goat_model", "deepseek/deepseek-v4.1-flash"),
+        "max_tokens": 8192,
+    }
+
+
 def _volc_config() -> dict:
-    """火山引擎 Ark（coding 端点，2026-08-15 实测 deepseek-v4-flash-ga-260731 可用）"""
+    """火山引擎 Ark —— **已退役，不在默认回退链内**。
+
+    2026-09-16 实测该账号订阅过期（``InvalidSubscription``）。保留此函数仅供显式
+    ``arknights_llm_provider=volcengine`` 的调用方使用；**不得**再作为静默 fallback，
+    否则过期凭据会被自动选中并掩盖真实故障。
+    """
     key = os.environ.get("arkcode_api", "")
     if not key:
         raise RuntimeError("未设置 arkcode_api 环境变量")
@@ -79,15 +103,21 @@ def _volc_config() -> dict:
 
 
 def _deepseek_config() -> dict:
-    """DeepSeek 官方 API（deepseek-chat 已下线，非思考模式 = deepseek-4-flash）"""
+    """DeepSeek 官方 API（回退档）。
+
+    2026-09-16 实测 ``GET /models`` 只返回 ``['deepseek-flash', 'deepseek-v4-pro']``：
+    旧名 ``deepseek-4-flash`` 已不被接受，且该 API **没有** ``v4.1-flash``。因此本档使用
+    ``deepseek-flash`` —— 这是**替代**（command_goat 才是 ``deepseek-v4.1-flash``），
+    两者 ID 不等价，不得混用。
+    """
     key = os.environ.get("deepseek_api", "")
     if not key:
         raise RuntimeError("未设置 deepseek_api 环境变量")
     return {
         "api_key": key,
-        "base_url": "https://api.deepseek.com/v1",
-        "model": "deepseek-4-flash",
-        "max_tokens": 8192,  # DeepSeek v4-flash 硬上限
+        "base_url": os.environ.get("deepseek_base", "https://api.deepseek.com/v1"),
+        "model": os.environ.get("deepseek_model", "deepseek-flash"),
+        "max_tokens": 8192,  # DeepSeek flash 档硬上限
     }
 
 
@@ -106,28 +136,36 @@ def _minimax_config() -> dict:
 def _get_model_config() -> dict:
     """从环境变量读取模型配置，返回 {api_key, base_url, model, max_tokens}
 
-    2026-08-17 统一模型层（agent 回答 + 意图改写 + 提取共用）:
-      - 显式指定: arknights_llm_provider = volcengine | deepseek | minimax
-      - 默认优先级: 火山引擎(arkcode_api) > DeepSeek官方(deepseek_api) > MiniMax(minimax_api)
+    2026-09-16 统一模型层（agent 回答 + 意图改写 + 提取共用）:
+      - 显式指定: arknights_llm_provider = command_goat | deepseek
+      - 默认优先级（**订阅优先**）: command_goat_api > deepseek_api
+      - **已退役**（不再进入回退链）: volcengine(arkcode_api) 订阅过期、minimax(minimax_api) 配额用尽
     模型名:
-      - 火山: deepseek-v4-flash-ga-260731（ark_agent_model 可覆盖; ark_api_base 可覆盖端点）
-      - DeepSeek 官方: deepseek-4-flash（非思考模式; deepseek-chat 已下线）
+      - command_goat: deepseek/deepseek-v4.1-flash（command_goat_model 可覆盖; command_goat_base 可覆盖端点）
+      - DeepSeek 官方: deepseek-flash（deepseek_model 可覆盖; deepseek_base 可覆盖端点）
+        —— 该 API 没有 v4.1-flash，故为**替代**，与 command_goat 的 ID 不等价
+
+    两者都不可用时**必须**明确报错，不得回退到已退役 provider 或静默换模型。
     """
     provider = os.environ.get("arknights_llm_provider", "").strip().lower()
-    if provider in ("volcengine", "volc", "ark"):
-        return _volc_config()
+    if provider in ("command_goat", "commandgoat", "command_code", "commandcode"):
+        return _command_goat_config()
     if provider == "deepseek":
         return _deepseek_config()
+    # 退役 provider 仅允许显式指定，避免过期/无配额凭据被静默选中
+    if provider in ("volcengine", "volc", "ark"):
+        return _volc_config()
     if provider == "minimax":
         return _minimax_config()
 
-    if os.environ.get("arkcode_api"):
-        return _volc_config()
+    if os.environ.get("command_goat_api"):
+        return _command_goat_config()
     if os.environ.get("deepseek_api"):
         return _deepseek_config()
-    if os.environ.get("minimax_api"):
-        return _minimax_config()
-    raise RuntimeError("未设置 arkcode_api / deepseek_api / minimax_api 环境变量")
+    raise RuntimeError(
+        "未设置 command_goat_api / deepseek_api 环境变量；"
+        "已退役的 arkcode_api(volcengine 订阅过期) 与 minimax_api(配额用尽) 不再作为回退"
+    )
 
 
 def create_client() -> OpenAI:
