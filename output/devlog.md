@@ -2278,3 +2278,83 @@ push 触发 workflow 后收到失败通知。**这批失败极有价值**：本�
 `git merge --no-ff origin/main` → `c2d39c5`（合入远程 `889747a fix/issue-2` + 合并 PR #3 与本仓 `bc954d3` Foundation 母 Spec 文档）。远端那 2 个提交只动 `data/extractions/**`，与主工作区两个脏文件不重叠，merge 无冲突。已 push，本地=远程=`c2d39c5`。
 
 > 推送期间遇到 `github.com`（20.205.243.166）边缘 IP 不可达（`api.github.com` 正常、SSH-over-443 可连通但本机无授权密钥），多次重试后网络自行恢复。本地提交全程安全。
+
+---
+
+## Spec 11 Stage 0 准备工作完成（2026-09-16）
+
+### 交付
+
+| 产物 | 说明 |
+|---|---|
+| `docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md` | **核心**：把 Spec 10 的全部 provisional 发明物逐条写成"已冻结 / 保留为开放"，含冻结语义表、守卫、Spec 11 Stage 0 行动清单、机器可验证命令 |
+| `scripts/contracts/status_ledger.py` | 新增 `PENDING_JSONL_FILENAME` / `PENDING_ENVELOPE_FILENAME` / `canonical_pending_paths()`（G-03 载体命名冻结，供 Spec 12/13 工具引用）；`REASON_BY_TRANSITION` 与 CLI 表加冻结标记 |
+| `tests/contracts/test_status_ledger.py` | 新增 `TestFrozenSurface`（8 个测试）：用**字面量表**钉住 G-22 耦合表、G-26 CLI 表面、G-03 载体命名、G-01/G-02 manifest 键集 |
+| `tests/contracts/test_replay_publish_tools.py`（Coding） | 独立钉住 manifest 键集（Coding 无 status_ledger，故在其唯一位置守卫） |
+
+### 三项"必须冻结"的语义（Stage 0 结论）
+
+1. **G-22 reason_code ↔ 转换耦合表**：`NOT_STARTED→READY`=`PREREQUISITES_SATISFIED`；`READY→IN_PROGRESS`=`EXECUTION_STARTED`；`IN_PROGRESS→VALIDATED`∈{VALIDATION_PASSED, FREEZE_BOUNDARY_REACHED, CANDIDATE_FROZEN, EVIDENCE_PUBLISHED, COORDINATION_PASSED}；`VALIDATED→COMPLETE`∈{ACCEPTANCE_COMPLETE, 上述 4 个边界码, FINALIZATION_COMPLETE}；`COMPLETE→IN_PROGRESS`=`STATUS_CORRECTION`（references 必填）。BLOCK/UNBLOCK/SUPERSEDE 分支运行时判定（解除 BLOCKED 必须回到进入前的状态；A2 重启为 `SUPERSEDED→IN_PROGRESS`+`CANDIDATE_SUPERSEDED`）。附加不变式：14 个理由码必须全部可用、`from==to` 非法、不用 last-line-wins。
+2. **G-26 reducer CLI 表面**：`validate` 自定义 flag 恰为 `--ledger`（必填）/`--pending-jsonl`/`--pending-envelope`/`--spec-dir`/`--index`/`--self-commit`/`--json`。coordinator 的 check 8 以 `cwd=A树` + `--spec-dir` + `--index` 调用，并要求 reducer 脚本存在于候选 A 内。
+3. **G-03 pending suffix 载体**：与账本同目录的 `execution-status-events.pending.jsonl` + `.pending.json`（envelope 字段闭集 5 个、`pending_version="1"`、`target_boundary∈{candidate_a,evidence_b_wiki,finalization_c_wiki}`、`suffix_hash` 为 jsonl 原始字节 sha256 且 envelope 不自 hash）。下一持久化边界必须原样 append。
+
+### 未冻结 / 留给后续
+
+`contract-coordinate.yml` 真实执行（Spec 15）· action pin SHA（可选）· 母 Spec 中"未定义语义"本身（本文档只是校准记录，未改母 Spec；建议 Spec 16 或母 Spec 回修补全）· Wiki 3 个隐含依赖 provider 配置的测试（项目测试卫生，用 CI 占位值绕过存在性检查）。
+
+### 验证
+
+`tests/contracts`：Wiki **319 passed / 3 skipped**（新增 8 个冻结测试）；Coding **196 passed**（新增 1 个）。真实账本（41 事件）归约仍 exit 0。`--gate pr` 8/8 通过。
+
+---
+
+## 会话恢复指南（供上下文压缩后接手）
+
+**当前状态一句话**：Foundation Contract **Spec 01–10 全部 `COMPLETE`**；Spec 11（Candidate A 冻结 / L1 / 全量回归）**尚未开始**，其 Stage 0 的准备工作已完成并记录在案；两仓 CI 全绿。
+
+### 第一步：读三份文件（按序）
+
+1. `README.md` — 项目状态与 Foundation Contract 章节
+2. `output/devlog.md` 末尾 — 本指南 + Spec 10/CI 全过程
+3. `docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md` — **Spec 11 的直接输入**
+
+### 第二步：进入 worktree 并确认状态
+
+```powershell
+cd "D:\AI project\_worktrees\foundation-contract\wiki"   # Coding 同理
+D:\CodexPython312\python.exe scripts/contracts/status_ledger.py validate --ledger docs/specs/foundation-contract/execution-status-events.jsonl
+D:\CodexPython312\python.exe scripts/contracts/validate_local.py --gate pr
+```
+
+- 权威解释器：`D:\CodexPython312\python.exe`（3.12.10 + pydantic 2.13.4）。PATH 里的 python **没有**项目依赖。
+- 动态状态**只看** `docs/specs/foundation-contract/execution-status-events.jsonl`（41 条事件；子 Spec 里的状态是 genesis，不反映进度）。
+- 契约身份：`contract_version=0.1.0`、payload `sha256:64049830…`（40 文件，两仓一致）、rule coverage `68 = 56 conformance + 7 项目 + 5 deferral`。
+
+### 第三步：Spec 11 要做什么（见校准记录 §7）
+
+1. 逐条 ratify 校准记录 §1–§3；确认 §5 的 L2 语料口径与 §4 的 G-07 口径。
+2. 用 `canonical_pending_paths()` 建立 `candidate_a` 边界的 suffix 载体，写入 Spec 11 的 freeze-boundary 条目。
+3. 冻结 A：两仓各取 `feature/foundation-contract-spec10` 的 HEAD（**不是 `main`**，两仓 main 都没有 Foundation 产物）；记录 payload hash。
+4. 跑 L1 + 全量回归，按 `KNOWN_BASELINE_FAILURE_RESOLVED_UNEXPECTEDLY` 口径判定（不失败、标记 review、不改基线）。
+5. 账本追加 `FREEZE_BOUNDARY_REACHED` / `CANDIDATE_FROZEN`（`candidate_commit` 非空）。
+6. **冻结后任何语义改动 = `SUPERSEDED` 当前 A 回到所属 pre-freeze Spec 形成 A2**（`GOV-FRZ-002`）。
+
+### 远程与分支（2026-09-16 收盘）
+
+| 仓 | 分支 | 远程 HEAD |
+|---|---|---|
+| Wiki | `main` | `c2d39c5`（含 Foundation 母 Spec 文档 + 远程 fix/issue-2 合并） |
+| Wiki | `feature/foundation-contract` | `102de4c`（Spec 09 收尾） |
+| Wiki | `feature/foundation-contract-spec10` | 本次校准提交（Spec 10 全部工作 + CI 修复 + 校准记录） |
+| Coding | `feature/foundation-contract` | `1798859`（Spec 09 镜像） |
+| Coding | `feature/foundation-contract-spec10` | 本次校准提交 |
+
+### 环境坑（可复用，别再踩）
+
+1. **脚本自举**：`python scripts/contracts/x.py` 的 `sys.path[0]` 是脚本目录，仓库根不在其中（只有 `python -m` 才加 CWD）→ 所有脚本顶部自行插入仓库根。两仓都提供顶层 `agent_core`，同一解释器**无法**同时可编辑安装两者。
+2. **CI runner 三件事**：Windows runner 的 stdout 默认 **cp1252**（脚本须 `reconfigure(encoding="utf-8")`）；runner **没有 git 身份**（需 workflow 内配置）；L1 gate **无密钥**，而 3 个 Wiki 测试要求 provider 配置**存在** → job 级占位环境值（非凭据）。
+3. **依赖档位**：Wiki gate 需 `[dev,agent]`（回归子集顶层 import `langgraph`/`numpy`）；`faiss`/`torch` 在 `vector_index.py` 内懒加载、`deepeval` 由测试注入 fake 模块。
+4. **追加账本事件后必须重跑验收**：曾因先跑验收再追加事件，导致写死状态的测试在 CI 上失败。
+5. **不要提交** `data/extractions/v3_seed_db_v2.json` 与 `output/eval/cost_log.jsonl`（项目测试会改写后者，前者是历史遗留）；两者长期处于 `M` 状态属正常。
+6. **网络**：`github.com` 边缘 IP 偶尔不可达（`api.github.com` 正常）；push 失败时重试即可，本地提交始终安全。
+7. **`.gitignore` 已含** `output/contract-validation/{staging,raw,private}/`、`build/`、`dist/`；scratch 脚本请放 `%TEMP%`，不要放 `staging/`（publication safety scan 会扫该目录并命中绝对路径）。

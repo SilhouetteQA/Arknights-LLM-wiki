@@ -146,7 +146,9 @@ __all__ = [
     "LEDGER_FILENAME",
     "NON_EXECUTABLE_AUTHORITIES",
     "PENDING_ENVELOPE_FIELDS",
+    "PENDING_ENVELOPE_FILENAME",
     "PENDING_ENVELOPE_VERSION",
+    "PENDING_JSONL_FILENAME",
     "REASON_CODES",
     "SPEC_AUTHORITY",
     "SPEC_IDS",
@@ -160,6 +162,7 @@ __all__ = [
     "LedgerReport",
     "StatusEvent",
     "assert_suffix_appended",
+    "canonical_pending_paths",
     "compute_suffix_hash",
     "count_nonempty_lines",
     "main",
@@ -292,6 +295,26 @@ PENDING_ENVELOPE_VERSION: Final[str] = "1"
 TARGET_BOUNDARIES: Final[frozenset[str]] = frozenset(
     {"candidate_a", "evidence_b_wiki", "finalization_c_wiki"}
 )
+
+#: **G-03 冻结**：pending suffix 的规范化文件名，与 canonical ledger **同目录**。
+#:
+#: 母 Spec 只规定 suffix 必须"由同一 Candidate A 的 reducer 生成/验证、记录目标持久化边界、
+#: 具备自身 canonical hash"，未规定载体路径。Spec 11 Stage 0 把下面的命名冻结为规范载体：
+#: Spec 11（freeze boundary 条目）、Spec 12/13（12/13 完成事件）都必须写这两个文件，
+#: coordinator 与审计者据此无歧义定位 suffix。
+#: CLI 的 ``--pending-jsonl`` / ``--pending-envelope`` 仍可指向任意路径（synthetic fixture 与
+#: 受控 staging 需要），但**持久化边界只接受上面这两个名字**。
+PENDING_JSONL_FILENAME: Final[str] = "execution-status-events.pending.jsonl"
+PENDING_ENVELOPE_FILENAME: Final[str] = "execution-status-events.pending.json"
+
+
+def canonical_pending_paths(ledger_path: Path | str) -> tuple[Path, Path]:
+    """返回该账本对应的规范化 pending suffix 路径 ``(jsonl, envelope)``。
+
+    与 ``--ledger`` 同目录；两个文件名已冻结（见 ``PENDING_JSONL_FILENAME``）。
+    """
+    directory = Path(ledger_path).parent
+    return directory / PENDING_JSONL_FILENAME, directory / PENDING_ENVELOPE_FILENAME
 
 # --------------------------------------------------------------------------- #
 # 1. 违规规则标识（错误信息必须携带：行号 + event_id + 规则）
@@ -484,6 +507,12 @@ SPEC_AUTHORITY: Final[Mapping[str, str]] = {
 
 #: 静态合法转换 → 允许的理由码集合。``BLOCKED`` 相关的转换在运行时另行判定
 #: （解除阻塞必须回到**该 spec 进入 BLOCKED 之前**的状态）。
+#:
+#: **G-22 冻结**：母 Spec 的 rule 4/8 要求判定"互斥后继"，却从未把 14 个 reason_code 映射到
+#: 状态转换；本表是 Spec 10 的发明，已在 Spec 11 Stage 0 校准中冻结（见
+#: ``docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md``）。
+#: ``tests/contracts/test_status_ledger.py::TestFrozenSurface`` 用字面量表把它钉住 ——
+#: 任何改动都会显式让测试失败，而不是悄悄漂移。
 REASON_BY_TRANSITION: Final[Mapping[tuple[str, str], frozenset[str]]] = {
     ("NOT_STARTED", "READY"): frozenset({"PREREQUISITES_SATISFIED"}),
     ("READY", "IN_PROGRESS"): frozenset({"EXECUTION_STARTED"}),

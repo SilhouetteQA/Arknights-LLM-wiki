@@ -17,6 +17,7 @@ pending suffix hash 与 append 一致性 / Candidate 隔离。
 """
 from __future__ import annotations
 
+import argparse
 import importlib.util
 import itertools
 import json
@@ -1170,3 +1171,209 @@ class TestIndexConsistency:
             ]
         )
         assert _reduce(ready_only, spec_dir).statuses["16"] == "READY"
+
+
+# --------------------------------------------------------------------------- #
+# 12. 冻结表面（Spec 11 Stage 0 校准）
+# --------------------------------------------------------------------------- #
+
+
+class TestFrozenSurface:
+    """把 Spec 10 的 provisional 发明物钉成**显式冻结面**（G-22 / G-26 / G-03）。
+
+    这三个语义在母 Spec 中**完全没有定义**，是 Spec 10 的发明；它们会随 Candidate A 一起冻结，
+    之后任何改动都必须把 A 标 ``SUPERSEDED`` 并形成 A2（``GOV-FRZ-002``）。因此这里用**字面量
+    表**把耦合表、CLI 表面与 pending suffix 载体固定下来：改动会让测试**显式失败**，
+    而不是悄悄漂移。
+
+    校准记录：``docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md``
+    """
+
+    EXPECTED_REASON_CODES = (
+        "PREREQUISITES_SATISFIED",
+        "EXECUTION_STARTED",
+        "VALIDATION_PASSED",
+        "ACCEPTANCE_COMPLETE",
+        "BLOCKED",
+        "SPEC_CONFLICT",
+        "SPEC_INCOMPLETE",
+        "FREEZE_BOUNDARY_REACHED",
+        "CANDIDATE_FROZEN",
+        "CANDIDATE_SUPERSEDED",
+        "EVIDENCE_PUBLISHED",
+        "COORDINATION_PASSED",
+        "FINALIZATION_COMPLETE",
+        "STATUS_CORRECTION",
+    )
+
+    #: G-22 冻结：静态转换 → 允许理由码（``BLOCKED`` 相关转换在运行时另行判定）。
+    EXPECTED_REASON_BY_TRANSITION = {
+        ("NOT_STARTED", "READY"): frozenset({"PREREQUISITES_SATISFIED"}),
+        ("READY", "IN_PROGRESS"): frozenset({"EXECUTION_STARTED"}),
+        ("IN_PROGRESS", "VALIDATED"): frozenset(
+            {
+                "VALIDATION_PASSED",
+                "FREEZE_BOUNDARY_REACHED",
+                "CANDIDATE_FROZEN",
+                "EVIDENCE_PUBLISHED",
+                "COORDINATION_PASSED",
+            }
+        ),
+        ("VALIDATED", "COMPLETE"): frozenset(
+            {
+                "ACCEPTANCE_COMPLETE",
+                "FREEZE_BOUNDARY_REACHED",
+                "CANDIDATE_FROZEN",
+                "EVIDENCE_PUBLISHED",
+                "COORDINATION_PASSED",
+                "FINALIZATION_COMPLETE",
+            }
+        ),
+        ("COMPLETE", "IN_PROGRESS"): frozenset({"STATUS_CORRECTION"}),
+    }
+
+    #: G-26 冻结：``status_ledger.py validate`` 的 CLI 表面。
+    EXPECTED_VALIDATE_FLAGS = frozenset(
+        {
+            "--ledger",
+            "--pending-jsonl",
+            "--pending-envelope",
+            "--spec-dir",
+            "--index",
+            "--self-commit",
+            "--json",
+        }
+    )
+
+    def test_reason_codes_closed_set_is_frozen(self) -> None:
+        assert sl.REASON_CODES == self.EXPECTED_REASON_CODES
+        assert len(set(sl.REASON_CODES)) == len(sl.REASON_CODES) == 14
+
+    def test_reason_by_transition_table_is_frozen(self) -> None:
+        assert dict(sl.REASON_BY_TRANSITION) == self.EXPECTED_REASON_BY_TRANSITION
+        used = {code for codes in sl.REASON_BY_TRANSITION.values() for code in codes}
+        assert used <= set(sl.REASON_CODES), sorted(used - set(sl.REASON_CODES))
+
+    def test_every_reason_code_is_usable_somewhere(self) -> None:
+        """14 个理由码必须都能在某个转换（含 BLOCK/UNBLOCK/SUPERSEDE 分支）里被接受。"""
+        usable = (
+            {code for codes in sl.REASON_BY_TRANSITION.values() for code in codes}
+            | set(sl.BLOCK_REASON_CODES)
+            | set(sl.UNBLOCK_REASON_CODES)
+            | set(sl.SUPERSEDE_REASON_CODES)
+        )
+        assert usable == set(sl.REASON_CODES), sorted(set(sl.REASON_CODES) - usable)
+
+    def test_block_unblock_supersede_sets_are_frozen(self) -> None:
+        assert sl.BLOCK_REASON_CODES == frozenset({"BLOCKED", "SPEC_CONFLICT", "SPEC_INCOMPLETE"})
+        assert sl.UNBLOCK_REASON_CODES == frozenset(
+            {"PREREQUISITES_SATISFIED", "EXECUTION_STARTED"}
+        )
+        assert sl.SUPERSEDE_FROM_STATUSES == frozenset(
+            {"READY", "IN_PROGRESS", "BLOCKED", "VALIDATED", "COMPLETE"}
+        )
+        assert sl.SUPERSEDE_REASON_CODES == frozenset({"CANDIDATE_SUPERSEDED"})
+
+    def test_non_executable_authority_statuses_are_frozen(self) -> None:
+        assert sl.NON_EXECUTABLE_STATUSES == frozenset({"NOT_STARTED", "READY", "BLOCKED"})
+        assert sl.VALIDATED_UNLOCK_ALLOWED == frozenset()
+
+    def test_validate_cli_surface_is_frozen(self) -> None:
+        """G-26：coordinator 的 check 8 依赖这些参数，它们必须随 A 一起冻结。"""
+        parser = sl.build_parser()
+        subparsers = next(
+            action
+            for action in parser._actions  # noqa: SLF001 - argparse 无公开的自省 API
+            if isinstance(action, argparse._SubParsersAction)  # noqa: SLF001
+        )
+        validate = subparsers.choices["validate"]
+        flags = {
+            option
+            for action in validate._actions  # noqa: SLF001
+            for option in action.option_strings
+            # argparse 会自动加入 -h/--help，不属于本工具的自定义表面
+            if option not in {"-h", "--help"}
+        }
+        assert flags == self.EXPECTED_VALIDATE_FLAGS
+
+    def test_pending_suffix_paths_are_canonical(self, tmp_path: Path) -> None:
+        """G-03 冻结：suffix 载体文件名与 ledger 同目录。"""
+        ledger = tmp_path / "execution-status-events.jsonl"
+        jsonl, envelope = sl.canonical_pending_paths(ledger)
+        assert jsonl == tmp_path / "execution-status-events.pending.jsonl"
+        assert envelope == tmp_path / "execution-status-events.pending.json"
+        assert sl.PENDING_JSONL_FILENAME == "execution-status-events.pending.jsonl"
+        assert sl.PENDING_ENVELOPE_FILENAME == "execution-status-events.pending.json"
+        assert sl.PENDING_ENVELOPE_FIELDS == (
+            "pending_version",
+            "target_boundary",
+            "candidate_commit",
+            "event_count",
+            "suffix_hash",
+        )
+        assert sl.TARGET_BOUNDARIES == frozenset(
+            {"candidate_a", "evidence_b_wiki", "finalization_c_wiki"}
+        )
+        # 真实账本必须能用同一套命名定位 suffix
+        real_jsonl, real_envelope = sl.canonical_pending_paths(REAL_LEDGER)
+        assert real_jsonl.parent == REAL_LEDGER.parent == SPEC_DIR
+        assert real_envelope.name == sl.PENDING_ENVELOPE_FILENAME
+
+    def test_manifest_key_sets_are_frozen(self) -> None:
+        """G-01 / G-02 冻结：两个 run manifest 的键集与嵌套结构。
+
+        Spec 13/14 禁止修改 ``config/``，所以键名必须在 A 冻结前定死；这里用字面量钉住。
+        """
+        expected_smoke_keys = {
+            "manifest_version",
+            "run_id",
+            "contract_mode",
+            "contract_version",
+            "payload_hash",
+            "candidate_commit",
+            "repository_commit",
+            "evidence_root",
+            "coverage_policy",
+            "required_producer_stages",
+            "model",
+            "provider",
+            "case_ids",
+            "expected_calls",
+            "max_calls",
+            "estimated_cost_cap",
+            "network_requirement",
+            "side_effect_policy",
+            "timeout_seconds",
+            "duration_cap_seconds",
+        }
+        expected_replay_keys = {
+            "manifest_version",
+            "run_id",
+            "contract_mode",
+            "contract_version",
+            "payload_hash",
+            "repository_commit",
+            "output_dir",
+            "sources",
+            "max_records",
+            "reproduction_restriction",
+        }
+        expected_stage_keys = {"producer_id", "mapping_stage", "evidence_requirement"}
+        expected_source_keys = {
+            "source_id",
+            "source_class",
+            "path",
+            "producer_id",
+            "mapping_stage",
+            "runtime_adapter_status",
+            "evidence_role",
+        }
+        config_dir = REPO_ROOT / "config" / "contracts"
+        smoke = json.loads((config_dir / "smoke-v0.1.json").read_text(encoding="utf-8"))
+        replay = json.loads((config_dir / "replay-v0.1.json").read_text(encoding="utf-8"))
+        assert set(smoke) == expected_smoke_keys, sorted(set(smoke) ^ expected_smoke_keys)
+        assert set(replay) == expected_replay_keys, sorted(set(replay) ^ expected_replay_keys)
+        for item in smoke["required_producer_stages"]:
+            assert set(item) == expected_stage_keys
+        for source in replay["sources"]:
+            assert set(source) == expected_source_keys

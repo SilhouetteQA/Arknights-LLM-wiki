@@ -131,7 +131,7 @@ v0.1 契约内容：`Usage` / `Cost` / `CostSummary` / `ErrorEnvelope` / `Founda
 
 | 范围 | 授权 | 进度 |
 |---|---|---|
-| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–10 `COMPLETE`**（2026-09-10 → 09-16）；Spec 11（Candidate A 冻结）待启动 |
+| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–10 `COMPLETE`**（2026-09-10 → 09-16）；**Spec 11 Stage 0 校准已完成**（`docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md`），Spec 11 冻结动作待启动 |
 | Part II — Cycle 2 / v0.2（Spec 16） | `FEEDBACK-BOUND` | 需真实 L2/L3 问题驱动才可启动 |
 | Part III — 抽取门禁（Spec 17–18） | `GATE-DEFINED` | 只评估门禁，不得实现 |
 
