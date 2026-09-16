@@ -2601,6 +2601,60 @@ SPEC_STATUS_CONFLICT / GATE FAILED: 业务路径退出码 1 != 0；拒绝为一�
 
 ---
 
+## 候选轮次 A→A4 全记录与接手要点（2026-09-16，第 37 轮）
+
+### 候选演进（每一步都由真实缺陷推动，非返工浪费）
+
+| 候选 | SHA | 触发原因 | 结果 |
+|---|---|---|---|
+| **A** | `b726c09` / `c8e06e5` | 初次冻结 | L1+回归全绿，但 Spec 13 无法闭合（B1–B7） |
+| **A2** | `ca24a199` / `339768dd` | B1–B7：无 run-summary 生产者 / 无 L3 驱动 / case_ids 选不中 / gate 忽略 per-pair / §7.3 硬要求不可观测 | L1+回归全绿（913/623 passed，0 failed） |
+| **A3** | `3972c887`（仅 Wiki） | provider 三死一活 + judge 网关限流 + 驱动编码缺陷 | **L3 技术上 8/8 通过**，但**全量回归 1 failed** |
+| **A4** | `554bce2f`（仅 Wiki） | A3 的回归根因＝**定价歧义零** | L1+回归**待验证** |
+
+**A3 的 L3 通过细节**（这是关键里程碑，可复现）：`ALL_STAGES 5/5`（含 judge）、`NOT_OBSERVED_ALLOWED 0/1`（gate 显式列出 `wiki.eval.cost_log/scoring` 为"未观测（豁免登记，**不计为通过/覆盖**）"）、`run-summary` 闭合（sink=0 / 无拒绝 / 54s 在预算内）、业务路径 exit 0、12 条 evidence 事件。
+
+### 三个必须记住的"命令成功但语义错误"陷阱
+
+1. **`workflow_dispatch` 按远程 ref 取 HEAD**：本地提交未推送时 dispatch 会**成功返回 URL，但测的是旧 HEAD**。必须用 `git ls-remote origin <branch>` **独立确认**远程 HEAD = 目标 SHA，再 dispatch。（已踩过一次。）
+2. **`subprocess.run(text=True)` 在 Windows 按 gbk 解码**：业务路径 UTF-8 中文输出会让读取线程抛 `UnicodeDecodeError` 并**丢掉全部业务输出**，使失败无法诊断。须显式 `encoding="utf-8", errors="replace"`。（Coding 驱动本有此修复，Wiki 侧漏了。）
+3. **`_use_legacy_*` 不能用"环境变量存在"作判据**：`opencode_go_api` 在本机恒存在，若以它为准会把 opencode 的 key 发给新端点 → **401**。必须显式要求（设 `opencode_go_base` 或 `arknights_judge_use_opencode=1`）才回退。
+
+### provider 实测（2026-09-16，四选一）
+
+| provider | 结果 |
+|---|---|
+| `command_goat_api` → `https://api.commandcode.ai/provider/v1` | ✅ **可用**；模型 ID **必须**带命名空间：`deepseek/deepseek-v4.1-flash`（裸名被拒 `unsupported_model`） |
+| `deepseek_api` → `https://api.deepseek.com/v1` | ⚠️ 密钥有效，但 `/models` **只有** `deepseek-flash`、`deepseek-v4-pro`；**无** v4.1-flash（属替代，ID 不等价） |
+| `opencode_go_api` | ❌ 鉴权通过（`/models` 200）但**推理 429 Too Many Requests** |
+| `arkcode_api`(volcengine) | ❌ 订阅过期 `InvalidSubscription`（`/models` 200，仅推理失败） |
+| `minimax_api` | ❌ 429 配额用尽 |
+
+该模型是**推理型**：`max_tokens` 太小（如 16）会返回**空 content**，需给足预算。
+
+### A3 引入的回归与修法（示范契约原则）
+
+`tests/observability/test_llm_tracing.py::test_enabled_records_usage` 断言 `cost_details["total"] > 0` 得到 `0.0` —— 因新模型 ID 在 `arknights_wiki/eval/pricing.json` 无条目，**未知单价被静默当成 0**，正是契约要消灭的 `Unknown is not Zero`。修法：按该表既有惯例（所有 DeepSeek/MiniMax 条目均 `in 2.0 / out 8.0` + `estimate: true`）补两条，并在 `note` 写明**沿用 flash 档估算、未经供应商账单核对、属 estimate 待核对** —— 沿用约定并标注不确定性，而非编造价格。
+
+### 剩余步骤（严格顺序）
+
+1. **A4 验证**：L1 六条命令 + 全量回归（后台 `pwsh-53`，日志 `%TEMP%\l1-a4-wiki.log`）。期望 913 passed / 0 failed。
+2. **CI**：A4 已 dispatch（run `35119905641` / `35119909715`）；须先 `git ls-remote` 确认远程 HEAD = `554bce2f…`。
+3. **新 suffix 绑定 A4**：`%TEMP%\suffix_tool.py create --repo <cycle-wiki> --candidate 554bce2f…`，再 `append` Spec 10/11/12 事件（模板见 `%TEMP%\a2_new_suffix.py`、`a2_spec12_events.py`）。A3 的 suffix（hash `ce40a77a…`，绑定 `ca24a199`）须先归档到 `void/` 再作废。
+4. **L3 用 A4 重跑**：`AGENT_CONTRACT_MODE=observe`、`AGENT_CONTRACT_RUN_ID=foundation-0_1_0-c1-wiki-smoke`、`AGENT_CONTRACT_COMMIT=554bce2f…`、`python scripts/contracts/run_l3_smoke.py --run-manifest config/contracts/smoke-v0.1.json`。**跑完必须 `git checkout -- output/eval/cost_log.jsonl`**（业务运行会追加污染这个被跟踪文件；混入候选会让 B 阶段 allowlist 门禁失败）。失败 run 要归档到 `failed-runs/`（已有 4 份）。
+5. **Coding 侧**：其 smoke manifest 预登记 `provider=opencode_go` / `model=mimo-v2.5`，而 opencode **推理 429** ⇒ Coding L3 很可能同样跑不通，需要把同一套 provider 整合应用到 Coding（可能要 **A5_coding**）。**先实测再决定，不要凭猜测做候选。**
+6. **Spec 14**：`python scripts/contracts/publish_evidence.py --candidate <A4> --release-version 0.1.0`（Coding 侧需 `AGENT_CONTRACT_CANONICAL_PAYLOAD_COMMIT=<A_wiki>`）→ 形成 B_wiki/B_coding。注意 `evidence_publication_allowlist` 已含 Wiki 账本（L322-323）。
+7. **Spec 15**：构造 **A/B tree 之外**的闭合 cycle plan → `coordinate_cycle.py --plan <plan> --output <out>` → `finalize_cycle.py --coordination <out> --release docs/contracts/releases/0.1.0` → C_wiki → 合并 canonical branch 后复验 → Cycle COMPLETE。需 `AGENT_CONTRACT_ALLOW_REAL_COORDINATION` / `ALLOW_REAL_LEDGER` / `ALLOW_REAL_RELEASE` 守卫。
+
+### 已核查、不需要修的项（省重复排查）
+
+- `coordinate_cycle.evidence_publication_allowlist` **已包含** Wiki 账本；`check_ledger_append_only` 存在。
+- `coordinate_cycle` 对 Wiki 回归接受 `PASS` **或** `PASS_WITH_KNOWN_BASELINE_FAILURES`；`gate_candidate` 已按裁定实现 G-07（`RESOLVED_UNEXPECTEDLY` = 允许 + `needs_review`）。
+- `publish_evidence` 的 `full_regression` 硬编码为 Spec 14 字面要求值，属**已记残余**，不阻塞。
+- **agent/judge 模型分离**目前丢失（旧 judge 默认 `mimo-v2.5` 只在已限流的 opencode 上）；保留 `ark_judge_model` 覆盖开关，网关恢复后应重建分离以缓解自评偏差 —— 记为待办。
+
+---
+
 ## 会话恢复指南（供上下文压缩后接手）
 
 **当前状态一句话**：Foundation Contract **Spec 01–12 已 `COMPLETE`，但 A 因 Spec 13 的 B1/B2/B3 缺陷被 `SUPERSEDED`**（用户按 N-04 批准规范路径）；正在实施 **A2**（纯工具级修复，payload hash 不变）。A2 完成后须重跑 L1/回归（2 仓）、重做 L2、跑真实 L3，再进 Spec 14/15。Spec 14/15 未解锁。
