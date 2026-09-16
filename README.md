@@ -131,13 +131,26 @@ v0.1 契约内容：`Usage` / `Cost` / `CostSummary` / `ErrorEnvelope` / `Founda
 
 | 范围 | 授权 | 进度 |
 |---|---|---|
-| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–10 `COMPLETE`**（2026-09-10 → 09-16）；**Spec 11 Stage 0 校准已完成**（`docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md`），Spec 11 冻结动作待启动 |
+| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–11 `COMPLETE`**（2026-09-10 → 09-16）；**Candidate A 已冻结**，L1 与全量回归在两个 A 的干净 checkout 上全绿；Spec 12(L2) / 13(L3) 已由 `candidate_a` pending suffix 解锁 |
 | Part II — Cycle 2 / v0.2（Spec 16） | `FEEDBACK-BOUND` | 需真实 L2/L3 问题驱动才可启动 |
 | Part III — 抽取门禁（Spec 17–18） | `GATE-DEFINED` | 只评估门禁，不得实现 |
 
 DAG：`01 → 02 → 03 → 04 →（05 → 07 / 06 → 08）→ 09 → 10 → 11`（**Candidate A 冻结边界**）`→ 12(L2) / 13(L3) → 14(Evidence B) → 15(协调 + Finalization C → Cycle COMPLETE)`。
 
 Spec 10 已交付**全部 pre-freeze 工具与 5 个 CI workflow**（两仓 `scripts/contracts/`、`.github/workflows/`）；Spec 11 之后这些实现不得再改——缺工具只能把 Candidate A 标 `SUPERSEDED` 并回到所属 Spec 形成 A2（`GOV-FRZ-001/002`）。
+
+### Candidate A 冻结边界（2026-09-16）
+
+| 项 | 值 |
+|---|---|
+| A_wiki | `b726c09efc0f06a890d44fd1c87f5dfbfa6bf70b` |
+| A_coding | `c8e06e52db69ffdeb833cee9d0f653934ba44523` |
+| Cycle 分支 | `contract-cycle/foundation-0.1.0-cycle-1`（**A/B/C 的唯一承载分支**）。母 Spec §16.3 要求 `diff(A,B) ⊆ evidence publication allowlist`，因此 README / devlog 等非 allowlist 提交必须留在 `feature/foundation-contract-spec10`，不得插入 A→B 之间 |
+| 正式 L1（两个 A 的干净 detached checkout，0 个 worktree 改动） | 6 条命令全部 exit 0：`generate_schemas --check`；`verify_payload`（40 文件 / `sha256:64049830…`，两仓一致）；conformance 两仓各 **224 passed**；`tests/contracts` Wiki **319 passed / 3 skipped**、Coding **196 passed**；`validate_local --gate pr` **8/8**；`python -m build` sdist + wheel |
+| 全量回归 | Wiki `864 passed / 10 skipped / **0 failed**`；Coding `577 passed / 13 skipped / **0 failed**` |
+| 基线口径（G-07） | Wiki 规范基线登记 3 条 known failure，实测**全部 PASS** → 按 `KNOWN_BASELINE_FAILURE_RESOLVED_UNEXPECTEDLY` 处理：**不算 gate 失败**、标记需 review、基线不改写 |
+| 受控 staging（**故意不提交**） | `docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}`，`target_boundary=candidate_a`、`candidate_commit=A_wiki`、`suffix_hash=sha256:bd5e2dcf…`。Spec 14 必须把它**逐字节** append 到 B_wiki 账本，否则 Spec 12/13 的证据无效 |
+| 预期输出（Spec 11） | 固定 A SHA、Candidate inventory 与 Payload identity、Candidate-bound L1、Candidate-bound 回归与基线比较 —— 全部记录在 `docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md` §9 与上述 pending suffix 的 `evidence_refs` |
 
 ### 全程红线
 

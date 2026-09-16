@@ -2308,9 +2308,61 @@ push 触发 workflow 后收到失败通知。**这批失败极有价值**：本�
 
 ---
 
+## Spec 11 完成：Candidate A 已冻结（2026-09-16）
+
+### 交付
+
+| 产物 | 说明 |
+|---|---|
+| **A_wiki `b726c09` / A_coding `c8e06e5`** | 两个固定候选提交，取自 `feature/foundation-contract-spec10` 的 HEAD（**不是 `main`**，两仓 main 都没有 Foundation 产物）。此后验证一律用 SHA，不用分支名 |
+| **Cycle 分支 `contract-cycle/foundation-0.1.0-cycle-1`** | 在 A 处创建，作为 A/B/C 的唯一承载分支。母 Spec §16.3 要求 `diff(A,B) ⊆ evidence publication allowlist`，故 README/devlog 等非 allowlist 提交必须留在 feature 分支，不得插入 A→B 之间 |
+| `docs/specs/foundation-contract/execution-status-events.jsonl` | 追加 Spec 11 `NOT_STARTED→READY→IN_PROGRESS` 两条 canonical 事件（共 43 条；`candidate_commit=null`，rule 7 对 Spec 01–11 的 pre-freeze 事件允许 null） |
+| `docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}` | **受控 staging，故意不提交**：Spec 11 `IN_PROGRESS→VALIDATED`（`FREEZE_BOUNDARY_REACHED`）+ `VALIDATED→COMPLETE`（`CANDIDATE_FROZEN`），两条均绑定 `candidate_commit=A_wiki`；envelope `target_boundary=candidate_a`、`event_count=2`、`suffix_hash=sha256:bd5e2dcf…` |
+| 校准记录 §3.1 + §9 | G-20 逐字节复核记录 + Spec 11 pre-freeze inventory（契约身份、仓库本地身份、工具链、工作树归属） |
+
+### 为什么 boundary 事件在 pending suffix 而不是 canonical 账本
+
+`FREEZE_BOUNDARY_REACHED` / `CANDIDATE_FROZEN` 属于"无论 spec 为何都必须绑定非空 `candidate_commit`"的 5 个边界/发布类理由码（G-23 收严），而 A 冻结前这个 SHA 还不存在 → 只能等 A 形成后写进 controlled pending suffix（母 Spec §16.2 正是这样规定的）。Spec 14 必须把该 suffix **逐字节** append 到 B_wiki 账本，否则 Spec 12/13 依赖它的证据无效。
+
+### 正式验证（在两个 A 的干净 detached checkout 上重跑，不引用 Spec 09/10 开发期 PASS）
+
+| L1 步骤 | Wiki A `b726c09` | Coding A `c8e06e5` |
+|---|---|---|
+| `generate_schemas --check` | exit 0（6 schemas / 68 rules） | exit 0 |
+| `verify_payload` | exit 0（40 文件 / `sha256:64049830…`） | exit 0（同 hash） |
+| `pytest agent_core/contracts/conformance` | **224 passed** | **224 passed** |
+| `pytest tests/contracts` | **319 passed / 3 skipped** | **196 passed** |
+| `validate_local --gate pr` | exit 0（**8/8**） | exit 0（**8/8**） |
+| `python -m build` | exit 0（sdist + wheel，wheel 内 payload 完整） | exit 0（sdist + wheel） |
+| `pytest tests/`（全量回归） | **864 passed / 10 skipped / 0 failed** | **577 passed / 13 skipped / 0 failed** |
+
+**G-07 口径**：Wiki 规范基线登记 3 条 known failure（`tests/test_stats_collector.py`），实测**全部 PASS** → 按 `KNOWN_BASELINE_FAILURE_RESOLVED_UNEXPECTEDLY` 处理：**不算 gate 失败**、标记需 review、基线文件不改写。Coding 期望 `PASS`，实测 `PASS`。
+
+**Suffix 校验不是空转**：三个负例均按预期 exit 1 + `SPEC_STATUS_CONFLICT` —— 篡改 `suffix_hash` → `PENDING_2_SUFFIX_HASH_MISMATCH`；envelope 与事件 `candidate_commit` 不符 → `PENDING_3_CANDIDATE_MISMATCH`；`event_count` 不符 → `PENDING_2_EVENT_COUNT_MISMATCH`。
+
+### G-20 逐字节复核（本轮新发现，已按冻结语义接受）
+
+Spec 10 的提取报告只记了 descriptor 一处磁盘字节差异。本轮对**全部 40 个 payload 文件**做了逐字节 + canonical 双重比对：
+
+```text
+磁盘字节不同        7  （descriptor + 全部 6 个 schema）
+canonical 内容不同   0  → payload_hash / descriptor_hash / schema_set_hash 两仓完全一致
+差异量              每文件恰 1 字节：Wiki 结尾多一个 LF（1797 vs 1796）
+```
+
+**根因定位到行**：`tooling/generate_schemas.py:182,187` 写快照用 `canonical_json_dumps(x) + "\n"`（多一个装饰性 LF）；`bundle.py:143` 落盘的是 `file_canonical_content()` 的结果 —— 该函数对 `.json` 重新序列化为 canonical JSON（无尾随 LF），对其它文本只做换行规范化。所以 **Coding 收到的就是 canonical 形态，Wiki 自己生成的快照反而多一字节**；`--check` 比较的是 `canonical_json_dumps(...)`，对该字节不敏感，故两仓都通过。
+
+**本 Cycle 不修的理由**（写入校准记录 §3.1）：① 无任何消费者按原始字节比较两仓（`coordinate_cycle` 只比 `payload_hash`/`payload_descriptor_hash`/`schema_set_hash`；本地 gate 按 G-06 不读另一仓）；② 要同时满足"逐字节相同"与"生成器幂等"必须改 payload 内的 `generate_schemas.py` 或 `bundle.py`，会**变更 `contract_payload_hash`**，使账本中已 `COMPLETE` 的 Spec 09/10 事件所引用的 `sha256:64049830…` 变成悬空身份（append-only 账本无法回改）；③ 只重写那 7 个 JSON 快照虽 hash 不变，却会让提交状态与生成器输出不一致（下次 `--write` 即再分叉），形成"看似逐字节相同、实则随时会漂"的假象。**结论：按已冻结的 G-20 语义接受，记为显式残留，建议随下一个 payload 版本修。**
+
+### 工作树归属（Freeze Procedure 步骤 1）
+
+Wiki 的 2 个长期 `M` 文件明确归属为运行期/数据改动、**不纳入 A**（均未提交，天然不进 A）：`output/eval/cost_log.jsonl`（`+42`，项目测试会追加）、`data/extractions/v3_seed_db_v2.json`（`+1/−1`，2026-08-18 起未提交）。Coding 工作树**完全干净**，无未跟踪文件。
+
+---
+
 ## 会话恢复指南（供上下文压缩后接手）
 
-**当前状态一句话**：Foundation Contract **Spec 01–10 全部 `COMPLETE`**；Spec 11（Candidate A 冻结 / L1 / 全量回归）**尚未开始**，其 Stage 0 的准备工作已完成并记录在案；两仓 CI 全绿。
+**当前状态一句话**：Foundation Contract **Spec 01–11 全部 `COMPLETE`**；**Candidate A 已冻结**（A_wiki `b726c09` / A_coding `c8e06e5`），正式 L1 与全量回归在两个 A 的干净 checkout 上全绿；Spec 12(L2) / 13(L3) 已由 `candidate_a` pending suffix 解锁，下一个持久化边界是 Spec 14 的 B_wiki / B_coding。
 
 ### 第一步：读三份文件（按序）
 
@@ -2322,32 +2374,44 @@ push 触发 workflow 后收到失败通知。**这批失败极有价值**：本�
 
 ```powershell
 cd "D:\AI project\_worktrees\foundation-contract\wiki"   # Coding 同理
+# canonical 账本单独归约
 D:\CodexPython312\python.exe scripts/contracts/status_ledger.py validate --ledger docs/specs/foundation-contract/execution-status-events.jsonl
+# canonical 前缀 + candidate_a pending suffix（Spec 11 之后应看到 11 COMPLETE pending=True）
+$d='docs/specs/foundation-contract'
+D:\CodexPython312\python.exe scripts/contracts/status_ledger.py validate --ledger "$d/execution-status-events.jsonl" --pending-jsonl "$d/execution-status-events.pending.jsonl" --pending-envelope "$d/execution-status-events.pending.json"
 D:\CodexPython312\python.exe scripts/contracts/validate_local.py --gate pr
 ```
 
+> **注意**：`--self-commit` **不要**传 A_wiki。pending suffix 的事件绑定 `candidate_commit=A_wiki`，而 `A_wiki` 正是封装 canonical 前缀的那次提交；传 `--self-commit A_wiki` 会正确地报 `RULE_7_SELF_COMMIT_REFERENCE`。该 suffix **本就不属于 A**，它是 A 之外的受控 staging，Spec 14 才把它 append 进 B_wiki。
+
 - 权威解释器：`D:\CodexPython312\python.exe`（3.12.10 + pydantic 2.13.4）。PATH 里的 python **没有**项目依赖。
-- 动态状态**只看** `docs/specs/foundation-contract/execution-status-events.jsonl`（41 条事件；子 Spec 里的状态是 genesis，不反映进度）。
+- 动态状态**只看** `docs/specs/foundation-contract/execution-status-events.jsonl`（canonical 43 条事件；子 Spec 里的状态是 genesis，不反映进度）。加上 `candidate_a` pending suffix 后 Spec 11 = `COMPLETE (pending=True)`。
 - 契约身份：`contract_version=0.1.0`、payload `sha256:64049830…`（40 文件，两仓一致）、rule coverage `68 = 56 conformance + 7 项目 + 5 deferral`。
 
-### 第三步：Spec 11 要做什么（见校准记录 §7）
+### 第三步：下一步是 Spec 12 / 13（Spec 11 已完成）
 
-1. 逐条 ratify 校准记录 §1–§3；确认 §5 的 L2 语料口径与 §4 的 G-07 口径。
-2. 用 `canonical_pending_paths()` 建立 `candidate_a` 边界的 suffix 载体，写入 Spec 11 的 freeze-boundary 条目。
-3. 冻结 A：两仓各取 `feature/foundation-contract-spec10` 的 HEAD（**不是 `main`**，两仓 main 都没有 Foundation 产物）；记录 payload hash。
-4. 跑 L1 + 全量回归，按 `KNOWN_BASELINE_FAILURE_RESOLVED_UNEXPECTEDLY` 口径判定（不失败、标记 review、不改基线）。
-5. 账本追加 `FREEZE_BOUNDARY_REACHED` / `CANDIDATE_FROZEN`（`candidate_commit` 非空）。
-6. **冻结后任何语义改动 = `SUPERSEDED` 当前 A 回到所属 pre-freeze Spec 形成 A2**（`GOV-FRZ-002`）。
+Spec 12（历史回放 + 净化语料，L2）与 Spec 13（新鲜冒烟 + coverage + 业务不变性，L3）都由 `11 COMPLETE` 解锁、彼此独立，**可在同一轮并行**：
 
-### 远程与分支（2026-09-16 收盘）
+1. 两者都**只能使用 A 已有的工具**（`replay_history.py` / `validate_local.py --gate candidate|smoke` / `publish_evidence.py`），**不得新增或修改任何实现文件**。
+2. 两者都必须在自己的事件里绑定**非空 `candidate_commit`**（G-23；边界/发布类理由码一律非空）。
+3. L2 语料口径见校准记录 §5（Wiki 220 条全 `REPRODUCTION_RESTRICTED`；Coding 3 条 `LEGACY_DATA_INSUFFICIENT`）—— Spec 12 必须先**确认接受**该结论。
+4. 完成后把 Spec 12/13 的 `VALIDATED` / `COMPLETE` 事件**追加到同一个 `candidate_a` pending suffix**（在既有 2 条之后追加，并同步更新 envelope 的 `event_count` 与 `suffix_hash`）。
+5. 然后 Spec 14 才把整个 suffix 逐字节 append 到 B_wiki 账本并形成 B。
+6. **冻结后任何语义改动 = `SUPERSEDED` 当前 A 回到所属 pre-freeze Spec 形成 A2**（`GOV-FRZ-002`）；即使只改一个字节也算。
 
-| 仓 | 分支 | 远程 HEAD |
-|---|---|---|
-| Wiki | `main` | `c2d39c5`（含 Foundation 母 Spec 文档 + 远程 fix/issue-2 合并） |
-| Wiki | `feature/foundation-contract` | `102de4c`（Spec 09 收尾） |
-| Wiki | `feature/foundation-contract-spec10` | 本次校准提交（Spec 10 全部工作 + CI 修复 + 校准记录） |
-| Coding | `feature/foundation-contract` | `1798859`（Spec 09 镜像） |
-| Coding | `feature/foundation-contract-spec10` | 本次校准提交 |
+### 远程与分支（2026-09-16 Spec 11 收盘）
+
+| 仓 | 分支 | HEAD | 说明 |
+|---|---|---|---|
+| Wiki | `main` | `c2d39c5` | 含 Foundation 母 Spec 文档 + 远程 fix/issue-2 合并；**不含任何 Foundation 代码** |
+| Wiki | `contract-cycle/foundation-0.1.0-cycle-1` | `b726c09` = **A_wiki** | **A/B/C 唯一承载分支** |
+| Wiki | `feature/foundation-contract-spec10` | Spec 11 记账提交 | 全部实现 + 校准 + 冻结前记账（README/devlog 留在此分支，不插入 A→B） |
+| Wiki | `feature/foundation-contract` | `102de4c` | Spec 09 收尾 |
+| Coding | `contract-cycle/foundation-0.1.0-cycle-1` | `c8e06e5` = **A_coding** | **A/B/C 唯一承载分支** |
+| Coding | `feature/foundation-contract-spec10` | `c8e06e5` | Spec 10 全部工作 |
+| Coding | `feature/foundation-contract` | `1798859` | Spec 09 镜像 |
+
+> Coding 主工作区 `D:\AI project\Knowledge-Augmented Autonomous Coding Agent` 当前 `08a8275 [main]` —— 本轮**未触碰** Coding `main`。
 
 ### 环境坑（可复用，别再踩）
 
@@ -2358,3 +2422,7 @@ D:\CodexPython312\python.exe scripts/contracts/validate_local.py --gate pr
 5. **不要提交** `data/extractions/v3_seed_db_v2.json` 与 `output/eval/cost_log.jsonl`（项目测试会改写后者，前者是历史遗留）；两者长期处于 `M` 状态属正常。
 6. **网络**：`github.com` 边缘 IP 偶尔不可达（`api.github.com` 正常）；push 失败时重试即可，本地提交始终安全。
 7. **`.gitignore` 已含** `output/contract-validation/{staging,raw,private}/`、`build/`、`dist/`；scratch 脚本请放 `%TEMP%`，不要放 `staging/`（publication safety scan 会扫该目录并命中绝对路径）。
+8. **PowerShell 传 JSON 给原生命令会吃掉引号**：`--event '{"a":1}'` 到 Python 时变成 `{a:1}` 而解析失败。所有需要传 JSON 的场合**改走临时文件**。同理 `echo` 在 pwsh 里是 `Write-Output` 别名，空参报错 —— 用 `Write-Host ''` 或 `"..."; ""` 之外的写法。
+9. **cycle 分支不能混入记账提交**：`diff(A,B) ⊆ allowlist` 是硬门禁，README/devlog 不在 allowlist 内 → 记账提交必须留在 `feature/foundation-contract-spec10`，A/B/C 只走 `contract-cycle/foundation-0.1.0-cycle-1`。
+10. **pending suffix 是 untracked 的**：`docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}` **故意不提交**（提交它会污染 A→B 的 diff）。切分支不会动 untracked 文件，但 `git clean -fd` 会删掉它 —— **不要**在 spec 目录跑 `git clean`；重建脚本见本轮写法（用 `canonical_pending_paths()` + `compute_suffix_hash()`）。
+11. **不要 `git worktree add` 到仓库内部**：干净 checkout 用 `git worktree add --detach <path> <A_SHA>` 建在 `%TEMP%` 下，跑完 `git worktree remove --force`。Coding 与 Wiki 都提供顶层 `agent_core`，**同一解释器无法同时可编辑安装两者**，所以干净 checkout 只能靠 CWD + 自举，不要试图 `pip install -e`。
