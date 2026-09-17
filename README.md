@@ -16,7 +16,7 @@
 - **实体双向索引**：5,213 实体的 25,300 条引用，支持精确匹配和别名解析
 - **PRTS 终端前端**：SSE 流式聊天、检索步骤可视化、来源引用展开
 - **W0 评测体系**（升级阶段）：`arknights_wiki/eval/` Benchmark 建库——100 题八类覆盖、DeepEval 打分、mimo-v2.5 统一 judge（`report_v1_mimo.md` overall 0.857）、路由/打分层 bug 修复与测试补全
-- **Foundation Contract 公共工程层**（2026-09 起）：与 Knowledge-Augmented Autonomous Coding Agent 共享 `agent_core.contracts` 契约镜像——presence-aware 事实语义（Unknown ≠ Zero / Estimated ≠ Reported / USD ≠ CNY）、非侵入旁路治理、append-only 状态账本与双仓 L1/L2/L3 证据门禁。Cycle 1 Spec 01–10 已完成（packaging + 6 个本地契约工具 + 5 个 CI workflow）
+- **Foundation Contract 公共工程层**（2026-09 起）：与 Knowledge-Augmented Autonomous Coding Agent 共享 `agent_core.contracts` 契约镜像——presence-aware 事实语义（Unknown ≠ Zero / Estimated ≠ Reported / USD ≠ CNY）、非侵入旁路治理、append-only 状态账本与双仓 L1/L2/L3 证据门禁。Cycle 1 进度：Spec 01–12 `COMPLETE`，Spec 13（双仓 L3 新鲜冒烟）`BLOCKED` —— Wiki 半边已 gate 8/8 闭合，Coding 半边被一个**实测的候选业务代码缺陷**挡住，故 Spec 14/15 仍锁定；缺陷与恢复条件见 `docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md` §11
 
 ---
 
@@ -131,7 +131,7 @@ v0.1 契约内容：`Usage` / `Cost` / `CostSummary` / `ErrorEnvelope` / `Founda
 
 | 范围 | 授权 | 进度 |
 |---|---|---|
-| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–13 `COMPLETE`** —— 候选经 **A→A2→A3→A4** 固化（**A4_wiki `554bce2f`** / A4_coding `339768dd`）；真实 L3 fresh smoke 在 A4 上 gate **8/8** 闭合；**Spec 14/15 已解锁**（待做：Evidence B → 协调 → C_wiki） |
+| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–12 `COMPLETE`；Spec 13 `BLOCKED`** —— 候选经 **A→A2→A3→A4（Wiki）/ A→A2→A5（Coding）** 固化（**A_wiki `554bce2f`** / **A_coding `c5d0af0f`**）；Wiki 半边 L3 gate **8/8** 闭合，**Coding 半边 L3 未闭合**（见下）；**Spec 14/15 因此仍锁定** |
 | Part II — Cycle 2 / v0.2（Spec 16） | `FEEDBACK-BOUND` | 需真实 L2/L3 问题驱动才可启动 |
 | Part III — 抽取门禁（Spec 17–18） | `GATE-DEFINED` | 只评估门禁，不得实现 |
 
@@ -139,43 +139,37 @@ DAG：`01 → 02 → 03 → 04 →（05 → 07 / 06 → 08）→ 09 → 10 → 1
 
 Spec 10 已交付**全部 pre-freeze 工具与 5 个 CI workflow**（两仓 `scripts/contracts/`、`.github/workflows/`）；Spec 11 之后这些实现不得再改——缺工具只能把 Candidate A 标 `SUPERSEDED` 并回到所属 Spec 形成 A2（`GOV-FRZ-001/002`）。
 
-### Candidate A 冻结边界（2026-09-16）
+### Candidate A 冻结边界（2026-09-17 现状）
 
 | 项 | 值 |
 |---|---|
-| A_wiki | `b726c09efc0f06a890d44fd1c87f5dfbfa6bf70b` |
-| A_coding | `c8e06e52db69ffdeb833cee9d0f653934ba44523` |
+| A_wiki | `554bce2f2ebd00f5f4e6ac722680a8a57ab8cc66`（A4） |
+| A_coding | `c5d0af0f4c9110259945fc90151da4336a07d639`（A5；取代 A2 `339768dd`） |
+| Payload 身份 | `contract_version=0.1.0`、40 文件、`payload_hash=sha256:64049830…` —— 自 A 起**从未变化**，A2/A3/A4/A5 全部是 payload-neutral 的项目本地改动 |
 | Cycle 分支 | `contract-cycle/foundation-0.1.0-cycle-1`（**A/B/C 的唯一承载分支**）。母 Spec §16.3 要求 `diff(A,B) ⊆ evidence publication allowlist`，因此 README / devlog 等非 allowlist 提交必须留在 `feature/foundation-contract-spec10`，不得插入 A→B 之间 |
-| 正式 L1（两个 A 的干净 detached checkout，0 个 worktree 改动） | 6 条命令全部 exit 0：`generate_schemas --check`；`verify_payload`（40 文件 / `sha256:64049830…`，两仓一致）；conformance 两仓各 **224 passed**；`tests/contracts` Wiki **319 passed / 3 skipped**、Coding **196 passed**；`validate_local --gate pr` **8/8**；`python -m build` sdist + wheel |
-| 全量回归 | Wiki `864 passed / 10 skipped / **0 failed**`；Coding `577 passed / 13 skipped / **0 failed**` |
-| 基线口径（G-07） | Wiki 规范基线登记 3 条 known failure，实测**全部 PASS** → 按 `KNOWN_BASELINE_FAILURE_RESOLVED_UNEXPECTEDLY` 处理：**不算 gate 失败**、标记需 review、基线不改写 |
-| 受控 staging（**故意不提交**） | `docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}`，`target_boundary=candidate_a`、`candidate_commit=A_wiki`、`suffix_hash=sha256:bd5e2dcf…`。Spec 14 必须把它**逐字节** append 到 B_wiki 账本，否则 Spec 12/13 的证据无效 |
-| 预期输出（Spec 11） | 固定 A SHA、Candidate inventory 与 Payload identity、Candidate-bound L1、Candidate-bound 回归与基线比较 —— 全部记录在 `docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md` §9 与上述 pending suffix 的 `evidence_refs` |
+| 正式 L1（A5 干净 checkout） | 6 条命令全部 exit 0：`generate_schemas --check`（schemas=6 / rules=68）；`verify_payload`（三哈希未变）；conformance **224 passed**；`tests/contracts` **242 passed**；`validate_local --gate pr` **8/8**；`python -m build` |
+| 全量回归 | Wiki `913 passed / 10 skipped / **0 failed**`（A4）；Coding `638 passed / 3 skipped / **0 failed**`（A5） |
+| 候选轮次 | Wiki：A `b726c09` → A2 `ca24a199` → A3 `3972c887` → **A4 `554bce2f`**；Coding：A `c8e06e5` → A2 `339768dd` → **A5 `c5d0af0f`**。每一轮都由一个**实测缺陷**驱动，逐轮记录见 `output/devlog.md` |
+| 受控 staging（**故意不提交**） | `docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}`（23 事件），`target_boundary=candidate_a`、`candidate_commit=A_wiki`、`suffix_hash=sha256:673486d1…`。Spec 14 必须把它**逐字节** append 到 B_wiki 账本，否则 Spec 12/13 的证据无效 |
 
-### L2 结果（Spec 12 `COMPLETE`）与 L3 阻断（Spec 13 `BLOCKED`）
+### Spec 12 `COMPLETE` / Spec 13 `BLOCKED`：经验证的进展与经验证的缺口
 
-Spec 12 在两个 **pristine cycle worktree**（checked out at A，`git status` 0 改动）上跑通了真实历史回放，L2 = `PASS`：
+L2（Spec 12）在两仓真实跑通：Wiki 220 records / 2 sources（`REPRODUCTION_RESTRICTED`，`difference_class` = `NONE`×120 + `expected semantic correction`×100）、Coding 3 records（`LEGACY_DATA_INSUFFICIENT`×3）、`adapter_defects=0`、发布扫描无命中；来源 sha256 绑定 **A 的已提交 blob**（Wiki `cost_log` `9f4bd645…`、`results_scored` `aa6f633d…`）。
 
-| | Wiki | Coding |
+L3（Spec 13）**只有 Wiki 半边闭合**：`AGENT_CONTRACT_MODE=observe` 下驱动真实 `arknights_wiki.eval.runner`，gate **8/8**、业务 exit 0、51.2s、12 事件、5 个 producer-stage 对 `ALL_STAGES 5/5`，未观测项按 `NOT_OBSERVED_ALLOWED` 具名登记且**不计为覆盖**。
+
+Coding 半边 L3 **未闭合**，四条原因全部实测（逐条证据见 `docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md` §11）：
+
+| 编号 | 内容 | 性质 |
 |---|---|---|
-| 记录数 / 来源数 | 220 / 2 | 3 / 3 |
-| status | `REPRODUCTION_RESTRICTED` ×220 | `LEGACY_DATA_INSUFFICIENT` ×3 |
-| difference_class | `NONE` ×120（cost_log/runner）+ `expected semantic correction` ×100（results_scored/scoring） | `legacy insufficiency` ×3 |
-| adapter_defects | 0 | 0 |
-| scan（secret/path/forbidden/size/schema） | failed=0 | failed=0 |
-| raw 业务证据 | 未进入 contract staging、未进 Git | 同 |
+| F1 | 预登记 provider `opencode_go`/`mimo-v2.5` → HTTP 429 `GoUsageLimitError`（月度额度耗尽） | 环境 |
+| F2 | 预登记 case `schedule-99` 的 fixture（`dbader/schedule`）测试模块调用 POSIX-only `time.tzset()` → Windows 下必然 `environment_error`，Agent 不运行，`case_cost/normal` 不可观测 | 平台/夹具 |
+| F3 | `benchmark/runner.py::_run_one_case` 先 `with sandbox_executor(repo_dir)` 再 `_ensure_repository()`，而 `DockerExecutor.create()` 要求 `workspace_root` 已存在 → **任何全新 workspace** 下的 docker 执行器都以「沙箱工作区不存在」失败 | **候选（业务代码）缺陷** |
+| F4 | 即使临时修正 F3 的顺序（未提交试验），docker 路径仍在冻结的 `timeout_seconds=600` 内不闭合，业务路径 0 provider 响应、0 事件 | 候选路径 + provider，未定论 |
 
-来源 sha256 绑定 **A 的已提交 blob**（Wiki `cost_log` `9f4bd645…`、`results_scored` `aa6f633d…`），因此语料可复现 —— 这也是必须在干净 checkout 而非被改写的工作区跑 L2 的原因。PR gate 第 [7] 步"publication safety scan"现在**不再空转**（两仓各 2 文件、无命中）。
+对照：同一 agent + 同一 provider + 同一 case 在 local 执行器下 **12 次调用 / 83s** 全部正常，证明 provider 与 agent 本身健康（F5）。
 
-**Spec 13 阻断（三个独立、可复现的 A 缺陷）**：
-
-| 编号 | 缺陷 | 证据 |
-|---|---|---|
-| **B1** | smoke gate 第 [8] 步要求 `<evidence_root>/<run_id>/run-summary.json`（G-04 冻结的 8 键），但**两仓没有任何组件写它** | 全仓扫描仅命中"要求它的 gate 自己"+ 计划/devlog；A 的 runtime 8 键里只原生暴露 `sink_failure_count`，其余 7 键无 accessor |
-| **B2** | G-13 把 `--gate smoke` 冻结为"只校验已完成的 run"，却把业务运行留给"受控手动命令"——而**该命令在 A 中未定义** | `contract-local.yml` 末尾只记录了 validate-only 的 smoke 调用自身 |
-| **B3** | smoke manifest 预登记 `case_ids=[character_complex_002]`，但**无法选择**该 case | `eval/runner.py` 只有 `--bench/--limit/--category/...`；默认 bench `questions.jsonl` 不存在，草稿 bench 里该 case 在第 2 位，`--limit 1` 会跑成 `character_complex_001` |
-
-Spec 13 的 No-implementation Boundary 禁止热修 harness/wiring/config/tests，其 Stop Conditions（"需要修改工具/接线/tests"、"Evidence 无法闭合"）已触发。按 Index §5 与 `GOV-FRZ-002`，post-freeze 工具缺失必须让 **A `SUPERSEDED` 并回到拥有该工具的 pre-freeze Spec（Spec 10：post-freeze 工具集与 smoke harness）形成 A2**。**本轮未修改任何实现文件、未执行业务运行，无需回退**；A2 需要的代码变更属项目规则 N-04 范畴，须经用户批准后执行。
+按 Spec 13 的 `No-implementation Boundary` 与 Stop Conditions，本轮**不热修**业务代码、**不**事后调高冻结预算、**不**把失败 run 发布为 Evidence —— 而是如实记 `13 BLOCKED`，把 F3 的最小修改建议与恢复条件写入校准记录 §11.6，交回 pre-freeze 子 Spec 形成新候选。失败 run 已按 Spec 13 要求保留在 `output/contract-validation/{staging/,}failed-runs/`。
 
 ### 全程红线
 

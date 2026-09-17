@@ -2759,3 +2759,92 @@ A2 需要新增的代码（都属 N-04 范畴，须先获批准）：
 9. **cycle 分支不能混入记账提交**：`diff(A,B) ⊆ allowlist` 是硬门禁，README/devlog 不在 allowlist 内 → 记账提交必须留在 `feature/foundation-contract-spec10`，A/B/C 只走 `contract-cycle/foundation-0.1.0-cycle-1`。
 10. **pending suffix 是 untracked 的**：`docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}` **故意不提交**（提交它会污染 A→B 的 diff）。切分支不会动 untracked 文件，但 `git clean -fd` 会删掉它 —— **不要**在 spec 目录跑 `git clean`；重建脚本见本轮写法（用 `canonical_pending_paths()` + `compute_suffix_hash()`）。
 11. **不要 `git worktree add` 到仓库内部**：干净 checkout 用 `git worktree add --detach <path> <A_SHA>` 建在 `%TEMP%` 下，跑完 `git worktree remove --force`。Coding 与 Wiki 都提供顶层 `agent_core`，**同一解释器无法同时可编辑安装两者**，所以干净 checkout 只能靠 CWD + 自举，不要试图 `pip install -e`。
+
+---
+
+## 2026-09-17（续）A5_coding：provider 整合 + Coding 半边 L3 实测阻断（Spec 13 退回 IN_PROGRESS → BLOCKED）
+
+### 触发：发现上一轮的 Spec 13 `COMPLETE` 证据不足
+
+回看账本时对照母 Spec，发现 **Spec 13 的 Coding 半边从未真实运行过**：账本里 Spec 13 的 evidence_refs
+只引用了 `foundation-0_1_0-c1-wiki-smoke`，而子 Spec 13 的 `Expected Outputs` 明写「双仓闭合 L3 run
+artifacts」、`Validation Commands` 分别给出 Wiki 与 Coding 两条命令、Index §3 的 Target 也是 `BOTH`。
+即上一轮写下的 `13 COMPLETE` 是**过早状态**（不是伪造证据，但结论不成立）。
+
+处理：不改写历史事件，改用账本自带的 `COMPLETE → IN_PROGRESS` + `reason_code=STATUS_CORRECTION`
+并 `references=[<被纠正的 event_id>]` 把它退回重做（reducer 自带规则 8 正是为此设计）。
+
+### A5_coding（provider 整合，用户已授权 N-04）
+
+| 项 | 值 |
+|---|---|
+| A_coding | `c5d0af0f4c9110259945fc90151da4336a07d639`（取代 A2 `339768dd2f9e3b26c8820408ec93bf30e378e50e`） |
+| A_wiki | `554bce2f…`（未变） |
+| payload | `sha256:64049830…` / 40 文件 / 0.1.0 —— **未变**，A5 是 payload-neutral |
+| 改动 | `agent/llm.py`（新增 `command_goat` + `_resolve_provider_name()` 自动选择）、`config/contracts/smoke-v0.1.json`（provider/model 与 Wiki 锁步，**键集未变**）、`tests/test_llm.py`（+4 项覆盖）、`.env.example` |
+| L1 | 6 条全 exit 0；conformance 224；`tests/contracts` 242；`--gate pr` 8/8 |
+| 全量回归 | **638 passed / 3 skipped / 0 failed** |
+| L2 | `foundation-0_1_0-c1-coding-replay` PASS，3 records / 3 sources，全 `LEGACY_DATA_INSUFFICIENT` |
+
+证据（全部实测）：`command_goat/deepseek-v4.1-flash` **可用**（也支持 tool calling，2.9s 返回）；
+`opencode_go/mimo-v2.5` **429 `GoUsageLimitError`「Monthly usage limit reached」**；
+`deepseek_api/deepseek-flash` 可用。
+
+### Coding 半边 L3：四条实测原因（每层都留下了证据）
+
+1. **F1 预登记 provider 不可用** → 429 月度额度耗尽。
+2. **F2 宿主执行器不可能通过**：`schedule-99` 的 fixture 测试 `test_schedule.py:30` 调用
+   POSIX-only `time.tzset()`，Windows 下必然 `environment_error`（`AttributeError` 直接复现），
+   Agent 不运行 → `coding.benchmark.case_cost/normal` 不可观测。
+3. **F3 候选缺陷（关键）**：`benchmark/runner.py::_run_one_case` 先进入 `sandbox_executor(repo_dir)`
+   再调用 `_ensure_repository()`，而 `DockerExecutor.create()` 要求 `workspace_root` 已存在
+   （`tools/docker_sandbox.py`）→ **任何全新 workspace** 下 docker 执行器都以
+   「沙箱工作区不存在」失败，只有复用旧 workspace 才偶然通过。
+   即：宿主要 gh 才能做 repo 就绪、容器要 POSIX 才能跑测试，**唯一同时满足两者的 docker 执行器路径本身是坏的**。
+4. **F4 修正顺序后仍不闭合**：把 `_ensure_repository` 移到 `with` 之外（临时试验、**已还原未提交**）
+   并预建 workspace + 开放容器网络后，宿主 `gh` 克隆成功、沙箱创建成功，但业务路径在冻结的
+   `timeout_seconds=600` 内始终拿不到任何 provider 响应（0 事件；600.016s wall / ~17s CPU；
+   期间容器完全空闲）。
+5. **F5 对照**：同一 agent + 同一 provider + 同一 case 在 **local** 执行器下 **12 次调用 / 83s**
+   全部正常（prompt 到 170KB 仍 5.6s 返回）→ provider 与 agent 本身健康，问题在 docker 执行器路径。
+6. **F6**：把整个 driver 放进项目自己的 Linux 沙箱镜像（`ka-sandbox:py312-v1`，Python 3.12.14，
+   有 `time.tzset`）又暴露 `get_repository()` 依赖**宿主** `gh` CLI（`tools/github_tools.py`
+   设计上「凭据不进沙箱」），镜像内无 gh。
+
+### 本轮刻意不做的事
+
+- **不热修** `benchmark/runner.py`：Spec 13 `No-implementation Boundary` 明确禁止在本步骤改业务代码，
+  缺陷必须回到 pre-freeze 子 Spec 形成新候选后重跑 L1/L2/L3。
+- **不**事后调高冻结 manifest 的 `timeout_seconds` / cost cap，**不**删除任何未观测 stage
+  （Spec 13 明令禁止「根据运行结果事后删除未覆盖 stage 或提高成本上限」）。
+- **不**把 F2/F3/F4 的失败 run 发布为 Evidence；失败 run 全部保留在
+  `output/contract-validation/{staging/,}failed-runs/`。
+
+### 账本与状态
+
+pending suffix 由 13 → **23 事件**（`suffix_hash=sha256:673486d1…`），归约结果：
+
+```text
+10 COMPLETE(pending) | 11 COMPLETE(pending) | 12 COMPLETE(pending) | 13 BLOCKED(pending)
+14 NOT_STARTED | 15 NOT_STARTED
+```
+
+- Spec 11 / 12：`COMPLETE → SUPERSEDED → IN_PROGRESS → VALIDATED → COMPLETE`，绑定 A5 的真实证据。
+- Spec 13：`COMPLETE → IN_PROGRESS`（`STATUS_CORRECTION`，引用被纠正事件）→ `BLOCKED`（`BLOCKED`）。
+- Spec 10：未改任何工具，其 `COMPLETE` 保持不变（A5 的 L1.1–L1.6 已重新验证其工具链）。
+- Spec 14/15：依赖未满足，**保持锁定**，本轮未创建 B/C。
+
+### 教训
+
+1. **"半边证据"必须对照子 Spec 的 `Expected Outputs` 与 `Target Repository` 逐条核**：母 Spec 说
+   「未观察到 ≠ 失败」，但**没观察到却写成 COMPLETE** 是另一种错误；账本自带的
+   `STATUS_CORRECTION` 就是为这种情形准备的，不要用 `SUPERSEDED` 掩盖。
+2. **同一 run_id 会被驱动重建**：失败 run 必须在下次运行前挪到 `failed-runs/`，否则即使报错文本
+   已抄进文档，原始产物也已被覆盖。
+3. **业务产物不得落到 staging**：`report.json` 含 `diff` 字段与绝对路径，`--gate pr` 的发布扫描会因此
+   失败 —— 这就是驱动把业务输出放 `run-scratch/`、只让派生摘要进 staging 的原因；搬运失败 run 时
+   同样要遵守（archive 的业务部分放 `output/contract-validation/failed-runs/`，不放 `staging/`）。
+4. **诊断"卡住"要拿栈，不要猜**：`faulthandler.dump_traceback_later` + 逐次调用计时（包装
+   `client.chat`）把"provider 慢 / docker exec 卡 / 本机 I/O 慢"三种假设一次区分开 ——
+   本轮先后否掉了「Docker 挂载 I/O 慢」（实测 `git status` 0.5s、pytest 收集 0.7s）与
+   「provider 坏」（对照组 12 次调用全正常）两个**错误**假设。
