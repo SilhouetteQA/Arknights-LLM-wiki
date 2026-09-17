@@ -529,3 +529,50 @@ F3/F4 的失败 run 因 `run_id` 相同、驱动会在同 run_id 下重建产物
 
 4. 上述完成后，Coding 半边 L3 才能闭合，Spec 13 才能 `VALIDATED → COMPLETE`，Spec 14/15 才
    解锁（Spec 14 `Depends On：11 + 12 + 13 COMPLETE`）。
+
+### 11.7 A6_coding：F3 已修复（恢复条件 1 的落地）
+
+```text
+A_coding = 5e780fdd145a89e0e02d8d52065834ef7c5c52c3   （A6，取代 A5 c5d0af0f）
+payload_hash = sha256:64049830…                        （未变，40 文件，payload-neutral）
+```
+
+改动（2 文件）：`benchmark/runner.py` 把 `_ensure_repository()` 移到
+`with sandbox_executor(...)` **之前**；`tests/test_benchmark_runner.py` 新增回归钉子
+`test_sandbox_entered_only_after_repository_is_ready` —— 用「与 `DockerExecutor.create()`
+同款前置检查」的替身沙箱观测进入时 workspace 是否已存在。该测试在**旧顺序下实测 FAIL**
+（并给出准确诊断），修复后 PASS；相关套件 98 passed。
+
+A6 上的验证状态（**如实记录，未完成的就说未完成**）：
+
+| 项 | 结果 |
+|---|---|
+| L1.1–L1.6 | 全部 exit 0（三哈希未变 / conformance 224 / `tests/contracts` 242 / `--gate pr` 8/8 / build） |
+| 全量回归 | `638 passed / 3 skipped / **1 failed**` —— 唯一失败 `test_docker_integration.py::test_clone_repo_when_empty`，它**在容器内向 github.com 克隆** `octocat/Hello-World`，属本次网络故障导致的环境性失败（A5 同套件在改动前为 0 failed）→ 故 Spec 11 停在 `IN_PROGRESS` |
+| L2（`foundation-0_1_0-c1-coding-replay`） | **PASS**，3 records / 3 sources，全 `LEGACY_DATA_INSUFFICIENT`，绑定 A6 commit（L2 只读已提交 blob，不受网络故障影响） |
+| L3（Coding 半边） | **仍未闭合**，见下 |
+
+### 11.8 本轮新增阻塞 F7：GitHub 网络故障
+
+`github.com:443` 持续不可达（`git ls-remote https://github.com/dbader/schedule.git` 连续 8 次
+失败；`gh repo clone` 报 `Recv failure: Connection was reset`）。Coding 的基准路径在基线之前
+必须先做 repo 就绪，而 `_ensure_repository` → `sync_repository` 需要 `git fetch origin`
+（首次则 `clone_repository`），因此**网络不可达时基准路径根本无法启动**，L3 也拿不到任何
+`coding.benchmark.case_cost/normal` 观测。同一故障同时阻断了两个候选分支的 push。
+
+恢复动作（网络可达后按序执行）：
+
+```powershell
+# 1) 让 Spec 11 能进入 VALIDATED（消除环境性失败）
+python -m pytest tests/ -q                                  # 期望 638 passed / 3 skipped / 0 failed
+# 2) Coding 半边 L3（§13.3 允许的 sandbox 执行器）
+$env:KA_EXECUTOR='docker'; $env:AGENT_CONTRACT_MODE='observe'
+python scripts/contracts/run_l3_smoke.py --run-manifest config/contracts/smoke-v0.1.json --json
+# 3) 推送两个候选分支
+git push origin contract-cycle/foundation-0.1.0-cycle-1     # Coding
+git push origin feature/foundation-contract-spec10          # Wiki（记账提交）
+```
+
+若第 2 步复现 F4（600s 内拿不到 provider 响应），按 §11.6 继续定位；若判定为预登记预算不合理，
+只能由**新候选**调整 manifest 值，不得事后放宽。
+

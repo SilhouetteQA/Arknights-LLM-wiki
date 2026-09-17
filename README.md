@@ -131,7 +131,7 @@ v0.1 契约内容：`Usage` / `Cost` / `CostSummary` / `ErrorEnvelope` / `Founda
 
 | 范围 | 授权 | 进度 |
 |---|---|---|
-| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–12 `COMPLETE`；Spec 13 `BLOCKED`** —— 候选经 **A→A2→A3→A4（Wiki）/ A→A2→A5（Coding）** 固化（**A_wiki `554bce2f`** / **A_coding `c5d0af0f`**）；Wiki 半边 L3 gate **8/8** 闭合，**Coding 半边 L3 未闭合**（见下）；**Spec 14/15 因此仍锁定** |
+| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 10 + 12 `COMPLETE`；Spec 11 `IN_PROGRESS`（A6 待重跑全量回归）；Spec 13 `BLOCKED`** —— 候选经 **A→A2→A3→A4（Wiki）/ A→A2→A5→A6（Coding）** 固化（**A_wiki `554bce2f`** / **A_coding `5e780fd`**）；Wiki 半边 L3 gate **8/8** 闭合，**Coding 半边 L3 未闭合**（见下）；**Spec 14/15 因此仍锁定** |
 | Part II — Cycle 2 / v0.2（Spec 16） | `FEEDBACK-BOUND` | 需真实 L2/L3 问题驱动才可启动 |
 | Part III — 抽取门禁（Spec 17–18） | `GATE-DEFINED` | 只评估门禁，不得实现 |
 
@@ -144,28 +144,29 @@ Spec 10 已交付**全部 pre-freeze 工具与 5 个 CI workflow**（两仓 `scr
 | 项 | 值 |
 |---|---|
 | A_wiki | `554bce2f2ebd00f5f4e6ac722680a8a57ab8cc66`（A4） |
-| A_coding | `c5d0af0f4c9110259945fc90151da4336a07d639`（A5；取代 A2 `339768dd`） |
-| Payload 身份 | `contract_version=0.1.0`、40 文件、`payload_hash=sha256:64049830…` —— 自 A 起**从未变化**，A2/A3/A4/A5 全部是 payload-neutral 的项目本地改动 |
+| A_coding | `5e780fdd145a89e0e02d8d52065834ef7c5c52c3`（A6；取代 A5 `c5d0af0f`，A5 取代 A2 `339768dd`） |
+| Payload 身份 | `contract_version=0.1.0`、40 文件、`payload_hash=sha256:64049830…` —— 自 A 起**从未变化**，A2/A3/A4/A5/A6 全部是 payload-neutral 的项目本地改动 |
 | Cycle 分支 | `contract-cycle/foundation-0.1.0-cycle-1`（**A/B/C 的唯一承载分支**）。母 Spec §16.3 要求 `diff(A,B) ⊆ evidence publication allowlist`，因此 README / devlog 等非 allowlist 提交必须留在 `feature/foundation-contract-spec10`，不得插入 A→B 之间 |
-| 正式 L1（A5 干净 checkout） | 6 条命令全部 exit 0：`generate_schemas --check`（schemas=6 / rules=68）；`verify_payload`（三哈希未变）；conformance **224 passed**；`tests/contracts` **242 passed**；`validate_local --gate pr` **8/8**；`python -m build` |
-| 全量回归 | Wiki `913 passed / 10 skipped / **0 failed**`（A4）；Coding `638 passed / 3 skipped / **0 failed**`（A5） |
-| 候选轮次 | Wiki：A `b726c09` → A2 `ca24a199` → A3 `3972c887` → **A4 `554bce2f`**；Coding：A `c8e06e5` → A2 `339768dd` → **A5 `c5d0af0f`**。每一轮都由一个**实测缺陷**驱动，逐轮记录见 `output/devlog.md` |
-| 受控 staging（**故意不提交**） | `docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}`（23 事件），`target_boundary=candidate_a`、`candidate_commit=A_wiki`、`suffix_hash=sha256:673486d1…`。Spec 14 必须把它**逐字节** append 到 B_wiki 账本，否则 Spec 12/13 的证据无效 |
+| 正式 L1（A6 干净 checkout） | 6 条命令全部 exit 0：`generate_schemas --check`（schemas=6 / rules=68）；`verify_payload`（三哈希未变）；conformance **224 passed**；`tests/contracts` **242 passed**；`validate_local --gate pr` **8/8**；`python -m build` |
+| 全量回归 | Wiki `913 passed / 10 skipped / **0 failed**`（A4）；Coding A5 `638 passed / 3 skipped / **0 failed**`；Coding **A6 `638 passed / 3 skipped / 1 failed`** —— 唯一失败是 `test_docker_integration.py::test_clone_repo_when_empty`（容器内克隆 github.com），属**当时的 GitHub 网络故障**，故 Spec 11 停在 `IN_PROGRESS`，待网络恢复重跑 |
+| 候选轮次 | Wiki：A `b726c09` → A2 `ca24a199` → A3 `3972c887` → **A4 `554bce2f`**；Coding：A `c8e06e5` → A2 `339768dd` → A5 `c5d0af0f` → **A6 `5e780fd`**。每一轮都由一个**实测缺陷**驱动，逐轮记录见 `output/devlog.md` |
+| 受控 staging（**故意不提交**） | `docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}`（31 事件），`target_boundary=candidate_a`、`candidate_commit=A_wiki`、`suffix_hash=sha256:1d76da31…`。Spec 14 必须把它**逐字节** append 到 B_wiki 账本，否则 Spec 12/13 的证据无效 |
 
-### Spec 12 `COMPLETE` / Spec 13 `BLOCKED`：经验证的进展与经验证的缺口
+### Spec 12 `COMPLETE` / Spec 11 `IN_PROGRESS` / Spec 13 `BLOCKED`：经验证的进展与经验证的缺口
 
-L2（Spec 12）在两仓真实跑通：Wiki 220 records / 2 sources（`REPRODUCTION_RESTRICTED`，`difference_class` = `NONE`×120 + `expected semantic correction`×100）、Coding 3 records（`LEGACY_DATA_INSUFFICIENT`×3）、`adapter_defects=0`、发布扫描无命中；来源 sha256 绑定 **A 的已提交 blob**（Wiki `cost_log` `9f4bd645…`、`results_scored` `aa6f633d…`）。
+L2（Spec 12）在两仓真实跑通：Wiki 220 records / 2 sources（`REPRODUCTION_RESTRICTED`，`difference_class` = `NONE`×120 + `expected semantic correction`×100）、Coding 3 records（`LEGACY_DATA_INSUFFICIENT`×3）、`adapter_defects=0`、发布扫描无命中；来源 sha256 绑定 **A 的已提交 blob**（Wiki `cost_log` `9f4bd645…`、`results_scored` `aa6f633d…`）。Coding 半边的 L2 已在 A5 与 A6 上各跑通一次（A6 的为本轮有效绑定）。
 
 L3（Spec 13）**只有 Wiki 半边闭合**：`AGENT_CONTRACT_MODE=observe` 下驱动真实 `arknights_wiki.eval.runner`，gate **8/8**、业务 exit 0、51.2s、12 事件、5 个 producer-stage 对 `ALL_STAGES 5/5`，未观测项按 `NOT_OBSERVED_ALLOWED` 具名登记且**不计为覆盖**。
 
-Coding 半边 L3 **未闭合**，四条原因全部实测（逐条证据见 `docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md` §11）：
+Coding 半边 L3 **未闭合**，原因全部实测（逐条证据见 `docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md` §11）：
 
-| 编号 | 内容 | 性质 |
-|---|---|---|
-| F1 | 预登记 provider `opencode_go`/`mimo-v2.5` → HTTP 429 `GoUsageLimitError`（月度额度耗尽） | 环境 |
-| F2 | 预登记 case `schedule-99` 的 fixture（`dbader/schedule`）测试模块调用 POSIX-only `time.tzset()` → Windows 下必然 `environment_error`，Agent 不运行，`case_cost/normal` 不可观测 | 平台/夹具 |
-| F3 | `benchmark/runner.py::_run_one_case` 先 `with sandbox_executor(repo_dir)` 再 `_ensure_repository()`，而 `DockerExecutor.create()` 要求 `workspace_root` 已存在 → **任何全新 workspace** 下的 docker 执行器都以「沙箱工作区不存在」失败 | **候选（业务代码）缺陷** |
-| F4 | 即使临时修正 F3 的顺序（未提交试验），docker 路径仍在冻结的 `timeout_seconds=600` 内不闭合，业务路径 0 provider 响应、0 事件 | 候选路径 + provider，未定论 |
+| 编号 | 内容 | 性质 | 现状 |
+|---|---|---|---|
+| F1 | 预登记 provider `opencode_go`/`mimo-v2.5` → HTTP 429 `GoUsageLimitError`（月度额度耗尽） | 环境 | 由 A5 起的 provider 整合（`command_goat`，用户 N-04 授权）覆盖 |
+| F2 | 预登记 case `schedule-99` 的 fixture（`dbader/schedule`）测试模块调用 POSIX-only `time.tzset()` → Windows 下必然 `environment_error`，Agent 不运行，`case_cost/normal` 不可观测 | 平台/夹具 | 由 §13.3 允许的 docker 执行器覆盖 |
+| F3 | `benchmark/runner.py::_run_one_case` 先 `with sandbox_executor(repo_dir)` 再 `_ensure_repository()`，而 `DockerExecutor.create()` 要求 `workspace_root` 已存在 → **任何全新 workspace** 下的 docker 执行器都以「沙箱工作区不存在」失败 | **候选（业务代码）缺陷** | **已在 A6 修复**并加回归钉子（旧顺序实测 RED、修复后 GREEN） |
+| F4 | docker 路径在冻结的 `timeout_seconds=600` 内不闭合（0 provider 响应、0 事件） | 候选路径 + provider，未定论 | **尚未在 A6 上复现判定** —— 需要 github.com 可达才能启动基准路径 |
+| F7 | 本轮 GitHub 网络故障：`github.com:443` 持续不可达，`gh repo clone` 报 `Connection was reset`，`sync_repository` 需要 `git fetch origin` → **基准路径根本无法启动** | 外部 | 阻塞 Coding L3 与两个候选分支的 push |
 
 对照：同一 agent + 同一 provider + 同一 case 在 local 执行器下 **12 次调用 / 83s** 全部正常，证明 provider 与 agent 本身健康（F5）。
 

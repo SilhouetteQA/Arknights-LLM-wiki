@@ -2848,3 +2848,51 @@ pending suffix 由 13 → **23 事件**（`suffix_hash=sha256:673486d1…`），
    `client.chat`）把"provider 慢 / docker exec 卡 / 本机 I/O 慢"三种假设一次区分开 ——
    本轮先后否掉了「Docker 挂载 I/O 慢」（实测 `git status` 0.5s、pytest 收集 0.7s）与
    「provider 坏」（对照组 12 次调用全正常）两个**错误**假设。
+
+---
+
+## 2026-09-17（再续）A6_coding：修复 F3（沙箱创建顺序），并记录外部阻塞 F7
+
+### A6_coding = `5e780fd`（取代 A5 `c5d0af0f`；A_wiki 不变）
+
+| 项 | 结果 |
+|---|---|
+| 改动 | `benchmark/runner.py`：`_ensure_repository()` 移到 `with sandbox_executor(...)` **之前**；`tests/test_benchmark_runner.py`：新增回归钉子 `test_sandbox_entered_only_after_repository_is_ready` |
+| 钉子有效性 | 旧顺序下该测试**实测 FAIL**（"沙箱在 workspace 就绪之前被进入…"），修复后 PASS；相关套件 98 passed |
+| L1.1–L1.6 | 全部 exit 0（三哈希未变 / conformance 224 / tests/contracts 242 / --gate pr 8/8 / build） |
+| 全量回归 | `638 passed / 3 skipped / **1 failed**` —— 唯一失败 `test_docker_integration.py::test_clone_repo_when_empty`（容器内克隆 github.com），**环境性**，故 Spec 11 停在 `IN_PROGRESS` |
+| L2 | `foundation-0_1_0-c1-coding-replay` **PASS**（3 records / 3 sources，全 `LEGACY_DATA_INSUFFICIENT`，绑定 A6） |
+| L3 | Coding 半边**仍未闭合**（见 F7） |
+
+### F7：GitHub 网络故障（本轮新的外部阻塞）
+
+`github.com:443` 持续不可达：`git ls-remote https://github.com/dbader/schedule.git` 连续 8 次失败，
+`gh repo clone` 报 `Recv failure: Connection was reset`。
+
+关键点：**Coding 的基准路径在基线之前必须先做 repo 就绪**，而 `_ensure_repository` →
+`sync_repository` 需要 `git fetch origin`（首次 clone 亦然）→ **网络不可达时基准根本无法启动**，
+L3 拿不到任何 `case_cost/normal` 观测。同一故障也阻断了两个候选分支的 push。
+
+我没有因此放宽任何冻结字段、没有补写证据、没有把失败 run 发布为 Evidence —— 账本如实记
+`Spec 11 IN_PROGRESS`、`Spec 13 BLOCKED`，并把恢复命令写进校准记录 §11.8。
+
+### 账本（suffix 31 事件，`suffix_hash=sha256:1d76da31…`）
+
+```text
+10 COMPLETE | 11 IN_PROGRESS(pending) | 12 COMPLETE(pending) | 13 BLOCKED(pending) | 14/15 NOT_STARTED
+```
+
+- 11：`COMPLETE → SUPERSEDED → IN_PROGRESS`（A5 因 F3 被取代；A6 的 L1 通过但回归含一条环境性失败）。
+- 12：`COMPLETE → SUPERSEDED → IN_PROGRESS → VALIDATED → COMPLETE`（A6 上 L2 PASS）。
+- 13：维持 `BLOCKED`，并记录"F3 已修复 → 重启 → 被 F7 重新阻塞"的完整过程。
+
+### 教训
+
+1. **一个"恰好在旧工作区能通过"的缺陷，单测和 local 执行器都抓不到**：F3 只在「全新 workspace +
+   docker 执行器」组合下暴露。修完之后**必须把那个组合固化成测试**（替身沙箱检查前置条件），
+   否则下次重构还会把它改回来。
+2. **环境性失败要如实归类**：`test_clone_repo_when_empty` 失败与 A6 改动无关，但它确实让
+   "Coding 回归 = PASS" 这一验收项不成立 —— 正确做法是记 `IN_PROGRESS` 并写明原因，
+   而不是把它当 flaky 略过。
+3. **先确认外部依赖再选执行路径**：Coding 基准对 github.com 有硬依赖（repo 就绪），
+   在这个前提下"离线也能跑 L3"的假设不成立。
