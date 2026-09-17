@@ -2896,3 +2896,35 @@ L3 拿不到任何 `case_cost/normal` 观测。同一故障也阻断了两个候
    而不是把它当 flaky 略过。
 3. **先确认外部依赖再选执行路径**：Coding 基准对 github.com 有硬依赖（repo 就绪），
    在这个前提下"离线也能跑 L3"的假设不成立。
+
+---
+
+## 2026-09-17（三续）网络恢复窗口内的复测：F4 收窄 + 两仓已推送
+
+GitHub 短暂恢复后完成/观察到：
+
+1. **两仓推送成功**：Wiki `feature/foundation-contract-spec10` → `0423d5b`；
+   Coding `contract-cycle/foundation-0.1.0-cycle-1` → `5e780fd`（`git ls-remote` 与本地一致）。
+2. **F4 在 A6 上复现**：`KA_EXECUTOR=docker` + `command_goat` 跑 Coding L3 →
+   `business_timed_out=true`、`duration_seconds=600.25`、`producer_coverage=[]`、`actual_calls=0`；
+   `faulthandler` 采样（30s × 5）全部停在 `plan_node`/`decide_node` → `chat` → `ssl.read`（等响应头）。
+3. **F4 收窄（重要）**：用 `real_agent_timing.py` 以**同一** `KA_EXECUTOR=docker`、**同一** provider
+   单独驱动同一 agent/case，**12 次调用全部成功、总计 110.5s**（单次 1.2–24.2s，prompt 最大 ~92KB）。
+   → 否证了"docker 执行器会让 provider 调用挂死"这一假设。
+4. **网络自身在抖动**：同一窗口内 `gh repo clone` / `git fetch origin` 反复
+   `Recv failure: Connection was reset`；全量回归重跑仍是 `638 passed / 3 skipped / 1 failed`，
+   唯一失败仍是容器内 `git clone https://github.com/octocat/Hello-World.git`。
+
+据此把 F4 记为**未定论、高度怀疑外部网络不稳定**：好窗口内同组合 110.5s 正常，坏窗口内 provider
+请求停在等响应头且 GitHub 同时被 reset。要区分"网络抖动"与"某条特定请求触发网关长时间不响应"，
+必须在**稳定网络**下重跑一次 L3。
+
+账本无需改动（也**不该**改动）：`Spec 11 IN_PROGRESS`（回归含 1 条网络性失败）、`Spec 12 COMPLETE`、
+`Spec 13 BLOCKED`、Spec 14/15 锁定，仍然是当前真实状态。
+
+### 本轮最重要的一条纪律
+
+**不要让"环境不好"变成"把门槛降低"**。F4 复现后最省事的做法是调大冻结 manifest 的
+`timeout_seconds`，让 L3 "通过" —— 而 Spec 13 恰好明文禁止"根据运行结果事后提高成本上限",
+§7.3 也写着"未观察到 ≠ 失败"（反过来同样成立：**没通过也不等于可以改写标准**）。
+所以本轮的选择是：如实记 BLOCKED、把 F4 的证据与收窄写进校准记录 §11.9、把复测命令留给下一个窗口。

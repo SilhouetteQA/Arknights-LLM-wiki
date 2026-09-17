@@ -576,3 +576,31 @@ git push origin feature/foundation-contract-spec10          # Wiki（记账提�
 若第 2 步复现 F4（600s 内拿不到 provider 响应），按 §11.6 继续定位；若判定为预登记预算不合理，
 只能由**新候选**调整 manifest 值，不得事后放宽。
 
+### 11.9 网络恢复窗口内的复测：F4 收窄，Spec 11 仍差一步
+
+GitHub 短暂恢复后做了三件事，结果如下（**都不是完成证明**）：
+
+| 复测 | 结果 |
+|---|---|
+| 推送 | 两仓均成功：Wiki `feature/foundation-contract-spec10` → `0423d5b`；Coding `contract-cycle/foundation-0.1.0-cycle-1` → `5e780fd`（远端与本地一致） |
+| A6 上的 Coding L3（`KA_EXECUTOR=docker`，`command_goat`） | **F4 复现**：`business_timed_out=true`、`duration_seconds=600.25`、`producer_coverage=[]`、`actual_calls=0`、无 events 目录。栈采样（`faulthandler`，30s × 5）显示进程始终停在 `plan_node`/`decide_node` → `chat` → `ssl.read`（等 provider 响应头） |
+| 全量回归（A6，重跑一次） | 仍是 `638 passed / 3 skipped / **1 failed**`，唯一失败仍为 `test_docker_integration.py::test_clone_repo_when_empty`（容器内 `git clone https://github.com/octocat/Hello-World.git`）→ Spec 11 维持 `IN_PROGRESS` |
+
+**F4 的重要收窄（新证据）**：把同一 agent、同一 provider、同一 case 用 `real_agent_timing.py`
+（同一 `KA_EXECUTOR=docker`、同一 `command_goat`）单独驱动，**12 次调用全部成功，总计 110.5s**
+（单次 1.2–24.2s，prompt 最大 ~92KB；工具含 `search_code`/`git_log`/`edit_file`）。因此
+
+```text
+"docker 执行器会让 provider 调用变慢/挂死" 这一假设被否证。
+```
+
+同一窗口内 `gh repo clone` / `git fetch origin` 反复出现 `Recv failure: Connection was reset`，
+说明本机到外网的连通性本身在抖动。据此把 F4 的结论改为**未定论但高度怀疑外部网络不稳定**：
+- 支持：同一组合在"好窗口"内 110.5s 正常完成；坏窗口内 provider 请求停在等响应头、GitHub 同时被 reset。
+- 反证/待排除：仍需在**稳定网络**下重跑一次，才能区分"网络抖动"与"某条特定请求（如超大工具结果回注后
+  的 prompt）触发网关长时间不响应"。
+
+复测顺序（网络稳定后）：先跑 L3（判 F4），再跑全量回归（让 Spec 11 进 VALIDATED），最后推分支。
+在 F4 定性之前，**不得**通过调大冻结 `timeout_seconds` 来"通过" —— 那属于 Spec 13 明令禁止的事后放宽。
+
+
