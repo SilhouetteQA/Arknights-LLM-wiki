@@ -603,4 +603,83 @@ GitHub 短暂恢复后做了三件事，结果如下（**都不是完成证明**
 复测顺序（网络稳定后）：先跑 L3（判 F4），再跑全量回归（让 Spec 11 进 VALIDATED），最后推分支。
 在 F4 定性之前，**不得**通过调大冻结 `timeout_seconds` 来"通过" —— 那属于 Spec 13 明令禁止的事后放宽。
 
+### 11.10 F4 定案：不是网络、不是 provider，而是 runtime 不采纳 `AGENT_CONTRACT_RUN_ID`
+
+代理打开、GitHub 可达后继续复测，结论如下。
+
+**(1) F4 的真实根因（A7_coding 修复）**
+
+```text
+A_coding = b763fc70b2bb902c08cdf7ed5f05e6508ad5c521   （A7，取代 A6 5e780fd）
+```
+
+`adapters/foundation/runtime.py::_build_runtime_from_env()` 构造进程级 runtime 时**没有读
+`AGENT_CONTRACT_RUN_ID`**，于是 `CodingFoundationRuntime` 在 observe 下回落到进程级随机 UUID；
+所有 producer 证据被写进 `<evidence_root>/<uuid>/events/`，而 L3 gate 只认
+`<evidence_root>/<manifest run_id>/events/` → 表现就是「**0 事件 + required stage 未观测**」，
+而业务路径完全正常。
+
+实测证据链：
+
+| 证据 | 内容 |
+|---|---|
+| 磁盘事实 | A6 上一次**跑通且判 PASS**（`resolution_rate=100%`）的运行留下 102 条格式完全正确的事件：`repository_commit=5e780fdd…`、`contract_mode=observe`、`openai_compat` ×51 + `langfuse_generation` ×51 —— 但位于 `<staging>/7e3c49b5-…/events/` |
+| 直接探针 | 同一探针脚本：Coding → `runtime.run_id=<uuid>`；Wiki → `runtime.run_id=<env 值>`（正确） |
+| 代码对照 | 两仓 `_resolve_run_id()` 实现**完全相同**；差异只在 `_build_runtime_from_env()` 是否读环境变量（Wiki 读了并 `is_safe_run_id` 校验） |
+
+修复：新增 `CONTRACT_RUN_ID_ENV` 并导出；`_build_runtime_from_env()` 读取 + 校验 + `run_id=run_id`
+（与 Wiki 同款机制，不安全值忽略并记结构化日志）。回归钉子
+`test_env_built_runtime_adopts_agent_contract_run_id` **实测 RED**（旧代码断言得到 uuid）→ 修复后 GREEN。
+
+修复后实证：L3 运行产出 **65 条事件落在 `<staging>/foundation-0_1_0-c1-coding-smoke/events/`**，
+绑定 `b763fc70`、mode=observe —— **证据归属问题已彻底解决**。
+
+**(2) A7 上的 Spec 11 / 12 已完成**
+
+| 项 | 结果 |
+|---|---|
+| L1.1–L1.6 | 全部 exit 0（三哈希未变 / conformance 224 / `tests/contracts` **244** / `--gate pr` 8/8 / build） |
+| 全量回归 | **641 passed / 3 skipped / 0 failed**（满足 Spec 11 对 Coding 的 PASS） |
+| L2 | `foundation-0_1_0-c1-coding-replay` **PASS**，3 records / 3 sources，绑定 A7 |
+
+> 一次插曲：首轮回归出现 `631 passed / **13 skipped**`，因为 Docker 守护进程在跑测途中退出，
+> 10 个 docker 集成测试被跳过。0 failed 但**不代表通过** —— 重启 Docker 后重跑才得到
+> `641 passed / 3 skipped / 0 failed` 的干净结果。跳过数上升必须当成"没测"而不是"没事"。
+
+**(3) Spec 13 仍未闭合：原因已换成"预登记本身自相矛盾"**
+
+A7 之后唯一剩余的违反项始终是 `coding.benchmark.case_cost / normal`（§7.3:896 的硬要求），
+即预登记 case 必须在不报错的情况下跑完。6 次尝试都没做到：
+
+| 形态 | 次数 | 细节 |
+|---|---|---|
+| 业务在冻结 `timeout_seconds=600` 被驱动超时 | 4 | 观测调用量 122 / 156 / 204 / 232 次 |
+| 业务正常结束但 Agent 的 provider 调用以 `Connection error.` 收场 | 1 | 546s、64 次调用，case 记 `error` |
+| repo 就绪阶段 GitHub API `EOF` | 1 | 环境抖动，非候选问题 |
+
+关键对照：**同一 case 早前一次带插桩的运行以 32 次调用、444s 收敛并判 PASS**（`resolution_rate=100%`）。
+所以收敛是可能的，但方差极大。
+
+由此可判定冻结 manifest 的 pre-registration **自相矛盾且过紧**：
+
+```text
+manifest.max_calls        = 12
+manifest.timeout_seconds  = 600
+case.max_iterations       = 30          → 观测到最多 232 次 provider 调用
+```
+
+`max_calls: 12` 与其预登记的 case（30 轮上限）根本不兼容 —— 这是 Spec 11 Stage 0 预登记的缺陷，
+不是候选缺陷，也不是环境问题。按 Spec 13「不得根据运行结果事后删除未覆盖 stage 或提高成本上限」，
+本轮**没有**调高任何冻结字段，而是如实记 `13 BLOCKED`。
+
+**(4) 恢复条件**
+
+1. 形成**新候选**，在 pre-freeze 侧（Spec 11 Stage 0 的 run manifest）**重新推导**而不是放宽
+   `max_calls` / `timeout_seconds`：应按"预登记 case 的 `max_iterations` × 每轮实际调用数上界"
+   推出与 case 自洽的值，并同步 `expected_calls` / `estimated_cost_cap`。
+2. 在新候选上重跑 L1 + 全量回归 + L2 + L3（L3 用 §13.3 允许的 docker 执行器）。
+3. 若届时 `case_cost/normal` 仍不可观测，则需先判定"agent 在 docker 执行器下不收敛"是不是
+   又一个真实缺陷（对照实验：同一 case 在 local 执行器下曾收敛）。
+
+
 

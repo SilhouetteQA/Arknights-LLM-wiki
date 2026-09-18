@@ -2928,3 +2928,71 @@ GitHub 短暂恢复后完成/观察到：
 `timeout_seconds`，让 L3 "通过" —— 而 Spec 13 恰好明文禁止"根据运行结果事后提高成本上限",
 §7.3 也写着"未观察到 ≠ 失败"（反过来同样成立：**没通过也不等于可以改写标准**）。
 所以本轮的选择是：如实记 BLOCKED、把 F4 的证据与收窄写进校准记录 §11.9、把复测命令留给下一个窗口。
+
+---
+
+## 2026-09-17（四续）A7_coding：F4 根因定案（runtime 不采纳 run_id）+ Spec 11/12 完成
+
+### F4 的真实根因 —— 不是网络，不是 provider，是接线
+
+`adapters/foundation/runtime.py::_build_runtime_from_env()` 构造进程级 runtime 时**没有读
+`AGENT_CONTRACT_RUN_ID`**，于是 `CodingFoundationRuntime` 在 observe 下回落到进程级随机 UUID：
+所有 producer 证据写进 `<evidence_root>/<uuid>/events/`，而 L3 gate 只认
+`<evidence_root>/<manifest run_id>/events/` → 症状正是「**0 事件 + required stage 未观测**」，
+业务路径却完全正常。此前把 F4 归因为"网络抖动/provider 挂死"是**错的**。
+
+证据链：
+1. 磁盘事实：A6 上一次**跑通且判 PASS（resolution_rate=100%）**的运行留下 **102 条**格式完全正确
+   的事件（`repository_commit=5e780fdd…`、`mode=observe`、`openai_compat`×51 +
+   `langfuse_generation`×51），但它们位于 `<staging>/7e3c49b5-…/events/`。
+2. 探针：同一脚本 → Coding `runtime.run_id=<uuid>`；Wiki `runtime.run_id=<env 值>`（正确）。
+3. 代码对照：两仓 `_resolve_run_id()` **完全相同**；差异只在 `_build_runtime_from_env()` 是否读环境变量。
+
+**A7_coding = `b763fc70b2bb902c08cdf7ed5f05e6508ad5c521`**（取代 A6 `5e780fd`；A_wiki 未变）
+- 新增 `CONTRACT_RUN_ID_ENV` 并导出；`_build_runtime_from_env()` 读取 + `is_safe_run_id` 校验 +
+  `run_id=run_id`（与 Wiki 同款机制；不安全值忽略并记结构化日志）。
+- 回归钉子 `test_env_built_runtime_adopts_agent_contract_run_id` **实测 RED**（断言得到 uuid）→ GREEN；
+  另加 `test_env_built_runtime_ignores_unsafe_run_id`。
+- 修复后实证：L3 产出 **65 条事件落在正确 run_id**，`producer_coverage` 恢复为 3 对。
+
+### A7 上的验证（Spec 11/12 已完成）
+
+| 项 | 结果 |
+|---|---|
+| L1.1–L1.6 | 全部 exit 0（三哈希未变 / conformance 224 / tests/contracts **244** / --gate pr 8/8 / build） |
+| 全量回归 | **641 passed / 3 skipped / 0 failed** |
+| L2 | `foundation-0_1_0-c1-coding-replay` **PASS**（3 records / 3 sources，绑定 A7） |
+
+**一次插曲值得记下**：首轮回归得到 `631 passed / **13 skipped** / 0 failed` —— Docker 守护进程在
+跑测途中退出，10 个 docker 集成测试被跳过。**0 failed 不等于通过**；重启 Docker 重跑才得到
+`641 passed / 3 skipped / 0 failed`。跳过数上升要当成"没测"，不能当成"没事"。
+
+### 账本（suffix 41 事件，`suffix_hash=sha256:72e780c8…`）
+
+```text
+10 COMPLETE | 11 COMPLETE(pending) | 12 COMPLETE(pending) | 13 BLOCKED(pending) | 14/15 NOT_STARTED
+```
+
+### Spec 13 仍未闭合：原因已换成"预登记自相矛盾"（F8）
+
+唯一剩余违反项始终是 `coding.benchmark.case_cost / normal`（§7.3:896 硬要求）。6 次尝试：
+
+| 形态 | 次数 | 观测 |
+|---|---|---|
+| 撞冻结 `timeout_seconds=600` | 4 | provider 调用 122 / 156 / 204 / 232 次 |
+| 业务结束但 Agent 调用 `Connection error.` | 1 | 546s / 64 次调用 |
+| repo 就绪阶段 GitHub `EOF` | 1 | 环境抖动 |
+
+对照：**同一 case 早前带插桩的一次运行以 32 次调用 / 444s 收敛并判 PASS(100%)** → 收敛可能，方差极大。
+
+结论：冻结 manifest 的 `max_calls: 12` 与其预登记的 case（`max_iterations: 30`，实测最多 232 次调用）
+**根本不兼容** —— 这是 Spec 11 Stage 0 预登记的缺陷。按 Spec 13，**没有**事后调高任何冻结字段，
+而是如实记 `BLOCKED`，把"新候选重新推导预登记值"的恢复条件写进校准记录 §11.10。
+
+### 教训
+
+1. **"证据在哪"和"证据有没有"是两件事**：gate 报 0 事件时，我先后怀疑过网络、provider、docker、
+   I/O，全错；真相是证据一直在，只是写在 gate 找不到的目录。**先把磁盘上的事实找干净，再谈归因**。
+2. **对称性假设会骗人**：两仓 `_resolve_run_id` 逐字相同，差异只在调用点是否读环境变量 ——
+   只读"看起来该负责的那个函数"永远发现不了。
+3. **0 failed + 跳过数暴涨不是绿灯**：Docker 中途退出让 10 个集成测试静默跳过，必须重跑确认。
