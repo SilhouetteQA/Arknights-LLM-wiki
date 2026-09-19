@@ -681,5 +681,80 @@ case.max_iterations       = 30          → 观测到最多 232 次 provider 调
 3. 若届时 `case_cost/normal` 仍不可观测，则需先判定"agent 在 docker 执行器下不收敛"是不是
    又一个真实缺陷（对照实验：同一 case 在 local 执行器下曾收敛）。
 
+### 11.11 F8 定案：不是"不收敛"，是 L3 驱动从不清理陈旧证据（A8_coding 修复）
+
+```text
+A_coding = 0a4e5cf88cad59142b172987459a094892f90f5c   （A8，取代 A7 b763fc7）
+```
+
+**11.11.1 缺陷**
+
+`scripts/contracts/run_l3_smoke.py` 准备运行目录时只
+`run_dir.mkdir(parents=True, exist_ok=True)`，**从不清理**同一 run_id 上一次尝试留下的 `events/`。
+Wiki 仓驱动器自 A2 起就有 `clear_previous_run()`（清 `events/`、`driver/`、`run-summary.json`、
+sink 失败标记），Coding 仓是遗漏。
+
+**11.11.2 为什么此前把它误读成"agent 不收敛"**
+
+归档对比 attempt1/3/5 的事件字节：三份归档都含**同一批**最早的事件（32 次调用，起始
+`13:10:04Z`），而"调用总数"递增为 61 → 102 → 116。也就是说历次运行的事件层层叠加，
+`actual_calls` 把**旧运行**的调用也算进了本次 —— §11.10 里"122/156/204/232 次调用仍不收敛"
+这个结论是叠加假象，不是 agent 行为。
+
+**11.11.3 最严重的后果是"假通过"，不只是计数虚高**
+
+若上一次尝试恰好观测到某个 stage，本次即使没跑出来，gate 也会因为目录里还躺着那条**陈旧**事件
+而判为已覆盖 —— 用上一次的证据证明这一次通过。回归钉子
+`test_second_run_does_not_reuse_previous_run_events` 正是构造这个场景：
+
+```text
+run#1：fixture 覆盖全部 7 对 → rc 0，磁盘留下全套事件
+run#2：fixture 只产出 1 对
+  旧代码：run#2 报出 **7 对覆盖**（RED 实测）—— 假通过
+  修复后：run#2 只报 1 对，rc=1，并把清掉的项写进报告
+```
+
+**11.11.4 修复内容**
+
+新增 `clear_previous_run()`（清 `events/`、`run-summary.json`、`FAILURES_FILENAME`、残留 `*.tmp`），
+在驱动业务路径**之前**调用；清空项记入 `SmokeRun.cleared`，同时出现在 `--json` 与人类可读报告
+（"fresh" 本身也是需要被审计的证据）。
+
+**11.11.5 A8 上的验证**
+
+| 项 | 结果 |
+|---|---|
+| L1.1–L1.6 | 全部 exit 0（三哈希未变 / conformance 224 / `tests/contracts` **245** / `--gate pr` 8/8 / build） |
+| 全量回归 | **642 passed / 3 skipped / 0 failed**（3 skipped 为既有基线，docker 集成测试真实执行） |
+| L2 | `foundation-0_1_0-c1-coding-replay` **PASS**，3 records / 3 sources，绑定 A8 |
+| L3 | 一次**全新**运行：清掉 **235** 条陈旧事件后产出 **62** 条事件；仍撞 `timeout_seconds=600` |
+
+**11.11.6 唯一剩余的阻塞（F9）：预登记内部不一致 —— 交用户决策**
+
+A8 之后违反项只剩 `coding.benchmark.case_cost / normal`：预登记 case 没能在被允许的时间内跑完。
+而这暴露的是 manifest **自身**的矛盾：
+
+```text
+duration_cap_seconds = 1800   ← manifest 声明的时长预算；gate 只按它判定
+timeout_seconds      = 600    ← 驱动杀业务进程的预算，比声明上限紧 3 倍
+                                 ⇒ 600s–1800s 之间的运行会被杀掉，而它在声明预算内
+max_calls            = 12     ← 单次全新运行实测 62 次调用
+```
+
+对照：同一 case 早前带插桩的一次运行以 **32 次调用 / 444s 收敛并判 PASS(100%)** —— 所以 600s 是
+**临界而非不可能**，失败主要来自代理网络把每次调用拖到约 10s。
+
+**为什么本轮不擅自改**：修它必须改动 `config/contracts/smoke-v0.1.json` 的冻结值，而那正是
+Spec 11 Stage 0 预登记的产物；改动的动机正是"观察到上限被打到"，方向上等同于事后放宽
+（Spec 13 明文禁止），同时会把单次 L3 的资源消耗提高约 3 倍 —— 属治理 + 资源决策，交用户定。
+
+**两个可选方向（供决策）**：
+
+| 方向 | 动作 | 结果 |
+|---|---|---|
+| (甲) 批准修正预登记 | 形成 A9：仅把 `timeout_seconds` 对齐 manifest **自身**的 `duration_cap_seconds`（600 → 1800），并把 `max_calls` / `expected_calls` 按 case 的 `max_iterations` 重新推导；**不动** `estimated_cost_cap`。随后在 A9 上重跑 L1/L2/L3 | 有机会闭合 Coding L3，进而解锁 Spec 14/15；代价是单次 L3 最坏耗时 ×3 |
+| (乙) 保持冻结值不变 | 不做任何改动，Cycle 1 带一条残余 handoff：Coding L3 未闭合、Spec 14/15 锁定，把 F9 作为真实 L2/L3 反馈交给 Spec 16 | 零额外成本；但 Cycle 1 无法 COMPLETE |
+
+
 
 

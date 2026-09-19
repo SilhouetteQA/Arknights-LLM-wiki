@@ -131,7 +131,7 @@ v0.1 契约内容：`Usage` / `Cost` / `CostSummary` / `ErrorEnvelope` / `Founda
 
 | 范围 | 授权 | 进度 |
 |---|---|---|
-| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 10/11/12 `COMPLETE`；Spec 13 `BLOCKED`** —— 候选经 **A→A2→A3→A4（Wiki）/ A→A2→A5→A6→A7（Coding）** 固化（**A_wiki `554bce2f`** / **A_coding `b763fc7`**）；Wiki 半边 L3 gate **8/8** 闭合，**Coding 半边 L3 未闭合**（见下）；**Spec 14/15 因此仍锁定** |
+| Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 10/11/12 `COMPLETE`；Spec 13 `BLOCKED`** —— 候选经 **A→A2→A3→A4（Wiki）/ A→A2→A5→A6→A7→A8（Coding）** 固化（**A_wiki `554bce2f`** / **A_coding `0a4e5cf`**）；Wiki 半边 L3 gate **8/8** 闭合，**Coding 半边 L3 未闭合**（见下）；**Spec 14/15 因此仍锁定** |
 | Part II — Cycle 2 / v0.2（Spec 16） | `FEEDBACK-BOUND` | 需真实 L2/L3 问题驱动才可启动 |
 | Part III — 抽取门禁（Spec 17–18） | `GATE-DEFINED` | 只评估门禁，不得实现 |
 
@@ -144,17 +144,17 @@ Spec 10 已交付**全部 pre-freeze 工具与 5 个 CI workflow**（两仓 `scr
 | 项 | 值 |
 |---|---|
 | A_wiki | `554bce2f2ebd00f5f4e6ac722680a8a57ab8cc66`（A4） |
-| A_coding | `b763fc70b2bb902c08cdf7ed5f05e6508ad5c521`（A7；取代 A6 `5e780fd`，A6 取代 A5 `c5d0af0f`，A5 取代 A2 `339768dd`） |
-| Payload 身份 | `contract_version=0.1.0`、40 文件、`payload_hash=sha256:64049830…` —— 自 A 起**从未变化**，A2/A3/A4/A5/A6/A7 全部是 payload-neutral 的项目本地改动 |
+| A_coding | `0a4e5cf88cad59142b172987459a094892f90f5c`（A8；取代 A7 `b763fc7` → A6 `5e780fd` → A5 `c5d0af0f` → A2 `339768dd`） |
+| Payload 身份 | `contract_version=0.1.0`、40 文件、`payload_hash=sha256:64049830…` —— 自 A 起**从未变化**，A2…A8 全部是 payload-neutral 的项目本地改动 |
 | Cycle 分支 | `contract-cycle/foundation-0.1.0-cycle-1`（**A/B/C 的唯一承载分支**）。母 Spec §16.3 要求 `diff(A,B) ⊆ evidence publication allowlist`，因此 README / devlog 等非 allowlist 提交必须留在 `feature/foundation-contract-spec10`，不得插入 A→B 之间 |
-| 正式 L1（A7 干净 checkout） | 6 条命令全部 exit 0：`generate_schemas --check`（schemas=6 / rules=68）；`verify_payload`（三哈希未变）；conformance **224 passed**；`tests/contracts` **244 passed**；`validate_local --gate pr` **8/8**；`python -m build` |
-| 全量回归 | Wiki `913 passed / 10 skipped / **0 failed**`（A4）；Coding **A7 `641 passed / 3 skipped / 0 failed`**（满足 Spec 11 的 PASS 要求） |
-| 候选轮次 | Wiki：A `b726c09` → A2 `ca24a199` → A3 `3972c887` → **A4 `554bce2f`**；Coding：A `c8e06e5` → A2 `339768dd` → A5 `c5d0af0f` → A6 `5e780fd` → **A7 `b763fc7`**。每一轮都由一个**实测缺陷**驱动，逐轮记录见 `output/devlog.md` |
-| 受控 staging（**故意不提交**） | `docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}`（41 事件），`target_boundary=candidate_a`、`candidate_commit=A_wiki`、`suffix_hash=sha256:72e780c8…`。Spec 14 必须把它**逐字节** append 到 B_wiki 账本，否则 Spec 12/13 的证据无效 |
+| 正式 L1（A8 干净 checkout） | 6 条命令全部 exit 0：`generate_schemas --check`（schemas=6 / rules=68）；`verify_payload`（三哈希未变）；conformance **224 passed**；`tests/contracts` **245 passed**；`validate_local --gate pr` **8/8**；`python -m build` |
+| 全量回归 | Wiki `913 passed / 10 skipped / **0 failed**`（A4）；Coding **A8 `642 passed / 3 skipped / 0 failed`**（满足 Spec 11 的 PASS 要求） |
+| 候选轮次 | Wiki：A `b726c09` → A2 `ca24a199` → A3 `3972c887` → **A4 `554bce2f`**；Coding：A `c8e06e5` → A2 `339768dd` → A5 `c5d0af0f` → A6 `5e780fd` → A7 `b763fc7` → **A8 `0a4e5cf`**。每一轮都由一个**实测缺陷**驱动，逐轮记录见 `output/devlog.md` |
+| 受控 staging（**故意不提交**） | `docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}`（51 事件），`target_boundary=candidate_a`、`candidate_commit=A_wiki`、`suffix_hash=sha256:36cc4c64…`。Spec 14 必须把它**逐字节** append 到 B_wiki 账本，否则 Spec 12/13 的证据无效 |
 
 ### Spec 11/12 `COMPLETE` / Spec 13 `BLOCKED`：经验证的进展与经验证的缺口
 
-L2（Spec 12）在两仓真实跑通：Wiki 220 records / 2 sources（`REPRODUCTION_RESTRICTED`，`difference_class` = `NONE`×120 + `expected semantic correction`×100）、Coding 3 records（`LEGACY_DATA_INSUFFICIENT`×3）、`adapter_defects=0`、发布扫描无命中；来源 sha256 绑定 **A 的已提交 blob**（Wiki `cost_log` `9f4bd645…`、`results_scored` `aa6f633d…`）。Coding 半边已在 A7 上重新绑定跑通。
+L2（Spec 12）在两仓真实跑通：Wiki 220 records / 2 sources（`REPRODUCTION_RESTRICTED`，`difference_class` = `NONE`×120 + `expected semantic correction`×100）、Coding 3 records（`LEGACY_DATA_INSUFFICIENT`×3）、`adapter_defects=0`、发布扫描无命中；来源 sha256 绑定 **A 的已提交 blob**（Wiki `cost_log` `9f4bd645…`、`results_scored` `aa6f633d…`）。Coding 半边已在 A8 上重新绑定跑通。
 
 L3（Spec 13）**只有 Wiki 半边闭合**：`AGENT_CONTRACT_MODE=observe` 下驱动真实 `arknights_wiki.eval.runner`，gate **8/8**、业务 exit 0、51.2s、12 事件、5 个 producer-stage 对 `ALL_STAGES 5/5`，未观测项按 `NOT_OBSERVED_ALLOWED` 具名登记且**不计为覆盖**。
 
@@ -167,11 +167,12 @@ Coding 半边 L3 **未闭合**，原因全部实测（逐条证据见 `docs/plan
 | F3 | `benchmark/runner.py::_run_one_case` 先 `with sandbox_executor(repo_dir)` 再 `_ensure_repository()`，而 `DockerExecutor.create()` 要求 `workspace_root` 已存在 → 任何全新 workspace 下的 docker 执行器都失败 | 候选（业务代码）缺陷 | **A6 已修**（旧顺序实测 RED、修复后 GREEN） |
 | **F4** | **根因定案**：`adapters/foundation/runtime.py::_build_runtime_from_env()` **不读 `AGENT_CONTRACT_RUN_ID`** → 进程级 runtime 回落随机 UUID → 证据写进 `<staging>/<uuid>/events/`，而 gate 只认 `<manifest run_id>/events/` → 表现为「0 事件 + required stage 未观测」，业务却完全正常 | **候选（接线）缺陷** | **A7 已修**；修复后实测 65 条事件落在正确 run_id、coverage 恢复；回归钉子 RED→GREEN |
 | F7 | GitHub 网络抖动（`gh repo clone`/`git fetch`/`gh api` 间歇失败） | 外部 | 影响 repo 就绪阶段的成功率，非候选问题 |
-| **F8** | **当前唯一剩余阻塞**：`coding.benchmark.case_cost / normal`（§7.3:896 硬要求）仍不可观测。6 次尝试中 4 次撞冻结 `timeout_seconds=600`（观测 122/156/204/232 次调用）、1 次以 `Connection error.` 收场、1 次 repo 就绪 GitHub `EOF`；而同一 case 早前一次带插桩运行以 32 次调用 / 444s 收敛并判 **PASS(100%)** | **pre-registration 自相矛盾**：`max_calls: 12` 与 case 的 `max_iterations: 30` 不兼容 | 需**新候选重新推导**预登记值（不得事后放宽） |
+| **F8** | **A8 已定案并修复**：`scripts/contracts/run_l3_smoke.py` 只 `mkdir(exist_ok=True)`、**从不清理**同一 run_id 上一次尝试的 `events/`（Wiki 驱动器有 `clear_previous_run`，Coding 遗漏）→ 陈旧证据被算进本次运行：`actual_calls` 虚高（实测累积 235 条陈旧事件）、覆盖可能是**上一次**跑出来的（**假通过**）。此前读到的"122/156/204/232 次调用不收敛"正是这个叠加假象 | **候选（工具）缺陷** | **A8 已修**：新增 `clear_previous_run()` 并把清空项纳入报告；回归钉子构造假通过场景，旧代码下 run#2 只产出 1 对却被记为 **7 对覆盖**（RED），修复后只 1 对且 rc=1 |
+| **F9** | **当前唯一剩余阻塞**：`coding.benchmark.case_cost / normal`（§7.3:896 硬要求）不可观测。A8 后一次**全新**运行（62 条事件、清掉 235 条陈旧）仍在冻结 `timeout_seconds=600` 被超时。而 manifest 自身声明的时长预算是 `duration_cap_seconds=1800`，gate 也只按 1800 判定 → **驱动杀进程的预算比 manifest 自己声明的上限紧 3 倍，声明上限无法被触及**。对照：同一 case 早前带插桩运行以 32 次调用 / 444s 收敛并判 **PASS(100%)** | **pre-registration 内部不一致**（`timeout_seconds` vs `duration_cap_seconds`；`max_calls: 12` vs 单次运行实测 62 次调用） | **决策交给用户**：修正它等于改动冻结预登记值、且把单次 L3 资源消耗提高约 3 倍 —— 属治理+资源决策，本轮**未擅自改** |
 
 对照：同一 agent + 同一 provider + 同一 case 在 local 执行器下 **12 次调用 / 83s** 全部正常；在 docker 执行器下（插桩运行）**34 次调用 / ~444s 收敛并判 PASS**，证明 provider、agent 与 docker 执行器本身都健康。
 
-按 Spec 13 的 `No-implementation Boundary` 与 Stop Conditions，各轮**不热修**业务/接线代码、**不**事后调高冻结预算、**不**删除未观测 stage、**不**把失败 run 发布为 Evidence —— 所有修复都走"新候选 + 重跑 L1/L2/L3"的正规路径（A6 修 F3、A7 修 F4）。失败 run 已按 Spec 13 要求保留在 `output/contract-validation/{staging/,}failed-runs/`。
+按 Spec 13 的 `No-implementation Boundary` 与 Stop Conditions，各轮**不热修**业务/接线/工具代码、**不**事后调高冻结预算、**不**删除未观测 stage、**不**把失败 run 发布为 Evidence —— 所有修复都走"新候选 + 重跑 L1/L2/L3"的正规路径（A6 修 F3、A7 修 F4、A8 修 F8）。失败 run 已按 Spec 13 要求保留在 `output/contract-validation/{staging/,}failed-runs/`。
 
 ### 全程红线
 
