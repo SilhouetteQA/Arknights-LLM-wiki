@@ -755,6 +755,59 @@ Spec 11 Stage 0 预登记的产物；改动的动机正是"观察到上限被打
 | (甲) 批准修正预登记 | 形成 A9：仅把 `timeout_seconds` 对齐 manifest **自身**的 `duration_cap_seconds`（600 → 1800），并把 `max_calls` / `expected_calls` 按 case 的 `max_iterations` 重新推导；**不动** `estimated_cost_cap`。随后在 A9 上重跑 L1/L2/L3 | 有机会闭合 Coding L3，进而解锁 Spec 14/15；代价是单次 L3 最坏耗时 ×3 |
 | (乙) 保持冻结值不变 | 不做任何改动，Cycle 1 带一条残余 handoff：Coding L3 未闭合、Spec 14/15 锁定，把 F9 作为真实 L2/L3 反馈交给 Spec 16 | 零额外成本；但 Cycle 1 无法 COMPLETE |
 
+---
+
+## 12. 续执行状态（2026-10-11）
+
+### Goal
+
+完成 Foundation Contract Cycle 1 的 Spec 13、14、15，并以双仓固定 A/B 与 Wiki C 的最终验收结果收口。
+
+### Success criteria
+
+- Spec 11–13 的候选绑定证据完整，状态可由受控 pending suffix 合法归约为 `COMPLETE`。
+- 两仓 Evidence Publication B 只包含规范 allowlist 内文件。
+- 固定 A/B 协调结果为 `PASS / READY_FOR_FINALIZATION`。
+- Wiki C 严格满足 finalization allowlist，最终账本归约为 Cycle `COMPLETE`。
+
+### Status
+
+`running`
+
+### Current step
+
+Spec 13–15 的固定提交与终结产物已经形成；正在把结果合并到两仓本地主分支并从主分支做最终复核。
+
+### Completed
+
+- A9_coding 已形成：`ae186533cfef35df9c7832c27fcf60a627de433d`。
+- A9 真实 L3 已在 87.516 秒内结束，产出 23 条事件，required producer/stage 全覆盖，sink failure 与 rejected record 均为 0。
+- A9 `--gate smoke` 已复核为 8/8 PASS。
+- A9 L2 已绑定同一提交并 PASS：3 records / 3 sources / 0 adapter defects。
+- A9 正式复核完成：Conformance 224 passed、契约测试 245 passed、PR gate 8/8、build PASS、全量回归 642 passed / 3 skipped / 0 failed；Docker 集成 10 passed。
+- 调用口径复核完成：23 条事件中含 11 条 `coding.agent.llm_usage` 与 11 条镜像 `coding.trace.generation_usage`，对应 11 次逻辑 provider call，未达到 `max_calls=12`；`run-summary.actual_calls=22` 是冻结实现定义的 usage 观测条数。
+- pending suffix 已追加 A9 的 Spec 11–13 状态事件并通过真实 reducer：event_count=62，Specs 01–13 effective status 均为 `COMPLETE`。
+- Evidence Publication B2 已形成：Wiki `8a39c8b4a37ff0eb11823d8563cd8743b15722e2`，Coding `c364b0201f83b748cbea60ddfa4217c6dc46040d`；两仓 A→B 均只包含 publication allowlist 文件。
+- 固定 A/B 协调已通过全部检查，结果为 `PASS / READY_FOR_FINALIZATION`，协调结果 canonical hash 为 `sha256:277ab38f852e74359d0ba2acf145197647e0c0fc57fee15d23868a6aed3e3489`。
+- Wiki Finalization C 已形成：`146e9c4260eb0e509fc6f6379c15e4c7f95c4669`；finalizer 8/8 PASS，B 为 C 的祖先，C 严格满足 finalization allowlist。
+- C 上账本已通过真实 reducer：canonical event_count=119，Specs 01–15 effective status 均为 `COMPLETE`。
+
+### Active owners
+
+- Coordinator / Worker：当前 Codex 会话（单会话顺序执行，不启用子代理）。
+
+### Blockers
+
+- 无。
+
+### Next action
+
+将 Wiki C、进度文档与 Coding B2 合并到各自本地 `main`，随后在主分支运行 candidate gate、状态账本归约与 finalizer 复核。
+
+### Next checkpoint
+
+两仓主分支终验全部通过后，将本节状态更新为 `complete`。
+
 
 
 
