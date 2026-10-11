@@ -771,11 +771,11 @@ Spec 11 Stage 0 预登记的产物；改动的动机正是"观察到上限被打
 
 ### Status
 
-`running`
+`complete`
 
 ### Current step
 
-Spec 13–15 的固定提交与终结产物已经形成；正在把结果合并到两仓本地主分支并从主分支做最终复核。
+Foundation Contract Cycle 1 已完成：固定 A/B/C 已接入两仓本地 `main`，主分支终验通过。
 
 ### Completed
 
@@ -790,6 +790,10 @@ Spec 13–15 的固定提交与终结产物已经形成；正在把结果合并�
 - 固定 A/B 协调已通过全部检查，结果为 `PASS / READY_FOR_FINALIZATION`，协调结果 canonical hash 为 `sha256:277ab38f852e74359d0ba2acf145197647e0c0fc57fee15d23868a6aed3e3489`。
 - Wiki Finalization C 已形成：`146e9c4260eb0e509fc6f6379c15e4c7f95c4669`；finalizer 8/8 PASS，B 为 C 的祖先，C 严格满足 finalization allowlist。
 - C 上账本已通过真实 reducer：canonical event_count=119，Specs 01–15 effective status 均为 `COMPLETE`。
+- 两仓本地主分支已完成集成：Wiki 通过 merge commit `d21666b4534c04d2dd3458dd00dfedd4b78d1f3e` 接入 C 与进度记录；Coding `main` 快进到 B2 `c364b0201f83b748cbea60ddfa4217c6dc46040d`。
+- Wiki 干净主分支 candidate gate 通过：Conformance 224 passed、契约测试 368 passed / 3 skipped、业务范围 139 passed、全量回归 913 passed / 10 skipped / 0 failed，发布安全扫描 9 文件无命中，构建安装与 L1/L2/L3 evidence verification 通过。
+- Coding 主分支 candidate gate 通过：Conformance 224 passed、契约测试 245 passed、业务范围 197 passed、全量回归 632 passed / 13 skipped / 0 failed，发布安全扫描 7 文件无命中，构建安装与 L1/L2/L3 evidence verification 通过。
+- 主分支提交中的 `cycle-report.json` 与协调原件字节一致；在禁用 Windows 自动换行转换的干净主分支检验副本中，Finalizer 8/8 PASS。原 Wiki 工作区的未提交评测数据保持不变，未纳入本轮提交。
 
 ### Active owners
 
@@ -801,8 +805,8 @@ Spec 13–15 的固定提交与终结产物已经形成；正在把结果合并�
 
 ### Next action
 
-将 Wiki C、进度文档与 Coding B2 合并到各自本地 `main`，随后在主分支运行 candidate gate、状态账本归约与 finalizer 复核。
+无。后续如需同步远端，再单独执行 push / PR 流程。
 
 ### Next checkpoint
 
-两仓主分支终验全部通过后，将本节状态更新为 `complete`。
+无；Cycle 1 已验收收口。
