@@ -794,6 +794,7 @@ Foundation Contract Cycle 1 已完成：固定 A/B/C 已接入两仓本地 `main
 - Wiki 干净主分支 candidate gate 通过：Conformance 224 passed、契约测试 368 passed / 3 skipped、业务范围 139 passed、全量回归 913 passed / 10 skipped / 0 failed，发布安全扫描 9 文件无命中，构建安装与 L1/L2/L3 evidence verification 通过。
 - Coding 主分支 candidate gate 通过：Conformance 224 passed、契约测试 245 passed、业务范围 197 passed、全量回归 632 passed / 13 skipped / 0 failed，发布安全扫描 7 文件无命中，构建安装与 L1/L2/L3 evidence verification 通过。
 - 主分支提交中的 `cycle-report.json` 与协调原件字节一致；在禁用 Windows 自动换行转换的干净主分支检验副本中，Finalizer 8/8 PASS。原 Wiki 工作区的未提交评测数据保持不变，未纳入本轮提交。
+- 已用 `.gitattributes` 将 Foundation 终结产物固定为不做换行转换，消除 Windows `core.autocrlf` 对字节级 Finalizer 复核的假失败。
 
 ### Active owners
 

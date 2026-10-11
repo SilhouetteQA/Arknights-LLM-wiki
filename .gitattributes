@@ -1,0 +1,6 @@
+# Foundation Contract 终结产物参与字节级哈希与 append-only 校验，禁止自动换行转换。
+docs/contracts/current.json -text
+docs/contracts/releases/*/current.json -text
+docs/contracts/releases/*/cycle-report.json -text
+docs/contracts/releases/*/cycle-report.md -text
+docs/specs/foundation-contract/execution-status-events.jsonl -text
