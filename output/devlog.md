@@ -2308,9 +2308,391 @@ push 触发 workflow 后收到失败通知。**这批失败极有价值**：本�
 
 ---
 
+## Spec 11 完成：Candidate A 已冻结（2026-09-16）
+
+### 交付
+
+| 产物 | 说明 |
+|---|---|
+| **A_wiki `b726c09` / A_coding `c8e06e5`** | 两个固定候选提交，取自 `feature/foundation-contract-spec10` 的 HEAD（**不是 `main`**，两仓 main 都没有 Foundation 产物）。此后验证一律用 SHA，不用分支名 |
+| **Cycle 分支 `contract-cycle/foundation-0.1.0-cycle-1`** | 在 A 处创建，作为 A/B/C 的唯一承载分支。母 Spec §16.3 要求 `diff(A,B) ⊆ evidence publication allowlist`，故 README/devlog 等非 allowlist 提交必须留在 feature 分支，不得插入 A→B 之间 |
+| `docs/specs/foundation-contract/execution-status-events.jsonl` | 追加 Spec 11 `NOT_STARTED→READY→IN_PROGRESS` 两条 canonical 事件（共 43 条；`candidate_commit=null`，rule 7 对 Spec 01–11 的 pre-freeze 事件允许 null） |
+| `docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}` | **受控 staging，故意不提交**：Spec 11 `IN_PROGRESS→VALIDATED`（`FREEZE_BOUNDARY_REACHED`）+ `VALIDATED→COMPLETE`（`CANDIDATE_FROZEN`），两条均绑定 `candidate_commit=A_wiki`；envelope `target_boundary=candidate_a`、`event_count=2`、`suffix_hash=sha256:bd5e2dcf…` |
+| 校准记录 §3.1 + §9 | G-20 逐字节复核记录 + Spec 11 pre-freeze inventory（契约身份、仓库本地身份、工具链、工作树归属） |
+
+### 为什么 boundary 事件在 pending suffix 而不是 canonical 账本
+
+`FREEZE_BOUNDARY_REACHED` / `CANDIDATE_FROZEN` 属于"无论 spec 为何都必须绑定非空 `candidate_commit`"的 5 个边界/发布类理由码（G-23 收严），而 A 冻结前这个 SHA 还不存在 → 只能等 A 形成后写进 controlled pending suffix（母 Spec §16.2 正是这样规定的）。Spec 14 必须把该 suffix **逐字节** append 到 B_wiki 账本，否则 Spec 12/13 依赖它的证据无效。
+
+### 正式验证（在两个 A 的干净 detached checkout 上重跑，不引用 Spec 09/10 开发期 PASS）
+
+| L1 步骤 | Wiki A `b726c09` | Coding A `c8e06e5` |
+|---|---|---|
+| `generate_schemas --check` | exit 0（6 schemas / 68 rules） | exit 0 |
+| `verify_payload` | exit 0（40 文件 / `sha256:64049830…`） | exit 0（同 hash） |
+| `pytest agent_core/contracts/conformance` | **224 passed** | **224 passed** |
+| `pytest tests/contracts` | **319 passed / 3 skipped** | **196 passed** |
+| `validate_local --gate pr` | exit 0（**8/8**） | exit 0（**8/8**） |
+| `python -m build` | exit 0（sdist + wheel，wheel 内 payload 完整） | exit 0（sdist + wheel） |
+| `pytest tests/`（全量回归） | **864 passed / 10 skipped / 0 failed** | **577 passed / 13 skipped / 0 failed** |
+
+**G-07 口径**：Wiki 规范基线登记 3 条 known failure（`tests/test_stats_collector.py`），实测**全部 PASS** → 按 `KNOWN_BASELINE_FAILURE_RESOLVED_UNEXPECTEDLY` 处理：**不算 gate 失败**、标记需 review、基线文件不改写。Coding 期望 `PASS`，实测 `PASS`。
+
+**Suffix 校验不是空转**：三个负例均按预期 exit 1 + `SPEC_STATUS_CONFLICT` —— 篡改 `suffix_hash` → `PENDING_2_SUFFIX_HASH_MISMATCH`；envelope 与事件 `candidate_commit` 不符 → `PENDING_3_CANDIDATE_MISMATCH`；`event_count` 不符 → `PENDING_2_EVENT_COUNT_MISMATCH`。
+
+### G-20 逐字节复核（本轮新发现，已按冻结语义接受）
+
+Spec 10 的提取报告只记了 descriptor 一处磁盘字节差异。本轮对**全部 40 个 payload 文件**做了逐字节 + canonical 双重比对：
+
+```text
+磁盘字节不同        7  （descriptor + 全部 6 个 schema）
+canonical 内容不同   0  → payload_hash / descriptor_hash / schema_set_hash 两仓完全一致
+差异量              每文件恰 1 字节：Wiki 结尾多一个 LF（1797 vs 1796）
+```
+
+**根因定位到行**：`tooling/generate_schemas.py:182,187` 写快照用 `canonical_json_dumps(x) + "\n"`（多一个装饰性 LF）；`bundle.py:143` 落盘的是 `file_canonical_content()` 的结果 —— 该函数对 `.json` 重新序列化为 canonical JSON（无尾随 LF），对其它文本只做换行规范化。所以 **Coding 收到的就是 canonical 形态，Wiki 自己生成的快照反而多一字节**；`--check` 比较的是 `canonical_json_dumps(...)`，对该字节不敏感，故两仓都通过。
+
+**本 Cycle 不修的理由**（写入校准记录 §3.1）：① 无任何消费者按原始字节比较两仓（`coordinate_cycle` 只比 `payload_hash`/`payload_descriptor_hash`/`schema_set_hash`；本地 gate 按 G-06 不读另一仓）；② 要同时满足"逐字节相同"与"生成器幂等"必须改 payload 内的 `generate_schemas.py` 或 `bundle.py`，会**变更 `contract_payload_hash`**，使账本中已 `COMPLETE` 的 Spec 09/10 事件所引用的 `sha256:64049830…` 变成悬空身份（append-only 账本无法回改）；③ 只重写那 7 个 JSON 快照虽 hash 不变，却会让提交状态与生成器输出不一致（下次 `--write` 即再分叉），形成"看似逐字节相同、实则随时会漂"的假象。**结论：按已冻结的 G-20 语义接受，记为显式残留，建议随下一个 payload 版本修。**
+
+### 工作树归属（Freeze Procedure 步骤 1）
+
+Wiki 的 2 个长期 `M` 文件明确归属为运行期/数据改动、**不纳入 A**（均未提交，天然不进 A）：`output/eval/cost_log.jsonl`（`+42`，项目测试会追加）、`data/extractions/v3_seed_db_v2.json`（`+1/−1`，2026-08-18 起未提交）。Coding 工作树**完全干净**，无未跟踪文件。
+
+---
+
+## Spec 12 完成 / Spec 13 阻断（2026-09-16）
+
+### 先做了结构修正：cycle worktree
+
+Spec 12 必须绑定 **A 的已提交 blob** 的 sha256，而被长期改写的 `output/eval/cost_log.jsonl` 在工作区里与提交内容不同（`9f4bd645…` 3479 行 vs `88108f88…` 3521 行）。因此在 `_worktrees/foundation-contract/cycle/{wiki,coding}` 新建了**检出在 cycle 分支上的 pristine worktree**（`git status` 0 改动）：
+- Spec 12/13 从这里跑（Candidate-bound、可复现）；
+- Spec 14 也将在这里形成 B；
+- `candidate_a` pending suffix 一并**移到 cycle worktree**（与 canonical ledger 同目录，G-03），feature worktree 的副本已删除以避免两份 staging 歧义。
+
+### Spec 12（L2 Historical Replay）= `COMPLETE`
+
+命令（受控手动，非 workflow，G-06）：`AGENT_CONTRACT_MODE=strict` + `AGENT_CONTRACT_RUN_ID=<manifest run_id>` + `AGENT_CONTRACT_COMMIT=<A SHA>` + `python scripts/contracts/replay_history.py --run-manifest config/contracts/replay-v0.1.json`。
+
+| | Wiki | Coding |
+|---|---|---|
+| result | `PASS` | `PASS` |
+| 记录 / 来源 | 220 / 2 | 3 / 3 |
+| status | `REPRODUCTION_RESTRICTED` ×220 | `LEGACY_DATA_INSUFFICIENT` ×3 |
+| mapping_outcome | `OBSERVED` ×220 | `LEGACY_DATA_INSUFFICIENT` ×3 |
+| difference_class | `NONE` ×120 + `expected semantic correction` ×100 | `legacy insufficiency` ×3 |
+| adapter_defects | 0 | 0 |
+| scan.failed / findings | 0 / `[]` | 0 / `[]` |
+| raw retention | `…RETAINED_IN_CONTROLLED_SOURCE_LOCATION`，未进 contract staging、未进 Git | 同 |
+
+绑定核验：`repository_commit` = A 且 `repository_commit_matches_head=True`（`repository_commit_source=AGENT_CONTRACT_COMMIT`）、`contract_payload_hash` = `64049830…` 且 `payload_hash_verified=True`。语料 record 形状稳定（8 键），只有 presence-aware 最小事实——**无 raw prompt / response / code / diff / path / credential**。
+
+这也**顺带结清了校准记录 §5 的悬置问题**：真实执行确认 Wiki 220 条全 `REPRODUCTION_RESTRICTED`、Coding 3 条 `LEGACY_DATA_INSUFFICIENT`，因此"管线跑通但数据不足"作为 Cycle 1 的 L2 结论被接受（补造语料会超出 v0.1 范围且需改冻结的 config）。
+
+**PR gate 第 [7] 步不再空转**：两仓 cycle worktree 上 `--gate pr` 均 exit 0（8/8），且 `evidence publication safety scan — 2 文件无命中`（此前 staging 为空时是 vacuous）。
+
+### Spec 13（L3 Fresh Smoke）= `BLOCKED`
+
+准备阶段即发现**三个独立、可复现的 Candidate A 缺陷**，Spec 13 无法闭合：
+
+| 编号 | 缺陷 | 决定性证据 |
+|---|---|---|
+| **B1** | gate 第 [8] 步要求 `<evidence_root>/<run_id>/run-summary.json`（G-04 冻结 8 键），**两仓无任何组件写它** | 全仓扫描：Wiki 命中 5 文件、Coding 1 文件，**全部是文档 + 要求它的 gate 本身**；A 的 runtime 8 键中只原生暴露 `sink_failure_count`，`rejected_records`/`actual_calls`/`actual_tokens`/`duration_seconds`/`producer_coverage`/`known_cost_components`/`unknown_cost_components` 均无 accessor。→ 无论业务运行多成功，gate 永远无法通过 |
+| **B2** | G-13（Spec 11 Stage 0 冻结）把 `--gate smoke` 定为"只校验已完成的 run"，业务运行交给"受控手动命令"——**该命令在 A 中不存在** | `contract-local.yml` 末尾记录的 L2/L3 命令只有 validate-only 的 smoke 调用自身；`gate_smoke()` 只读 `events/` + `run-summary.json`，不驱动任何业务路径 |
+| **B3** | smoke manifest 预登记 `case_ids=[character_complex_002]` 却**无法被选中** | `eval/runner.py` 只有 `--bench/--out/--mode/--limit/--category/--server/--dry-run/--no-judge/--workers`；默认 bench `benchmarks/arknights_bench/questions.jsonl` **不存在**；草稿 bench 里该 case 在第 2 位，`--limit 1` 会跑成 `character_complex_001` |
+
+Spec 13 的 No-implementation Boundary 禁止热修 smoke harness / Adapter / sink / config / tests / 业务代码 / workflow，其 Stop Conditions（"需要修改工具、接线或 tests"、"Evidence 无法落盘或 run 不闭合"）已触发；Spec 11 的 Stop Conditions 也早已列明"任一 post-freeze 工具缺失"。
+
+**处置（严格按规范，不自行发明）**：按 Index §5 与 `GOV-FRZ-002`，post-freeze 工具缺失/错误 ⇒ **A `SUPERSEDED`，回到拥有该文件的 pre-freeze Spec（Spec 10 —— 它拥有 post-freeze 工具集与 smoke harness，且其验收证据曾声称"Spec 12–15 零剩余工具工作"）形成 A2**。
+
+**本轮未越界**：没有修改任何实现文件、没有执行业务运行、没有改 config/tests/workflow ⇒ 无需回退。Spec 12 的 L2 staging 与本结论无关，仍然有效。
+
+**待批准**：A2 需要写新工具（L3 驱动 + `run-summary` 生产者 + case 选择），属项目规则 **N-04（迁移/架构变更需用户同意）** 范畴，因此停在这里等用户裁定，未自行开工。
+
+### 账本与分支状态
+
+- canonical 账本仍 **43 条**（A 内的 canonical prefix 未动）。
+- `candidate_a` pending suffix 现为 **9 条**：Spec 11 ×2、Spec 12 ×4、Spec 13 ×3（`NOT_STARTED→READY→IN_PROGRESS→BLOCKED(SPEC_INCOMPLETE)`）；`suffix_hash` = `sha256:67f60a19…`。
+- 归约结果：Spec 01–12 `COMPLETE`、**Spec 13 `BLOCKED`**、14–18 `NOT_STARTED`（14 正确地**未**解锁）。
+- 已推送：Wiki `contract-cycle/foundation-0.1.0-cycle-1`（`b726c09`）、Wiki `feature/foundation-contract-spec10`（`9847101`）、Coding `contract-cycle/foundation-0.1.0-cycle-1`（`c8e06e5`）。
+
+---
+
+## A2 决策与实施（2026-09-16）
+
+### 决策
+
+用户按 **N-04** 批准走规范路径：**A `SUPERSEDED` → 回到拥有缺陷的 pre-freeze Spec（Spec 10）修工具 → 形成 A2**。理由链：Spec 13 的 Stop Conditions 已触发（需改工具/Evidence 无法闭合），Index §5 与 `GOV-FRZ-002` 规定 post-freeze 工具缺失/错误必须 SUPERSEDED，Spec 13 自身禁止热修。用户同时否决了"最小可行 + provisional 覆盖冻结规则"与"停在 BLOCKED"两个选项。
+
+### A2 的关键有利事实：payload 不变
+
+`scripts/contracts/**` 与两仓业务代码（`arknights_wiki/**`、`adapters/**`、`benchmark/**`、`tools/**`）**都不在 40 文件 Contract Payload 内**（payload 只含 `agent_core/__init__.py` + `agent_core/contracts/**`）。因此 A2 是**纯工具级修复**：
+
+```text
+contract_version       0.1.0        （不变）
+contract_payload_hash  sha256:64049830…  （不变）
+descriptor / schema_set hash              （不变）
+```
+
+⇒ Spec 09/10 的契约身份与 rule coverage 证据**继续有效**，不需要版本升级，`agent_core.contracts` 两仓镜像也不动。
+
+### A2 变更范围（非 payload）
+
+1. **新增 `scripts/contracts/run_l3_smoke.py`**（两仓各一份）：受控 L3 驱动 —— 校验 manifest（与 `gate_smoke` 同键集）、强制 `mode=observe` 与 `run_id` 一致、从 `--case-source` 解析并**强制**满足预登记 `case_ids`（缺失即 exit 2 + `SPEC_INCOMPLETE`）、子进程驱动真实业务路径、测量时长、按 `RUN_SUMMARY_KEYS` 从**durable evidence** 聚合出 `<evidence_root>/<run_id>/run-summary.json`。
+2. **sink 失败落盘**（`*/adapters/foundation/evidence_sink.py`）：业务路径跑在子进程里，进程内 `sink_failure_count` 读不到 ⇒ 让 sink 在 emit 失败时追加 run 级失败标记文件；缺失即 0 次失败。`run-summary` 的 `sink_failure_count` / `rejected_records` 由此可证据化。
+3. **case 选择（B3）**：由 driver 强制预登记 `case_ids`，并把投影出的单 case bench 放进受控 staging —— **不需要改动 runner 的业务代码或已冻结的 `config/`**。
+4. **workflow 注释**：按 G-06 把新的受控 L3 驱动命令写进两仓 `contract-local.yml` 末尾注释块（不新增 workflow 文件、不改 job 步骤）。
+5. **G-13 校正**：Spec 11 Stage 0 冻结的"业务运行由受控手动命令完成"原本**没有定义那条命令**，A2 必须把它定义为上面的 driver。
+
+### A2 的账本建模
+
+写入 **A2 自身的 canonical 账本**（这是 pre-A2 边界事实，与 Spec 11 的 pre-A 事件同期同理），三条事件：
+
+```text
+11  IN_PROGRESS → SUPERSEDED    CANDIDATE_SUPERSEDED  candidate_commit=A_wiki
+10  COMPLETE    → SUPERSEDED    CANDIDATE_SUPERSEDED  candidate_commit=A_wiki  references=[Spec10 COMPLETE event]
+10  SUPERSEDED  → IN_PROGRESS   CANDIDATE_SUPERSEDED  candidate_commit=A_wiki  （A2 重启）
+```
+
+**旧 `candidate_a` pending suffix 必须被 reducer 拒绝**（`PENDING_3_CANDIDATE_SUPERSEDED`："a pending suffix cannot be reused across candidates"）—— 这是设计使然，也验证了 supersede 生效。旧 suffix 已作为审计材料归档到 `docs/specs/foundation-contract/void/candidate-a.*`（**不覆盖、不删除历史**），并在新边界改用绑定 **A2** 的 suffix。
+
+Spec 11/12 在旧 suffix 里的 `COMPLETE`、Spec 13 的 `BLOCKED` 随 A 一起作废（canonical 里 Spec 11 是 `IN_PROGRESS`、Spec 12/13 是 `NOT_STARTED`），所以三者在 A2 上从各自合法起点重做。
+
+### CI 触发的一个既知约束
+
+`contract-cycle/**` **不在** G-06 冻结的推送触发集合内（只含 `main` / `feature/**`）。所以 A2 提交到 cycle 分支后默认**不会**跑 CI —— 必须用已冻结的 `workflow_dispatch` 手动触发两条 workflow，才能拿到 A2 的 GitHub CI 证据。
+
+### 本轮已验证的 CI（A 及记账提交）
+
+| 仓 / 分支 | SHA | 结果 |
+|---|---|---|
+| Wiki `feature/foundation-contract-spec10` | `9223916` | Contract Local Gate ✅ + Linux canonical hash ✅ |
+| Coding `feature/foundation-contract-spec10`（= A_coding） | `c8e06e5` | Contract Local Gate ✅ + Linux canonical hash ✅ |
+
+---
+
+## L3 收敛裁定（2026-09-16，用户授权）
+
+A2 的驱动部分完成后，L3 仍跑不通。经母 Spec §7.3（分层覆盖要求）逐条比对，问题分两类：
+
+**A 类 —— gate 缺陷，规范明确要求，直接修（B7）**
+`gate_smoke` 忽略 per-pair `evidence_requirement`，只用顶层 `coverage_policy` 一刀切，导致 Coding `trace.summary`（登记为 `ONE_OF`）被要求 sdk 与 clickhouse **都**出现。母 Spec §7.3 与 Spec 13:51（"`ONE_OF` 按预登记策略判断"）都要求按预登记策略判定，§7.3:887 更明写 **"未观察到"不等于失败**。
+
+**B 类 —— 规范硬要求 vs 本机环境能力（B4 / B5 / B6）**
+
+| # | 项 | §7.3 原文要求 | 实测现实 |
+|---|---|---|---|
+| B4 | Wiki `wiki.eval.cost_log` | L3 需 **runner/judge/scoring 全部** | `scoring.py` 顶层 `import deepeval`；deepeval **未声明在 pyproject 也未安装**（项目只在 `deepeval-local` 容器跑） ⇒ 6 条 pair 只能观测到 5 条 |
+| B5 | Coding `coding.benchmark.case_cost` | L3 **`normal` required；错误 stage 可 `NOT_OBSERVED`** | 冻结 manifest 把三个 stage **全标 `ALL_STAGES`** ⇒ manifest 本身偏离 §7.3；且 `benchmark/runner.py::_run_one_case` 每个 case 只产出一个 stage，而 `case_ids` 冻结为 1 个 case ⇒ 三个全观测在结构上不可能 |
+| B6 | Coding `coding.trace.summary` | L3 **`ONE_OF(sdk, clickhouse)`** | 两个 stage 都无法从 `--benchmark` 路径产生（唯一生产者 `tools/report_trace.py` 只能经 `main.py --trace-report`），且需要 Langfuse 凭据或 127.0.0.1:8123 的 ClickHouse |
+
+**用户裁定**：授权**按环境实际可观测收敛 L3**（选项 b）。具体做法：
+
+1. 为 per-pair `evidence_requirement` 增加一个**自述式**词表值 `NOT_OBSERVED_ALLOWED`（直接引用 §7.3:896 的"可 `NOT_OBSERVED`"用词，便于审计）。
+2. 按 §7.3 修正 Coding manifest：`case_cost/normal` 保持 required；`case_cost/environment_error`、`case_cost/error` 改为 `NOT_OBSERVED_ALLOWED`（这一步是**回归规范**，不是偏离）。
+3. 对 B4/B6 做**显式偏离**：Wiki `wiki.eval.cost_log/scoring`、Coding `coding.trace.summary/{sdk,clickhouse}` 标为 `NOT_OBSERVED_ALLOWED`，并在以下四处留痕，不静默：
+   - 校准记录新增偏离条目（含 §7.3 原文、本机不可观测的确切原因、恢复条件）；
+   - pending suffix 事件里记 `SPEC_INCOMPLETE` 供 **Spec 16（Cycle 2）校准**；
+   - Evidence / validation report 明写"本环境不可观测"，不得写成 PASS 或伪造观测；
+   - 恢复条件写明：装并声明 `deepeval` 后 Wiki `scoring` 可观测；提供 Langfuse 凭据或 ClickHouse 后 Coding `trace.summary` 可观测。
+4. `gate_smoke` 对 `NOT_OBSERVED_ALLOWED` 的 pair：未观测 → 记 `NOT_OBSERVED` 并**不**判失败，但必须在 step 摘要里显式列出（"未观测 ≠ 通过"）。
+
+**为什么这不是"放水"**：§7.3:887 已经确立"未观察到不等于失败"；B5 是把 manifest 修回规范；B4/B6 的偏离被逐条具名、具因、带恢复条件地记录，而不是从要求里删掉。用户明确签字授权该偏离。
+
+---
+
+## A2 实施状态快照（2026-09-16，第 8 轮）
+
+**一句话**：A2 的 L3 驱动与 gate 逐对判定已完成（本地未提交），phase 2（覆盖策略收敛）正在实施。A2 **尚未提交**，A 仍是当前候选。
+
+### 已完成（工作区未提交，两仓 cycle worktree）
+
+| 文件 | 内容 | 状态 |
+|---|---|---|
+| `scripts/contracts/run_l3_smoke.py` | 新增 L3 驱动：强制 mode/run_id、强制预登记 `case_ids`、子进程驱动真实业务路径、按 `RUN_SUMMARY_KEYS` 聚合出 `run-summary.json`、收尾调用冻结的 `gate_smoke` | ✅ 两仓 |
+| `tests/contracts/test_run_l3_smoke.py` | 驱动测试（Wiki +29、Coding +22），含 fixture seam 的离线 e2e 与扰动负例 | ✅ 两仓 |
+| `*/adapters/foundation/evidence_sink.py` | sink 失败落盘 `<evidence_root>/<run_id>/sink-failures.jsonl`（append-only，缺文件=0 次失败）—— 修复"业务跑在子进程、进程内计数读不到" | ✅ 两仓 |
+| `.github/workflows/contract-local.yml` | 末尾注释块记录受控 L3 驱动命令（G-06；不新增 workflow、不改 job） | ✅ 两仓 |
+| `scripts/contracts/validate_local.py` | gate 第 7 步改为**逐对**判定：`ALL_STAGES` 逐对必观测；`ONE_OF` 按 `producer_id` 分组成组，组内至少一条；无 per-pair 要求回退顶层 `coverage_policy`（修复 B7） | ✅ 两仓，**逐字节相同** `4ef4c27e…` |
+| `tests/contracts/test_validate_local_tools.py` | 逐对判定测试 | ✅ 两仓 |
+
+已在早前验证通过：Wiki `tests/contracts` **348 passed / 3 skipped**、`--gate pr` **8/8**；Coding **218 passed**、`--gate pr` **8/8**；两仓 `verify_payload` payload hash 仍为 `64049830…`（40 文件）。
+
+### 进行中
+
+**phase 2（覆盖策略收敛）** —— 施工单 `C:\Users\Public\dsh-tmp\phase2_brief.md`。要点：
+1. 新增 per-pair 词表值 **`NOT_OBSERVED_ALLOWED`**（引用 §7.3:896 原话），gate 接受它；未观测不判失败，但必须在 step 7 摘要**显式点名**（未观测 ≠ 通过）；**不得**作为顶层 `coverage_policy`。
+2. **manifest 与 registry 必须成对改**（`publish_evidence.py` 会交叉核对，不一致即报错）：
+   - **回归规范（A 类）**：Coding `case_cost/environment_error`、`case_cost/error` → `NOT_OBSERVED_ALLOWED`（§7.3 原本就写"错误 stage 可 `NOT_OBSERVED`"，是冻结的 manifest 写错了）
+   - **授权偏离（B 类）**：Wiki `wiki.eval.cost_log/scoring`、Coding `coding.trace.summary/{sdk,clickhouse}` → `NOT_OBSERVED_ALLOWED`
+3. `publish_evidence.py` 的 run-manifest 投影与覆盖表必须如实显示新值与 `covered: false`。
+4. 更新冻结面守卫测试（`TestFrozenSurface::test_manifest_key_sets_are_frozen` + Coding 侧 manifest 守卫）：继续钉住**键集与嵌套**，并说明哪些值是规范必需、哪些是授权偏离。
+5. 校准记录追加偏离章节（§7.3 原文 + 不可观测的确切文件行号证据 + 恢复条件 + 用户按 N-04 授权的声明），并明确区分 A 类回归与 B 类偏离，留待 **Spec 16（Cycle 2）校准**。
+
+### A2 提交前必须做的事
+
+1. 两仓合并验证：`tests/contracts` + `--gate pr`（覆盖 B7 + phase 2 全部改动）。
+2. **还原 `output/eval/cost_log.jsonl`**（测试会追加写这个被跟踪文件；A2 提交绝不能含它，否则 B 阶段 `diff(A2,B) ⊆ allowlist` 门禁直接失败）。
+3. 跑 `C:\Users\Public\dsh-tmp\a2_supersede_canonical.py`：向 **A2 自身的 canonical 账本**追加 `11 IN_PROGRESS→SUPERSEDED`、`10 COMPLETE→SUPERSEDED`、`10 SUPERSEDED→IN_PROGRESS`（`CANDIDATE_SUPERSEDED`，`candidate_commit=A_wiki`）；脚本会同时验证旧 `candidate_a` suffix 被 `PENDING_3_CANDIDATE_SUPERSEDED` 正确拒绝。
+4. 形成 **A2 提交**（两仓 cycle 分支）；cycle 分支**不在** CI 推送触发集合内 ⇒ 必须用已冻结的 `workflow_dispatch` 手动触发两条 workflow 才能拿到 A2 的 GitHub CI 证据。
+5. 在 A2 的干净 checkout 重跑 L1 + 全量回归（复用 `%TEMP%\run_l1.ps1`）。
+6. 用 `C:\Users\Public\dsh-tmp\suffix_tool.py create --candidate <A2_SHA>` 建**绑定 A2 的新 suffix**（旧 9 条已归档在 `docs/specs/foundation-contract/void/`），再 `append` 各 spec 事件。
+7. 重做 L2（`replay_history.py`）→ 跑**真实 L3**（`run_l3_smoke.py`；Wiki 约 4 次 LLM 调用、上限 12 次 / ≤5 CNY；跑完记得还原 `cost_log.jsonl`）。
+8. Spec 14：`publish_evidence.py --candidate <A2> --release-version 0.1.0`（Coding 侧需 `AGENT_CONTRACT_CANONICAL_PAYLOAD_COMMIT=A_wiki`）→ 形成 B。
+9. Spec 15：构造 **A/B tree 之外**的闭合 cycle plan → `coordinate_cycle.py` → `finalize_cycle.py` → C_wiki（需 `AGENT_CONTRACT_ALLOW_REAL_COORDINATION` / `ALLOW_REAL_LEDGER` / `ALLOW_REAL_RELEASE` 守卫）→ 合并 canonical branch 后复验 → Cycle COMPLETE。
+
+### 已核查、**不需要**修的两项（省掉重复排查）
+
+- `coordinate_cycle.evidence_publication_allowlist` **已包含** Wiki 账本（L322-323），`check_ledger_append_only` 存在 ⇒ B 阶段允许账本 append。
+- `coordinate_cycle` 对 Wiki 回归接受 `PASS` **或** `PASS_WITH_KNOWN_BASELINE_FAILURES`（L171）；`gate_candidate` 已按裁定实现 G-07（`RESOLVED_UNEXPECTEDLY` = 允许 + `needs_review`）。`publish_evidence` 的 `full_regression` 硬编码为 Spec 14 字面要求值，属**已记残余**，不阻塞。
+
+---
+
+## A2 冻结完成 + L3 provider 阻断与 LLM 整合裁定（2026-09-16）
+
+### A2 已形成并通过全量验证
+
+| | A2_wiki | A2_coding |
+|---|---|---|
+| SHA | `ca24a199f3300a2e9e1390f6186acbb5c9dfdaad` | `339768dd2f9e3b26c8820408ec93bf30e378e50e` |
+| L1（6 命令） | 全 exit 0 | 全 exit 0 |
+| conformance | 224 passed | 224 passed |
+| tests/contracts | 368 passed / 3 skipped | 242 passed |
+| `--gate pr` | 8/8 | 8/8 |
+| `python -m build` | exit 0 | exit 0 |
+| 全量回归 | **913 passed / 10 skipped / 0 failed** | **623 passed / 13 skipped / 0 failed** |
+| payload hash | `64049830…` 不变 | `64049830…` 不变 |
+
+CI：cycle 分支不在推送触发集合内（G-06），已用 `workflow_dispatch` 手动触发 4 条（wiki local 35114299175 / hash 35114304298；coding local 35114309620 / hash 35114318323）。
+
+账本：A 的 supersede 已落 canonical（`11 IN_PROGRESS→SUPERSEDED`、`10 COMPLETE→SUPERSEDED→IN_PROGRESS`）；旧 `candidate_a` suffix 被 **`PENDING_3_CANDIDATE_SUPERSEDED`** 正确拒绝（证明 pending 机制真能挡住跨候选复用），已归档 `void/`。新 suffix 绑定 `ca24a199`，9 事件，hash `ce40a77a…`：**Spec 10/11/12 `COMPLETE`**、Spec 13 `NOT_STARTED`。
+
+Spec 12 在 A2 上重跑 L2 **PASS** 且结果与旧候选逐项一致（Wiki 220 `REPRODUCTION_RESTRICTED` / Coding 3 `LEGACY_DATA_INSUFFICIENT`）→ 证明 A2 修复**对 L2 行为保持**。
+
+### 真实 L3 失败：不是 A2 缺陷，但驱动失败路径被验证
+
+volcengine 返回 `InvalidSubscription`（订阅过期）。**驱动行为完全正确**：
+
+```text
+SPEC_STATUS_CONFLICT / GATE FAILED: 业务路径退出码 1 != 0；拒绝为一次未跑完的 run 写 run-summary
+```
+
+即：**拒绝为未完成的 run 伪造 `run-summary.json`**。而且失败前已成功执行 ① 校验 manifest ② **选中预登记 case_ids（B3）** ③ **构造并启动业务命令（B2）**。失败 run 已按 Spec 13 要求归档到 `failed-runs/`。⇒ B1/B2/B3 机制在**真实路径**上均被触发过，比合成测试更有说服力。
+
+### provider 实测（三死一活）
+
+| provider | 实测 |
+|---|---|
+| command_goat（`command_goat_api`，已设置） | ✅ **真实调用成功** |
+| DeepSeek 官方（`deepseek_api`） | ⚠️ 密钥有效；但 `GET /models` **只有** `deepseek-flash`、`deepseek-v4-pro` |
+| volcengine（`arkcode_api`） | ❌ `InvalidSubscription` 订阅过期 |
+| minimax（`minimax_api`） | ❌ 429 配额用完 |
+
+### 用户裁定：全项目 LLM key 整合
+
+用户指令：整理当前项目所有 LLM key，改用 **DeepSeek 官方 + `command_goat_api`**（base `https://api.commandcode.ai/provider/v1`），都路由到 `deepseek-v4.1-flash`，做好测试，**优先使用订阅的模型**。
+
+**两条与实测冲突之处，按"显式标注而非静默处理"处理**：
+1. command_goat 要求**命名空间 ID** `deepseek/deepseek-v4.1-flash`（裸名被拒 `unsupported_model`，已实测）。
+2. DeepSeek 官方**没有** `v4.1-flash`（`/models` 只有两个），故该档用 `deepseek-flash`，实现与文档中明确写为**替代**，不得假装等价。
+
+优先级：**`command_goat_api`（订阅）→ `deepseek_api`**；volcengine/minimax **不再作为静默 fallback**（否则会掩盖真实故障）。价格未知必须报**未知**而非 0（presence-aware 契约要求）。
+
+施工单：`C:\Users\Public\dsh-tmp\llm_consolidation_brief.md`。**范围只含 Wiki**；Coding 的 LLM 入口与 `opencode_go_api` 可用性由同一交付**报告**但**不许改动**，待报告后再决定是否同步。
+
+---
+
+## 候选轮次 A→A4 全记录与接手要点（2026-09-16，第 37 轮）
+
+### 候选演进（每一步都由真实缺陷推动，非返工浪费）
+
+| 候选 | SHA | 触发原因 | 结果 |
+|---|---|---|---|
+| **A** | `b726c09` / `c8e06e5` | 初次冻结 | L1+回归全绿，但 Spec 13 无法闭合（B1–B7） |
+| **A2** | `ca24a199` / `339768dd` | B1–B7：无 run-summary 生产者 / 无 L3 驱动 / case_ids 选不中 / gate 忽略 per-pair / §7.3 硬要求不可观测 | L1+回归全绿（913/623 passed，0 failed） |
+| **A3** | `3972c887`（仅 Wiki） | provider 三死一活 + judge 网关限流 + 驱动编码缺陷 | **L3 技术上 8/8 通过**，但**全量回归 1 failed** |
+| **A4** | `554bce2f`（仅 Wiki） | A3 的回归根因＝**定价歧义零** | L1+回归**待验证** |
+
+**A3 的 L3 通过细节**（这是关键里程碑，可复现）：`ALL_STAGES 5/5`（含 judge）、`NOT_OBSERVED_ALLOWED 0/1`（gate 显式列出 `wiki.eval.cost_log/scoring` 为"未观测（豁免登记，**不计为通过/覆盖**）"）、`run-summary` 闭合（sink=0 / 无拒绝 / 54s 在预算内）、业务路径 exit 0、12 条 evidence 事件。
+
+### 三个必须记住的"命令成功但语义错误"陷阱
+
+1. **`workflow_dispatch` 按远程 ref 取 HEAD**：本地提交未推送时 dispatch 会**成功返回 URL，但测的是旧 HEAD**。必须用 `git ls-remote origin <branch>` **独立确认**远程 HEAD = 目标 SHA，再 dispatch。（已踩过一次。）
+2. **`subprocess.run(text=True)` 在 Windows 按 gbk 解码**：业务路径 UTF-8 中文输出会让读取线程抛 `UnicodeDecodeError` 并**丢掉全部业务输出**，使失败无法诊断。须显式 `encoding="utf-8", errors="replace"`。（Coding 驱动本有此修复，Wiki 侧漏了。）
+3. **`_use_legacy_*` 不能用"环境变量存在"作判据**：`opencode_go_api` 在本机恒存在，若以它为准会把 opencode 的 key 发给新端点 → **401**。必须显式要求（设 `opencode_go_base` 或 `arknights_judge_use_opencode=1`）才回退。
+
+### provider 实测（2026-09-16，四选一）
+
+| provider | 结果 |
+|---|---|
+| `command_goat_api` → `https://api.commandcode.ai/provider/v1` | ✅ **可用**；模型 ID **必须**带命名空间：`deepseek/deepseek-v4.1-flash`（裸名被拒 `unsupported_model`） |
+| `deepseek_api` → `https://api.deepseek.com/v1` | ⚠️ 密钥有效，但 `/models` **只有** `deepseek-flash`、`deepseek-v4-pro`；**无** v4.1-flash（属替代，ID 不等价） |
+| `opencode_go_api` | ❌ 鉴权通过（`/models` 200）但**推理 429 Too Many Requests** |
+| `arkcode_api`(volcengine) | ❌ 订阅过期 `InvalidSubscription`（`/models` 200，仅推理失败） |
+| `minimax_api` | ❌ 429 配额用尽 |
+
+该模型是**推理型**：`max_tokens` 太小（如 16）会返回**空 content**，需给足预算。
+
+### A3 引入的回归与修法（示范契约原则）
+
+`tests/observability/test_llm_tracing.py::test_enabled_records_usage` 断言 `cost_details["total"] > 0` 得到 `0.0` —— 因新模型 ID 在 `arknights_wiki/eval/pricing.json` 无条目，**未知单价被静默当成 0**，正是契约要消灭的 `Unknown is not Zero`。修法：按该表既有惯例（所有 DeepSeek/MiniMax 条目均 `in 2.0 / out 8.0` + `estimate: true`）补两条，并在 `note` 写明**沿用 flash 档估算、未经供应商账单核对、属 estimate 待核对** —— 沿用约定并标注不确定性，而非编造价格。
+
+### 剩余步骤（严格顺序）
+
+1. **A4 验证**：L1 六条命令 + 全量回归（后台 `pwsh-53`，日志 `%TEMP%\l1-a4-wiki.log`）。期望 913 passed / 0 failed。
+2. **CI**：A4 已 dispatch（run `35119905641` / `35119909715`）；须先 `git ls-remote` 确认远程 HEAD = `554bce2f…`。
+3. **新 suffix 绑定 A4**：`%TEMP%\suffix_tool.py create --repo <cycle-wiki> --candidate 554bce2f…`，再 `append` Spec 10/11/12 事件（模板见 `%TEMP%\a2_new_suffix.py`、`a2_spec12_events.py`）。A3 的 suffix（hash `ce40a77a…`，绑定 `ca24a199`）须先归档到 `void/` 再作废。
+4. **L3 用 A4 重跑**：`AGENT_CONTRACT_MODE=observe`、`AGENT_CONTRACT_RUN_ID=foundation-0_1_0-c1-wiki-smoke`、`AGENT_CONTRACT_COMMIT=554bce2f…`、`python scripts/contracts/run_l3_smoke.py --run-manifest config/contracts/smoke-v0.1.json`。**跑完必须 `git checkout -- output/eval/cost_log.jsonl`**（业务运行会追加污染这个被跟踪文件；混入候选会让 B 阶段 allowlist 门禁失败）。失败 run 要归档到 `failed-runs/`（已有 4 份）。
+5. **Coding 侧**：其 smoke manifest 预登记 `provider=opencode_go` / `model=mimo-v2.5`，而 opencode **推理 429** ⇒ Coding L3 很可能同样跑不通，需要把同一套 provider 整合应用到 Coding（可能要 **A5_coding**）。**先实测再决定，不要凭猜测做候选。**
+6. **Spec 14**：`python scripts/contracts/publish_evidence.py --candidate <A4> --release-version 0.1.0`（Coding 侧需 `AGENT_CONTRACT_CANONICAL_PAYLOAD_COMMIT=<A_wiki>`）→ 形成 B_wiki/B_coding。注意 `evidence_publication_allowlist` 已含 Wiki 账本（L322-323）。
+7. **Spec 15**：构造 **A/B tree 之外**的闭合 cycle plan → `coordinate_cycle.py --plan <plan> --output <out>` → `finalize_cycle.py --coordination <out> --release docs/contracts/releases/0.1.0` → C_wiki → 合并 canonical branch 后复验 → Cycle COMPLETE。需 `AGENT_CONTRACT_ALLOW_REAL_COORDINATION` / `ALLOW_REAL_LEDGER` / `ALLOW_REAL_RELEASE` 守卫。
+
+### 已核查、不需要修的项（省重复排查）
+
+- `coordinate_cycle.evidence_publication_allowlist` **已包含** Wiki 账本；`check_ledger_append_only` 存在。
+- `coordinate_cycle` 对 Wiki 回归接受 `PASS` **或** `PASS_WITH_KNOWN_BASELINE_FAILURES`；`gate_candidate` 已按裁定实现 G-07（`RESOLVED_UNEXPECTEDLY` = 允许 + `needs_review`）。
+- `publish_evidence` 的 `full_regression` 硬编码为 Spec 14 字面要求值，属**已记残余**，不阻塞。
+- **agent/judge 模型分离**目前丢失（旧 judge 默认 `mimo-v2.5` 只在已限流的 opencode 上）；保留 `ark_judge_model` 覆盖开关，网关恢复后应重建分离以缓解自评偏差 —— 记为待办。
+
+---
+
+## Spec 13 完成：L3 fresh smoke 在 A4 上闭合（2026-09-16，第 39 轮）
+
+**A4 = Wiki `554bce2f2ebd00f5f4e6ac722680a8a57ab8cc66` / Coding `339768dd2f9e3b26c8820408ec93bf30e378e50e`**
+
+A4_wiki 干净 checkout 全量验证：L1 六条命令全 exit 0、conformance 224 passed、`tests/contracts` 368 passed / 3 skipped、`--gate pr` 8/8、`python -m build` exit 0、**全量回归 913 passed / 10 skipped / 0 failed**。
+
+**真实 L3（`run_l3_smoke.py`，`AGENT_CONTRACT_COMMIT=554bce2f…`）8/8 通过**：
+
+```text
+[1] OK  run_id 与 manifest 一致 + mode=observe
+[2] OK  无 .tmp 残留
+[3] OK  EvidenceRecord 模式校验 — 12 条全部通过
+[4] OK  event_id 唯一 — 12 唯一
+[5] OK  repository / commit / version / payload hash 一致   ← 真正绑定 A4
+[6] OK  全部事件 contract_mode=observe — 12 条
+[7] OK  ALL_STAGES 5/5；NOT_OBSERVED_ALLOWED 0/1
+        未观测（豁免登记，不计为通过/覆盖）：wiki.eval.cost_log/scoring
+[8] OK  run-summary 闭合（sink=0 / 无拒绝 / 时长在预算内）
+L3 fresh smoke PASSED   （业务 exit 0，51.2s，12 事件）
+```
+
+**关键区分**：`[5]` 证明证据**真正绑定 A4**（A3 那次是用未提交改动跑却绑定旧 SHA，绑定不成立，故作废重做）；`[7]` 证明已豁免的 `scoring` 被**显式列为"未观测、不计入覆盖"** —— B7 的反放水要求在真实运行中生效；业务成功与 evidence 成功**分开报告**（Spec 13 step 4）。
+
+失败 run 历史保留 4 份于 `staging/failed-runs/`（provider 订阅过期 / judge 429 / judge 缺失），符合 Spec 13 "必须保留失败 run 历史"。
+
+账本：`candidate_a` suffix 13 事件、hash `a4ff9899…`、绑定 `554bce2f…`；**Spec 10/11/12/13 `COMPLETE`**，**Spec 14/15 已解锁**。A 与 A2 两代被作废的边界证据已归档 `void/`。
+
+### 下一步（Spec 14 → 15）
+
+1. **Coding 侧 L3 先实测**：其 smoke manifest 预登记 `provider=opencode_go` / `model=mimo-v2.5`，而 opencode 推理 **429** ⇒ 很可能需要把同一套 provider 整合应用到 Coding（可能要 **A5_coding**）。不要凭猜测做候选。
+2. **Spec 14**：`python scripts/contracts/publish_evidence.py --candidate <A4> --release-version 0.1.0`（Coding 侧需 `AGENT_CONTRACT_CANONICAL_PAYLOAD_COMMIT=<A_wiki>`）→ 形成 B_wiki / B_coding。allowlist 已含 Wiki 账本。
+3. **Spec 15**：构造 **A/B tree 之外**的闭合 cycle plan → `coordinate_cycle.py --plan <plan> --output <out>` → `finalize_cycle.py --coordination <out> --release docs/contracts/releases/0.1.0` → C_wiki → 合并 canonical branch 后复验 → Cycle COMPLETE。需 `ALLOW_REAL_COORDINATION` / `ALLOW_REAL_LEDGER` / `ALLOW_REAL_RELEASE` 守卫。
+
+---
+
 ## 会话恢复指南（供上下文压缩后接手）
 
-**当前状态一句话**：Foundation Contract **Spec 01–10 全部 `COMPLETE`**；Spec 11（Candidate A 冻结 / L1 / 全量回归）**尚未开始**，其 Stage 0 的准备工作已完成并记录在案；两仓 CI 全绿。
+**当前状态一句话**：Foundation Contract **Spec 01–12 已 `COMPLETE`，但 A 因 Spec 13 的 B1/B2/B3 缺陷被 `SUPERSEDED`**（用户按 N-04 批准规范路径）；正在实施 **A2**（纯工具级修复，payload hash 不变）。A2 完成后须重跑 L1/回归（2 仓）、重做 L2、跑真实 L3，再进 Spec 14/15。Spec 14/15 未解锁。
 
 ### 第一步：读三份文件（按序）
 
@@ -2322,32 +2704,47 @@ push 触发 workflow 后收到失败通知。**这批失败极有价值**：本�
 
 ```powershell
 cd "D:\AI project\_worktrees\foundation-contract\wiki"   # Coding 同理
+# canonical 账本单独归约
 D:\CodexPython312\python.exe scripts/contracts/status_ledger.py validate --ledger docs/specs/foundation-contract/execution-status-events.jsonl
+# canonical 前缀 + candidate_a pending suffix（Spec 11 之后应看到 11 COMPLETE pending=True）
+$d='docs/specs/foundation-contract'
+D:\CodexPython312\python.exe scripts/contracts/status_ledger.py validate --ledger "$d/execution-status-events.jsonl" --pending-jsonl "$d/execution-status-events.pending.jsonl" --pending-envelope "$d/execution-status-events.pending.json"
 D:\CodexPython312\python.exe scripts/contracts/validate_local.py --gate pr
 ```
 
+> **注意**：`--self-commit` **不要**传 A_wiki。pending suffix 的事件绑定 `candidate_commit=A_wiki`，而 `A_wiki` 正是封装 canonical 前缀的那次提交；传 `--self-commit A_wiki` 会正确地报 `RULE_7_SELF_COMMIT_REFERENCE`。该 suffix **本就不属于 A**，它是 A 之外的受控 staging，Spec 14 才把它 append 进 B_wiki。
+
 - 权威解释器：`D:\CodexPython312\python.exe`（3.12.10 + pydantic 2.13.4）。PATH 里的 python **没有**项目依赖。
-- 动态状态**只看** `docs/specs/foundation-contract/execution-status-events.jsonl`（41 条事件；子 Spec 里的状态是 genesis，不反映进度）。
+- 动态状态**只看** `docs/specs/foundation-contract/execution-status-events.jsonl`（canonical 43 条事件；子 Spec 里的状态是 genesis，不反映进度）。加上 `candidate_a` pending suffix 后 Spec 11 = `COMPLETE (pending=True)`。
 - 契约身份：`contract_version=0.1.0`、payload `sha256:64049830…`（40 文件，两仓一致）、rule coverage `68 = 56 conformance + 7 项目 + 5 deferral`。
 
-### 第三步：Spec 11 要做什么（见校准记录 §7）
+### 第三步：下一步是等 N-04 批准后做 A2（Spec 13 被阻断）
 
-1. 逐条 ratify 校准记录 §1–§3；确认 §5 的 L2 语料口径与 §4 的 G-07 口径。
-2. 用 `canonical_pending_paths()` 建立 `candidate_a` 边界的 suffix 载体，写入 Spec 11 的 freeze-boundary 条目。
-3. 冻结 A：两仓各取 `feature/foundation-contract-spec10` 的 HEAD（**不是 `main`**，两仓 main 都没有 Foundation 产物）；记录 payload hash。
-4. 跑 L1 + 全量回归，按 `KNOWN_BASELINE_FAILURE_RESOLVED_UNEXPECTEDLY` 口径判定（不失败、标记 review、不改基线）。
-5. 账本追加 `FREEZE_BOUNDARY_REACHED` / `CANDIDATE_FROZEN`（`candidate_commit` 非空）。
-6. **冻结后任何语义改动 = `SUPERSEDED` 当前 A 回到所属 pre-freeze Spec 形成 A2**（`GOV-FRZ-002`）。
+Spec 13 无法在 A 上闭合，三个缺陷 B1/B2/B3 见上一节。**规范给出的唯一合法路径**是 A `SUPERSEDED` → 回到 **Spec 10**（拥有 post-freeze 工具集与 smoke harness）修工具 → 形成 **A2** → 从 A2 重跑 L1 + 全量回归 + 重做 L2（Spec 12）/ L3（Spec 13）→ 再进 Spec 14/15。
 
-### 远程与分支（2026-09-16 收盘）
+A2 需要新增的代码（都属 N-04 范畴，须先获批准）：
 
-| 仓 | 分支 | 远程 HEAD |
-|---|---|---|
-| Wiki | `main` | `c2d39c5`（含 Foundation 母 Spec 文档 + 远程 fix/issue-2 合并） |
-| Wiki | `feature/foundation-contract` | `102de4c`（Spec 09 收尾） |
-| Wiki | `feature/foundation-contract-spec10` | 本次校准提交（Spec 10 全部工作 + CI 修复 + 校准记录） |
-| Coding | `feature/foundation-contract` | `1798859`（Spec 09 镜像） |
-| Coding | `feature/foundation-contract-spec10` | 本次校准提交 |
+1. **L3 driver**：一条受控手动命令，以 `observe` 驱动真实业务路径并让 runtime 在进程内累计 counters（B2）。
+2. **`run-summary` 生产者**：在 run 结束时把 8 个冻结键写入 `<evidence_root>/<run_id>/run-summary.json`（B1）。其中 7 键需要 runtime 暴露 accessor，或由 sark 侧聚合 —— 两者都是 A 内实现变更。
+3. **case 选择**：让预登记 `case_ids` 可被选中（runner 增加 `--case-id`，或由 driver 从草稿 bench 投影出预登记的 case，且不改动已冻结的 `config/`）（B3）。
+
+**A2 之后的重跑成本**（估）：两仓 L1（6 条命令 × 2）+ 全量回归（Wiki 864 / Coding 577）+ L2 重放 + 真实 L3 运行（Wiki 约 4 次 LLM 调用、上限 12 次 / ≤5 CNY；Coding ≤1 USD）。这一轮的成本决策必须由用户拍板。
+
+**若用户选择"不修"**：Spec 14 依赖 `11 + 12 + 13 COMPLETE`，Cycle 1 将停在此处无法 COMPLETE（`publish_evidence` 把 `fresh_smoke` 记为 `NOT_OBSERVED` 只是 §11.5 的合法状态，并不能替代 Spec 13 的 COMPLETE 依赖）。
+
+### 远程与分支（2026-09-16 Spec 11 收盘）
+
+| 仓 | 分支 | HEAD | 说明 |
+|---|---|---|---|
+| Wiki | `main` | `c2d39c5` | 含 Foundation 母 Spec 文档 + 远程 fix/issue-2 合并；**不含任何 Foundation 代码** |
+| Wiki | `contract-cycle/foundation-0.1.0-cycle-1` | `b726c09` = **A_wiki** | **A/B/C 唯一承载分支** |
+| Wiki | `feature/foundation-contract-spec10` | Spec 11 记账提交 | 全部实现 + 校准 + 冻结前记账（README/devlog 留在此分支，不插入 A→B） |
+| Wiki | `feature/foundation-contract` | `102de4c` | Spec 09 收尾 |
+| Coding | `contract-cycle/foundation-0.1.0-cycle-1` | `c8e06e5` = **A_coding** | **A/B/C 唯一承载分支** |
+| Coding | `feature/foundation-contract-spec10` | `c8e06e5` | Spec 10 全部工作 |
+| Coding | `feature/foundation-contract` | `1798859` | Spec 09 镜像 |
+
+> Coding 主工作区 `D:\AI project\Knowledge-Augmented Autonomous Coding Agent` 当前 `08a8275 [main]` —— 本轮**未触碰** Coding `main`。
 
 ### 环境坑（可复用，别再踩）
 
@@ -2358,3 +2755,322 @@ D:\CodexPython312\python.exe scripts/contracts/validate_local.py --gate pr
 5. **不要提交** `data/extractions/v3_seed_db_v2.json` 与 `output/eval/cost_log.jsonl`（项目测试会改写后者，前者是历史遗留）；两者长期处于 `M` 状态属正常。
 6. **网络**：`github.com` 边缘 IP 偶尔不可达（`api.github.com` 正常）；push 失败时重试即可，本地提交始终安全。
 7. **`.gitignore` 已含** `output/contract-validation/{staging,raw,private}/`、`build/`、`dist/`；scratch 脚本请放 `%TEMP%`，不要放 `staging/`（publication safety scan 会扫该目录并命中绝对路径）。
+8. **PowerShell 传 JSON 给原生命令会吃掉引号**：`--event '{"a":1}'` 到 Python 时变成 `{a:1}` 而解析失败。所有需要传 JSON 的场合**改走临时文件**。同理 `echo` 在 pwsh 里是 `Write-Output` 别名，空参报错 —— 用 `Write-Host ''` 或 `"..."; ""` 之外的写法。
+9. **cycle 分支不能混入记账提交**：`diff(A,B) ⊆ allowlist` 是硬门禁，README/devlog 不在 allowlist 内 → 记账提交必须留在 `feature/foundation-contract-spec10`，A/B/C 只走 `contract-cycle/foundation-0.1.0-cycle-1`。
+10. **pending suffix 是 untracked 的**：`docs/specs/foundation-contract/execution-status-events.pending.{jsonl,json}` **故意不提交**（提交它会污染 A→B 的 diff）。切分支不会动 untracked 文件，但 `git clean -fd` 会删掉它 —— **不要**在 spec 目录跑 `git clean`；重建脚本见本轮写法（用 `canonical_pending_paths()` + `compute_suffix_hash()`）。
+11. **不要 `git worktree add` 到仓库内部**：干净 checkout 用 `git worktree add --detach <path> <A_SHA>` 建在 `%TEMP%` 下，跑完 `git worktree remove --force`。Coding 与 Wiki 都提供顶层 `agent_core`，**同一解释器无法同时可编辑安装两者**，所以干净 checkout 只能靠 CWD + 自举，不要试图 `pip install -e`。
+
+---
+
+## 2026-09-17（续）A5_coding：provider 整合 + Coding 半边 L3 实测阻断（Spec 13 退回 IN_PROGRESS → BLOCKED）
+
+### 触发：发现上一轮的 Spec 13 `COMPLETE` 证据不足
+
+回看账本时对照母 Spec，发现 **Spec 13 的 Coding 半边从未真实运行过**：账本里 Spec 13 的 evidence_refs
+只引用了 `foundation-0_1_0-c1-wiki-smoke`，而子 Spec 13 的 `Expected Outputs` 明写「双仓闭合 L3 run
+artifacts」、`Validation Commands` 分别给出 Wiki 与 Coding 两条命令、Index §3 的 Target 也是 `BOTH`。
+即上一轮写下的 `13 COMPLETE` 是**过早状态**（不是伪造证据，但结论不成立）。
+
+处理：不改写历史事件，改用账本自带的 `COMPLETE → IN_PROGRESS` + `reason_code=STATUS_CORRECTION`
+并 `references=[<被纠正的 event_id>]` 把它退回重做（reducer 自带规则 8 正是为此设计）。
+
+### A5_coding（provider 整合，用户已授权 N-04）
+
+| 项 | 值 |
+|---|---|
+| A_coding | `c5d0af0f4c9110259945fc90151da4336a07d639`（取代 A2 `339768dd2f9e3b26c8820408ec93bf30e378e50e`） |
+| A_wiki | `554bce2f…`（未变） |
+| payload | `sha256:64049830…` / 40 文件 / 0.1.0 —— **未变**，A5 是 payload-neutral |
+| 改动 | `agent/llm.py`（新增 `command_goat` + `_resolve_provider_name()` 自动选择）、`config/contracts/smoke-v0.1.json`（provider/model 与 Wiki 锁步，**键集未变**）、`tests/test_llm.py`（+4 项覆盖）、`.env.example` |
+| L1 | 6 条全 exit 0；conformance 224；`tests/contracts` 242；`--gate pr` 8/8 |
+| 全量回归 | **638 passed / 3 skipped / 0 failed** |
+| L2 | `foundation-0_1_0-c1-coding-replay` PASS，3 records / 3 sources，全 `LEGACY_DATA_INSUFFICIENT` |
+
+证据（全部实测）：`command_goat/deepseek-v4.1-flash` **可用**（也支持 tool calling，2.9s 返回）；
+`opencode_go/mimo-v2.5` **429 `GoUsageLimitError`「Monthly usage limit reached」**；
+`deepseek_api/deepseek-flash` 可用。
+
+### Coding 半边 L3：四条实测原因（每层都留下了证据）
+
+1. **F1 预登记 provider 不可用** → 429 月度额度耗尽。
+2. **F2 宿主执行器不可能通过**：`schedule-99` 的 fixture 测试 `test_schedule.py:30` 调用
+   POSIX-only `time.tzset()`，Windows 下必然 `environment_error`（`AttributeError` 直接复现），
+   Agent 不运行 → `coding.benchmark.case_cost/normal` 不可观测。
+3. **F3 候选缺陷（关键）**：`benchmark/runner.py::_run_one_case` 先进入 `sandbox_executor(repo_dir)`
+   再调用 `_ensure_repository()`，而 `DockerExecutor.create()` 要求 `workspace_root` 已存在
+   （`tools/docker_sandbox.py`）→ **任何全新 workspace** 下 docker 执行器都以
+   「沙箱工作区不存在」失败，只有复用旧 workspace 才偶然通过。
+   即：宿主要 gh 才能做 repo 就绪、容器要 POSIX 才能跑测试，**唯一同时满足两者的 docker 执行器路径本身是坏的**。
+4. **F4 修正顺序后仍不闭合**：把 `_ensure_repository` 移到 `with` 之外（临时试验、**已还原未提交**）
+   并预建 workspace + 开放容器网络后，宿主 `gh` 克隆成功、沙箱创建成功，但业务路径在冻结的
+   `timeout_seconds=600` 内始终拿不到任何 provider 响应（0 事件；600.016s wall / ~17s CPU；
+   期间容器完全空闲）。
+5. **F5 对照**：同一 agent + 同一 provider + 同一 case 在 **local** 执行器下 **12 次调用 / 83s**
+   全部正常（prompt 到 170KB 仍 5.6s 返回）→ provider 与 agent 本身健康，问题在 docker 执行器路径。
+6. **F6**：把整个 driver 放进项目自己的 Linux 沙箱镜像（`ka-sandbox:py312-v1`，Python 3.12.14，
+   有 `time.tzset`）又暴露 `get_repository()` 依赖**宿主** `gh` CLI（`tools/github_tools.py`
+   设计上「凭据不进沙箱」），镜像内无 gh。
+
+### 本轮刻意不做的事
+
+- **不热修** `benchmark/runner.py`：Spec 13 `No-implementation Boundary` 明确禁止在本步骤改业务代码，
+  缺陷必须回到 pre-freeze 子 Spec 形成新候选后重跑 L1/L2/L3。
+- **不**事后调高冻结 manifest 的 `timeout_seconds` / cost cap，**不**删除任何未观测 stage
+  （Spec 13 明令禁止「根据运行结果事后删除未覆盖 stage 或提高成本上限」）。
+- **不**把 F2/F3/F4 的失败 run 发布为 Evidence；失败 run 全部保留在
+  `output/contract-validation/{staging/,}failed-runs/`。
+
+### 账本与状态
+
+pending suffix 由 13 → **23 事件**（`suffix_hash=sha256:673486d1…`），归约结果：
+
+```text
+10 COMPLETE(pending) | 11 COMPLETE(pending) | 12 COMPLETE(pending) | 13 BLOCKED(pending)
+14 NOT_STARTED | 15 NOT_STARTED
+```
+
+- Spec 11 / 12：`COMPLETE → SUPERSEDED → IN_PROGRESS → VALIDATED → COMPLETE`，绑定 A5 的真实证据。
+- Spec 13：`COMPLETE → IN_PROGRESS`（`STATUS_CORRECTION`，引用被纠正事件）→ `BLOCKED`（`BLOCKED`）。
+- Spec 10：未改任何工具，其 `COMPLETE` 保持不变（A5 的 L1.1–L1.6 已重新验证其工具链）。
+- Spec 14/15：依赖未满足，**保持锁定**，本轮未创建 B/C。
+
+### 教训
+
+1. **"半边证据"必须对照子 Spec 的 `Expected Outputs` 与 `Target Repository` 逐条核**：母 Spec 说
+   「未观察到 ≠ 失败」，但**没观察到却写成 COMPLETE** 是另一种错误；账本自带的
+   `STATUS_CORRECTION` 就是为这种情形准备的，不要用 `SUPERSEDED` 掩盖。
+2. **同一 run_id 会被驱动重建**：失败 run 必须在下次运行前挪到 `failed-runs/`，否则即使报错文本
+   已抄进文档，原始产物也已被覆盖。
+3. **业务产物不得落到 staging**：`report.json` 含 `diff` 字段与绝对路径，`--gate pr` 的发布扫描会因此
+   失败 —— 这就是驱动把业务输出放 `run-scratch/`、只让派生摘要进 staging 的原因；搬运失败 run 时
+   同样要遵守（archive 的业务部分放 `output/contract-validation/failed-runs/`，不放 `staging/`）。
+4. **诊断"卡住"要拿栈，不要猜**：`faulthandler.dump_traceback_later` + 逐次调用计时（包装
+   `client.chat`）把"provider 慢 / docker exec 卡 / 本机 I/O 慢"三种假设一次区分开 ——
+   本轮先后否掉了「Docker 挂载 I/O 慢」（实测 `git status` 0.5s、pytest 收集 0.7s）与
+   「provider 坏」（对照组 12 次调用全正常）两个**错误**假设。
+
+---
+
+## 2026-09-17（再续）A6_coding：修复 F3（沙箱创建顺序），并记录外部阻塞 F7
+
+### A6_coding = `5e780fd`（取代 A5 `c5d0af0f`；A_wiki 不变）
+
+| 项 | 结果 |
+|---|---|
+| 改动 | `benchmark/runner.py`：`_ensure_repository()` 移到 `with sandbox_executor(...)` **之前**；`tests/test_benchmark_runner.py`：新增回归钉子 `test_sandbox_entered_only_after_repository_is_ready` |
+| 钉子有效性 | 旧顺序下该测试**实测 FAIL**（"沙箱在 workspace 就绪之前被进入…"），修复后 PASS；相关套件 98 passed |
+| L1.1–L1.6 | 全部 exit 0（三哈希未变 / conformance 224 / tests/contracts 242 / --gate pr 8/8 / build） |
+| 全量回归 | `638 passed / 3 skipped / **1 failed**` —— 唯一失败 `test_docker_integration.py::test_clone_repo_when_empty`（容器内克隆 github.com），**环境性**，故 Spec 11 停在 `IN_PROGRESS` |
+| L2 | `foundation-0_1_0-c1-coding-replay` **PASS**（3 records / 3 sources，全 `LEGACY_DATA_INSUFFICIENT`，绑定 A6） |
+| L3 | Coding 半边**仍未闭合**（见 F7） |
+
+### F7：GitHub 网络故障（本轮新的外部阻塞）
+
+`github.com:443` 持续不可达：`git ls-remote https://github.com/dbader/schedule.git` 连续 8 次失败，
+`gh repo clone` 报 `Recv failure: Connection was reset`。
+
+关键点：**Coding 的基准路径在基线之前必须先做 repo 就绪**，而 `_ensure_repository` →
+`sync_repository` 需要 `git fetch origin`（首次 clone 亦然）→ **网络不可达时基准根本无法启动**，
+L3 拿不到任何 `case_cost/normal` 观测。同一故障也阻断了两个候选分支的 push。
+
+我没有因此放宽任何冻结字段、没有补写证据、没有把失败 run 发布为 Evidence —— 账本如实记
+`Spec 11 IN_PROGRESS`、`Spec 13 BLOCKED`，并把恢复命令写进校准记录 §11.8。
+
+### 账本（suffix 31 事件，`suffix_hash=sha256:1d76da31…`）
+
+```text
+10 COMPLETE | 11 IN_PROGRESS(pending) | 12 COMPLETE(pending) | 13 BLOCKED(pending) | 14/15 NOT_STARTED
+```
+
+- 11：`COMPLETE → SUPERSEDED → IN_PROGRESS`（A5 因 F3 被取代；A6 的 L1 通过但回归含一条环境性失败）。
+- 12：`COMPLETE → SUPERSEDED → IN_PROGRESS → VALIDATED → COMPLETE`（A6 上 L2 PASS）。
+- 13：维持 `BLOCKED`，并记录"F3 已修复 → 重启 → 被 F7 重新阻塞"的完整过程。
+
+### 教训
+
+1. **一个"恰好在旧工作区能通过"的缺陷，单测和 local 执行器都抓不到**：F3 只在「全新 workspace +
+   docker 执行器」组合下暴露。修完之后**必须把那个组合固化成测试**（替身沙箱检查前置条件），
+   否则下次重构还会把它改回来。
+2. **环境性失败要如实归类**：`test_clone_repo_when_empty` 失败与 A6 改动无关，但它确实让
+   "Coding 回归 = PASS" 这一验收项不成立 —— 正确做法是记 `IN_PROGRESS` 并写明原因，
+   而不是把它当 flaky 略过。
+3. **先确认外部依赖再选执行路径**：Coding 基准对 github.com 有硬依赖（repo 就绪），
+   在这个前提下"离线也能跑 L3"的假设不成立。
+
+---
+
+## 2026-09-17（三续）网络恢复窗口内的复测：F4 收窄 + 两仓已推送
+
+GitHub 短暂恢复后完成/观察到：
+
+1. **两仓推送成功**：Wiki `feature/foundation-contract-spec10` → `0423d5b`；
+   Coding `contract-cycle/foundation-0.1.0-cycle-1` → `5e780fd`（`git ls-remote` 与本地一致）。
+2. **F4 在 A6 上复现**：`KA_EXECUTOR=docker` + `command_goat` 跑 Coding L3 →
+   `business_timed_out=true`、`duration_seconds=600.25`、`producer_coverage=[]`、`actual_calls=0`；
+   `faulthandler` 采样（30s × 5）全部停在 `plan_node`/`decide_node` → `chat` → `ssl.read`（等响应头）。
+3. **F4 收窄（重要）**：用 `real_agent_timing.py` 以**同一** `KA_EXECUTOR=docker`、**同一** provider
+   单独驱动同一 agent/case，**12 次调用全部成功、总计 110.5s**（单次 1.2–24.2s，prompt 最大 ~92KB）。
+   → 否证了"docker 执行器会让 provider 调用挂死"这一假设。
+4. **网络自身在抖动**：同一窗口内 `gh repo clone` / `git fetch origin` 反复
+   `Recv failure: Connection was reset`；全量回归重跑仍是 `638 passed / 3 skipped / 1 failed`，
+   唯一失败仍是容器内 `git clone https://github.com/octocat/Hello-World.git`。
+
+据此把 F4 记为**未定论、高度怀疑外部网络不稳定**：好窗口内同组合 110.5s 正常，坏窗口内 provider
+请求停在等响应头且 GitHub 同时被 reset。要区分"网络抖动"与"某条特定请求触发网关长时间不响应"，
+必须在**稳定网络**下重跑一次 L3。
+
+账本无需改动（也**不该**改动）：`Spec 11 IN_PROGRESS`（回归含 1 条网络性失败）、`Spec 12 COMPLETE`、
+`Spec 13 BLOCKED`、Spec 14/15 锁定，仍然是当前真实状态。
+
+### 本轮最重要的一条纪律
+
+**不要让"环境不好"变成"把门槛降低"**。F4 复现后最省事的做法是调大冻结 manifest 的
+`timeout_seconds`，让 L3 "通过" —— 而 Spec 13 恰好明文禁止"根据运行结果事后提高成本上限",
+§7.3 也写着"未观察到 ≠ 失败"（反过来同样成立：**没通过也不等于可以改写标准**）。
+所以本轮的选择是：如实记 BLOCKED、把 F4 的证据与收窄写进校准记录 §11.9、把复测命令留给下一个窗口。
+
+---
+
+## 2026-09-17（四续）A7_coding：F4 根因定案（runtime 不采纳 run_id）+ Spec 11/12 完成
+
+### F4 的真实根因 —— 不是网络，不是 provider，是接线
+
+`adapters/foundation/runtime.py::_build_runtime_from_env()` 构造进程级 runtime 时**没有读
+`AGENT_CONTRACT_RUN_ID`**，于是 `CodingFoundationRuntime` 在 observe 下回落到进程级随机 UUID：
+所有 producer 证据写进 `<evidence_root>/<uuid>/events/`，而 L3 gate 只认
+`<evidence_root>/<manifest run_id>/events/` → 症状正是「**0 事件 + required stage 未观测**」，
+业务路径却完全正常。此前把 F4 归因为"网络抖动/provider 挂死"是**错的**。
+
+证据链：
+1. 磁盘事实：A6 上一次**跑通且判 PASS（resolution_rate=100%）**的运行留下 **102 条**格式完全正确
+   的事件（`repository_commit=5e780fdd…`、`mode=observe`、`openai_compat`×51 +
+   `langfuse_generation`×51），但它们位于 `<staging>/7e3c49b5-…/events/`。
+2. 探针：同一脚本 → Coding `runtime.run_id=<uuid>`；Wiki `runtime.run_id=<env 值>`（正确）。
+3. 代码对照：两仓 `_resolve_run_id()` **完全相同**；差异只在 `_build_runtime_from_env()` 是否读环境变量。
+
+**A7_coding = `b763fc70b2bb902c08cdf7ed5f05e6508ad5c521`**（取代 A6 `5e780fd`；A_wiki 未变）
+- 新增 `CONTRACT_RUN_ID_ENV` 并导出；`_build_runtime_from_env()` 读取 + `is_safe_run_id` 校验 +
+  `run_id=run_id`（与 Wiki 同款机制；不安全值忽略并记结构化日志）。
+- 回归钉子 `test_env_built_runtime_adopts_agent_contract_run_id` **实测 RED**（断言得到 uuid）→ GREEN；
+  另加 `test_env_built_runtime_ignores_unsafe_run_id`。
+- 修复后实证：L3 产出 **65 条事件落在正确 run_id**，`producer_coverage` 恢复为 3 对。
+
+### A7 上的验证（Spec 11/12 已完成）
+
+| 项 | 结果 |
+|---|---|
+| L1.1–L1.6 | 全部 exit 0（三哈希未变 / conformance 224 / tests/contracts **244** / --gate pr 8/8 / build） |
+| 全量回归 | **641 passed / 3 skipped / 0 failed** |
+| L2 | `foundation-0_1_0-c1-coding-replay` **PASS**（3 records / 3 sources，绑定 A7） |
+
+**一次插曲值得记下**：首轮回归得到 `631 passed / **13 skipped** / 0 failed` —— Docker 守护进程在
+跑测途中退出，10 个 docker 集成测试被跳过。**0 failed 不等于通过**；重启 Docker 重跑才得到
+`641 passed / 3 skipped / 0 failed`。跳过数上升要当成"没测"，不能当成"没事"。
+
+### 账本（suffix 41 事件，`suffix_hash=sha256:72e780c8…`）
+
+```text
+10 COMPLETE | 11 COMPLETE(pending) | 12 COMPLETE(pending) | 13 BLOCKED(pending) | 14/15 NOT_STARTED
+```
+
+### Spec 13 仍未闭合：原因已换成"预登记自相矛盾"（F8）
+
+唯一剩余违反项始终是 `coding.benchmark.case_cost / normal`（§7.3:896 硬要求）。6 次尝试：
+
+| 形态 | 次数 | 观测 |
+|---|---|---|
+| 撞冻结 `timeout_seconds=600` | 4 | provider 调用 122 / 156 / 204 / 232 次 |
+| 业务结束但 Agent 调用 `Connection error.` | 1 | 546s / 64 次调用 |
+| repo 就绪阶段 GitHub `EOF` | 1 | 环境抖动 |
+
+对照：**同一 case 早前带插桩的一次运行以 32 次调用 / 444s 收敛并判 PASS(100%)** → 收敛可能，方差极大。
+
+结论：冻结 manifest 的 `max_calls: 12` 与其预登记的 case（`max_iterations: 30`，实测最多 232 次调用）
+**根本不兼容** —— 这是 Spec 11 Stage 0 预登记的缺陷。按 Spec 13，**没有**事后调高任何冻结字段，
+而是如实记 `BLOCKED`，把"新候选重新推导预登记值"的恢复条件写进校准记录 §11.10。
+
+### 教训
+
+1. **"证据在哪"和"证据有没有"是两件事**：gate 报 0 事件时，我先后怀疑过网络、provider、docker、
+   I/O，全错；真相是证据一直在，只是写在 gate 找不到的目录。**先把磁盘上的事实找干净，再谈归因**。
+2. **对称性假设会骗人**：两仓 `_resolve_run_id` 逐字相同，差异只在调用点是否读环境变量 ——
+   只读"看起来该负责的那个函数"永远发现不了。
+3. **0 failed + 跳过数暴涨不是绿灯**：Docker 中途退出让 10 个集成测试静默跳过，必须重跑确认。
+
+---
+
+## 2026-09-17（五续）A8_coding：F8 定案 —— "不收敛"其实是陈旧证据叠加
+
+### 我上一轮的归因又错了一次（这次是"agent 不收敛"）
+
+上一轮我把 F8 记成"预登记 `max_calls:12` 与 case 的 `max_iterations:30` 不兼容、agent 不收敛"。
+真相是：**L3 驱动从不清理同一个 run_id 上一次尝试的 `events/`**，历次运行的证据层层叠加。
+
+决定性证据（归档对比）：
+```
+attempt1 归档：61 次调用     attempt3：102     attempt5：116
+三份归档都含**同一批**最早的事件（32 次调用，起始 13:10:04Z）
+```
+即"122/156/204/232 次调用不收敛"= 把旧运行的调用也算进了本次。运行前磁盘上实测有 **235 条陈旧事件**。
+
+Wiki 仓驱动器自 A2 起就有 `clear_previous_run()`；Coding 仓是遗漏。
+
+### 最严重的后果不是计数虚高，而是"假通过"
+
+若上一次尝试观测到某个 stage，本次即使没跑出来，gate 也会因为目录里还躺着陈旧事件而判为已覆盖 ——
+**用上一次的证据证明这一次通过**。回归钉子构造的正是这个场景：
+
+```
+run#1 覆盖全部 7 对（rc 0）；run#2 只产出 1 对
+  旧代码：run#2 报 7 对覆盖  ← RED 实测，假通过
+  修复后：run#2 只报 1 对、rc=1，并报告清掉了什么
+```
+
+### A8_coding = `0a4e5cf`
+
+| 项 | 结果 |
+|---|---|
+| 改动 | 新增 `clear_previous_run()`（清 events/、run-summary.json、sink-failures、残留 .tmp），在驱动业务前调用；清空项纳入 `--json` 与人类报告 |
+| 回归钉子 | `test_second_run_does_not_reuse_previous_run_events`：旧代码 **RED**（1 对却被记 7 对）→ 修复后 GREEN |
+| L1.1–L1.6 | 全 exit 0（conformance 224 / tests/contracts **245** / --gate pr 8/8 / build） |
+| 全量回归 | **642 passed / 3 skipped / 0 failed** |
+| L2 | **PASS**，3 records / 3 sources，绑定 A8 |
+| L3（全新运行） | 清掉 235 条陈旧 → 产出 **62** 条事件；仍撞 `timeout_seconds=600` |
+
+**没有**改动任何冻结 manifest 字段 —— 修的是"证据没有真的 fresh"，不是把门槛调低。
+
+### 账本（suffix 51 事件，`suffix_hash=sha256:36cc4c64…`）
+
+```text
+10 COMPLETE | 11 COMPLETE(pending) | 12 COMPLETE(pending) | 13 BLOCKED(pending) | 14/15 NOT_STARTED
+```
+
+### 唯一剩余阻塞 F9：预登记**自身**矛盾（交用户决策）
+
+A8 后违反项只剩 `coding.benchmark.case_cost / normal`（case 没能在允许时间内跑完）。而这暴露的是
+manifest 自己的矛盾：
+
+```
+duration_cap_seconds = 1800   ← 声明的时长预算（gate 只按它判定）
+timeout_seconds      = 600    ← 驱动杀进程的预算，比声明上限紧 3 倍
+                                 ⇒ 600–1800s 的运行会被杀掉，而它在声明预算内
+max_calls            = 12     ← 单次全新运行实测 62 次调用
+```
+
+对照：同一 case 早前带插桩的运行以 **32 次调用 / 444s 收敛并判 PASS(100%)** → 600s 是临界而非不可能，
+失败主要来自代理把每次调用拖到 ~10s。
+
+**本轮没有擅自改**：改它必须动 `config/contracts/smoke-v0.1.json` 的冻结值（Spec 11 Stage 0 的产物），
+而动机正是"观察到上限被打到"（方向上等于事后放宽，Spec 13 明文禁止），且会把单次 L3 资源消耗提高
+约 3 倍 —— 治理 + 资源决策，交用户定。两个方向（甲：形成 A9 只对齐 `timeout_seconds` 与 manifest
+自身的 `duration_cap_seconds`，不动 `estimated_cost_cap`；乙：保持冻结值、把 F9 作为残余 handoff
+交给 Spec 16）写在校准记录 §11.11.6。
+
+### 教训（连续第三轮归因错误的同一模式）
+
+1. **"数量异常"先怀疑测量，再怀疑被测对象**：122→232 次调用我读成了"agent 失控"，其实是账没清。
+   同一条纪律此前已经救过我一次（"0 事件"不是没证据，是写错目录）。
+2. **归档要按"文件内容"对比，不能只看数量**：三份归档的调用数递增看似合理，逐字节对比才发现
+   每份都含同一批最早事件 —— **同一批字节出现在多个"独立"归档里，就是叠加的铁证**。
+3. **假通过比失败更危险**：陈旧证据能让一次只跑出 1 对的运行被记为 7 对覆盖。凡是"状态目录
+   跨运行复用"的地方，都要问一句"这里会不会把上一次的结果算成这一次的"。

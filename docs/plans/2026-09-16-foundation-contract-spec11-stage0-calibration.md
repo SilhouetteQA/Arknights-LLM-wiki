@@ -413,3 +413,396 @@ registry 的 producer 级值同步改为授权下限 `NOT_OBSERVED_ALLOWED`（ma
 硬要求（Wiki `scoring` → `ALL_STAGES`；Coding `trace.summary` → `ONE_OF(sdk, clickhouse)`），
 registry 一并改回，并删除本节对它们的豁免。**若恢复条件仍不满足，Spec 16 必须重新取得用户授权**，
 不得把本轮的临时豁免当作默认延续。**（A) 不需要校准** —— 它是回归规范后的正确形态，不是偏离。
+## 11. A5_coding（provider 整合）与 Coding L3 阻塞实测记录
+
+> 状态：**Coding 半边的 L3 fresh smoke 未闭合**。本节是如实记录，不是完成证明。
+> 触发者：Spec 13 在 Coding 仓第一次真实运行。此前 Spec 13 的 `COMPLETE` 只由 Wiki 半边
+> 的 evidence 支撑，与 Spec 13 自己的 `Expected Outputs`（"双仓闭合 L3 run artifacts"）和
+> `Validation Commands`（Wiki + Coding 两条）不符 —— 该状态事件已被 `STATUS_CORRECTION` 纠正。
+
+### 11.1 为什么形成 A5_coding
+
+冻结 manifest 预登记的 `provider: opencode_go` / `model: mimo-v2.5` **实测不可用**：
+
+```text
+opencode_go / mimo-v2.5 → HTTP 429 GoUsageLimitError
+  "Monthly usage limit reached. Resets in 6hr 14min."
+```
+
+同时用户在本次工作中已明确授权（N-04）把两个项目的 LLM Key 统一到 `command_goat` 订阅网关
+与 `deepseek` 官方、路由到 `deepseek/deepseek-v4.1-flash`、并**优先使用订阅模型**。Wiki 仓已在
+A3 完成该整合，Coding 仓当时遗漏。因此按 Index §5「A 必须 `SUPERSEDED`，回到所属 01–10
+子 Spec形成新候选」的路径形成 **A5_coding**（A2_coding 保留身份）。
+
+### 11.2 A5_coding 身份与已取得的真实证据
+
+```text
+A_wiki   = 554bce2f2ebd00f5f4e6ac722680a8a57ab8cc66   （未变）
+A_coding = c5d0af0f4c9110259945fc90151da4336a07d639   （A5，替换 A2 339768dd…）
+payload_hash = sha256:64049830ba0d1ca2969bb04620ede2d54852e0171f2397d71bc646b2339a4576  （未变，40 文件）
+```
+
+| 验证 | 结果 |
+|---|---|
+| L1.1 `generate_schemas --check` | exit 0，schemas=6、rules=68、schema_set_hash 未变 |
+| L1.2 `verify_payload` | exit 0，payload_hash/descriptor_hash/schema_set_hash 全部未变 |
+| L1.3 `pytest agent_core/contracts/conformance` | 224 passed |
+| L1.4 `pytest tests/contracts` | 242 passed |
+| L1.5 `validate_local.py --gate pr` | 8 步 PASSED（含发布扫描 5 文件无命中） |
+| L1.6 `build` | 成功（sdist + wheel） |
+| 全量回归 `pytest tests/` | **638 passed / 3 skipped / 0 failed**（满足 Spec 11 对 Coding 的 `PASS`） |
+| L2 replay（`foundation-0_1_0-c1-coding-replay`） | PASS，3 records / 3 sources，全 `LEGACY_DATA_INSUFFICIENT`，绑定 A5 commit |
+
+改动清单（4 文件，均非 payload）：
+
+| 文件 | 改动 |
+|---|---|
+| `agent/llm.py` | 新增 `command_goat` 供应商；新增 `_resolve_provider_name()`：`KA_LLM_PROVIDER` 显式优先，否则按 `PROVIDER_PREFERENCE`（`command_goat` → `deepseek`）取第一个已配置 Key；无 Key 回退 `opencode_go` 并保持原报错点名。`opencode_go` 不再参与自动选择 |
+| `config/contracts/smoke-v0.1.json` | `provider`/`model` 与 Wiki 仓锁步。**键集未变**（冻结项） |
+| `tests/test_llm.py` | 新增 4 项覆盖（command_goat 读取、自动选择优先级、空白 Key 不计数、显式覆盖）；原 env 敏感用例改为显式固定供应商或清空全部供应商 Key |
+| `.env.example` | 记录新供应商与自动选择顺序 |
+
+### 11.3 Coding L3 未闭合：逐层实测原因（每层都有可复核证据）
+
+| # | 现象 | 实测证据 | 性质 |
+|---|---|---|---|
+| F1 | 预登记 provider 不可用：`opencode_go`/`mimo-v2.5` → HTTP 429 月度额度耗尽 | 直接 probe | 环境（非候选缺陷） |
+| F2 | **宿主执行器不可能通过**：预登记 case `schedule-99` 的 fixture（`dbader/schedule`）测试模块调用 POSIX-only `time.tzset()` → Windows 下 `AttributeError` → 基线 `environment_error` → Agent 不运行 → `coding.benchmark.case_cost/normal` 不可观测 | `report.json` 的 `environment_error` + 直接 `pytest test_schedule.py` 复现 | 平台/夹具，非候选缺陷 |
+| F3 | **候选的 docker 执行器路径本身是坏的**：`benchmark/runner.py::_run_one_case` 先 `with sandbox_executor(repo_dir)` 再 `_ensure_repository()`，而 `DockerExecutor.create()` 要求 `workspace_root` 已存在（`tools/docker_sandbox.py`）→ **任何全新 workspace** 都以「沙箱工作区不存在」失败；只有复用旧 workspace 才偶然通过 | `report.json` 的 `error` 原文 | **候选（业务代码）缺陷** |
+| F4 | 即使把 F3 的顺序临时修正（未提交试验）、并预建 workspace + 开放容器网络，docker 路径**仍在冻结的 `timeout_seconds=600` 内不闭合**：宿主 `gh` 克隆成功、沙箱创建成功，但业务路径始终没有拿到任何 provider 响应 → 0 事件；进程 ~600s wall / ~17s CPU（阻塞在 provider HTTP 读），期间容器完全空闲 | `duration_seconds=600.016`、`producer_coverage=[]`、容器 `docker top` 只有 `sleep infinity` | 候选路径 + provider 行为，未定论 |
+| F5 | 对照组：**同一 agent + 同一 provider + 同一 case 在 local 执行器下正常** —— 12 次调用、最长 17.6s、总计 83s、prompt 达 170KB 仍正常返回 | 独立 timing 探针 | 证明 provider 与 agent 本身健康，问题在 docker 执行器路径 |
+
+补充：把整个 driver 放进项目自己的 Linux 沙箱镜像（`ka-sandbox:py312-v1`，Python 3.12.14，
+`time.tzset` 存在）以 local 执行器运行时，暴露 F6：`get_repository()` 依赖宿主 `gh` CLI
+（`tools/github_tools.py`，设计上"凭据不进沙箱"），镜像内无 `gh` → `读取仓库元信息失败:
+命令不可用: gh`。即 **repo 就绪需要宿主 gh、基线测试需要 POSIX**，二者在本机互斥 —— 这正是
+docker 执行器（宿主做 repo 就绪 + 容器跑测试）被设计出来的原因，而它恰好被 F3 破坏。
+
+### 11.4 失败 run 历史（Spec 13 要求保留，未覆盖、未删除）
+
+```text
+output/contract-validation/staging/failed-runs/
+  foundation-0_1_0-c1-coding-smoke-local-executor-baseline-tzset/   （F2：run-summary + report）
+  foundation-0_1_0-c1-coding-smoke-linux-sandbox-missing-gh/        （F6：run-summary + report）
+output/contract-validation/failed-runs/                             （原始业务产物，§11.5 不得进 staging）
+  ...-local-executor-baseline-tzset/run-scratch/                     （含 report.json 的 diff 字段）
+  ...-linux-sandbox-missing-gh/run-scratch/
+```
+
+F3/F4 的失败 run 因 `run_id` 相同、驱动会在同 run_id 下重建产物，其 `run-summary.json` 已被
+后续尝试覆盖；但两者的**原始报错文本与量测值**已逐字记入本节 F3/F4 行，可复核。
+
+### 11.5 本轮**刻意没有**做的事（避免任何形式的粉饰）
+
+- **没有**在 Spec 13 里热修 `benchmark/runner.py`。Spec 13 `No-implementation Boundary` 明确
+  「任何工具/接线缺陷使 A superseded 并回到 01–10；不能在本步骤热修」。F3 的修正已在本地
+  试验验证过方向（临时改动后又还原，工作树现为干净 A5），但**未提交**。
+- **没有**为通过而事后调高冻结 manifest 的 `timeout_seconds` / `cost cap`，也**没有**删除或
+  改写任何未观测 stage。Spec 13 禁止「根据运行结果事后删除未覆盖 stage 或提高成本上限」。
+- **没有**把 provider 换成预登记之外的值来"凑"一次通过；A5 的 provider 变更走的是
+  新候选路径，并已在 §11.2 如实登记。
+- **没有**把 F3/F4 的失败 run 发布为 Evidence。
+
+### 11.6 恢复条件（交给后续候选 / Spec 16）
+
+1. **F3 修复**（建议的最小改动，owner = Coding 业务代码，需回到 pre-freeze 子 Spec 形成新候选）：
+
+   ```python
+   repo_dir = os.path.abspath(os.path.join(repo_root, _repo_dir_name(case.repository)))
+   try:
+       _ensure_repository(repo_root, repo_dir, case.repository)   # ← 移到 with 之外
+       with sandbox_executor(repo_dir):
+           _run_setup_commands(case, repo_dir)
+           baseline_ok, summary = _test_summary(case, repo_dir)
+           ...
+   ```
+
+   并把「全新 workspace 下 docker 执行器可跑通」固化为测试（现在恒不通过，故必须补测）。
+
+2. **F4 定位**：在 F3 修复后重跑，确认 docker 路径能在 600s 内拿到 provider 响应；若仍不能，
+   需判定是预登记预算不合理（→ 新候选调整 manifest 值，而非事后放宽）还是 docker 执行器
+   工具链问题。
+
+3. **F1 恢复**：`opencode_go` 额度恢复后，是否恢复该 provider 由用户决定；当前用户已授权
+   订阅网关优先，故 A5 的取值即目标形态。
+
+4. 上述完成后，Coding 半边 L3 才能闭合，Spec 13 才能 `VALIDATED → COMPLETE`，Spec 14/15 才
+   解锁（Spec 14 `Depends On：11 + 12 + 13 COMPLETE`）。
+
+### 11.7 A6_coding：F3 已修复（恢复条件 1 的落地）
+
+```text
+A_coding = 5e780fdd145a89e0e02d8d52065834ef7c5c52c3   （A6，取代 A5 c5d0af0f）
+payload_hash = sha256:64049830…                        （未变，40 文件，payload-neutral）
+```
+
+改动（2 文件）：`benchmark/runner.py` 把 `_ensure_repository()` 移到
+`with sandbox_executor(...)` **之前**；`tests/test_benchmark_runner.py` 新增回归钉子
+`test_sandbox_entered_only_after_repository_is_ready` —— 用「与 `DockerExecutor.create()`
+同款前置检查」的替身沙箱观测进入时 workspace 是否已存在。该测试在**旧顺序下实测 FAIL**
+（并给出准确诊断），修复后 PASS；相关套件 98 passed。
+
+A6 上的验证状态（**如实记录，未完成的就说未完成**）：
+
+| 项 | 结果 |
+|---|---|
+| L1.1–L1.6 | 全部 exit 0（三哈希未变 / conformance 224 / `tests/contracts` 242 / `--gate pr` 8/8 / build） |
+| 全量回归 | `638 passed / 3 skipped / **1 failed**` —— 唯一失败 `test_docker_integration.py::test_clone_repo_when_empty`，它**在容器内向 github.com 克隆** `octocat/Hello-World`，属本次网络故障导致的环境性失败（A5 同套件在改动前为 0 failed）→ 故 Spec 11 停在 `IN_PROGRESS` |
+| L2（`foundation-0_1_0-c1-coding-replay`） | **PASS**，3 records / 3 sources，全 `LEGACY_DATA_INSUFFICIENT`，绑定 A6 commit（L2 只读已提交 blob，不受网络故障影响） |
+| L3（Coding 半边） | **仍未闭合**，见下 |
+
+### 11.8 本轮新增阻塞 F7：GitHub 网络故障
+
+`github.com:443` 持续不可达（`git ls-remote https://github.com/dbader/schedule.git` 连续 8 次
+失败；`gh repo clone` 报 `Recv failure: Connection was reset`）。Coding 的基准路径在基线之前
+必须先做 repo 就绪，而 `_ensure_repository` → `sync_repository` 需要 `git fetch origin`
+（首次则 `clone_repository`），因此**网络不可达时基准路径根本无法启动**，L3 也拿不到任何
+`coding.benchmark.case_cost/normal` 观测。同一故障同时阻断了两个候选分支的 push。
+
+恢复动作（网络可达后按序执行）：
+
+```powershell
+# 1) 让 Spec 11 能进入 VALIDATED（消除环境性失败）
+python -m pytest tests/ -q                                  # 期望 638 passed / 3 skipped / 0 failed
+# 2) Coding 半边 L3（§13.3 允许的 sandbox 执行器）
+$env:KA_EXECUTOR='docker'; $env:AGENT_CONTRACT_MODE='observe'
+python scripts/contracts/run_l3_smoke.py --run-manifest config/contracts/smoke-v0.1.json --json
+# 3) 推送两个候选分支
+git push origin contract-cycle/foundation-0.1.0-cycle-1     # Coding
+git push origin feature/foundation-contract-spec10          # Wiki（记账提交）
+```
+
+若第 2 步复现 F4（600s 内拿不到 provider 响应），按 §11.6 继续定位；若判定为预登记预算不合理，
+只能由**新候选**调整 manifest 值，不得事后放宽。
+
+### 11.9 网络恢复窗口内的复测：F4 收窄，Spec 11 仍差一步
+
+GitHub 短暂恢复后做了三件事，结果如下（**都不是完成证明**）：
+
+| 复测 | 结果 |
+|---|---|
+| 推送 | 两仓均成功：Wiki `feature/foundation-contract-spec10` → `0423d5b`；Coding `contract-cycle/foundation-0.1.0-cycle-1` → `5e780fd`（远端与本地一致） |
+| A6 上的 Coding L3（`KA_EXECUTOR=docker`，`command_goat`） | **F4 复现**：`business_timed_out=true`、`duration_seconds=600.25`、`producer_coverage=[]`、`actual_calls=0`、无 events 目录。栈采样（`faulthandler`，30s × 5）显示进程始终停在 `plan_node`/`decide_node` → `chat` → `ssl.read`（等 provider 响应头） |
+| 全量回归（A6，重跑一次） | 仍是 `638 passed / 3 skipped / **1 failed**`，唯一失败仍为 `test_docker_integration.py::test_clone_repo_when_empty`（容器内 `git clone https://github.com/octocat/Hello-World.git`）→ Spec 11 维持 `IN_PROGRESS` |
+
+**F4 的重要收窄（新证据）**：把同一 agent、同一 provider、同一 case 用 `real_agent_timing.py`
+（同一 `KA_EXECUTOR=docker`、同一 `command_goat`）单独驱动，**12 次调用全部成功，总计 110.5s**
+（单次 1.2–24.2s，prompt 最大 ~92KB；工具含 `search_code`/`git_log`/`edit_file`）。因此
+
+```text
+"docker 执行器会让 provider 调用变慢/挂死" 这一假设被否证。
+```
+
+同一窗口内 `gh repo clone` / `git fetch origin` 反复出现 `Recv failure: Connection was reset`，
+说明本机到外网的连通性本身在抖动。据此把 F4 的结论改为**未定论但高度怀疑外部网络不稳定**：
+- 支持：同一组合在"好窗口"内 110.5s 正常完成；坏窗口内 provider 请求停在等响应头、GitHub 同时被 reset。
+- 反证/待排除：仍需在**稳定网络**下重跑一次，才能区分"网络抖动"与"某条特定请求（如超大工具结果回注后
+  的 prompt）触发网关长时间不响应"。
+
+复测顺序（网络稳定后）：先跑 L3（判 F4），再跑全量回归（让 Spec 11 进 VALIDATED），最后推分支。
+在 F4 定性之前，**不得**通过调大冻结 `timeout_seconds` 来"通过" —— 那属于 Spec 13 明令禁止的事后放宽。
+
+### 11.10 F4 定案：不是网络、不是 provider，而是 runtime 不采纳 `AGENT_CONTRACT_RUN_ID`
+
+代理打开、GitHub 可达后继续复测，结论如下。
+
+**(1) F4 的真实根因（A7_coding 修复）**
+
+```text
+A_coding = b763fc70b2bb902c08cdf7ed5f05e6508ad5c521   （A7，取代 A6 5e780fd）
+```
+
+`adapters/foundation/runtime.py::_build_runtime_from_env()` 构造进程级 runtime 时**没有读
+`AGENT_CONTRACT_RUN_ID`**，于是 `CodingFoundationRuntime` 在 observe 下回落到进程级随机 UUID；
+所有 producer 证据被写进 `<evidence_root>/<uuid>/events/`，而 L3 gate 只认
+`<evidence_root>/<manifest run_id>/events/` → 表现就是「**0 事件 + required stage 未观测**」，
+而业务路径完全正常。
+
+实测证据链：
+
+| 证据 | 内容 |
+|---|---|
+| 磁盘事实 | A6 上一次**跑通且判 PASS**（`resolution_rate=100%`）的运行留下 102 条格式完全正确的事件：`repository_commit=5e780fdd…`、`contract_mode=observe`、`openai_compat` ×51 + `langfuse_generation` ×51 —— 但位于 `<staging>/7e3c49b5-…/events/` |
+| 直接探针 | 同一探针脚本：Coding → `runtime.run_id=<uuid>`；Wiki → `runtime.run_id=<env 值>`（正确） |
+| 代码对照 | 两仓 `_resolve_run_id()` 实现**完全相同**；差异只在 `_build_runtime_from_env()` 是否读环境变量（Wiki 读了并 `is_safe_run_id` 校验） |
+
+修复：新增 `CONTRACT_RUN_ID_ENV` 并导出；`_build_runtime_from_env()` 读取 + 校验 + `run_id=run_id`
+（与 Wiki 同款机制，不安全值忽略并记结构化日志）。回归钉子
+`test_env_built_runtime_adopts_agent_contract_run_id` **实测 RED**（旧代码断言得到 uuid）→ 修复后 GREEN。
+
+修复后实证：L3 运行产出 **65 条事件落在 `<staging>/foundation-0_1_0-c1-coding-smoke/events/`**，
+绑定 `b763fc70`、mode=observe —— **证据归属问题已彻底解决**。
+
+**(2) A7 上的 Spec 11 / 12 已完成**
+
+| 项 | 结果 |
+|---|---|
+| L1.1–L1.6 | 全部 exit 0（三哈希未变 / conformance 224 / `tests/contracts` **244** / `--gate pr` 8/8 / build） |
+| 全量回归 | **641 passed / 3 skipped / 0 failed**（满足 Spec 11 对 Coding 的 PASS） |
+| L2 | `foundation-0_1_0-c1-coding-replay` **PASS**，3 records / 3 sources，绑定 A7 |
+
+> 一次插曲：首轮回归出现 `631 passed / **13 skipped**`，因为 Docker 守护进程在跑测途中退出，
+> 10 个 docker 集成测试被跳过。0 failed 但**不代表通过** —— 重启 Docker 后重跑才得到
+> `641 passed / 3 skipped / 0 failed` 的干净结果。跳过数上升必须当成"没测"而不是"没事"。
+
+**(3) Spec 13 仍未闭合：原因已换成"预登记本身自相矛盾"**
+
+A7 之后唯一剩余的违反项始终是 `coding.benchmark.case_cost / normal`（§7.3:896 的硬要求），
+即预登记 case 必须在不报错的情况下跑完。6 次尝试都没做到：
+
+| 形态 | 次数 | 细节 |
+|---|---|---|
+| 业务在冻结 `timeout_seconds=600` 被驱动超时 | 4 | 观测调用量 122 / 156 / 204 / 232 次 |
+| 业务正常结束但 Agent 的 provider 调用以 `Connection error.` 收场 | 1 | 546s、64 次调用，case 记 `error` |
+| repo 就绪阶段 GitHub API `EOF` | 1 | 环境抖动，非候选问题 |
+
+关键对照：**同一 case 早前一次带插桩的运行以 32 次调用、444s 收敛并判 PASS**（`resolution_rate=100%`）。
+所以收敛是可能的，但方差极大。
+
+由此可判定冻结 manifest 的 pre-registration **自相矛盾且过紧**：
+
+```text
+manifest.max_calls        = 12
+manifest.timeout_seconds  = 600
+case.max_iterations       = 30          → 观测到最多 232 次 provider 调用
+```
+
+`max_calls: 12` 与其预登记的 case（30 轮上限）根本不兼容 —— 这是 Spec 11 Stage 0 预登记的缺陷，
+不是候选缺陷，也不是环境问题。按 Spec 13「不得根据运行结果事后删除未覆盖 stage 或提高成本上限」，
+本轮**没有**调高任何冻结字段，而是如实记 `13 BLOCKED`。
+
+**(4) 恢复条件**
+
+1. 形成**新候选**，在 pre-freeze 侧（Spec 11 Stage 0 的 run manifest）**重新推导**而不是放宽
+   `max_calls` / `timeout_seconds`：应按"预登记 case 的 `max_iterations` × 每轮实际调用数上界"
+   推出与 case 自洽的值，并同步 `expected_calls` / `estimated_cost_cap`。
+2. 在新候选上重跑 L1 + 全量回归 + L2 + L3（L3 用 §13.3 允许的 docker 执行器）。
+3. 若届时 `case_cost/normal` 仍不可观测，则需先判定"agent 在 docker 执行器下不收敛"是不是
+   又一个真实缺陷（对照实验：同一 case 在 local 执行器下曾收敛）。
+
+### 11.11 F8 定案：不是"不收敛"，是 L3 驱动从不清理陈旧证据（A8_coding 修复）
+
+```text
+A_coding = 0a4e5cf88cad59142b172987459a094892f90f5c   （A8，取代 A7 b763fc7）
+```
+
+**11.11.1 缺陷**
+
+`scripts/contracts/run_l3_smoke.py` 准备运行目录时只
+`run_dir.mkdir(parents=True, exist_ok=True)`，**从不清理**同一 run_id 上一次尝试留下的 `events/`。
+Wiki 仓驱动器自 A2 起就有 `clear_previous_run()`（清 `events/`、`driver/`、`run-summary.json`、
+sink 失败标记），Coding 仓是遗漏。
+
+**11.11.2 为什么此前把它误读成"agent 不收敛"**
+
+归档对比 attempt1/3/5 的事件字节：三份归档都含**同一批**最早的事件（32 次调用，起始
+`13:10:04Z`），而"调用总数"递增为 61 → 102 → 116。也就是说历次运行的事件层层叠加，
+`actual_calls` 把**旧运行**的调用也算进了本次 —— §11.10 里"122/156/204/232 次调用仍不收敛"
+这个结论是叠加假象，不是 agent 行为。
+
+**11.11.3 最严重的后果是"假通过"，不只是计数虚高**
+
+若上一次尝试恰好观测到某个 stage，本次即使没跑出来，gate 也会因为目录里还躺着那条**陈旧**事件
+而判为已覆盖 —— 用上一次的证据证明这一次通过。回归钉子
+`test_second_run_does_not_reuse_previous_run_events` 正是构造这个场景：
+
+```text
+run#1：fixture 覆盖全部 7 对 → rc 0，磁盘留下全套事件
+run#2：fixture 只产出 1 对
+  旧代码：run#2 报出 **7 对覆盖**（RED 实测）—— 假通过
+  修复后：run#2 只报 1 对，rc=1，并把清掉的项写进报告
+```
+
+**11.11.4 修复内容**
+
+新增 `clear_previous_run()`（清 `events/`、`run-summary.json`、`FAILURES_FILENAME`、残留 `*.tmp`），
+在驱动业务路径**之前**调用；清空项记入 `SmokeRun.cleared`，同时出现在 `--json` 与人类可读报告
+（"fresh" 本身也是需要被审计的证据）。
+
+**11.11.5 A8 上的验证**
+
+| 项 | 结果 |
+|---|---|
+| L1.1–L1.6 | 全部 exit 0（三哈希未变 / conformance 224 / `tests/contracts` **245** / `--gate pr` 8/8 / build） |
+| 全量回归 | **642 passed / 3 skipped / 0 failed**（3 skipped 为既有基线，docker 集成测试真实执行） |
+| L2 | `foundation-0_1_0-c1-coding-replay` **PASS**，3 records / 3 sources，绑定 A8 |
+| L3 | 一次**全新**运行：清掉 **235** 条陈旧事件后产出 **62** 条事件；仍撞 `timeout_seconds=600` |
+
+**11.11.6 唯一剩余的阻塞（F9）：预登记内部不一致 —— 交用户决策**
+
+A8 之后违反项只剩 `coding.benchmark.case_cost / normal`：预登记 case 没能在被允许的时间内跑完。
+而这暴露的是 manifest **自身**的矛盾：
+
+```text
+duration_cap_seconds = 1800   ← manifest 声明的时长预算；gate 只按它判定
+timeout_seconds      = 600    ← 驱动杀业务进程的预算，比声明上限紧 3 倍
+                                 ⇒ 600s–1800s 之间的运行会被杀掉，而它在声明预算内
+max_calls            = 12     ← 单次全新运行实测 62 次调用
+```
+
+对照：同一 case 早前带插桩的一次运行以 **32 次调用 / 444s 收敛并判 PASS(100%)** —— 所以 600s 是
+**临界而非不可能**，失败主要来自代理网络把每次调用拖到约 10s。
+
+**为什么本轮不擅自改**：修它必须改动 `config/contracts/smoke-v0.1.json` 的冻结值，而那正是
+Spec 11 Stage 0 预登记的产物；改动的动机正是"观察到上限被打到"，方向上等同于事后放宽
+（Spec 13 明文禁止），同时会把单次 L3 的资源消耗提高约 3 倍 —— 属治理 + 资源决策，交用户定。
+
+**两个可选方向（供决策）**：
+
+| 方向 | 动作 | 结果 |
+|---|---|---|
+| (甲) 批准修正预登记 | 形成 A9：仅把 `timeout_seconds` 对齐 manifest **自身**的 `duration_cap_seconds`（600 → 1800），并把 `max_calls` / `expected_calls` 按 case 的 `max_iterations` 重新推导；**不动** `estimated_cost_cap`。随后在 A9 上重跑 L1/L2/L3 | 有机会闭合 Coding L3，进而解锁 Spec 14/15；代价是单次 L3 最坏耗时 ×3 |
+| (乙) 保持冻结值不变 | 不做任何改动，Cycle 1 带一条残余 handoff：Coding L3 未闭合、Spec 14/15 锁定，把 F9 作为真实 L2/L3 反馈交给 Spec 16 | 零额外成本；但 Cycle 1 无法 COMPLETE |
+
+---
+
+## 12. 续执行状态（2026-10-11）
+
+### Goal
+
+完成 Foundation Contract Cycle 1 的 Spec 13、14、15，并以双仓固定 A/B 与 Wiki C 的最终验收结果收口。
+
+### Success criteria
+
+- Spec 11–13 的候选绑定证据完整，状态可由受控 pending suffix 合法归约为 `COMPLETE`。
+- 两仓 Evidence Publication B 只包含规范 allowlist 内文件。
+- 固定 A/B 协调结果为 `PASS / READY_FOR_FINALIZATION`。
+- Wiki C 严格满足 finalization allowlist，最终账本归约为 Cycle `COMPLETE`。
+
+### Status
+
+`running`
+
+### Current step
+
+Spec 13–15 的固定提交与终结产物已经形成；正在把结果合并到两仓本地主分支并从主分支做最终复核。
+
+### Completed
+
+- A9_coding 已形成：`ae186533cfef35df9c7832c27fcf60a627de433d`。
+- A9 真实 L3 已在 87.516 秒内结束，产出 23 条事件，required producer/stage 全覆盖，sink failure 与 rejected record 均为 0。
+- A9 `--gate smoke` 已复核为 8/8 PASS。
+- A9 L2 已绑定同一提交并 PASS：3 records / 3 sources / 0 adapter defects。
+- A9 正式复核完成：Conformance 224 passed、契约测试 245 passed、PR gate 8/8、build PASS、全量回归 642 passed / 3 skipped / 0 failed；Docker 集成 10 passed。
+- 调用口径复核完成：23 条事件中含 11 条 `coding.agent.llm_usage` 与 11 条镜像 `coding.trace.generation_usage`，对应 11 次逻辑 provider call，未达到 `max_calls=12`；`run-summary.actual_calls=22` 是冻结实现定义的 usage 观测条数。
+- pending suffix 已追加 A9 的 Spec 11–13 状态事件并通过真实 reducer：event_count=62，Specs 01–13 effective status 均为 `COMPLETE`。
+- Evidence Publication B2 已形成：Wiki `8a39c8b4a37ff0eb11823d8563cd8743b15722e2`，Coding `c364b0201f83b748cbea60ddfa4217c6dc46040d`；两仓 A→B 均只包含 publication allowlist 文件。
+- 固定 A/B 协调已通过全部检查，结果为 `PASS / READY_FOR_FINALIZATION`，协调结果 canonical hash 为 `sha256:277ab38f852e74359d0ba2acf145197647e0c0fc57fee15d23868a6aed3e3489`。
+- Wiki Finalization C 已形成：`146e9c4260eb0e509fc6f6379c15e4c7f95c4669`；finalizer 8/8 PASS，B 为 C 的祖先，C 严格满足 finalization allowlist。
+- C 上账本已通过真实 reducer：canonical event_count=119，Specs 01–15 effective status 均为 `COMPLETE`。
+
+### Active owners
+
+- Coordinator / Worker：当前 Codex 会话（单会话顺序执行，不启用子代理）。
+
+### Blockers
+
+- 无。
+
+### Next action
+
+将 Wiki C、进度文档与 Coding B2 合并到各自本地 `main`，随后在主分支运行 candidate gate、状态账本归约与 finalizer 复核。
+
+### Next checkpoint
+
+两仓主分支终验全部通过后，将本节状态更新为 `complete`。
