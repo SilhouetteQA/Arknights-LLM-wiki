@@ -830,29 +830,90 @@ Foundation Contract Cycle 1 已完成：固定 A/B/C 已接入两仓本地 `main
 
 ### Status
 
-`running`
+`complete`
 
 ### Current step
 
-审计双仓 Cycle 1 发布 Evidence 和历史阻塞记录，判断是否存在能诚实触发 Spec 16 非纯文档演进的真实 Contract 问题。
+Spec 16–18 在当前权限下允许的 Evidence intake 与 gate assessment 已全部完成；状态账本保持 16–18 `NOT_STARTED`，未生成越权 coding task。
 
 ### Completed
 
 - 已确认 Wiki `main` 包含 Finalization C，Coding `main` 已快进到 Evidence B2。
 - 已复核 Spec 16–18 的 Authority Boundary、依赖、允许输出、禁止动作与 Stop Conditions。
+- 已逐项审计 Wiki/Coding 发布的 L2 corpus、L3 coverage、Evidence Manifest、Run Manifest、Rule traceability 与 Cycle report。
+- 已完成 Spec 16 feedback intake，版本决定为保持 `0.1.0`，不生成虚假的 `0.2.0` 候选。
+- 已完成 Spec 17 eligibility formula 判定，结果为 `NOT_READY_FOR_EXTRACTION`。
+- 已完成 Spec 18 五个 family 的 entry assessment，结果均为 `REMAIN_EXPERIMENTAL`。
 
 ### Active owners
 
 - Coordinator / Worker：当前 Codex 会话（单会话顺序执行，不启用子代理）。
 
+### Evidence intake — Spec 16
+
+| Evidence | 已验证事实 | 分类 | Contract 影响 |
+|---|---|---|---|
+| Wiki L2 `foundation-0_1_0-c1-wiki-replay` | 220 records；120 `NONE`，100 `expected semantic correction`；后者把 legacy aggregate cost 在缺少 usage/model 明细时诚实表达为 unknown，而不是伪造组成项 | 预期语义修正 | v0.1 已完整表达，不是缺陷 |
+| Coding L2 `foundation-0_1_0-c1-coding-replay` | 3 records 全部 `LEGACY_DATA_INSUFFICIENT`，没有 token/cost 组成事实 | Legacy insufficiency | 不得以新字段猜测缺失事实 |
+| Wiki L3 `foundation-0_1_0-c1-wiki-smoke` | 12 published events；要求覆盖项全部通过，`scoring` 为具名 `NOT_OBSERVED_ALLOWED` | 成功的真实路径证据 | 不要求 Contract 变化 |
+| Coding L3 `foundation-0_1_0-c1-coding-smoke` | 23 published events；required producer/stage 全覆盖，其余为具名 `NOT_OBSERVED_ALLOWED` | 成功的真实路径证据 | 不要求 Contract 变化 |
+| F3 / F4 | workspace 建立顺序、`AGENT_CONTRACT_RUN_ID` 接线错误 | Adapter / wiring defect | 已由项目本地修复，不应污染公共契约 |
+| F8 | 驱动未清理陈旧 Evidence，造成假覆盖 | Evidence tooling defect | 已修复工具，不构成契约演进 |
+| F9 | `timeout_seconds` 与同一 manifest 的 `duration_cap_seconds` 不一致 | pre-registration defect | A9 已对齐配置，不改变 schema/validator/behavior 语义 |
+| Windows byte check | `core.autocrlf` 改写已提交终结产物的检出字节 | packaging / checkout policy defect | 已由 `.gitattributes` 修复，不构成 Cycle 2 |
+
+Spec 16 的七项 proposal 问题结论：
+
+1. 没有证据表明旧契约无法诚实表达已观察事实；Unknown、Estimated、Reported 与 Legacy insufficiency 均已被 v0.1 正确表示。
+2. 已观察问题分别属于 Adapter、Evidence tooling、pre-registration、packaging policy 或 Legacy insufficiency；没有 Contract defect。
+3. 不需要字段、validator、Schema、Error code、event/envelope 或行为语义变化。
+4. 受影响 Rule ID：无；不得新增、复用或 deprecated Rule ID。
+5. Payload、序列化、mapping 与行为语义保持 `0.1.0`。
+6. 双仓不需要 `0.1 → 0.2` migration；项目差异继续留在各自 Adapter。
+7. 当前问题均已由 Adapter/工具修复或由 `NOT_OBSERVED_ALLOWED` / `LEGACY_DATA_INSUFFICIENT` 诚实表达，不能以它们为理由污染公共契约。
+
+版本决定：`FOUNDATION_REMAINS_CYCLING_AT_0.1.0`。Cycle 2 proposal 与 implementation authorization request 均不签发；这是 Spec 16 在真实反馈不足时要求的合法结果，不是遗漏。
+
+### Extraction eligibility — Spec 17
+
+| Eligibility 条件 | 结论 | Evidence / 原因 |
+|---|---|---|
+| Cycle 1 complete | PASS | Spec 01–15 `COMPLETE`，119 条 canonical events |
+| Cycle 2 complete | FAIL | 没有合格 Contract trigger，未启动 Cycle 2 |
+| real feedback revision exists | FAIL | Cycle 1 问题均非 Contract defect |
+| shared contract tests pass | PASS | 双仓 Conformance 224 passed |
+| Wiki regression pass | PASS | 913 passed / 10 skipped / 0 failed |
+| Coding regression pass | PASS | 632 passed / 13 skipped / 0 failed；Docker 集成另有 10 passed |
+| duplicate Adapter evidence | PARTIAL | 两仓均有 facts/mapping/runtime/sink，但 diff 显示大量项目专有实现，尚不能证明抽取会减少总复杂度 |
+| rollback verified | FAIL | 尚无 extraction candidate 与 repo-local mirror 回滚演练 |
+| semantic divergence acceptable | NOT ESTABLISHED | Foundation Payload 一致，但 Adapter 差异尚未经过第二轮真实演进验证 |
+| dependency boundary stable | FAIL | Model/Tool/Observability/Evaluation/Checkpoint 均未成熟 |
+| reproducible extraction quality gate | FAIL | 尚未冻结 pre-extraction BenchmarkSpec 与 immutable baseline |
+| zero new safety/side-effect violation | PASS | 发布扫描与 candidate gates 均通过，未执行 push/PR |
+
+Spec 17 gate output：`NOT_READY_FOR_EXTRACTION`。不创建 `agent-core` distribution，不删除本地 mirror，不改 imports/dependencies/packaging。
+
+### Future family entry — Spec 18
+
+| Family | 真实差异证据 | Gate output |
+|---|---|---|
+| Model | Wiki 有独立 provider 选择、retry/timeout 与 JSON 调用路径；Coding 使用自己的 `LLMClient` Protocol、provider 配置和 SDK retry/timeout。现有共享事实只证明 Usage/Cost 边界，不足以证明共同 ModelRequest/ModelResult | `REMAIN_EXPERIMENTAL` |
+| Tool | Wiki 的 8 个工具均为只读知识检索；Coding 工具包含文件写入、Docker sandbox、Git commit/push/PR 与 approval 状态机，共同形状会抹平 risk/side-effect 语义 | `REMAIN_EXPERIMENTAL` |
+| Observability | 两仓虽都接入 Langfuse，但 Wiki 有本地 Dashboard/ClickHouse 展示与检索链 metadata，Coding 有 issue/graph/benchmark trace 与独立 trace report；尚未证明可脱离 Model/Tool metadata | `REMAIN_EXPERIMENTAL` |
+| Evaluation | Wiki 是知识问答 quality/judge/scoring；Coding 是 must-pass、patch acceptance、resolution 与 safety。只能看到潜在 envelope/run metadata 交集，尚无独立两轮 Evidence | `REMAIN_EXPERIMENTAL` |
+| Checkpoint | Wiki 使用 LangGraph `SqliteSaver` / `MemorySaver` 和 `thread_id` 断点续跑；Coding 关键持久语义是 sandbox、pending approval、diff fingerprint、commit/push 防重放，语义分歧高 | `REMAIN_EXPERIMENTAL` |
+
 ### Blockers
 
-- 暂无；是否存在合格的 Cycle 2 Contract trigger 由 Evidence 审计决定。
+- Spec 16：缺少发布 Evidence 支持的非纯文档 Contract defect。
+- Spec 17：缺少由真实反馈驱动并完成 A/B/C 的 Cycle 2、rollback 演练和 pre-extraction frozen benchmark。
+- Spec 18：Foundation 尚未完成真实 Cycle 2，各 family 也没有自己的两轮 L1/L2/L3 Evidence。
+- 上述均为规范性前置条件，不是可通过继续写代码消除的工程阻塞。
 
 ### Next action
 
-汇总两仓 L2/L3 结果、差异分类、未观测项和历史失败根因，并映射到 Spec 16 的七项 proposal 问题。
+等待新的真实 L2/L3 Evidence。只有出现 v0.1 无法诚实表达的 Contract 问题后，才另立并批准 implementation-ready Cycle 2 Spec。
 
 ### Next checkpoint
 
-Spec 16 feedback intake 形成明确的“提出 v0.2 候选”或“证据不足，不制造 v0.2”结论后。
+出现新的 qualified Contract trigger，或治理方提供独立的 Cycle 2 implementation-ready Spec 时。

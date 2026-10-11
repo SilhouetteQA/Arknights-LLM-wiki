@@ -132,8 +132,8 @@ v0.1 契约内容：`Usage` / `Cost` / `CostSummary` / `ErrorEnvelope` / `Founda
 | 范围 | 授权 | 进度 |
 |---|---|---|
 | Part I — Cycle 1 / Foundation v0.1（Spec 01–15） | `IMPLEMENTATION-READY` | **Spec 01–15 `COMPLETE`** —— 固定候选为 **A_wiki `554bce2f` / A_coding `ae186533`（A9）**，Evidence Publication 为 **B2_wiki `8a39c8b4` / B2_coding `c364b020`**，Finalization 为 **C_wiki `146e9c42`**；协调与终结检查全部通过 |
-| Part II — Cycle 2 / v0.2（Spec 16） | `FEEDBACK-BOUND` | 需真实 L2/L3 问题驱动才可启动 |
-| Part III — 抽取门禁（Spec 17–18） | `GATE-DEFINED` | 只评估门禁，不得实现 |
+| Part II — Cycle 2 / v0.2（Spec 16） | `FEEDBACK-BOUND` | Cycle 1 Evidence intake 已完成：未发现 v0.1 无法诚实表达的真实 Contract 问题，结论为 **NO_ARTIFICIAL_V0_2**；保持 `NOT_STARTED`，等待新的真实 L2/L3 trigger |
+| Part III — 抽取门禁（Spec 17–18） | `GATE-DEFINED` | Spec 17 = **NOT_READY_FOR_EXTRACTION**（缺少真实反馈驱动的 Cycle 2）；Model / Tool / Observability / Evaluation / Checkpoint 均 = **REMAIN_EXPERIMENTAL**，不得实施抽包或新 family |
 
 DAG：`01 → 02 → 03 → 04 →（05 → 07 / 06 → 08）→ 09 → 10 → 11`（**Candidate A 冻结边界**）`→ 12(L2) / 13(L3) → 14(Evidence B) → 15(协调 + Finalization C → Cycle COMPLETE)`。
 
