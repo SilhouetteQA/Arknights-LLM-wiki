@@ -811,3 +811,48 @@ Foundation Contract Cycle 1 已完成：固定 A/B/C 已接入两仓本地 `main
 ### Next checkpoint
 
 无；Cycle 1 已验收收口。
+
+---
+
+## 13. 剩余治理工作续执行状态（2026-10-11）
+
+### Goal
+
+完成 Foundation Contract 剩余 Spec 16–18 在当前证据与执行权限下允许的全部工作：Cycle 2 反馈接收、Foundation 抽取门禁判定和未来 contract family entry 判定。
+
+### Success criteria
+
+- 逐项核对 Cycle 1 发布的 L2/L3 Evidence，区分 Contract defect、Adapter defect、Evidence defect、tooling defect 与 Legacy insufficiency。
+- 对 Spec 16 给出可追踪的版本与迁移决策；无合格语义变化时不人为制造 v0.2。
+- 对 Spec 17 的 eligibility formula 逐项给出 Evidence 结论。
+- 对 Spec 18 的 Model、Tool、Observability、Evaluation、Checkpoint 分别给出合法 gate output。
+- 状态账本只记录由真实证据支持且符合执行权限的转换。
+
+### Status
+
+`running`
+
+### Current step
+
+审计双仓 Cycle 1 发布 Evidence 和历史阻塞记录，判断是否存在能诚实触发 Spec 16 非纯文档演进的真实 Contract 问题。
+
+### Completed
+
+- 已确认 Wiki `main` 包含 Finalization C，Coding `main` 已快进到 Evidence B2。
+- 已复核 Spec 16–18 的 Authority Boundary、依赖、允许输出、禁止动作与 Stop Conditions。
+
+### Active owners
+
+- Coordinator / Worker：当前 Codex 会话（单会话顺序执行，不启用子代理）。
+
+### Blockers
+
+- 暂无；是否存在合格的 Cycle 2 Contract trigger 由 Evidence 审计决定。
+
+### Next action
+
+汇总两仓 L2/L3 结果、差异分类、未观测项和历史失败根因，并映射到 Spec 16 的七项 proposal 问题。
+
+### Next checkpoint
+
+Spec 16 feedback intake 形成明确的“提出 v0.2 候选”或“证据不足，不制造 v0.2”结论后。
