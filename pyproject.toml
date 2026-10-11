@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "arknights-wiki"
 version = "0.1.0"
@@ -6,10 +10,11 @@ dependencies = [
     "httpx>=0.28",
     "beautifulsoup4>=4.12",
     "lxml>=5.3",
+    "pydantic==2.13.4",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "pytest-asyncio>=0.25"]
+dev = ["pytest>=8", "pytest-asyncio>=0.25", "build>=1.2"]
 agent = [
     "fastapi>=0.115",
     "sse-starlette>=2.0",
@@ -24,4 +29,13 @@ agent = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["arknights_wiki*"]
+include = ["arknights_wiki*", "agent_core*"]
+
+# Foundation Contract Payload 非 Python 文件必须随 wheel 发布，
+# 由 agent_core.contracts.tooling 与 conformance 通过 importlib.resources 读取。
+[tool.setuptools.package-data]
+"agent_core.contracts" = [
+    "contract.md",
+    "payload-descriptor.json",
+    "schemas/*.json",
+]

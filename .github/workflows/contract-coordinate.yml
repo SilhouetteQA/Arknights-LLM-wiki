@@ -1,0 +1,210 @@
+# =============================================================================
+# contract-coordinate.yml —— Coordination（**仅 Wiki 仓**）
+# =============================================================================
+#
+# 目的
+#   Level 2 Cross-repository Cycle Gate 的 Phase 1（Wiki 协调端）：只读取**闭合**
+#   cycle plan，对两个固定 A/B 做确定性证据验证，输出 coordination artifact
+#   （`coordination_result=PASS` + `cycle_state=READY_FOR_FINALIZATION`）。
+#   它是确定性证据验证器：不调用真实模型、不产生新的 L3 Evidence（Master §15.3:1596）。
+#
+# 规范来源
+#   Master `docs/specs/2026-09-10-dual-agent-foundation-contract-master-spec.md`
+#     §15.3  Level 2 Cross-repository Cycle Gate：Wiki workflow 只读取闭合 cycle-plan.json，
+#            不得推断最新成功 commit 或 checkout 移动 main；Coding checkout token 只读、
+#            最小权限，禁止进入日志/环境 dump/extension/artifact（1586-1596）
+#     §16.4  cycle plan 闭合字段与其"不属任何 A/B git tree"（1675-1688）
+#     §16.5  coordination 输出字段与状态闭集（1694-1713）
+#     Appendix C.4  Coordination = Windows 或 Linux / Git + 契约验证工具 /
+#            Coding 只读 checkout token / 固定 A-B 验证、不调用模型（2436）
+#     Appendix C.5  `coordinate_cycle.py` 只产生 PASS/READY_FOR_FINALIZATION artifact（2443-2447）
+#     Appendix F.2  `contract-coordinate.yml`：固定 SHA coordinator / 不调用真实模型 /
+#            rollback = 删除 workflow（2662）
+#   Spec 10 `docs/specs/foundation-contract/10-packaging-and-local-contract-ci.md`
+#     Allowed Changes（29）、CI Implementation Steps 18（91）、Forbidden（52/53）、
+#     Acceptance「Coordinator/finalizer fixtures 证明无 self-reference 且 tree allowlists 生效」（130）
+#   Spec 15（协调/终局）—— 本 workflow 不得替代 coordinator 内部的判定
+#
+# provisional 与已知缺口
+#   G-06  触发条件与 token 载体形式未定义：本 workflow 采用**仅 workflow_dispatch**
+#         且在 dispatch 时给出固定 SHA（推断），待 Spec 回修后收敛。
+#   G-15  expected hash 来源未定义：本 workflow 把 `expected_payload_hash` 作为可选输入，
+#         仅用于**提前告警**（见对应 step），权威判定仍在 `coordinate_cycle.py`。
+#   G-16  Coding 侧 expected hash 来源未定义：本 workflow 不通过 clone/联网取 hash，
+#         只校验"固定 SHA 的 Coding checkout 是否与 dispatch 的 expected hash 一致"。
+#   G-17  协调输入/输出目录约定无规范：本 workflow 约定 Coding checkout 落在
+#         `${{ github.workspace }}/coding`、coordination 输出落在 `${{ runner.temp }}/coordination`
+#         （与 C.5 的 `--output <COORDINATION_OUTPUT>` 对齐）。若 `coordinate_cycle.py`
+#         需要别的路径约定，必须在 **A 冻结前**（Spec 10 内）解决，不得留到 Spec 15。
+#   G-18  退出码语义未定义：本 workflow 只采用"非 0 即失败"。
+#
+# 硬约束（违反即 Stop Condition）
+#   1. 不得调用真实模型。
+#   2. 不得产生 L3 Evidence。
+#   3. 不得推断"最新成功 commit"：Coding 只能按 dispatch 输入的固定 40-hex SHA checkout。
+#   4. 不得 checkout 移动分支/标签：输入若不是 40 位小写十六进制 SHA 立即失败，
+#      且 checkout 后再次比对 `HEAD` 与输入 SHA。
+#   5. token 只读、最小权限，绝不进入日志 / 环境 dump / workflow extension / artifact。
+#   6. 不提前写 `Cycle COMPLETE`：本 workflow 只产出 coordination artifact（§16.5:1713）。
+#
+# token 处理注意点（除 actions/checkout 自动 `::add-mask::` 之外必须遵守的规则）
+#   (a) `secrets.CODING_READONLY_TOKEN` 只在 `with:` 中出现一次，绝不在 `run:`/`env:`
+#       中回显；GitHub 的掩码只覆盖精确文本匹配，base64/URL 编码/切片拼接都会绕过掩码。
+#   (b) 两个 checkout 都设 `persist-credentials: false`：token 不会写入 `.git/config`
+#       或 credential helper，避免被后续步骤或 artifact 意外带走。
+#   (c) 不运行 `env` / `Get-ChildItem Env:` / `git config --list` / `git remote -v` /
+#       `git config --get-regexp` 等会打印配置的命令；不开启 ACTIONS_STEP_DEBUG 依赖。
+#   (d) artifact 路径严格限定为 `${{ runner.temp }}/coordination`；绝不上传
+#       `${{ github.workspace }}`（它包含 `coding/` 与两个 `.git` 目录）。
+#   (e) 不把 token 作为命令行参数或 env 传给 `coordinate_cycle.py`（该脚本只接受
+#       `--plan` / `--output`，见 C.5:2443）；脚本需要读 Coding 仓时只读本地 checkout。
+#   (f) Coding token 必须是**只读** token，不得使用带写权限的 PAT / deploy key。
+# =============================================================================
+
+name: Contract Coordination (Wiki)
+
+# provisional（G-06）：仅受控手动 dispatch，输入必须闭合（§16.4/§16.5）。
+on:
+  workflow_dispatch:
+    inputs:
+      cycle_plan_path:
+        description: '本检出树内闭合 cycle plan 路径（如 docs/contracts/cycles/<cycle_id>/cycle-plan.json）'
+        required: true
+        type: string
+      coding_candidate_commit:
+        description: '固定 Coding Candidate commit（40 位小写十六进制 SHA；禁止分支/标签/短 SHA）'
+        required: true
+        type: string
+      expected_payload_hash:
+        description: '可选：计划声明的 canonical payload hash（sha256:<64hex>），仅作提前告警'
+        required: false
+        type: string
+        default: ''
+      coding_repository:
+        description: 'Coding 仓 owner/name（只读 checkout 目标）'
+        required: false
+        type: string
+        default: 'SilhouetteQA/Knowledge-Augmented-Autonomous-Coding-Agent'
+
+# 最小权限：GITHUB_TOKEN 只读。Coding 侧由只读 token 承载（不写回任何仓）。
+permissions:
+  contents: read
+
+jobs:
+  coordinate:
+    name: Coordination (fixed A/B, deterministic, no model calls)
+    # Appendix C.4:2436 —— Coordination 可运行在 Windows 或 Linux；此处选 Windows。
+    runs-on: windows-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      # fetch-depth: 0 —— coordinator 需要完整历史做 A/B ancestry 与 tree diff allowlist（Spec15:42-51）。
+      # 注意：workflow ref 是 dispatch 时选择的 ref；plan 中的 wiki_candidate_commit /
+      # wiki_evidence_commit 才是权威 A/B（§16.4:1675-1686），本 workflow 不推断替代 SHA。
+      # 操作者应从候选协调提交处 dispatch，使 artifact 记录的 coordinator_commit 可追溯。
+      - name: Checkout Wiki coordinator repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # (b) token 不落盘到 .git/config。
+          persist-credentials: false
+
+      # 仅供 artifact 中的 coordinator identity 可追溯（§16.5 的 coordinator_commit）；
+      # 只打印本仓 HEAD SHA，不打印任何凭据/环境。
+      - name: Record coordinator revision (informational)
+        run: git rev-parse HEAD
+
+      # 硬约束 4：机器校验输入是固定 SHA，而不是移动 ref。
+      - name: Validate fixed coding candidate SHA
+        env:
+          CODING_CANDIDATE_COMMIT: ${{ inputs.coding_candidate_commit }}
+        run: |
+          if ($env:CODING_CANDIDATE_COMMIT -cnotmatch '^[0-9a-f]{40}$') {
+            throw "coding_candidate_commit 必须是 40 位小写十六进制 commit SHA（禁止分支/标签/短 SHA）：$env:CODING_CANDIDATE_COMMIT"
+          }
+          Write-Host 'coding_candidate_commit is a fixed 40-hex commit SHA.'
+
+      # (a)(b)(d)(f)：只读 token 仅在此 `with:` 出现；pin 到固定 SHA；fetch-depth 0 供 ancestry 判定。
+      - name: Checkout Coding repository read-only at the fixed SHA
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ inputs.coding_repository }}
+          ref: ${{ inputs.coding_candidate_commit }}
+          token: ${{ secrets.CODING_READONLY_TOKEN }}
+          path: coding
+          fetch-depth: 0
+          persist-credentials: false
+
+      # 硬约束 3/4：确认 checkout 确实停在输入的固定 SHA（不是移动分支的 tip）。
+      - name: Verify coding checkout is pinned to the fixed SHA
+        env:
+          CODING_CANDIDATE_COMMIT: ${{ inputs.coding_candidate_commit }}
+        run: |
+          $head = (git -C coding rev-parse HEAD).Trim()
+          if ($head -ne $env:CODING_CANDIDATE_COMMIT) {
+            throw "Coding checkout HEAD=$head 与固定 SHA $env:CODING_CANDIDATE_COMMIT 不一致：禁止移动分支或推断最新成功 commit。"
+          }
+          Write-Host "Coding checkout pinned at $head"
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # coordinator 是确定性证据验证器：只装 contract tooling 需要的包。
+      # 不安装业务/模型依赖（openai 等），从依赖层面保证"不调用真实模型"。
+      - name: Install coordination dependencies
+        run: python -m pip install -e ".[dev]"
+
+      # G-19：与 local gate 保持一致，为 `python -m build` / `--no-isolation` 场景显式补 build 工具链。
+      - name: Install build tooling (G-19)
+        run: python -m pip install build "setuptools>=68"
+
+      # provisional（G-15/G-16）：expected hash 来源未定义，故此处只做**提前告警**。
+      # 用 `continue-on-error` 保证它绝不掩盖权威结论：§16.5 要求的
+      # coordination_result（PASS / FAILED / DIVERGED）由下一档 `coordinate_cycle.py`
+      # 基于闭合 plan 独立产出，本步骤失败不阻断该产物。
+      # 校验对象：固定 SHA 的 Coding checkout（`${{ github.workspace }}/coding`）。
+      - name: Advisory pre-flight - expected payload hash on Coding checkout
+        if: ${{ inputs.expected_payload_hash != '' }}
+        continue-on-error: true
+        env:
+          EXPECTED_PAYLOAD_HASH: ${{ inputs.expected_payload_hash }}
+          CODING_CHECKOUT: ${{ github.workspace }}/coding
+        run: |
+          Write-Host 'Advisory only (G-15/G-16): comparing Coding checkout payload hash with the dispatched expected hash.'
+          python -m agent_core.contracts.tooling.verify_payload --repo-root "$env:CODING_CHECKOUT" --expect-payload-hash "$env:EXPECTED_PAYLOAD_HASH"
+
+      # §16.4:1688 / D.3:2520-2532：plan 是 CI dispatch/input artifact，不属于任何 A/B git tree；
+      # 这里只校验它在检出树内可读，并准备输出目录（不创建任何 plan 文件）。
+      - name: Validate cycle plan path and prepare output directory
+        env:
+          CYCLE_PLAN_PATH: ${{ inputs.cycle_plan_path }}
+        run: |
+          if (-not (Test-Path -LiteralPath $env:CYCLE_PLAN_PATH -PathType Leaf)) {
+            throw "cycle_plan_path 不存在或不是文件：$env:CYCLE_PLAN_PATH"
+          }
+          New-Item -ItemType Directory -Force -Path "${{ runner.temp }}/coordination" | Out-Null
+          Write-Host "cycle plan found; coordination output directory ready."
+
+      # C.5:2443 —— 唯一被允许的协调命令接口（参数在 Spec 10 冻结，不得在 Spec 15 修改）。
+      # 不传任何 expected hash / token / 模型密钥：判定完全由闭合 plan 驱动。
+      - name: Run coordination (deterministic evidence verifier)
+        env:
+          CYCLE_PLAN_PATH: ${{ inputs.cycle_plan_path }}
+        run: python scripts/contracts/coordinate_cycle.py --plan "$env:CYCLE_PLAN_PATH" --output "${{ runner.temp }}/coordination"
+
+      # (d)：只上传 coordination 输出目录，绝不上传 workspace / 环境 / .git。
+      # `if: always()` 保证失败时也保留已产出的诊断 artifact；
+      # `if-no-files-found: error` 保证"没产出 coordination artifact"不会被当成成功。
+      - name: Upload coordination artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: contract-coordination-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/coordination
+          if-no-files-found: error
+          retention-days: 30
+          include-hidden-files: false

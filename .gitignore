@@ -67,3 +67,19 @@ output/checkpoints/
 
 # DeepEval 缓存
 .deepeval/
+
+# 本地虚拟环境（临时）
+.venv_tmp/
+
+# Foundation Contract 验证产物（Spec 01）
+# staging = 尚未发布聚合的逐事件证据；raw/private = 受控临时证据与私有回放输入
+# 三者均不得进入版本控制
+output/contract-validation/staging/
+output/contract-validation/raw/
+output/contract-validation/private/
+
+# Foundation Contract packaging 构建产物（Spec 10）
+# `python -m build` 与 `test_packaging.py` 会在源树产生 build/ 与 dist/；它们是验证
+# 中间物，不得进入版本控制（`*.egg-info/` 已在文件头部忽略）
+build/
+dist/

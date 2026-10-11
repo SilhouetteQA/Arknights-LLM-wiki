@@ -1,0 +1,183 @@
+# =============================================================================
+# contract-local.yml —— Local PR Contract Gate（Wiki 仓）
+# =============================================================================
+#
+# 目的
+#   Wiki 仓的 L1 Repository Contract Gate：Schema 快照一致性 → Payload 身份自洽 →
+#   共享 conformance → 项目契约测试 → PR gate（含 publication safety）→ wheel smoke。
+#
+# 规范来源
+#   Master `docs/specs/2026-09-10-dual-agent-foundation-contract-master-spec.md`
+#     §15.1  L1 Repository Contract Gate：每仓独立运行、不 clone 另一仓（1550），
+#            PR gate 八步（1552-1563），权威命令清单（1569-1577）
+#     §15.2  跨平台 hash job：Windows 运行完整 Contract CI（1583）
+#     Appendix C.3  wheel / package-data smoke（2414-2425）
+#     Appendix C.4  CI 环境矩阵：Local PR Contract Gate = Windows / 无密钥（2429-2431）
+#     Appendix F.2  `contract-local.yml`：Wiki Local Gate，不 checkout Coding（2660）
+#   Spec 10 `docs/specs/foundation-contract/10-packaging-and-local-contract-ci.md`
+#     Allowed Changes（29）、CI Implementation Steps（89）、
+#     Development Validation Commands（97-104）、Forbidden（51/53）、
+#     Acceptance（126-131）、Stop Conditions（136-140）
+#
+# provisional 与已知缺口（本文件不自行填补规范，只显式标注）
+#   G-06  触发条件未定义：Master §15.1-§15.3 与 Appendix 全文没有给出任何 `on:` 语义；
+#         本文件下方的触发集合是 provisional 推断，待 Spec 回修后收敛。同理 C.4 列出
+#         6 个 job 而 Spec10:29/41 只允许 5 个 workflow 文件：Historical replay（L2）
+#         与 Fresh smoke（L3）不是 workflow，是受控手动运行，见文末注释块。
+#   G-19  `python -m build` 前置的 `build` 模块（以及 `[build-system]` requires 的
+#         setuptools）在 runner 上未预装 —— 本文件显式安装；不改 `pyproject.toml`。
+#   G-18  脚本退出码语义全文未定义：本文件只采用"非 0 即失败"，不解释具体数字。
+#         `scripts/contracts/validate_local.py` 尚未落地时 python 退出 2，该步骤照样
+#         失败（Appendix C 2358：脚本缺失不得用临时命令冒充通过）。
+#   G-05  §15.1:1560 的 "contract-related regression subset" 未定义；本文件不发明子集，
+#         该步骤由 `validate_local.py --gate pr` 内部实现。
+#   G-07  candidate 档位的回归基线（542/7/3）与仓库现状冲突：本文件不运行
+#         `--gate candidate`（其触发方式亦未定义，同 G-06）。
+#
+# 禁止事项（Master §15.1:1550；Spec10:51/53；Appendix F.2:2660）
+#   1. 不得 clone 或读取另一仓（Coding）：本 job 无跨仓 checkout / fetch / 网络拉取。
+#   2. 不得调用真实模型。
+#   3. 不得 dump 环境变量、凭据或 private endpoint：不运行 `env` / `Get-ChildItem Env:` /
+#      `git config --list` / `printenv` 之类打印命令，不依赖 ACTIONS_STEP_DEBUG。
+#   4. 不得设置或使用任何 secret：本 job 不引用 `secrets` 上下文，`permissions` 最小化。
+#   5. 不上传 artifact：本 gate 只产出通过/失败，从根上避免误传环境内容。
+#
+# 注意
+#   最后一步 `python -m build` 会在源树产生 `build/` 目录，属预期；该目录不进入
+#   任何后续判定（本 workflow 无 artifact、无缓存上传）。
+#   YAML 注释中出现的 `${{ ... }}` 不会被求值（注释不参与表达式展开）。
+# =============================================================================
+
+name: Contract Local Gate (Wiki)
+
+# provisional（G-06）：`on:` 全文未定义，以下为推断集合。
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+  workflow_dispatch:
+
+# 最小权限（Master Appendix C.4 / Spec10:121「所有 workflows 与最小权限边界」）。
+permissions:
+  contents: read
+
+jobs:
+  local-contract-gate:
+    name: Local PR Contract Gate (windows-latest, Python 3.12)
+    # Appendix C.4:2431 —— Local PR Contract Gate 运行在 Windows，使用本仓完整/测试依赖，无密钥。
+    runs-on: windows-latest
+    # 显式超时，避免 CI 无限挂起（build + 两次 wheel 构建在同一 run 内）。
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: pwsh
+    # 三个项目测试（tests/agent/test_graph.py 的 2 个 + tests/agent/test_router.py 的 1 个）要求
+    # provider 配置**存在**：`arknights_wiki.extraction.llm_client._get_model_config()` 会在三个 key
+    # 都缺失时抛 RuntimeError。但本 gate 必须"无密钥且不调用真实模型"（Master §15.1:1550、
+    # Appendix C.4:2431）。下面的值是**占位符——不是凭据，也不授予任何访问权限**：
+    #   - 测试中的 LLM 调用均被 mock（本地实测该子集 2.4s 跑完，无网络往返）；
+    #   - 若某个测试真的发起网络请求，它只会拿到 401 并失败 —— 因此占位值**不可能掩盖**
+    #     真实的网络依赖，只会让"配置存在性检查"这一个前置条件成立。
+    # 依据（本地对照实验）：env 清空 → 恰好这 3 个测试失败；填入占位值 → 全部通过。
+    env:
+      arkcode_api: "ci-placeholder-not-a-credential"
+      deepseek_api: "ci-placeholder-not-a-credential"
+    steps:
+      # fetch-depth: 0 —— 末档 gate 与历史相关的判定需要完整历史（此处保留全历史）。
+      - name: Checkout repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Appendix C.4：Local PR Contract Gate 使用"本仓完整/测试依赖"。首次真实运行证明
+      # 只装 `[dev]` 是不够的：`validate_local.py --gate pr` 的第 6 步会跑**契约相关回归
+      # 子集**（IN_SCOPE producer 源码模块 → 引用它们的项目测试），其中
+      # `tests/agent/test_graph.py` / `test_checkpoint.py` 顶层 import langgraph，
+      # `numpy` 也是 `vector_index.py` 的顶层依赖 → 必须装 `agent` extra。
+      # （`faiss`/`sentence-transformers` 在 `vector_index.py` 内是函数内懒加载，
+      #  `deepeval` 由 `tests/eval/test_scoring.py` 注入 fake 模块，故都不需要。）
+      - name: Install project and test dependencies
+        run: python -m pip install -e ".[dev,agent]"
+
+      # G-19：`python -m build` 需要 `build` 模块；`tests/contracts/test_packaging.py`
+      # 以 `python -m build --wheel --no-isolation` 构建 wheel，其 setuptools backend
+      # 必须存在于当前环境（与 `[build-system] requires = ["setuptools>=68"]` 对齐），
+      # 故显式安装两者。
+      - name: Install build tooling (G-19)
+        run: python -m pip install build "setuptools>=68"
+
+      # 某些项目测试会创建真实提交（如 Coding 的 tests/test_issue_agent.py）。
+      # GitHub runner 默认没有 git 身份 → `git commit` 报 "Author identity unknown"。
+      # 这是环境前置条件（不是契约语义、也不引入任何凭据），故在 job 内显式配置。
+      - name: Configure git identity for commit-creating tests
+        run: |
+          git config --global user.email "contract-gate@users.noreply.github.com"
+          git config --global user.name "Contract Local Gate"
+
+      # §15.1:1570 —— schema regeneration diff：快照必须与 Pydantic 重生成一致，且无工作区写入。
+      - name: '[1/6] Generate schemas --check'
+        run: python -m agent_core.contracts.tooling.generate_schemas --check
+
+      # §15.1:1571 —— payload allowlist / descriptor / 无自引用 / Payload Hash。
+      - name: '[2/6] Verify payload'
+        run: python -m agent_core.contracts.tooling.verify_payload
+
+      # §15.1:1572 —— shared conformance tests（两仓同源 payload 测试）。
+      - name: '[3/6] Shared conformance tests'
+        run: python -m pytest agent_core/contracts/conformance -q
+
+      # §15.1:1573 —— project adapter / wiring / invariance tests。
+      - name: '[4/6] Project contract tests'
+        run: python -m pytest tests/contracts -q
+
+      # §15.1:1574 —— PR gate：payload allowlist → schema diff → descriptor/hash →
+      # conformance → project tests → contract-related regression subset（G-05）→
+      # evidence publication safety scan → clean wheel install/import/resource smoke。
+      # 该 gate 本身禁止访问另一仓（§15.1:1550）。
+      - name: '[5/6] Local PR contract gate'
+        run: python scripts/contracts/validate_local.py --gate pr
+
+      # §15.1:1575 / Appendix C.3 —— package smoke；在源树产生 build/ 目录属预期。
+      - name: '[6/6] Package smoke (python -m build)'
+        run: python -m build
+
+# =============================================================================
+# 受控手动运行（这些**不是** workflow；G-06：Spec10:29 只允许本文件在内的 3 个
+# Wiki workflow 文件，L2/L3 是受控手动运行，禁止为其新增 workflow 文件）
+# =============================================================================
+#
+# L2 —— Historical replay（Master §13.2 / Appendix C.1:2378-2380；Spec12）：
+#   $env:AGENT_CONTRACT_MODE='strict'; $env:AGENT_CONTRACT_RUN_ID='<run_id>'; python scripts/contracts/replay_history.py --run-manifest config/contracts/replay-v0.1.json
+#
+# L3 —— Fresh smoke（Master §11.2/§13.3 / Appendix C.1:2382-2384；Spec13）：
+#   L3a 驱动真实业务路径 + 写运行后汇总（A2 新增的受控驱动器；`--gate smoke` 本身只校验）：
+#   $env:AGENT_CONTRACT_MODE='observe'; $env:AGENT_CONTRACT_RUN_ID='<run_id>'; $env:AGENT_CONTRACT_COMMIT='<运行 commit>'; python scripts/contracts/run_l3_smoke.py --run-manifest config/contracts/smoke-v0.1.json
+#       它按 manifest 预登记的 case_ids 从 benchmarks/arknights_bench/questions_draft.jsonl 投影一 case 一条的 bench
+#       （可加 `--case-source <bench.jsonl>` 显式指定；预登记 id 不在 source 中即 exit 2 / SPEC_INCOMPLETE），
+#       在 observe 下跑 `python -m arknights_wiki.eval.runner --mode direct --workers 1`，
+#       测量墙钟时长、把 8 键 run-summary.json 写进 <evidence_root>/<run_id>/，最后调用下面的冻结 gate 收尾。
+#   L3b 只校验已完成的 run（同一驱动器成功时已自动执行；也可单独复核）：
+#   $env:AGENT_CONTRACT_MODE='observe'; $env:AGENT_CONTRACT_RUN_ID='<run_id>'; python scripts/contracts/validate_local.py --gate smoke --run-manifest config/contracts/smoke-v0.1.json
+#
+# Appendix C.1:2379/2383 给出的示例 run_id：'foundation-0_1_0-c1-wiki-replay' /
+# 'foundation-0_1_0-c1-wiki-smoke'。`<run_id>` 必须显式给出、与 run manifest 一致，
+# 且满足 `^[A-Za-z0-9_-]+$`（EVD-RUN-001）。L3a/L3b 还要求仓库就是运行 commit 的
+# checkout（manifest 的 repository_commit 为 null 时由 AGENT_CONTRACT_COMMIT 解析，
+# 不自动推断 HEAD）；任一前置不满足时 exit 2 且 stderr 打 SPEC_INCOMPLETE，
+# run 未闭合时 exit 1 且 stderr 打 SPEC_STATUS_CONFLICT（G-18）。
+#
+# 另一条受控手动命令（同样不是 workflow）——Cycle Candidate Gate（§15.1:1576）：
+#   python scripts/contracts/validate_local.py --gate candidate
+#   其回归期望与仓库现状存在冲突（G-07），且触发方式未定义（G-06），不得自行接入 CI。
+#
+# L2/L3 不得在本 workflow 内以任何形式运行：它们需要真实业务路径/模型密钥，
+# 而本 job 是"无密钥 + 不调用真实模型"的 L1 gate。
+# =============================================================================
