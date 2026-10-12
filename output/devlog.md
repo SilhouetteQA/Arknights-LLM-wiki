@@ -3074,3 +3074,135 @@ max_calls            = 12     ← 单次全新运行实测 62 次调用
    每份都含同一批最早事件 —— **同一批字节出现在多个"独立"归档里，就是叠加的铁证**。
 3. **假通过比失败更危险**：陈旧证据能让一次只跑出 1 对的运行被记为 7 对覆盖。凡是"状态目录
    跨运行复用"的地方，都要问一句"这里会不会把上一次的结果算成这一次的"。
+
+---
+
+## 2026-09-19 → 2026-10-12 续执行：A9 闭环 → Evidence B2 → Finalization C → Spec 16–18 治理评估
+
+> 本节补齐一段记录缺口：A9 / B2 / C 的收口过程当时只写进了 `README.md` 与
+> `docs/plans/2026-09-16-foundation-contract-spec11-stage0-calibration.md` §12–13，
+> devlog 停在 2026-09-17（五续）A8。以下内容按该两份文档 + git 历史复述，未新增任何工程结论。
+
+### 提交时间线（2026-09-19 → 2026-10-11）
+
+| 提交 | 内容 |
+|---|---|
+| `4c6acb6`(09-19) | A8 定案 F8（陈旧证据 / 假通过路径）；Spec 11/12 绑定 A8；F9 交用户决策 |
+| `30f598c` | 发布 Wiki Evidence B（0.1.0） |
+| `8a39c8b` | 发布 Wiki Evidence B2 协调字段 |
+| `146e9c4` | **Finalization C**（`contract-cycle/foundation-0.1.0-cycle-1`） |
+| `2624fd8` | `feature/foundation-contract-spec10` 记录 Cycle 完成 |
+| `a8067dc` / `d21666b` | Wiki 主分支两次 merge，接入 C 与进度记录 |
+| `04517c7` | 关闭 Foundation Contract Cycle 1 |
+| `71f29d7` | `chore: preserve foundation finalization bytes`（`.gitattributes` 固定终结产物不做换行转换） |
+| `f157452` / `0487160` | 剩余治理评估（Spec 16–18）开始与完成 |
+
+### A9_coding：F9 的处置（用户决策 = 方案甲）
+
+上一轮把 F9（同一 manifest 内 `timeout_seconds=600` 与 `duration_cap_seconds=1800` 自相矛盾）交用户
+决策。用户批准方案甲：**只把 `timeout_seconds` 对齐为 1800，不动 `estimated_cost_cap`，也不动
+`max_calls`**。这不是事后放宽门槛 —— 声明预算始终是 1800s，修的是预登记自身的内部不一致。
+
+| 项 | 结果 |
+|---|---|
+| A9_coding | `ae186533cfef35df9c7832c27fcf60a627de433d` |
+| L3（真实运行） | **87.516s** 结束，产出 **23** 条事件，required producer/stage 全覆盖，sink failure 0、rejected record 0，`--gate smoke` **8/8 PASS** |
+| 调用口径复核 | 23 条事件含 11 条 `coding.agent.llm_usage` + 11 条镜像 `coding.trace.generation_usage` = **11 次逻辑 provider call**，未达 `max_calls=12`；`run-summary.actual_calls=22` 是冻结实现定义的 usage 观测条数 |
+| L2 | 绑定同一提交 **PASS**：3 records / 3 sources / 0 adapter defects |
+| L1.1–L1.6 | 全 exit 0：conformance **224 passed**、`tests/contracts` **245 passed**、`--gate pr` **8/8**、`python -m build` PASS |
+| 全量回归 | **642 passed / 3 skipped / 0 failed**；Docker 集成另有 10 passed |
+| pending suffix | 追加 A9 的 Spec 11–13 状态事件并通过真实 reducer：event_count=**62**，Specs 01–13 effective status 全 `COMPLETE` |
+
+### Evidence Publication B2 与 Finalization C
+
+| 项 | 值 |
+|---|---|
+| B2_wiki | `8a39c8b4a37ff0eb11823d8563cd8743b15722e2` |
+| B2_coding | `c364b0201f83b748cbea60ddfa4217c6dc46040d` |
+| A→B diff | wiki 8 文件 / coding 7 文件，**全部在 evidence publication allowlist 内** |
+| Evidence Manifest hash | wiki `sha256:871fe9f5…` / coding `sha256:06cc0742…`（两仓不同是正常事实，§16.3:1660） |
+| 协调结果 | `PASS / READY_FOR_FINALIZATION`；canonical hash `sha256:277ab38f852e74359d0ba2acf145197647e0c0fc57fee15d23868a6aed3e3489`；run_id `foundation-0_1_0-c1-coordinate-b2` |
+| C_wiki | `146e9c4260eb0e509fc6f6379c15e4c7f95c4669`；finalizer **8/8 PASS**，B 为 C 祖先，C 严格满足 finalization allowlist |
+| 账本归约 | canonical event_count=**119**，Specs **01–15 全 `COMPLETE`** |
+| 双仓集成 | Wiki 主分支 merge `d21666b`；Coding 主分支**快进**到 B2 `c364b020` |
+
+主分支 candidate gate 实测：
+
+| 仓 | conformance | 契约测试 | 业务范围 | 全量回归 | 发布扫描 |
+|---|---|---|---|---|---|
+| Wiki | 224 passed | 368 passed / 3 skipped | 139 passed | **913 passed / 10 skipped / 0 failed** | 9 文件无命中 |
+| Coding | 224 passed | 245 passed | 197 passed | **632 passed / 13 skipped / 0 failed** | 7 文件无命中 |
+
+> **口径差异（本次复核发现，原记录未解释）**：Coding 在 **A9 干净检出**上是 642 passed / **3 skipped**，
+> 在主分支 candidate gate 上是 632 passed / **13 skipped**，差值恰好 10 项。推断为 Docker 守护进程未起
+> 导致 10 个 docker 集成测试被跳过（与 A8 那轮的教训同因），但该推断**未经复核**，仅登记为待核项。
+
+另修一类"假失败"：`core.autocrlf` 会在检出时改写已提交终结产物的换行，使字节级 Finalizer 复核误判。
+已用 `.gitattributes` 把 Foundation 终结产物固定为不做换行转换（`71f29d7`）。
+
+### Spec 16 / 17 / 18：治理评估完成，**归并未获授权**
+
+Cycle 1 收口后，三个 Spec 在当前权限下允许的工作（Evidence intake + gate assessment）已全部做完：
+
+| Spec | 门禁输出 | 含义 |
+|---|---|---|
+| 16 Cycle 2 反馈接收 | `NO_ARTIFICIAL_V0_2` / `FOUNDATION_REMAINS_CYCLING_AT_0.1.0` | Cycle 1 暴露的问题（F3/F4/F8/F9、Windows CRLF）**全部**归因为 Adapter / 接线 / 工具 / 预登记 / packaging 缺陷，**没有一例 Contract defect** → 无合法 Cycle 2 trigger |
+| 17 Foundation 抽取门禁 | **`NOT_READY_FOR_EXTRACTION`** | 不创建 `agent-core` distribution、不删 local mirror、不改 imports/dependencies/packaging |
+| 18 未来 family 入口门禁 | Model / Tool / Observability / Evaluation / Checkpoint **全部 `REMAIN_EXPERIMENTAL`** | 五个 family 均不得进 CYCLING |
+
+Spec 17 的 12 项 eligibility 逐项结论（即"双仓架构归并"为什么一步没走的完整答案）：
+
+| 条件 | 结论 |
+|---|---|
+| cycle_1_complete / shared_contract_tests_pass / wiki_regression_pass / coding_regression_pass / zero_new_safety_violation | ✅ PASS（5 项） |
+| duplicate_adapter_evidence | ⚠️ PARTIAL —— 两仓均有 facts/mapping/runtime/sink，但 diff 显示大量项目专有实现，尚不能证明抽取会降低总复杂度 |
+| semantic_divergence_acceptable | ❓ NOT ESTABLISHED —— Payload 一致，但 Adapter 差异未经过第二轮真实演进验证 |
+| cycle_2_complete / real_feedback_revision_exists / rollback_verified / dependency_boundary_stable / reproducible_quality_gate | ❌ FAIL（5 项） |
+
+**关键结构约束**：抽取公式硬要求 `cycle_1_complete AND cycle_2_complete AND …`；而 Spec 16 判定
+"Cycle 1 无 Contract defect" → Cycle 2 缺合法 trigger → **归并前置条件在逻辑上自锁**。这不是"代码没写"，
+是"两轮真实 Cycle"这条证据要求当前无法满足。
+
+归并现状（本次实测确认）：`agent_core/**` 为双仓**逐字节相同的镜像**（两仓 `verify_payload` 均为
+40 文件、`payload_hash=sha256:64049830…`、`schema_set_hash=sha256:d785d52d…`），差异全部由各仓自持
+Adapter 表达；`06_双旗舰Agent_统一工程化路线.md` 规划的 11 类公共模块中，v0.1 只归并了**事实语义**
+（Usage / Cost / CostSummary / ErrorEnvelope / FoundationObservation / EvidenceRecord）。
+
+### 工作树与残留清理（2026-10-12）
+
+清理前实测盘点（同时修正了一处口头误记）：
+
+| 路径 | 性质 | 处置 |
+|---|---|---|
+| `_worktrees/foundation-contract/wiki` | worktree，`feature/foundation-contract-spec10` @ 2624fd8 | **保留**（ahead 1 未推送） |
+| `_worktrees/foundation-contract/cycle/wiki` | worktree，`contract-cycle/foundation-0.1.0-cycle-1` @ 146e9c4 | **保留**（ahead 3 未推送；含 pending/void/contract-validation 过程留痕） |
+| `_worktrees/foundation-contract/verify-wiki-lf` | ⚠️ **独立 clone**（`autocrlf=false`，remote 指向本仓），**不是 worktree** | **已删除**（仅为禁用换行转换的字节复验副本，验证已通过，可由 clone 复现） |
+| `%TEMP%\fc-a3-wiki` | 游离 worktree @ A3 `3972c88` | **已删除**。其未提交的 `pricing.json` 实测为**编码损坏**（GBK/UTF-8 误解码，2036B vs 提交版 3344B，行结构相同），非真实成果；正式内容已在 A4 `554bce2` |
+| `%TEMP%\fc-a4-wiki` | 游离 worktree @ A4 `554bce2` | **已删除**（未提交内容仅为主仓同样存在的运行时评测数据） |
+| `_worktrees/.../coding`、`cycle/coding` | Coding 仓两个 worktree | **保留**（push 流程未走完） |
+| `_worktrees/foundation-contract/_baseline/` | 非 git 目录：Spec 01–09 校准脚本与消息留痕 | **保留**（治理证据留痕） |
+| Coding 仓根 `06_双旗舰Agent_统一工程化路线.md` | 未跟踪副本，SHA256 与本仓**逐字节相同** | **已删除**（母 Spec 规定 Coding 仓不得保存本目录副本） |
+
+删除操作因目标位于会话工作区之外首次被文件沙箱拒绝，经一次性提权后完成。`git worktree prune` 后两仓
+注册表干净（Wiki 3 个、Coding 2 个）。
+
+### 遗留与待办
+
+1. **push 未执行**：Wiki `main` 领先 `origin/main` **58** 个提交；`contract-cycle/*` 两仓各 ahead 3；
+   `feature/foundation-contract-spec10`（wiki）ahead 1。清单需用户确认后再推送（G-04）。
+2. **Coding 回归口径差异**（642/3 vs 632/13）待复核，见上文推断。
+3. **Spec 16–18 无工程待做**：6 项 FAIL 中没有一项能靠继续写代码消除，规范要求停手等真实 trigger。
+4. **若要把归并推下去**，合法下一步不是写抽取代码，而是先按 Spec 17 建 **immutable pre-extraction
+   baseline** + 做一次 **mirror rollback 演练**，且必须另立 implementation-ready Spec（当前不存在）。
+5. 主工作区仍有 2 个刻意保留的未提交文件：`data/extractions/v3_seed_db_v2.json`、
+   `output/eval/cost_log.jsonl`（§12 明确"未提交评测数据保持不变"）。
+
+### 会话恢复指南（下会话）
+
+```text
+1. 读 README.md 的 Foundation Contract 章节（已是最终状态）
+2. 读 calibration §12（Cycle 1 收口）/ §13（Spec 16–18 判定）
+3. 状态源：scripts/contracts/status_ledger.py validate --ledger docs/specs/foundation-contract/execution-status-events.jsonl
+   → 期望：01–15 COMPLETE / 16–18 NOT_STARTED / canonical_events=119 / pending_suffix=null
+4. 权威解释器：D:\CodexPython312\python.exe（PATH 里的 python 无依赖）
+```
