@@ -229,6 +229,8 @@ def build_benchmark_spec(
         },
         "corpus": corpus,
         "materials": materials_hashes(materials_dir),
+        #: 参考数据所在目录：冻结副本旁边**没有** materials/，校验必须回到这里
+        "materials_dir": str(Path(materials_dir)),
         "prompt_hashes": prompt_hashes(root),
         "models": model_identity(),
         "temperature_policy": dict(TEMPERATURE_POLICY),
@@ -283,10 +285,15 @@ def verify_manifest(spec_path: Path | str, root: Path | str | None = None) -> tu
         if ids != corpus.get("case_ids"):
             problems.append("case_ids 顺序或内容与冻结清单不一致")
 
-    for name, want in (spec.get("materials") or {}).items():
-        got = sha256_file(Path(bench).parent / "materials" / name)
-        if got != want:
-            problems.append(f"materials/{name} 哈希不一致")
+    mat_hashes = spec.get("materials") or {}
+    mat_dir = Path(spec.get("materials_dir") or (Path(bench).parent / "materials"))
+    if mat_hashes and not mat_dir.is_dir():
+        problems.append(f"materials 目录缺失: {mat_dir}")
+    else:
+        for name, want in mat_hashes.items():
+            got = sha256_file(mat_dir / name)
+            if got != want:
+                problems.append(f"materials/{name} 哈希不一致")
 
     for rel, want in (spec.get("prompt_hashes") or {}).items():
         got = sha256_file(Path(root) / rel)

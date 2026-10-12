@@ -138,6 +138,37 @@ class TestBenchmarkSpec:
         assert not ok
         assert any("提示词/评分语义已变更" in p for p in problems)
 
+    def test_verify_manifest_resolves_materials_from_recorded_dir(self, workdir):
+        """回归：冻结副本旁边没有 materials/，校验必须按记录的 materials_dir 去找。
+
+        首次真实冻结时此校验报了 7 个「materials/*.json 哈希不一致」——因为校验端
+        默认在冻结文件旁边找 materials/。自校验没有空转，正是它挡住了这次冻结。
+        """
+        root = self._root_with_prompt(workdir)
+        mats = workdir / "materials"
+        mats.mkdir(parents=True, exist_ok=True)
+        (mats / "character.json").write_text('[{"name": "测试"}]', encoding="utf-8")
+        bench = _write_jsonl(workdir / "questions.jsonl", SAMPLE)
+
+        frozen_dir = workdir / "frozen" / "v1"
+        frozen_dir.mkdir(parents=True, exist_ok=True)
+        frozen_bench = _write_jsonl(frozen_dir / "questions.jsonl", SAMPLE)
+        spec_path = frozen_dir / "MANIFEST.json"
+        freeze.write_benchmark_spec(
+            spec_path, freeze.build_benchmark_spec(frozen_bench, mats, root)
+        )
+
+        # 冻结副本旁边确实没有 materials/
+        assert not (frozen_dir / "materials").exists()
+        ok, problems = freeze.verify_manifest(spec_path, root=root)
+        assert ok, problems
+
+        # 内容漂移仍必须被发现
+        (mats / "character.json").write_text('[{"name": "改了"}]', encoding="utf-8")
+        ok, problems = freeze.verify_manifest(spec_path, root=root)
+        assert not ok
+        assert any("materials/character.json" in p for p in problems)
+
     def test_missing_corpus_is_not_pass(self, workdir):
         root = self._root_with_prompt(workdir)
         bench = _write_jsonl(workdir / "questions.jsonl", SAMPLE)
