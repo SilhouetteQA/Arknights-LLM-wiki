@@ -13,6 +13,7 @@ W2 Failure Recovery: 工具执行经 execute_with_resilience（timeout→retry�
 import concurrent.futures
 import contextvars
 import json
+import logging
 import os
 
 from langgraph.graph import StateGraph, END
@@ -301,7 +302,14 @@ def synthesize_node(state: AgentState) -> AgentState:
                 ],
                 temperature=0.3,
             )
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
+            # W11-D3（可观测性缺陷）：回退文案保持不变，但故障**必须可见**。
+            # 此前这里静默吞掉一切异常，于是 provider 整合引入的 400 缺陷让
+            # 「agent 每个问题都回退」持续了三周没被发现（W11-D1）。
+            logging.getLogger(__name__).warning(
+                "synthesize_node LLM 调用失败，返回回退文案: %s: %s",
+                type(e).__name__, str(e)[:300],
+            )
             answer = "抱歉，回答生成出了点问题。请稍后再试。"
 
     state["messages"] = state["messages"] + [

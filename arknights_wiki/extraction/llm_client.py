@@ -256,13 +256,20 @@ def chat_completion(
 
     def _do_create():
         client = create_client()
-        return client.chat.completions.create(
-            model=config["model"],
-            messages=messages,
-            temperature=temperature,
-            max_tokens=max_tokens or config["max_tokens"],
-            tools=tools,
-        )
+        create_kwargs = {
+            "model": config["model"],
+            "messages": messages,
+            "temperature": temperature,
+            "max_tokens": max_tokens or config["max_tokens"],
+        }
+        # W11-D1（阻塞缺陷）：`tools=None` 时**不要**把它放进请求。
+        # OpenAI SDK 会序列化成 `"tools": null`，而 command_goat 网关对此直接返回
+        # 400 Invalid input: expected array, received null (param: tools) —— 400 不在
+        # 可重试异常里，于是一次即失败；synthesize_node 又静默吞异常，表现为
+        # 「agent 每个问题都返回回退文案」。实测：122 题跑批 13/13 全回退。
+        if tools:
+            create_kwargs["tools"] = tools
+        return client.chat.completions.create(**create_kwargs)
 
     from arknights_wiki.observability import is_enabled, record_llm_usage
 

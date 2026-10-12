@@ -10,6 +10,7 @@
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime
 from pathlib import Path
 
@@ -27,18 +28,24 @@ from arknights_wiki.eval import config as eval_config
 from arknights_wiki.eval.llm import chat
 from arknights_wiki.eval.metrics import hallucination_rate, rule_metrics  # 单一数据源
 
-COST_LOG = Path(__file__).resolve().parents[2] / "output" / "eval" / "cost_log.jsonl"
+def cost_log_path() -> Path:
+    """成本日志路径（W11-D2，与 judge.py / runner.py 同口径）：尊重 `ARKNIGHTS_COST_LOG`。"""
+    env = os.environ.get("ARKNIGHTS_COST_LOG", "").strip()
+    if env:
+        return Path(env)
+    return Path(__file__).resolve().parents[2] / "output" / "eval" / "cost_log.jsonl"
 
 
 def _log_cost(entry: dict) -> None:
-    COST_LOG.parent.mkdir(parents=True, exist_ok=True)
+    cost_log = cost_log_path()
+    cost_log.parent.mkdir(parents=True, exist_ok=True)
     entry["timestamp"] = datetime.now().isoformat(timespec="seconds")
     # Spec 07 旁路观察：entry 形成后、实际写入前观察（stage=scoring）。
     # 不改 entry、不改路径/编码/append 次数，也不改变任何返回。
     from arknights_wiki.adapters.foundation.runtime import observe_eval_cost_entry
 
     observe_eval_cost_entry(entry, stage="scoring")
-    with COST_LOG.open("a", encoding="utf-8") as f:
+    with cost_log.open("a", encoding="utf-8") as f:
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 

@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime
 from pathlib import Path
 
@@ -14,18 +15,30 @@ from arknights_wiki.eval import config as eval_config
 from arknights_wiki.eval.llm import chat_json
 from arknights_wiki.eval.metrics import rule_metrics  # 单一数据源（judge/scoring 共用）
 
-COST_LOG = Path(__file__).resolve().parents[2] / "output" / "eval" / "cost_log.jsonl"
+
+def cost_log_path() -> Path:
+    """成本日志路径（W11-D2）。
+
+    与 `runner.py` 同口径：尊重 `ARKNIGHTS_COST_LOG`。此前这里**硬编码**全局路径，
+    于是 `--out <dir>` 的跑批把 judge 开销写到别处 —— 冻结基线的成本章节会漏掉
+    全部 judge 成本（实测：17 条 judge 落全局、14 条 agent 落基线目录）。
+    """
+    env = os.environ.get("ARKNIGHTS_COST_LOG", "").strip()
+    if env:
+        return Path(env)
+    return Path(__file__).resolve().parents[2] / "output" / "eval" / "cost_log.jsonl"
 
 
 def _log_cost(entry: dict) -> None:
-    COST_LOG.parent.mkdir(parents=True, exist_ok=True)
+    cost_log = cost_log_path()
+    cost_log.parent.mkdir(parents=True, exist_ok=True)
     entry["timestamp"] = datetime.now().isoformat(timespec="seconds")
     # Spec 07 旁路观察：entry 形成后、实际写入前观察（stage=judge）。
     # 不改 entry、不改路径/编码/append 次数，也不改变任何返回。
     from arknights_wiki.adapters.foundation.runtime import observe_eval_cost_entry
 
     observe_eval_cost_entry(entry, stage="judge")
-    with COST_LOG.open("a", encoding="utf-8") as f:
+    with cost_log.open("a", encoding="utf-8") as f:
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 JUDGE_SYSTEM_PROMPT = """你是《明日方舟》剧情专家评审。你只依据给出的「参考答案与证据」和「用户答案」进行客观评分，不臆测。
