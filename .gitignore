@@ -54,6 +54,13 @@ output/frontend-comparison.html
 output/_w11_probe/tmp/
 output/_w11_probe/tmpprobe/
 output/_w11_probe/junit/
+output/_w11_probe/t3_scratch/
+output/_w11_probe/t3_demo/
+output/_w11_probe/pytest_coding/
+
+# W11-α 中止跑批的缺陷证据（W11-D1：agent 100% 回退）：保留在磁盘但不入库，
+# 因为它是一次无效运行；结论与哈希记录在 output/devlog.md 与 Spec §3.9。
+output/eval/_aborted_provider_defect_20261012/
 
 # W2 checkpoint DB
 output/checkpoints/

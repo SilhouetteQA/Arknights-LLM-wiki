@@ -160,6 +160,34 @@ Coding:
 
 ---
 
+### 3.7 冻结口径与已决事项（2026-10-12）
+
+| 事项 | 决定 | 依据 |
+|---|---|---|
+| 取值域新增 `expected_behavior="reject"` / `route="reject"` | **接受并显式声明** | base 100 题实测只用 `complex 62 / simple 38`；`arknights_wiki/eval/metrics.py:99` 存在 `reject` 真实分支。冻结 MANIFEST 必须记录取值分布 |
+| 取值域新增 `meta_eval.verdict="skipped"` | **接受**；冻结过滤**不得**要求 `verdict=="pass"` | 元评估是作者辅助而非测量；本批**未跑** LLM 元评估，拒绝伪造 `pass`（base 取值为 pass 92 / reject 5 / review 3） |
+| 拒绝词白名单（`metrics.py:100`） | **暂不扩建**，登记为已知限制 | 它是确定性指标，凭空放宽会掩盖问题。基线报告的覆盖率与 `task_completion` 分布将作为证据；若出现系统性假阴性，形成 `w11a-v2` 并登记 SUPERSEDED 原因 |
+| 既有 `manual_draft.jsonl`（13+13） | **不并入冻结集** | 实测缺 `route`/`chapter_check`/`material_refs`/`meta_eval` 四个字段、`expected_behavior` 混用（complex 11 / reject 15）、`answer_key.evidence` 为空（无验证证据） |
+| 被审阅字节 = 被冻结字节 | **强制校验** | `scripts/eval/freeze_corpus.py` 要求 `--reviewed-sha256` 等于审阅文件哈希；不匹配即中止，防止冻结未经审阅的内容 |
+| T6 执行拆分 | **T6a Wiki 先行；T6b Coding 随后** | Coding 侧需 GitHub clone + 执行器（Docker / 网络就绪后执行）；若阻塞则如实记 `BLOCKED`，不放宽任何标准 |
+
+### 3.8 Coding 侧已实现的测量字段（T3，2026-10-12）
+
+在 Coding 仓 `feature/pre-extraction-baseline` 上落地（提交 `66302c7`，31 条改动 / 6 文件，`pytest` 91 passed）：
+
+`RunMetadata` 增补 `provider` / `base_url` / `temperature` / `max_tokens` / `executor_actual` / `sandbox_policy` /
+`iteration_limits` / `timeouts` / `resolution_definition_version` / `side_effect_policy` / `judge_prompt_sha256`；
+`cost_usd` 不再是假 `0.0`（价格表为空时写 `null` + `cost_source="unknown"`）；
+`loader` 支持可选 `repository_commit` 与 `cases.lock.json`；`docker_sandbox` 记录**实际**执行器与生效 sandbox 策略。
+
+**已知缺口（必须随冻结清单披露，不得掩饰）**：
+1. `temperature` / `max_tokens` 目前记为 `null` —— Coding 的 `LLMClient` 不发送这两个参数（provider 默认值）。
+   要在冻结中固定真实采样参数，需要改 `agent/llm.py`（超出 T3 范围，另立决定）。
+2. `benchmark/frozen/<ver>/cases.lock.json` 尚未编写（缺真实 fixture commit）→ `repository_commit` 仍为空字符串。
+3. `sandbox_policy.executor` 在无 Docker 环境下只能回显声明值；docker 分支的实际执行器记录未在本机验证。
+
+
+
 ## 4. 验收标准
 
 1. 两仓 BenchmarkSpec 的 §24 字段**全部有值**，且任何一方都可从冻结件重算出相同哈希。
