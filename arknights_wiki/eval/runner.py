@@ -294,6 +294,36 @@ def _run_and_score(item: dict, mode: str, args) -> dict:
     return row
 
 
+def _drop_error_rows(results_path: Path) -> int:
+    """移除此前写下的失败行（W11-D6），返回移除条数。
+
+    失败行判定：`route == "error"` 或 answer 以 `[run error` / `[http 调用失败` 开头。
+    动机：一次性 400/超时失败会给结果文件留下"已存在"的错误行，断点续跑会跳过它们，
+    于是失败被永久固化。`--retry-errors` 把"重试失败题"变成**显式且可复现**的动作，
+    而不是靠手工改结果文件。
+    """
+    if not results_path.exists():
+        return 0
+    kept: list[str] = []
+    dropped = 0
+    for line in results_path.read_text(encoding="utf-8").splitlines():
+        s = line.strip()
+        if not s:
+            continue
+        try:
+            row = json.loads(s)
+        except json.JSONDecodeError:
+            continue
+        answer = str(row.get("answer", ""))
+        if row.get("route") == "error" or answer.startswith(("[run error", "[http 调用失败")):
+            dropped += 1
+            continue
+        kept.append(s)
+    if dropped:
+        results_path.write_text("\n".join(kept) + "\n", encoding="utf-8")
+    return dropped
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="W0 Benchmark 评测运行器")
     parser.add_argument("--bench", default=str(ROOT / "benchmarks" / "arknights_bench" / "questions.jsonl"))
@@ -305,6 +335,10 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--no-judge", action="store_true", help="只跑 agent 不评分（试跑用）")
     parser.add_argument("--workers", type=int, default=1, help="并发 worker 数（>1 时并行跑批加速）")
+    parser.add_argument(
+        "--retry-errors", action="store_true",
+        help="W11-D6：先移除此前写下的失败行（route=error / [run error]），再按断点续跑重试它们",
+    )
     args = parser.parse_args()
 
     bench_path = Path(args.bench)
@@ -367,6 +401,10 @@ def main() -> int:
     )
     results_path = out_dir / "results_v1.jsonl"
     existing = _existing_ids(results_path)
+    if args.retry_errors:
+        dropped = _drop_error_rows(results_path)
+        print(f"[retry-errors] 移除 {dropped} 行先前失败的记录，本次将重跑它们")
+        existing = _existing_ids(results_path)
 
     tasks = [
         (item, mode)
@@ -392,7 +430,11 @@ def main() -> int:
                 except Exception as e:  # noqa: BLE001
                     print(f"  ! {item['id']}:{mode} 失败: {str(e)[:200]}")
                     _write_result(results_path, {
-                        "id": item["id"], "mode": mode, "question": item["question"],
+                        "id": item["id"], "mode": mode,
+                        # W11-D6：失败行也必须写 category —— 此前缺失导致聚合里出现 "?" 类别（n=0），
+                        # 13 行失败把一个不存在的类别带进了报告。
+                        "category": item.get("category", ""),
+                        "question": item["question"],
                         "answer": f"[run error: {str(e)[:200]}]", "route": "error",
                         "latency_ms": 0, "cost": 0.0,
                         **_RUN_META,

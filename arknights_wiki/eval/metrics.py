@@ -139,7 +139,12 @@ def aggregate(results: list[dict]) -> dict:
             for m in METRICS:
                 vals = [v for v in (_metric_value(row, m) for row in cat_rows) if v is not None]
                 cat_vals[m] = _mean(vals) if vals else None
-            cat_vals["overall"] = _mean([v for v in cat_vals.values() if v is not None])
+            # W11-D5：overall 只能对**指标值**取均值。此前对 `cat_vals.values()` 取均值，
+            # 把 `count` 也算进去了 ⇒ 分八类的 overall 实际是"和"，实测出现 2.596 / 3.091
+            # 这种 >1 的均值（0–1 区间指标不可能 >1）。历史报告同此缺陷。
+            cat_vals["overall"] = _mean(
+                [cat_vals[m] for m in METRICS if cat_vals.get(m) is not None]
+            )
             per_cat[cat] = cat_vals
         out["by_mode"][mode] = {
             "metrics": per_metric,

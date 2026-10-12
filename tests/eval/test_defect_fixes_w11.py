@@ -192,6 +192,73 @@ class TestD4JudgeSeesRetrievalContext:
         assert "实际检索" in captured["system"], "系统提示词也要说明判据含实际检索资料"
 
 
+class TestD5CategoryOverall:
+    """D5：分八类的 overall 只能是指标均值，不得把 count 混进去。"""
+
+    def _row(self, rid, cat, ac, faith):
+        return {
+            "id": rid, "mode": "direct", "category": cat,
+            "judge": {"answer_correctness": ac, "faithfulness": faith, "hallucination": 0},
+            "metrics": {"tool_selection_accuracy": 1.0, "task_completion": 1.0},
+        }
+
+    def test_category_overall_is_within_unit_range(self):
+        from arknights_wiki.eval.metrics import aggregate
+
+        rows = [self._row(f"c{i}", "character", 1.0, 1.0) for i in range(18)]
+        agg = aggregate(rows)
+        for cat, vals in agg["by_mode"]["direct"]["categories"].items():
+            assert 0.0 <= vals["overall"] <= 1.0, f"{cat} overall 越界: {vals['overall']}"
+        assert agg["by_mode"]["direct"]["categories"]["character"]["overall"] == 1.0
+
+    def test_count_no_longer_inflates_overall(self):
+        """18 条全 1.0 时，旧实现会因 count=18 得到 (18+5)/6=3.83 这种荒谬值。"""
+        from arknights_wiki.eval.metrics import aggregate
+
+        rows = [self._row(f"c{i}", "character", 1.0, 1.0) for i in range(18)]
+        vals = aggregate(rows)["by_mode"]["direct"]["categories"]["character"]
+        assert vals["count"] == 18
+        assert vals["overall"] == 1.0, "overall 不得受 count 影响"
+
+
+class TestD6FailedRowKeepsCategory:
+    """D6：失败行必须保留 category，否则报告里会冒出 '?' 类别。"""
+
+    def test_drop_error_rows_removes_only_failures(self, workdir):
+        from arknights_wiki.eval import runner as r
+
+        path = workdir / "results_v1.jsonl"
+        good = {"id": "a", "mode": "direct", "category": "event", "answer": "正常答案", "route": "complex"}
+        bad = {"id": "b", "mode": "direct", "category": "", "answer": "[run error: 400]", "route": "error"}
+        httpbad = {"id": "c", "mode": "http", "category": "event", "answer": "[http 调用失败: x]", "route": "error"}
+        path.write_text(
+            "\n".join(__import__("json").dumps(x, ensure_ascii=False) for x in (good, bad, httpbad)) + "\n",
+            encoding="utf-8",
+        )
+        dropped = r._drop_error_rows(path)
+        assert dropped == 2
+        left = path.read_text(encoding="utf-8").strip().splitlines()
+        assert len(left) == 1
+        assert '"id": "a"' in left[0]
+
+    def test_drop_error_rows_noop_when_clean(self, workdir):
+        from arknights_wiki.eval import runner as r
+
+        path = workdir / "results_v1.jsonl"
+        path.write_text('{"id": "a", "route": "simple", "answer": "ok"}\n', encoding="utf-8")
+        assert r._drop_error_rows(path) == 0
+
+    def test_error_row_includes_category(self):
+        """源码级钉子：失败行字典必须带 category（此前缺失）。"""
+        import inspect
+
+        from arknights_wiki.eval import runner as r
+
+        src = inspect.getsource(r.main)
+        assert '"category": item.get("category", "")' in src
+        assert "--retry-errors" in inspect.getsource(r.main)
+
+
 class TestD3FailureVisibility:
     """D3：回退文案不变，但失败必须留下告警（否则故障不可见）。"""
 
