@@ -41,24 +41,59 @@ def _log_cost(entry: dict) -> None:
     with cost_log.open("a", encoding="utf-8") as f:
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
-JUDGE_SYSTEM_PROMPT = """你是《明日方舟》剧情专家评审。你只依据给出的「参考答案与证据」和「用户答案」进行客观评分，不臆测。
+JUDGE_SYSTEM_PROMPT = """你是《明日方舟》剧情专家评审。你只依据给出的「参考答案与证据」「Agent 实际检索到的资料」和「用户答案」进行客观评分，不臆测。
 
 评分指标（全部输出 0-1 的小数，保留 1 位）：
 1. answer_correctness：答案的事实正确性（与参考答案要点一致程度）
-2. faithfulness：答案声称的内容是否都能在提供的证据/知识库依据中找到出处（无依据即扣分）
+2. faithfulness：答案声称的内容能否在**实际检索到的资料或参考答案证据**中找到出处（无依据即扣分）
 3. citation_accuracy：答案中提及的章节/角色/组织等引用是否准确；若答案完全不涉及引用，输出 null
-4. hallucination：答案是否存在明显编造/无依据的断言（0=无幻觉，1=有幻觉）
+4. hallucination：答案是否存在**在上述两类依据中都找不到出处**的编造/无依据断言（0=无幻觉，1=有幻觉）
+
+注意：只有在一份依据里出现即可算"有据"——实际检索资料与参考答案证据互为补充，不得因为某条事实只出现在其中一方就扣分。
 
 输出严格 JSON：{"answer_correctness": 0.0-1.0, "faithfulness": 0.0-1.0, "citation_accuracy": 0.0-1.0|null, "hallucination": 0|1, "reason": "一两句中文理由"}"""
 
+#: W11-D4：传给 judge 的检索上下文总量上限（控制在成本与失真之间的平衡）
+_MAX_CONTEXT_CHARS = 7000
+_MAX_CTX_DOC_CHARS = 1200
 
-def _build_prompt(question: str, answer: str, answer_key: dict) -> str:
+
+def _render_context(retrieval_context: list[str] | None) -> str:
+    """把 agent 实际检索到的资料渲染成 judge 可读的段落（W11-D4）。
+
+    此前 judge 只拿到参考答案，于是长答案里凡不在参考答案里的内容都被判为"无据"——
+    faithfulness 被系统性压低、hallucination 被系统性判 1，而这两项指标名义上衡量的正是
+    "是否有据"。实际检索上下文一直存在（结果行里的 `retrieval_context`），只是没传给 judge。
+    """
+    docs = [d for d in (retrieval_context or []) if d]
+    if not docs:
+        return "（本次未记录到检索资料）"
+    parts: list[str] = []
+    used = 0
+    for i, doc in enumerate(docs, 1):
+        text = str(doc)[:_MAX_CTX_DOC_CHARS]
+        if used + len(text) > _MAX_CONTEXT_CHARS:
+            parts.append(f"[{i}] （后续资料因上下文预算省略）")
+            break
+        parts.append(f"[{i}] {text}")
+        used += len(text)
+    return "\n\n".join(parts)
+
+
+def _build_prompt(
+    question: str,
+    answer: str,
+    answer_key: dict,
+    retrieval_context: list[str] | None = None,
+) -> str:
     summary = (answer_key or {}).get("summary", "")
     evidence = (answer_key or {}).get("evidence", [])
     return (
         f"问题：{question}\n\n"
         f"参考答案要点：{summary}\n"
         f"参考答案证据：{json.dumps(evidence, ensure_ascii=False)}\n\n"
+        f"Agent 实际检索到的资料（判定 faithfulness / hallucination 的一等依据）：\n"
+        f"{_render_context(retrieval_context)}\n\n"
         f"用户答案（待评分）：{answer[:3000]}\n\n"
         "请按系统要求输出六指标 JSON。"
     )
@@ -89,6 +124,7 @@ def judge_answer(
     tools_called: list[str],
     expected_tools: list[str],
     expected_behavior: str,
+    retrieval_context: list[str] | None = None,
 ) -> dict:
     """六指标评分。返回 {metrics..., reason, _stats}。
 
@@ -96,8 +132,11 @@ def judge_answer(
     （`judge_error=True`，四项 judge 指标一律为 `None`），而**不是**降级为 0 分。
     理由：Unknown ≠ Zero —— 把"没评上"写成 0 分，会让度量本身撒谎，并让聚合分母静默漂移。
     失败行由 `metrics.aggregate()` 计入 `judge_failure_count`，不计入指标均值。
+
+    W11-D4：`retrieval_context` 是 agent **实际**检索到的资料，作为 faithfulness /
+    hallucination 的一等判据。不传时行为与改造前一致（仅用参考答案），保持向后兼容。
     """
-    prompt = _build_prompt(question, answer, answer_key)
+    prompt = _build_prompt(question, answer, answer_key, retrieval_context)
     for attempt in range(2):
         try:
             out = chat_json(

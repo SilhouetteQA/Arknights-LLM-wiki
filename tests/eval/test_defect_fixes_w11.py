@@ -141,6 +141,57 @@ class TestD2CostLogPath:
         assert len([ln for ln in text.splitlines() if ln.strip()]) == 1
 
 
+class TestD4JudgeSeesRetrievalContext:
+    """D4：judge 必须看到 agent 实际检索到的资料（否则 faithfulness/hallucination 名不副实）。"""
+
+    def test_prompt_includes_context(self):
+        from arknights_wiki.eval import judge as j
+
+        prompt = j._build_prompt(
+            "问题", "答案", {"summary": "s", "evidence": ["e"]},
+            ["资料甲：罗德岛是制药公司", "资料乙：凯尔希是医疗主管"],
+        )
+        assert "Agent 实际检索到的资料" in prompt
+        assert "资料甲" in prompt and "资料乙" in prompt
+
+    def test_prompt_without_context_is_explicit(self):
+        from arknights_wiki.eval import judge as j
+
+        prompt = j._build_prompt("问题", "答案", {"summary": "s"}, None)
+        assert "未记录到检索资料" in prompt
+
+    def test_context_budget_is_capped_and_declared(self):
+        from arknights_wiki.eval import judge as j
+
+        docs = ["x" * 1200 for _ in range(20)]
+        prompt = j._build_prompt("q", "a", {}, docs)
+        assert "后续资料因上下文预算省略" in prompt
+        assert len(prompt) < j._MAX_CONTEXT_CHARS + 2000, "上下文必须有预算上限，不能无限膨胀"
+
+    def test_judge_answer_forwards_context(self, monkeypatch):
+        from arknights_wiki.eval import judge as j
+
+        captured: dict = {}
+
+        def fake_chat_json(model, system_prompt, prompt, **kw):
+            captured["prompt"] = prompt
+            captured["system"] = system_prompt
+            return {
+                "answer_correctness": 0.8, "faithfulness": 0.8,
+                "citation_accuracy": None, "hallucination": 0, "reason": "ok",
+                "_stats": {"tokens_in": 1, "tokens_out": 1, "cost": 0.0},
+            }
+
+        monkeypatch.setattr(j, "chat_json", fake_chat_json)
+        out = j.judge_answer(
+            "q", "a", {"summary": "s"}, [], [], "complex",
+            retrieval_context=["检索到的资料：凯尔希是医疗主管"],
+        )
+        assert out["faithfulness"] == 0.8
+        assert "凯尔希是医疗主管" in captured["prompt"]
+        assert "实际检索" in captured["system"], "系统提示词也要说明判据含实际检索资料"
+
+
 class TestD3FailureVisibility:
     """D3：回退文案不变，但失败必须留下告警（否则故障不可见）。"""
 

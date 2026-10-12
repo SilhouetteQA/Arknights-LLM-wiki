@@ -280,6 +280,9 @@ def _run_and_score(item: dict, mode: str, args) -> dict:
             tools_called=res.get("tools_called", []),
             expected_tools=item.get("requires_tools", []),
             expected_behavior=item.get("expected_behavior", ""),
+            # W11-D4：judge 必须看到 agent 实际检索到的资料，否则 faithfulness /
+            # hallucination 只是拿短参考答案去比长答案，系统性判"无据"。
+            retrieval_context=res.get("retrieval_context", []),
         )
         row["judge"] = judged
         row["metrics"] = rule_metrics(
