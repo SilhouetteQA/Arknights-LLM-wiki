@@ -1,0 +1,26 @@
+{
+  "side": "wiki",
+  "ts": "2026-10-12T17:01:03+0800",
+  "agent": {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "base_url_host": "api.commandcode.ai",
+    "api_key_present": true
+  },
+  "judge_model": "deepseek/deepseek-v4.1-flash",
+  "judge_base_host": "api.commandcode.ai",
+  "judge_key_present": true,
+  "consolidated_judge_call": {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "latency_ms": 2422.0,
+    "wall_ms": 2422.0,
+    "tokens_in": 38,
+    "tokens_out": 16,
+    "cost_cny": 0.000204,
+    "content_head": ""
+  },
+  "legacy_gateway": {
+    "base_host": "opencode.ai",
+    "key_present": true
+  },
+  "legacy_mimo_call_error": "RuntimeError: LLM 调用失败（1 次尝试）: Client error '400 Bad Request' for url 'https://opencode.ai/zen/go/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+}

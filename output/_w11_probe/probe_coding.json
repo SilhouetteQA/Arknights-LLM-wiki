@@ -1,0 +1,34 @@
+{
+  "side": "coding",
+  "ts": "2026-10-12T17:01:09+0800",
+  "resolved_provider": "command_goat",
+  "provider_preference": [
+    "command_goat",
+    "deepseek"
+  ],
+  "fallback_provider": "opencode_go",
+  "env_keys_present": {
+    "command_goat_api": true,
+    "opencode_go_api": true,
+    "deepseek_api": true
+  },
+  "client": {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "base_url_host": "api.commandcode.ai",
+    "has_key": true
+  },
+  "call": {
+    "latency_ms": 3438.0,
+    "content_head": "pong",
+    "tokens": {
+      "prompt": 38,
+      "completion": 23
+    },
+    "reasoning_head": ""
+  },
+  "docker": {
+    "rc": 1,
+    "server_version": "",
+    "stderr_head": "failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if th"
+  }
+}
