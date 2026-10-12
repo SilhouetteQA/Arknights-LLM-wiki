@@ -32,6 +32,7 @@ if hasattr(sys.stdout, "reconfigure"):
 import httpx
 
 from arknights_wiki.eval import config as eval_config
+from arknights_wiki.eval import freeze
 from arknights_wiki.eval.judge import judge_answer, rule_metrics
 from arknights_wiki.eval.llm import compute_cost
 from arknights_wiki.observability import TRACE_ROOT, flush, get_client
@@ -42,6 +43,10 @@ COST_LOG = Path(
         str(ROOT / "output" / "eval" / "cost_log.jsonl"),
     )
 )
+
+#: W11-α（母 Spec §24）：本次运行的冻结身份。在 main() 中于跑批前一次性写入，
+#: 之后只读 —— 使得每一行结果都能自证"是哪次配置跑出来的"。
+_RUN_META: dict = {}
 
 
 def _log_cost(entry: dict) -> None:
@@ -266,6 +271,7 @@ def _run_and_score(item: dict, mode: str, args) -> dict:
         "cost": res.get("cost", 0.0),
         "ts": datetime.now().isoformat(timespec="seconds"),
     }
+    row.update(_RUN_META)
     if not args.no_judge:
         judged = judge_answer(
             question=item["question"],
@@ -319,15 +325,43 @@ def main() -> int:
     print(f"外部调用估算: agent {agent_calls} 次（DeepSeek 内部计价）+ judge {judge_calls} 次（{eval_config.get_judge_model()}）")
     print(f"LLM tokens 估算: ~{est_tokens:,} → judge 侧费用 ~¥{est_cost:.3f}（Flash 档估算；agent 侧另按 DeepSeek 计价）")
     print(f"judge 模型: {eval_config.get_judge_model()} | base: {eval_config.get_ark_base()}")
-    print(f"输出: {Path(args.out) / 'results_v1.jsonl'} + report_v1.md")
+    print(f"输出: {Path(args.out) / 'results_v1.jsonl'} + report_v1.md + benchmark-spec.json")
+
+    # W11-α（母 Spec §24）：冻结元数据必须在跑批**之前**构造完；dry-run 只预览、不落盘。
+    spec = freeze.build_benchmark_spec(bench_path, bench_path.parent / "materials", ROOT)
+    print(f"corpus: {spec['corpus']['case_count']} 题 · sha256 {spec['corpus']['corpus_sha256'][:24]}")
+    print(
+        f"agent: {spec['models']['agent_model']} @ {spec['models']['agent_provider']} · "
+        f"judge: {spec['models']['judge_model']}"
+        + ("（⚠️ 与 agent 同模型 = 自评）" if spec["models"]["judge_is_same_as_agent"] else "")
+    )
     if args.dry_run:
-        print("\n[dry-run] 未执行任何外部调用。确认后去掉 --dry-run 运行。")
+        print("\n[dry-run] 未执行任何外部调用，也未写出冻结清单。确认后去掉 --dry-run 运行。")
         return 0
     if not eval_config.get_opencode_go_key():
         print("错误：未检测到 opencode_go_api（HKCU 注册表，judge 需要）", file=sys.stderr)
         return 1
 
     out_dir = Path(args.out)
+    freeze.write_benchmark_spec(out_dir / "benchmark-spec.json", spec)
+    _RUN_META.clear()
+    _RUN_META.update(
+        {
+            "harness_commit": spec["harness"]["commit"],
+            "corpus_sha256": spec["corpus"]["corpus_sha256"],
+            "agent_model": spec["models"]["agent_model"],
+            "agent_provider": spec["models"]["agent_provider"],
+            "agent_base_host": spec["models"]["agent_base_host"],
+            "judge_model": spec["models"]["judge_model"],
+            "judge_provider": spec["models"]["judge_provider"],
+            "temperature_policy": spec["temperature_policy"],
+            "max_tokens_policy": spec["max_tokens_policy"],
+            "prompt_set_sha256": freeze.sha256_bytes(
+                json.dumps(spec["prompt_hashes"], sort_keys=True, ensure_ascii=False).encode("utf-8")
+            ),
+            "aggregation_rules_version": spec["aggregation_rules_version"],
+        }
+    )
     results_path = out_dir / "results_v1.jsonl"
     existing = _existing_ids(results_path)
 
@@ -358,6 +392,7 @@ def main() -> int:
                         "id": item["id"], "mode": mode, "question": item["question"],
                         "answer": f"[run error: {str(e)[:200]}]", "route": "error",
                         "latency_ms": 0, "cost": 0.0,
+                        **_RUN_META,
                         "ts": datetime.now().isoformat(timespec="seconds"),
                     })
                     done += 1
@@ -379,7 +414,11 @@ def main() -> int:
         try:
             from arknights_wiki.eval.report import generate_report
 
-            report_path = generate_report(results_path, out_dir)
+            report_path = generate_report(
+                results_path,
+                out_dir,
+                spec=freeze.load_benchmark_spec(out_dir / "benchmark-spec.json"),
+            )
             print(f"报告: {report_path}")
         except Exception as e:  # noqa: BLE001
             print(f"报告生成失败: {str(e)[:200]}", file=sys.stderr)

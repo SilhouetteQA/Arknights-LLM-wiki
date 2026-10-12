@@ -32,6 +32,47 @@ def _mean(values: list[float]) -> float:
     return round(sum(values) / len(values), 3) if values else None
 
 
+def _metric_value(row: dict, m: str) -> float | None:
+    """单一数据源：从一行结果取某指标的值（优先级与 W0 审计后的口径完全一致）。
+
+    W11-α：返回 `None` 表示**未知**（judge 失败 / 该指标未评），与「0 分」严格区分。
+    """
+    metrics = row.get("metrics") or {}
+    j = row.get("judge") or {}
+    if m in metrics:
+        return metrics[m]
+    if m in j and m != "hallucination":
+        return j[m]
+    if m == "hallucination" and j.get("hallucination") is not None:
+        return 1 - int(j["hallucination"])  # 无幻觉率
+    return None
+
+
+def _judge_failed(row: dict) -> bool:
+    """judge 是否失败（LLM judge 的显式标记，或 DeepEval 评分路径的 error 字段）。"""
+    j = row.get("judge") or {}
+    return bool(j.get("judge_error")) or bool(j.get("error"))
+
+
+def _coverage(rows: list[dict]) -> dict:
+    """覆盖率口径（W11-α / 母 Spec §24）：显式记录分母，禁止静默丢弃 null。
+
+    母 Spec §24 要求「聚合使分母稳定」；旧实现 `_mean` 静默丢 null，
+    导致 judge 失败会悄悄改变分母而无人察觉。
+    """
+    non_null = {m: 0 for m in METRICS}
+    for row in rows:
+        for m in METRICS:
+            if _metric_value(row, m) is not None:
+                non_null[m] += 1
+    return {
+        "rows": len(rows),
+        "judge_failure_count": sum(1 for r in rows if _judge_failed(r)),
+        "metric_non_null_count": non_null,
+        "metric_null_count": {m: len(rows) - c for m, c in non_null.items()},
+    }
+
+
 def rule_metrics(
     answer: str,
     tools_called: list[str],
@@ -85,16 +126,7 @@ def aggregate(results: list[dict]) -> dict:
         rows = by_mode[mode]
         per_metric: dict[str, float | None] = {}
         for m in METRICS:
-            vals = []
-            for row in rows:
-                metrics = row.get("metrics") or {}
-                j = row.get("judge") or {}
-                if m in metrics:
-                    vals.append(metrics[m])
-                elif m in j and m != "hallucination":
-                    vals.append(j[m])
-                elif m == "hallucination" and j.get("hallucination") is not None:
-                    vals.append(1 - int(j["hallucination"]))  # 无幻觉率
+            vals = [v for v in (_metric_value(row, m) for row in rows) if v is not None]
             per_metric[m] = _mean(vals) if vals else None
         per_metric["overall"] = _mean([v for v in per_metric.values() if v is not None])
         out["by_mode"][mode] = per_metric
@@ -105,20 +137,15 @@ def aggregate(results: list[dict]) -> dict:
             cat_rows = [r for r in rows if r.get("category") == cat]
             cat_vals = {"count": len(cat_rows)}
             for m in METRICS:
-                vals = []
-                for row in cat_rows:
-                    metrics = row.get("metrics") or {}
-                    j = row.get("judge") or {}
-                    if m in metrics:
-                        vals.append(metrics[m])
-                    elif m in j and m != "hallucination":
-                        vals.append(j[m])
-                    elif m == "hallucination" and j.get("hallucination") is not None:
-                        vals.append(1 - int(j["hallucination"]))
+                vals = [v for v in (_metric_value(row, m) for row in cat_rows) if v is not None]
                 cat_vals[m] = _mean(vals) if vals else None
             cat_vals["overall"] = _mean([v for v in cat_vals.values() if v is not None])
             per_cat[cat] = cat_vals
-        out["by_mode"][mode] = {"metrics": per_metric, "categories": per_cat}
+        out["by_mode"][mode] = {
+            "metrics": per_metric,
+            "categories": per_cat,
+            "coverage": _coverage(rows),
+        }
 
     # overall：全模式合并
     all_rows = list(by_mode.values())
@@ -126,19 +153,11 @@ def aggregate(results: list[dict]) -> dict:
     if flat:
         ov: dict[str, float | None] = {}
         for m in METRICS:
-            vals = []
-            for row in flat:
-                metrics = row.get("metrics") or {}
-                j = row.get("judge") or {}
-                if m in metrics:
-                    vals.append(metrics[m])
-                elif m in j and m != "hallucination":
-                    vals.append(j[m])
-                elif m == "hallucination" and j.get("hallucination") is not None:
-                    vals.append(1 - int(j["hallucination"]))
+            vals = [v for v in (_metric_value(row, m) for row in flat) if v is not None]
             ov[m] = _mean(vals) if vals else None
         ov["overall"] = _mean([v for v in ov.values() if v is not None])
         out["overall"] = ov
+        out["coverage"] = _coverage(flat)
     return out
 
 

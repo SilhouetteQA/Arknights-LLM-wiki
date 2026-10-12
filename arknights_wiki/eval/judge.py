@@ -77,7 +77,13 @@ def judge_answer(
     expected_tools: list[str],
     expected_behavior: str,
 ) -> dict:
-    """六指标评分。返回 {metrics..., reason, _stats}；judge 失败时返回降级值。"""
+    """六指标评分。返回 {metrics..., reason, _stats}。
+
+    W11-α（母 Spec §24 / presence-aware 红线）：judge 调用失败时返回**显式的失败标记**
+    （`judge_error=True`，四项 judge 指标一律为 `None`），而**不是**降级为 0 分。
+    理由：Unknown ≠ Zero —— 把"没评上"写成 0 分，会让度量本身撒谎，并让聚合分母静默漂移。
+    失败行由 `metrics.aggregate()` 计入 `judge_failure_count`，不计入指标均值。
+    """
     prompt = _build_prompt(question, answer, answer_key)
     for attempt in range(2):
         try:
@@ -104,10 +110,11 @@ def judge_answer(
             last_err = str(e)[:200]
             continue
     return {
-        "answer_correctness": 0.0,
-        "faithfulness": 0.0,
+        "answer_correctness": None,
+        "faithfulness": None,
         "citation_accuracy": None,
-        "hallucination": 1,
+        "hallucination": None,
+        "judge_error": True,
         "reason": f"judge 调用失败: {last_err}",
         "_stats": {},
     }

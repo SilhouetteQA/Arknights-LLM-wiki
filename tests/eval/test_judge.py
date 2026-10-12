@@ -54,7 +54,16 @@ class TestJudgeAnswer:
         assert out["answer_correctness"] == 0.6
 
     @patch("arknights_wiki.eval.judge.chat_json", side_effect=RuntimeError("api down"))
-    def test_failure_degrade(self, _):
+    def test_failure_is_unknown_not_zero(self, _):
+        """W11-α：judge 失败必须表达为**未知**（None + judge_error），不得伪造成 0 分。
+
+        旧行为返回 hallucination=1（等价 0 分）且无失败标记 —— 度量会撒谎，聚合分母也会静默漂移。
+        presence-aware 红线：Unknown ≠ Zero。
+        """
         out = judge_answer("q", "a", {}, [], [], "simple")
-        assert out["hallucination"] == 1
+        assert out["judge_error"] is True
+        assert out["answer_correctness"] is None
+        assert out["faithfulness"] is None
+        assert out["citation_accuracy"] is None
+        assert out["hallucination"] is None
         assert "judge 调用失败" in out["reason"]

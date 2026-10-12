@@ -50,6 +50,11 @@ output/_tmp_tests/
 output/_diag_*
 output/frontend-comparison.html
 
+# W11-α 探测/测试临时产物（脚本与 JSON 报告本身要进版本控制）
+output/_w11_probe/tmp/
+output/_w11_probe/tmpprobe/
+output/_w11_probe/junit/
+
 # W2 checkpoint DB
 output/checkpoints/
 
