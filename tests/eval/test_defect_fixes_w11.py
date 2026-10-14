@@ -259,6 +259,38 @@ class TestD6FailedRowKeepsCategory:
         assert "--retry-errors" in inspect.getsource(r.main)
 
 
+class TestD7EmptyAnswerIsFailure:
+    """D7：空答案必须等同失败（可重试、不计入指标），不能作为 0 分有效结果。"""
+
+    def test_empty_answer_row_is_dropped_for_retry(self, workdir):
+        import json as _json
+
+        from arknights_wiki.eval import runner as r
+
+        path = workdir / "results_v1.jsonl"
+        rows = [
+            {"id": "good", "mode": "direct", "category": "event", "answer": "正常", "route": "complex"},
+            {"id": "empty", "mode": "direct", "category": "event", "answer": "", "route": "complex"},
+            {"id": "blank", "mode": "direct", "category": "event", "answer": "   ", "route": "simple"},
+        ]
+        path.write_text(
+            "\n".join(_json.dumps(x, ensure_ascii=False) for x in rows) + "\n", encoding="utf-8"
+        )
+        assert r._drop_error_rows(path) == 2
+        left = [x for x in path.read_text(encoding="utf-8").splitlines() if x.strip()]
+        assert len(left) == 1 and '"id": "good"' in left[0]
+
+    def test_runner_marks_empty_answer_as_error(self):
+        """源码级钉子：空答案分支必须写出 route=error 行。"""
+        import inspect
+
+        from arknights_wiki.eval import runner as r
+
+        src = inspect.getsource(r._run_and_score)
+        assert "空答案" in src
+        assert '"route": "error"' in src
+
+
 class TestD3FailureVisibility:
     """D3：回退文案不变，但失败必须留下告警（否则故障不可见）。"""
 

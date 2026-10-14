@@ -258,6 +258,22 @@ def _run_and_score(item: dict, mode: str, args) -> dict:
             res = run_direct(item["question"])
     else:
         res = run_http(item["question"], args.server)
+    # W11-D7：空答案是**失败**，不是"0 分有效结果"。此前空答案会被当成正常行写入：
+    # task_completion 记 0、judge 打 0 分，静默拉低基线（实测 2 行），而 --retry-errors
+    # 也认不出它们（不含错误文案）。判为失败后，它可被重试且不计入指标。
+    if not str(res.get("answer", "")).strip():
+        return {
+            "id": item["id"],
+            "mode": mode,
+            "category": item.get("category", ""),
+            "question": item["question"],
+            "answer": "[run error: 空答案（agent 未生成任何内容）]",
+            "route": "error",
+            "latency_ms": res.get("latency_ms", 0),
+            "cost": res.get("cost", 0.0),
+            **_RUN_META,
+            "ts": datetime.now().isoformat(timespec="seconds"),
+        }
     row = {
         "id": item["id"],
         "mode": mode,
@@ -315,7 +331,11 @@ def _drop_error_rows(results_path: Path) -> int:
         except json.JSONDecodeError:
             continue
         answer = str(row.get("answer", ""))
-        if row.get("route") == "error" or answer.startswith(("[run error", "[http 调用失败")):
+        if (
+            row.get("route") == "error"
+            or answer.startswith(("[run error", "[http 调用失败"))
+            or not answer.strip()  # W11-D7：空答案同样视为失败，必须可重试
+        ):
             dropped += 1
             continue
         kept.append(s)
