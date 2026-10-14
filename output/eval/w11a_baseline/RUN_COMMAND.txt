@@ -1,0 +1,7 @@
+﻿# W11-alpha T6a 基线跑批（冻结语料 w11a-v1）
+D:\CodexPython312\python.exe -m arknights_wiki.eval.runner --bench benchmarks/arknights_bench/frozen/w11a-v1/questions.jsonl --mode direct --workers 4 --out output/eval/w11a_baseline
+# 环境: ARKNIGHTS_COST_LOG=<baseline>/cost_log.jsonl
+# workers=4（基线 + T7 复跑必须同参数）
+# corpus_sha256=238d2e88148a95f9e7a92de80bbd79d15dc307e7b01f2700f040e3041bd0f797
+# harness=6bbe15979576...（W11-D4 修复后）
+# judge=deepseek/deepseek-v4.1-flash（与 agent 同模型 = 自评，已知限制）
