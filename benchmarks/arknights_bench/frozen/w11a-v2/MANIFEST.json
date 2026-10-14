@@ -1,0 +1,300 @@
+{
+  "spec_version": "w11a-1",
+  "created_at": "2026-10-14T14:48:38",
+  "harness": {
+    "commit": "cefd872f400bd265145601f9c9193c4522ec389b",
+    "branch": "feature/pre-extraction-baseline"
+  },
+  "corpus": {
+    "path": "D:\\AI project\\Arknights LLM Wiki\\benchmarks\\arknights_bench\\frozen\\w11a-v2\\questions.jsonl",
+    "corpus_sha256": "238d2e88148a95f9e7a92de80bbd79d15dc307e7b01f2700f040e3041bd0f797",
+    "case_ids": [
+      "character_complex_001",
+      "character_complex_002",
+      "character_complex_003",
+      "character_complex_004",
+      "character_complex_005",
+      "character_complex_006",
+      "character_complex_007",
+      "character_complex_008",
+      "character_complex_009",
+      "character_complex_010",
+      "character_complex_011",
+      "event_complex_001",
+      "event_complex_002",
+      "event_complex_003",
+      "event_complex_004",
+      "event_complex_005",
+      "event_complex_006",
+      "event_complex_007",
+      "event_complex_008",
+      "event_complex_009",
+      "event_complex_010",
+      "event_complex_011",
+      "region_complex_001",
+      "region_complex_002",
+      "region_complex_003",
+      "region_complex_004",
+      "region_complex_005",
+      "region_complex_006",
+      "region_complex_007",
+      "region_complex_008",
+      "region_complex_009",
+      "region_complex_010",
+      "organization_complex_001",
+      "organization_complex_003",
+      "organization_complex_004",
+      "organization_complex_002",
+      "organization_complex_005",
+      "organization_complex_006",
+      "organization_complex_007",
+      "organization_complex_008",
+      "organization_complex_009",
+      "organization_complex_010",
+      "combat_power_complex_001",
+      "combat_power_complex_004",
+      "combat_power_complex_002",
+      "combat_power_complex_003",
+      "combat_power_complex_005",
+      "combat_power_complex_006",
+      "combat_power_complex_009",
+      "combat_power_complex_008",
+      "combat_power_complex_007",
+      "combat_power_complex_010",
+      "worldview_complex_002",
+      "worldview_complex_001",
+      "worldview_complex_004",
+      "worldview_complex_003",
+      "worldview_complex_005",
+      "worldview_complex_006",
+      "worldview_complex_008",
+      "worldview_complex_009",
+      "worldview_complex_007",
+      "worldview_complex_010",
+      "character_simple_003",
+      "character_simple_002",
+      "character_simple_001",
+      "character_simple_004",
+      "character_simple_005",
+      "event_simple_001",
+      "character_simple_006",
+      "character_simple_007",
+      "event_simple_002",
+      "event_simple_003",
+      "event_simple_004",
+      "event_simple_005",
+      "event_simple_006",
+      "region_simple_001",
+      "region_simple_003",
+      "event_simple_007",
+      "region_simple_002",
+      "region_simple_004",
+      "region_simple_005",
+      "region_simple_006",
+      "organization_simple_002",
+      "organization_simple_001",
+      "organization_simple_003",
+      "organization_simple_006",
+      "organization_simple_005",
+      "combat_power_simple_001",
+      "organization_simple_004",
+      "combat_power_simple_002",
+      "combat_power_simple_003",
+      "combat_power_simple_004",
+      "combat_power_simple_005",
+      "worldview_simple_001",
+      "combat_power_simple_006",
+      "worldview_simple_003",
+      "worldview_simple_002",
+      "worldview_simple_004",
+      "worldview_simple_005",
+      "worldview_simple_006",
+      "no_answer_reject_001",
+      "no_answer_reject_002",
+      "no_answer_reject_003",
+      "no_answer_reject_004",
+      "no_answer_reject_005",
+      "no_answer_reject_006",
+      "no_answer_reject_007",
+      "no_answer_reject_008",
+      "no_answer_reject_009",
+      "no_answer_reject_010",
+      "no_answer_reject_011",
+      "hallucination_bait_reject_001",
+      "hallucination_bait_reject_002",
+      "hallucination_bait_reject_003",
+      "hallucination_bait_reject_004",
+      "hallucination_bait_reject_005",
+      "hallucination_bait_reject_006",
+      "hallucination_bait_reject_007",
+      "hallucination_bait_reject_008",
+      "hallucination_bait_reject_009",
+      "hallucination_bait_reject_010",
+      "hallucination_bait_reject_011"
+    ],
+    "case_count": 122,
+    "category_counts": {
+      "character": 18,
+      "event": 18,
+      "region": 16,
+      "organization": 16,
+      "combat_power": 16,
+      "worldview": 16,
+      "no_answer": 11,
+      "hallucination_bait": 11
+    }
+  },
+  "materials": {
+    "character.json": "548e87d291c67dc0e5254e59112ed8d0a6247d74c47e79b0d9afaab5f626806f",
+    "combat_power.json": "a7c06c622020175e8a89eb4752746b83fcb20e76623d363c12999bf3a990a6d6",
+    "event.json": "2eb3c4528cfaf77d9622a0c164cb0a628a98957e6e2a3495be2e8fac1ee675b4",
+    "event_chapters.json": "03be73b224e4cfa4594a2075996ec0523b25019133380c1f45eef210047bf0e0",
+    "organization.json": "a2218d7ee85003e5c3d61ecdf1f297b2f9ae96e4fa4bf8cdaa882fc6ef95898d",
+    "region.json": "c7f57f4bd604da1d02aa6cb845eb5f677efb447d1da7dd8142e5a73164ed8917",
+    "worldview.json": "1e6acd6b4f26db149f1141028acb067338ab69e33da6d7130ed95c0e41c97d17"
+  },
+  "materials_dir": "D:\\AI project\\Arknights LLM Wiki\\benchmarks\\arknights_bench\\materials",
+  "prompt_hashes": {
+    "arknights_wiki/agent/prompts.py": "e57efd18e92410093786d912f4b2b78386b47f5f47bd985e39f961a9ea6ff13b",
+    "arknights_wiki/agent/graph.py": "bb86812a8dd0b9499e1b3444e29a72eaf9fbf4e3feb22b1b897b3df5aa54d611",
+    "arknights_wiki/agent/router.py": "a06c74ce3218718af148eff9f590a017255540418155bf9f5b567760b02dbff6",
+    "arknights_wiki/agent/planner.py": "22d4bdaa1fad12b5dee84440c9e68d8dd375fbe3fdeb44e7f77933adb9665dcd",
+    "arknights_wiki/agent/simple_search.py": "cb477646cfad917d146f8790f476ed7da8dc70ffe06b516f725a0ef2a56ac309",
+    "arknights_wiki/eval/judge.py": "56f45b09799989f7def820ff85cd0a9a72319c4468c80ec2d969a04522437536",
+    "arknights_wiki/eval/scoring.py": "7554643e26806bebb8aa58ba894c95dcfb1abf046ca44186305e5926557a93c8",
+    "arknights_wiki/eval/metrics.py": "b86c6be77d50fd3bffcd57f2712ac8fd5de67d1f9bb5042a89dcd25abff0ff66"
+  },
+  "models": {
+    "agent_model": "deepseek/deepseek-v4.1-flash",
+    "agent_provider": "command_goat",
+    "agent_base_host": "api.commandcode.ai",
+    "judge_model": "deepseek/deepseek-v4.1-flash",
+    "judge_provider": "command_goat",
+    "judge_base_host": "api.commandcode.ai",
+    "judge_is_same_as_agent": true
+  },
+  "temperature_policy": {
+    "agent_graph_default": 0.1,
+    "agent_graph_extended": 0.3,
+    "router": 0.1,
+    "planner": 0.1,
+    "simple_search": 0.3,
+    "judge": 0.1
+  },
+  "max_tokens_policy": {
+    "agent_nodes": 4096,
+    "judge": 4096
+  },
+  "aggregation_rules_version": "w11a-1",
+  "preregistered_tolerances": {
+    "deterministic_metrics": "exact_match",
+    "deterministic_metrics_list": [
+      "tool_selection_accuracy",
+      "task_completion"
+    ],
+    "stochastic_metric_mean_delta_max": 0.03,
+    "stochastic_per_case_agreement_min": 0.9,
+    "judge_failure_rate_max": 0.05,
+    "safety_violations_max": 0,
+    "declared_at": "2026-10-12",
+    "declared_by": "W11-α Spec §3.5（用户批准 2026-10-12）"
+  },
+  "historical_baseline": {
+    "artifact": "output/eval/report_v1_mimo.md",
+    "judge_model": "mimo-v2.5",
+    "overall": 0.857,
+    "comparable": false,
+    "reason": "judge 身份漂移：历史基线用 mimo-v2.5（旧 opencode 网关，当前返回 HTTP 400），现默认 judge 已收敛到与 agent 相同的统一 provider 模型；两者不同源。"
+  },
+  "freeze": {
+    "frozen_at": "2026-10-14T14:48:40",
+    "version": "w11a-v2",
+    "supersede_reason": null,
+    "sources": {
+      "base": {
+        "path": "benchmarks\\arknights_bench\\questions_draft.jsonl",
+        "sha256": "d72e1fc0e5af9a48231971b8c5b975ad1a7860d481a2216b2d4e43e8d9a85359",
+        "count": 100
+      },
+      "new_items": {
+        "path": "benchmarks\\arknights_bench\\drafts\\w11a_new_categories.jsonl",
+        "sha256": "69eab3b3b3b73bac3b6a131e635c441ccabbf0d9a874f5827bfeae2473dc57ae",
+        "count": 22
+      },
+      "review_notes": {
+        "path": "benchmarks\\arknights_bench\\drafts\\w11a_review_notes.md",
+        "sha256": "170b2d99693a91267130ae290c250cdcfc49b6c9568c80cb1c3487a323999281"
+      }
+    },
+    "review": {
+      "reviewed_bytes_sha256": "69eab3b3b3b73bac3b6a131e635c441ccabbf0d9a874f5827bfeae2473dc57ae",
+      "note": "冻结内容与人工审阅内容为同一份字节（哈希比对通过）"
+    },
+    "value_domains": {
+      "category_counts": {
+        "character": 18,
+        "combat_power": 16,
+        "event": 18,
+        "hallucination_bait": 11,
+        "no_answer": 11,
+        "organization": 16,
+        "region": 16,
+        "worldview": 16
+      },
+      "expected_behavior_counts": {
+        "complex": 62,
+        "simple": 38,
+        "reject": 22
+      },
+      "route_counts": {
+        "complex": 62,
+        "simple": 38,
+        "reject": 22
+      },
+      "source_counts": {
+        "grounded_llm": 100,
+        "manual": 22
+      },
+      "meta_eval_verdict_counts": {
+        "pass": 92,
+        "review": 3,
+        "reject": 5,
+        "skipped": 22
+      },
+      "declared_new_values": {
+        "expected_behavior": [
+          "reject"
+        ],
+        "meta_eval.verdict": [
+          "skipped"
+        ],
+        "note": "base 100 题只使用 simple/complex 与 pass/reject/review；本批引入 reject（行为）与 skipped（未跑元评估，拒绝伪造 pass）—— 必须在冻结清单中显式声明。"
+      }
+    },
+    "excluded": {
+      "manual_draft.jsonl": "未并入：实测缺 route/chapter_check/material_refs/meta_eval 四字段、expected_behavior 混用(complex 11 / reject 15)、answer_key.evidence 为空（无验证证据）。如需启用需先补齐 schema 与证据并重跑缺失校验。"
+    }
+  },
+  "review_findings": {
+    "review_date": "2026-10-14",
+    "corrected_claims": {
+      "u14_taxonomy": "冻结件的 category 为 6 个实体域 + 2 个新类；U-14 的题目类型分类未记录 ⇒ 不再声称「U-14 八类」。",
+      "self_check_default_root": "verify_manifest 默认 root 此前算错（parents[2]），Plan 里的验证命令实际是坏的；已修并加回归钉子。"
+    },
+    "supersedes": {
+      "w11a-v1": "v1 在 D4–D7 修复过程中被**就地重建**，违反 Spec §3.4 的不可变规则。v2 为正式替代：语料字节完全相同（corpus_sha256 一致），仅 harness 与 prompt/judge 哈希更新；v1 保留为历史留痕。"
+    },
+    "registered_limitations": [
+      "拒绝词白名单（metrics.py:100）未扩建：同义措辞可能误判 task_completion（确定性指标）",
+      "judge 与 agent 同模型 = 自评，指标存在系统性偏差",
+      "citation_accuracy 的 null 表示「答案不涉及引用」，非失败",
+      "评测口径 direct + workers=4 不在 §24 字段内，记录于 RUN_COMMAND.txt"
+    ],
+    "deferred_not_done": {
+      "coding_side_reproducibility": "Coding 侧未做全量复跑与判定（Spec §3.5 要求）—— 明确记为未完成",
+      "bom_commit_subjects": "3 条提交主题含 UTF-8 BOM；历史重写会失效已冻结的 harness SHA，评估后选择记录而非重写",
+      "coding_test_private_access": "Coding 测试仍调用私有函数并 monkeypatch 全局 os —— 已登记，未在本轮重构",
+      "coding_tolerance_label": "Coding 冻结容差把 resolution 记为统计量而非 §3.5 的「必须完全一致」，已登记偏差点"
+    }
+  }
+}

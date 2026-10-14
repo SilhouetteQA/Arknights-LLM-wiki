@@ -245,7 +245,7 @@ Coding:
 |---|---|
 | 两仓 BenchmarkSpec §24 字段全部有值且可复算 | ✅ Wiki（`frozen/w11a-v1/MANIFEST.json`，自校验 PASS）· Coding（`benchmark/frozen/w11a-v1/MANIFEST.json`） |
 | 冻结产物齐全 + SHA256SUMS | ✅ `output/eval/w11a_baseline/`（8 文件）· Coding `benchmark/baselines/w11a-v1/` |
-| Wiki 冻结语料 8 类各 ≥10 | ✅ 122 题（U-14 八类：18/18/16/16/16/16/11/11） |
+| Wiki 冻结语料各类 ≥10 | ✅ 122 题（**6 个实体域** 18/18/16/16/16/16 + **2 个新弃答/纠错类** 11/11）；⚠️ 更正：冻结件的 category 是**实体域**，不是 U-14 的题目类型（单跳/多跳/时间线/人物关系/跨章节/多工具/无答案/易幻觉）—— U-14 类型未在冻结件中记录，见 §9 declared gap |
 | **复跑判定脚本产出结论** | ✅ 产出，结论为 **`NOT_REPRODUCIBLE`** |
 | 安全与副作用零容忍项 = 0 | ✅ |
 | `reproducible_quality_gate` 可被引用 | ❌ **未通过**：逐题一致率 58–82%（预登记 ≥90%）、provider 失败率 22.1%（预登记 ≤5%） |

@@ -310,6 +310,26 @@ def _run_and_score(item: dict, mode: str, args) -> dict:
     return row
 
 
+#: W11-α review 修复（Duplicated Code 且已漂移）：失败行判定收敛为**单一数据源**。
+#: 此前 runner 与 scripts/eval/check_reproducibility.py 各写一份，后者多一个 agent 回退文案标记，
+#: 于是「回退文案」这种失败 runner 认不出、无法被 --retry-errors 重试。
+FAILURE_ANSWER_MARKERS: tuple[str, ...] = (
+    "[run error",
+    "[http 调用失败",
+    "回答生成出了点问题",  # agent 回退文案（graph.synthesize_node 的兜底输出）
+)
+
+
+def is_failure_row(row: dict) -> bool:
+    """该行是否代表失败：路由错误 / 错误文案 / agent 回退文案 / 空答案（W11-D7）。"""
+    answer = str(row.get("answer", ""))
+    return (
+        row.get("route") == "error"
+        or answer.lstrip().startswith(FAILURE_ANSWER_MARKERS)
+        or not answer.strip()
+    )
+
+
 def _drop_error_rows(results_path: Path) -> int:
     """移除此前写下的失败行（W11-D6），返回移除条数。
 
@@ -331,11 +351,7 @@ def _drop_error_rows(results_path: Path) -> int:
         except json.JSONDecodeError:
             continue
         answer = str(row.get("answer", ""))
-        if (
-            row.get("route") == "error"
-            or answer.startswith(("[run error", "[http 调用失败"))
-            or not answer.strip()  # W11-D7：空答案同样视为失败，必须可重试
-        ):
+        if is_failure_row(row):  # 单一数据源：见 is_failure_row 的注释
             dropped += 1
             continue
         kept.append(s)

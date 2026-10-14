@@ -33,3 +33,11 @@ D5 只影响聚合展示，D6 只影响失败行的 category 字段。
 - 确定性指标在「两次都跑成功」的题上一致；报告里的 54 处不一致全部来自复跑的 27 行 provider 400 失败（1.0 vs None）。
 - 复跑的 provider 失败率 27/122 = 22.1%（首次 47/122，重试后仍失败 27），**远超预登记的 5% 上限** ⇒ 该网关在 workers=4 下不稳定。
 - 判定规则见 scripts/eval/check_reproducibility.py，容差固化于 rknights_wiki/eval/freeze.py:PREREGISTERED_TOLERANCES（跑批前登记，未修改）。
+
+
+## 评审结论登记（2026-10-14）
+
+- **更正**：本基线语料的 category 是 6 个实体域 + 2 个新弃答/纠错类；**不等于** U-14 的题目类型分类。
+- **冻结版本**：正式冻结件为 rozen/w11a-v2/（语料字节与 v1 完全相同）；v1 因在 D4–D7 修复中被就地重建而作废，保留为历史留痕。
+- **已登记限制**：拒绝词白名单未扩建；judge 自评；citation null 语义；评测口径记录在 RUN_COMMAND.txt。
+- **明确未做**：Coding 侧复跑判定；提交主题 BOM 未重写；Coding 测试的私有访问未重构。

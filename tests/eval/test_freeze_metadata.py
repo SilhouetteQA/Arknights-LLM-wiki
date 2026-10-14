@@ -169,6 +169,25 @@ class TestBenchmarkSpec:
         assert not ok
         assert any("materials/character.json" in p for p in problems)
 
+    def test_default_root_resolves_repo_root(self, workdir):
+        """回归（W11-α 评审）：不传 root 时也必须推断出仓库根。
+
+        此前默认 `parents[2]` 会把 `benchmarks/arknights_bench/frozen/<ver>/MANIFEST.json`
+        算成 `benchmarks/arknights_bench` ⇒ 全部 prompt_hashes 解析失败、自校验**假失败**；
+        只有显式传 root 才通过。Plan 里那条验证命令正是默认调用 —— 也就是说当时它是坏的。
+        """
+        repo_root = Path(__file__).resolve().parents[2]
+        bench = _write_jsonl(workdir / "questions.jsonl", SAMPLE)
+        frozen = workdir / "frozen" / "v1"
+        frozen.mkdir(parents=True, exist_ok=True)
+        spec_path = frozen / "MANIFEST.json"
+        freeze.write_benchmark_spec(
+            spec_path, freeze.build_benchmark_spec(bench, workdir / "materials", repo_root)
+        )
+
+        ok, problems = freeze.verify_manifest(spec_path)  # 不传 root
+        assert ok, problems
+
     def test_missing_corpus_is_not_pass(self, workdir):
         root = self._root_with_prompt(workdir)
         bench = _write_jsonl(workdir / "questions.jsonl", SAMPLE)

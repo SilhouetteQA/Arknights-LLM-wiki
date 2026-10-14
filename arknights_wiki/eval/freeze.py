@@ -258,6 +258,21 @@ def load_benchmark_spec(path: Path | str) -> dict | None:
         return None
 
 
+def _default_repo_root(spec_path: Path | str) -> Path:
+    """推断仓库根（W11-α 评审修复）。
+
+    此前默认取 `spec_path.resolve().parents[2]`；对真实冻结件
+    `benchmarks/arknights_bench/frozen/<ver>/MANIFEST.json` 会算成 `benchmarks/arknights_bench`
+    ⇒ 全部 prompt_hashes 解析到不存在的路径、**自校验假失败**；只有显式传 `root=`.` 才通过。
+    这类「默认参数下静默失败、加个隐藏参数就通过」正是本窗口反复踩的坑，故改为向上寻找仓库根。
+    """
+    start = Path(spec_path).resolve()
+    for candidate in (start.parent, *start.parents):
+        if (candidate / "arknights_wiki").is_dir() or (candidate / ".git").exists():
+            return candidate
+    return Path.cwd()
+
+
 def verify_manifest(spec_path: Path | str, root: Path | str | None = None) -> tuple[bool, list[str]]:
     """校验冻结清单可复算：corpus 哈希、参考数据哈希、提示词哈希。
 
@@ -266,7 +281,7 @@ def verify_manifest(spec_path: Path | str, root: Path | str | None = None) -> tu
     spec = load_benchmark_spec(spec_path)
     if spec is None:
         return False, [f"spec 不存在或不可解析: {spec_path}"]
-    root = Path(root) if root else Path(spec_path).resolve().parents[2]
+    root = Path(root) if root else _default_repo_root(spec_path)
     problems: list[str] = []
 
     corpus = spec.get("corpus") or {}
