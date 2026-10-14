@@ -236,3 +236,31 @@ Coding:
 
 ⇒ 本任务完成后，Spec 17 的合法输出**仍是 `NOT_READY_FOR_EXTRACTION`**。本任务的价值是消除「无标尺」这一项，
 而不是把门禁打开。
+
+---
+
+## 8. 实测结果（2026-10-12 收口）
+
+| 验收项 | 结果 |
+|---|---|
+| 两仓 BenchmarkSpec §24 字段全部有值且可复算 | ✅ Wiki（`frozen/w11a-v1/MANIFEST.json`，自校验 PASS）· Coding（`benchmark/frozen/w11a-v1/MANIFEST.json`） |
+| 冻结产物齐全 + SHA256SUMS | ✅ `output/eval/w11a_baseline/`（8 文件）· Coding `benchmark/baselines/w11a-v1/` |
+| Wiki 冻结语料 8 类各 ≥10 | ✅ 122 题（U-14 八类：18/18/16/16/16/16/11/11） |
+| **复跑判定脚本产出结论** | ✅ 产出，结论为 **`NOT_REPRODUCIBLE`** |
+| 安全与副作用零容忍项 = 0 | ✅ |
+| `reproducible_quality_gate` 可被引用 | ❌ **未通过**：逐题一致率 58–82%（预登记 ≥90%）、provider 失败率 22.1%（预登记 ≤5%） |
+
+### 未通过的原因（实测，非推断）
+
+1. **判分在单题粒度不稳定**：`answer_correctness` 均值差仅 0.005（很稳），但逐题一致率 82.1%；
+   `faithfulness` / `hallucination` 均值差 0.042 / 0.069 双双超出 ±0.03。根因是 judge 与 agent **同模型**（自评）+ 0.1 温度。
+2. **网关并发不可靠**：`--workers 4` 下首次复跑 47/122（38.5%）返回 400 `invalid request error`，`--retry-errors`
+   重试后仍失败 27/122（22.1%）。
+3. 确定性指标（tool_selection / task_completion）在「两次都跑成功」的题目上完全一致；报告中的 54 处不一致
+   全部来自失败行的 `1.0 vs None`，不构成测量漂移。
+
+### 结论
+
+`reproducible_quality_gate` **仍未闭合** ⇒ Spec 17 的合法输出仍是 `NOT_READY_FOR_EXTRACTION`。
+本窗口的价值不在于把门禁打开，而在于把「缺证据」变成了三条可执行的阻塞原因，并顺带修掉 7 个真实缺陷（D1–D7）。
+**不得**为了通过门禁而放宽容差；下一步应先解决判分稳定性与网关可靠性，再重建基线。

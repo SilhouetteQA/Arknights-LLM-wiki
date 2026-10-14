@@ -3206,3 +3206,90 @@ Adapter 表达；`06_双旗舰Agent_统一工程化路线.md` 规划的 11 类�
    → 期望：01–15 COMPLETE / 16–18 NOT_STARTED / canonical_events=119 / pending_suffix=null
 4. 权威解释器：D:\CodexPython312\python.exe（PATH 里的 python 无依赖）
 ```
+
+
+---
+
+## W11-α：Pre-extraction Benchmark Baseline 冻结（2026-10-12，单窗口全记录）
+
+### 为什么做这件事
+
+Spec 17（Foundation Family Extraction Gate）的 12 项 eligibility 里，`reproducible_quality_gate` 是唯一
+100% 落在当时权限内、且不需要改产品代码就能推进的缺失项；而它同时是抽取的**前置**：母 Spec §24 明文
+「MUST NOT extract before a reproducible BenchmarkSpec and pre-extraction baseline are frozen」。
+
+### 交付物
+
+| 交付 | 位置 |
+|---|---|
+| Spec / Plan | `docs/specs/2026-10-12-pre-extraction-benchmark-freeze.md`、`docs/plans/2026-10-12-pre-extraction-benchmark-freeze-plan.md` |
+| 冻结语料（122 题 / U-14 八类） | `benchmarks/arknights_bench/frozen/w11a-v1/questions.jsonl` + `MANIFEST.json`（corpus_sha256 `238d2e88…`） |
+| 新增 22 道题（人工构造 + 三源缺失校验） | `benchmarks/arknights_bench/drafts/`（含 22 题审阅稿与抽验单） |
+| 冻结工具 | `scripts/eval/freeze_corpus.py`（**要求审阅哈希**：冻结的字节必须等于人工看过的字节） |
+| 复现性判定工具 | `scripts/eval/check_reproducibility.py`（按预登记容差） |
+| Wiki 基线 + provenance | `output/eval/w11a_baseline/`（8 文件，含 `PROVENANCE.md` / `SHA256SUMS` / `reproducibility.md`） |
+| Coding 侧仪表化 + 冻结件 + 基线 | Coding 仓 `feature/pre-extraction-baseline`：`66302c7`/`22c0da4`/`723c4a5`/`e67da5b`，基线在 `benchmark/baselines/w11a-v1/` |
+
+### 基线结果（Wiki，122 题，`--mode direct --workers 4`）
+
+overall **0.700**（补齐 D7 后：correctness 0.782 / faithfulness 0.614 / citation 0.626 /
+tool_selection 0.877 / hallucination 0.311 / task_completion 0.984）。
+分八类最强「人物」0.807、最弱「事件」0.606（correctness 仅 0.472）、「易幻觉」0.429 但**幻觉率 0.0**。
+
+Coding 侧：5 case 解决 2（raw 40% / adjusted 50%），fixture 全部钉在 `dbader/schedule@82a43db1` 且
+`pinned == actual`。
+
+### 为冻结一份基线，挖出 7 个真实缺陷（本窗口最大价值）
+
+| 编号 | 缺陷 | 性质 |
+|---|---|---|
+| **D1** | `chat_completion` 在 `tools=None` 时发 `"tools": null` → command_goat 网关 400 → **Wiki Agent 全链路自 2026-09-16 provider 整合后不可用**（122 题实测 13/13 全回退） | 阻塞级产品缺陷；因整合后从未重跑评测（U-03 空窗）而未被发现 |
+| **D2** | `judge.py` / `scoring.py` 硬编码全局 cost log、无视 `ARKNIGHTS_COST_LOG` → 成本账分裂（17 条 judge 落全局、14 条落基线目录） | 测量口径 |
+| **D3** | `synthesize_node` 静默吞掉所有异常 → D1 那种「每次都失败」完全不可见 | 可观测性（U-04） |
+| **D4** | judge prompt 只给「参考答案」，**不给 agent 实际检索上下文** → faithfulness/hallucination 名不副实（smoke 实测 faithfulness 0.3–0.6、7/10 判幻觉） | 测量有效性 |
+| **D5** | 分八类的 `overall` 把 `count` 一起取均值 → 出现 2.596 / 3.091 这种 >1 的「均值」（历史报告同缺陷） | 测量正确性 |
+| **D6** | 失败行不写 `category` → 报告出现 `?` 类别（n=0）；且失败行会被断点续跑当作「已完成」永久跳过 | 数据完整性 + 重试不可行 |
+| **D7** | 空答案被当成「0 分有效结果」写入（基线实测 2 行） | 测量正确性 |
+
+D1–D7 全部带回归钉子（`tests/eval/test_defect_fixes_w11.py`），`tests/eval` 108 passed。
+
+### T7 复现性判定：`NOT_REPRODUCIBLE`（未放宽容差）
+
+| 指标 | 均值差 | 逐题一致率 | 预登记要求 |
+|---|---|---|---|
+| answer_correctness | **0.005** | 82.1% | ≤0.03 / ≥90% |
+| faithfulness | 0.042 | 57.9% | 同上 |
+| citation_accuracy | 0.031 | 59.3% | 同上 |
+| hallucination | 0.069 | 72.6% | 同上 |
+
+- **均值稳、逐题不稳**：LLM 自评 judge 在 0.1 网格上的固有抖动；确定性指标在「两次都跑成功」的题上一致，
+  54 处不一致全部来自失败行的 `1.0 vs None`。
+- **provider 不稳**：首次复跑 47/122（38.5%）400 失败，重试后仍 27/122（22.1%）失败，远超预登记的 5% 上限。
+- 容差在跑批**之前**固化于 `freeze.py:PREREGISTERED_TOLERANCES`，判定后**未做任何修改**（母 Spec §24）。
+
+### Spec 17 的最终状态（如实）
+
+| eligibility 条件 | 状态 |
+|---|---|
+| `reproducible_quality_gate` | **仍未通过** —— BenchmarkSpec 已冻结 ✅、baseline 已产出 ✅，但复跑未达预登记容差（逐题一致率 58–82%、provider 失败率 22%） |
+| `duplicate_adapter_evidence` | 本窗口附带产出量化审计（723 行逐字共享 / 每仓 500–650 行可原样共享 / 9 条抽象税），为后续裁定提供证据，未自行改判 |
+| 其余 4 项 | 仍 FAIL（需真实 Cycle 2 / rollback 演练 / 未成熟 family） |
+
+⇒ **Spec 17 的合法结论仍是 `NOT_READY_FOR_EXTRACTION`**，但这次的原因从「缺证据」变成了三条可执行的实测结论：
+① 判分在单题粒度不稳定；② 网关在并发下不可靠；③ 抽取前必须先解决这两条，否则 before/after 对比无意义。
+
+### 成本
+
+- Wiki 基线：822 条 judge/agent 调用条目，`output/eval/w11a_baseline/cost_log.jsonl` 自记；judge 侧 ¥1 量级。
+- Coding 基线：`cost_usd = null`（价格表为空）—— 按 presence-aware 原则**不填假 0**。
+- 中止跑批（D1）证据保留在 `output/eval/_aborted_provider_defect_20261012/`（不入库，哈希见本窗口提交信息）。
+
+### 会话恢复指南（下会话）
+
+```text
+1. 冻结件：benchmarks/arknights_bench/frozen/w11a-v1/MANIFEST.json（harness b0f2ff68）
+2. 基线：output/eval/w11a_baseline/PROVENANCE.md → report_v1.md → reproducibility.md
+3. 判定复算：D:\CodexPython312\python.exe scripts/eval/check_reproducibility.py --base output/eval/w11a_baseline --rerun output/eval/w11a_baseline_run2
+4. 缺陷钉子：D:\CodexPython312\python.exe -m pytest tests/eval -q（108 passed）
+5. 下一步优先级：判分稳定性（分离 judge 模型 / 固定更严采样参数）→ 网关并发可靠性 → 再谈抽取
+```
