@@ -1,12 +1,12 @@
 # Agent 评测报告
 
-> 生成时间：2026-10-12T21:10:03
+> 生成时间：2026-10-14T14:14:28
 > 题目数：122 条结果 · 模式：direct
 
 ## 〇、冻结元数据（母 Spec §24 BenchmarkSpec）
 
 - spec_version `w11a-1` · aggregation_rules_version `w11a-1`
-- harness `2ded09512fb936581360aef832ba4b706371f8f0`（feature/pre-extraction-baseline）
+- harness `b0f2ff68f8e0bb375d95564833ce369344bc90a0`（feature/pre-extraction-baseline）
 - corpus `122` 题 · sha256 `238d2e88148a95f9e7a92de8`
 - agent `deepseek/deepseek-v4.1-flash` @ `command_goat`
 - judge `deepseek/deepseek-v4.1-flash` @ `command_goat`
@@ -20,22 +20,22 @@
 
 | 指标 | 总分 | direct |
 |------|------|------|
-| overall | 0.7 | 0.7 |
-| answer_correctness | 0.769 | 0.769 |
-| faithfulness | 0.609 | 0.609 |
-| citation_accuracy | 0.632 | 0.632 |
+| overall | 0.702 | 0.702 |
+| answer_correctness | 0.782 | 0.782 |
+| faithfulness | 0.614 | 0.614 |
+| citation_accuracy | 0.626 | 0.626 |
 | tool_selection_accuracy | 0.877 | 0.877 |
-| hallucination | 0.328 | 0.328 |
-| task_completion | 0.984 | 0.984 |
+| hallucination | 0.311 | 0.311 |
+| task_completion | 1.0 | 1.0 |
 
 ## 二、分八类
 
 | 类别 | 题数 | overall | correctness | faithfulness | 无幻觉率 | task_completion |
 |------|------|---------|-------------|--------------|----------|-----------------|
 | 世界观 | 16 | 0.734 | 0.831 | 0.666 | 0.375 | 1.0 |
-| 事件 | 18 | 0.606 | 0.472 | 0.461 | 0.278 | 0.944 |
+| 事件 | 18 | 0.616 | 0.517 | 0.483 | 0.222 | 1.0 |
 | 人物 | 18 | 0.807 | 0.844 | 0.686 | 0.5 | 1.0 |
-| 国家地区 | 16 | 0.736 | 0.819 | 0.625 | 0.375 | 0.938 |
+| 国家地区 | 16 | 0.744 | 0.869 | 0.644 | 0.312 | 1.0 |
 | 战斗力 | 16 | 0.754 | 0.803 | 0.681 | 0.312 | 1.0 |
 | 无答案 | 11 | 0.662 | 0.882 | 0.564 | 0.364 | 1.0 |
 | 易幻觉 | 11 | 0.429 | 0.755 | 0.373 | 0.0 | 1.0 |
@@ -43,11 +43,11 @@
 
 ## 三、成本汇总
 
-- **总计：¥3.1544**
+- **总计：¥3.191**
 - 分步骤：
-  - agent_direct:complex: 68 次 · ¥0.583272
-  - agent_direct:simple: 54 次 · ¥0.199792
-  - judge: 122 次 · ¥2.371368
+  - agent_direct:complex: 69 次 · ¥0.58916
+  - agent_direct:simple: 55 次 · ¥0.209176
+  - judge: 124 次 · ¥2.39271
 
 ## 四、双路径对比（direct vs http）
 
@@ -61,7 +61,7 @@
 |------|--------|------------------|
 | answer_correctness | 122 | 0 |
 | faithfulness | 122 | 0 |
-| citation_accuracy | 114 | 8 |
+| citation_accuracy | 116 | 6 |
 | tool_selection_accuracy | 122 | 0 |
 | hallucination | 122 | 0 |
 | task_completion | 122 | 0 |

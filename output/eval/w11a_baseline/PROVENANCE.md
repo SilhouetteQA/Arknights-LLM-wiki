@@ -17,10 +17,19 @@ D5 只影响聚合展示，D6 只影响失败行的 category 字段。
 - 原始 13 行失败：provider 400 invalid request error（偶发，重试 13/13 全部成功）
 - 重试使用 --retry-errors（显式移除失败行后断点续跑），日志见 output/_w11_probe/t6a_retry.log
 
-## 已知限制
 
-1. judge 与 agent 同模型（自评），指标存在系统性偏差。
-2. 与历史 0.857 基线**不可比**（judge 身份、provider、代码均不同）。
-3. citation_accuracy 有 8 行为 null：答案为「不涉及引用」时的设计行为，不是失败。
-4. D4 后 faithfulness/hallucination 才真正以「实际检索资料」为判据；修复前的同名列不是同一口径。
-`
+## T7 复现性判定：NOT_REPRODUCIBLE（未放宽容差）
+
+复跑 output/eval/w11a_baseline_run2（同 corpus / 同参数 --mode direct --workers 4）。
+
+| 指标 | 均值差 | 逐题一致率 | 预登记要求 |
+|---|---|---|---|
+| answer_correctness | 0.005 | 82.1% | ≤0.03 / ≥90% |
+| faithfulness | 0.042 | 57.9% | 同上 |
+| citation_accuracy | 0.031 | 59.3% | 同上 |
+| hallucination | 0.069 | 72.6% | 同上 |
+
+- **均值稳（answer_correctness 0.005），但逐题一致率 58–82% 远低于预登记的 90%** —— LLM 自评 judge 在 0.1 网格上的固有抖动。
+- 确定性指标在「两次都跑成功」的题上一致；报告里的 54 处不一致全部来自复跑的 27 行 provider 400 失败（1.0 vs None）。
+- 复跑的 provider 失败率 27/122 = 22.1%（首次 47/122，重试后仍失败 27），**远超预登记的 5% 上限** ⇒ 该网关在 workers=4 下不稳定。
+- 判定规则见 scripts/eval/check_reproducibility.py，容差固化于 rknights_wiki/eval/freeze.py:PREREGISTERED_TOLERANCES（跑批前登记，未修改）。

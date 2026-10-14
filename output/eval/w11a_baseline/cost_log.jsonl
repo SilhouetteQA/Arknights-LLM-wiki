@@ -242,3 +242,7 @@
 {"step": "judge", "model": "deepseek/deepseek-v4.1-flash", "tokens_in": 4593, "tokens_out": 1540, "cost": 0.021505999999999997, "timestamp": "2026-10-12T21:08:56"}
 {"step": "agent_direct:complex", "model": "deepseek/deepseek-v4.1-flash", "tokens_in": 0, "tokens_out": 585, "cost": 0.00468, "estimate": true, "timestamp": "2026-10-12T21:09:45"}
 {"step": "judge", "model": "deepseek/deepseek-v4.1-flash", "tokens_in": 3662, "tokens_out": 1706, "cost": 0.020972, "timestamp": "2026-10-12T21:10:03"}
+{"step": "agent_direct:simple", "model": "deepseek/deepseek-v4.1-flash", "tokens_in": 0, "tokens_out": 1173, "cost": 0.009384, "estimate": true, "timestamp": "2026-10-14T14:13:22"}
+{"step": "judge", "model": "deepseek/deepseek-v4.1-flash", "tokens_in": 1764, "tokens_out": 1407, "cost": 0.014784, "timestamp": "2026-10-14T14:13:37"}
+{"step": "agent_direct:complex", "model": "deepseek/deepseek-v4.1-flash", "tokens_in": 0, "tokens_out": 736, "cost": 0.005888, "estimate": true, "timestamp": "2026-10-14T14:14:00"}
+{"step": "judge", "model": "deepseek/deepseek-v4.1-flash", "tokens_in": 1335, "tokens_out": 486, "cost": 0.006558, "timestamp": "2026-10-14T14:14:28"}
